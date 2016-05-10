@@ -1,5 +1,9 @@
 package alexndr.plugins.Netherrocks;
 
-public class ProxyClient extends ProxyCommon {
+/**
+ * @author AleXndrTheGr8st
+ */
+public class ProxyClient extends ProxyCommon
+{
 
 }
