@@ -7,8 +7,9 @@ libs/
 *.log
 *.jar
 *.class
+*~
+.classpath
 gradlew
 gradlew.bat
 bin/
 .gradle/
-build.number
