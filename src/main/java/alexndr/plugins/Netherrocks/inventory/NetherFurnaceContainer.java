@@ -1,5 +1,6 @@
-package alexndr.plugins.Netherrocks;
+package alexndr.plugins.Netherrocks.inventory;
 
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

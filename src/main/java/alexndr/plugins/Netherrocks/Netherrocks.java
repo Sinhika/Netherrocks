@@ -17,27 +17,33 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import alexndr.api.core.SimpleCoreAPI;
-import alexndr.api.core.UpdateChecker;
 import alexndr.api.helpers.game.OreGenerator;
 import alexndr.api.helpers.game.RenderItemHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
+import alexndr.plugins.Fusion.ModInfo;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 import com.google.common.collect.Lists;
 
 /**
  * @author AleXndrTheGr8st
  */
-@Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, dependencies = "required-after:simplecore")
-public class Netherrocks {
-	public static Plugin plugin = new Plugin(ModInfo.ID, ModInfo.NAME);
-	public static Netherrocks INSTANCE = new Netherrocks();
-	
-	@SidedProxy(clientSide = "alexndr.plugins.Netherrocks.ProxyClient", serverSide = "alexndr.plugins.Netherrocks.ProxyCommon")
+@Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
+	 dependencies = ModInfo.DEPENDENCIES, updateJSON=ModInfo.VERSIONURL)
+public class Netherrocks 
+{
+	@Mod.Instance
+	public static Netherrocks INSTANCE;
+
+	@SidedProxy(clientSide = "alexndr.plugins.Netherrocks.ProxyClient", 
+				serverSide = "alexndr.plugins.Netherrocks.ProxyCommon")
 	public static ProxyCommon proxy;
-	
+
+	public static Plugin plugin = new Plugin(ModInfo.ID, ModInfo.NAME);
+
 	//Tool Materials
 	public static ToolMaterial toolFyrite, toolMalachite, toolAshstone, toolIllumenite, toolDragonstone, toolArgonite;
 	
@@ -50,9 +56,7 @@ public class Netherrocks {
 		
 		//Configuration
 		ContentRegistry.registerPlugin(plugin);
-		ModInfo.setModInfoProperties(event);
 		Settings.createOrLoadSettings(event);
-		if(Settings.updateChecker.asBoolean()) {UpdateChecker checker = new UpdateChecker(ModInfo.ID, ModInfo.VERSION, ModInfo.VERSIONURL); }
 		
 		//Content
 		setToolAndArmorStats();

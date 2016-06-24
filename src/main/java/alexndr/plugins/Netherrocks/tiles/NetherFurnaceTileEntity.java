@@ -1,5 +1,8 @@
-package alexndr.plugins.Netherrocks;
+package alexndr.plugins.Netherrocks.tiles;
 
+import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.Settings;
+import alexndr.plugins.Netherrocks.inventory.NetherFurnaceContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;

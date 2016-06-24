@@ -1,5 +1,6 @@
-package alexndr.plugins.Netherrocks;
+package alexndr.plugins.Netherrocks.inventory;
 
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

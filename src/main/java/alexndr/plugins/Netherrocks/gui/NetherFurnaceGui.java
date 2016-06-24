@@ -1,5 +1,6 @@
-package alexndr.plugins.Netherrocks;
+package alexndr.plugins.Netherrocks.gui;
 
+import alexndr.plugins.Netherrocks.inventory.NetherFurnaceContainer;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
