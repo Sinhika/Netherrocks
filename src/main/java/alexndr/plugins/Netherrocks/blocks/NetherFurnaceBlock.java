@@ -1,4 +1,4 @@
-package alexndr.plugins.Netherrocks;
+package alexndr.plugins.Netherrocks.blocks;
 
 import java.util.Random;
 
@@ -7,7 +7,6 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,9 +15,9 @@ import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,6 +26,9 @@ import alexndr.api.config.types.ConfigBlock;
 import alexndr.api.registry.ContentCategories;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
+import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.Netherrocks;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
  * @author AleXndrTheGr8st

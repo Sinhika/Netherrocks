@@ -1,40 +1,84 @@
 package alexndr.plugins.Netherrocks;
 
-import alexndr.plugins.Netherrocks.gui.NetherFurnaceGui;
-import alexndr.plugins.Netherrocks.inventory.NetherFurnaceContainer;
-import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.IGuiHandler;
+import java.util.List;
 
-public class ProxyCommon implements IGuiHandler{
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import alexndr.api.core.SimpleCoreAPI;
+import alexndr.api.helpers.game.OreGenerator;
+import alexndr.api.helpers.game.TabHelper;
+import alexndr.api.logger.LogHelper;
+import alexndr.api.registry.ContentRegistry;
 
-	@Override
-	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		TileEntity machine = world.getTileEntity(new BlockPos(x, y, z));
+import com.google.common.collect.Lists;
+
+
+public class ProxyCommon 
+{
+
+	public void PreInit(FMLPreInitializationEvent event)
+	{	
+		//Configuration
+		ContentRegistry.registerPlugin(Netherrocks.plugin);
+		Settings.createOrLoadSettings(event);
 		
-        if(machine == null)
-        	return null;
-            
-        if(machine instanceof NetherFurnaceTileEntity)
-        	return new NetherFurnaceContainer(player.inventory, (NetherFurnaceTileEntity)machine);
-        
-        return null;
-	}
-
-	@Override
-	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		TileEntity machine = world.getTileEntity(new BlockPos(x, y, z));
+		// in the event this is standalone..
+		if (! TabHelper.wereTabsInitialized()) {
+			SimpleCoreAPI.tabPreInit();
+		}
+		Netherrocks.tabPreInit();
 		
-        if(machine == null)
-        	return null;
-            
-        if(machine instanceof NetherFurnaceTileEntity)
-        	return new NetherFurnaceGui(player.inventory, (NetherFurnaceTileEntity)machine);
-        
-        return null;
-	}
+		//Content
+		Content.preInitialize();
+		Recipes.preInitialize();
+	} // end PreInit
 
-}
+	public void Init(FMLInitializationEvent event)
+	{
+		//Content
+		Recipes.initialize();
+		setTabIcons();
+		Content.setRepairMaterials();
+		Content.setAchievementTriggers();
+		setOreGenSettings();
+	} // end Init()
+
+	public void PostInit(FMLPostInitializationEvent event)
+	{
+	} // end PostInit()
+
+	private static void setTabIcons() 
+	{
+		LogHelper.verbose("Netherrocks", "Setting tab icons");
+		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.fyrite_ore), Item.getItemFromBlock(Content.dragonstone_block), 
+						Content.malachite_ingot, Content.ashstone_pickaxe, Content.argonite_sword);
+		SimpleCoreAPI.setTabIcons(list);
+	}
+	
+	private static void setOreGenSettings() 
+	{
+		LogHelper.verbose("Netherrocks", "Setting ore gen paramaters");
+		OreGenerator.registerOreForGen(-1, Content.fyrite_ore, Blocks.NETHERRACK, 
+				Settings.fyriteOre.getSpawnRate(), Settings.fyriteOre.getVeinSize(), 
+				Settings.fyriteOre.getMinHeight(), Settings.fyriteOre.getMaxHeight());
+		OreGenerator.registerOreForGen(-1, Content.malachite_ore, Blocks.NETHERRACK, 
+				Settings.malachiteOre.getSpawnRate(), Settings.malachiteOre.getVeinSize(), 
+				Settings.malachiteOre.getMinHeight(), Settings.malachiteOre.getMaxHeight());
+		OreGenerator.registerOreForGen(-1, Content.ashstone_ore, Blocks.NETHERRACK, 
+				Settings.ashstoneOre.getSpawnRate(), Settings.ashstoneOre.getVeinSize(), 
+				Settings.ashstoneOre.getMinHeight(), Settings.ashstoneOre.getMaxHeight());
+		OreGenerator.registerOreForGen(-1, Content.illumenite_ore, Blocks.GLOWSTONE, 
+				Settings.illumeniteOre.getSpawnRate(), Settings.illumeniteOre.getVeinSize(), 
+				Settings.illumeniteOre.getMinHeight(), Settings.illumeniteOre.getMaxHeight());
+		OreGenerator.registerOreForGen(-1, Content.dragonstone_ore, Blocks.NETHERRACK, 
+				Settings.dragonstoneOre.getSpawnRate(), Settings.dragonstoneOre.getVeinSize(), 
+				Settings.dragonstoneOre.getMinHeight(), Settings.dragonstoneOre.getMaxHeight());
+		OreGenerator.registerOreForGen(-1, Content.argonite_ore, Blocks.NETHERRACK, 
+				Settings.argoniteOre.getSpawnRate(), Settings.argoniteOre.getVeinSize(), 
+				Settings.argoniteOre.getMinHeight(), Settings.argoniteOre.getMaxHeight());
+	} // end setOreGenSettings()
+
+} // end class
