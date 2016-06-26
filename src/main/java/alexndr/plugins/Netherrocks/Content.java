@@ -26,6 +26,7 @@ import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentCategories;
+import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
@@ -107,10 +108,9 @@ public class Content
 				ContentCategories.Block.GENERAL).setConfigEntry(Settings.argoniteBlock)
 				.setStepSound(SoundType.METAL).setUnlocalizedName("argonite_block");
 		
-		nether_furnace = new NetherFurnaceBlock(Netherrocks.plugin, ContentCategories.Block.MACHINE, 
-				false).setConfigEntry(Settings.netherFurnace).setUnlocalizedName("nether_furnace");
-		nether_furnace_lit = new NetherFurnaceBlock(Netherrocks.plugin, 
-				ContentCategories.Block.MACHINE, true).setConfigEntry(Settings.netherFurnace)
+		nether_furnace = new NetherFurnaceBlock(false).setConfigEntry(Settings.netherFurnace)
+				.setUnlocalizedName("nether_furnace");
+		nether_furnace_lit = new NetherFurnaceBlock(true).setConfigEntry(Settings.netherFurnace)
 				.setUnlocalizedName("nether_furnace_lit");
 	} // end doBlocks()
 	

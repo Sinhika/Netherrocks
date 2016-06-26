@@ -11,6 +11,7 @@ import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 public class NetherFurnaceGuiHandler implements IGuiHandler 
 {
+	public static final int NETHER_FURNACE_TILE_ID	= 1;
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,

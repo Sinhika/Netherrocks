@@ -101,7 +101,3 @@ netherrocks.illumeniteArmor.info=§aSet Bonus: No fall damage.
 netherrocks.fyrite_pickaxe.info=§aAuto smelts when mining.
 netherrocks.fyrite_sword.info=§aHarnesses the power of fire.
 netherrocks.illumenite_sword.info=§aGrants night vision on hit. Blinds and slows target.
-
-//Updater
-netherrocks.updateMessage1=§3Netherrocks §ris out of date. The latest version is §c
-netherrocks.updateMessage2=§r. Please update from §9http://bit.ly/Netherrocks
