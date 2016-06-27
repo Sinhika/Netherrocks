@@ -29,7 +29,7 @@ def getVersionAppendage() {
 
 version = "${version_minecraft}-${version_mod}." + getVersionAppendage()
 group= "alexndr.plugins"
-archivesBaseName = "simpleores"
+archivesBaseName = "netherrocks"
 
 minecraft {
     version = "1.9.4-12.17.0.1976"

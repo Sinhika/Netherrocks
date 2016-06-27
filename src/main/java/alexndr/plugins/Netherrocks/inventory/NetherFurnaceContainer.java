@@ -1,33 +1,34 @@
 package alexndr.plugins.Netherrocks.inventory;
 
-import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnaceOutput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceContainer extends Container {
-    private final IInventory tileFurnace;
-    private int field_178152_f;
-    private int field_178153_g;
-    private int field_178154_h;
-    private int field_178155_i;
+public class NetherFurnaceContainer extends Container 
+{
+	protected NetherFurnaceTileEntity tileFurnace;
+	private int lastCookTime = 0;
+	private int lastBurnTime = 0;
+	private int lastItemBurnTime = 0;
+	private int lastTotalCookTime = 0;
     
-    public NetherFurnaceContainer(InventoryPlayer player, IInventory iinv) {
-		this.tileFurnace = iinv;
-		this.addSlotToContainer(new Slot(iinv, 0, 56, 17));
-		this.addSlotToContainer(new SlotNetherFuel(iinv, 1, 56, 53));
-		this.addSlotToContainer(new SlotFurnaceOutput(player.player, iinv, 2, 116, 35));
+    public NetherFurnaceContainer(InventoryPlayer player, NetherFurnaceTileEntity tileentity) 
+    {
+		this.tileFurnace = tileentity;
+		this.addSlotToContainer(new Slot(tileentity, 0, 56, 17));
+		this.addSlotToContainer(new SlotNetherFuel(tileentity, 1, 56, 53));
+		this.addSlotToContainer(new SlotFurnaceOutput(player.player, tileentity, 2, 116, 35));
 
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) 
@@ -38,36 +39,38 @@ public class NetherFurnaceContainer extends Container {
 			this.addSlotToContainer(new Slot(player, i, 8 + i * 18, 142));
     }
     
-//    @Override
-//	public void addCraftingToCrafters(ICrafting listener) {
-//        super.addCraftingToCrafters(listener);
-//        listener.sendAllWindowProperties(this, this.tileFurnace);
-//    }
+	@Override
+    public void addListener(IContainerListener listener)
+    {
+        super.addListener(listener);
+        listener.sendAllWindowProperties(this, this.tileFurnace);
+    }
     
     @Override
-	public void detectAndSendChanges() {
+	public void detectAndSendChanges() 
+    {
 		super.detectAndSendChanges();
 
-		for (int i = 0; i < this.crafters.size(); ++i) {
-			ICrafting icrafting = (ICrafting) this.crafters.get(i);
+		for (int i = 0; i < this.listeners.size(); ++i) {
+			IContainerListener icrafting = (IContainerListener) this.listeners.get(i);
 
-			if (this.field_178152_f != this.tileFurnace.getField(2))
+			if (this.lastCookTime != this.tileFurnace.getField(2))
 				icrafting.sendProgressBarUpdate(this, 2, this.tileFurnace.getField(2));
 
-			if (this.field_178154_h != this.tileFurnace.getField(0))
+			if (this.lastBurnTime != this.tileFurnace.getField(0))
 				icrafting.sendProgressBarUpdate(this, 0, this.tileFurnace.getField(0));
 
-			if (this.field_178155_i != this.tileFurnace.getField(1))
+			if (this.lastItemBurnTime != this.tileFurnace.getField(1))
 				icrafting.sendProgressBarUpdate(this, 1, this.tileFurnace.getField(1));
 
-			if (this.field_178153_g != this.tileFurnace.getField(3))
+			if (this.lastTotalCookTime != this.tileFurnace.getField(3))
 				icrafting.sendProgressBarUpdate(this, 3, this.tileFurnace.getField(3));
 		}
 
-		this.field_178152_f = this.tileFurnace.getField(2);
-		this.field_178154_h = this.tileFurnace.getField(0);
-		this.field_178155_i = this.tileFurnace.getField(1);
-		this.field_178153_g = this.tileFurnace.getField(3);
+		this.lastCookTime = this.tileFurnace.getField(2);
+		this.lastBurnTime = this.tileFurnace.getField(0);
+		this.lastItemBurnTime = this.tileFurnace.getField(1);
+		this.lastTotalCookTime = this.tileFurnace.getField(3);
     }
     
     @Override
@@ -127,4 +130,4 @@ public class NetherFurnaceContainer extends Container {
 
 		return itemstack;
 	}
-}
+} // end class()

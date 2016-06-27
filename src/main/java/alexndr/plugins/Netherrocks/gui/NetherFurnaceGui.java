@@ -1,22 +1,26 @@
 package alexndr.plugins.Netherrocks.gui;
 
-import alexndr.plugins.Netherrocks.inventory.NetherFurnaceContainer;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.ResourceLocation;
+import alexndr.plugins.Netherrocks.inventory.NetherFurnaceContainer;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceGui extends GuiContainer {
-    private static final ResourceLocation furnaceGuiTextures = new ResourceLocation("textures/gui/container/furnace.png");
-    private final InventoryPlayer field_175383_v;
-    private IInventory tileFurnace;
+public class NetherFurnaceGui extends GuiContainer 
+{
+    protected static final ResourceLocation furnaceGuiTextures 
+    	= new ResourceLocation(alexndr.plugins.Netherrocks.ModInfo.ID,
+    						   "textures/gui/container/nether_furnace_gui.png");
+    
+    protected final InventoryPlayer field_175383_v;
+    private NetherFurnaceTileEntity tileFurnace;
 
-	public NetherFurnaceGui(InventoryPlayer player, IInventory iinv) {
+	public NetherFurnaceGui(InventoryPlayer player, NetherFurnaceTileEntity iinv) {
 		super(new NetherFurnaceContainer(player, iinv));
         this.field_175383_v = player;
         this.tileFurnace = iinv;
@@ -61,4 +65,4 @@ public class NetherFurnaceGui extends GuiContainer {
         
         return this.tileFurnace.getField(0) * burnTime / j;
     }
-}
+} // end class
