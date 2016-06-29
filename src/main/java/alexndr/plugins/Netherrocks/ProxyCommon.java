@@ -53,9 +53,11 @@ public class ProxyCommon
 	private static void setTabIcons() 
 	{
 		LogHelper.verbose("Netherrocks", "Setting tab icons");
-		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.fyrite_ore), Item.getItemFromBlock(Content.dragonstone_block), 
+		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.fyrite_ore), 
+						Item.getItemFromBlock(Content.dragonstone_block), 
 						Content.malachite_ingot, Content.ashstone_pickaxe, Content.argonite_sword);
 		SimpleCoreAPI.setTabIcons(list);
+		Netherrocks.simpleMachines.setIcon(Item.getItemFromBlock(Content.nether_furnace));
 	}
 	
 	private static void setOreGenSettings() 

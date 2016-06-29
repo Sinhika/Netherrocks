@@ -58,6 +58,7 @@ public class Content
 		}
 	} // end preInitialize()
 	
+	
 	public static void doItems() 
 	{
 		fyrite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.fyriteIngot).setUnlocalizedName("fyrite_ingot");

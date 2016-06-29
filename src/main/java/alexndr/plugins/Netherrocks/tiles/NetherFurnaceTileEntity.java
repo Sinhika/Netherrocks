@@ -21,7 +21,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 {
     public NetherFurnaceTileEntity() 
     {
-		super("container.nether_furnace", 600, "minecraft:furnace", 3);
+		super("container.nether_furnace", 600, "netherrocks:nether_furnace_gui", 3);
 	}
 
    public static int getItemBurnTime(ItemStack burnItem) 
