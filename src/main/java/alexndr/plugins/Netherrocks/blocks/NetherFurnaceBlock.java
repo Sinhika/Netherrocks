@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -108,21 +107,6 @@ public class NetherFurnaceBlock extends SimpleFurnace
         }
     } // end setState()
 	
-
-	@Override
-	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-	}
-	
-	@Override
-	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-		worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
-		if(stack.hasDisplayName()) {
-			TileEntity tileentity = worldIn.getTileEntity(pos);
-			if(tileentity instanceof NetherFurnaceTileEntity)
-				((NetherFurnaceTileEntity)tileentity).setCustomInventoryName(stack.getDisplayName());
-		}
-	}
 	
 	@Override
 	public void setAdditionalProperties() 

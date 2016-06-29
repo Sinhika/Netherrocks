@@ -73,10 +73,15 @@ public class Settings {
 			argoniteBlock = settings.get(new ConfigBlock("Argonite Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
 					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
 			
-			netherFurnace = settings.get(new ConfigBlock("Nether Furnace", "Blocks").setHardness(3.5F).setResistance(12.0F).setLightValue(1.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleDecorations")
-					.createNewValue("SmeltingTime", "@I", "100", "100").createNewValue("NetherrackBurnTime", "@I", "200", "200")
-					.createNewValue("FyriteBurnTime", "@I", "8000", "8000").createNewValue("BlazeRodBurnTime", "@I", "2400", "2400")).asConfigBlock();
+			netherFurnace = settings.get(new ConfigBlock("Nether Furnace", "Blocks")
+					.setHardness(3.5F).setResistance(12.0F).setLightValue(1.0F)
+					.setHarvestLevel(0).setHarvestTool("pickaxe")
+					.setCreativeTab("SimpleMachines")
+					.createNewValue("SmeltingTime", "@I", "100", "100")
+					.createNewValue("NetherrackBurnTime", "@I", "200", "200")
+					.createNewValue("FyriteBurnTime", "@I", "8000", "8000")
+					.createNewValue("BlazeRodBurnTime", "@I", "2400", "2400"))
+					.asConfigBlock();
 				
 			//Items
 			fyriteIngot = settings.get(new ConfigItem("Fyrite Ingot", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.8F)).asConfigItem();

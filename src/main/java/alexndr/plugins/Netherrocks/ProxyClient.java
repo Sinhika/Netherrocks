@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import alexndr.api.helpers.game.RenderItemHelper;
 
-public class ProxyClient extends ProxyCommon 
+public class ProxyClient extends alexndr.plugins.Netherrocks.ProxyCommon 
 {
 	RenderItemHelper renderHelper = new RenderItemHelper(Netherrocks.plugin);
 	

@@ -109,9 +109,11 @@ public class Content
 				ContentCategories.Block.GENERAL).setConfigEntry(Settings.argoniteBlock)
 				.setStepSound(SoundType.METAL).setUnlocalizedName("argonite_block");
 		
-		nether_furnace = new NetherFurnaceBlock(false).setConfigEntry(Settings.netherFurnace)
+		nether_furnace = new NetherFurnaceBlock(false)
+				.setConfigEntry(Settings.netherFurnace)
 				.setUnlocalizedName("nether_furnace");
-		nether_furnace_lit = new NetherFurnaceBlock(true).setConfigEntry(Settings.netherFurnace)
+		nether_furnace_lit = new NetherFurnaceBlock(true)
+				.setConfigEntry(Settings.netherFurnace)
 				.setUnlocalizedName("nether_furnace_lit");
 	} // end doBlocks()
 	
