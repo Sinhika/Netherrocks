@@ -27,6 +27,9 @@ import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentCategories;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
+import alexndr.plugins.Netherrocks.items.FyritePickaxe;
+import alexndr.plugins.Netherrocks.items.FyriteSword;
+import alexndr.plugins.Netherrocks.items.IllumeniteSword;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
@@ -119,11 +122,26 @@ public class Content
 	
 	public static void doTools() 
 	{
-		malachite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_pickaxe");
+		fyrite_sword = new FyriteSword().setConfigEntry(Settings.fyriteTools)
+				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_sword");
+		fyrite_pickaxe = new FyritePickaxe().setConfigEntry(Settings.fyriteTools)
+				.setCreativeTab(TabHelper.toolsTab())
+				.setUnlocalizedName("fyrite_pickaxe");
+				
+		malachite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolMalachite)
+			.setConfigEntry(Settings.malachiteTools)
+			.setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_pickaxe");
 		malachite_axe = new SimpleAxe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_axe");
 		malachite_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_shovel");
 		malachite_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_hoe");
-		malachite_sword = new SimpleSword(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_sword");
+		malachite_sword = new SimpleSword(Netherrocks.plugin, Content.toolMalachite)
+			.setConfigEntry(Settings.malachiteTools)
+			.setCreativeTab(TabHelper.combatTab())
+			.setUnlocalizedName("malachite_sword");
+		
+		illumenite_sword = new IllumeniteSword().setConfigEntry(Settings.fyriteTools)
+				.setCreativeTab(TabHelper.combatTab())
+				.setUnlocalizedName("illumenite_sword");
 		
 		ashstone_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_pickaxe");
 		ashstone_axe = new SimpleAxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_axe");

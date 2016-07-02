@@ -11,4 +11,4 @@ public class Recipes {
 	public static void initialize() {
 		
 	}
-}
+} // end class
