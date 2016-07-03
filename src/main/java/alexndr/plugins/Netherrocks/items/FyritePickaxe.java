@@ -4,7 +4,8 @@ import alexndr.api.content.items.SimplePickaxe;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.Netherrocks;
 
-public class FyritePickaxe extends SimplePickaxe {
+public class FyritePickaxe extends SimplePickaxe 
+{
 
 	public FyritePickaxe() 
 	{

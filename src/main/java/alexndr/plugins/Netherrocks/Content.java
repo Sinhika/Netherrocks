@@ -2,6 +2,7 @@ package alexndr.plugins.Netherrocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -74,43 +75,70 @@ public class Content
 	
 	public static void doBlocks() 
 	{
-		fyrite_ore = new SimpleBlock(Netherrocks.plugin, Settings.fyriteOre.getBlockMaterial(), 
-				ContentCategories.Block.ORE).setConfigEntry(Settings.fyriteOre).setStepSound(SoundType.STONE)
-				.setUnlocalizedName("fyrite_ore");
-		malachite_ore = new SimpleBlock(Netherrocks.plugin, Settings.malachiteOre.getBlockMaterial(), 
-				ContentCategories.Block.ORE).setConfigEntry(Settings.malachiteOre).setStepSound(SoundType.STONE)
+		fyrite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
+				ContentCategories.Block.ORE).setConfigEntry(Settings.fyriteOre)
+				.setStepSound(SoundType.STONE).setUnlocalizedName("fyrite_ore");
+		malachite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
+										ContentCategories.Block.ORE)
+				.setConfigEntry(Settings.malachiteOre)
+				.setStepSound(SoundType.STONE)
 				.setUnlocalizedName("malachite_ore");
-		ashstone_ore = new SimpleBlock(Netherrocks.plugin, Settings.ashstoneOre.getBlockMaterial(), 
-				ContentCategories.Block.ORE).setConfigEntry(Settings.ashstoneOre).setStepSound(SoundType.STONE)
+		ashstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
+				ContentCategories.Block.ORE)
+				.setConfigEntry(Settings.ashstoneOre)
+				.setStepSound(SoundType.STONE)
 				.setUnlocalizedName("ashstone_ore");
-		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Settings.illumeniteOre.getBlockMaterial(),
-				ContentCategories.Block.ORE).setConfigEntry(Settings.illumeniteOre)
-				.setStepSound(SoundType.GLASS).setUnlocalizedName("illumenite_ore");
-		dragonstone_ore = new SimpleBlock(Netherrocks.plugin, Settings.dragonstoneOre.getBlockMaterial(), 
-				ContentCategories.Block.ORE).setConfigEntry(Settings.dragonstoneOre).setStepSound(SoundType.STONE)
+		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Material.GLASS,
+				ContentCategories.Block.ORE)
+				.setConfigEntry(Settings.illumeniteOre)
+				.setStepSound(SoundType.GLASS)
+				.setUnlocalizedName("illumenite_ore");
+		dragonstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
+				ContentCategories.Block.ORE)
+				.setConfigEntry(Settings.dragonstoneOre)
+				.setStepSound(SoundType.STONE)
 				.setUnlocalizedName("dragonstone_ore");
-		argonite_ore = new SimpleBlock(Netherrocks.plugin, Settings.argoniteOre.getBlockMaterial(), 
-				ContentCategories.Block.ORE).setConfigEntry(Settings.argoniteOre).setStepSound(SoundType.STONE)
+		argonite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
+				ContentCategories.Block.ORE)
+				.setConfigEntry(Settings.argoniteOre)
+				.setStepSound(SoundType.STONE)
 				.setUnlocalizedName("argonite_ore");
 		
-		fyrite_block = new SimpleBlock(Netherrocks.plugin, Settings.fyriteBlock.getBlockMaterial(), 
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.fyriteBlock)
-				.setStepSound(SoundType.METAL).setUnlocalizedName("fyrite_block");
-		malachite_block = new SimpleBlock(Netherrocks.plugin, Settings.malachiteBlock.getBlockMaterial(), 
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.malachiteBlock)
-				.setStepSound(SoundType.METAL).setUnlocalizedName("malachite_block");
-		ashstone_block = new SimpleBlock(Netherrocks.plugin, Settings.ashstoneBlock.getBlockMaterial(),
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.ashstoneBlock)
-				.setStepSound(SoundType.STONE).setUnlocalizedName("ashstone_block");
-		illumenite_block = new SimpleBlock(Netherrocks.plugin, Settings.illumeniteBlock.getBlockMaterial(), 
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.illumeniteBlock)
-				.setStepSound(SoundType.GLASS).setUnlocalizedName("illumenite_block");
-		dragonstone_block = new SimpleBlock(Netherrocks.plugin, Settings.dragonstoneBlock.getBlockMaterial(), 
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.dragonstoneBlock)
-				.setStepSound(SoundType.STONE).setUnlocalizedName("dragonstone_block");
-		argonite_block = new SimpleBlock(Netherrocks.plugin, Settings.argoniteBlock.getBlockMaterial(), 
-				ContentCategories.Block.GENERAL).setConfigEntry(Settings.argoniteBlock)
-				.setStepSound(SoundType.METAL).setUnlocalizedName("argonite_block");
+		fyrite_block = new SimpleBlock(Netherrocks.plugin, Material.IRON,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.fyriteBlock)
+				.setStepSound(SoundType.METAL)
+				.setUnlocalizedName("fyrite_block");
+		malachite_block = new SimpleBlock(Netherrocks.plugin,
+				Material.IRON,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.malachiteBlock)
+				.setStepSound(SoundType.METAL)
+				.setUnlocalizedName("malachite_block");
+		ashstone_block = new SimpleBlock(Netherrocks.plugin,
+				Material.ROCK,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.ashstoneBlock)
+				.setStepSound(SoundType.STONE)
+				.setUnlocalizedName("ashstone_block");
+		illumenite_block = new SimpleBlock(Netherrocks.plugin,
+				Material.GLASS,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.illumeniteBlock)
+				.setStepSound(SoundType.GLASS)
+				.setUnlocalizedName("illumenite_block");
+		dragonstone_block = new SimpleBlock(Netherrocks.plugin,
+				Material.ROCK,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.dragonstoneBlock)
+				.setStepSound(SoundType.STONE)
+				.setUnlocalizedName("dragonstone_block");
+		argonite_block = new SimpleBlock(Netherrocks.plugin,
+				Material.IRON,
+				ContentCategories.Block.GENERAL)
+				.setConfigEntry(Settings.argoniteBlock)
+				.setStepSound(SoundType.METAL)
+				.setUnlocalizedName("argonite_block");
 		
 		nether_furnace = new NetherFurnaceBlock(false)
 				.setConfigEntry(Settings.netherFurnace)

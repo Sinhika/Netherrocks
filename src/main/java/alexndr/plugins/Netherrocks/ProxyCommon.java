@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -12,6 +13,7 @@ import alexndr.api.helpers.game.OreGenerator;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentRegistry;
+import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 
 import com.google.common.collect.Lists;
 
@@ -43,7 +45,10 @@ public class ProxyCommon
 		setTabIcons();
 		Content.setRepairMaterials();
 		Content.setAchievementTriggers();
+		
 		setOreGenSettings();
+		
+		MinecraftForge.EVENT_BUS.register(new FyriteHandler());
 	} // end Init()
 
 	public void PostInit(FMLPostInitializationEvent event)

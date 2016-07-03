@@ -47,31 +47,91 @@ public class Settings {
 					updateChecker = toggles.getValueByName("UpdateChecker");
 				
 			//Blocks
-			fyriteOre = settings.get(new ConfigBlock("Fyrite Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(10).setVeinSize(6).setMinHeight(0).setMaxHeight(255).setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleBlocks")).asConfigBlock();
-			malachiteOre = settings.get(new ConfigBlock("Malachite Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(10).setVeinSize(7).setMinHeight(0).setMaxHeight(255).setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleBlocks")).asConfigBlock();
-			ashstoneOre = settings.get(new ConfigBlock("Ashstone Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(10).setVeinSize(5).setMinHeight(0).setMaxHeight(255).setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleBlocks")).asConfigBlock();
-			illumeniteOre = settings.get(new ConfigBlock("Illumenite Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(1.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(350).setVeinSize(15).setMinHeight(0).setMaxHeight(255).setBlockMaterial("glass").setSoundType("glass").setCreativeTab("SimpleBlocks")).asConfigBlock();
-			dragonstoneOre = settings.get(new ConfigBlock("Dragonstone Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(6).setVeinSize(6).setMinHeight(0).setMaxHeight(255).setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleBlocks")).asConfigBlock();
-			argoniteOre = settings.get(new ConfigBlock("Argonite Ore", "Ores").setHardness(3.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-					.setSpawnRate(10).setVeinSize(6).setMinHeight(0).setMaxHeight(255).setBlockMaterial("rock").setSoundType("stone").setCreativeTab("SimpleBlocks")).asConfigBlock();
+			fyriteOre = settings.get(
+					new ConfigBlock("Fyrite Ore", "Ores").setHardness(3.0F)
+							.setResistance(10.0F).setLightValue(0.0F)
+							.setHarvestLevel(2).setHarvestTool("pickaxe")
+							.setSpawnRate(10).setVeinSize(6).setMinHeight(0)
+							.setMaxHeight(255)
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
+			malachiteOre = settings.get(
+					new ConfigBlock("Malachite Ore", "Ores").setHardness(3.0F)
+							.setResistance(10.0F).setLightValue(0.0F)
+							.setHarvestLevel(2).setHarvestTool("pickaxe")
+							.setSpawnRate(10).setVeinSize(7).setMinHeight(0)
+							.setMaxHeight(255)
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
+			ashstoneOre = settings.get(
+					new ConfigBlock("Ashstone Ore", "Ores").setHardness(3.0F)
+							.setResistance(10.0F).setLightValue(0.0F)
+							.setHarvestLevel(2).setHarvestTool("pickaxe")
+							.setSpawnRate(10).setVeinSize(5).setMinHeight(0)
+							.setMaxHeight(255)
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
+			illumeniteOre = settings.get(
+					new ConfigBlock("Illumenite Ore", "Ores").setHardness(3.0F)
+							.setResistance(10.0F).setLightValue(1.0F)
+							.setHarvestLevel(2).setHarvestTool("pickaxe")
+							.setSpawnRate(350).setVeinSize(15).setMinHeight(0)
+							.setMaxHeight(255).setBlockMaterial("glass")
+							.setSoundType("glass")
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
+			dragonstoneOre = settings.get(
+					new ConfigBlock("Dragonstone Ore", "Ores")
+							.setHardness(3.0F).setResistance(10.0F)
+							.setLightValue(0.0F).setHarvestLevel(2)
+							.setHarvestTool("pickaxe").setSpawnRate(6)
+							.setVeinSize(6).setMinHeight(0).setMaxHeight(255)
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
+			argoniteOre = settings.get(
+					new ConfigBlock("Argonite Ore", "Ores").setHardness(3.0F)
+							.setResistance(10.0F).setLightValue(0.0F)
+							.setHarvestLevel(2).setHarvestTool("pickaxe")
+							.setSpawnRate(10).setVeinSize(6).setMinHeight(0)
+							.setMaxHeight(255)
+							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			
-			fyriteBlock = settings.get(new ConfigBlock("Fyrite Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
-			malachiteBlock = settings.get(new ConfigBlock("Malachite Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
-			ashstoneBlock = settings.get(new ConfigBlock("Ashstone Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
-			illumeniteBlock = settings.get(new ConfigBlock("Illumenite Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(1.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
-			dragonstoneBlock = settings.get(new ConfigBlock("Dragonstone Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
-			argoniteBlock = settings.get(new ConfigBlock("Argonite Block", "Blocks").setHardness(7.0F).setResistance(10.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
-					.setBlockMaterial("iron").setSoundType("metal").setCreativeTab("SimpleDecorations").setBeaconBase(true)).asConfigBlock();
+			fyriteBlock = settings.get(
+					new ConfigBlock("Fyrite Block", "Blocks").setHardness(7.0F)
+							.setResistance(10.0F).setLightValue(0.0F)
+							.setHarvestLevel(0).setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
+			malachiteBlock = settings.get(
+					new ConfigBlock("Malachite Block", "Blocks")
+							.setHardness(7.0F).setResistance(10.0F)
+							.setLightValue(0.0F).setHarvestLevel(0)
+							.setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
+			ashstoneBlock = settings.get(
+					new ConfigBlock("Ashstone Block", "Blocks")
+							.setHardness(7.0F).setResistance(10.0F)
+							.setLightValue(0.0F).setHarvestLevel(0)
+							.setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
+			illumeniteBlock = settings.get(
+					new ConfigBlock("Illumenite Block", "Blocks")
+							.setHardness(7.0F).setResistance(10.0F)
+							.setLightValue(1.0F).setHarvestLevel(0)
+							.setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
+			dragonstoneBlock = settings.get(
+					new ConfigBlock("Dragonstone Block", "Blocks")
+							.setHardness(7.0F).setResistance(10.0F)
+							.setLightValue(0.0F).setHarvestLevel(0)
+							.setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
+			argoniteBlock = settings.get(
+					new ConfigBlock("Argonite Block", "Blocks")
+							.setHardness(7.0F).setResistance(10.0F)
+							.setLightValue(0.0F).setHarvestLevel(0)
+							.setHarvestTool("pickaxe")
+							.setCreativeTab("SimpleDecorations")
+							.setBeaconBase(true)).asConfigBlock();
 			
 			netherFurnace = settings.get(new ConfigBlock("Nether Furnace", "Blocks")
 					.setHardness(3.5F).setResistance(12.0F).setLightValue(1.0F)
@@ -84,13 +144,33 @@ public class Settings {
 					.asConfigBlock();
 				
 			//Items
-			fyriteIngot = settings.get(new ConfigItem("Fyrite Ingot", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.8F)).asConfigItem();
-			malachiteIngot = settings.get(new ConfigItem("Malachite Ingot", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.5F)).asConfigItem();
-			ashstoneGem = settings.get(new ConfigItem("Ashstone Gem", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.8F)).asConfigItem();
-			illumeniteIngot = settings.get(new ConfigItem("Illumenite Ingot", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.8F)).asConfigItem();
-			dragonstoneGem = settings.get(new ConfigItem("Dragonstone Gem", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(1.0F)).asConfigItem();
-			argoniteIngot = settings.get(new ConfigItem("Argonite Ingot", "Items").setStackSize(64).setCreativeTab("SimpleMaterials").setSmeltingXP(0.7F)).asConfigItem();
-			illumeniteRod = settings.get(new ConfigItem("Illumenite Rod", "Items").setStackSize(64).setCreativeTab("SimpleMaterials")).asConfigItem();
+			fyriteIngot = settings.get(
+					new ConfigItem("Fyrite Ingot", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(0.8F)).asConfigItem();
+			malachiteIngot = settings.get(
+					new ConfigItem("Malachite Ingot", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(0.5F)).asConfigItem();
+			ashstoneGem = settings.get(
+					new ConfigItem("Ashstone Gem", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(0.8F)).asConfigItem();
+			illumeniteIngot = settings.get(
+					new ConfigItem("Illumenite Ingot", "Items")
+							.setStackSize(64).setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(0.8F)).asConfigItem();
+			dragonstoneGem = settings.get(
+					new ConfigItem("Dragonstone Gem", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(1.0F)).asConfigItem();
+			argoniteIngot = settings.get(
+					new ConfigItem("Argonite Ingot", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")
+							.setSmeltingXP(0.7F)).asConfigItem();
+			illumeniteRod = settings.get(
+					new ConfigItem("Illumenite Rod", "Items").setStackSize(64)
+							.setCreativeTab("SimpleMaterials")).asConfigItem();
 			
 			//Tools
 			fyriteTools = settings.get(new ConfigTool("Fyrite Tools", "Tools").setUses(150).setHarvestLevel(3).setHarvestSpeed(8.0F).setDamageVsEntity(4.0F).setEnchantability(7)).asConfigTool();
