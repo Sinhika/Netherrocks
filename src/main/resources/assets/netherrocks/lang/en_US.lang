@@ -45,6 +45,8 @@ item.argonite_sword.name=Argonite Sword
 item.argonite_hoe.name=Argonite Hoe
 item.fyrite_pickaxe.name=Fyrite Pickaxe
 item.fyrite_sword.name=Fyrite Sword
+item.fyrite_axe.name=Fyrite Axe
+item.fyrite_shovel.name=Fyrite Shovel
 item.illumenite_sword.name=Illumenite Sword
 
 //Armor

@@ -201,6 +201,15 @@ public class Recipes {
 				new Object[] { "X", "X", "Y", Character.valueOf('X'),
 						Content.fyrite_ingot, Character.valueOf('Y'),
 						"stickWood" }));
+		GameRegistry.addRecipe(new ShapedOreRecipe(Content.fyrite_axe, true,
+				new Object[] { "XX ", "XY ", " Y ", Character.valueOf('X'),
+						Content.fyrite_ingot, Character.valueOf('Y'),
+						"stickWood" }));
+		GameRegistry.addRecipe(new ShapedOreRecipe(Content.fyrite_shovel,
+				true, new Object[] { "X", "Y", "Y", Character.valueOf('X'),
+						Content.fyrite_ingot, Character.valueOf('Y'),
+						"stickWood" }));
+		
 		GameRegistry.addRecipe(new ShapedOreRecipe(Content.illumenite_sword,
 				true, new Object[] { "X", "X", "Y", Character.valueOf('X'),
 						Content.illumenite_ingot, Character.valueOf('Y'),

@@ -172,9 +172,21 @@ public class Settings {
 							.setCreativeTab("SimpleMaterials")).asConfigItem();
 			
 			//Tools
-			fyriteTools = settings.get(new ConfigTool("Fyrite Tools", "Tools").setUses(150).setHarvestLevel(3).setHarvestSpeed(8.0F).setDamageVsEntity(4.0F).setEnchantability(7)).asConfigTool();
-			malachiteTools = settings.get(new ConfigTool("Malachite Tools", "Tools").setUses(700).setHarvestLevel(3).setHarvestSpeed(9.0F).setDamageVsEntity(3.0F).setEnchantability(39)).asConfigTool();
-			ashstoneTools = settings.get(new ConfigTool("Ashstone Tools", "Tools").setUses(900).setHarvestLevel(3).setHarvestSpeed(16.0F).setDamageVsEntity(2.0F).setEnchantability(7)).asConfigTool();
+			fyriteTools = settings.get(
+					new ConfigTool("Fyrite Tools", "Tools").setUses(150)
+							.setHarvestLevel(3).setHarvestSpeed(8.0F)
+							.setDamageVsEntity(4.0F).setEnchantability(7))
+					.asConfigTool();
+			malachiteTools = settings.get(
+					new ConfigTool("Malachite Tools", "Tools").setUses(700)
+							.setHarvestLevel(3).setHarvestSpeed(9.0F)
+							.setDamageVsEntity(3.0F).setEnchantability(39))
+					.asConfigTool();
+			ashstoneTools = settings.get(
+					new ConfigTool("Ashstone Tools", "Tools").setUses(900)
+							.setHarvestLevel(3).setHarvestSpeed(16.0F)
+							.setDamageVsEntity(2.0F).setEnchantability(7))
+					.asConfigTool();
 			illumeniteTools = settings.get(new ConfigTool("Illumenite Tools", "Tools").setUses(700).setHarvestLevel(3).setHarvestSpeed(8.0F).setDamageVsEntity(4.0F).setEnchantability(7)
 					.createNewValue("NightVisionTime", "@I", "3600", "3600").createNewValue("BlindnessTime", "@I", "60", "60")
 					.createNewValue("SlowTime", "@I", "200", "200").createNewValue("SlowLevel", "@I", "3", "3")).asConfigTool();

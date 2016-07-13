@@ -29,7 +29,9 @@ import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentCategories;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.Netherrocks.items.FyriteArmor;
+import alexndr.plugins.Netherrocks.items.FyriteAxe;
 import alexndr.plugins.Netherrocks.items.FyritePickaxe;
+import alexndr.plugins.Netherrocks.items.FyriteShovel;
 import alexndr.plugins.Netherrocks.items.FyriteSword;
 import alexndr.plugins.Netherrocks.items.IllumeniteArmor;
 import alexndr.plugins.Netherrocks.items.IllumeniteSword;
@@ -158,6 +160,12 @@ public class Content
 		fyrite_pickaxe = new FyritePickaxe().setConfigEntry(Settings.fyriteTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("fyrite_pickaxe");
+		fyrite_axe = new FyriteAxe().setConfigEntry(Settings.fyriteTools)
+				.setCreativeTab(TabHelper.toolsTab())
+				.setUnlocalizedName("fyrite_axe");
+		fyrite_shovel = new FyriteShovel().setConfigEntry(Settings.fyriteTools)
+				.setCreativeTab(TabHelper.toolsTab())
+				.setUnlocalizedName("fyrite_shovel");
 				
 		malachite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolMalachite)
 			.setConfigEntry(Settings.malachiteTools)
@@ -415,8 +423,8 @@ public class Content
 						illumenite_rod;
 	
 	public static Item 	malachite_pickaxe, ashstone_pickaxe, dragonstone_pickaxe, argonite_pickaxe, fyrite_pickaxe, 
-						malachite_axe, ashstone_axe, dragonstone_axe, argonite_axe, 
-						malachite_shovel, ashstone_shovel, dragonstone_shovel, argonite_shovel, 
+						malachite_axe, ashstone_axe, dragonstone_axe, argonite_axe, fyrite_axe,
+						malachite_shovel, ashstone_shovel, dragonstone_shovel, argonite_shovel, fyrite_shovel, 
 						malachite_sword, ashstone_sword, dragonstone_sword, argonite_sword, fyrite_sword, illumenite_sword, 
 						malachite_hoe, ashstone_hoe, dragonstone_hoe, argonite_hoe;
 	
