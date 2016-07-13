@@ -5,42 +5,52 @@ import java.util.Random;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import alexndr.api.helpers.game.IHarvestEffectHelper;
+import alexndr.api.helpers.game.IUseItemEffectHelper;
+import alexndr.api.helpers.game.IWeaponEffectHelper;
 import alexndr.api.helpers.game.ToolHelper;
 import alexndr.plugins.Netherrocks.Content;
 
 /** Helper class for handling Fyrite properties */
-public class FyriteHandler 
+public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper, 
+									  IHarvestEffectHelper
 {
+	public static FyriteHandler INSTANCE = new FyriteHandler();
+	
+	private FyriteHandler() {
+	}
+
 	/**
-	 * Fyrite smelts blocks on harvest. This is the event handler that handles
-	 * the BlockEvent.HarvestDropsEvent. Original code improved by borrowing from
-	 * Tinker's Construct autosmelt code.
-	 * 
-	 * @param event
+	 * Fyrite smelts blocks on harvest. 
+	 * @see alexndr.api.SimpleCore.helpers.game.IHarvestEffectHelper#onHarvestDrops(net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent)
 	 */
+	@Override
 	@SubscribeEvent
 	public void onHarvestDrops(BlockEvent.HarvestDropsEvent event) 
 	{
-	
 		// do not change harvest drops if non-player or we are using silk touch.
 		EntityPlayer player = event.getHarvester();
 		if (player == null) return;
 		if (event.isSilkTouching()) return;
 		
 		Random random = event.getWorld().rand;
-		boolean was_effective = false;
-		
 		// check if tool exists and is a fyrite tool.
 		ItemStack tool = player.getHeldItem(player.getActiveHand());
 		if (tool == null) return;
@@ -78,6 +88,8 @@ public class FyriteHandler
 						// replace original drop stack with smelted results.
 						dropList.set(smelted);
 						
+						// afterBlockSmelt(event.getWorld(), event.getPos(), true);
+						
 						// drop the xp for smelting.
 						float xp = FurnaceRecipes.instance().getSmeltingExperience(smelted);
 						if (xp < 1 && Math.random() < xp) {
@@ -87,14 +99,18 @@ public class FyriteHandler
 							state.getBlock().dropXpOnBlockBreak(event.getWorld(), 
 																event.getPos(), (int) xp);
 						} // end-if xp
-						was_effective = true;
 					} // end-if smelted
 				} // end-while
-				afterBlockSmelt(event.getWorld(), event.getPos(), was_effective);
 			} // end-if effective
 		} // end-if fyrite tool
 	} // end onHarvestDrops()
 
+	/**
+	 * show flame flash after block auto-smelted
+	 * @param world
+	 * @param pos
+	 * @param was_effective
+	 */
 	public void afterBlockSmelt(World world, BlockPos pos, boolean was_effective)
 	{
 		if (world.isRemote && was_effective)
@@ -108,6 +124,70 @@ public class FyriteHandler
 		                            0.0D, 0.0D, 0.0D);
 			} // end-for	
 		} // end-if
-	} // end afterBlockBreak()
+	} // end afterBlockSmelt()
 	
+	/**
+	 * set entities on fire when hit by weapon. Implements IWeaponEffectHelper.
+	 */
+	public boolean hitEntity(ItemStack stack, EntityLivingBase target,
+							 EntityLivingBase attacker) 
+	{
+		if (!target.isBurning()) {
+			target.setFire(100);
+		}
+		return true;
+	} // end hitEntity
+
+	/**
+	 * what should Fyrite items do when right-clicked on something?
+	 * @param stack
+	 * @param playerIn
+	 * @param worldIn
+	 * @param pos
+	 * @param hand
+	 * @param facing
+	 * @param hitX
+	 * @param hitY
+	 * @param hitZ
+	 * @return EnumActionResult.PASS because we're not done.
+	 */
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn,
+			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
+			float hitX, float hitY, float hitZ) 
+	{
+		BlockPos adjacentPos = pos;
+		switch (facing) 
+		{
+		case DOWN:
+			adjacentPos = pos.down();
+			break;
+		case UP:
+			adjacentPos = pos.up();
+			break;
+		case NORTH:
+			adjacentPos = pos.north();
+			break;
+		case SOUTH:
+			adjacentPos = pos.south();
+			break;
+		case EAST:
+			adjacentPos = pos.east();
+			break;
+		case WEST:
+			adjacentPos = pos.west();
+			break;
+		} // end switch
+		if (!playerIn.canPlayerEdit(adjacentPos, facing, stack))
+		{
+	        return EnumActionResult.PASS;
+		}
+		IBlockState targetBlock = worldIn.getBlockState(adjacentPos);
+		if (targetBlock.getBlock().isAir(targetBlock, worldIn, adjacentPos))
+		{
+			playerIn.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1.0F, 1.0F);
+			worldIn.setBlockState(adjacentPos, Blocks.FIRE.getDefaultState());
+			stack.attemptDamageItem(1, worldIn.rand);
+		}
+		return EnumActionResult.PASS;
+	} // end onItemUse()
 } // end class

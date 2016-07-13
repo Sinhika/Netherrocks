@@ -1,14 +1,11 @@
 package alexndr.plugins.Netherrocks.items;
 
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import alexndr.api.content.items.SimpleSword;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.Netherrocks;
-import alexndr.plugins.Netherrocks.Settings;
+import alexndr.plugins.Netherrocks.helpers.IllumeniteHandler;
 
 public class IllumeniteSword extends SimpleSword {
 
@@ -23,15 +20,8 @@ public class IllumeniteSword extends SimpleSword {
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target,
 			EntityLivingBase attacker) 
 	{
-        attacker.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, Settings.illumeniteNVTime.asInt()));
-        attacker.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, Settings.illumeniteBlindnessTime.asInt()));
-        if(!(target instanceof EntityPlayer))
-        {
-        	target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 
-        			Settings.illumeniteSlowTime.asInt(), 
-        			Settings.illumeniteSlowLevel.asInt()));
-        }
-		return super.hitEntity(stack, target, attacker);
+		return IllumeniteHandler.INSTANCE.hitEntity(stack, target, attacker) &&
+				super.hitEntity(stack, target, attacker);
 	}
 
 

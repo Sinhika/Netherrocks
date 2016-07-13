@@ -24,6 +24,12 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 		super("container.nether_furnace", 600, "netherrocks:nether_furnace_gui", 3);
 	}
 
+    public static boolean isItemFuel(ItemStack fuel)
+    {
+         return getItemBurnTime(fuel) > 0;
+    }
+
+    
    public static int getItemBurnTime(ItemStack burnItem) 
     {
         if (burnItem == null)

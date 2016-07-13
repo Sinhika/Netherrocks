@@ -14,6 +14,7 @@ import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
+import alexndr.plugins.Netherrocks.helpers.IllumeniteHandler;
 
 import com.google.common.collect.Lists;
 
@@ -48,7 +49,8 @@ public class ProxyCommon
 		
 		setOreGenSettings();
 		
-		MinecraftForge.EVENT_BUS.register(new FyriteHandler());
+		MinecraftForge.EVENT_BUS.register(FyriteHandler.INSTANCE);
+		MinecraftForge.EVENT_BUS.register(IllumeniteHandler.INSTANCE);
 	} // end Init()
 
 	public void PostInit(FMLPostInitializationEvent event)

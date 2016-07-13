@@ -73,8 +73,7 @@ public class Settings {
 							.setResistance(10.0F).setLightValue(1.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
 							.setSpawnRate(350).setVeinSize(15).setMinHeight(0)
-							.setMaxHeight(255).setBlockMaterial("glass")
-							.setSoundType("glass")
+							.setMaxHeight(255)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			dragonstoneOre = settings.get(
 					new ConfigBlock("Dragonstone Ore", "Ores")
@@ -187,16 +186,44 @@ public class Settings {
 			argoniteTools = settings.get(new ConfigTool("Argonite Tools", "Tools").setUses(1300).setHarvestLevel(3).setHarvestSpeed(8.0F).setDamageVsEntity(3.0F).setEnchantability(18)).asConfigTool();
 			
 			//Armor
-			fyriteArmor = settings.get(new ConfigArmor("Fyrite Armor", "Armors").setDurability(5).setEnchantability(7).setHelmReduction(3).setChestReduction(5).setLegsReduction(4).setBootsReduction(3)
-					.createNewValue("FireProof", "@B", "true", "true")).asConfigArmor();
-					fyriteEffect = fyriteArmor.getValueByName("FireProof");
-			malachiteArmor = settings.get(new ConfigArmor("Fyrite Armor", "Armors").setDurability(5).setEnchantability(7).setHelmReduction(3).setChestReduction(5).setLegsReduction(4).setBootsReduction(3)
-					.createNewValue("JumpBoost", "@B", "true", "true").createNewValue("BoostAmount", "@F", "0.15", "0.15").createNewValue("MinFallHeight", "@F", "4.0", "4.0")).asConfigArmor();
-					malachiteEffect = malachiteArmor.getValueByName("JumpBoost"); malachiteJumpBoost = malachiteArmor.getValueByName("BoostAmount"); malachiteMinFallHeight = malachiteArmor.getValueByName("MinFallHeight");
-			illumeniteArmor = settings.get(new ConfigArmor("Fyrite Armor", "Armors").setDurability(5).setEnchantability(7).setHelmReduction(3).setChestReduction(5).setLegsReduction(4).setBootsReduction(3)
-					.createNewValue("NoFallDamage", "@B", "true", "true")).asConfigArmor();
-					illumeniteEffect = illumeniteArmor.getValueByName("NoFallDamage");
-			dragonstoneArmor = settings.get(new ConfigArmor("Fyrite Armor", "Armors").setDurability(5).setEnchantability(7).setHelmReduction(3).setChestReduction(5).setLegsReduction(4).setBootsReduction(3)).asConfigArmor();
+			fyriteArmor = settings.get(
+					new ConfigArmor("Fyrite Armor", "Armors").setDurability(5)
+							.setEnchantability(7).setHelmReduction(3)
+							.setChestReduction(5).setLegsReduction(4)
+							.setBootsReduction(3)
+							.createNewValue("FireProof", "@B", "true", "true"))
+					.asConfigArmor();
+			fyriteEffect = fyriteArmor.getValueByName("FireProof");
+			malachiteArmor = settings
+					.get(new ConfigArmor("Malachite Armor", "Armors")
+							.setDurability(16)
+							.setEnchantability(39)
+							.setHelmReduction(2)
+							.setChestReduction(4)
+							.setLegsReduction(4)
+							.setBootsReduction(2)
+							.createNewValue("JumpBoost", "@B", "true", "true")
+							.createNewValue("BoostFactor", "@I", "1", "1"))
+					.asConfigArmor();
+			malachiteEffect = malachiteArmor.getValueByName("JumpBoost");
+			malachiteJumpBoost = malachiteArmor.getValueByName("BoostFactor");
+			illumeniteArmor = settings.get(
+					new ConfigArmor("Illumenite Armor", "Armors")
+							.setDurability(12)
+							.setEnchantability(15)
+							.setHelmReduction(4)
+							.setChestReduction(5)
+							.setLegsReduction(5)
+							.setBootsReduction(3)
+							.createNewValue("NoFallDamage", "@B", "true",
+									"true")).asConfigArmor();
+			illumeniteEffect = illumeniteArmor.getValueByName("NoFallDamage");
+			dragonstoneArmor = settings.get(
+					new ConfigArmor("Dragonstone Armor", "Armors")
+							.setDurability(48).setEnchantability(27)
+							.setHelmReduction(3).setChestReduction(9)
+							.setLegsReduction(7).setBootsReduction(3))
+					.asConfigArmor();
 			
 		}
 		catch(Exception e) {
@@ -222,5 +249,5 @@ public class Settings {
 	public static ConfigValue updateChecker, armorEffects, toolEffects, coloredGUIs, 
 								netherFurnaceSpeed, netherrackBurnTime, fyriteBurnTime, blazeRodBurnTime, 
 								illumeniteNVTime, illumeniteBlindnessTime, illumeniteSlowTime, illumeniteSlowLevel, 
-								malachiteEffect, malachiteJumpBoost, malachiteMinFallHeight, fyriteEffect, illumeniteEffect;
+								malachiteEffect, malachiteJumpBoost, fyriteEffect, illumeniteEffect;
 }

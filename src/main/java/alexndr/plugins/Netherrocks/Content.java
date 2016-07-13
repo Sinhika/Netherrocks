@@ -28,9 +28,12 @@ import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentCategories;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
+import alexndr.plugins.Netherrocks.items.FyriteArmor;
 import alexndr.plugins.Netherrocks.items.FyritePickaxe;
 import alexndr.plugins.Netherrocks.items.FyriteSword;
+import alexndr.plugins.Netherrocks.items.IllumeniteArmor;
 import alexndr.plugins.Netherrocks.items.IllumeniteSword;
+import alexndr.plugins.Netherrocks.items.MalachiteArmor;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
@@ -192,65 +195,105 @@ public class Content
 	
 	public static void doArmor() 
 	{
-		fyrite_helmet = new SimpleArmor(Netherrocks.plugin, Content.armorFyrite, 
-				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.fyriteArmor).setType("fyrite")
-				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_helmet");
-		fyrite_chestplate = new SimpleArmor(Netherrocks.plugin, Content.armorFyrite, 
-				EntityEquipmentSlot.CHEST).setConfigEntry(Settings.fyriteArmor).setType("fyrite")
-				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_chestplate");
-		fyrite_leggings = new SimpleArmor(Netherrocks.plugin, Content.armorFyrite, 
-				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.fyriteArmor).setType("fyrite")
+		fyrite_helmet = new FyriteArmor(EntityEquipmentSlot.HEAD, 
+										Settings.fyriteEffect.asBoolean())
+			.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
+			.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
+			.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_helmet");
+		fyrite_chestplate = new FyriteArmor(EntityEquipmentSlot.CHEST, 
+											Settings.fyriteEffect.asBoolean())
+			.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
+			.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
+			.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_chestplate");
+		fyrite_leggings = new FyriteArmor(EntityEquipmentSlot.LEGS, 
+										  Settings.fyriteEffect.asBoolean())
+				.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_leggings");
-		fyrite_boots = new SimpleArmor(Netherrocks.plugin, Content.armorFyrite, 
-				EntityEquipmentSlot.FEET).setConfigEntry(Settings.fyriteArmor).setType("fyrite")
+		fyrite_boots = new FyriteArmor(EntityEquipmentSlot.FEET, 
+										Settings.fyriteEffect.asBoolean())
+				.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_boots");
 		
-		malachite_helmet = new SimpleArmor(Netherrocks.plugin, Content.armorMalachite, 
-				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.malachiteArmor).setType("malachite")
+		malachite_helmet = new MalachiteArmor(EntityEquipmentSlot.HEAD, 
+					Settings.malachiteEffect.asBoolean(), 
+					Settings.malachiteJumpBoost.asInt())
+				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_helmet");
-		malachite_chestplate = new SimpleArmor(Netherrocks.plugin, Content.armorMalachite, 
-				EntityEquipmentSlot.CHEST).setConfigEntry(Settings.malachiteArmor).setType("malachite")
+		malachite_chestplate = new MalachiteArmor(EntityEquipmentSlot.CHEST, 
+					Settings.malachiteEffect.asBoolean(), 
+					Settings.malachiteJumpBoost.asInt())
+				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_chestplate");
-		malachite_leggings = new SimpleArmor(Netherrocks.plugin, Content.armorMalachite, 
-				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.malachiteArmor).setType("malachite")
+		malachite_leggings = new MalachiteArmor(EntityEquipmentSlot.LEGS, 
+				Settings.malachiteEffect.asBoolean(), 
+				Settings.malachiteJumpBoost.asInt())
+				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_leggings");
-		malachite_boots = new SimpleArmor(Netherrocks.plugin, Content.armorMalachite, 
-				EntityEquipmentSlot.FEET).setConfigEntry(Settings.malachiteArmor).setType("malachite")
+		malachite_boots = new MalachiteArmor(EntityEquipmentSlot.FEET, 
+				Settings.malachiteEffect.asBoolean(), 
+				Settings.malachiteJumpBoost.asInt())
+				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_boots");
 		
-		illumenite_helmet = new SimpleArmor(Netherrocks.plugin, Content.armorIllumenite, 
-				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
+		illumenite_helmet = new IllumeniteArmor(EntityEquipmentSlot.HEAD, 
+												Settings.illumeniteEffect.asBoolean())
+				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_helmet");
-		illumenite_chestplate = new SimpleArmor(Netherrocks.plugin, Content.armorIllumenite, 
-				EntityEquipmentSlot.CHEST).setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
+		illumenite_chestplate = new IllumeniteArmor(EntityEquipmentSlot.CHEST, 
+											Settings.illumeniteEffect.asBoolean())
+				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_chestplate");
-		illumenite_leggings = new SimpleArmor(Netherrocks.plugin, Content.armorIllumenite, 
-				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
+		illumenite_leggings = new IllumeniteArmor(EntityEquipmentSlot.LEGS, 
+								Settings.illumeniteEffect.asBoolean())
+				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_leggings");
-		illumenite_boots = new SimpleArmor(Netherrocks.plugin, Content.armorIllumenite, 
-				EntityEquipmentSlot.FEET).setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
+		illumenite_boots = new IllumeniteArmor(EntityEquipmentSlot.FEET, 
+								Settings.illumeniteEffect.asBoolean())
+				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_boots");
 		
-		dragonstone_helmet = new SimpleArmor(Netherrocks.plugin, Content.armorDragonstone, EntityEquipmentSlot.HEAD).setConfigEntry(Settings.dragonstoneArmor).setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info", TextFormatting.GREEN).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("dragonstone_helmet");
-		dragonstone_chestplate = new SimpleArmor(Netherrocks.plugin, Content.armorDragonstone, EntityEquipmentSlot.CHEST).setConfigEntry(Settings.dragonstoneArmor).setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info", TextFormatting.GREEN).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("dragonstone_chestplate");
-		dragonstone_leggings = new SimpleArmor(Netherrocks.plugin, Content.armorDragonstone, EntityEquipmentSlot.LEGS).setConfigEntry(Settings.dragonstoneArmor).setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info", TextFormatting.GREEN).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("dragonstone_leggings");
-		dragonstone_boots = new SimpleArmor(Netherrocks.plugin, Content.armorDragonstone, EntityEquipmentSlot.FEET).setConfigEntry(Settings.dragonstoneArmor).setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info", TextFormatting.GREEN).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("dragonstone_boots");
+		dragonstone_helmet = new SimpleArmor(Netherrocks.plugin,
+				Content.armorDragonstone, EntityEquipmentSlot.HEAD)
+				.setConfigEntry(Settings.dragonstoneArmor)
+				.setType("dragonstone")
+				.addToolTip("netherrocks.dragonstoneArmor.info",
+						TextFormatting.GREEN)
+				.setCreativeTab(TabHelper.combatTab())
+				.setUnlocalizedName("dragonstone_helmet");
+		dragonstone_chestplate = new SimpleArmor(Netherrocks.plugin,
+				Content.armorDragonstone, EntityEquipmentSlot.CHEST)
+				.setConfigEntry(Settings.dragonstoneArmor)
+				.setType("dragonstone")
+				.addToolTip("netherrocks.dragonstoneArmor.info",
+						TextFormatting.GREEN)
+				.setCreativeTab(TabHelper.combatTab())
+				.setUnlocalizedName("dragonstone_chestplate");
+		dragonstone_leggings = new SimpleArmor(Netherrocks.plugin,
+				Content.armorDragonstone, EntityEquipmentSlot.LEGS)
+				.setConfigEntry(Settings.dragonstoneArmor)
+				.setType("dragonstone")
+				.addToolTip("netherrocks.dragonstoneArmor.info",
+						TextFormatting.GREEN)
+				.setCreativeTab(TabHelper.combatTab())
+				.setUnlocalizedName("dragonstone_leggings");
+		dragonstone_boots = new SimpleArmor(Netherrocks.plugin,
+				Content.armorDragonstone, EntityEquipmentSlot.FEET)
+				.setConfigEntry(Settings.dragonstoneArmor)
+				.setType("dragonstone")
+				.addToolTip("netherrocks.dragonstoneArmor.info",
+						TextFormatting.GREEN)
+				.setCreativeTab(TabHelper.combatTab())
+				.setUnlocalizedName("dragonstone_boots");
 	} // end doArmor()
 	
 	public static void doAchievements() 
