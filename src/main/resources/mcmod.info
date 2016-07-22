@@ -5,7 +5,7 @@
 "description": "A plugin for SimpleCore API that adds 6 new ores to the Nether.",
 "version": "${version}",
 "credits": "Created by AleXndrTheGr8st. Maintained by Sinhika",
-"logoFile": "/assets/simplecore/logos/Netherrocks.png",
+"logoFile": "assets/simplecore/logos/Netherrocks.png",
 "mcversion": "${mcversion}",
 "url": "http://minecraft.curseforge.com/projects/netherrocks",
 "updateUrl": "",
