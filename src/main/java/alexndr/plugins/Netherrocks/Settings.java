@@ -51,43 +51,43 @@ public class Settings {
 					new ConfigBlock("Fyrite Ore", "Ores").setHardness(3.0F)
 							.setResistance(10.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(10).setVeinSize(6).setMinHeight(0)
-							.setMaxHeight(255)
+							.setSpawnRate(10).setVeinSize(6).setMinHeight(1)
+							.setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			malachiteOre = settings.get(
 					new ConfigBlock("Malachite Ore", "Ores").setHardness(3.0F)
 							.setResistance(10.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(10).setVeinSize(7).setMinHeight(0)
-							.setMaxHeight(255)
+							.setSpawnRate(10).setVeinSize(7).setMinHeight(1)
+							.setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			ashstoneOre = settings.get(
 					new ConfigBlock("Ashstone Ore", "Ores").setHardness(3.0F)
 							.setResistance(10.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(10).setVeinSize(5).setMinHeight(0)
-							.setMaxHeight(255)
+							.setSpawnRate(10).setVeinSize(5).setMinHeight(1)
+							.setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			illumeniteOre = settings.get(
 					new ConfigBlock("Illumenite Ore", "Ores").setHardness(3.0F)
 							.setResistance(10.0F).setLightValue(1.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(350).setVeinSize(15).setMinHeight(0)
-							.setMaxHeight(255)
+							.setSpawnRate(350).setVeinSize(15).setMinHeight(1)
+							.setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			dragonstoneOre = settings.get(
 					new ConfigBlock("Dragonstone Ore", "Ores")
 							.setHardness(3.0F).setResistance(10.0F)
 							.setLightValue(0.0F).setHarvestLevel(2)
 							.setHarvestTool("pickaxe").setSpawnRate(6)
-							.setVeinSize(6).setMinHeight(0).setMaxHeight(255)
+							.setVeinSize(6).setMinHeight(1).setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			argoniteOre = settings.get(
 					new ConfigBlock("Argonite Ore", "Ores").setHardness(3.0F)
 							.setResistance(10.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(10).setVeinSize(6).setMinHeight(0)
-							.setMaxHeight(255)
+							.setSpawnRate(10).setVeinSize(6).setMinHeight(1)
+							.setMaxHeight(127)
 							.setCreativeTab("SimpleBlocks")).asConfigBlock();
 			
 			fyriteBlock = settings.get(
