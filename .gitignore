@@ -10,6 +10,7 @@ libs/
 *~
 .classpath
 gradlew
+build.number
 gradlew.bat
 bin/
 .gradle/
