@@ -2,15 +2,14 @@ package alexndr.plugins.Netherrocks;
 
 import java.io.File;
 
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import alexndr.api.config.Configuration;
 import alexndr.api.config.types.ConfigArmor;
 import alexndr.api.config.types.ConfigBlock;
-import alexndr.api.config.types.ConfigEntry;
 import alexndr.api.config.types.ConfigItem;
 import alexndr.api.config.types.ConfigTool;
 import alexndr.api.config.types.ConfigValue;
 import alexndr.api.logger.LogHelper;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author AleXndrTheGr8st
@@ -18,34 +17,18 @@ import alexndr.api.logger.LogHelper;
 public class Settings {
 	private static Configuration settings = new Configuration();
 	
-	public static void createOrLoadSettings(FMLPreInitializationEvent event) {
+	public static void createOrLoadSettings(FMLPreInitializationEvent event) 
+	{
 		settings.setModName("Netherrocks");
-		File configDir = new File(event.getModConfigurationDirectory() + "/AleXndr", "Netherrocks Settings.xml");
-		settings.setFile(configDir);
+		File configDir = new File(event.getModConfigurationDirectory(), "AleXndr");
+		File settingsFile = new File(configDir, "Netherrocks_Settings.xml" );
+		settings.setFile(settingsFile);
 		
 		LogHelper.verbose("Netherrocks", "Loading Settings...");
 		try {
 			settings.load();
-			
-			//Config Help
-			ConfigEntry link = new ConfigEntry("Documentation", "ConfigHelp");
-				link.createNewValue("DocumentationLink").setActive().setDataType("@S").setCurrentValue("Please Read: "
-						+ "https://github.com/AleXndrTheGr8st/SimpleCore/wiki/Using-The-Config").setDefaultValue("");
-			link = settings.get(link);
-				
-			ConfigEntry dataTypes = new ConfigEntry("Data Types", "ConfigHelp");
-				dataTypes.createNewValue("ABOUT").setActive().setDataType("@S").setCurrentValue("It is important that the correct data types are used. They are designated by the @ symbol.").setDefaultValue("");
-				dataTypes.createNewValue("Boolean").setActive().setDataType("@B").setCurrentValue("Accepts: true, false.").setDefaultValue("");
-				dataTypes.createNewValue("Integer").setActive().setDataType("@I").setCurrentValue("Accepts: Whole numbers only, such as 2 or 4096.").setDefaultValue("");
-				dataTypes.createNewValue("Float").setActive().setDataType("@F").setCurrentValue("Accepts: Decimal numbers, such as 1.5 or 98.9.").setDefaultValue("");
-				dataTypes.createNewValue("Double").setActive().setDataType("@D").setCurrentValue("Accepts: Decimal numbers, such as 1.5 or 98.9.").setDefaultValue("");
-				dataTypes.createNewValue("String").setActive().setDataType("@S").setCurrentValue("Accepts: Any number or character, such as abcdefg or 9dsa29213mn#.").setDefaultValue("");
-			dataTypes = settings.get(dataTypes);
-			
-			//Toggles
-			ConfigEntry toggles = settings.get(new ConfigEntry("Netherrocks Toggles", "Toggles").createNewValue("UpdateChecker", "@B", "true", "true"));
-					updateChecker = toggles.getValueByName("UpdateChecker");
-				
+			settings.createHelpEntry(ModInfo.URL);
+
 			//Blocks
 			fyriteOre = settings.get(
 					new ConfigBlock("Fyrite Ore", "Ores").setHardness(3.0F)
