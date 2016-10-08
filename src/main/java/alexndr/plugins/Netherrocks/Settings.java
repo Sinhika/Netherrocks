@@ -75,20 +75,20 @@ public class Settings {
 			
 			fyriteBlock = settings.get(
 					new ConfigBlock("Fyrite Block", "Blocks").setHardness(7.0F)
-							.setResistance(10.0F).setLightValue(0.0F)
+							.setResistance(12.0F).setLightValue(0.0F)
 							.setHarvestLevel(0).setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
 							.setBeaconBase(true)).asConfigBlock();
 			malachiteBlock = settings.get(
 					new ConfigBlock("Malachite Block", "Blocks")
-							.setHardness(7.0F).setResistance(10.0F)
+							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
 							.setBeaconBase(true)).asConfigBlock();
 			ashstoneBlock = settings.get(
 					new ConfigBlock("Ashstone Block", "Blocks")
-							.setHardness(7.0F).setResistance(10.0F)
+							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
@@ -102,14 +102,14 @@ public class Settings {
 							.setBeaconBase(true)).asConfigBlock();
 			dragonstoneBlock = settings.get(
 					new ConfigBlock("Dragonstone Block", "Blocks")
-							.setHardness(7.0F).setResistance(10.0F)
+							.setHardness(10.0F).setResistance(45.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
 							.setBeaconBase(true)).asConfigBlock();
 			argoniteBlock = settings.get(
 					new ConfigBlock("Argonite Block", "Blocks")
-							.setHardness(7.0F).setResistance(10.0F)
+							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
