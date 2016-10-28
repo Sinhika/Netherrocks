@@ -70,84 +70,101 @@ public class Content
 	
 	public static void doItems() 
 	{
-		fyrite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.fyriteIngot).setUnlocalizedName("fyrite_ingot");
-		malachite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.malachiteIngot).setUnlocalizedName("malachite_ingot");
-		ashstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.ashstoneGem).setUnlocalizedName("ashstone_gem");
-		illumenite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.illumeniteIngot).setUnlocalizedName("illumenite_ingot");
-		dragonstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.dragonstoneGem).setUnlocalizedName("dragonstone_gem");
-		argonite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.argoniteIngot).setUnlocalizedName("argonite_ingot");
+        fyrite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.fyriteIngot).setUnlocalizedName("fyrite_ingot")
+                        .setCreativeTab(TabHelper.materialsTab());
+        malachite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.malachiteIngot)
+                        .setUnlocalizedName("malachite_ingot")
+                        .setCreativeTab(TabHelper.materialsTab());
+        ashstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.ashstoneGem).setUnlocalizedName("ashstone_gem")
+                        .setCreativeTab(TabHelper.materialsTab());
+        illumenite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.illumeniteIngot)
+                        .setUnlocalizedName("illumenite_ingot")
+                        .setCreativeTab(TabHelper.materialsTab());
+        dragonstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.dragonstoneGem)
+                        .setUnlocalizedName("dragonstone_gem")
+                        .setCreativeTab(TabHelper.materialsTab());
+        argonite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
+                        .setConfigEntry(Settings.argoniteIngot)
+                        .setUnlocalizedName("argonite_ingot")
+                        .setCreativeTab(TabHelper.materialsTab());
 	} // end doItems()
 	
 	public static void doBlocks() 
 	{
 		fyrite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.fyriteOre)
-				.setStepSound(SoundType.STONE).setUnlocalizedName("fyrite_ore");
+				.setStepSound(SoundType.STONE).setUnlocalizedName("fyrite_ore")
+				.setCreativeTab(TabHelper.blocksTab());
 		malachite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 										ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.malachiteOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("malachite_ore");
+				.setUnlocalizedName("malachite_ore").setCreativeTab(TabHelper.blocksTab());
 		ashstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.ashstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("ashstone_ore");
+				.setUnlocalizedName("ashstone_ore").setCreativeTab(TabHelper.blocksTab());
 		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Material.GLASS,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.illumeniteOre)
 				.setStepSound(SoundType.GLASS)
-				.setUnlocalizedName("illumenite_ore");
+				.setUnlocalizedName("illumenite_ore").setCreativeTab(TabHelper.blocksTab());
 		dragonstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.dragonstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("dragonstone_ore");
+				.setUnlocalizedName("dragonstone_ore").setCreativeTab(TabHelper.blocksTab());
 		argonite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.argoniteOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("argonite_ore");
+				.setUnlocalizedName("argonite_ore").setCreativeTab(TabHelper.blocksTab());
 		
 		fyrite_block = new SimpleBlock(Netherrocks.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.fyriteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("fyrite_block");
+				.setUnlocalizedName("fyrite_block").setCreativeTab(TabHelper.decorationsTab());
 		malachite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.malachiteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("malachite_block");
+				.setUnlocalizedName("malachite_block").setCreativeTab(TabHelper.decorationsTab());
 		ashstone_block = new SimpleBlock(Netherrocks.plugin,
 				Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.ashstoneBlock)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("ashstone_block");
+				.setUnlocalizedName("ashstone_block").setCreativeTab(TabHelper.decorationsTab());
 		illumenite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.GLASS,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.illumeniteBlock)
 				.setStepSound(SoundType.GLASS)
-				.setUnlocalizedName("illumenite_block");
+				.setUnlocalizedName("illumenite_block").setCreativeTab(TabHelper.decorationsTab());
 		dragonstone_block = new SimpleBlock(Netherrocks.plugin,
 				Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.dragonstoneBlock)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("dragonstone_block");
+				.setUnlocalizedName("dragonstone_block").setCreativeTab(TabHelper.decorationsTab());
 		argonite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.argoniteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("argonite_block");
+				.setUnlocalizedName("argonite_block").setCreativeTab(TabHelper.decorationsTab());
 		
 		nether_furnace = new NetherFurnaceBlock(false)
 				.setConfigEntry(Settings.netherFurnace)
-				.setUnlocalizedName("nether_furnace");
+				.setUnlocalizedName("nether_furnace").setCreativeTab(TabHelper.redstoneTab());
 		nether_furnace_lit = new NetherFurnaceBlock(true)
 				.setConfigEntry(Settings.netherFurnace)
 				.setUnlocalizedName("nether_furnace_lit");
