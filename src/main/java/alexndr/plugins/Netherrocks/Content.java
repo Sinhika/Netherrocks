@@ -291,32 +291,24 @@ public class Content
 				Content.armorDragonstone, EntityEquipmentSlot.HEAD)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info",
-						TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab())
 				.setUnlocalizedName("dragonstone_helmet");
 		dragonstone_chestplate = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info",
-						TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab())
 				.setUnlocalizedName("dragonstone_chestplate");
 		dragonstone_leggings = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info",
-						TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab())
 				.setUnlocalizedName("dragonstone_leggings");
 		dragonstone_boots = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.FEET)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.addToolTip("netherrocks.dragonstoneArmor.info",
-						TextFormatting.GREEN)
 				.setCreativeTab(TabHelper.combatTab())
 				.setUnlocalizedName("dragonstone_boots");
 	} // end doArmor()

@@ -67,6 +67,10 @@ item.dragonstone_chestplate.name=Dragonstone Chestplate
 item.dragonstone_leggings.name=Dragonstone Leggings
 item.dragonstone_boots.name=Dragonstone Boots
 
+// Containers
+container.nether_furnace=Nether Furnace
+nether_furnace_gui=Nether Furnace
+
 //Achievements
 achievement.fyriteOreAch=Warm to the Touch
 achievement.fyriteOreAch.desc=Collect some Fyrite Ore from the Nether
