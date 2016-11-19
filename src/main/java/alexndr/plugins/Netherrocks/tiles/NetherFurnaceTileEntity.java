@@ -1,5 +1,9 @@
 package alexndr.plugins.Netherrocks.tiles;
 
+import alexndr.api.content.tiles.TileEntitySimpleFurnace;
+import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
+import alexndr.plugins.Netherrocks.inventory.SlotNetherFuel;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -10,9 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.util.math.MathHelper;
-import alexndr.api.content.tiles.TileEntitySimpleFurnace;
-import alexndr.plugins.Netherrocks.Content;
-import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 
 /**
  * @author AleXndrTheGr8st
@@ -71,6 +72,26 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
         } // end-else ! null
 
 	} // end getItemBurnTime()
+
+   @Override
+   public boolean isItemValidForSlot(int index, ItemStack stack)
+   {
+       if (index == 2)
+       {
+           return false;
+       }
+       else if (index != 1)
+       {
+           return true;
+       }
+       else
+       {
+           ItemStack itemstack = this.furnaceItemStacks[1];
+           return isItemFuel(stack) || SlotNetherFuel.isBucket(stack) 
+                           && (itemstack == null || itemstack.getItem() != Items.BUCKET);
+       }
+   }
+
 
 //	@Override
 //	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
