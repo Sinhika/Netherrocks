@@ -14,7 +14,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author AleXndrTheGr8st
  */
-public class Settings {
+public class Settings 
+{
 	private static Configuration settings = new Configuration();
 	
 	public static void createOrLoadSettings(FMLPreInitializationEvent event) 
