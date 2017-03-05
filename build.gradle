@@ -46,6 +46,16 @@ minecraft {
     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+repositories {
+    maven { // McJtyLib
+            url "http://maven.k-4u.nl"
+    }
+}
+
+dependencies {
+    deobfCompile "com.github.mcjty:compatlayer:1.10-0.2.2"
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
