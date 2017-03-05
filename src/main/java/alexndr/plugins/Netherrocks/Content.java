@@ -23,6 +23,7 @@ import alexndr.api.content.items.SimpleItem;
 import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
+import alexndr.api.helpers.game.ArmorMaterialHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
@@ -349,31 +350,31 @@ public class Content
 		
 		armorFyrite = EnumHelper.addArmorMaterial("FYRITE", "fyrite", 
 				Settings.fyriteArmor.getDurability(), 
-				new int[] {Settings.fyriteArmor.getHelmReduction(),  
-						   Settings.fyriteArmor.getChestReduction(), 
+				new int[] {Settings.fyriteArmor.getBootsReduction(),  
 						   Settings.fyriteArmor.getLegsReduction(), 
-						   Settings.fyriteArmor.getBootsReduction()}, 
+						   Settings.fyriteArmor.getChestReduction(), 
+						   Settings.fyriteArmor.getHelmReduction()}, 
 				Settings.fyriteArmor.getEnchantability(), armorNoise, 0.0F);
 		armorMalachite = EnumHelper.addArmorMaterial("MALACHITE", "malachite", 
 				Settings.malachiteArmor.getDurability(), 
-				new int[] {Settings.malachiteArmor.getHelmReduction(),  
-						   Settings.malachiteArmor.getChestReduction(), 
+				new int[] {Settings.malachiteArmor.getBootsReduction(),  
 						   Settings.malachiteArmor.getLegsReduction(), 
-						   Settings.malachiteArmor.getBootsReduction()}, 
+						   Settings.malachiteArmor.getChestReduction(), 
+						   Settings.malachiteArmor.getHelmReduction()}, 
 				Settings.malachiteArmor.getEnchantability(), armorNoise, 0.0F);
 		armorIllumenite = EnumHelper.addArmorMaterial("ILLUMENITE", "illumenite", 
 				Settings.illumeniteArmor.getDurability(), 
-				new int[] {Settings.illumeniteArmor.getHelmReduction(),  
-						   Settings.illumeniteArmor.getChestReduction(), 
+				new int[] {Settings.illumeniteArmor.getBootsReduction(),  
 						   Settings.illumeniteArmor.getLegsReduction(), 
-						   Settings.illumeniteArmor.getBootsReduction()}, 
+						   Settings.illumeniteArmor.getChestReduction(), 
+						   Settings.illumeniteArmor.getHelmReduction()}, 
 				Settings.illumeniteArmor.getEnchantability(), armorNoise, 0.0F);
 		armorDragonstone = EnumHelper.addArmorMaterial("DRAGONSTONE", "dragonstone", 
 				Settings.dragonstoneArmor.getDurability(), 
-				new int[] {	Settings.dragonstoneArmor.getHelmReduction(),  
-							Settings.dragonstoneArmor.getChestReduction(), 
+				new int[] {	Settings.dragonstoneArmor.getBootsReduction(),  
 							Settings.dragonstoneArmor.getLegsReduction(), 
-							Settings.dragonstoneArmor.getBootsReduction()}, 
+							Settings.dragonstoneArmor.getChestReduction(), 
+							Settings.dragonstoneArmor.getHelmReduction()}, 
 				Settings.dragonstoneArmor.getEnchantability(), armorNoise, 2.0F);
 	} // end setToolAndArmorStats()
 	
@@ -389,10 +390,10 @@ public class Content
 		toolArgonite.setRepairItem(new ItemStack(Content.argonite_ingot));
 		
 		//Armor
-		armorFyrite.customCraftingMaterial = Content.fyrite_ingot;
-		armorMalachite.customCraftingMaterial = Content.malachite_ingot;
-		armorIllumenite.customCraftingMaterial = Content.illumenite_ingot;
-		armorDragonstone.customCraftingMaterial = Content.dragonstone_gem;
+		ArmorMaterialHelper.setRepairItem(armorFyrite, new ItemStack(Content.fyrite_ingot));
+		ArmorMaterialHelper.setRepairItem(armorMalachite, new ItemStack(Content.malachite_ingot));
+		ArmorMaterialHelper.setRepairItem(armorIllumenite, new ItemStack(illumenite_ingot));
+		ArmorMaterialHelper.setRepairItem(armorDragonstone, new ItemStack(Content.dragonstone_gem));
 	} // end setRepairMaterials()
 	
 	public static void setAchievementTriggers() 
