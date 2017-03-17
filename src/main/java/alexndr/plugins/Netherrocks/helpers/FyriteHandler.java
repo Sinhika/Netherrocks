@@ -3,6 +3,11 @@ package alexndr.plugins.Netherrocks.helpers;
 import java.util.ListIterator;
 import java.util.Random;
 
+import alexndr.api.helpers.game.IHarvestEffectHelper;
+import alexndr.api.helpers.game.IWeaponEffectHelper;
+import alexndr.api.helpers.game.ToolHelper;
+import alexndr.plugins.Netherrocks.Content;
+import mcjty.lib.tools.ItemStackTools;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,15 +27,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import alexndr.api.helpers.game.IHarvestEffectHelper;
-import alexndr.api.helpers.game.IUseItemEffectHelper;
-import alexndr.api.helpers.game.IWeaponEffectHelper;
-import alexndr.api.helpers.game.ToolHelper;
-import alexndr.plugins.Netherrocks.Content;
 
 /** Helper class for handling Fyrite properties */
-public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper, 
-									  IHarvestEffectHelper
+public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 {
 	public static FyriteHandler INSTANCE = new FyriteHandler();
 	
@@ -53,7 +52,7 @@ public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper,
 		Random random = event.getWorld().rand;
 		// check if tool exists and is a fyrite tool.
 		ItemStack tool = player.getHeldItem(player.getActiveHand());
-		if (tool == null) return;
+		if (ItemStackTools.isEmpty(tool)) return;
 		Item toolItem = tool.getItem();
 		if (! (toolItem instanceof ItemTool)) return;
 		
@@ -74,16 +73,19 @@ public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper,
 					ItemStack drop = dropList.next();
 					// is there a smelted version of this drop?
 					ItemStack smelted = FurnaceRecipes.instance().getSmeltingResult(drop);
-					if (smelted != null) 
+					if (ItemStackTools.isValid(smelted) ) 
 					{
-						smelted = smelted.copy();
-						smelted.stackSize = drop.stackSize;
+						smelted = ItemStackTools.safeCopy(smelted);
 						
 						// apply fortune enchantment to smelting results
 						int fortune = EnchantmentHelper.getEnchantmentLevel(
 													Enchantments.FORTUNE, tool);
-						if (fortune > 0) {
-							smelted.stackSize *= random.nextInt(fortune + 1) + 1;
+						if (fortune > 0) 
+						{
+						//	smelted.setCount(smelted.getCount() *random.nextInt(fortune + 1) + 1);
+							int amount = ItemStackTools.getStackSize(smelted) * random.nextInt(fortune+1) + 1;
+							amount -= ItemStackTools.getStackSize(smelted);
+							ItemStackTools.incStackSize(smelted, amount);
 						}
 						// replace original drop stack with smelted results.
 						dropList.set(smelted);
@@ -140,7 +142,6 @@ public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper,
 
 	/**
 	 * what should Fyrite items do when right-clicked on something?
-	 * @param stack
 	 * @param playerIn
 	 * @param worldIn
 	 * @param pos
@@ -151,11 +152,13 @@ public class FyriteHandler implements IWeaponEffectHelper, IUseItemEffectHelper,
 	 * @param hitZ
 	 * @return EnumActionResult.PASS because we're not done.
 	 */
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn,
+	public EnumActionResult onItemUse(EntityPlayer playerIn,
 			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
 			float hitX, float hitY, float hitZ) 
 	{
 		BlockPos adjacentPos = pos;
+		ItemStack stack = playerIn.getActiveItemStack();
+		
 		switch (facing) 
 		{
 		case DOWN:

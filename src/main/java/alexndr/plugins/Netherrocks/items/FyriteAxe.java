@@ -14,7 +14,8 @@ import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.Netherrocks;
 import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 
-public class FyriteAxe extends SimpleAxe {
+public class FyriteAxe extends SimpleAxe 
+{
 
 	public FyriteAxe(float damage, float speed) 
 	{
@@ -36,18 +37,18 @@ public class FyriteAxe extends SimpleAxe {
 	}
 
 	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn,
+	protected EnumActionResult clOnItemUse(EntityPlayer playerIn,
 			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
 			float hitX, float hitY, float hitZ) 
 	{
 		EnumActionResult result 
-			= FyriteHandler.INSTANCE.onItemUse(stack, playerIn, worldIn, pos, hand, facing, 
+			= FyriteHandler.INSTANCE.onItemUse(playerIn, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		if (result != EnumActionResult.PASS) {
 			return result;
 		}
 		else {
-			return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, 
+			return super.clOnItemUse(playerIn, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		}
 	} // onItemUse()

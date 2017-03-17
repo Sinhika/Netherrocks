@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "com.github.mcjty:compatlayer:1.10-0.2.2"
+    deobfCompile "com.github.mcjty:compatlayer:${project.compat_version}"
 }
 
 dependencies {

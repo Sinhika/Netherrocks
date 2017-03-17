@@ -2,8 +2,12 @@ package alexndr.plugins.Netherrocks.blocks;
 
 import java.util.Random;
 
-import javax.annotation.Nullable;
-
+import alexndr.api.content.blocks.SimpleFurnace;
+import alexndr.api.registry.ContentCategories;
+import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.Netherrocks;
+import alexndr.plugins.Netherrocks.helpers.NetherFurnaceGuiHandler;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,12 +21,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import alexndr.api.content.blocks.SimpleFurnace;
-import alexndr.api.registry.ContentCategories;
-import alexndr.plugins.Netherrocks.Content;
-import alexndr.plugins.Netherrocks.Netherrocks;
-import alexndr.plugins.Netherrocks.helpers.NetherFurnaceGuiHandler;
-import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 
 /**
  * @author AleXndrTheGr8st
@@ -56,11 +54,10 @@ public class NetherFurnaceBlock extends SimpleFurnace
 		return Item.getItemFromBlock(Content.nether_furnace);
 	}
 	
-    /* cut & pasted from BlockFurnace */
+    /* cut & pasted from BlockFurnace & modified per CompatBlock */
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos,
-			IBlockState state, EntityPlayer playerIn, EnumHand hand,
-			@Nullable ItemStack heldItem, EnumFacing side, float hitX,
+	protected boolean clOnBlockActivated(World worldIn, BlockPos pos,
+			IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX,
 			float hitY, float hitZ) 
 	{
         if (worldIn.isRemote) {
