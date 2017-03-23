@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import mcjty.lib.compat.CompatSlot;
+import mcjty.lib.tools.InventoryTools;
 import mcjty.lib.tools.ItemStackTools;
 
 /**
@@ -83,7 +84,7 @@ public class NetherFurnaceContainer extends Container
 
 	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
-        return this.tileFurnace.isUsableByPlayer(playerIn);
+        return this.tileFurnace.isUsable(playerIn);
 	}
 	
 	@Override
@@ -128,7 +129,7 @@ public class NetherFurnaceContainer extends Container
 			if (ItemStackTools.getStackSize(itemstack1) == ItemStackTools.getStackSize(itemstack))
 				return ItemStackTools.getEmptyStack();
 
-			slot.onTake(playerIn, itemstack1);
+			InventoryTools.onPickup(slot, playerIn, itemstack1);
 		}
 
 		return itemstack;

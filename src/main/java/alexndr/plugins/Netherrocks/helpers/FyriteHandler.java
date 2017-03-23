@@ -157,8 +157,11 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 			float hitX, float hitY, float hitZ) 
 	{
 		BlockPos adjacentPos = pos;
-		ItemStack stack = playerIn.getActiveItemStack();
+		ItemStack stack = playerIn.getHeldItem(hand);
 		
+		if (ItemStackTools.isEmpty(stack)) {
+            return EnumActionResult.PASS;
+		}
 		switch (facing) 
 		{
 		case DOWN:
