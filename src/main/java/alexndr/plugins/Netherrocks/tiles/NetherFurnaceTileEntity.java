@@ -4,8 +4,6 @@ import alexndr.api.content.tiles.TileEntitySimpleFurnace;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.Netherrocks.inventory.SlotNetherFuel;
-import mcjty.lib.tools.ItemStackTools;
-import mcjty.lib.tools.MathTools;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -112,55 +110,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 
         if (!this.getWorld().isRemote)
         {
-            ItemStack itemstack = (ItemStack)this.getStackInSlot(NDX_FUEL_SLOT);
-            
-            if (this.isBurning() || ItemStackTools.isValid(itemstack) 
-                &&  ItemStackTools.isValid(this.getStackInSlot(NDX_INPUT_SLOT)))
-            {
-                if (!this.isBurning() && this.canSmelt())
-                {
-                    this.furnaceBurnTime = NetherFurnaceTileEntity.getItemBurnTime(itemstack);
-                    this.currentItemBurnTime = this.furnaceBurnTime;
-
-                    if (this.isBurning())
-                    {
-                        flag1 = true;
-                        
-                        if (ItemStackTools.isValid(itemstack))
-                        {
-                            Item item = itemstack.getItem();
-                            ItemStackTools.incStackSize(itemstack, -1);
-                            if (ItemStackTools.isEmpty(itemstack)) {
-                                ItemStack item1 = item.getContainerItem(itemstack);
-                                this.furnaceItemStacks.set(NDX_FUEL_SLOT, item1);
-                            }
-                        }
-                    } // end-if isBurning
-                } // end-if !isBurning && canSmelt
-
-                if (this.isBurning() && this.canSmelt())
-                {
-                    ++this.cookTime;
-
-                    if (this.cookTime == this.totalCookTime)
-                    {
-                        this.cookTime = 0;
-                        this.totalCookTime = this.getCookTime(
-                                        this.getStackInSlot(NDX_INPUT_SLOT));
-                        this.smeltItem();
-                        flag1 = true;
-                    }
-                }
-                else
-                {
-                    this.cookTime = 0;
-                }
-            } // end-if isBurning or isValid(fuel)
-            else if (!this.isBurning() && this.cookTime > 0)
-            {
-                this.cookTime = MathTools.clamp(this.cookTime - 2, 0, this.totalCookTime);
-            }
-
+            flag1 = default_cooking_update(flag1);
             if (flag != this.isBurning())
             {
                 flag1 = true;
