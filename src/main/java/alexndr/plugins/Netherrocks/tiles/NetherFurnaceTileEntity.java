@@ -4,6 +4,7 @@ import alexndr.api.content.tiles.TileEntitySimpleFurnace;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.Netherrocks.inventory.SlotNetherFuel;
+import mcjty.lib.tools.ItemStackTools;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -102,7 +103,8 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 	{
         boolean flag = this.isBurning();
         boolean flag1 = false;
-
+        int burnTime = 0;
+        
         if (this.isBurning())
         {
             --this.furnaceBurnTime;
@@ -110,7 +112,11 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 
         if (!this.getWorld().isRemote)
         {
-            flag1 = default_cooking_update(flag1);
+            ItemStack itemstack = (ItemStack)this.getStackInSlot(NDX_FUEL_SLOT);
+            if (ItemStackTools.isValid(itemstack)) {
+                burnTime = NetherFurnaceTileEntity.getItemBurnTime(itemstack);
+            }
+            flag1 = default_cooking_update(flag1, itemstack, burnTime);
             if (flag != this.isBurning())
             {
                 flag1 = true;
