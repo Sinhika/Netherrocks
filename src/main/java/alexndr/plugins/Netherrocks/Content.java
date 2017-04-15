@@ -56,7 +56,7 @@ public class Content
 			doAchievements();
 			
 			//Registers
-			GameRegistry.registerTileEntity(NetherFurnaceTileEntity.class, "nether_furnace");
+			GameRegistry.registerTileEntity(NetherFurnaceTileEntity.class, "netherrocks_nether_furnace");
 			
 			LogHelper.verbose("Netherrocks",
 					"Content pre-init completed successfully");

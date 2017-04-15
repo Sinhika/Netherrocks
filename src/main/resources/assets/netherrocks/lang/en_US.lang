@@ -68,7 +68,7 @@ item.dragonstone_leggings.name=Dragonstone Leggings
 item.dragonstone_boots.name=Dragonstone Boots
 
 // Containers
-container.nether_furnace=Nether Furnace
+container.netherrocks_nether_furnace=Nether Furnace
 nether_furnace_gui=Nether Furnace
 
 //Achievements

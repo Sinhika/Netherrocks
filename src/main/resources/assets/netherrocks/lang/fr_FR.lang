@@ -68,7 +68,7 @@ item.dragonstone_leggings.name=Jambières en Dragonstone
 item.dragonstone_boots.name=Bottes en Dragonstone
 
 // Containers
-container.nether_furnace=Fourneau du Nether 
+container.netherrocks_nether_furnace=Fourneau du Nether 
 nether_furnace_gui=Fourneau du Nether
 
 

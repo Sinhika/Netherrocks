@@ -22,7 +22,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 {
     public NetherFurnaceTileEntity() 
     {
-		super("container.nether_furnace", 600, "netherrocks:nether_furnace_gui", 3);
+		super("container.netherrocks_nether_furnace", 600, "netherrocks:nether_furnace_gui", 3);
 	}
 
     public static boolean isItemFuel(ItemStack fuel)
