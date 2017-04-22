@@ -23,6 +23,7 @@ import alexndr.api.content.items.SimpleItem;
 import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
+import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.ArmorMaterialHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.helpers.game.TabHelper;
@@ -73,26 +74,26 @@ public class Content
 	{
         fyrite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.fyriteIngot).setUnlocalizedName("fyrite_ingot")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
         malachite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.malachiteIngot)
                         .setUnlocalizedName("malachite_ingot")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
         ashstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.ashstoneGem).setUnlocalizedName("ashstone_gem")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
         illumenite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.illumeniteIngot)
                         .setUnlocalizedName("illumenite_ingot")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
         dragonstone_gem = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.dragonstoneGem)
                         .setUnlocalizedName("dragonstone_gem")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
         argonite_ingot = new SimpleItem(Netherrocks.plugin, ContentCategories.Item.INGOT)
                         .setConfigEntry(Settings.argoniteIngot)
                         .setUnlocalizedName("argonite_ingot")
-                        .setCreativeTab(TabHelper.materialsTab());
+                        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 	} // end doItems()
 	
 	public static void doBlocks() 
@@ -100,72 +101,72 @@ public class Content
 		fyrite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.fyriteOre)
 				.setStepSound(SoundType.STONE).setUnlocalizedName("fyrite_ore")
-				.setCreativeTab(TabHelper.blocksTab());
+				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		malachite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 										ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.malachiteOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("malachite_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("malachite_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		ashstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.ashstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("ashstone_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("ashstone_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Material.GLASS,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.illumeniteOre)
 				.setStepSound(SoundType.GLASS)
-				.setUnlocalizedName("illumenite_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("illumenite_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		dragonstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.dragonstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("dragonstone_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("dragonstone_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		argonite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.argoniteOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("argonite_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("argonite_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		
 		fyrite_block = new SimpleBlock(Netherrocks.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.fyriteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("fyrite_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("fyrite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		malachite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.malachiteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("malachite_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("malachite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		ashstone_block = new SimpleBlock(Netherrocks.plugin,
 				Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.ashstoneBlock)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("ashstone_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("ashstone_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		illumenite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.GLASS,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.illumeniteBlock)
 				.setStepSound(SoundType.GLASS)
-				.setUnlocalizedName("illumenite_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("illumenite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		dragonstone_block = new SimpleBlock(Netherrocks.plugin,
 				Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.dragonstoneBlock)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("dragonstone_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("dragonstone_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		argonite_block = new SimpleBlock(Netherrocks.plugin,
 				Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.argoniteBlock)
 				.setStepSound(SoundType.METAL)
-				.setUnlocalizedName("argonite_block").setCreativeTab(TabHelper.decorationsTab());
+				.setUnlocalizedName("argonite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		
 		nether_furnace = new NetherFurnaceBlock(false)
 				.setConfigEntry(Settings.netherFurnace)
-				.setUnlocalizedName("nether_furnace").setCreativeTab(TabHelper.redstoneTab());
+				.setUnlocalizedName("nether_furnace").setCreativeTab(TabHelper.redstoneTab(SimpleCoreAPI.plugin));
 		nether_furnace_lit = new NetherFurnaceBlock(true)
 				.setConfigEntry(Settings.netherFurnace)
 				.setUnlocalizedName("nether_furnace_lit");
@@ -174,49 +175,49 @@ public class Content
 	public static void doTools() 
 	{
 		fyrite_sword = new FyriteSword().setConfigEntry(Settings.fyriteTools)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_sword");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("fyrite_sword");
 		fyrite_pickaxe = new FyritePickaxe().setConfigEntry(Settings.fyriteTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("fyrite_pickaxe");
 		fyrite_axe = new FyriteAxe().setConfigEntry(Settings.fyriteTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("fyrite_axe");
 		fyrite_shovel = new FyriteShovel().setConfigEntry(Settings.fyriteTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("fyrite_shovel");
 				
 		malachite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolMalachite)
 			.setConfigEntry(Settings.malachiteTools)
-			.setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_pickaxe");
-		malachite_axe = new SimpleAxe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_axe");
-		malachite_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_shovel");
-		malachite_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("malachite_hoe");
+			.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_pickaxe");
+		malachite_axe = new SimpleAxe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_axe");
+		malachite_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_shovel");
+		malachite_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolMalachite).setConfigEntry(Settings.malachiteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_hoe");
 		malachite_sword = new SimpleSword(Netherrocks.plugin, Content.toolMalachite)
 			.setConfigEntry(Settings.malachiteTools)
-			.setCreativeTab(TabHelper.combatTab())
+			.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 			.setUnlocalizedName("malachite_sword");
 		
 		illumenite_sword = new IllumeniteSword().setConfigEntry(Settings.fyriteTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("illumenite_sword");
 		
-		ashstone_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_pickaxe");
-		ashstone_axe = new SimpleAxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_axe");
-		ashstone_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_shovel");
-		ashstone_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("ashstone_hoe");
-		ashstone_sword = new SimpleSword(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("ashstone_sword");
+		ashstone_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("ashstone_pickaxe");
+		ashstone_axe = new SimpleAxe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("ashstone_axe");
+		ashstone_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("ashstone_shovel");
+		ashstone_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("ashstone_hoe");
+		ashstone_sword = new SimpleSword(Netherrocks.plugin, Content.toolAshstone).setConfigEntry(Settings.ashstoneTools).setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("ashstone_sword");
 		
-		dragonstone_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("dragonstone_pickaxe");
-		dragonstone_axe = new SimpleAxe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("dragonstone_axe");
-		dragonstone_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("dragonstone_shovel");
-		dragonstone_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("dragonstone_hoe");
-		dragonstone_sword = new SimpleSword(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("dragonstone_sword");
+		dragonstone_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("dragonstone_pickaxe");
+		dragonstone_axe = new SimpleAxe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("dragonstone_axe");
+		dragonstone_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("dragonstone_shovel");
+		dragonstone_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("dragonstone_hoe");
+		dragonstone_sword = new SimpleSword(Netherrocks.plugin, Content.toolDragonstone).setConfigEntry(Settings.dragonstoneTools).setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("dragonstone_sword");
 		
-		argonite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("argonite_pickaxe");
-		argonite_axe = new SimpleAxe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("argonite_axe");
-		argonite_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("argonite_shovel");
-		argonite_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab()).setUnlocalizedName("argonite_hoe");
-		argonite_sword = new SimpleSword(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("argonite_sword");
+		argonite_pickaxe = new SimplePickaxe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("argonite_pickaxe");
+		argonite_axe = new SimpleAxe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("argonite_axe");
+		argonite_shovel = new SimpleShovel(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("argonite_shovel");
+		argonite_hoe = new SimpleHoe(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin)).setUnlocalizedName("argonite_hoe");
+		argonite_sword = new SimpleSword(Netherrocks.plugin, Content.toolArgonite).setConfigEntry(Settings.argoniteTools).setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("argonite_sword");
 	} // end doTools()
 	
 	public static void doArmor() 
@@ -225,92 +226,92 @@ public class Content
 										Settings.fyriteEffect.asBoolean())
 			.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 			.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-			.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_helmet");
+			.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("fyrite_helmet");
 		fyrite_chestplate = new FyriteArmor(EntityEquipmentSlot.CHEST, 
 											Settings.fyriteEffect.asBoolean())
 			.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 			.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-			.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_chestplate");
+			.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("fyrite_chestplate");
 		fyrite_leggings = new FyriteArmor(EntityEquipmentSlot.LEGS, 
 										  Settings.fyriteEffect.asBoolean())
 				.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_leggings");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("fyrite_leggings");
 		fyrite_boots = new FyriteArmor(EntityEquipmentSlot.FEET, 
 										Settings.fyriteEffect.asBoolean())
 				.setConfigEntry(Settings.fyriteArmor).setType("fyrite")
 				.addToolTip("netherrocks.fyriteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("fyrite_boots");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("fyrite_boots");
 		
 		malachite_helmet = new MalachiteArmor(EntityEquipmentSlot.HEAD, 
 					Settings.malachiteEffect.asBoolean(), 
 					Settings.malachiteJumpBoost.asInt())
 				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_helmet");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_helmet");
 		malachite_chestplate = new MalachiteArmor(EntityEquipmentSlot.CHEST, 
 					Settings.malachiteEffect.asBoolean(), 
 					Settings.malachiteJumpBoost.asInt())
 				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_chestplate");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_chestplate");
 		malachite_leggings = new MalachiteArmor(EntityEquipmentSlot.LEGS, 
 				Settings.malachiteEffect.asBoolean(), 
 				Settings.malachiteJumpBoost.asInt())
 				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_leggings");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_leggings");
 		malachite_boots = new MalachiteArmor(EntityEquipmentSlot.FEET, 
 				Settings.malachiteEffect.asBoolean(), 
 				Settings.malachiteJumpBoost.asInt())
 				.setConfigEntry(Settings.malachiteArmor).setType("malachite")
 				.addToolTip("netherrocks.malachiteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("malachite_boots");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("malachite_boots");
 		
 		illumenite_helmet = new IllumeniteArmor(EntityEquipmentSlot.HEAD, 
 												Settings.illumeniteEffect.asBoolean())
 				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_helmet");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("illumenite_helmet");
 		illumenite_chestplate = new IllumeniteArmor(EntityEquipmentSlot.CHEST, 
 											Settings.illumeniteEffect.asBoolean())
 				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_chestplate");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("illumenite_chestplate");
 		illumenite_leggings = new IllumeniteArmor(EntityEquipmentSlot.LEGS, 
 								Settings.illumeniteEffect.asBoolean())
 				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_leggings");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("illumenite_leggings");
 		illumenite_boots = new IllumeniteArmor(EntityEquipmentSlot.FEET, 
 								Settings.illumeniteEffect.asBoolean())
 				.setConfigEntry(Settings.illumeniteArmor).setType("illumenite")
 				.addToolTip("netherrocks.illumeniteArmor.info", TextFormatting.GREEN)
-				.setCreativeTab(TabHelper.combatTab()).setUnlocalizedName("illumenite_boots");
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin)).setUnlocalizedName("illumenite_boots");
 		
 		dragonstone_helmet = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.HEAD)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("dragonstone_helmet");
 		dragonstone_chestplate = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("dragonstone_chestplate");
 		dragonstone_leggings = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("dragonstone_leggings");
 		dragonstone_boots = new SimpleArmor(Netherrocks.plugin,
 				Content.armorDragonstone, EntityEquipmentSlot.FEET)
 				.setConfigEntry(Settings.dragonstoneArmor)
 				.setType("dragonstone")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("dragonstone_boots");
 	} // end doArmor()
 	
