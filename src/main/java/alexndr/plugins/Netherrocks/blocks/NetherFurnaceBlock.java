@@ -6,6 +6,7 @@ import alexndr.api.content.blocks.SimpleFurnace;
 import alexndr.api.registry.ContentCategories;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.Netherrocks;
+import alexndr.plugins.Netherrocks.Settings;
 import alexndr.plugins.Netherrocks.helpers.NetherFurnaceGuiHandler;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.block.material.Material;
@@ -109,22 +110,9 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	public void setAdditionalProperties() 
 	{
 		super.setAdditionalProperties();
-		if(entry.getValueByName("NetherrackBurnTime") != null 
-				&& entry.getValueByName("NetherrackBurnTime").isActive())
-		{
-			NetherFurnaceBlock.netherrackBurnTime = Integer.parseInt(
-					entry.getValueByName("NetherrackBurnTime").getCurrentValue());
-		}
-		if(entry.getValueByName("FyriteBurnTime") != null 
-				&& entry.getValueByName("FyriteBurnTime").isActive())
-		{
-			NetherFurnaceBlock.fyriteBurnTime = Integer.parseInt(entry.getValueByName("FyriteBurnTime").getCurrentValue());
-		}
-		if(entry.getValueByName("BlazeRodBurnTime") != null 
-				&& entry.getValueByName("BlazeRodBurnTime").isActive())
-		{
-			NetherFurnaceBlock.blazeRodBurnTime = Integer.parseInt(entry.getValueByName("BlazeRodBurnTime").getCurrentValue());
-		}
+		NetherFurnaceBlock.netherrackBurnTime = Settings.netherrackBurnTime;
+		NetherFurnaceBlock.fyriteBurnTime = Settings.fyriteBurnTime;
+		NetherFurnaceBlock.blazeRodBurnTime = Settings.blazeRodBurnTime;
 	} // end setAdditionalProperties()
 
 	@Override

@@ -32,13 +32,12 @@ public class IllumeniteHandler implements IWeaponEffectHelper
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target,
 			EntityLivingBase attacker) 
 	{
-        attacker.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, Settings.illumeniteNVTime.asInt()));
-        attacker.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, Settings.illumeniteBlindnessTime.asInt()));
+        attacker.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, Settings.illumeniteNVTime));
+        attacker.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, Settings.illumeniteBlindnessTime));
         if(!(target instanceof EntityPlayer))
         {
         	target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 
-        			Settings.illumeniteSlowTime.asInt(), 
-        			Settings.illumeniteSlowLevel.asInt()));
+        			Settings.illumeniteSlowTime,Settings.illumeniteSlowLevel));
         }
 		return true;
 	} // end hitEntity
