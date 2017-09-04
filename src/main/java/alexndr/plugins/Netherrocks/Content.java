@@ -50,7 +50,7 @@ public class Content
 		setToolAndArmorStats();
 		
 		try {
-			doItems();
+			doItems(); // must be before doBlocks() as some items are dropped by blocks.
 			doBlocks();
 			doTools();
 			doArmor();
@@ -111,7 +111,9 @@ public class Content
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.ashstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("ashstone_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+				.setUnlocalizedName("ashstone_ore")
+				.setDropItem(true).setItemToDrop(ashstone_gem).setQuantityToDrop(1)
+				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Material.GLASS,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.illumeniteOre)
@@ -121,7 +123,9 @@ public class Content
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.dragonstoneOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("dragonstone_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+				.setDropItem(true).setItemToDrop(dragonstone_gem).setQuantityToDrop(1)
+				.setUnlocalizedName("dragonstone_ore")
+				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		argonite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.argoniteOre)
