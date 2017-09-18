@@ -31,12 +31,12 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
     }
 
     
-   public static int getItemBurnTime(ItemStack burnItem) 
+    public static int getItemBurnTime(ItemStack burnItem) 
     {
-        if (burnItem == null)
-        {
-            return 0;
-        }
+    	if (burnItem.isEmpty())
+    	{
+    		return 0;
+    	}
         else
         {
             Item item = burnItem.getItem();

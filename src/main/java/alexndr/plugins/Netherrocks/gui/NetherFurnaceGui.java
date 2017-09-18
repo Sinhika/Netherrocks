@@ -26,6 +26,10 @@ public class NetherFurnaceGui extends GuiContainer
         this.tileFurnace = iinv;
 	}
 	
+	public static ResourceLocation getGuiTexture() {
+		return furnaceGuiTextures;
+	}
+	
     @Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         String s = this.tileFurnace.getDisplayName().getUnformattedText();
