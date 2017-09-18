@@ -1,7 +1,6 @@
 package alexndr.plugins.Netherrocks.modsupport.jei;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +9,6 @@ import java.util.Set;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IJeiHelpers;
-import mezz.jei.api.ingredients.IIngredientRegistry;
 import mezz.jei.api.recipe.IStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -19,12 +17,11 @@ public final class NetherFuelRecipeMaker
 {
 	private NetherFuelRecipeMaker() {}
 
-	public static List<NetherFuelRecipe> getFuelRecipes(IIngredientRegistry ingredientRegistry, 
-													    IJeiHelpers helpers) 
+	public static List<NetherFuelRecipe> getFuelRecipes(IJeiHelpers helpers) 
 	{
 		IGuiHelper guiHelper = helpers.getGuiHelper();
 		IStackHelper stackHelper = helpers.getStackHelper();
-		List<ItemStack> fuelStacks = ingredientRegistry.getFuels(); // TODO -fix this?
+		List<ItemStack> fuelStacks = NetherFurnaceTileEntity.getFuels();
 
 		Set<String> oreDictNames = new HashSet<String>();
 		List<NetherFuelRecipe> fuelRecipes = new ArrayList<NetherFuelRecipe>(fuelStacks.size());
@@ -45,7 +42,7 @@ public final class NetherFuelRecipeMaker
 
 					oreDictNames.add(name);
 					List<ItemStack> oreDictFuels = OreDictionary.getOres(name);
-					Collection<ItemStack> oreDictFuelsSet = stackHelper.getAllSubtypes(oreDictFuels);
+					List<ItemStack> oreDictFuelsSet = stackHelper.getAllSubtypes(oreDictFuels);
 					removeNoBurnTime(oreDictFuelsSet);
 					if (oreDictFuels.isEmpty()) {
 						continue;
@@ -69,7 +66,7 @@ public final class NetherFuelRecipeMaker
 		return fuelRecipes;
 	} // end getFuelRecipes()
 	
-	private static void removeNoBurnTime(Collection<ItemStack> itemStacks) 
+	private static void removeNoBurnTime(List<ItemStack> itemStacks) 
 	{
 		Iterator<ItemStack> iterator = itemStacks.iterator();
 		while (iterator.hasNext()) {

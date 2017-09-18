@@ -99,7 +99,7 @@ repositories {
 
 dependencies {
   // compile against the JEI API
-  deobfCompile "mezz.jei:jei_${version_minecraft}:${jei_version}:api"
+  deobfCompile "mezz.jei:jei_${version_minecraft}:${jei_version}"
   // at runtime, use the full JEI jar
   runtime "mezz.jei:jei_${version_minecraft}:${jei_version}"
 }

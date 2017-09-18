@@ -1,5 +1,8 @@
 package alexndr.plugins.Netherrocks.tiles;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import alexndr.api.content.tiles.TileEntitySimpleFurnace;
 import alexndr.plugins.Netherrocks.Content;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
@@ -20,6 +23,8 @@ import net.minecraft.item.ItemTool;
  */
 public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 {
+	protected final static List<ItemStack> fuelstacks = new ArrayList<ItemStack>();
+	
     public NetherFurnaceTileEntity() 
     {
 		super("container.netherrocks_nether_furnace", 600, "netherrocks:nether_furnace_gui", 3);
@@ -47,6 +52,9 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
                  if (block == Blocks.NETHERRACK) {
                 	return NetherFurnaceBlock.netherrackBurnTime;
                 }
+                 else if (block == Content.fyrite_block) {
+                	 return NetherFurnaceBlock.fyriteBurnTime * 10;
+                 }
             }
 
             // allow fyrite tools to be burned, too.
@@ -73,6 +81,27 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 
 	} // end getItemBurnTime()
 
+    /**
+     * 
+     * @return a list of valid fuel items
+     */
+   public static List<ItemStack> getFuels()
+   {
+	   if (fuelstacks.isEmpty()) 
+	   {
+		   fuelstacks.add(new ItemStack(Blocks.NETHERRACK));
+		   fuelstacks.add(new ItemStack(Content.fyrite_ingot));
+		   fuelstacks.add(new ItemStack(Items.BLAZE_ROD));
+		   fuelstacks.add(new ItemStack(Items.BLAZE_POWDER));
+		   fuelstacks.add(new ItemStack(Content.fyrite_block));
+		   fuelstacks.add(new ItemStack(Content.fyrite_axe));
+		   fuelstacks.add(new ItemStack(Content.fyrite_pickaxe));
+		   fuelstacks.add(new ItemStack(Content.fyrite_shovel));
+		   fuelstacks.add(new ItemStack(Content.fyrite_sword));
+	   }
+	   return fuelstacks;
+   } // end getFuels()
+   
    @Override
    public boolean isItemValidForSlot(int index, ItemStack stack)
    {
