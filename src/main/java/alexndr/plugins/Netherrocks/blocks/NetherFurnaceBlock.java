@@ -31,9 +31,9 @@ public class NetherFurnaceBlock extends SimpleFurnace
 
 	public static int netherrackBurnTime = 200, fyriteBurnTime = 8000, blazeRodBurnTime = 2400;
 
-	public NetherFurnaceBlock(boolean isActive) 
+	public NetherFurnaceBlock(String name, boolean isActive) 
 	{
-		super(Netherrocks.plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
+		super(name, Netherrocks.plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
 	}
 	
 	@Override
@@ -57,9 +57,9 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	
     /* cut & pasted from BlockFurnace & modified per CompatBlock */
 	@Override
-	protected boolean clOnBlockActivated(World worldIn, BlockPos pos,
-			IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX,
-			float hitY, float hitZ) 
+	public boolean onBlockActivated(World worldIn, BlockPos pos, 
+						IBlockState state, EntityPlayer playerIn, EnumHand hand, 
+						EnumFacing facing, float hitX, float hitY, float hitZ) 
 	{
         if (worldIn.isRemote) {
             return true;

@@ -17,10 +17,9 @@ import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 public class FyriteShovel extends SimpleShovel 
 {
 
-	public FyriteShovel() 
+	public FyriteShovel(String name) 
 	{
-		super(Netherrocks.plugin, Content.toolFyrite);
-		// TODO Auto-generated constructor stub
+		super(name, Netherrocks.plugin, Content.toolFyrite);
 	}
 
 	@Override
@@ -33,7 +32,7 @@ public class FyriteShovel extends SimpleShovel
 	}
 
 	@Override
-	public EnumActionResult clOnItemUse(EntityPlayer playerIn,
+	public EnumActionResult onItemUse(EntityPlayer playerIn,
 			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
 			float hitX, float hitY, float hitZ) 
 	{
@@ -44,7 +43,7 @@ public class FyriteShovel extends SimpleShovel
 			return result;
 		}
 		else {
-			return super.clOnItemUse(playerIn, worldIn, pos, hand, facing, 
+			return super.onItemUse(playerIn, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		}
 	} // onItemUse()

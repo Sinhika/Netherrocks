@@ -32,7 +32,7 @@ public class Netherrocks
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
-		LogHelper.info(ModInfo.NAME, "Loading...");
+		LogHelper.info(ModInfo.ID, "Loading...");
 		proxy.PreInit(event);
 	}
 	
@@ -47,7 +47,7 @@ public class Netherrocks
 	public void postInit(FMLPostInitializationEvent event) 
 	{
 		proxy.PostInit(event);
-		LogHelper.info(ModInfo.NAME, "Loading Complete!");
+		LogHelper.info(ModInfo.ID, "Loading Complete!");
 	}
 
 } // end class

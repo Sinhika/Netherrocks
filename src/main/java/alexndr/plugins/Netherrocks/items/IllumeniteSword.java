@@ -9,11 +9,10 @@ import alexndr.plugins.Netherrocks.helpers.IllumeniteHandler;
 
 public class IllumeniteSword extends SimpleSword {
 
-	public IllumeniteSword() 
+	public IllumeniteSword(String name) 
 	{
-		super(Netherrocks.plugin, Content.toolIllumenite);
+		super(name, Netherrocks.plugin, Content.toolIllumenite);
 		addToolTip("netherrocks.illumenite_sword.info");
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

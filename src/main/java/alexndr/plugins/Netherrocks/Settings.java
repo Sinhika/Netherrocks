@@ -157,8 +157,6 @@ public class Settings
 		argoniteIngot = new ConfigItem("Argonite Ingot", ConfigHelper.CATEGORY_ITEM)
 						.setSmeltingXP(0.7F);
 		argoniteIngot.GetConfig(settings);
-        illumeniteRod = new ConfigItem("Illumenite Rod", ConfigHelper.CATEGORY_ITEM);
-        illumeniteRod.GetConfig(settings);
 	} // end configuredItems()
 
 	public static void configureOres() 
@@ -242,7 +240,7 @@ public class Settings
 	public static ConfigBlock fyriteBlock, malachiteBlock, ashstoneBlock, illumeniteBlock, dragonstoneBlock, argoniteBlock,
 								netherFurnace;
 	public static ConfigItem fyriteIngot, malachiteIngot, ashstoneGem, illumeniteIngot, dragonstoneGem, argoniteIngot, 
-								illumeniteRod, argoniteBucket;
+								argoniteBucket;
 	
 	public static ConfigTool fyriteTools, malachiteTools, ashstoneTools, illumeniteTools, dragonstoneTools, argoniteTools;
 	

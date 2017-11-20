@@ -16,8 +16,8 @@ import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 public class FyriteSword extends SimpleSword 
 {
 
-	public FyriteSword() {
-		super(Netherrocks.plugin, Content.toolFyrite);
+	public FyriteSword(String name) {
+		super(name, Netherrocks.plugin, Content.toolFyrite);
 		addToolTip("netherrocks.fyrite_sword.info");
 	}
 
@@ -30,18 +30,17 @@ public class FyriteSword extends SimpleSword
 	} // end hitEntity
 
 	@Override
-	public EnumActionResult clOnItemUse(EntityPlayer playerIn,
-			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
-			float hitX, float hitY, float hitZ) 
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
+										EnumFacing facing, float hitX, float hitY, float hitZ)	
 	{
 		EnumActionResult result 
-			= FyriteHandler.INSTANCE.onItemUse(playerIn, worldIn, pos, hand, facing, 
+			= FyriteHandler.INSTANCE.onItemUse(player, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		if (result != EnumActionResult.PASS) {
 			return result;
 		}
 		else {
-			return super.clOnItemUse(playerIn, worldIn, pos, hand, facing, 
+			return super.onItemUse(player, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		}
 	} // onItemUse()

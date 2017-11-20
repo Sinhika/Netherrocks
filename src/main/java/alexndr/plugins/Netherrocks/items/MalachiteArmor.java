@@ -15,9 +15,9 @@ public class MalachiteArmor extends SimpleArmor
 	protected boolean hasJumpBoost = true;
 	protected int jumpBoostFactor = 1;
 	
-	public MalachiteArmor(EntityEquipmentSlot slot, boolean hasJumpBoost, int jFactor) 
+	public MalachiteArmor(String name, EntityEquipmentSlot slot, boolean hasJumpBoost, int jFactor) 
 	{
-		super(Netherrocks.plugin, Content.armorMalachite, slot);
+		super(name, Netherrocks.plugin, Content.armorMalachite, slot);
 		this.hasJumpBoost = hasJumpBoost;
 		this.jumpBoostFactor = jFactor;
 	}

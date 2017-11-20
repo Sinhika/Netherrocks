@@ -10,9 +10,9 @@ public class IllumeniteArmor extends SimpleArmor
 {
 	protected boolean noFallDamage = true;
 	
-	public IllumeniteArmor(EntityEquipmentSlot slot, boolean noFallDamage) 
+	public IllumeniteArmor(String name, EntityEquipmentSlot slot, boolean noFallDamage) 
 	{
-		super(Netherrocks.plugin, Content.armorIllumenite, slot);
+		super(name, Netherrocks.plugin, Content.armorIllumenite, slot);
 		this.noFallDamage = noFallDamage;
 	}
 

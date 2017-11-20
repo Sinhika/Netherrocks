@@ -17,9 +17,9 @@ import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 public class FyritePickaxe extends SimplePickaxe 
 {
 
-	public FyritePickaxe() 
+	public FyritePickaxe(String name) 
 	{
-		super(Netherrocks.plugin, Content.toolFyrite);
+		super(name, Netherrocks.plugin, Content.toolFyrite);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class FyritePickaxe extends SimplePickaxe
 	}
 
 	@Override
-	public EnumActionResult clOnItemUse(EntityPlayer playerIn,
+	public EnumActionResult onItemUse(EntityPlayer playerIn,
 			World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
 			float hitX, float hitY, float hitZ) 
 	{
@@ -43,7 +43,7 @@ public class FyritePickaxe extends SimplePickaxe
 			return result;
 		}
 		else {
-			return super.clOnItemUse(playerIn, worldIn, pos, hand, facing, 
+			return super.onItemUse(playerIn, worldIn, pos, hand, facing, 
 					hitX, hitY, hitZ);
 		}
 	} // onItemUse()

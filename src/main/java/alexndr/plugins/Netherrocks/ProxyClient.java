@@ -1,24 +1,20 @@
 package alexndr.plugins.Netherrocks;
 
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import alexndr.api.helpers.game.RenderItemHelper;
 
+@Mod.EventBusSubscriber(Side.CLIENT)
 public class ProxyClient extends alexndr.plugins.Netherrocks.ProxyCommon 
 {
-	RenderItemHelper renderHelper = new RenderItemHelper(Netherrocks.plugin);
-	
 	@Override
 	public void PreInit(FMLPreInitializationEvent event)
 	{	
 		super.PreInit(event);
-		if(event.getSide() == Side.CLIENT) 
-		{
-			renderHelper.renderItemsAndBlocks();
-			renderHelper.renderItemStuff(event);
-		}
 	} // end PreInit
 
 	@Override
@@ -32,5 +28,12 @@ public class ProxyClient extends alexndr.plugins.Netherrocks.ProxyCommon
 	{
 		super.PostInit(event);
 	} // end PostInit()
+
+	@SubscribeEvent
+	public static void registerModels(ModelRegistryEvent event) 
+	{
+    	ModItems.registerModels();
+    	ModBlocks.registerModels();
+	}
 
 } // end class

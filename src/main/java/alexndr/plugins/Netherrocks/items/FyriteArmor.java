@@ -15,9 +15,9 @@ public class FyriteArmor extends SimpleArmor
 	protected boolean isFireproof = true;
 	
 	/** constructor */
-	public FyriteArmor(EntityEquipmentSlot slot, boolean isFireproof) 
+	public FyriteArmor(String name, EntityEquipmentSlot slot, boolean isFireproof) 
 	{
-		super(Netherrocks.plugin, Content.armorFyrite, slot);
+		super(name, Netherrocks.plugin, Content.armorFyrite, slot);
 		this.isFireproof = isFireproof;
 	}
 
