@@ -18,36 +18,36 @@ public class ModBlocks
 	// ORES
 	public static SimpleBlock fyrite_ore = 
 			new SimpleBlock("fyrite_ore", Netherrocks.plugin, Material.ROCK, 
-							ContentCategories.Block.ORE);
+							ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	public static SimpleBlock malachite_ore = 
 			new SimpleBlock("malachite_ore", Netherrocks.plugin, Material.ROCK, 
-					ContentCategories.Block.ORE);
+					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	public static SimpleBlock ashstone_ore = 
 			new SimpleBlock("ashstone_ore", Netherrocks.plugin, Material.ROCK, 
-					ContentCategories.Block.ORE);
+					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	public static SimpleBlock illumenite_ore = 
 			new SimpleBlock("illumenite_ore", Netherrocks.plugin, Material.GLASS, 
-					ContentCategories.Block.ORE);
+					ContentCategories.Block.ORE).setStepSound(SoundType.GLASS);
 	public static SimpleBlock dragonstone_ore = 
 			new SimpleBlock("dragonstone_ore", Netherrocks.plugin, Material.ROCK, 
-					ContentCategories.Block.ORE);
+					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	public static SimpleBlock argonite_ore = 
 			new SimpleBlock("argonite_ore", Netherrocks.plugin, Material.ROCK, 
-					ContentCategories.Block.ORE);
+					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	
 	// STORAGE BLOCKS
 	public static SimpleBlock argonite_block = new SimpleBlock("argonite_block", Netherrocks.plugin, Material.IRON,
-			ContentCategories.Block.GENERAL);
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
 	public static SimpleBlock fyrite_block = new SimpleBlock("fyrite_block", Netherrocks.plugin, Material.IRON,
-			ContentCategories.Block.GENERAL);
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
 	public static SimpleBlock malachite_block = new SimpleBlock("malachite_block", Netherrocks.plugin, Material.IRON,
-			ContentCategories.Block.GENERAL);
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
 	public static SimpleBlock ashstone_block = new SimpleBlock("ashstone_block", Netherrocks.plugin, Material.ROCK,
-			ContentCategories.Block.GENERAL);
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.STONE);
 	public static SimpleBlock illumenite_block = new SimpleBlock("illumenite_block", Netherrocks.plugin, Material.GLASS,
-			ContentCategories.Block.GENERAL);
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.GLASS);
 	public static SimpleBlock dragonstone_block = new SimpleBlock("dragonstone_block", Netherrocks.plugin,
-			Material.ROCK, ContentCategories.Block.GENERAL);
+			Material.ROCK, ContentCategories.Block.GENERAL).setStepSound(SoundType.STONE);
 	
 	// MACHINES
 	public static NetherFurnaceBlock nether_furnace
@@ -58,54 +58,53 @@ public class ModBlocks
 	public static void configureBlocks() 
 	{
 		if (Settings.fyriteOre.isEnabled()) {
-			fyrite_ore.setConfigEntry(Settings.fyriteOre).setStepSound(SoundType.STONE)
+			fyrite_ore.setConfigEntry(Settings.fyriteOre)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.malachiteOre.isEnabled()) {
-			malachite_ore.setConfigEntry(Settings.malachiteOre).setStepSound(SoundType.STONE)
+			malachite_ore.setConfigEntry(Settings.malachiteOre)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.ashstoneOre.isEnabled()) {
-			ashstone_ore.setConfigEntry(Settings.ashstoneOre).setStepSound(SoundType.STONE).setDropItem(true)
+			ashstone_ore.setConfigEntry(Settings.ashstoneOre).setDropItem(true)
 					.setItemToDrop(ModItems.ashstone_gem).setQuantityToDrop(1)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.illumeniteOre.isEnabled()) {
-			illumenite_ore.setConfigEntry(Settings.illumeniteOre).setStepSound(SoundType.GLASS)
+			illumenite_ore.setConfigEntry(Settings.illumeniteOre)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.dragonstoneOre.isEnabled()) {
-			dragonstone_ore.setConfigEntry(Settings.dragonstoneOre).setStepSound(SoundType.STONE).setDropItem(true)
+			dragonstone_ore.setConfigEntry(Settings.dragonstoneOre).setDropItem(true)
 					.setItemToDrop(ModItems.dragonstone_gem).setQuantityToDrop(1)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.argoniteOre.isEnabled()) {
-			argonite_ore.setConfigEntry(Settings.argoniteOre).setStepSound(SoundType.STONE)
+			argonite_ore.setConfigEntry(Settings.argoniteOre)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.argoniteBlock.isEnabled()) {
-			argonite_block.setConfigEntry(Settings.argoniteBlock).setStepSound(SoundType.METAL)
+			argonite_block.setConfigEntry(Settings.argoniteBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.fyriteBlock.isEnabled()) {
-			fyrite_block.setConfigEntry(Settings.fyriteBlock).setStepSound(SoundType.METAL)
+			fyrite_block.setConfigEntry(Settings.fyriteBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.malachiteBlock.isEnabled()) {
-			malachite_block.setConfigEntry(Settings.malachiteBlock).setStepSound(SoundType.METAL)
+			malachite_block.setConfigEntry(Settings.malachiteBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.ashstoneBlock.isEnabled()) { 
-			ashstone_block.setConfigEntry(Settings.ashstoneBlock).setStepSound(SoundType.STONE)
+			ashstone_block.setConfigEntry(Settings.ashstoneBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.illumeniteBlock.isEnabled()) {
-			illumenite_block.setConfigEntry(Settings.illumeniteBlock).setStepSound(SoundType.GLASS)
+			illumenite_block.setConfigEntry(Settings.illumeniteBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.dragonstoneBlock.isEnabled()) {
 			dragonstone_block.setConfigEntry(Settings.dragonstoneBlock)
-					.setStepSound(SoundType.STONE)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.netherFurnace.isEnabled()) {

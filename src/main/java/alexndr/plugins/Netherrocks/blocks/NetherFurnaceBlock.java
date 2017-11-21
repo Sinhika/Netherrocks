@@ -9,6 +9,7 @@ import alexndr.plugins.Netherrocks.Netherrocks;
 import alexndr.plugins.Netherrocks.Settings;
 import alexndr.plugins.Netherrocks.helpers.NetherFurnaceGuiHandler;
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,6 +35,7 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	public NetherFurnaceBlock(String name, boolean isActive) 
 	{
 		super(name, Netherrocks.plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
+		this.setStepSound(SoundType.STONE);
 	}
 	
 	@Override
