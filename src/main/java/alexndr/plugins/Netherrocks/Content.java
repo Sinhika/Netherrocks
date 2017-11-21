@@ -2,7 +2,6 @@ package alexndr.plugins.Netherrocks;
 
 import alexndr.api.helpers.game.ArmorMaterialHelper;
 import alexndr.api.logger.LogHelper;
-import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -33,10 +32,6 @@ public class Content
 			ModItems.configureTools();
 			ModItems.configureArmor();
 //			doAchievements();
-			
-			//Registers
-			GameRegistry.registerTileEntity(NetherFurnaceTileEntity.class, 
-											"netherrocks_nether_furnace");
 			
 			LogHelper.verbose("Netherrocks",
 					"Content pre-init completed successfully");

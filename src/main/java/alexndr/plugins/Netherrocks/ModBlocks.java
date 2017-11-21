@@ -22,86 +22,97 @@ public class ModBlocks
 	public static SimpleBlock malachite_ore = 
 			new SimpleBlock("malachite_ore", Netherrocks.plugin, Material.ROCK, 
 					ContentCategories.Block.ORE);
-	public static SimpleBlock ashstone_ore;
-	public static SimpleBlock illumenite_ore;
-	public static SimpleBlock dragonstone_ore;
-	public static SimpleBlock argonite_ore;
+	public static SimpleBlock ashstone_ore = 
+			new SimpleBlock("ashstone_ore", Netherrocks.plugin, Material.ROCK, 
+					ContentCategories.Block.ORE);
+	public static SimpleBlock illumenite_ore = 
+			new SimpleBlock("illumenite_ore", Netherrocks.plugin, Material.GLASS, 
+					ContentCategories.Block.ORE);
+	public static SimpleBlock dragonstone_ore = 
+			new SimpleBlock("dragonstone_ore", Netherrocks.plugin, Material.ROCK, 
+					ContentCategories.Block.ORE);
+	public static SimpleBlock argonite_ore = 
+			new SimpleBlock("argonite_ore", Netherrocks.plugin, Material.ROCK, 
+					ContentCategories.Block.ORE);
 	
 	// STORAGE BLOCKS
-	public static SimpleBlock fyrite_block;
-	public static SimpleBlock malachite_block;
-	public static SimpleBlock ashstone_block;
-	public static SimpleBlock illumenite_block;
-	public static SimpleBlock dragonstone_block;
-	public static SimpleBlock argonite_block;
+	public static SimpleBlock argonite_block = new SimpleBlock("argonite_block", Netherrocks.plugin, Material.IRON,
+			ContentCategories.Block.GENERAL);
+	public static SimpleBlock fyrite_block = new SimpleBlock("fyrite_block", Netherrocks.plugin, Material.IRON,
+			ContentCategories.Block.GENERAL);
+	public static SimpleBlock malachite_block = new SimpleBlock("malachite_block", Netherrocks.plugin, Material.IRON,
+			ContentCategories.Block.GENERAL);
+	public static SimpleBlock ashstone_block = new SimpleBlock("ashstone_block", Netherrocks.plugin, Material.ROCK,
+			ContentCategories.Block.GENERAL);
+	public static SimpleBlock illumenite_block = new SimpleBlock("illumenite_block", Netherrocks.plugin, Material.GLASS,
+			ContentCategories.Block.GENERAL);
+	public static SimpleBlock dragonstone_block = new SimpleBlock("dragonstone_block", Netherrocks.plugin,
+			Material.ROCK, ContentCategories.Block.GENERAL);
 	
 	// MACHINES
-	public static NetherFurnaceBlock nether_furnace_lit;
-	public static NetherFurnaceBlock nether_furnace;
+	public static NetherFurnaceBlock nether_furnace
+			= new NetherFurnaceBlock("nether_furnace", false);
+	public static NetherFurnaceBlock nether_furnace_lit  
+			= new NetherFurnaceBlock("nether_furnace_lit", true);
 
 	public static void configureBlocks() 
 	{
-		fyrite_ore.setConfigEntry(Settings.fyriteOre).setStepSound(SoundType.STONE)
-				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		malachite_ore.setConfigEntry(Settings.malachiteOre).setStepSound(SoundType.STONE)
-				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		ashstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK, ContentCategories.Block.ORE)
-				.setConfigEntry(Settings.ashstoneOre).setStepSound(SoundType.STONE).setUnlocalizedName("ashstone_ore")
-				.setDropItem(true).setItemToDrop(ashstone_gem).setQuantityToDrop(1)
-				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		illumenite_ore = new SimpleBlock(Netherrocks.plugin, Material.GLASS, ContentCategories.Block.ORE)
-				.setConfigEntry(Settings.illumeniteOre).setStepSound(SoundType.GLASS)
-				.setUnlocalizedName("illumenite_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		dragonstone_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK, ContentCategories.Block.ORE)
-				.setConfigEntry(Settings.dragonstoneOre).setStepSound(SoundType.STONE).setDropItem(true)
-				.setItemToDrop(dragonstone_gem).setQuantityToDrop(1).setUnlocalizedName("dragonstone_ore")
-				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		argonite_ore = new SimpleBlock(Netherrocks.plugin, Material.ROCK, ContentCategories.Block.ORE)
-				.setConfigEntry(Settings.argoniteOre).setStepSound(SoundType.STONE).setUnlocalizedName("argonite_ore")
-				.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
-		//		
-//		fyrite_block = new SimpleBlock(Netherrocks.plugin, Material.IRON,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.fyriteBlock)
-//				.setStepSound(SoundType.METAL)
-//				.setUnlocalizedName("fyrite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		malachite_block = new SimpleBlock(Netherrocks.plugin,
-//				Material.IRON,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.malachiteBlock)
-//				.setStepSound(SoundType.METAL)
-//				.setUnlocalizedName("malachite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		ashstone_block = new SimpleBlock(Netherrocks.plugin,
-//				Material.ROCK,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.ashstoneBlock)
-//				.setStepSound(SoundType.STONE)
-//				.setUnlocalizedName("ashstone_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		illumenite_block = new SimpleBlock(Netherrocks.plugin,
-//				Material.GLASS,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.illumeniteBlock)
-//				.setStepSound(SoundType.GLASS)
-//				.setUnlocalizedName("illumenite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		dragonstone_block = new SimpleBlock(Netherrocks.plugin,
-//				Material.ROCK,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.dragonstoneBlock)
-//				.setStepSound(SoundType.STONE)
-//				.setUnlocalizedName("dragonstone_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		argonite_block = new SimpleBlock(Netherrocks.plugin,
-//				Material.IRON,
-//				ContentCategories.Block.GENERAL)
-//				.setConfigEntry(Settings.argoniteBlock)
-//				.setStepSound(SoundType.METAL)
-//				.setUnlocalizedName("argonite_block").setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
-//		
-//		nether_furnace = new NetherFurnaceBlock(false)
-//				.setConfigEntry(Settings.netherFurnace)
-//				.setUnlocalizedName("nether_furnace").setCreativeTab(TabHelper.redstoneTab(SimpleCoreAPI.plugin));
-//		nether_furnace_lit = new NetherFurnaceBlock(true)
-//				.setConfigEntry(Settings.netherFurnace)
-//				.setUnlocalizedName("nether_furnace_lit");
+		if (Settings.fyriteOre.isEnabled()) {
+			fyrite_ore.setConfigEntry(Settings.fyriteOre).setStepSound(SoundType.STONE)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.malachiteOre.isEnabled()) {
+			malachite_ore.setConfigEntry(Settings.malachiteOre).setStepSound(SoundType.STONE)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.ashstoneOre.isEnabled()) {
+			ashstone_ore.setConfigEntry(Settings.ashstoneOre).setStepSound(SoundType.STONE).setDropItem(true)
+					.setItemToDrop(ModItems.ashstone_gem).setQuantityToDrop(1)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.illumeniteOre.isEnabled()) {
+			illumenite_ore.setConfigEntry(Settings.illumeniteOre).setStepSound(SoundType.GLASS)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.dragonstoneOre.isEnabled()) {
+			dragonstone_ore.setConfigEntry(Settings.dragonstoneOre).setStepSound(SoundType.STONE).setDropItem(true)
+					.setItemToDrop(ModItems.dragonstone_gem).setQuantityToDrop(1)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.argoniteOre.isEnabled()) {
+			argonite_ore.setConfigEntry(Settings.argoniteOre).setStepSound(SoundType.STONE)
+					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.argoniteBlock.isEnabled()) {
+			argonite_block.setConfigEntry(Settings.argoniteBlock).setStepSound(SoundType.METAL)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.fyriteBlock.isEnabled()) {
+			fyrite_block.setConfigEntry(Settings.fyriteBlock).setStepSound(SoundType.METAL)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.malachiteBlock.isEnabled()) {
+			malachite_block.setConfigEntry(Settings.malachiteBlock).setStepSound(SoundType.METAL)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.ashstoneBlock.isEnabled()) { 
+			ashstone_block.setConfigEntry(Settings.ashstoneBlock).setStepSound(SoundType.STONE)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.illumeniteBlock.isEnabled()) {
+			illumenite_block.setConfigEntry(Settings.illumeniteBlock).setStepSound(SoundType.GLASS)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.dragonstoneBlock.isEnabled()) {
+			dragonstone_block.setConfigEntry(Settings.dragonstoneBlock)
+					.setStepSound(SoundType.STONE)
+					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
+		}
+		if (Settings.netherFurnace.isEnabled()) {
+			nether_furnace.setConfigEntry(Settings.netherFurnace)
+					.setCreativeTab(TabHelper.redstoneTab(SimpleCoreAPI.plugin));
+			nether_furnace_lit.setConfigEntry(Settings.netherFurnace);
+		}
 	} // end configureBlocks()
 
 	/**

@@ -4,11 +4,11 @@ import alexndr.plugins.Netherrocks.gui.NetherFurnaceGui;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawableAnimated;
 import mezz.jei.api.gui.IDrawableStatic;
-import mezz.jei.api.recipe.BlankRecipeCategory;
+import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class NetherFurnaceRecipeCategory<T extends IRecipeWrapper> extends BlankRecipeCategory<T> 
+public abstract class NetherFurnaceRecipeCategory<T extends IRecipeWrapper> implements IRecipeCategory<IRecipeWrapper> 
 {
 	protected static final int inputSlot = 0;
 	protected static final int fuelSlot = 1;

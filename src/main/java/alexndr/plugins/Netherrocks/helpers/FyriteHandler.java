@@ -7,11 +7,11 @@ import alexndr.api.helpers.game.IHarvestEffectHelper;
 import alexndr.api.helpers.game.IWeaponEffectHelper;
 import alexndr.api.helpers.game.ToolHelper;
 import alexndr.plugins.Netherrocks.Content;
-import mcjty.lib.tools.ItemStackTools;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
@@ -52,12 +52,12 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 		Random random = event.getWorld().rand;
 		// check if tool exists and is a fyrite tool.
 		ItemStack tool = player.getHeldItem(player.getActiveHand());
-		if (ItemStackTools.isEmpty(tool)) return;
+		if (tool.isEmpty()) return;
 		Item toolItem = tool.getItem();
 		if (! (toolItem instanceof ItemTool)) return;
 		
 //		LogHelper.info("this tool is a tool");
-		if ( ((ItemTool) tool.getItem()).getToolMaterial() == Content.toolFyrite ) 
+		if ( ((ItemTool) tool.getItem()).getToolMaterialName().equals(Content.toolFyrite.toString())) 
 		{
 //			LogHelper.info("this tool is made of fyrite");
 			IBlockState state = event.getState();
@@ -73,9 +73,9 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 					ItemStack drop = dropList.next();
 					// is there a smelted version of this drop?
 					ItemStack smelted = FurnaceRecipes.instance().getSmeltingResult(drop);
-					if (ItemStackTools.isValid(smelted) ) 
+					if (!smelted.isEmpty() ) 
 					{
-						smelted = ItemStackTools.safeCopy(smelted);
+						smelted = smelted.copy();
 						
 						// apply fortune enchantment to smelting results
 						int fortune = EnchantmentHelper.getEnchantmentLevel(
@@ -83,9 +83,9 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 						if (fortune > 0) 
 						{
 						//	smelted.setCount(smelted.getCount() *random.nextInt(fortune + 1) + 1);
-							int amount = ItemStackTools.getStackSize(smelted) * random.nextInt(fortune+1) + 1;
-							amount -= ItemStackTools.getStackSize(smelted);
-							ItemStackTools.incStackSize(smelted, amount);
+							int amount = smelted.getCount() * random.nextInt(fortune+1) + 1;
+							amount -= smelted.getCount();
+							smelted.grow(amount);
 						}
 						// replace original drop stack with smelted results.
 						dropList.set(smelted);
@@ -159,7 +159,7 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 		BlockPos adjacentPos = pos;
 		ItemStack stack = playerIn.getHeldItem(hand);
 		
-		if (ItemStackTools.isEmpty(stack)) {
+		if (stack.isEmpty()) {
             return EnumActionResult.PASS;
 		}
 		switch (facing) 
@@ -192,7 +192,7 @@ public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 		{
 			playerIn.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1.0F, 1.0F);
 			worldIn.setBlockState(adjacentPos, Blocks.FIRE.getDefaultState());
-			stack.attemptDamageItem(1, worldIn.rand);
+			stack.attemptDamageItem(1, worldIn.rand, (EntityPlayerMP) playerIn);
 		}
 		return EnumActionResult.PASS;
 	} // end onItemUse()

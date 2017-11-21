@@ -12,6 +12,7 @@ import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
 import alexndr.plugins.Netherrocks.helpers.FyriteHandler;
 import alexndr.plugins.Netherrocks.helpers.IllumeniteHandler;
+import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 @Mod.EventBusSubscriber
@@ -107,6 +109,12 @@ public class ProxyCommon
 	public static void registerBlocks(RegistryEvent.Register<Block> event) 
 	{
     	 ModBlocks.register(event.getRegistry());
+    	 
+    	 //Registers
+    	 if (Settings.netherFurnace.isEnabled()) {
+    		 GameRegistry.registerTileEntity(NetherFurnaceTileEntity.class, 
+    				 "netherrocks_nether_furnace");
+    	 }
 	} // end registerBlocks()
 
 	@SubscribeEvent

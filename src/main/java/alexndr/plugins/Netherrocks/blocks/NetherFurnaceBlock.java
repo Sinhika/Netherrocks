@@ -4,7 +4,7 @@ import java.util.Random;
 
 import alexndr.api.content.blocks.SimpleFurnace;
 import alexndr.api.registry.ContentCategories;
-import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.ModBlocks;
 import alexndr.plugins.Netherrocks.Netherrocks;
 import alexndr.plugins.Netherrocks.Settings;
 import alexndr.plugins.Netherrocks.helpers.NetherFurnaceGuiHandler;
@@ -42,17 +42,17 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	}
 
 	public static SimpleFurnace getUnlit_furnace() {
-		return (SimpleFurnace) Content.nether_furnace;
+		return (SimpleFurnace) ModBlocks.nether_furnace;
 	}
 
 	public static SimpleFurnace getLit_furnace() {
-		return (SimpleFurnace) Content.nether_furnace_lit;
+		return (SimpleFurnace) ModBlocks.nether_furnace_lit;
 	}
 
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(Content.nether_furnace);
+		return Item.getItemFromBlock(ModBlocks.nether_furnace);
 	}
 	
     /* cut & pasted from BlockFurnace & modified per CompatBlock */
@@ -118,7 +118,7 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ItemStack getItem(World arg0, BlockPos arg1, IBlockState arg2) {
-		return new ItemStack(Item.getItemFromBlock(Content.nether_furnace));
+		return new ItemStack(Item.getItemFromBlock(ModBlocks.nether_furnace));
 	}
 	
 } // end class

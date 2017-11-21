@@ -8,6 +8,7 @@ import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import mezz.jei.config.Constants;
 import mezz.jei.util.Translator;
 import net.minecraft.util.ResourceLocation;
@@ -58,13 +59,12 @@ public class NetherFurnaceFuelCategory extends NetherFurnaceRecipeCategory<Nethe
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, NetherFuelRecipe recipeWrapper, 
-							IIngredients ingredients) 
+	public void setRecipe(IRecipeLayout recipeLayout, IRecipeWrapper recipeWrapper, 
+			IIngredients ingredients) 
 	{
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
-
 		guiItemStacks.init(fuelSlot, true, 0, 14);
 		guiItemStacks.set(ingredients);
-	} // end setRecipe()
+	}
 
 } // end class

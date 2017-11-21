@@ -3,15 +3,15 @@ package alexndr.plugins.Netherrocks.inventory;
 import javax.annotation.Nullable;
 
 import alexndr.plugins.Netherrocks.tiles.NetherFurnaceTileEntity;
-import mcjty.lib.compat.CompatSlot;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 /**
  * @author AleXndrTheGr8st
  */
-public class SlotNetherFuel extends CompatSlot
+public class SlotNetherFuel extends Slot
 {
 	public SlotNetherFuel(IInventory iinv, int index, int x, int y) {
 		super(iinv, index, x, y);

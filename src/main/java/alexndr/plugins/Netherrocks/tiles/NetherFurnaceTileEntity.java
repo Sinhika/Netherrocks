@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import alexndr.api.content.tiles.TileEntitySimpleFurnace;
-import alexndr.plugins.Netherrocks.Content;
+import alexndr.plugins.Netherrocks.ModBlocks;
+import alexndr.plugins.Netherrocks.ModItems;
 import alexndr.plugins.Netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.Netherrocks.inventory.SlotNetherFuel;
-import mcjty.lib.tools.ItemStackTools;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -52,7 +52,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
                  if (block == Blocks.NETHERRACK) {
                 	return NetherFurnaceBlock.netherrackBurnTime;
                 }
-                 else if (block == Content.fyrite_block) {
+                 else if (block == ModBlocks.fyrite_block) {
                 	 return NetherFurnaceBlock.fyriteBurnTime * 10;
                  }
             }
@@ -71,7 +71,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
             	return NetherFurnaceBlock.fyriteBurnTime * 2/3;
             }
             
-            if (item == Content.fyrite_ingot) return NetherFurnaceBlock.fyriteBurnTime;
+            if (item == ModItems.fyrite_ingot) return NetherFurnaceBlock.fyriteBurnTime;
             if (item == Items.BLAZE_ROD) return NetherFurnaceBlock.blazeRodBurnTime;
             if (item == Items.BLAZE_POWDER) return NetherFurnaceBlock.blazeRodBurnTime / 3;
             
@@ -90,14 +90,14 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 	   if (fuelstacks.isEmpty()) 
 	   {
 		   fuelstacks.add(new ItemStack(Blocks.NETHERRACK));
-		   fuelstacks.add(new ItemStack(Content.fyrite_ingot));
+		   fuelstacks.add(new ItemStack(ModItems.fyrite_ingot));
 		   fuelstacks.add(new ItemStack(Items.BLAZE_ROD));
 		   fuelstacks.add(new ItemStack(Items.BLAZE_POWDER));
-		   fuelstacks.add(new ItemStack(Content.fyrite_block));
-		   fuelstacks.add(new ItemStack(Content.fyrite_axe));
-		   fuelstacks.add(new ItemStack(Content.fyrite_pickaxe));
-		   fuelstacks.add(new ItemStack(Content.fyrite_shovel));
-		   fuelstacks.add(new ItemStack(Content.fyrite_sword));
+		   fuelstacks.add(new ItemStack(ModBlocks.fyrite_block));
+		   fuelstacks.add(new ItemStack(ModItems.fyrite_axe));
+		   fuelstacks.add(new ItemStack(ModItems.fyrite_pickaxe));
+		   fuelstacks.add(new ItemStack(ModItems.fyrite_shovel));
+		   fuelstacks.add(new ItemStack(ModItems.fyrite_sword));
 	   }
 	   return fuelstacks;
    } // end getFuels()
@@ -142,7 +142,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
         if (!this.getWorld().isRemote)
         {
             ItemStack itemstack = (ItemStack)this.getStackInSlot(NDX_FUEL_SLOT);
-            if (ItemStackTools.isValid(itemstack)) {
+            if (!itemstack.isEmpty()) {
                 burnTime = NetherFurnaceTileEntity.getItemBurnTime(itemstack);
             }
             flag1 = default_cooking_update(flag1, itemstack, burnTime);
