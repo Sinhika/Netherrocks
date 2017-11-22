@@ -16,45 +16,50 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModBlocks 
 {
 	// ORES
-	public static SimpleBlock fyrite_ore = 
-			new SimpleBlock("fyrite_ore", Netherrocks.plugin, Material.ROCK, 
-							ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
-	public static SimpleBlock malachite_ore = 
-			new SimpleBlock("malachite_ore", Netherrocks.plugin, Material.ROCK, 
+	public static SimpleBlock argonite_ore = 
+			new SimpleBlock("argonite_ore", Netherrocks.plugin, Material.ROCK, 
 					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	public static SimpleBlock ashstone_ore = 
 			new SimpleBlock("ashstone_ore", Netherrocks.plugin, Material.ROCK, 
 					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
-	public static SimpleBlock illumenite_ore = 
-			new SimpleBlock("illumenite_ore", Netherrocks.plugin, Material.GLASS, 
-					ContentCategories.Block.ORE).setStepSound(SoundType.GLASS);
 	public static SimpleBlock dragonstone_ore = 
 			new SimpleBlock("dragonstone_ore", Netherrocks.plugin, Material.ROCK, 
 					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
-	public static SimpleBlock argonite_ore = 
-			new SimpleBlock("argonite_ore", Netherrocks.plugin, Material.ROCK, 
+	public static SimpleBlock fyrite_ore = 
+			new SimpleBlock("fyrite_ore", Netherrocks.plugin, Material.ROCK, 
+							ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
+	public static SimpleBlock illumenite_ore = 
+			new SimpleBlock("illumenite_ore", Netherrocks.plugin, Material.GLASS, 
+					ContentCategories.Block.ORE).setStepSound(SoundType.GLASS);
+	public static SimpleBlock malachite_ore = 
+			new SimpleBlock("malachite_ore", Netherrocks.plugin, Material.ROCK, 
 					ContentCategories.Block.ORE).setStepSound(SoundType.STONE);
 	
 	// STORAGE BLOCKS
 	public static SimpleBlock argonite_block = new SimpleBlock("argonite_block", Netherrocks.plugin, Material.IRON,
 			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
-	public static SimpleBlock fyrite_block = new SimpleBlock("fyrite_block", Netherrocks.plugin, Material.IRON,
-			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
-	public static SimpleBlock malachite_block = new SimpleBlock("malachite_block", Netherrocks.plugin, Material.IRON,
-			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
 	public static SimpleBlock ashstone_block = new SimpleBlock("ashstone_block", Netherrocks.plugin, Material.ROCK,
 			ContentCategories.Block.GENERAL).setStepSound(SoundType.STONE);
-	public static SimpleBlock illumenite_block = new SimpleBlock("illumenite_block", Netherrocks.plugin, Material.GLASS,
-			ContentCategories.Block.GENERAL).setStepSound(SoundType.GLASS);
 	public static SimpleBlock dragonstone_block = new SimpleBlock("dragonstone_block", Netherrocks.plugin,
 			Material.ROCK, ContentCategories.Block.GENERAL).setStepSound(SoundType.STONE);
+	public static SimpleBlock fyrite_block = new SimpleBlock("fyrite_block", Netherrocks.plugin, Material.IRON,
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
+	public static SimpleBlock illumenite_block = new SimpleBlock("illumenite_block", Netherrocks.plugin, Material.GLASS,
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.GLASS);
+	public static SimpleBlock malachite_block = new SimpleBlock("malachite_block", Netherrocks.plugin, Material.IRON,
+			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
 	
 	// MACHINES
 	public static NetherFurnaceBlock nether_furnace
-			= new NetherFurnaceBlock("nether_furnace", false);
-	public static NetherFurnaceBlock nether_furnace_lit  
-			= new NetherFurnaceBlock("nether_furnace_lit", true);
+			= new NetherFurnaceBlock("nether_furnace", Netherrocks.plugin, false)
+								.setStepSound(SoundType.STONE);
+	public static NetherFurnaceBlock nether_furnace_lit
+			= new NetherFurnaceBlock("nether_furnace_lit", Netherrocks.plugin, true)
+								.setStepSound(SoundType.STONE);
 
+	/**
+	 * configure mod blocks from config settings.
+	 */
 	public static void configureBlocks() 
 	{
 		if (Settings.fyriteOre.isEnabled()) {
@@ -83,6 +88,7 @@ public class ModBlocks
 			argonite_ore.setConfigEntry(Settings.argoniteOre)
 					.setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		}
+		
 		if (Settings.argoniteBlock.isEnabled()) {
 			argonite_block.setConfigEntry(Settings.argoniteBlock)
 					.setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin));
@@ -121,12 +127,13 @@ public class ModBlocks
 	 */
 	public static void register(IForgeRegistry<Block> registry) 
 	{
-		if (Settings.fyriteOre.isEnabled()) registry.register(fyrite_ore);
-		if (Settings.malachiteOre.isEnabled()) registry.register(malachite_ore);
-		if (Settings.argoniteOre.isEnabled()) registry.register(argonite_block);
+		if (Settings.argoniteOre.isEnabled()) registry.register(argonite_ore);
 		if (Settings.ashstoneOre.isEnabled()) registry.register(ashstone_ore);
 		if (Settings.dragonstoneOre.isEnabled()) registry.register(dragonstone_ore);
+		if (Settings.fyriteOre.isEnabled()) registry.register(fyrite_ore);
 		if (Settings.illumeniteOre.isEnabled()) registry.register(illumenite_ore);
+		if (Settings.malachiteOre.isEnabled()) registry.register(malachite_ore);
+		
 		if (Settings.argoniteBlock.isEnabled()) registry.register(argonite_block);
 		if (Settings.ashstoneBlock.isEnabled()) registry.register(ashstone_block);
 		if (Settings.dragonstoneBlock.isEnabled()) registry.register(dragonstone_block);
@@ -146,12 +153,13 @@ public class ModBlocks
 	 */
 	public static void registerItemBlocks(IForgeRegistry<Item> registry) 
 	{
-		if (Settings.fyriteOre.isEnabled()) registry.register(fyrite_ore.createItemBlock());
-		if (Settings.malachiteOre.isEnabled()) registry.register(malachite_ore.createItemBlock());
 		if (Settings.argoniteOre.isEnabled()) registry.register(argonite_block.createItemBlock());
 		if (Settings.ashstoneOre.isEnabled()) registry.register(ashstone_ore.createItemBlock());
 		if (Settings.dragonstoneOre.isEnabled()) registry.register(dragonstone_ore.createItemBlock());
+		if (Settings.fyriteOre.isEnabled()) registry.register(fyrite_ore.createItemBlock());
 		if (Settings.illumeniteOre.isEnabled()) registry.register(illumenite_ore.createItemBlock());
+		if (Settings.malachiteOre.isEnabled()) registry.register(malachite_ore.createItemBlock());
+		
 		if (Settings.argoniteBlock.isEnabled()) registry.register(argonite_block.createItemBlock());
 		if (Settings.ashstoneBlock.isEnabled()) registry.register(ashstone_block.createItemBlock());
 		if (Settings.dragonstoneBlock.isEnabled()) registry.register(dragonstone_block.createItemBlock());
@@ -168,18 +176,18 @@ public class ModBlocks
 	 */
 	public static void registerModels() 
 	{
-		if (Settings.fyriteOre.isEnabled()) 
-			fyrite_ore.registerItemModel(Item.getItemFromBlock(fyrite_ore));
-		if (Settings.malachiteOre.isEnabled())
-			malachite_ore.registerItemModel(Item.getItemFromBlock(malachite_ore));
 		if (Settings.argoniteOre.isEnabled())
 			argonite_ore.registerItemModel(Item.getItemFromBlock(argonite_ore));
 		if (Settings.ashstoneOre.isEnabled()) 
 			ashstone_ore.registerItemModel(Item.getItemFromBlock(ashstone_ore));
 		if (Settings.dragonstoneOre.isEnabled())
 			dragonstone_ore.registerItemModel(Item.getItemFromBlock(dragonstone_ore));
+		if (Settings.fyriteOre.isEnabled()) 
+			fyrite_ore.registerItemModel(Item.getItemFromBlock(fyrite_ore));
 		if (Settings.illumeniteOre.isEnabled()) 
 			illumenite_ore.registerItemModel(Item.getItemFromBlock(illumenite_ore));
+		if (Settings.malachiteOre.isEnabled())
+			malachite_ore.registerItemModel(Item.getItemFromBlock(malachite_ore));
 		
 		if (Settings.argoniteBlock.isEnabled()) 
 			argonite_block.registerItemModel(Item.getItemFromBlock(argonite_block));
@@ -204,36 +212,37 @@ public class ModBlocks
 	 */
 	public static void registerOreDictionary()
 	{
-		if (Settings.fyriteOre.isEnabled()) {
-			OreDictionary.registerOre("oreFyrite", new ItemStack(ModBlocks.fyrite_ore));
-		}
-		if (Settings.malachiteOre.isEnabled()) {
-			OreDictionary.registerOre("oreMalachite", new ItemStack(ModBlocks.malachite_ore));
+		if (Settings.argoniteOre.isEnabled()) {
+			OreDictionary.registerOre("oreArgonite", new ItemStack(ModBlocks.argonite_ore));
 		}
 		if (Settings.ashstoneOre.isEnabled()) {
 			OreDictionary.registerOre("oreAshstone", new ItemStack(ModBlocks.ashstone_ore));
 		}
-		if (Settings.illumeniteOre.isEnabled()) {
-			OreDictionary.registerOre("oreIllumenite", new ItemStack(ModBlocks.illumenite_ore));
-		}
 		if (Settings.dragonstoneOre.isEnabled()) {
 			OreDictionary.registerOre("oreDragonstone", new ItemStack(ModBlocks.dragonstone_ore));
 		}
-		if (Settings.argoniteOre.isEnabled()) {
-			OreDictionary.registerOre("oreArgonite", new ItemStack(ModBlocks.argonite_ore));
+		if (Settings.fyriteOre.isEnabled()) {
+			OreDictionary.registerOre("oreFyrite", new ItemStack(ModBlocks.fyrite_ore));
 		}
-		if (Settings.fyriteBlock.isEnabled())
-			OreDictionary.registerOre("blockFyrite", new ItemStack(ModBlocks.fyrite_block));
-		if (Settings.malachiteBlock.isEnabled())
-			OreDictionary.registerOre("blockMalachite", new ItemStack(ModBlocks.malachite_block));
-		if (Settings.ashstoneBlock.isEnabled())
-			OreDictionary.registerOre("blockAshstone", new ItemStack(ModBlocks.ashstone_block));
-		if (Settings.illumeniteBlock.isEnabled())
-			OreDictionary.registerOre("blockIllumenite", new ItemStack(ModBlocks.illumenite_block));
-		if (Settings.dragonstoneBlock.isEnabled()) 
-			OreDictionary.registerOre("blockDragonstone", new ItemStack(ModBlocks.dragonstone_block));
+		if (Settings.illumeniteOre.isEnabled()) {
+			OreDictionary.registerOre("oreIllumenite", new ItemStack(ModBlocks.illumenite_ore));
+		}
+		if (Settings.malachiteOre.isEnabled()) {
+			OreDictionary.registerOre("oreMalachite", new ItemStack(ModBlocks.malachite_ore));
+		}
+
 		if (Settings.argoniteBlock.isEnabled())
 			OreDictionary.registerOre("blockArgonite", new ItemStack(ModBlocks.argonite_block));
+		if (Settings.ashstoneBlock.isEnabled())
+			OreDictionary.registerOre("blockAshstone", new ItemStack(ModBlocks.ashstone_block));
+		if (Settings.dragonstoneBlock.isEnabled()) 
+			OreDictionary.registerOre("blockDragonstone", new ItemStack(ModBlocks.dragonstone_block));
+		if (Settings.fyriteBlock.isEnabled())
+			OreDictionary.registerOre("blockFyrite", new ItemStack(ModBlocks.fyrite_block));
+		if (Settings.illumeniteBlock.isEnabled())
+			OreDictionary.registerOre("blockIllumenite", new ItemStack(ModBlocks.illumenite_block));
+		if (Settings.malachiteBlock.isEnabled())
+			OreDictionary.registerOre("blockMalachite", new ItemStack(ModBlocks.malachite_block));
 	} // end registerOreDictionary()
 	
 } // end class

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import alexndr.api.content.blocks.SimpleFurnace;
 import alexndr.api.registry.ContentCategories;
+import alexndr.api.registry.Plugin;
 import alexndr.plugins.Netherrocks.ModBlocks;
 import alexndr.plugins.Netherrocks.Netherrocks;
 import alexndr.plugins.Netherrocks.Settings;
@@ -21,8 +22,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * @author AleXndrTheGr8st
@@ -30,14 +29,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class NetherFurnaceBlock extends SimpleFurnace
 {
 
-	public static int netherrackBurnTime = 200, fyriteBurnTime = 8000, blazeRodBurnTime = 2400;
+	public static int netherrackBurnTime = 200;
+	public static int fyriteBurnTime = 8000;
+	public static int blazeRodBurnTime = 2400;
 
-	public NetherFurnaceBlock(String name, boolean isActive) 
+	public NetherFurnaceBlock(String furnace_name, Plugin plugin, boolean isActive) 
 	{
-		super(name, Netherrocks.plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
-		this.setStepSound(SoundType.STONE);
+		super(furnace_name, plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
+		setRegistryName(plugin.getModId(), furnace_name);
 	}
 	
+	@Override
+	public NetherFurnaceBlock setStepSound(SoundType sound) {
+		return (NetherFurnaceBlock) super.setStepSound(sound);
+	}
+
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new NetherFurnaceTileEntity();
@@ -118,9 +124,8 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	} // end setAdditionalProperties()
 
 	@Override
-	@SideOnly(Side.CLIENT)
 	public ItemStack getItem(World arg0, BlockPos arg1, IBlockState arg2) {
-		return new ItemStack(Item.getItemFromBlock(ModBlocks.nether_furnace));
+		return new ItemStack(ModBlocks.nether_furnace);
 	}
 	
 } // end class

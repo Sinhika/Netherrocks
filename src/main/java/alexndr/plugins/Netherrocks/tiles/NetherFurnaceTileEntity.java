@@ -149,7 +149,7 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
             if (flag != this.isBurning())
             {
                 flag1 = true;
-                NetherFurnaceBlock.setState(this.isBurning(), this.getWorld(), this.pos);
+                 NetherFurnaceBlock.setState(this.isBurning(), this.getWorld(), this.pos);
             } // end-if
         } // end-if ! isRemote
 
