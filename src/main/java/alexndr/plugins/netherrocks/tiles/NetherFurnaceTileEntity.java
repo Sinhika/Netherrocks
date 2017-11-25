@@ -29,12 +29,12 @@ import net.minecraft.item.ItemTool;
 public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 {
 	protected final static List<ItemStack> fuelstacks = new ArrayList<ItemStack>();
-	public final static String tilename = "container.netherrocks_nether_furnace";
+	public final static String tilename = "netherrocks:container.netherrocks_nether_furnace";
 	public final static String guiID = "netherrocks:nether_furnace_gui";
 	
     public NetherFurnaceTileEntity() 
     {
-		super(tilename, 600, guiID, 3);
+		super(NetherFurnaceTileEntity.tilename, 600, NetherFurnaceTileEntity.guiID, 3);
 		LogHelper.verbose("netherrocks", "finished TileEntitySimpleFurnace ctor for " + tilename);
 	}
 
