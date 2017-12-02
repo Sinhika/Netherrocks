@@ -4,23 +4,28 @@ import javax.annotation.Nullable;
 
 import alexndr.plugins.netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
 
 /**
  * @author AleXndrTheGr8st
  */
-public class SlotNetherFuel extends Slot
+public class SlotNetherFuel extends SlotItemHandler
 {
-	public SlotNetherFuel(IInventory iinv, int index, int x, int y) {
+	private NetherFurnaceTileEntity nfte;
+	
+	public SlotNetherFuel(IItemHandler iinv, int index, int x, int y, NetherFurnaceTileEntity nfte) 
+	{
 		super(iinv, index, x, y);
+		this.nfte = nfte;
 	}
 
     @Override
 	public boolean isItemValid(@Nullable ItemStack stack)
     {
-        return NetherFurnaceTileEntity.isItemFuel(stack) || isBucket(stack);
+        boolean okay = NetherFurnaceTileEntity.isItemFuel(stack) || isBucket(stack);
+        return okay && super.isItemValid(stack);
     }
 
     @Override
@@ -32,6 +37,14 @@ public class SlotNetherFuel extends Slot
     // TODO rewrite to use UniversalBucket and SimpleBucket
     public static boolean isBucket(ItemStack stack)
     {
-        return stack != null && stack.getItem() != null && stack.getItem() == Items.BUCKET;
+        return stack != null && stack.getItem() != null 
+        		&& stack.getItem() == Items.BUCKET;
     }
+
+	@Override
+	public void onSlotChange(ItemStack p_75220_1_, ItemStack p_75220_2_) 
+	{
+		nfte.markDirty();
+	}
+
 } // end slot

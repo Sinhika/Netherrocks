@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceBlock extends SimpleFurnace
+public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
 {
 
 	public static int netherrackBurnTime = 200;
@@ -31,19 +31,11 @@ public class NetherFurnaceBlock extends SimpleFurnace
 	public NetherFurnaceBlock(String furnace_name, Plugin plugin, boolean isActive) 
 	{
 		super(furnace_name, plugin, Material.ROCK, ContentCategories.Block.MACHINE, isActive);
-		setRegistryName(plugin.getModId(), furnace_name);
 	}
 	
 	@Override
 	public NetherFurnaceBlock setStepSound(SoundType sound) {
 		return (NetherFurnaceBlock) super.setStepSound(sound);
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) 
-	{
-		NetherFurnaceTileEntity te = new NetherFurnaceTileEntity();
-		return (TileEntity) te;
 	}
 
     /* cut & pasted from BlockFurnace & modified per CompatBlock */
@@ -105,6 +97,26 @@ public class NetherFurnaceBlock extends SimpleFurnace
 		NetherFurnaceBlock.fyriteBurnTime = Settings.fyriteBurnTime;
 		NetherFurnaceBlock.blazeRodBurnTime = Settings.blazeRodBurnTime;
 	} // end setAdditionalProperties()
+
+	@Override
+	public Class<NetherFurnaceTileEntity> getTileEntityClass() 
+	{
+		return NetherFurnaceTileEntity.class;
+	}
+
+	@Override
+	public NetherFurnaceTileEntity createTileEntity(World world, IBlockState state) 
+	{
+		return new NetherFurnaceTileEntity();
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta) 
+	{
+		return new NetherFurnaceTileEntity();
+	}
+	
+
 	
 } // end class
 

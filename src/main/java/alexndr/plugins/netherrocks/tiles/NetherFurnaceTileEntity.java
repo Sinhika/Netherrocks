@@ -3,13 +3,12 @@ package alexndr.plugins.netherrocks.tiles;
 import java.util.ArrayList;
 import java.util.List;
 
-import alexndr.api.content.tiles.TileEntitySimpleFurnace;
+import alexndr.api.content.tiles.TileEntityBaseFurnace;
 import alexndr.api.logger.LogHelper;
 import alexndr.plugins.netherrocks.ModBlocks;
 import alexndr.plugins.netherrocks.ModItems;
 import alexndr.plugins.netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.netherrocks.inventory.NetherFurnaceContainer;
-import alexndr.plugins.netherrocks.inventory.SlotNetherFuel;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -26,7 +25,7 @@ import net.minecraft.item.ItemTool;
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
+public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 {
 	protected final static List<ItemStack> fuelstacks = new ArrayList<ItemStack>();
 	public final static String tilename = "netherrocks:container.netherrocks_nether_furnace";
@@ -110,28 +109,29 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 	   return fuelstacks;
    } // end getFuels()
    
-   @Override
-   public boolean isItemValidForSlot(int index, ItemStack stack)
-   {
-       if (index == NDX_OUTPUT_SLOT)
-       {
-           return false;
-       }
-       else if (index != NDX_FUEL_SLOT)
-       {
-           return true;
-       }
-       else
-       {
-           ItemStack itemstack = this.getStackInSlot(NDX_FUEL_SLOT);
-           return NetherFurnaceTileEntity.isItemFuel(stack) || SlotNetherFuel.isBucket(stack) 
-                           && (itemstack == null || itemstack.getItem() != Items.BUCKET);
-       }
-   }
+//   @Override
+//   public boolean isItemValidForSlot(int index, ItemStack stack)
+//   {
+//       if (index == NDX_OUTPUT_SLOT)
+//       {
+//           return false;
+//       }
+//       else if (index != NDX_FUEL_SLOT)
+//       {
+//           return true;
+//       }
+//       else
+//       {
+//           ItemStack itemstack = this.getStackInSlot(NDX_FUEL_SLOT);
+//           return NetherFurnaceTileEntity.isItemFuel(stack) || SlotNetherFuel.isBucket(stack) 
+//                           && (itemstack == null || itemstack.getItem() != Items.BUCKET);
+//       }
+//   }
 
 
 	@Override
-	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
+	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) 
+	{
         return new NetherFurnaceContainer(playerInventory, this);
 	}
 
@@ -149,11 +149,11 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 
         if (!this.getWorld().isRemote)
         {
-            ItemStack itemstack = (ItemStack)this.getStackInSlot(NDX_FUEL_SLOT);
-            if (!itemstack.isEmpty()) {
-                burnTime = NetherFurnaceTileEntity.getItemBurnTime(itemstack);
+            ItemStack readonly_fuelstack = slotHandler.getStackInSlot(NDX_FUEL_SLOT);
+            if (!readonly_fuelstack.isEmpty()) {
+                burnTime = NetherFurnaceTileEntity.getItemBurnTime(readonly_fuelstack);
             }
-            flag1 = default_cooking_update(flag1, itemstack, burnTime);
+            flag1 = default_cooking_update(flag1, readonly_fuelstack, burnTime);
             if (flag != this.isBurning())
             {
                 flag1 = true;

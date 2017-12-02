@@ -5,11 +5,13 @@ import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.registry.ContentCategories;
 import alexndr.plugins.netherrocks.blocks.NetherFurnaceBlock;
+import alexndr.plugins.netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -148,6 +150,8 @@ public class ModBlocks
 		if (Settings.netherFurnace.isEnabled()) {
 			registry.register(nether_furnace);
 			registry.register(nether_furnace_lit);
+			GameRegistry.registerTileEntity( NetherFurnaceTileEntity.class, 
+											 NetherFurnaceTileEntity.tilename);
 		}
 	} // end register()
 	

@@ -12,11 +12,9 @@ import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
 import alexndr.plugins.netherrocks.helpers.FyriteHandler;
 import alexndr.plugins.netherrocks.helpers.IllumeniteHandler;
-import alexndr.plugins.netherrocks.tiles.NetherFurnaceTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +22,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 @Mod.EventBusSubscriber
@@ -106,20 +103,11 @@ public class ProxyCommon
 		}
 	} // end setOreGenSettings()
 
-	@SuppressWarnings("unchecked")
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) 
-			throws ClassNotFoundException 
 	{
-   	 //Registers
-   	 if (Settings.netherFurnace.isEnabled()) 
-   	 {
-   		 Class<?> c = Class.forName("alexndr.plugins.netherrocks.tiles.NetherFurnaceTileEntity");
-		 GameRegistry.registerTileEntity( (Class<? extends TileEntity>) c, 
-				 						  NetherFurnaceTileEntity.tilename);
-   	 }
-     ModBlocks.register(event.getRegistry());
-    	 
+   	 	//Registers
+		ModBlocks.register(event.getRegistry());
 	} // end registerBlocks()
 
 	@SubscribeEvent
