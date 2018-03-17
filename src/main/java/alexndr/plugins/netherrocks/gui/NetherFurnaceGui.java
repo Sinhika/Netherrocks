@@ -46,31 +46,16 @@ public class NetherFurnaceGui extends GuiContainer
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
 		this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
-//		int i1;
+		int i1;
 
-//		if (tileFurnace.isBurning()) 
-//		{
-//			i1 = this.getScaledBurnTime(13);
-//			this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 1);
-//		}
-//
-//		i1 = this.getScaledCookProgress(24);
-//		this.drawTexturedModalRect(k + 79, l + 34, 176, 14, i1 + 1, 16);
-	}
+		if (tileFurnace.isBurning()) 
+		{
+			i1 = tileFurnace.getScaledBurnTime(13);
+			this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 1);
+		}
+
+		i1 = tileFurnace.getScaledCookProgress(24);
+		this.drawTexturedModalRect(k + 79, l + 34, 176, 14, i1 + 1, 16);
+	} // end ()
 	
-//    private int getScaledCookProgress(int cookTime) 
-//    {
-//        int j = this.tileFurnace.getField(2);
-//        int k = this.tileFurnace.getField(3);
-//        return k != 0 && j != 0 ? j * cookTime / k : 0;
-//    }
-//    
-//    private int getScaledBurnTime(int burnTime){
-//        int j = this.tileFurnace.getField(1);
-//
-//        if (j == 0)
-//            j = 200;
-//        
-//        return this.tileFurnace.getField(0) * burnTime / j;
-//    }
 } // end class
