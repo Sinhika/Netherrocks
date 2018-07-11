@@ -11,7 +11,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -150,8 +150,7 @@ public class ModBlocks
 		if (Settings.netherFurnace.isEnabled()) {
 			registry.register(nether_furnace);
 			registry.register(nether_furnace_lit);
-			GameRegistry.registerTileEntity( NetherFurnaceTileEntity.class, 
-											 NetherFurnaceTileEntity.tilename);
+			TileEntity.register(NetherFurnaceTileEntity.tilename, NetherFurnaceTileEntity.class);
 		}
 	} // end register()
 	
@@ -162,7 +161,7 @@ public class ModBlocks
 	 */
 	public static void registerItemBlocks(IForgeRegistry<Item> registry) 
 	{
-		if (Settings.argoniteOre.isEnabled()) registry.register(argonite_block.createItemBlock());
+		if (Settings.argoniteOre.isEnabled()) registry.register(argonite_ore.createItemBlock());
 		if (Settings.ashstoneOre.isEnabled()) registry.register(ashstone_ore.createItemBlock());
 		if (Settings.dragonstoneOre.isEnabled()) registry.register(dragonstone_ore.createItemBlock());
 		if (Settings.fyriteOre.isEnabled()) registry.register(fyrite_ore.createItemBlock());
