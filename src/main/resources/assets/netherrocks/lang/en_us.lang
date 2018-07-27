@@ -1,4 +1,4 @@
-//Blocks
+#Blocks
 tile.fyrite_ore.name=Fyrite Ore
 tile.fyrite_block.name=Fyrite Block
 tile.malachite_ore.name=Malachite Ore
@@ -14,7 +14,7 @@ tile.argonite_block.name=Argonite Block
 tile.nether_furnace.name=Nether Furnace
 tile.nether_furnace_lit.name=Nether Furnace
 
-//Items
+#Items
 item.fyrite_ingot.name=Fyrite Ingot
 item.malachite_ingot.name=Malachite Ingot
 item.ashstone_gem.name=Ashstone Gem
@@ -22,7 +22,7 @@ item.illumenite_ingot.name=Illumenite Ingot
 item.dragonstone_gem.name=Dragonstone Gem
 item.argonite_ingot.name=Argonite Ingot
 
-//Tools
+#Tools
 item.malachite_pickaxe.name=Malachite Pickaxe
 item.malachite_axe.name=Malachite Axe
 item.malachite_shovel.name=Malachite Shovel
@@ -49,7 +49,7 @@ item.fyrite_axe.name=Fyrite Axe
 item.fyrite_shovel.name=Fyrite Shovel
 item.illumenite_sword.name=Illumenite Sword
 
-//Armor
+#Armor
 item.fyrite_helmet.name=Fyrite Helmet
 item.fyrite_chestplate.name=Fyrite Chestplate
 item.fyrite_leggings.name=Fyrite Leggings
@@ -67,9 +67,9 @@ item.dragonstone_chestplate.name=Dragonstone Chestplate
 item.dragonstone_leggings.name=Dragonstone Leggings
 item.dragonstone_boots.name=Dragonstone Boots
 
-// Containers
-container.netherrocks_nether_furnace=Nether Furnace
-nether_furnace_gui=Nether Furnace
+# Containers
+container.netherrocks_nether_furnace.name=Nether Furnace
+nether_furnace_gui.name=Nether Furnace
 
 //Achievements
 achievement.fyriteOreAch=Warm to the Touch

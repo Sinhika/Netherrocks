@@ -10,6 +10,7 @@ import alexndr.plugins.netherrocks.ModItems;
 import alexndr.plugins.netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.netherrocks.inventory.NetherFurnaceContainer;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -22,6 +23,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 /**
  * @author AleXndrTheGr8st
@@ -31,11 +34,14 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 	protected final static List<ItemStack> fuelstacks = new ArrayList<ItemStack>();
 	public final static String tilename = "netherrocks:container.netherrocks_nether_furnace";
 	public final static String guiID = "netherrocks:nether_furnace_gui";
+	public final static int TILETYPE = 253;
 	
     public NetherFurnaceTileEntity() 
     {
 		super(NetherFurnaceTileEntity.tilename, 600, NetherFurnaceTileEntity.guiID, 3);
-		LogHelper.verbose("netherrocks", "finished TileEntitySimpleFurnace ctor for " + tilename);
+		this.setTileEntityType(NetherFurnaceTileEntity.TILETYPE);
+		LogHelper.verbose("netherrocks", "finished NetherFurnaceTileEntity ctor for " 
+					+ this.getDisplayName().getUnformattedText());
 	}
 
     public static boolean isItemFuel(ItemStack fuel)
@@ -178,4 +184,12 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
             this.markDirty();
         }
 	} // end update()
+
+	@Override
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, 
+								 IBlockState newState) 
+	{
+		return (! Block.isEqualTo(newState.getBlock(), ModBlocks.nether_furnace)
+				&& ! Block.isEqualTo(newState.getBlock(), ModBlocks.nether_furnace_lit));
+	} // end shouldRefresh()
 } // end class
