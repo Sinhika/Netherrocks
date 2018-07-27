@@ -21,6 +21,7 @@ import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
+import net.minecraft.nbt.NBTTagCompound;
 
 /**
  * @author AleXndrTheGr8st
@@ -133,6 +134,17 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) 
 	{
         return new NetherFurnaceContainer(playerInventory, this);
+	}
+
+	@Override
+	public void readSyncableNBT(NBTTagCompound compound, NBTType type) 
+	{
+		super.readSyncableNBT(compound, type);
+		if (type != NBTType.SAVE_BLOCK)
+		{
+			this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime(
+														slotHandler.getStackInSlot(NDX_FUEL_SLOT));
+		}
 	}
 
 	@Override
