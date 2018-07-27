@@ -93,7 +93,7 @@ public class NetherFurnaceContainer extends Container
 			else if (index >= inventoryStart)			
 			{
 				// is this something we can smelt?
-				if (FurnaceRecipes.instance().getSmeltingResult(newStack).isEmpty()) 
+				if (! FurnaceRecipes.instance().getSmeltingResult(newStack).isEmpty()) 
 				{
 					// if so, try moving to input slot.
 					if (!this.mergeItemStack(newStack, TileEntityBaseFurnace.NDX_INPUT_SLOT, 

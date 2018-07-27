@@ -145,7 +145,7 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 			this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime(
 														slotHandler.getStackInSlot(NDX_FUEL_SLOT));
 		}
-	}
+	} // end readSyncableNBT()
 
 	@Override
 	public void update() 
