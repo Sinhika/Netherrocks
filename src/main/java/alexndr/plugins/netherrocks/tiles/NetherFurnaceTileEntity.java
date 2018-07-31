@@ -146,11 +146,8 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 	public void readSyncableNBT(NBTTagCompound compound, NBTType type) 
 	{
 		super.readSyncableNBT(compound, type);
-		if (type != NBTType.SAVE_BLOCK)
-		{
-			this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime(
+		this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime(
 														slotHandler.getStackInSlot(NDX_FUEL_SLOT));
-		}
 	} // end readSyncableNBT()
 
 	@Override
@@ -183,6 +180,12 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
         {
             this.markDirty();
         }
+        if (this.world != null)
+        {
+        	IBlockState blockstate = this.getWorld().getBlockState(this.pos);
+        	this.getWorld().notifyBlockUpdate(this.pos, blockstate, blockstate, 2);
+        }
+
 	} // end update()
 
 	@Override

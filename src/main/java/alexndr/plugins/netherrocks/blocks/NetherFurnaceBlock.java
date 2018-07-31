@@ -38,7 +38,7 @@ public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
 		return (NetherFurnaceBlock) super.setStepSound(sound);
 	}
 
-    /* cut & pasted from BlockFurnace & modified per CompatBlock */
+    /* cut & pasted from BlockFurnace & modified */
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, 
 						IBlockState state, EntityPlayer playerIn, EnumHand hand, 
@@ -55,7 +55,7 @@ public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
             {
             	playerIn.openGui(Netherrocks.INSTANCE, NetherFurnaceGuiHandler.NETHER_FURNACE_TILE_ID, 
             		  			worldIn, pos.getX(), pos.getY(), pos.getZ());
-                playerIn.addStat(StatList.FURNACE_INTERACTION);
+                // playerIn.addStat(StatList.FURNACE_INTERACTION);
             }
             return true;
         }

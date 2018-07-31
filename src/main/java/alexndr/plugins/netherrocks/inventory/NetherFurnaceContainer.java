@@ -135,9 +135,10 @@ public class NetherFurnaceContainer extends Container
 				return ItemStack.EMPTY;
 
 			slot.onTake(playerIn, newStack);
+			return currentStack;
 		}
-
-		return currentStack;
+		
+		return ItemStack.EMPTY;
 	} // end transferStackInSlot()
 	
 //	@Override
