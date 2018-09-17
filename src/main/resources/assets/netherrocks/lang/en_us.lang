@@ -68,8 +68,8 @@ item.dragonstone_leggings.name=Dragonstone Leggings
 item.dragonstone_boots.name=Dragonstone Boots
 
 # Containers
-container.netherrocks_nether_furnace.name=Nether Furnace
-nether_furnace_gui.name=Nether Furnace
+container.nether_furnace=Nether Furnace
+
 
 //Achievements
 achievement.fyriteOreAch=Warm to the Touch

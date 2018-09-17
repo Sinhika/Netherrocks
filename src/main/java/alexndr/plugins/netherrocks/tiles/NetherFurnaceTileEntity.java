@@ -3,14 +3,13 @@ package alexndr.plugins.netherrocks.tiles;
 import java.util.ArrayList;
 import java.util.List;
 
-import alexndr.api.content.tiles.TileEntityBaseFurnace;
+import alexndr.api.content.tiles.TileEntitySimpleFurnace;
 import alexndr.api.logger.LogHelper;
 import alexndr.plugins.netherrocks.ModBlocks;
 import alexndr.plugins.netherrocks.ModItems;
 import alexndr.plugins.netherrocks.blocks.NetherFurnaceBlock;
 import alexndr.plugins.netherrocks.inventory.NetherFurnaceContainer;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -23,28 +22,25 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
+public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
 {
 	protected final static List<ItemStack> fuelstacks = new ArrayList<ItemStack>();
-	public final static String tilename = "netherrocks:container.netherrocks_nether_furnace";
+	public final static String tilename = "container.nether_furnace";
 	public final static String guiID = "netherrocks:nether_furnace_gui";
 	public final static int TILETYPE = 253;
 	
     public NetherFurnaceTileEntity() 
     {
 		super(NetherFurnaceTileEntity.tilename, 600, NetherFurnaceTileEntity.guiID, 3);
-		this.setTileEntityType(NetherFurnaceTileEntity.TILETYPE);
 		LogHelper.verbose("netherrocks", "finished NetherFurnaceTileEntity ctor for " 
 					+ this.getDisplayName().getUnformattedText());
 	}
 
-    public static boolean isItemFuel(ItemStack fuel)
+    public boolean isItemFuel(ItemStack fuel)
     {
          return NetherFurnaceTileEntity.getItemBurnTime(fuel) > 0;
     }
@@ -116,39 +112,22 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 	   return fuelstacks;
    } // end getFuels()
    
-//   @Override
-//   public boolean isItemValidForSlot(int index, ItemStack stack)
-//   {
-//       if (index == NDX_OUTPUT_SLOT)
-//       {
-//           return false;
-//       }
-//       else if (index != NDX_FUEL_SLOT)
-//       {
-//           return true;
-//       }
-//       else
-//       {
-//           ItemStack itemstack = this.getStackInSlot(NDX_FUEL_SLOT);
-//           return NetherFurnaceTileEntity.isItemFuel(stack) || SlotNetherFuel.isBucket(stack) 
-//                           && (itemstack == null || itemstack.getItem() != Items.BUCKET);
-//       }
-//   }
-
-
 	@Override
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) 
 	{
         return new NetherFurnaceContainer(playerInventory, this);
 	}
 
+
+	/* (non-Javadoc)
+	 * @see alexndr.api.content.tiles.TileEntitySimpleFurnace#readFromNBT(net.minecraft.nbt.NBTTagCompound)
+	 */
 	@Override
-	public void readSyncableNBT(NBTTagCompound compound, NBTType type) 
+	public void readFromNBT(NBTTagCompound compound) 
 	{
-		super.readSyncableNBT(compound, type);
-		this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime(
-														slotHandler.getStackInSlot(NDX_FUEL_SLOT));
-	} // end readSyncableNBT()
+		super.readFromNBT(compound);
+        this.currentItemBurnTime = NetherFurnaceTileEntity.getItemBurnTime((ItemStack)this.getStackInSlot(NDX_FUEL_SLOT));
+	}
 
 	@Override
 	public void update() 
@@ -164,7 +143,7 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
 
         if (!this.getWorld().isRemote)
         {
-            ItemStack readonly_fuelstack = slotHandler.getStackInSlot(NDX_FUEL_SLOT);
+            ItemStack readonly_fuelstack = (ItemStack)this.getStackInSlot(NDX_FUEL_SLOT);
             if (!readonly_fuelstack.isEmpty()) {
                 burnTime = NetherFurnaceTileEntity.getItemBurnTime(readonly_fuelstack);
             }
@@ -180,19 +159,12 @@ public class NetherFurnaceTileEntity extends TileEntityBaseFurnace
         {
             this.markDirty();
         }
-        if (this.world != null)
-        {
-        	IBlockState blockstate = this.getWorld().getBlockState(this.pos);
-        	this.getWorld().notifyBlockUpdate(this.pos, blockstate, blockstate, 2);
-        }
+//        if (this.world != null)
+//        {
+//        	IBlockState blockstate = this.getWorld().getBlockState(this.pos);
+//        	this.getWorld().notifyBlockUpdate(this.pos, blockstate, blockstate, 2);
+//        }
 
 	} // end update()
 
-	@Override
-	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, 
-								 IBlockState newState) 
-	{
-		return (! Block.isEqualTo(newState.getBlock(), ModBlocks.nether_furnace)
-				&& ! Block.isEqualTo(newState.getBlock(), ModBlocks.nether_furnace_lit));
-	} // end shouldRefresh()
 } // end class
