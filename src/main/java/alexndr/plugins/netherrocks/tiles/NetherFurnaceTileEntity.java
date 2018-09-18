@@ -59,10 +59,10 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
             if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.AIR)
             {
                 Block block = Block.getBlockFromItem(item);
-                 if (block == Blocks.NETHERRACK) {
+                 if (Block.isEqualTo(block,Blocks.NETHERRACK)) {
                 	return NetherFurnaceBlock.netherrackBurnTime;
                 }
-                 else if (block == ModBlocks.fyrite_block) {
+                 else if (Block.isEqualTo(block, ModBlocks.fyrite_block)) {
                 	 return NetherFurnaceBlock.fyriteBurnTime * 10;
                  }
             }

@@ -7,6 +7,7 @@ import alexndr.plugins.netherrocks.Netherrocks;
 import alexndr.plugins.netherrocks.Settings;
 import alexndr.plugins.netherrocks.helpers.NetherFurnaceGuiHandler;
 import alexndr.plugins.netherrocks.tiles.NetherFurnaceTileEntity;
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +23,9 @@ import net.minecraft.world.World;
  */
 public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
 {
+	// repeat for custom furnace classes
+	private static Block unlit_furnace;
+	private static Block lit_furnace;
 
 	public static int netherrackBurnTime = 200;
 	public static int fyriteBurnTime = 8000;
@@ -69,13 +73,13 @@ public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
 
         if (active)
         {
-            worldIn.setBlockState(pos, getLit_furnace().getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, getLit_furnace().getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, NetherFurnaceBlock.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, NetherFurnaceBlock.lit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, getUnlit_furnace().getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, getUnlit_furnace().getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, NetherFurnaceBlock.unlit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, NetherFurnaceBlock.unlit_furnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
 
         keepInventory = false;
@@ -115,6 +119,21 @@ public class NetherFurnaceBlock extends SimpleFurnace<NetherFurnaceTileEntity>
 		return new NetherFurnaceTileEntity();
 	}
 	
+	public static Block getUnlit_furnace() {
+		return NetherFurnaceBlock.unlit_furnace;
+	}
+
+	public static void setUnlit_furnace(Block unlit_furnace) {
+		NetherFurnaceBlock.unlit_furnace = unlit_furnace;
+	}
+
+	public static Block getLit_furnace() {
+		return NetherFurnaceBlock.lit_furnace;
+	}
+
+	public static void setLit_furnace(Block lit_furnace) {
+		NetherFurnaceBlock.lit_furnace = lit_furnace;
+	}
 
 	
 } // end class

@@ -58,18 +58,23 @@ public class NetherFurnaceContainer extends SimpleFurnaceContainer
             }
             // player inv/hotbar slot?
             else if (index != TileEntitySimpleFurnace.NDX_FUEL_SLOT 
-            		&& index != TileEntitySimpleFurnace.NDX_OUTPUT_SLOT)
+            		&& index != TileEntitySimpleFurnace.NDX_INPUT_SLOT)
             {
-                if (!FurnaceRecipes.instance().getSmeltingResult(itemstack1).isEmpty())
+            	// NOTE:
+            	// we switch the usual order from check input first, fuel second, to
+            	// check fuel first, input second, because netherrack is both a fuel
+            	// and a smeltable. By default we want to shift-click stacks of netherrack
+            	// in as fuel.
+                if (((NetherFurnaceTileEntity) tileFurnace).isItemFuel(itemstack1))
                 {
-                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
+                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
                     {
                         return ItemStack.EMPTY;
                     }
                 }
-                else if (((NetherFurnaceTileEntity) tileFurnace).isItemFuel(itemstack1))
+                else if (!FurnaceRecipes.instance().getSmeltingResult(itemstack1).isEmpty())
                 {
-                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
                     {
                         return ItemStack.EMPTY;
                     }
@@ -86,6 +91,7 @@ public class NetherFurnaceContainer extends SimpleFurnaceContainer
                     return ItemStack.EMPTY;
                 }
             }
+            // not player inv/hotbar slot.
             else if (!this.mergeItemStack(itemstack1, 3, 39, false))
             {
                 return ItemStack.EMPTY;
