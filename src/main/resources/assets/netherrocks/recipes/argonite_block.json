@@ -1,0 +1,19 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:argonite_ingot_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "netherrocks:argonite_block"
+	},
+	"pattern" : [
+		"SSS",
+		"SSS",
+		"SSS"
+	],
+	"key" : {
+		"S" : { "item" : "netherrocks:argonite_ingot"}
+	}
+}

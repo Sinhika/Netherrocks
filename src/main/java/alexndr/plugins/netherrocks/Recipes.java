@@ -7,27 +7,6 @@ public class Recipes
 {
 //	public static void doRecipes()
 //	{
-//		//Block Recipes
-//		GameRegistry.addRecipe(new ItemStack(Content.malachite_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.malachite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.ashstone_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.ashstone_gem });
-//		GameRegistry.addRecipe(new ItemStack(Content.illumenite_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.illumenite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.dragonstone_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.dragonstone_gem });
-//		GameRegistry.addRecipe(new ItemStack(Content.argonite_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.argonite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.nether_furnace, 1),
-//				new Object[] { "XXX", "XYX", "XXX", Character.valueOf('X'),
-//						Blocks.NETHERRACK, Character.valueOf('Y'),
-//						Items.FLINT_AND_STEEL });
-//				
 //		//Item Recipes
 //		GameRegistry.addShapelessRecipe(new ItemStack(Content.fyrite_ingot, 9),
 //				new Object[] { Content.fyrite_block });

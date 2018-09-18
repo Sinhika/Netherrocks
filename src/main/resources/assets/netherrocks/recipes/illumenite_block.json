@@ -1,0 +1,19 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:illumenite_ingot_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "netherrocks:illumenite_block"
+	},
+	"pattern" : [
+		"SSS",
+		"SSS",
+		"SSS"
+	],
+	"key" : {
+		"S" : { "item" : "netherrocks:illumenite_ingot"}
+	}
+}
