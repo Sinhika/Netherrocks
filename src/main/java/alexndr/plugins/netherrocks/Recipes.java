@@ -8,9 +8,6 @@ public class Recipes
 //	public static void doRecipes()
 //	{
 //		//Block Recipes
-//		GameRegistry.addRecipe(new ItemStack(Content.fyrite_block, 1),
-//				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
-//						Content.fyrite_ingot });
 //		GameRegistry.addRecipe(new ItemStack(Content.malachite_block, 1),
 //				new Object[] { "XXX", "XXX", "XXX", Character.valueOf('X'),
 //						Content.malachite_ingot });

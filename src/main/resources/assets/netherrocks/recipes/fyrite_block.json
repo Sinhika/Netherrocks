@@ -1,0 +1,19 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:fyrite_ingot_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "netherrocks:fyrite_block"
+	},
+	"pattern" : [
+		"SSS",
+		"SSS",
+		"SSS"
+	],
+	"key" : {
+		"S" : { "item" : "netherrocks:fyrite_ingot"}
+	}
+}
