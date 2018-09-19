@@ -7,21 +7,6 @@ public class Recipes
 {
 //	public static void doRecipes()
 //	{
-//		//Item Recipes
-//		GameRegistry.addShapelessRecipe(new ItemStack(Content.fyrite_ingot, 9),
-//				new Object[] { Content.fyrite_block });
-//		GameRegistry.addShapelessRecipe(new ItemStack(Content.malachite_ingot,
-//				9), new Object[] { Content.malachite_block });
-//		GameRegistry.addShapelessRecipe(new ItemStack(Content.ashstone_gem, 9),
-//				new Object[] { Content.ashstone_block });
-//		GameRegistry.addShapelessRecipe(new ItemStack(Content.illumenite_ingot,
-//				9), new Object[] { Content.illumenite_block });
-//		GameRegistry.addShapelessRecipe(new ItemStack(Content.dragonstone_gem,
-//				9), new Object[] { Content.dragonstone_block });
-//		GameRegistry.addShapelessRecipe(
-//				new ItemStack(Content.argonite_ingot, 9),
-//				new Object[] { Content.argonite_block });
-//					
 //		//Tool Recipes
 //			//Malachite Tool Recipes
 //		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_pickaxe, true,
