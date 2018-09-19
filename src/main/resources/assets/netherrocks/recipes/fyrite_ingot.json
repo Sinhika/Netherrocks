@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:fyrite_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "netherrocks:fyrite_block" }
+	],
+	"result" : {
+		"item" : "netherrocks:fyrite_ingot",
+		"count" : 9
+	}
+}

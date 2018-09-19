@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:illumenite_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "netherrocks:illumenite_block" }
+	],
+	"result" : {
+		"item" : "netherrocks:illumenite_ingot",
+		"count" : 9
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:argonite_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "netherrocks:argonite_block" }
+	],
+	"result" : {
+		"item" : "netherrocks:argonite_ingot",
+		"count" : 9
+	}
+}
