@@ -24,7 +24,7 @@ public class NetherFurnaceFuelCategory extends NetherFurnaceRecipeCategory<Nethe
 	public NetherFurnaceFuelCategory(IGuiHelper guiHelper) 
 	{
 		super(guiHelper);
-		background = guiHelper.createDrawable(backgroundLocation, 55, 38, 18, 32, 0, 0, 0, 80);
+		background = guiHelper.drawableBuilder(backgroundLocation, 55, 38, 18, 32).build();
 
 		ResourceLocation recipeBackgroundResource = new ResourceLocation(Constants.RESOURCE_DOMAIN, 
 															Constants.TEXTURE_RECIPE_BACKGROUND_PATH);
