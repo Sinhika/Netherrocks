@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:ashstone_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:ashstone_hoe"
+	},
+	"pattern" : [
+		"SS ",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#GEMASHSTONE"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

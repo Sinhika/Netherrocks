@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:ashstone_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:ashstone_pickaxe"
+	},
+	"pattern" : [
+		"SSS",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#GEMASHSTONE"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

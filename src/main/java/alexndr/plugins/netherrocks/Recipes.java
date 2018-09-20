@@ -8,52 +8,6 @@ public class Recipes
 //	public static void doRecipes()
 //	{
 //		//Tool Recipes
-//			//Malachite Tool Recipes
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_pickaxe, true,
-//						new Object[] { "XXX", " Y ", " Y ",
-//								Character.valueOf('X'),
-//								Content.malachite_ingot,
-//								Character.valueOf('Y'), "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_axe, true,
-//						new Object[] { "XX ", "XY ", " Y ",
-//								Character.valueOf('X'),
-//								Content.malachite_ingot,
-//								Character.valueOf('Y'), "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_shovel, true,
-//						new Object[] { "X", "Y", "Y", Character.valueOf('X'),
-//								Content.malachite_ingot,
-//								Character.valueOf('Y'), "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_sword, true,
-//						new Object[] { "X", "X", "Y", Character.valueOf('X'),
-//								Content.malachite_ingot,
-//								Character.valueOf('Y'), "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.malachite_hoe, true,
-//						new Object[] { "XX ", " Y ", " Y ",
-//								Character.valueOf('X'),
-//								Content.malachite_ingot,
-//								Character.valueOf('Y'), "stickWood" }));
-//					
-//		// Ashstone Tool Recipes
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.ashstone_pickaxe,
-//				true, new Object[] { "XXX", " Y ", " Y ",
-//						Character.valueOf('X'), Content.ashstone_gem,
-//						Character.valueOf('Y'), "stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.ashstone_axe, true,
-//				new Object[] { "XX ", "XY ", " Y ", Character.valueOf('X'),
-//						Content.ashstone_gem, Character.valueOf('Y'),
-//						"stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.ashstone_shovel,
-//				true, new Object[] { "X", "Y", "Y", Character.valueOf('X'),
-//						Content.ashstone_gem, Character.valueOf('Y'),
-//						"stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.ashstone_sword,
-//				true, new Object[] { "X", "X", "Y", Character.valueOf('X'),
-//						Content.ashstone_gem, Character.valueOf('Y'),
-//						"stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.ashstone_hoe, true,
-//				new Object[] { "XX ", " Y ", " Y ", Character.valueOf('X'),
-//						Content.ashstone_gem, Character.valueOf('Y'),
-//						"stickWood" }));
 //					
 //		// Dragonstone Tool Recipes
 //		GameRegistry.addRecipe(new ShapedOreRecipe(Content.dragonstone_pickaxe,
@@ -117,11 +71,7 @@ public class Recipes
 //				true, new Object[] { "X", "X", "Y", Character.valueOf('X'),
 //						Content.illumenite_ingot, Character.valueOf('Y'),
 //						"stickWood" }));
-//		GameRegistry.addRecipe(new ShapedOreRecipe(Content.fyrite_pickaxe,
-//				true, new Object[] { "XXX", " Y ", " Y ",
-//						Character.valueOf('X'), Content.fyrite_ingot,
-//						Character.valueOf('Y'), "stickWood" }));
-//
+	
 //		// Armor Recipes
 //		// Fyrite Armor Recipes
 //		GameRegistry.addRecipe(new ItemStack(Content.fyrite_helmet, 1),
