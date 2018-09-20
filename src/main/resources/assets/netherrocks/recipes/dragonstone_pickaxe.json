@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:dragonstone_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:dragonstone_pickaxe"
+	},
+	"pattern" : [
+		"SSS",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#GEMDRAGONSTONE"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:illumenite_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:illumenite_sword"
+	},
+	"pattern" : [
+		" S ",
+		" S ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTILLUMENITE"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:argonite_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:argonite_hoe"
+	},
+	"pattern" : [
+		"SS ",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTARGONITE"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}
