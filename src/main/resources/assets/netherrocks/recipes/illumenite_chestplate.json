@@ -1,0 +1,19 @@
+{
+	"conditions" : [
+		{
+			"type" : "netherrocks:illumenite_armor_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "netherrocks:illumenite_chestplate"
+	},
+	"pattern" : [
+		"S S",
+		"SSS",
+		"SSS"
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTILLUMENITE"}
+	}
+}
