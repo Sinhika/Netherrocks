@@ -9,20 +9,6 @@ public class Recipes
 //	{
 //		// Armor Recipes
 //					
-//		// Malachite Armor Recipes
-//		GameRegistry.addRecipe(new ItemStack(Content.malachite_helmet, 1),
-//				new Object[] { "XXX", "X X", Character.valueOf('X'),
-//						Content.malachite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.malachite_chestplate, 1),
-//				new Object[] { "X X", "XXX", "XXX", Character.valueOf('X'),
-//						Content.malachite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.malachite_leggings, 1),
-//				new Object[] { "XXX", "X X", "X X", Character.valueOf('X'),
-//						Content.malachite_ingot });
-//		GameRegistry.addRecipe(new ItemStack(Content.malachite_boots, 1),
-//				new Object[] { "X X", "X X", Character.valueOf('X'),
-//						Content.malachite_ingot });
-//
 //		// Illumenite Armor Recipes
 //		GameRegistry.addRecipe(new ItemStack(Content.illumenite_helmet, 1),
 //				new Object[] { "XXX", "X X", Character.valueOf('X'),
