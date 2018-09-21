@@ -35,13 +35,13 @@
         		"recipe": "netherrocks:malachite_pickaxe"
       		}
     	},
-    	"has_recipe5" : {
+    	"has_recipe4" : {
       		"trigger": "minecraft:recipe_unlocked",
       		"conditions": {
         		"recipe": "netherrocks:malachite_shovel"
       		}
     	},
-    	"has_recipe6" : {
+    	"has_recipe5" : {
       		"trigger": "minecraft:recipe_unlocked",
       		"conditions": {
         		"recipe": "netherrocks:malachite_sword"
@@ -50,8 +50,8 @@
     },
   "requirements": [
     [
-      "has_malachite", "has_recipe1", "has_recipe2","has_recipe3","has_recipe5",
-      "has_recipe6"
+      "has_malachite", "has_recipe1", "has_recipe2","has_recipe3","has_recipe4",
+      "has_recipe5"
    	]
   ]
 }
