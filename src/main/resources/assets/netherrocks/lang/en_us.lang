@@ -72,6 +72,8 @@ container.nether_furnace=Nether Furnace
 
 
 //Achievements
+advancements.root.welcome=Ready to mine Hell!
+advancements.root.welcome.desc=You've reached the Nether. Look for netherrocks ores.
 achievement.fyriteOreAch=Warm to the Touch
 achievement.fyriteOreAch.desc=Collect some Fyrite Ore from the Nether
 achievement.malachiteOreAch=Born to Enchant

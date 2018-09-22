@@ -4,15 +4,15 @@
             "item": "netherrocks:fyrite_ore"
         },
         "title": {
-            "translate": "advancements.fyriteAch"
+            "translate": "achievement.fyriteOreAch"
         },
         "description": {
-            "translate": "advancements.fyriteAch.desc"
+            "translate": "achievement.fyriteOreAch.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "minecraft:nether/root",
+    "parent" : "netherrocks:main/root",
    	"rewards": {
     	"recipes": [
       		"netherrocks:fyrite_block", "netherrocks:fyrite_ingot"

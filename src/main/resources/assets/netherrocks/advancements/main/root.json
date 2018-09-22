@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "item": "netherrocks:dragonstone_gem"
+        },
+        "title": {
+            "translate": "advancements.root.welcome"
+        },
+        "description": {
+            "translate": "advancements.root.welcome.desc"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/nether.png",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "entered_nether": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "the_nether"
+            }
+        }
+    }
+}
