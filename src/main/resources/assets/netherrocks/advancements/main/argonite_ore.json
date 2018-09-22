@@ -1,29 +1,29 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:fyrite_ore"
+            "item": "netherrocks:argonite_ore"
         },
         "title": {
-            "translate": "advancements.fyriteOreAch"
+            "translate": "advancements.argoniteOreAch"
         },
         "description": {
-            "translate": "advancements.fyriteOreAch.desc"
+            "translate": "advancements.argoniteOreAch.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/root",
+    "parent" : "netherrocks:main/illumenite_ore",
    	"rewards": {
     	"recipes": [
-      		"netherrocks:fyrite_block", "netherrocks:fyrite_ingot"
+      		"netherrocks:argonite_block", "netherrocks:argonite_ingot"
     	]
   	},
     "criteria" : {
-    	"got_fyrite_ore" : {
+    	"got_argonite_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_ore"}
+      			{"item" : "netherrocks:argonite_ore"}
       			]
       		}
     	}

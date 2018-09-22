@@ -3,7 +3,7 @@
    	"rewards": {
     	"recipes": [
       		"netherrocks:malachite_axe", "netherrocks:malachite_hoe", "netherrocks:malachite_pickaxe",
-      		"netherrocks:malachite_shears", "netherrocks:malachite_shovel", "netherrocks:malachite_sword"
+      		"netherrocks:malachite_shovel", "netherrocks:malachite_sword"
     	]
   	},
     "criteria" : {

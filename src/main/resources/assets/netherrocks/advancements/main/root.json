@@ -13,6 +13,11 @@
         "show_toast": true,
         "announce_to_chat": true
     },
+   	"rewards": {
+    	"recipes": [
+      		"netherrocks:nether_furnace"
+    	]
+  	},
     "criteria": {
         "entered_nether": {
             "trigger": "minecraft:changed_dimension",

@@ -1,29 +1,29 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:fyrite_ore"
+            "item": "netherrocks:malachite_ore"
         },
         "title": {
-            "translate": "advancements.fyriteOreAch"
+            "translate": "advancements.malachiteOreAch"
         },
         "description": {
-            "translate": "advancements.fyriteOreAch.desc"
+            "translate": "advancements.malachiteOreAch.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/root",
+    "parent" : "netherrocks:main/fyrite_ore",
    	"rewards": {
     	"recipes": [
-      		"netherrocks:fyrite_block", "netherrocks:fyrite_ingot"
+      		"netherrocks:malachite_block", "netherrocks:malachite_ingot"
     	]
   	},
     "criteria" : {
-    	"got_fyrite_ore" : {
+    	"got_malachite_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_ore"}
+      			{"item" : "netherrocks:malachite_ore"}
       			]
       		}
     	}

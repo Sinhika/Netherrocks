@@ -151,12 +151,16 @@ public class ModItems
 		if (Settings.fyriteTools.isEnabled()) 
 		{
 			fyrite_sword.setConfigEntry(Settings.fyriteTools)
+					.addToolTip("netherrocks.fyrite_sword.info")
 					.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
 			fyrite_pickaxe.setConfigEntry(Settings.fyriteTools)
+					.addToolTip("netherrocks.fyrite_pickaxe.info")
 					.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 			fyrite_axe.setConfigEntry(Settings.fyriteTools)
+					.addToolTip("netherrocks.fyrite_axe.info")
 					.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 			fyrite_shovel.setConfigEntry(Settings.fyriteTools)
+					.addToolTip("netherrocks.fyrite_shovel.info")
 					.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.malachiteTools.isEnabled()) 
@@ -174,6 +178,7 @@ public class ModItems
 		}
 		if (Settings.illumeniteTools.isEnabled()) {
 			illumenite_sword.setConfigEntry(Settings.fyriteTools)
+					.addToolTip("netherrocks.illumenite_sword.info")
 					.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
 		}
 		if (Settings.ashstoneTools.isEnabled()) 
