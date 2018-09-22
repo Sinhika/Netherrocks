@@ -1,0 +1,50 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:malachite_chestplate"
+        },
+        "title": {
+            "translate": "advancements.malachiteSetAch"
+        },
+        "description": {
+            "translate": "advancements.malachiteSetAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/malachite_ore",
+    "criteria" : {
+    	"malachite_chestplate" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:malachite_chestplate"}
+      			]
+      		}
+    	},
+    	"malachite_leggings" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:malachite_leggings"}
+      			]
+      		}
+    	},
+    	"malachite_helmet" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:malachite_helmet"}
+      			]
+      		}
+    	},
+    	"malachite_boots" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:malachite_boots"}
+      			]
+      		}
+    	}
+    }
+}

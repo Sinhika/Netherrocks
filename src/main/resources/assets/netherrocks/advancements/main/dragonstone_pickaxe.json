@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:dragonstone_pickaxe"
+        },
+        "title": {
+            "translate": "advancements.dragonstonePickaxeAch"
+        },
+        "description": {
+            "translate": "advancements.dragonstonePickaxeAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/dragonstone_ore",
+    "criteria" : {
+    	"got_dragonstone_pickaxe" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:dragonstone_pickaxe"}
+      			]
+      		}
+    	}
+    }
+}

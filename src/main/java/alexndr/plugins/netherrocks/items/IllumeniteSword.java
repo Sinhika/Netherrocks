@@ -12,7 +12,6 @@ public class IllumeniteSword extends SimpleSword {
 	public IllumeniteSword(String name) 
 	{
 		super(name, Netherrocks.plugin, Content.toolIllumenite);
-		addToolTip("netherrocks.illumenite_sword.info");
 	}
 
 	@Override

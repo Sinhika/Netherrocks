@@ -1,0 +1,50 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:fyrite_chestplate"
+        },
+        "title": {
+            "translate": "advancements.fyriteSetAch"
+        },
+        "description": {
+            "translate": "advancements.fyriteSetAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/fyrite_ore",
+    "criteria" : {
+    	"fyrite_chestplate" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:fyrite_chestplate"}
+      			]
+      		}
+    	},
+    	"fyrite_leggings" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:fyrite_leggings"}
+      			]
+      		}
+    	},
+    	"fyrite_helmet" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:fyrite_helmet"}
+      			]
+      		}
+    	},
+    	"fyrite_boots" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:fyrite_boots"}
+      			]
+      		}
+    	}
+    }
+}

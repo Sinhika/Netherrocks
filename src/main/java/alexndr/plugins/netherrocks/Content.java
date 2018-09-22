@@ -31,8 +31,6 @@ public class Content
 			ModBlocks.configureBlocks();
 			ModItems.configureTools();
 			ModItems.configureArmor();
-//			doAchievements();
-			
 			LogHelper.verbose("Netherrocks",
 					"Content pre-init completed successfully");
 		} 
@@ -64,21 +62,6 @@ public class Content
 				ModItems.dragonstone_gem, 1, 0), 1.0F);
 	} // end addSmeltingRecipes()
 	
-	
-//	public static void doAchievements() 
-//	{
-//		dragonstoneOreAch = new Achievement("achievement.dragonstoneOreAch", "dragonstoneOreAch", -6, -3, dragonstone_ore, argoniteOreAch).setSpecial().registerStat();
-//		
-//		fyriteSetAch = new Achievement("achievement.fyriteSetAch", "fyriteSetAch", -8, 7, fyrite_chestplate, fyriteOreAch).setSpecial().registerStat();
-//		malachiteSetAch = new Achievement("achievement.malachiteSetAch", "malachiteSetAch", -8, 5, malachite_chestplate, malachiteOreAch).setSpecial().registerStat();
-//		ashstoneAxeAch = new Achievement("achievement.ashstoneAxeAch", "ashstoneAxeAch", -8, 3, ashstone_axe, ashstoneOreAch).registerStat();
-//		illumeniteSetAch = new Achievement("achievement.illumeniteSetAch", "illumeniteSetAch", -8, 1, illumenite_chestplate, illumeniteOreAch).setSpecial().registerStat();
-//		argoniteSwordAch = new Achievement("achievement.argoniteSwordAch", "argoniteSwordAch", -8, -1, argonite_sword, argoniteOreAch).registerStat();
-//		dragonstonePickaxeAch = new Achievement("achievement.dragonstonePickaxeAch", "dragonstonePickaxeAch", -8, -3, dragonstone_pickaxe, dragonstoneOreAch).registerStat();
-//		
-//		//netherFurnaceAch = new Achievement("achievement.netherFurnaceAch", "netherFurnaceAch", 1, 7, nether_furnace_lit, AchievementList.portal).registerStat();
-//	} // end doAchievements()
-
 	public static void setToolAndArmorStats() 
 	{
 		LogHelper.verbose("Netherrocks", "Setting Tool and Armor stats");
@@ -142,29 +125,4 @@ public class Content
 		ArmorMaterialHelper.setRepairItem(armorDragonstone, new ItemStack(ModItems.dragonstone_gem));
 	} // end setRepairMaterials()
 	
-//	public static void setAchievementTriggers() 
-//	{
-//		LogHelper.verbose("Netherrocks", "Setting achievement triggers");
-//		//Pickup Triggers
-//		StatTriggersHelper.addPickupTrigger(Item.getItemFromBlock(Content.fyrite_ore), Content.fyriteOreAch);
-//		StatTriggersHelper.addPickupTrigger(Item.getItemFromBlock(Content.malachite_ore), Content.malachiteOreAch);
-//		StatTriggersHelper.addPickupTrigger(Content.ashstone_gem, Content.ashstoneOreAch);
-//		StatTriggersHelper.addPickupTrigger(Item.getItemFromBlock(Content.illumenite_ore), Content.illumeniteOreAch);
-//		StatTriggersHelper.addPickupTrigger(Content.dragonstone_gem, Content.dragonstoneOreAch);
-//		StatTriggersHelper.addPickupTrigger(Item.getItemFromBlock(Content.argonite_ore), Content.argoniteOreAch);
-//		
-//		//Crafting Triggers
-//		StatTriggersHelper.addCraftingTrigger(Content.ashstone_axe, Content.ashstoneAxeAch);
-//		StatTriggersHelper.addCraftingTrigger(Content.argonite_sword, Content.argoniteSwordAch);
-//		StatTriggersHelper.addCraftingTrigger(Content.dragonstone_pickaxe, Content.dragonstonePickaxeAch);
-//		//StatTriggersHelper.addCraftingTrigger(Content.nether_furnace, Content.netherFurnaceAch);
-//		
-//		//Smelting Triggers
-//		StatTriggersHelper.addSmeltingTrigger(Content.ashstone_gem, Content.ashstoneOreAch);
-//		StatTriggersHelper.addSmeltingTrigger(Content.dragonstone_gem, Content.dragonstoneOreAch);
-//	} // end setAchievementTriggers()
-	
-
-//	public static Achievement 	fyriteOreAch, malachiteOreAch, ashstoneOreAch, illumeniteOreAch, dragonstoneOreAch, argoniteOreAch, netherFurnaceAch, 
-//								fyriteSetAch, malachiteSetAch, ashstoneAxeAch, illumeniteSetAch, dragonstonePickaxeAch, argoniteSwordAch;
 } // end class

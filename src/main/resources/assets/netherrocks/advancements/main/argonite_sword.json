@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:argonite_sword"
+        },
+        "title": {
+            "translate": "advancements.argoniteSwordAch"
+        },
+        "description": {
+            "translate": "advancements.argoniteSwordAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/argonite_ore",
+    "criteria" : {
+    	"got_argonite_sword" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:argonite_sword"}
+      			]
+      		}
+    	}
+    }
+}

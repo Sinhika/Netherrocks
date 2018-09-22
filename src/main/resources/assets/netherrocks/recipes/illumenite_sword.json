@@ -14,7 +14,7 @@
 	],
 	"type" : "forge:ore_shaped",
 	"key" : {
-		"S" : { "item" : "#INGOTILLUMENITE"},
+		"S" : { "item" : "netherrocks:illumenite_ingot"},
 		"T" : { "item" : "#STICKWOOD"}
 	}
 }

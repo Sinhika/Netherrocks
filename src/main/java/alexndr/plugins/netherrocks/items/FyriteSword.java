@@ -18,7 +18,6 @@ public class FyriteSword extends SimpleSword
 
 	public FyriteSword(String name) {
 		super(name, Netherrocks.plugin, Content.toolFyrite);
-		addToolTip("netherrocks.fyrite_sword.info");
 	}
 
 	@Override

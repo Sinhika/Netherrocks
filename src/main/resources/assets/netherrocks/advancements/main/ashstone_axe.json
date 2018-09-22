@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:ashstone_axe"
+        },
+        "title": {
+            "translate": "advancements.ashstoneAxeAch"
+        },
+        "description": {
+            "translate": "advancements.ashstoneAxeAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/ashstone_ore",
+    "criteria" : {
+    	"got_ashstone_sword" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:ashstone_axe"}
+      			]
+      		}
+    	}
+    }
+}

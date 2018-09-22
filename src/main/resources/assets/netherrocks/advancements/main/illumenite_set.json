@@ -1,0 +1,50 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:illumenite_chestplate"
+        },
+        "title": {
+            "translate": "advancements.illumeniteSetAch"
+        },
+        "description": {
+            "translate": "advancements.illumeniteSetAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/illumenite_ore",
+    "criteria" : {
+    	"illumenite_chestplate" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:illumenite_chestplate"}
+      			]
+      		}
+    	},
+    	"illumenite_leggings" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:illumenite_leggings"}
+      			]
+      		}
+    	},
+    	"illumenite_helmet" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:illumenite_helmet"}
+      			]
+      		}
+    	},
+    	"illumenite_boots" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:illumenite_boots"}
+      			]
+      		}
+    	}
+    }
+}
