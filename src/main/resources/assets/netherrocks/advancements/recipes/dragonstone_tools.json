@@ -1,0 +1,57 @@
+{
+	"parent" : "netherrocks:recipes/root",
+   	"rewards": {
+    	"recipes": [
+      		"netherrocks:dragonstone_axe", "netherrocks:dragonstone_hoe", "netherrocks:dragonstone_pickaxe",
+      		"netherrocks:dragonstone_shovel", "netherrocks:dragonstone_sword"
+    	]
+  	},
+    "criteria" : {
+    	"has_dragonstone" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      				{
+      				"item" : "netherrocks:dragonstone_gem"
+      				}
+      			]
+      		}
+    	},
+    	"has_recipe1" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:dragonstone_axe"
+      		}
+    	},
+    	"has_recipe2" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:dragonstone_hoe"
+      		}
+    	},
+    	"has_recipe3" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:dragonstone_pickaxe"
+      		}
+    	},
+    	"has_recipe4" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:dragonstone_shovel"
+      		}
+    	},
+    	"has_recipe5" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:dragonstone_sword"
+      		}
+    	}
+    },
+  "requirements": [
+    [
+      "has_dragonstone", "has_recipe1", "has_recipe2","has_recipe3","has_recipe4",
+      "has_recipe5"
+   	]
+  ]
+}

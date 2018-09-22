@@ -1,0 +1,50 @@
+{
+	"parent" : "netherrocks:recipes/root",
+   	"rewards": {
+    	"recipes": [
+      		"netherrocks:fyrite_boots", "netherrocks:fyrite_chestplate",
+      		"netherrocks:fyrite_helmet", "netherrocks:fyrite_leggings"
+    	]
+  	},
+    "criteria" : {
+    	"has_fyrite" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      				{
+      				"item" : "netherrocks:fyrite_ingot"
+      				}
+      			]
+      		}
+    	},
+    	"has_recipe1" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_boots"
+      		}
+    	},
+    	"has_recipe2" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_chestplate"
+      		}
+    	},
+    	"has_recipe3" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_helmet"
+      		}
+    	},
+    	"has_recipe4" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_leggings"
+      		}
+    	}
+    },
+  "requirements": [
+    [
+      "has_fyrite", "has_recipe1", "has_recipe2","has_recipe3","has_recipe4"
+   	]
+  ]
+}

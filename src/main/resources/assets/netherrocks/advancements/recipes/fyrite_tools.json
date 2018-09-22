@@ -1,0 +1,50 @@
+{
+	"parent" : "netherrocks:recipes/root",
+   	"rewards": {
+    	"recipes": [
+      		"netherrocks:fyrite_axe",  "netherrocks:fyrite_pickaxe",
+      		"netherrocks:fyrite_shovel", "netherrocks:fyrite_sword"
+    	]
+  	},
+    "criteria" : {
+    	"has_fyrite" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      				{
+      				"item" : "netherrocks:fyrite_ingot"
+      				}
+      			]
+      		}
+    	},
+    	"has_recipe1" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_axe"
+      		}
+    	},
+    	"has_recipe3" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_pickaxe"
+      		}
+    	},
+    	"has_recipe4" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_shovel"
+      		}
+    	},
+    	"has_recipe5" : {
+      		"trigger": "minecraft:recipe_unlocked",
+      		"conditions": {
+        		"recipe": "netherrocks:fyrite_sword"
+      		}
+    	}
+    },
+  "requirements": [
+    [
+      "has_fyrite", "has_recipe1", "has_recipe3","has_recipe4", "has_recipe5"
+   	]
+  ]
+}
