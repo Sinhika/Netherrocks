@@ -19,7 +19,11 @@
     	"has_sword" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions": {
-        		"items": "netherrocks:illumenite_sword"
+        		"items": [ 
+        			{
+						"item" : "netherrocks:illumenite_sword"
+        			} 
+        		]
       		}
     	}
     },
