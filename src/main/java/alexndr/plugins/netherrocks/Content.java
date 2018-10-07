@@ -48,10 +48,16 @@ public class Content
 	public static void addSmeltingRecipes() 
 	{
 		// Furnace Recipes
-		GameRegistry.addSmelting(ModBlocks.fyrite_ore, new ItemStack(
+		if (Settings.fyriteOre.isEnabled() && Settings.fyriteIngot.isEnabled()) 
+		{
+			GameRegistry.addSmelting(ModBlocks.fyrite_ore, new ItemStack(
 				ModItems.fyrite_ingot, 1, 0), 0.8F);
-		GameRegistry.addSmelting(ModBlocks.malachite_ore, new ItemStack(
+		}
+		if (Settings.malachiteOre.isEnabled() && Settings.malachiteIngot.isEnabled())
+		{
+			GameRegistry.addSmelting(ModBlocks.malachite_ore, new ItemStack(
 				ModItems.malachite_ingot, 1, 0), 0.5F);
+		}
 		GameRegistry.addSmelting(ModBlocks.ashstone_ore, new ItemStack(
 				ModItems.ashstone_gem, 1, 0), 0.8F);
 		GameRegistry.addSmelting(ModBlocks.illumenite_ore, new ItemStack(

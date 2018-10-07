@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import alexndr.api.content.tiles.TileEntitySimpleFurnace;
-import alexndr.api.logger.LogHelper;
 import alexndr.plugins.netherrocks.ModBlocks;
 import alexndr.plugins.netherrocks.ModItems;
 import alexndr.plugins.netherrocks.blocks.NetherFurnaceBlock;
@@ -36,8 +35,8 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
     public NetherFurnaceTileEntity() 
     {
 		super(NetherFurnaceTileEntity.tilename, 600, NetherFurnaceTileEntity.guiID, 3);
-		LogHelper.verbose("netherrocks", "finished NetherFurnaceTileEntity ctor for " 
-					+ this.getDisplayName().getUnformattedText());
+//		LogHelper.verbose("netherrocks", "finished NetherFurnaceTileEntity ctor for " 
+//					+ this.getDisplayName().getUnformattedText());
 	}
 
     public boolean isItemFuel(ItemStack fuel)
@@ -159,11 +158,6 @@ public class NetherFurnaceTileEntity extends TileEntitySimpleFurnace
         {
             this.markDirty();
         }
-//        if (this.world != null)
-//        {
-//        	IBlockState blockstate = this.getWorld().getBlockState(this.pos);
-//        	this.getWorld().notifyBlockUpdate(this.pos, blockstate, blockstate, 2);
-//        }
 
 	} // end update()
 

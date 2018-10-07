@@ -66,10 +66,10 @@ item.dragonstone_leggings.name=龙石护腿
 item.dragonstone_boots.name=龙石靴子
 
 //Achievements
-achievement.netherRocksAch=初识地狱矿！
-achievement.netherRocksAch.desc=发现孔雀石矿
-achievement.netherFurnaceAch=超级熔炉
-achievement.netherFurnaceAch.desc=合成第一个地狱熔炉！
+advancements.netherRocksAch=初识地狱矿！
+advancements.netherRocksAch.desc=发现孔雀石矿
+advancements.netherFurnaceAch=超级熔炉
+advancements.netherFurnaceAch.desc=合成第一个地狱熔炉！
 
 //Tool Tip Info
 netherrocks.fyriteArmor.info=§a套装属性：无视火/岩浆伤害

@@ -73,33 +73,33 @@ nether_furnace_gui=Fourneau du Nether
 
 
 //Achievements
-achievement.fyriteOreAch=Chaud au touché
-achievement.fyriteOreAch.desc=Récupère du Minerai de Fyrite depuis le Nether
-achievement.malachiteOreAch=Né pour enchanter
-achievement.malachiteOreAch.desc=Obtiens du Minerai de Malachite. C'est très enchantable
-achievement.ashstoneOreAch=Super rapide!
-achievement.ashstoneOreAch.desc=Les Outils en Ashstone sont super rapide, donc commence à chercher!
-achievement.illumeniteOreAch=Éclair la voie
-achievement.illumeniteOreAch.desc=Ça pousse parmi la Glowstone
-achievement.argoniteOreAch=All Rounder
-achievement.argoniteOreAch.desc=L'Argonite produit de bons outils
-achievement.dragonstoneOreAch=Depuis le ventre de la bête
-achievement.dragonstoneOreAch.desc=Admire, le vrai pouvoir qu'attend ceux qui exploitent ce Minerai
+advancements.fyriteOreAch=Chaud au touché
+advancements.fyriteOreAch.desc=Récupère du Minerai de Fyrite depuis le Nether
+advancements.malachiteOreAch=Né pour enchanter
+advancements.malachiteOreAch.desc=Obtiens du Minerai de Malachite. C'est très enchantable
+advancements.ashstoneOreAch=Super rapide!
+advancements.ashstoneOreAch.desc=Les Outils en Ashstone sont super rapide, donc commence à chercher!
+advancements.illumeniteOreAch=Éclair la voie
+advancements.illumeniteOreAch.desc=Ça pousse parmi la Glowstone
+advancements.argoniteOreAch=All Rounder
+advancements.argoniteOreAch.desc=L'Argonite produit de bons outils
+advancements.dragonstoneOreAch=Depuis le ventre de la bête
+advancements.dragonstoneOreAch.desc=Admire, le vrai pouvoir qu'attend ceux qui exploitent ce Minerai
 
-achievement.fyriteSetAch=Lava Proof
-achievement.fyriteSetAch.desc=Porte l'Ensemble et tu ne sentira même plus less brûlures
-achievement.malachiteSetAch=Super saut
-achievement.malachiteSetAch.desc=Porte l'Ensemble pour sauter comme si tu ne pesai rien
-achievement.ashstoneAxeAch=Nemesis des arbres
-achievement.ashstoneAxeAch.desc=Les arbres ne sont jamais tombés si vite
-achievement.illumeniteSetAch=Os incassable
-achievement.illumeniteSetAch.desc=Porte l'Ensemble pour vaincre ton vertige
-achievement.argoniteSwordAch=La meilleure amie des chasseurs de monstres
-achievement.argoniteSwordAch.desc=Une puissante Épée qui ne te laissera jamais tomber
-achievement.dragonstonePickaxeAch=Le companion de la vie
-achievement.dragonstonePickaxeAch.desc=Ne vous inquiétez pas, on le pense vraiment
-achievement.netherFurnaceAch=Super Four
-achievement.netherFurnaceAch.desc=Construit un Fourneau du Nether!
+advancements.fyriteSetAch=Lava Proof
+advancements.fyriteSetAch.desc=Porte l'Ensemble et tu ne sentira même plus less brûlures
+advancements.malachiteSetAch=Super saut
+advancements.malachiteSetAch.desc=Porte l'Ensemble pour sauter comme si tu ne pesai rien
+advancements.ashstoneAxeAch=Nemesis des arbres
+advancements.ashstoneAxeAch.desc=Les arbres ne sont jamais tombés si vite
+advancements.illumeniteSetAch=Os incassable
+advancements.illumeniteSetAch.desc=Porte l'Ensemble pour vaincre ton vertige
+advancements.argoniteSwordAch=La meilleure amie des chasseurs de monstres
+advancements.argoniteSwordAch.desc=Une puissante Épée qui ne te laissera jamais tomber
+advancements.dragonstonePickaxeAch=Le companion de la vie
+advancements.dragonstonePickaxeAch.desc=Ne vous inquiétez pas, on le pense vraiment
+advancements.netherFurnaceAch=Super Four
+advancements.netherFurnaceAch.desc=Construit un Fourneau du Nether!
 
 //Tool Tip Info
 netherrocks.fyriteArmor.info=§aBonus d'Ensemble: Pas de dégats de feu/lave.
