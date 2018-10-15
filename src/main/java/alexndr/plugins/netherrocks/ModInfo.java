@@ -13,7 +13,7 @@ public class ModInfo {
 	public static final String VERSION = "@MODVERSION@";
 	public static final String DESCRIPTION = "A plugin for SimpleCore API that adds 6 new ores to the Nether.";
 	public static final String DEPENDENCIES = "required-after:simplecore@[1.7.2.0,);after:simpleores;after:jei@[4.11.0.0,)";
-	public static final String ACCEPTED_VERSIONS = "[1.12,)";
+	public static final String ACCEPTED_VERSIONS = "[1.12.2,)";
 	public static final String URL = "http://minecraft.curseforge.com/projects/netherrocks";
 	public static final List<String> AUTHORS = Lists.newArrayList("AleXndrTheGr8st");
 	public static final String CREDITS = "Created by AleXndrTheGr8st. Maintained by Sinhika";

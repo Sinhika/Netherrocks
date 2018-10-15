@@ -453,7 +453,8 @@ public static void registerOreDictionary()
 		OreDictionary.registerOre("ingotMalachite", new ItemStack(ModItems.malachite_ingot));
 	if (Settings.ashstoneGem.isEnabled())
 		OreDictionary.registerOre("gemAshstone", new ItemStack(ModItems.ashstone_gem));
-	OreDictionary.registerOre("ingotIllumenite", new ItemStack(ModItems.illumenite_ingot));
+	if (Settings.illumeniteIngot.isEnabled())
+		OreDictionary.registerOre("ingotIllumenite", new ItemStack(ModItems.illumenite_ingot));
 	if (Settings.dragonstoneGem.isEnabled())
 		OreDictionary.registerOre("gemDragonstone", new ItemStack(ModItems.dragonstone_gem));
 	if (Settings.argoniteIngot.isEnabled())

@@ -33,12 +33,12 @@ public class Settings
 			configureMachines();
 		}
 		catch(Exception e) {
-			LogHelper.severe("Netherrocks", "Failed to load settings");
+			LogHelper.severe(ModInfo.ID, "Failed to load settings");
 			e.printStackTrace();
 		}
 		finally {
 			settings.save();
-			LogHelper.verbose("Netherrocks", "Settings loaded successfully");
+			LogHelper.verbose(ModInfo.ID, "Settings loaded successfully");
 		}
 	} // end createOrLoadSettings()
 	
