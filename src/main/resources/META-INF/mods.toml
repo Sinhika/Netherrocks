@@ -8,7 +8,7 @@ loaderVersion="[25,)" #mandatory (24 is current forge version)
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
 
 [[mods]]
-modId="simplenetherrocks"
+modId="netherrocks"
 version="${version}"
 displayName="SimpleOres:Netherrocks"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.14/update.json"
