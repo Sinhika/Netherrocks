@@ -63,14 +63,14 @@
     "item.simplenetherrocks.dragonstone_leggings": "龙石护腿",
     "item.simplenetherrocks.dragonstone_boots": "龙石靴子",
 
-    "advancements.netherRocksAch": "初识地狱矿！",
-    "advancements.netherRocksAch.desc": "发现孔雀石矿",
-    "advancements.netherFurnaceAch": "超级熔炉",
-    "advancements.netherFurnaceAch.desc": "合成第一个地狱熔炉！",
+    "advancements.root.welcome": "初识地狱矿！"
+    "advancements.root.welcome.desc": "发现孔雀石矿",
+    "advancements.nether_furnace_ach": "超级熔炉",
+    "advancements.nether_furnace_ach.desc": "合成第一个地狱熔炉！",
 
-    "netherrocks.fyriteArmor.info": "§a套装属性：无视火/岩浆伤害",
-    "netherrocks.malachiteArmor.info": "§a套装属性：跳的更高",
-    "netherrocks.illumeniteArmor.info": "§a套装属性：无视跌落伤害",
+    "netherrocks.fyrite_armor.info": "§a套装属性：无视火/岩浆伤害",
+    "netherrocks.malachite_armor.info": "§a套装属性：跳的更高",
+    "netherrocks.illumenite_armor.info": "§a套装属性：无视跌落伤害",
     "netherrocks.fyrite_pickaxe.info": "§a自动炼制矿石",
     "netherrocks.fyrite_sword.info": "§a来自火的力量",
     "netherrocks.illumenite_sword.info": "§a打斗中获得夜视，使敌人失明和减速"
