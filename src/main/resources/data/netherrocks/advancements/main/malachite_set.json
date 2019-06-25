@@ -4,10 +4,10 @@
             "item": "netherrocks:malachite_chestplate"
         },
         "title": {
-            "translate": "advancements.malachiteSetAch"
+            "translate": "advancements.malachite_set_ach"
         },
         "description": {
-            "translate": "advancements.malachiteSetAch.desc"
+            "translate": "advancements.malachite_set_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true

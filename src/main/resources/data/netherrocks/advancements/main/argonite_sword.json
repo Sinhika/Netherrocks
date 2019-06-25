@@ -1,24 +1,24 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:dragonstone_pickaxe"
+            "item": "netherrocks:argonite_sword"
         },
         "title": {
-            "translate": "advancements.dragonstonePickaxeAch"
+            "translate": "advancements.argonite_sword_ach"
         },
         "description": {
-            "translate": "advancements.dragonstonePickaxeAch.desc"
+            "translate": "advancements.argonite_sword_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/dragonstone_ore",
+    "parent" : "netherrocks:main/argonite_ore",
     "criteria" : {
-    	"got_dragonstone_pickaxe" : {
+    	"got_argonite_sword" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:dragonstone_pickaxe"}
+      			{"item" : "netherrocks:argonite_sword"}
       			]
       		}
     	}

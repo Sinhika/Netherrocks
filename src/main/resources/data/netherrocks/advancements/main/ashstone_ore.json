@@ -4,10 +4,10 @@
             "item": "netherrocks:ashstone_ore"
         },
         "title": {
-            "translate": "advancements.ashstoneOreAch"
+            "translate": "advancements.ashstone_ore_ach"
         },
         "description": {
-            "translate": "advancements.ashstoneOreAch.desc"
+            "translate": "advancements.ashstone_ore_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true

@@ -1,29 +1,29 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:dragonstone_ore"
+            "item": "netherrocks:illumenite_ore"
         },
         "title": {
-            "translate": "advancements.dragonstoneOreAch"
+            "translate": "advancements.illumenite_ore_ach"
         },
         "description": {
-            "translate": "advancements.dragonstoneOreAch.desc"
+            "translate": "advancements.illumenite_ore_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/argonite_ore",
+    "parent" : "netherrocks:main/ashstone_ore",
    	"rewards": {
     	"recipes": [
-      		"netherrocks:dragonstone_block", "netherrocks:dragonstone_gem"
+      		"netherrocks:illumenite_block", "netherrocks:illumenite_ingot"
     	]
   	},
     "criteria" : {
-    	"got_dragonstone_ore" : {
+    	"got_illumenite_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:dragonstone_ore"}
+      			{"item" : "netherrocks:illumenite_ore"}
       			]
       		}
     	}

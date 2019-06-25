@@ -1,24 +1,24 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:ashstone_axe"
+            "item": "netherrocks:dragonstone_pickaxe"
         },
         "title": {
-            "translate": "advancements.ashstoneAxeAch"
+            "translate": "advancements.dragonstone_pickaxe_ach"
         },
         "description": {
-            "translate": "advancements.ashstoneAxeAch.desc"
+            "translate": "advancements.dragonstone_pickaxe_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/ashstone_ore",
+    "parent" : "netherrocks:main/dragonstone_ore",
     "criteria" : {
-    	"got_ashstone_sword" : {
+    	"got_dragonstone_pickaxe" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:ashstone_axe"}
+      			{"item" : "netherrocks:dragonstone_pickaxe"}
       			]
       		}
     	}

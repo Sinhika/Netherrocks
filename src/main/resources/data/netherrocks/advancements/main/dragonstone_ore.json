@@ -1,29 +1,29 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:malachite_ore"
+            "item": "netherrocks:dragonstone_ore"
         },
         "title": {
-            "translate": "advancements.malachiteOreAch"
+            "translate": "advancements.dragonstone_ore_ach"
         },
         "description": {
-            "translate": "advancements.malachiteOreAch.desc"
+            "translate": "advancements.dragonstone_ore_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/fyrite_ore",
+    "parent" : "netherrocks:main/argonite_ore",
    	"rewards": {
     	"recipes": [
-      		"netherrocks:malachite_block", "netherrocks:malachite_ingot"
+      		"netherrocks:dragonstone_block", "netherrocks:dragonstone_gem"
     	]
   	},
     "criteria" : {
-    	"got_malachite_ore" : {
+    	"got_dragonstone_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_ore"}
+      			{"item" : "netherrocks:dragonstone_ore"}
       			]
       		}
     	}

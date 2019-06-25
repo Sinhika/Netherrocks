@@ -1,24 +1,24 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:argonite_sword"
+            "item": "netherrocks:ashstone_axe"
         },
         "title": {
-            "translate": "advancements.argoniteSwordAch"
+            "translate": "advancements.ashstone_axe_ach"
         },
         "description": {
-            "translate": "advancements.argoniteSwordAch.desc"
+            "translate": "advancements.ashstone_axe_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/argonite_ore",
+    "parent" : "netherrocks:main/ashstone_ore",
     "criteria" : {
-    	"got_argonite_sword" : {
+    	"got_ashstone_sword" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:argonite_sword"}
+      			{"item" : "netherrocks:ashstone_axe"}
       			]
       		}
     	}

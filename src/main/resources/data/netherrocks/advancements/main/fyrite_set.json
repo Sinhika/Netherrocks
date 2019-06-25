@@ -1,48 +1,48 @@
 {
     "display":  {
         "icon": {
-            "item": "netherrocks:illumenite_chestplate"
+            "item": "netherrocks:fyrite_chestplate"
         },
         "title": {
-            "translate": "advancements.illumeniteSetAch"
+            "translate": "advancements.fyrite_set_ach"
         },
         "description": {
-            "translate": "advancements.illumeniteSetAch.desc"
+            "translate": "advancements.fyrite_set_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "netherrocks:main/illumenite_ore",
+    "parent" : "netherrocks:main/fyrite_ore",
     "criteria" : {
-    	"illumenite_chestplate" : {
+    	"fyrite_chestplate" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:illumenite_chestplate"}
+      			{"item" : "netherrocks:fyrite_chestplate"}
       			]
       		}
     	},
-    	"illumenite_leggings" : {
+    	"fyrite_leggings" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:illumenite_leggings"}
+      			{"item" : "netherrocks:fyrite_leggings"}
       			]
       		}
     	},
-    	"illumenite_helmet" : {
+    	"fyrite_helmet" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:illumenite_helmet"}
+      			{"item" : "netherrocks:fyrite_helmet"}
       			]
       		}
     	},
-    	"illumenite_boots" : {
+    	"fyrite_boots" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:illumenite_boots"}
+      			{"item" : "netherrocks:fyrite_boots"}
       			]
       		}
     	}

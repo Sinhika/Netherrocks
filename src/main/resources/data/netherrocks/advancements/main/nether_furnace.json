@@ -4,10 +4,10 @@
             "item": "netherrocks:nether_furnace"
         },
         "title": {
-            "translate": "advancements.netherFurnaceAch"
+            "translate": "advancements.nether_furnace_ach"
         },
         "description": {
-            "translate": "advancements.netherFurnaceAch.desc"
+            "translate": "advancements.nether_furnace_ach.desc"
         },
         "show_toast": true,
         "announce_to_chat": true
