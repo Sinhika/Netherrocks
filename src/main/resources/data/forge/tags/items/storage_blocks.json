@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:storage_blocks/malachite",
+    "#forge:storage_blocks/ashstone",
+    "#forge:storage_blocks/dragonstone",
+    "#forge:storage_blocks/argonite",
+    "#forge:storage_blocks/illumenite",
+    "#forge:storage_blocks/fyrite"
+  ]
+}

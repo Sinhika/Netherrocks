@@ -1,9 +1,5 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:dragonstone_tools_enabled",
-			"value" : true
-		} ],
+	
 	"result" : {
 		"item" : "netherrocks:dragonstone_shovel"
 	},
@@ -15,6 +11,6 @@
 	"type" : "forge:ore_shaped",
 	"key" : {
 		"S" : { "item" : "#GEMDRAGONSTONE"},
-		"T" : { "item" : "#STICKWOOD"}
+		"T" : { "tag" : "forge:rods/wooden"}
 	}
 }

@@ -1,9 +1,5 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:malachite_tools_enabled",
-			"value" : true
-		} ],
+	
 	"result" : {
 		"item" : "netherrocks:malachite_hoe"
 	},
@@ -14,7 +10,7 @@
 	],
 	"type" : "forge:ore_shaped",
 	"key" : {
-		"S" : { "item" : "#INGOTMALACHITE"},
-		"T" : { "item" : "#STICKWOOD"}
+		"S" : { "tag" : "forge:ingots/malachite"},
+		"T" : { "tag" : "forge:rods/wooden"}
 	}
 }

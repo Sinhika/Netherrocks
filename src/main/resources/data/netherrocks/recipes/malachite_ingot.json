@@ -1,9 +1,5 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:malachite_block_enabled",
-			"value" : true
-		} ],
+	
 	"type" : "minecraft:crafting_shapeless",
 	"ingredients" : [
 		{ "item" : "netherrocks:malachite_block" }

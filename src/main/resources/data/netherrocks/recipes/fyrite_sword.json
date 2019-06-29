@@ -1,9 +1,5 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:fyrite_tools_enabled",
-			"value" : true
-		} ],
+	
 	"result" : {
 		"item" : "netherrocks:fyrite_sword"
 	},
@@ -14,7 +10,7 @@
 	],
 	"type" : "forge:ore_shaped",
 	"key" : {
-		"S" : { "item" : "#INGOTFYRITE"},
-		"T" : { "item" : "#STICKWOOD"}
+		"S" : { "tag" : "forge:ingots/fyrite"},
+		"T" : { "tag" : "forge:rods/wooden"}
 	}
 }

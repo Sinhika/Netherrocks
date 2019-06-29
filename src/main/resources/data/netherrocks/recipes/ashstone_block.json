@@ -1,9 +1,5 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:ashstone_gem_enabled",
-			"value" : true
-		} ],
+	
 	"type" : "minecraft:crafting_shaped",
 	"result" : {
 		"item" : "netherrocks:ashstone_block"

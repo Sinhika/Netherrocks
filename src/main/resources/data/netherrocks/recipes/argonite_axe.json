@@ -1,9 +1,4 @@
 {
-	"conditions" : [
-		{
-			"type" : "netherrocks:argonite_tools_enabled",
-			"value" : true
-		} ],
 	"result" : {
 		"item" : "netherrocks:argonite_axe"
 	},
@@ -14,7 +9,7 @@
 	],
 	"type" : "forge:ore_shaped",
 	"key" : {
-		"S" : { "item" : "#INGOTARGONITE"},
-		"T" : { "item" : "#STICKWOOD"}
+		"S" : { "tag" : "forge:ingots/argonite"},
+		"T" : { "tag" : "forge:rods/wooden"}
 	}
 }

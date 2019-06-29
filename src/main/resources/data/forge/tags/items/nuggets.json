@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:nuggets/argonite",
+    "#forge:nuggets/fyrite",
+    "#forge:nuggets/illumenite",
+    "#forge:nuggets/malachite"
+  ]
+}
