@@ -5,7 +5,7 @@ modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 loaderVersion="[27,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
-logoFile=""
+logoFile="netherrocks.png"
 
 [[mods]]
 modId="netherrocks"
