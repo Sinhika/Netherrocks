@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "illumenite_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "netherrocks:illumenite_nugget"
+    }
+  },
+  "result": {
+    "item": "netherrocks:illumenite_ingot"
+  }
+}
