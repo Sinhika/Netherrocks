@@ -1,10 +1,10 @@
 {
 	"forge_marker" : 1,
 	"defaults": {
-		"textures": { "all": "netherrocks:blocks/argonite_block" }
+		"textures": { "all": "netherrocks:block/argonite_block" }
 	},
 	"variants": {
-		"normal": { "model" : "cube_all" },
+		"": { "model" : "cube_all" },
 		"inventory": { "model" : "cube_all" }
 	}
 }

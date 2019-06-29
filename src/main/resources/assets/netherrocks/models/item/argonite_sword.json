@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "netherrocks:items/argonite_sword"
+        "layer0": "netherrocks:item/argonite_sword"
     }
 }

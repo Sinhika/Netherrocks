@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "netherrocks:items/dragonstone_chestplate"
+        "layer0": "netherrocks:item/dragonstone_chestplate"
     }
 }

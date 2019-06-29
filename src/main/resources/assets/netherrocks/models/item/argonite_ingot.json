@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "netherrocks:items/argonite_ingot"
+        "layer0": "netherrocks:item/argonite_ingot"
     }
 }

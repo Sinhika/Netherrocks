@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "netherrocks:items/fyrite_pickaxe"
+        "layer0": "netherrocks:item/fyrite_pickaxe"
     }
 }

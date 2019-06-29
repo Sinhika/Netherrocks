@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "netherrocks:items/dragonstone_shovel"
+        "layer0": "netherrocks:item/dragonstone_shovel"
     }
 }

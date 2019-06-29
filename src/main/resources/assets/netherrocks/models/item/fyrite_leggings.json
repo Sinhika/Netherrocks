@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "netherrocks:items/fyrite_leggings"
+        "layer0": "netherrocks:item/fyrite_leggings"
     }
 }

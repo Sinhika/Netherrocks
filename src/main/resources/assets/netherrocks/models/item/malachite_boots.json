@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "netherrocks:items/malachite_boots"
+        "layer0": "netherrocks:item/malachite_boots"
     }
 }
