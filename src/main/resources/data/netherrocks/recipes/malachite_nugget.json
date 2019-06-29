@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherrocks:malachite_ingot"
+    }
+  ],
+  "result": {
+    "item": "netherrocks:malachite_nugget",
+    "count": 9
+  }
+}

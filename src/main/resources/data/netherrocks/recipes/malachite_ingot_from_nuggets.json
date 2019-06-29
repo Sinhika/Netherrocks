@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "malachite_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "netherrocks:malachite_nugget"
+    }
+  },
+  "result": {
+    "item": "netherrocks:malachite_ingot"
+  }
+}
