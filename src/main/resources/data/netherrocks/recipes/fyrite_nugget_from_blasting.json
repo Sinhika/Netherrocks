@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "netherrocks:fyrite_axe"
+    },
+    {
+      "item": "netherrocks:fyrite_boots"
+    },
+    {
+      "item": "netherrocks:fyrite_chestplate"
+    },
+    {
+      "item": "netherrocks:fyrite_helmet"
+    },
+    {
+      "item": "netherrocks:fyrite_leggings"
+    },
+    {
+      "item": "netherrocks:fyrite_pickaxe"
+    },
+    {
+      "item": "netherrocks:fyrite_shovel"
+    },
+    {
+      "item": "netherrocks:fyrite_sword"
+    }
+  ],
+  "result": "netherrocks:fyrite_nugget",
+  "experience": 0.3,
+  "cookingtime": 100
+}
