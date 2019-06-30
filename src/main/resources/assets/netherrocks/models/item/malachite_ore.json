@@ -1,0 +1,4 @@
+{
+	"parent": "block/cube_all",
+	"textures": { "all": "netherrocks:block/malachite_ore" }
+}
