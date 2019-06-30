@@ -10,7 +10,7 @@
 	],
 	"type" : "minecraft:crafting_shaped",
 	"key" : {
-		"S" : { "item" : "#GEMDRAGONSTONE"},
+		"S" : { "tag" : "forge:gems/dragonstone"},
 		"T" : { "tag" : "forge:rods/wooden"}
 	}
 }
