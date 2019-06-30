@@ -16,7 +16,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -24,9 +24,8 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
-@EventBusSubscriber(modid = Netherrocks.MODID, bus = MOD)
+@Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
 {
 	private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Mod Event Subscriber");
@@ -57,48 +56,129 @@ public final class ModEventSubscriber
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
 		// ingots, nuggets, gems, parts
-		// TODO
 		registry.registerAll(
-				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_ingot")
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_ingot"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_ingot"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_ingot"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_ingot"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_gem"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_gem"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_nugget"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_nugget"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_nugget"),
+				setup(new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_nugget")
 		);
 
 		// armors
-		// TODO
 		registry.registerAll(
 				// dragonstone
 				setup(new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.HEAD,
-									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_helmet")
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_helmet"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.CHEST,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_chestplate"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.LEGS,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_leggings"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.FEET,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_boots"),
 
 				// fyrite
-				// TODO
+				// TODO - will need to change class when fyrite specials
+				//  implemented.
+				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.HEAD,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_helmet"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.CHEST,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_chestplate"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.LEGS,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_leggings"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.FEET,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_boots"),
+
 				// illumenite
-				// TODO
-				// mallachite
-				// TODO
+				// TODO - will need to change class when illumenite specials
+				//  implemented.
+				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.HEAD,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_helmet"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.CHEST,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_chestplate"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.LEGS,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_leggings"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.FEET,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_boots"),
+
+				// malachite
+				// TODO - will need to change class when malachite specials
+				//  implemented.
+				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.HEAD,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_helmet"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.CHEST,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_chestplate"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.LEGS,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_leggings"),
+				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.FEET,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_boots")
 		);
 
 		// tools
-		// TODO
 		registry.registerAll(
 				// axes
 				setup(new SimpleAxe(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_axe"),
+				setup(new SimpleAxe(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_axe"),
+				setup(new SimpleAxe(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_axe"),
+				setup(new SimpleAxe(NetherrocksItemTier.ASHSTONE, 7.0F, -3.1F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_axe"),
+				setup(new SimpleAxe(NetherrocksItemTier.DRAGONSTONE, 7.0F, -3.1F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_axe"),
 
 				// hoes
 				setup(new HoeItem(NetherrocksItemTier.ARGONITE,-2.0F,
 						new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_hoe"),
+				setup(new HoeItem(NetherrocksItemTier.MALACHITE, -2.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_hoe"),
+				setup(new HoeItem(NetherrocksItemTier.ASHSTONE, -2.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_hoe"),
+				setup(new HoeItem(NetherrocksItemTier.DRAGONSTONE, -2.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_hoe"),
 
                 // pickaxes
 				setup(new SimplePickaxe(NetherrocksItemTier.ARGONITE, 1, -2.8F,
 										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_pickaxe"),
+				setup(new SimplePickaxe(NetherrocksItemTier.FYRITE, 1, -2.8F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_pickaxe"),
+				setup(new SimplePickaxe(NetherrocksItemTier.MALACHITE, 1, -2.8F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_pickaxe"),
+				setup(new SimplePickaxe(NetherrocksItemTier.ASHSTONE, 1, -2.8F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_pickaxe"),
+				setup(new SimplePickaxe(NetherrocksItemTier.DRAGONSTONE, 1, -2.8F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_pickaxe"),
 
 				// shovels
 				setup(new ShovelItem(NetherrocksItemTier.ARGONITE, 1.5F, -3.0F,
 									 new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_shovel"),
+				setup(new ShovelItem(NetherrocksItemTier.FYRITE, 1.5F, -3.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_shovel"),
+				setup(new ShovelItem(NetherrocksItemTier.MALACHITE, 1.5F, -3.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_shovel"),
+				setup(new ShovelItem(NetherrocksItemTier.ASHSTONE, 1.5F, -3.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_shovel"),
+				setup(new ShovelItem(NetherrocksItemTier.DRAGONSTONE, 1.5F, -3.0F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_shovel"),
 
 				// swords
 				setup(new SwordItem(NetherrocksItemTier.ARGONITE, 3, -2.4F,
-									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_sword")
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_sword"),
+				setup(new SwordItem(NetherrocksItemTier.FYRITE, 3, -2.4F,
+										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_sword"),
+				setup(new SwordItem(NetherrocksItemTier.MALACHITE, 3, -2.4F,
+										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_sword"),
+				setup(new SwordItem(NetherrocksItemTier.ASHSTONE, 3, -2.4F,
+										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_sword"),
+				setup(new SwordItem(NetherrocksItemTier.DRAGONSTONE, 3, -2.4F,
+										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_sword"),
+				setup(new SwordItem(NetherrocksItemTier.ILLUMENITE, 3, -2.4F,
+									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_sword")
 		);
 
 		// We need to go over the entire registry so that we include any potential Registry Overrides

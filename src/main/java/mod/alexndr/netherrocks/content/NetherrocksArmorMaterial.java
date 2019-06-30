@@ -14,15 +14,19 @@ import java.util.function.Supplier;
 
 public enum NetherrocksArmorMaterial implements IArmorMaterial
 {
-    ARGONITE ("netherrocks:argonite", 8, new int [] {1,2,3,2}, 8,
+    FYRITE ("netherrocks:fyrite", 5, new int [] {3,4,5,3}, 7,
             SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F,
-            ()-> { return Ingredient.fromItems(ModItems.argonite_ingot);} ),
-    DRAGONSTONE ("netherrocks:argonite", 8, new int [] {1,2,3,2}, 8,
-    SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F,
+            ()-> { return Ingredient.fromItems(ModItems.fyrite_ingot);} ),
+    MALACHITE ("netherrocks:malachite", 16, new int [] {2,4,4,2}, 39,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON , 0.0F,
+            ()-> { return Ingredient.fromItems(ModItems.malachite_ingot);} ),
+    ILLUMENITE ("netherrocks:illumenite", 12, new int [] {3,5,5,4}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F,
+            ()-> { return Ingredient.fromItems(ModItems.illumenite_ingot);} ),
+    DRAGONSTONE ("netherrocks:dragonstone", 48, new int [] {3,7,9,3}, 27,
+    SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2.0F,
         ()-> { return Ingredient.fromItems(ModItems.dragonstone_gem);} );
-    // TODO
 
-    // TODO
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;
