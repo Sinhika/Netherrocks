@@ -38,10 +38,22 @@ public final class ModEventSubscriber
 	public static void onRegisterBlocks(final RegistryEvent.Register<Block> event)
 	{
 		// Register all your blocks inside this registerAll call
-		// TODO
+		// TODO - fix harvestLevels when those get figured out.
         event.getRegistry().registerAll(
-                setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 1.7F, 3.0F)), "argonite_ore"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(20.0F, 100.0F)), "argonite_block")
+				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 3.0F, 30.0F)), "fyrite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 3.0F, 30.0F)), "malachite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "ashstone_ore"),
+                setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "argonite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "dragonstone_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance( 1.0F, 30.0F).lightValue(15)), "illumenite_ore"),
+				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(10.0F, 72.0F)), "dragonstone_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "ashstone_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "fyrite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "malachite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F).lightValue(15)), "illumenite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "argonite_block")
         );
 		LOGGER.debug("Registered Blocks");
 	}
@@ -121,6 +133,7 @@ public final class ModEventSubscriber
 		// tools
 		registry.registerAll(
 				// axes
+				// TODO will need to change classes when tools effects implemented.
 				setup(new SimpleAxe(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_axe"),
 				setup(new SimpleAxe(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
@@ -143,6 +156,7 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_hoe"),
 
                 // pickaxes
+				// TODO will need to change classes when tools effects implemented.
 				setup(new SimplePickaxe(NetherrocksItemTier.ARGONITE, 1, -2.8F,
 										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_pickaxe"),
 				setup(new SimplePickaxe(NetherrocksItemTier.FYRITE, 1, -2.8F,
@@ -155,6 +169,7 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_pickaxe"),
 
 				// shovels
+				// TODO will need to change classes when tools effects implemented.
 				setup(new ShovelItem(NetherrocksItemTier.ARGONITE, 1.5F, -3.0F,
 									 new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_shovel"),
 				setup(new ShovelItem(NetherrocksItemTier.FYRITE, 1.5F, -3.0F,
@@ -167,6 +182,7 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_shovel"),
 
 				// swords
+				// TODO will need to change classes when tools effects implemented.
 				setup(new SwordItem(NetherrocksItemTier.ARGONITE, 3, -2.4F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_sword"),
 				setup(new SwordItem(NetherrocksItemTier.FYRITE, 3, -2.4F,
