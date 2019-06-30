@@ -8,7 +8,7 @@
 		"ST ",
 		" T "
 	],
-	"type" : "forge:ore_shaped",
+	"type" : "minecraft:crafting_shaped",
 	"key" : {
 		"S" : { "item" : "#GEMDRAGONSTONE"},
 		"T" : { "tag" : "forge:rods/wooden"}
