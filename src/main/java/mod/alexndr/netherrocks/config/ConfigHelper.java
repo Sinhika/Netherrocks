@@ -22,7 +22,11 @@ public final class ConfigHelper
 		serverConfig = config;
 
 		NetherrocksConfig.enableArgoniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
-		// TODO
+		NetherrocksConfig.enableAshstoneOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
+		NetherrocksConfig.enableDragonstoneOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
+		NetherrocksConfig.enableFyriteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
+		NetherrocksConfig.enableIllumeniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
+		NetherrocksConfig.enableMalachiteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
 	} // end bakeServer()
 
 	private static void setValueAndSave(final ModConfig modConfig, final String path, final Object newValue)

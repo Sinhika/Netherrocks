@@ -14,6 +14,11 @@ final class ServerConfig
 {
 
 	final ForgeConfigSpec.BooleanValue serverEnableArgoniteOre;
+	final ForgeConfigSpec.BooleanValue serverEnableAshstoneOre;
+	final ForgeConfigSpec.BooleanValue serverEnableDragonstoneOre;
+	final ForgeConfigSpec.BooleanValue serverEnableFyriteOre;
+	final ForgeConfigSpec.BooleanValue serverEnableIllumeniteOre;
+	final ForgeConfigSpec.BooleanValue serverEnableMalachiteOre;
 	// TODO
 
 	ServerConfig(final ForgeConfigSpec.Builder builder)
@@ -23,7 +28,26 @@ final class ServerConfig
 				.comment("Enable argonite ore generation?")
 				.translation(Netherrocks.MODID + ".config.serverEnableArgoniteOre")
 				.define("serverEnableArgoniteOre", true);
-		// TODO
+		serverEnableAshstoneOre = builder
+				.comment("Enable ashstone ore generation?")
+				.translation(Netherrocks.MODID + ".config.serverEnableAshstoneOre")
+				.define("serverEnableAshstoneOre", true);
+		serverEnableDragonstoneOre = builder
+				.comment("Enable dragonstone ore generation?")
+				.translation(Netherrocks.MODID + ".config.serverEnableDragonstoneOre")
+				.define("serverEnableDragonstoneOre", true);
+		serverEnableFyriteOre = builder
+				.comment("Enable fyrite ore generation?")
+				.translation(Netherrocks.MODID + ".config.serverEnableFyriteOre")
+				.define("serverEnableFyriteOre", true);
+		serverEnableIllumeniteOre = builder
+				.comment("Enable illumenite ore generation?")
+				.translation(Netherrocks.MODID + ".config.serverEnableIllumeniteOre")
+				.define("serverEnableIllumeniteOre", true);
+		serverEnableMalachiteOre = builder
+				.comment("Enable malachite ore generation?")
+				.translation(Netherrocks.MODID + ".config.serverEnableMalachiteOre")
+				.define("serverEnableMalachiteOre", true);
 		builder.pop();
 	} // end ctor
 
