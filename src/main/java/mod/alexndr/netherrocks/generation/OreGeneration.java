@@ -23,7 +23,7 @@ public class OreGeneration
     private static final int argonite_veinsize = 6;
     private static final CountRangeConfig ashstone_cfg = new CountRangeConfig(10, 0, 0, 128);
     private static final int ashstone_veinsize = 5;
-    private static final CountRangeConfig dragonstone_cfg = new CountRangeConfig(6, 0, 0, 128);
+    private static final CountRangeConfig dragonstone_cfg = new CountRangeConfig(7, 0, 0, 128);
     private static final int dragonstone_veinsize = 5;
     private static final CountRangeConfig fyrite_cfg = new CountRangeConfig(10, 0, 0, 128);
     private static final int fyrite_veinsize = 6;
@@ -84,6 +84,7 @@ public class OreGeneration
         if (NetherrocksConfig.enableIllumeniteOre)
         {
             // TODO - this will need tweaking if it works at all.
+            // TODO - does not work at all.
             Biomes.NETHER.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                 Biome.createDecoratedFeature(Feature.EMERALD_ORE,
                         new ReplaceBlockConfig(Blocks.GLOWSTONE.getDefaultState(), ModBlocks.illumenite_ore.getDefaultState()),
