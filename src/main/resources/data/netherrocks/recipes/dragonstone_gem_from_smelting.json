@@ -4,6 +4,6 @@
 		"item": "netherrocks:dragonstone_ore"
 	},
 	"result": "netherrocks:dragonstone_gem",
-	"experience": 0.7,
-	"cookingtime": 100
+	"experience": 1.0,
+	"cookingtime": 200
 }
