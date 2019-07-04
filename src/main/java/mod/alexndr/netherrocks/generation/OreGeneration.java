@@ -10,6 +10,8 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ReplaceBlockConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
+import net.minecraft.world.gen.placement.NoPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 
 /**
@@ -30,8 +32,11 @@ public class OreGeneration
     private static final CountRangeConfig malachite_cfg = new CountRangeConfig(10, 0, 0, 128);
     private static final int malachite_veinsize = 7;
 
-    private static final CountRangeConfig illumenite_cfg = new CountRangeConfig(350, 1, 0, 128);
-    private static final int illumenite_veinsize = 15;
+    // private static final CountRangeConfig illumenite_cfg = new CountRangeConfig(350, 1, 0, 128);
+    private static final NoPlacementConfig illumenite_cfg = IPlacementConfig.NO_PLACEMENT_CONFIG;
+    //private static final int illumenite_veinsize = 15;
+    private static final Placement<NoPlacementConfig> illumenite_placement = new Height4to128(NoPlacementConfig::deserialize);
+
     /**
      * called in setup to generate Nether ores.
      */
@@ -84,11 +89,10 @@ public class OreGeneration
         if (NetherrocksConfig.enableIllumeniteOre)
         {
             // TODO - this will need tweaking if it works at all.
-            // TODO - does not work at all.
             Biomes.NETHER.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                 Biome.createDecoratedFeature(Feature.EMERALD_ORE,
                         new ReplaceBlockConfig(Blocks.GLOWSTONE.getDefaultState(), ModBlocks.illumenite_ore.getDefaultState()),
-                                             Placement.COUNT_RANGE, illumenite_cfg));
+                                                illumenite_placement, illumenite_cfg));
         }
     } // end setupNetherOreGen()
 
