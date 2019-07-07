@@ -8,8 +8,6 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(Netherrocks.MODID)
 public final class ModItems
 {
-    // TODO TODO TODO
-
     // ingots and nuggets
     public static final Item argonite_ingot = ModUtil._null();
     public static final Item argonite_nugget = ModUtil._null();

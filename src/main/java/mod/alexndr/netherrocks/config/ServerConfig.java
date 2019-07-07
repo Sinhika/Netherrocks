@@ -19,7 +19,6 @@ final class ServerConfig
 	final ForgeConfigSpec.BooleanValue serverEnableFyriteOre;
 	final ForgeConfigSpec.BooleanValue serverEnableIllumeniteOre;
 	final ForgeConfigSpec.BooleanValue serverEnableMalachiteOre;
-	// TODO
 
 	ServerConfig(final ForgeConfigSpec.Builder builder)
 	{

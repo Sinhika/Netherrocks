@@ -15,7 +15,6 @@ import net.minecraft.world.gen.placement.*;
 public class OreGeneration
 {
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
-    // TODO
     private static final CountRangeConfig argonite_cfg = new CountRangeConfig(10, 0, 0, 128);
     private static final int argonite_veinsize = 6;
     private static final CountRangeConfig ashstone_cfg = new CountRangeConfig(10, 0, 0, 128);
