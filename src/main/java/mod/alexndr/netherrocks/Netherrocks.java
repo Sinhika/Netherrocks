@@ -28,17 +28,6 @@ public class Netherrocks
 
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
-
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onCommonSetup);
-
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
     } // end Netherrocks()
 
-    private void onCommonSetup(final FMLCommonSetupEvent event)
-    {
-        OreGeneration.setupNetherOreGen();
-        LOGGER.debug("Common setup done");
-    } // end onCommonSetup
 } // end class Netherrocks

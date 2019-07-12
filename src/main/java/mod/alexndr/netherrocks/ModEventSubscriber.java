@@ -5,8 +5,7 @@ import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
-import mod.alexndr.netherrocks.content.SimpleAxe;
-import mod.alexndr.netherrocks.content.SimplePickaxe;
+import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
@@ -14,10 +13,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -30,6 +31,12 @@ public final class ModEventSubscriber
 {
 	private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Mod Event Subscriber");
 
+	@SubscribeEvent
+	public static void onCommonSetup(final FMLCommonSetupEvent event)
+	{
+		OreGeneration.setupNetherOreGen();
+		LOGGER.debug("Common setup done");
+	} // end onCommonSetup
 	/**
 	 * This method will be called by Forge when it is time for the mod to register its Blocks.
 	 * This method will always be called before the Item registry method.
@@ -40,20 +47,56 @@ public final class ModEventSubscriber
 		// Register all your blocks inside this registerAll call
 		// TODO - fix harvestLevels when those get figured out.
         event.getRegistry().registerAll(
-				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 3.0F, 30.0F)), "fyrite_ore"),
-				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 3.0F, 30.0F)), "malachite_ore"),
-				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "ashstone_ore"),
-                setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "argonite_ore"),
-				setup(new OreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance( 5.0F, 30.0F)), "dragonstone_ore"),
 				setup(new OreBlock(Block.Properties.create(Material.ROCK)
-						.hardnessAndResistance( 1.0F, 30.0F).lightValue(15)), "illumenite_ore"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(10.0F, 72.0F)), "dragonstone_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "ashstone_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "fyrite_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "malachite_block"),
+                       .hardnessAndResistance( 3.0F, 30.0F)
+                       .harvestTool(ToolType.PICKAXE).harvestLevel(2)),
+					  "fyrite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK)
+                        .hardnessAndResistance( 3.0F, 30.0F)
+                        .harvestTool(ToolType.PICKAXE).harvestLevel(2)),
+					  "malachite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK)
+                        .hardnessAndResistance( 5.0F, 30.0F)
+                        .harvestTool(ToolType.PICKAXE).harvestLevel(3)),
+					  "ashstone_ore"),
+                setup(new OreBlock(Block.Properties.create(Material.ROCK)
+                        .hardnessAndResistance( 5.0F, 30.0F)
+                        .harvestTool(ToolType.PICKAXE).harvestLevel(3)),
+					  "argonite_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK)
+                        .hardnessAndResistance( 5.0F, 30.0F)
+                        .harvestTool(ToolType.PICKAXE).harvestLevel(3)),
+					  "dragonstone_ore"),
+				setup(new OreBlock(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance( 1.0F, 30.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(2)
+						.lightValue(15)),
+					  "illumenite_ore"),
 				setup(new Block(Block.Properties.create(Material.ROCK)
-						.hardnessAndResistance(7.0F, 72.0F).lightValue(15)), "illumenite_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(7.0F, 72.0F)), "argonite_block")
+						.hardnessAndResistance(10.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
+					  "dragonstone_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
+					  "ashstone_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
+					  "fyrite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
+					  "malachite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)
+						.lightValue(15)),
+					  "illumenite_block"),
+				setup(new Block(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(7.0F, 72.0F)
+						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
+					  "argonite_block")
         );
 		LOGGER.debug("Registered Blocks");
 	}
@@ -134,15 +177,15 @@ public final class ModEventSubscriber
 		registry.registerAll(
 				// axes
 				// TODO will need to change classes when tools effects implemented.
-				setup(new SimpleAxe(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
+				setup(new AxeItem(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_axe"),
-				setup(new SimpleAxe(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
+				setup(new AxeItem(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_axe"),
-				setup(new SimpleAxe(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
+				setup(new AxeItem(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_axe"),
-				setup(new SimpleAxe(NetherrocksItemTier.ASHSTONE, 7.0F, -3.1F,
+				setup(new AxeItem(NetherrocksItemTier.ASHSTONE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_axe"),
-				setup(new SimpleAxe(NetherrocksItemTier.DRAGONSTONE, 7.0F, -3.1F,
+				setup(new AxeItem(NetherrocksItemTier.DRAGONSTONE, 7.0F, -3.1F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_axe"),
 
 				// hoes
@@ -157,15 +200,15 @@ public final class ModEventSubscriber
 
                 // pickaxes
 				// TODO will need to change classes when tools effects implemented.
-				setup(new SimplePickaxe(NetherrocksItemTier.ARGONITE, 1, -2.8F,
+				setup(new PickaxeItem(NetherrocksItemTier.ARGONITE, 1, -2.8F,
 										new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "argonite_pickaxe"),
-				setup(new SimplePickaxe(NetherrocksItemTier.FYRITE, 1, -2.8F,
+				setup(new PickaxeItem(NetherrocksItemTier.FYRITE, 1, -2.8F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_pickaxe"),
-				setup(new SimplePickaxe(NetherrocksItemTier.MALACHITE, 1, -2.8F,
+				setup(new PickaxeItem(NetherrocksItemTier.MALACHITE, 1, -2.8F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_pickaxe"),
-				setup(new SimplePickaxe(NetherrocksItemTier.ASHSTONE, 1, -2.8F,
+				setup(new PickaxeItem(NetherrocksItemTier.ASHSTONE, 1, -2.8F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "ashstone_pickaxe"),
-				setup(new SimplePickaxe(NetherrocksItemTier.DRAGONSTONE, 1, -2.8F,
+				setup(new PickaxeItem(NetherrocksItemTier.DRAGONSTONE, 1, -2.8F,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_pickaxe"),
 
 				// shovels

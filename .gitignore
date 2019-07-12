@@ -16,3 +16,4 @@ bin/
 .gradle/
 /bin/
 .project
+.idea/

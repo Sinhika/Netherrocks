@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 public enum NetherrocksItemTier implements IItemTier
 {
-   ARGONITE(1, 1300, 8.0F, 3.0F, 18,
+   ARGONITE(4, 1300, 8.0F, 3.0F, 18,
             ()->{ return Ingredient.fromItems(ModItems.argonite_ingot);}),
    ASHSTONE(3, 900, 16.0F, 2.0F, 7,
             ()->{ return Ingredient.fromItems(ModItems.ashstone_gem);}),
