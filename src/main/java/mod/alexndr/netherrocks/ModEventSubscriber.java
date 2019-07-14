@@ -3,6 +3,7 @@ package mod.alexndr.netherrocks;
 import com.google.common.base.Preconditions;
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
 import mod.alexndr.netherrocks.content.MalachiteArmorItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
@@ -11,11 +12,14 @@ import mod.alexndr.netherrocks.init.ModTabGroups;
 import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -150,13 +154,13 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_boots"),
 
 				// illumenite
-				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.HEAD,
+				setup(new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.HEAD,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_helmet"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.CHEST,
+				setup(new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.CHEST,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_chestplate"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.LEGS,
-									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_leggings"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.FEET,
+				setup(new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.LEGS,
+											  new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_leggings"),
+				setup(new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.FEET,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_boots"),
 
 				// malachite
@@ -268,6 +272,7 @@ public final class ModEventSubscriber
 			ConfigHelper.bakeServer(config);
 		}
 	} // onModConfigEvent
+
 
     public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
 													   final String name)

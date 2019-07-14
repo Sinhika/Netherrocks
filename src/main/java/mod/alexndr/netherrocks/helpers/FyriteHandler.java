@@ -11,14 +11,12 @@ import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid=Netherrocks.MODID, bus=Mod.EventBusSubscriber.Bus.FORGE)
 public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 {
     public static FyriteHandler INSTANCE = new FyriteHandler();
 
     private FyriteHandler() {}
 
-    @SubscribeEvent
     @Override
     public void onHarvestDrops(BlockEvent.HarvestDropsEvent event)
     {
