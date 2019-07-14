@@ -150,8 +150,6 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_boots"),
 
 				// illumenite
-				// TODO - will need to change class when illumenite specials
-				//  implemented.
 				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.HEAD,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_helmet"),
 				setup(new ArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.CHEST,
@@ -162,8 +160,6 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "illumenite_boots"),
 
 				// malachite
-				// TODO - will need to change class when malachite specials
-				//  implemented.
 				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.HEAD,
 											 new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_helmet"),
 				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.CHEST,

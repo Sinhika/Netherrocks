@@ -1,7 +1,10 @@
 package mod.alexndr.netherrocks.helpers;
 
+import mod.alexndr.netherrocks.ModUtil;
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -32,7 +35,18 @@ public class IllumeniteHandler implements IWeaponEffectHelper
     @SubscribeEvent
     public void onLivingFallEvent(LivingFallEvent event)
     {
-        // TODO
+        // first, is it a player?
+        if (event.getEntityLiving() instanceof PlayerEntity)
+        {
+            PlayerEntity player = (PlayerEntity) event.getEntityLiving();
+
+            // are they wearing full illumenite armor?
+            if (ModUtil.isPlayerWearingFullSet(player,
+                                               NetherrocksArmorMaterial.ILLUMENITE))
+            {
+                event.setDamageMultiplier(0.0F);
+            } // end-if full set of Illumenite
+        } // end-if player
     } // end onLivingFallEvent
 
 }  // end class IllumeniteHandler
