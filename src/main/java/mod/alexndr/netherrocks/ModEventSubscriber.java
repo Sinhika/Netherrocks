@@ -3,6 +3,7 @@ package mod.alexndr.netherrocks;
 import com.google.common.base.Preconditions;
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.content.MalachiteArmorItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
 import mod.alexndr.netherrocks.generation.OreGeneration;
@@ -163,13 +164,13 @@ public final class ModEventSubscriber
 				// malachite
 				// TODO - will need to change class when malachite specials
 				//  implemented.
-				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.HEAD,
-									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_helmet"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.CHEST,
+				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.HEAD,
+											 new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_helmet"),
+				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.CHEST,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_chestplate"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.LEGS,
+				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.LEGS,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_leggings"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.FEET,
+				setup(new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.FEET,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "malachite_boots")
 		);
 
