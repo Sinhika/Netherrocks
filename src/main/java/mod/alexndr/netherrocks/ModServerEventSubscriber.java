@@ -21,25 +21,4 @@ public final class ModServerEventSubscriber
     private static final Logger LOGGER =
         LogManager.getLogger(Netherrocks.MODID + " Mod Event Subscriber (Server)");
 
-    @SubscribeEvent(receiveCanceled = true)
-    public static void onLivingHurtEvent(LivingHurtEvent event)
-    {
-        // first, is it a player?
-        if (event.getEntityLiving() instanceof PlayerEntity)
-        {
-            PlayerEntity player = (PlayerEntity) event.getEntityLiving();
-            LOGGER.info("caught LivingHurtEvent");
-
-            // fall damage and are they wearing full illumenite armor?
-            if ((event.getSource() == DamageSource.FALL) &&
-                ModUtil.isPlayerWearingFullSet(player,
-                                               NetherrocksArmorMaterial.ILLUMENITE))
-            {
-                // pro-forma cancelable check.
-                if (event.isCancelable()) event.setCanceled(true);
-                LOGGER.info("Canceled fall damage from illumenite");
-            } // end-if full set of Illumenite
-        } // end-if player
-    } // end onLivingHurtEvent
-
 } // end-class
