@@ -10,6 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import sun.nio.ch.Net;
 
 /**
  * Subscribe to events from the FORGE EventBus that should be handled on both PHYSICAL sides in this class
@@ -36,8 +37,16 @@ public final class ForgeEventSubscriber
             {
                 // pro-forma cancelable check.
                 if (event.isCancelable()) event.setCanceled(true);
-                LOGGER.debug("Canceled fall damage from illumenite");
-            } // end-if full set of Illumenite
+                LOGGER.debug("Canceled fall damage because of illumenite");
+            } // end-if full set of Illumenite and fall damage
+            else if (event.getSource().isFireDamage()
+                     && ModUtil.isPlayerWearingFullSet(player,
+                                                      NetherrocksArmorMaterial.FYRITE))
+            {
+                // pro-forma cancelable check.
+                if (event.isCancelable()) event.setCanceled(true);
+                LOGGER.debug("Canceled fire damage because of fyrite");
+            } // end-else-if full set of Fyrite and fire damage
         } // end-if player
     } // end onLivingHurtEvent
 

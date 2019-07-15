@@ -3,10 +3,7 @@ package mod.alexndr.netherrocks;
 import com.google.common.base.Preconditions;
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
-import mod.alexndr.netherrocks.content.MalachiteArmorItem;
-import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
-import mod.alexndr.netherrocks.content.NetherrocksItemTier;
+import mod.alexndr.netherrocks.content.*;
 import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import net.minecraft.block.Block;
@@ -142,15 +139,13 @@ public final class ModEventSubscriber
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "dragonstone_boots"),
 
 				// fyrite
-				// TODO - will need to change class when fyrite specials
-				//  implemented.
-				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.HEAD,
-									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_helmet"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.CHEST,
+				setup(new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.HEAD,
+										  new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_helmet"),
+				setup(new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.CHEST,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_chestplate"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.LEGS,
+				setup(new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.LEGS,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_leggings"),
-				setup(new ArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.FEET,
+				setup(new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.FEET,
 									new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)), "fyrite_boots"),
 
 				// illumenite
