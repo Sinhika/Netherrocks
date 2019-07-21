@@ -47,7 +47,6 @@ public final class ModEventSubscriber
 	public static void onRegisterBlocks(final RegistryEvent.Register<Block> event)
 	{
 		// Register all your blocks inside this registerAll call
-		// TODO - fix harvestLevels when those get figured out.
         event.getRegistry().registerAll(
 				setup(new OreBlock(Block.Properties.create(Material.ROCK)
                        .hardnessAndResistance( 3.0F, 30.0F)

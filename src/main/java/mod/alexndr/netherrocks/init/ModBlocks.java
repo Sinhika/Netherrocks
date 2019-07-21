@@ -24,4 +24,7 @@ public final class ModBlocks
     public static final Block illumenite_block = ModUtil._null();
     public static final Block malachite_block = ModUtil._null();
 
+    // Furnace
+    public static final Block nether_furnace = ModUtil._null();
+
 }  // end class ModBlocks
