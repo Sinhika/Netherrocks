@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "netherrocks:nether_furnace"
+        },
+        "title": {
+            "translate": "advancements.nether_furnace_ach"
+        },
+        "description": {
+            "translate": "advancements.nether_furnace_ach.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "netherrocks:main/root",
+     "criteria" : {
+    	"got_nether_furnace" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "netherrocks:nether_furnace"}
+      			]
+      		}
+    	}
+    }
+}

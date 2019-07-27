@@ -3,14 +3,12 @@ package mod.alexndr.netherrocks;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sun.nio.ch.Net;
 
 /**
  * Subscribe to events from the FORGE EventBus that should be handled on both PHYSICAL sides in this class
@@ -22,7 +20,7 @@ public final class ForgeEventSubscriber
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Forge Event Subscriber");
 
     @SubscribeEvent(receiveCanceled = true, priority= EventPriority.HIGHEST)
-    public static void onLivingHurtEvent(LivingAttackEvent event)
+    public static void onLivingAttackEvent(LivingAttackEvent event)
     {
         // first, is it a player?
         if (event.getEntityLiving() instanceof PlayerEntity)

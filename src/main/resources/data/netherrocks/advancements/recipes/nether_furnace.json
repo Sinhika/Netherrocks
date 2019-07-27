@@ -1,0 +1,25 @@
+{
+	"parent" : "netherrocks:recipes/root",
+   	"rewards": {
+    	"recipes": [
+      		"netherrocks:nether_furnace"
+    	]
+  	},
+    "criteria" : {
+    	"has_netherrack" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      				{
+      				"item" : "minecraft:netherrack"
+      				}
+      			]
+      		}
+    	}
+     },
+  "requirements": [
+    [
+      "has_netherrack"
+   	]
+  ]
+}

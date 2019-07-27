@@ -1,0 +1,15 @@
+{
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "netherrocks:nether_furnace"
+	},
+	"pattern" : [
+		"SSS",
+		"SYS",
+		"SSS"
+	],
+	"key" : {
+		"S" : { "item" : "minecraft:netherrack"},
+		"Y" : { "item" : "minecraft:flint_and_steel"}
+	}
+}
