@@ -5,18 +5,22 @@ import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.content.*;
 import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
+import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraft.item.*;
-import net.minecraft.util.DamageSource;
+import net.minecraft.tileentity.FurnaceTileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -27,6 +31,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.awt.event.ContainerEvent;
 
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
@@ -39,6 +44,31 @@ public final class ModEventSubscriber
 		OreGeneration.setupNetherOreGen();
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
+
+
+	@SubscribeEvent
+	public static void onRegisterContainers(final RegistryEvent.Register<ContainerType<?>> event)
+	{
+		// register containers.
+		// TODO
+		//event.getRegistry().register();
+	} // end ()
+
+
+	@SubscribeEvent
+	public static void onRegisterTileEntities(final RegistryEvent.Register<TileEntityType<?>> event)
+	{
+		ModTiles.NETHER_FURNACE =
+			TileEntityType.Builder.create(NetherFurnaceTileEntity::new,
+										  ModBlocks.nether_furnace).build(null);
+		// tile entities.
+        event.getRegistry().register(
+        	setup(ModTiles.NETHER_FURNACE,
+					"nether_furnace_tile_entity")
+		);
+	} // end ()
+
+
 	/**
 	 * This method will be called by Forge when it is time for the mod to register its Blocks.
 	 * This method will always be called before the Item registry method.
@@ -97,7 +127,11 @@ public final class ModEventSubscriber
 				setup(new Block(Block.Properties.create(Material.ROCK)
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
-					  "argonite_block")
+					  "argonite_block"),
+				setup(new NetherFurnaceBlock(Block.Properties.create(Material.ROCK)
+						.hardnessAndResistance(3.5F, 12.0F)
+						 .lightValue(0).harvestTool(ToolType.PICKAXE)),
+					  "nether_furnace")
         );
 		LOGGER.debug("Registered Blocks");
 	}

@@ -14,6 +14,6 @@ public class NetherFurnaceBlock extends FurnaceBlock
     @Override
     public TileEntity createNewTileEntity(IBlockReader worldIn)
     {
-        return super.createNewTileEntity(worldIn);
+        return new NetherFurnaceTileEntity();
     }
 }  // end class NetherFurnaceBlock
