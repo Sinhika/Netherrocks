@@ -110,20 +110,20 @@ public final class ModEventSubscriber
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
 					  "ashstone_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK)
+				setup(new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
 					  "fyrite_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK)
+				setup(new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
 					  "malachite_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK)
+				setup(new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)
 						.lightValue(15)),
 					  "illumenite_block"),
-				setup(new Block(Block.Properties.create(Material.ROCK)
+				setup(new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
 						.hardnessAndResistance(7.0F, 72.0F)
 						.harvestTool(ToolType.PICKAXE).harvestLevel(1)),
 					  "argonite_block"),
