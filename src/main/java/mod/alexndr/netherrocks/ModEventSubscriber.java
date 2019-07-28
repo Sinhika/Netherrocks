@@ -63,8 +63,7 @@ public final class ModEventSubscriber
 										  ModBlocks.nether_furnace).build(null);
 		// tile entities.
         event.getRegistry().register(
-        	setup(ModTiles.NETHER_FURNACE,
-					"nether_furnace_tile_entity")
+        	setup(ModTiles.NETHER_FURNACE, "nether_furnace_tile_entity")
 		);
 	} // end ()
 
