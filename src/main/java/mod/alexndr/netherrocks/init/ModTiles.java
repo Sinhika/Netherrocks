@@ -1,10 +1,8 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.ModUtil;
-import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraftforge.registries.ObjectHolder;
 
 public class ModTiles
 {
