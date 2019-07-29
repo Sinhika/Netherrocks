@@ -18,6 +18,8 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
@@ -25,6 +27,7 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
     protected static final int netherrackBurnTime = 200;
     protected static final int fyriteBurnTime = 8000;
     protected static final int blazeRodBurnTime = 2400;
+    protected static final List<Item> validFuels = new ArrayList<Item>();
 
     public NetherFurnaceTileEntity()
     {
@@ -38,12 +41,65 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
     }
 
     @Override
+    public boolean isItemValidForSlot(int index, ItemStack stack)
+    {
+        if (index == 2) {
+            return false;
+        }
+        else if (index != 1) {
+            return true;
+        }
+        else {
+            return NetherFurnaceTileEntity.isFuel(stack);
+        }
+    } // end ()
+
+    public static boolean isFuel(ItemStack stack)
+    {
+        return getValidFuels().contains(stack.getItem());
+    }
+
+
+    @Override
     protected int getBurnTime(ItemStack fuelStack)
     {
         if (fuelStack.isEmpty()) { return 0; }
         Item fuelItem = fuelStack.getItem();
-        return NetherFurnaceTileEntity.getBurnTimes().getOrDefault(fuelItem, 0);
-    }
+
+        if (getValidFuels().contains(fuelItem))
+        {
+            return NetherFurnaceTileEntity.getBurnTimes().getOrDefault(fuelItem, 0);
+        }
+        else {
+            return 0;
+        }
+    } // end getBurnTime()
+
+    /**
+     * Get the list of valid fuels, or create it if it is empty.
+     * @return a list of valid fuel items
+     */
+    public static List<Item> getValidFuels()
+    {
+        if (validFuels.isEmpty())
+        {
+            validFuels.add(Blocks.NETHERRACK.asItem());
+            validFuels.add(ModBlocks.fyrite_block.asItem());
+            validFuels.add(ModItems.fyrite_ingot);
+            validFuels.add(ModItems.fyrite_nugget);
+            validFuels.add(Items.BLAZE_ROD);
+            validFuels.add(Items.BLAZE_POWDER);
+            for (Item item : ModTags.getFyriteTools().getAllElements())
+            {
+                validFuels.add(item);
+            }
+//            validFuels.add(ModItems.fyrite_axe);
+//            validFuels.add(ModItems.fyrite_pickaxe);
+//            validFuels.add(ModItems.fyrite_shovel);
+//            validFuels.add(ModItems.fyrite_sword);
+        }
+        return validFuels;
+    } // end getValidFuels()
 
     public static Map<Item, Integer> getBurnTimes()
     {
