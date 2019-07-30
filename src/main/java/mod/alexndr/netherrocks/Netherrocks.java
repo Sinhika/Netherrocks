@@ -2,7 +2,11 @@ package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.netherrocks.init.ClientProxy;
+import mod.alexndr.netherrocks.init.IProxy;
+import mod.alexndr.netherrocks.init.ServerProxy;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -17,6 +21,9 @@ public class Netherrocks
 {
 	// modid 
 	public static final String MODID = "netherrocks";
+
+    public static IProxy
+        proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();

@@ -6,6 +6,7 @@ import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.content.*;
 import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.block.Block;
@@ -19,7 +20,9 @@ import net.minecraft.item.*;
 import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -33,6 +36,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.awt.event.ContainerEvent;
 
+import static mod.alexndr.netherrocks.Netherrocks.proxy;
+
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
 {
@@ -41,6 +46,7 @@ public final class ModEventSubscriber
 	@SubscribeEvent
 	public static void onCommonSetup(final FMLCommonSetupEvent event)
 	{
+		proxy.init();
 		OreGeneration.setupNetherOreGen();
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
@@ -50,8 +56,12 @@ public final class ModEventSubscriber
 	public static void onRegisterContainers(final RegistryEvent.Register<ContainerType<?>> event)
 	{
 		// register containers.
-		// TODO
-		//event.getRegistry().register();
+		ModContainers.NETHER_FURNACE =
+			IForgeContainerType.create((windowId, inv, data) -> {
+				return new NetherFurnaceContainer(windowId, inv);
+			});
+		event.getRegistry().register(
+			setup(ModContainers.NETHER_FURNACE, "nether_furnace"));
 	} // end ()
 
 
