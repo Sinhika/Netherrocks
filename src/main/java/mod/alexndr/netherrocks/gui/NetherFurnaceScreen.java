@@ -1,7 +1,7 @@
-package mod.alexndr.netherrocks.content;
+package mod.alexndr.netherrocks.gui;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import net.minecraft.client.gui.recipebook.FurnaceRecipeGui;
+import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import net.minecraft.client.gui.screen.inventory.AbstractFurnaceScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -18,6 +18,7 @@ public class NetherFurnaceScreen extends AbstractFurnaceScreen<NetherFurnaceCont
     public NetherFurnaceScreen(NetherFurnaceContainer container, PlayerInventory inv,
                                ITextComponent text)
     {
-        super(container, new FurnaceRecipeGui(), inv, text, NETHER_FURNACE_GUI_TEXTURES);
+        super(container, new NetherFurnaceRecipeGui(), inv, text,
+              NETHER_FURNACE_GUI_TEXTURES);
     }
 }  // end class NetherFurnaceScreen

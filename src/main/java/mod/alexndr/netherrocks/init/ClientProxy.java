@@ -1,6 +1,6 @@
 package mod.alexndr.netherrocks.init;
 
-import mod.alexndr.netherrocks.content.NetherFurnaceScreen;
+import mod.alexndr.netherrocks.gui.NetherFurnaceScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.entity.player.PlayerEntity;

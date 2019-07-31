@@ -10,20 +10,19 @@ import net.minecraft.util.IIntArray;
 
 public class NetherFurnaceContainer extends AbstractFurnaceContainer
 {
-    public NetherFurnaceContainer( int p_i50103_3_, PlayerInventory p_i50103_4_)
+    public NetherFurnaceContainer( int id, PlayerInventory playerInv)
     {
-        super(ModContainers.NETHER_FURNACE, IRecipeType.SMELTING, p_i50103_3_, p_i50103_4_);
+        super(ModContainers.NETHER_FURNACE, IRecipeType.SMELTING, id, playerInv);
     }
 
-    public NetherFurnaceContainer( int p_i50104_3_, PlayerInventory p_i50104_4_, IInventory p_i50104_5_, IIntArray p_i50104_6_)
+    public NetherFurnaceContainer( int id, PlayerInventory playerInv, IInventory iinv, IIntArray fields)
     {
-        super(ModContainers.NETHER_FURNACE, IRecipeType.SMELTING, p_i50104_3_, p_i50104_4_, p_i50104_5_,
-              p_i50104_6_);
+        super(ModContainers.NETHER_FURNACE, IRecipeType.SMELTING, id, playerInv, iinv, fields);
     }
 
     @Override
-    protected boolean isFuel(ItemStack p_217058_1_)
+    protected boolean isFuel(ItemStack fuelStack)
     {
-        return NetherFurnaceTileEntity.isFuel(p_217058_1_);
+        return NetherFurnaceTileEntity.isFuel(fuelStack);
     }
 }  // end class NetherFurnaceContainer
