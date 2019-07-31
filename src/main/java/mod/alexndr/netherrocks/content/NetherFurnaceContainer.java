@@ -3,13 +3,10 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.init.ModContainers;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.AbstractFurnaceContainer;
-import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.IIntArray;
-import net.minecraft.util.IntArray;
 
 public class NetherFurnaceContainer extends AbstractFurnaceContainer
 {
@@ -22,5 +19,11 @@ public class NetherFurnaceContainer extends AbstractFurnaceContainer
     {
         super(ModContainers.NETHER_FURNACE, IRecipeType.SMELTING, p_i50104_3_, p_i50104_4_, p_i50104_5_,
               p_i50104_6_);
+    }
+
+    @Override
+    protected boolean isFuel(ItemStack p_217058_1_)
+    {
+        return NetherFurnaceTileEntity.isFuel(p_217058_1_);
     }
 }  // end class NetherFurnaceContainer

@@ -11,11 +11,12 @@ import net.minecraft.util.ResourceLocation;
  */
 public class ModTags
 {
-    private static ResourceLocation tagFyriteTools = new ResourceLocation(Netherrocks.MODID, "fyrite_tools");
+    private static ResourceLocation
+        tagNetherFurnaceFuels = new ResourceLocation(Netherrocks.MODID, "nether_furnace_fuels");
 
-    public static Tag<Item> getFyriteTools()
+    public static Tag<Item> getnetherFurnaceFuels()
     {
-        return ItemTags.getCollection().getOrCreate(tagFyriteTools);
+        return ItemTags.getCollection().getOrCreate(tagNetherFurnaceFuels);
     }
 
 }  // end class ModTags

@@ -89,7 +89,7 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
             validFuels.add(ModItems.fyrite_nugget);
             validFuels.add(Items.BLAZE_ROD);
             validFuels.add(Items.BLAZE_POWDER);
-            for (Item item : ModTags.getFyriteTools().getAllElements())
+            for (Item item : ModTags.getnetherFurnaceFuels().getAllElements())
             {
                 validFuels.add(item);
             }
@@ -110,7 +110,7 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
         addItemBurnTime(map, ModItems.fyrite_nugget, fyriteBurnTime/9);
         addItemBurnTime(map, Items.BLAZE_ROD, blazeRodBurnTime);
         addItemBurnTime(map, Items.BLAZE_POWDER, blazeRodBurnTime/3);
-        addItemTagBurnTime(map, ModTags.getFyriteTools(), fyriteBurnTime/3);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), fyriteBurnTime / 3);
         return map;
     } // end getBurnTimes()
 
