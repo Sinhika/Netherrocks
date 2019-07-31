@@ -18,6 +18,7 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -127,9 +128,10 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
         }
     } // end ()
 
+    @Nullable
     @Override
     protected Container createMenu(int id, PlayerInventory player)
     {
-        return null;
+        return new NetherFurnaceContainer(id, player);
     }
 }  // end class NetherFurnaceTileEntity
