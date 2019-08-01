@@ -30,6 +30,11 @@ public class NetherFurnaceRecipeGui extends AbstractRecipeBookGui
     }
 
     @Override
+	public boolean isVisible() {
+		return this.func_212963_d();
+	}
+
+    @Override
     protected void func_212957_c(boolean p_212957_1_)
     {
         this.recipeBook.setFurnaceGuiOpen(p_212957_1_);
@@ -46,4 +51,5 @@ public class NetherFurnaceRecipeGui extends AbstractRecipeBookGui
     {
         return NetherFurnaceTileEntity.getBurnTimes().keySet();
     }
+
 }  // end class NetherFurnaceRecipeGui

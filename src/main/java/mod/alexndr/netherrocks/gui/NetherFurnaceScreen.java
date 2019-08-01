@@ -18,7 +18,7 @@ public class NetherFurnaceScreen extends AbstractFurnaceScreen<NetherFurnaceCont
     public NetherFurnaceScreen(NetherFurnaceContainer container, PlayerInventory inv,
                                ITextComponent text)
     {
-        super(container, new NetherFurnaceRecipeGui(), inv, text,
-              NETHER_FURNACE_GUI_TEXTURES);
+        super(container, new NetherFurnaceRecipeGui(), inv, text, NETHER_FURNACE_GUI_TEXTURES);
     }
+
 }  // end class NetherFurnaceScreen

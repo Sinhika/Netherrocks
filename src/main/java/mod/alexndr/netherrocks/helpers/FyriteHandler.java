@@ -1,6 +1,5 @@
 package mod.alexndr.netherrocks.helpers;
 
-import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
@@ -8,8 +7,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
 public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
 {

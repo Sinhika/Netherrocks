@@ -1,26 +1,43 @@
 package mod.alexndr.netherrocks;
 
+import static mod.alexndr.netherrocks.Netherrocks.proxy;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.common.base.Preconditions;
+
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.content.*;
+import mod.alexndr.netherrocks.content.FyriteArmorItem;
+import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
+import mod.alexndr.netherrocks.content.MalachiteArmorItem;
+import mod.alexndr.netherrocks.content.NetherFurnaceBlock;
+import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
+import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
+import mod.alexndr.netherrocks.content.NetherrocksItemTier;
+import mod.alexndr.netherrocks.content.SimpleMetalBlock;
 import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.inventory.container.FurnaceContainer;
-import net.minecraft.item.*;
-import net.minecraft.tileentity.FurnaceTileEntity;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,12 +48,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.awt.event.ContainerEvent;
-
-import static mod.alexndr.netherrocks.Netherrocks.proxy;
 
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
