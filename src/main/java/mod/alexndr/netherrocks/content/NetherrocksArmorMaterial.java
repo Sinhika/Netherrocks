@@ -4,7 +4,7 @@ import mod.alexndr.netherrocks.init.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadBase;
+import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,7 +34,7 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
     private final int enchantability;
     private final SoundEvent soundEvent;
     private final float toughness;
-    private final LazyLoadBase<Ingredient> repairMaterial;
+    private final LazyValue<Ingredient> repairMaterial;
 
     private NetherrocksArmorMaterial(String nameIn, int maxDamageIn, int[] drAmtArray,
                                      int enchantabilityIn, SoundEvent soundIn,
@@ -47,7 +47,7 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
         enchantability = enchantabilityIn;
         soundEvent = soundIn;
         toughness = toughnessIn;
-        repairMaterial = new LazyLoadBase<>(repairMatIn);
+        repairMaterial = new LazyValue<>(repairMatIn);
     } // end ctor()
 
     @Override

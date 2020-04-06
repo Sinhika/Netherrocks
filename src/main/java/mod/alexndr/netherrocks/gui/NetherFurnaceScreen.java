@@ -1,6 +1,6 @@
 package mod.alexndr.netherrocks.gui;
 
-import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
@@ -26,7 +26,7 @@ public class NetherFurnaceScreen extends ContainerScreen<NetherFurnaceContainer>
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) 
 	{
-	      GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+		  RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 	      this.minecraft.getTextureManager().bindTexture(NetherFurnaceScreen.NETHER_FURNACE_GUI_TEXTURES);
 	      int i = this.guiLeft;
 	      int j = this.guiTop;

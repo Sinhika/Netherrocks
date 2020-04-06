@@ -3,7 +3,7 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.init.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadBase;
+import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
@@ -27,7 +27,7 @@ public enum NetherrocksItemTier implements IItemTier
    private final float efficiency;
    private final float attackDamage;
    private final int enchantability;
-   private final LazyLoadBase<Ingredient> repairMaterial;
+   private final LazyValue<Ingredient> repairMaterial;
 
    private NetherrocksItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn,
                                Supplier<Ingredient> repairMaterialIn)
@@ -37,7 +37,7 @@ public enum NetherrocksItemTier implements IItemTier
       this.efficiency = efficiencyIn;
       this.attackDamage = attackDamageIn;
       this.enchantability = enchantabilityIn;
-      this.repairMaterial = new LazyLoadBase<>(repairMaterialIn);
+      this.repairMaterial = new LazyValue<>(repairMaterialIn);
    }
 
    @Override
