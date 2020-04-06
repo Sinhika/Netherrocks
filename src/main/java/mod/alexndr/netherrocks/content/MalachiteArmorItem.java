@@ -32,7 +32,8 @@ public class MalachiteArmorItem extends ArmorItem
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
     {
  	// must be wearing full set and not sneaking
-		if (ModUtil.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) && ! player.isSneaking())
+		if (ModUtil.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) 
+				&& ! player.isShiftKeyDown())
 		{
 			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 2, jumpBoostFactor, false, false));
 					//new PotionEffect(MobEffects.JUMP_BOOST, 2, jumpBoostFactor));
