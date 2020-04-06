@@ -8,6 +8,7 @@ libs/
 *.jar
 *.class
 *~
+.*.swp
 .classpath
 gradlew
 build.number
