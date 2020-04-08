@@ -11,7 +11,7 @@ public final class ModTabGroups
 {
 
     public static final ItemGroup MOD_ITEM_GROUP =
-            new ModTabGroup(Netherrocks.MODID, () -> new ItemStack(ModItems.fyrite_pickaxe));
+            new ModTabGroup(Netherrocks.MODID, () -> new ItemStack(ModItems.fyrite_pickaxe.get()));
 
     public static final class ModTabGroup extends ItemGroup
     {

@@ -35,7 +35,7 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
             return false;
         }
         else {
-            Block thisblock = (rand.nextInt(100) < 50) ? ModBlocks.illumenite_ore : Blocks.GLOWSTONE;
+            Block thisblock = (rand.nextInt(100) < 50) ? ModBlocks.illumenite_ore.get() : Blocks.GLOWSTONE;
             worldIn.setBlockState(pos, thisblock.getDefaultState(), 2);
 
             for(int i = 0; i < 1500; ++i)
@@ -48,7 +48,7 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
                     for(Direction direction : Direction.values())
                     {
                         Block thatblock = worldIn.getBlockState(blockpos.offset(direction)).getBlock();
-                        if (thatblock == Blocks.GLOWSTONE || thatblock == ModBlocks.illumenite_ore)
+                        if (thatblock == Blocks.GLOWSTONE || thatblock == ModBlocks.illumenite_ore.get())
                         {
                             ++j;
                         }
@@ -58,7 +58,7 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
                     } // end-for
 
                     if (j == 1) {
-                        Block nextblock = (rand.nextInt(100) < 50) ? ModBlocks.illumenite_ore : Blocks.GLOWSTONE;
+                        Block nextblock = (rand.nextInt(100) < 50) ? ModBlocks.illumenite_ore.get() : Blocks.GLOWSTONE;
                         worldIn.setBlockState(blockpos, nextblock.getDefaultState(), 2);
                     }
                 } // end-if
