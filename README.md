@@ -1,7 +1,20 @@
 # Netherrocks
 
+Repository for Netherrocks add-on for Simple Ores2 by AleXndrTheGr8st, maintained by Sinhika
 
-Repository for Netherrocks plugin for Simple Ores2 by AleXndrTheGr8st
+Forge 1.15.2 port enabled thanks to Cadiboo's LGPL-licensed example code 
+<https://github.com/Cadiboo/Example-Mod> that he made free to all to borrow, 
+in the hopes of encouraging good coding practices in
+Forge mods. I hope I did a good job with it. 
+
+**WARNING: 1.15 is a Work-in-Progress; expect frequent changes!**
+
+TO DO
+-----
+1. Implement nether furnace.
+2. Implement special weapon abilities.
+3. Are special armor abilities still implemented?
+4. Re-implement old, detailed config files.
 
 License
 -------
