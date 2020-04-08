@@ -12,21 +12,29 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+@SuppressWarnings("deprecation")
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
 {
 	private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Mod Event Subscriber");
 
+	/**
+	 * For best inter-mod compatibility, run ore generation in a DeferredWorkQueue, per dieseiben07.
+	 * @param event
+	 */
 	@SubscribeEvent
 	public static void onCommonSetup(final FMLCommonSetupEvent event)
 	{
-		OreGeneration.setupNetherOreGen();
+	    DeferredWorkQueue.runLater(	() -> {
+	            OreGeneration.setupNetherOreGen();
+	    } );
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
 
