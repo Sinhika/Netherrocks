@@ -1,25 +1,15 @@
 package mod.alexndr.netherrocks;
 
-import static mod.alexndr.netherrocks.Netherrocks.proxy;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
-import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModTabGroups;
-import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -27,7 +17,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber 
@@ -37,37 +26,9 @@ public final class ModEventSubscriber
 	@SubscribeEvent
 	public static void onCommonSetup(final FMLCommonSetupEvent event)
 	{
-		proxy.init();
 		OreGeneration.setupNetherOreGen();
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
-
-
-	@SubscribeEvent
-	public static void onRegisterContainers(final RegistryEvent.Register<ContainerType<?>> event)
-	{
-		// register containers.
-		ModContainers.NETHER_FURNACE =
-			IForgeContainerType.create((windowId, inv, data) -> {
-				return new NetherFurnaceContainer(windowId, inv);
-			});
-		event.getRegistry().register(
-			setup(ModContainers.NETHER_FURNACE, "nether_furnace"));
-	} // end ()
-
-
-	@SubscribeEvent
-	public static void onRegisterTileEntities(final RegistryEvent.Register<TileEntityType<?>> event)
-	{
-		ModTiles.NETHER_FURNACE =
-			TileEntityType.Builder.create(NetherFurnaceTileEntity::new,
-										  ModBlocks.nether_furnace.get()).build(null);
-		// tile entities.
-        event.getRegistry().register(
-        	setup(ModTiles.NETHER_FURNACE, "nether_furnace_tile_entity")
-		);
-	} // end ()
-
 
 	/**
 	 * This method will be called by Forge when it is time for the mod to register its Items.
@@ -108,17 +69,17 @@ public final class ModEventSubscriber
 	} // onModConfigEvent
 
 
-    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
-													   final String name)
-	{
-		return setup(entry, new ResourceLocation(Netherrocks.MODID, name));
-	}
-
-	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
-													   final ResourceLocation registryName)
-	{
-		entry.setRegistryName(registryName);
-		return entry;
-	}
+//    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
+//													   final String name)
+//	{
+//		return setup(entry, new ResourceLocation(Netherrocks.MODID, name));
+//	}
+//
+//	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
+//													   final ResourceLocation registryName)
+//	{
+//		entry.setRegistryName(registryName);
+//		return entry;
+//	}
 
 } // end class ModEventSubscriber

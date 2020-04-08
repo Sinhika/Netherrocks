@@ -70,6 +70,8 @@
   "item.netherrocks.dragonstone_boots": "Dragonstone Boots",
 
   "container.nether_furnace": "Nether Furnace",
+  "gui.netherrocks.smeltTimeProgress": "Smelt time %s/%s",
+  "gui.netherrocks.fuelBurnTimeProgress": "Fuel burn time %s/%s",
 
   "advancements.root.welcome": "Ready to mine Hell!",
   "advancements.root.welcome.desc": "You've reached the Nether. Look for netherrocks ores.",
