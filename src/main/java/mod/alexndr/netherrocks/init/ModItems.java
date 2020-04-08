@@ -31,7 +31,8 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public final class ModItems
 {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Netherrocks.MODID);
+    public static final DeferredRegister<Item> ITEMS = 
+            new DeferredRegister<>(ForgeRegistries.ITEMS, Netherrocks.MODID);
     
    // ingots and nuggets
     public static final RegistryObject<Item> argonite_ingot = ITEMS.register("argonite_ingot",
