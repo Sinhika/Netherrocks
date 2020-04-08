@@ -85,9 +85,9 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
         if (validFuels.isEmpty())
         {
             validFuels.add(Blocks.NETHERRACK.asItem());
-            validFuels.add(ModBlocks.fyrite_block.asItem());
-            validFuels.add(ModItems.fyrite_ingot);
-            validFuels.add(ModItems.fyrite_nugget);
+            validFuels.add(ModBlocks.fyrite_block.get().asItem());
+            validFuels.add(ModItems.fyrite_ingot.get());
+            validFuels.add(ModItems.fyrite_nugget.get());
             validFuels.add(Items.BLAZE_ROD);
             validFuels.add(Items.BLAZE_POWDER);
             for (Item item : ModTags.getnetherFurnaceFuels().getAllElements())
@@ -106,9 +106,9 @@ public class NetherFurnaceTileEntity extends AbstractFurnaceTileEntity
     {
         Map<Item, Integer> map = Maps.newLinkedHashMap();
         addItemBurnTime(map, Blocks.NETHERRACK, netherrackBurnTime);
-        addItemBurnTime(map, ModBlocks.fyrite_block, fyriteBurnTime * 10);
-        addItemBurnTime(map, ModItems.fyrite_ingot, fyriteBurnTime);
-        addItemBurnTime(map, ModItems.fyrite_nugget, fyriteBurnTime/9);
+        addItemBurnTime(map, ModBlocks.fyrite_block.get(), fyriteBurnTime * 10);
+        addItemBurnTime(map, ModItems.fyrite_ingot.get(), fyriteBurnTime);
+        addItemBurnTime(map, ModItems.fyrite_nugget.get(), fyriteBurnTime/9);
         addItemBurnTime(map, Items.BLAZE_ROD, blazeRodBurnTime);
         addItemBurnTime(map, Items.BLAZE_POWDER, blazeRodBurnTime/3);
         addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), fyriteBurnTime / 3);

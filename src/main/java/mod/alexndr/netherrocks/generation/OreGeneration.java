@@ -50,7 +50,7 @@ public class OreGeneration
             	biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                                  Feature.ORE.withConfiguration(new OreFeatureConfig(
                                                                  OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.argonite_ore.getDefaultState(),
+                                                                 ModBlocks.argonite_ore.get().getDefaultState(),
                                                                  argonite_veinsize))
                                  .withPlacement(Placement.COUNT_RANGE.configure(argonite_cfg)));
             }
@@ -59,7 +59,7 @@ public class OreGeneration
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                                  Feature.ORE.withConfiguration(
                                 		 new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                              ModBlocks.ashstone_ore.getDefaultState(),
+                                                              ModBlocks.ashstone_ore.get().getDefaultState(),
                                                               ashstone_veinsize))
                                  .withPlacement(Placement.COUNT_RANGE.configure(ashstone_cfg)));
 
@@ -69,7 +69,7 @@ public class OreGeneration
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                                  Feature.ORE.withConfiguration(new OreFeatureConfig(
                                                                  OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.dragonstone_ore.getDefaultState(),
+                                                                 ModBlocks.dragonstone_ore.get().getDefaultState(),
                                                                  dragonstone_veinsize))
                                  .withPlacement(Placement.COUNT_RANGE.configure(dragonstone_cfg)));
 
@@ -79,7 +79,7 @@ public class OreGeneration
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                                 Feature.ORE.withConfiguration(new OreFeatureConfig(
                                                                  OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.fyrite_ore.getDefaultState(),
+                                                                 ModBlocks.fyrite_ore.get().getDefaultState(),
                                                                  fyrite_veinsize))
                                 .withPlacement(Placement.COUNT_RANGE.configure(fyrite_cfg)));
 
@@ -89,7 +89,7 @@ public class OreGeneration
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                                  Feature.ORE.withConfiguration(new OreFeatureConfig(
                                                         OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                        ModBlocks.malachite_ore.getDefaultState(),
+                                                        ModBlocks.malachite_ore.get().getDefaultState(),
                                                                  malachite_veinsize))
                                  .withPlacement(Placement.COUNT_RANGE.configure(malachite_cfg)));
 
