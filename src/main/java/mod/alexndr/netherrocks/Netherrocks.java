@@ -37,7 +37,7 @@ public class Netherrocks
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
 
         // Register Configs
-        modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
+        modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
     } // end Netherrocks()
 
 } // end class Netherrocks
