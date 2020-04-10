@@ -85,5 +85,5 @@ public final class ModBlocks
     public static final RegistryObject<NetherFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
             () -> new NetherFurnaceBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.5F, 12.0F)
-                    .lightValue(0).harvestTool(ToolType.PICKAXE)));
+                    .lightValue(13).harvestTool(ToolType.PICKAXE)));
 }  // end class ModBlocks
