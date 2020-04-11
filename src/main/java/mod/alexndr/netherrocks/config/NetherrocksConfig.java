@@ -4,6 +4,12 @@ import net.minecraft.world.gen.placement.CountRangeConfig;
 
 public class NetherrocksConfig
 {
+    public static final int illumeniteNVTime = 3600;        // night vision time (seconds)
+    public static final int illumeniteBlindnessTime = 60;   // target blindness time (seconds)
+    public static final int illumeniteSlowTime = 200;       // target slow time (seconds)
+    public static final int illumeniteSlowLevel = 3;        // slow level
+    
+    
     public static boolean enableArgoniteOre;
     public static boolean enableAshstoneOre;
     public static boolean enableDragonstoneOre;

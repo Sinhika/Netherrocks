@@ -3,6 +3,7 @@ package mod.alexndr.netherrocks.init;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.FyriteArmorItem;
 import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
+import mod.alexndr.netherrocks.content.IllumeniteSwordItem;
 import mod.alexndr.netherrocks.content.MalachiteArmorItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
@@ -66,8 +67,8 @@ public final class ModItems
     public static final RegistryObject<SwordItem> fyrite_sword = ITEMS.register("fyrite_sword",
             () -> new SwordItem(NetherrocksItemTier.FYRITE, 3, -2.4F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<SwordItem> illumenite_sword = ITEMS.register("illumenite_sword",
-            () -> new SwordItem(NetherrocksItemTier.ILLUMENITE, 3, -2.4F,
+    public static final RegistryObject<IllumeniteSwordItem> illumenite_sword = ITEMS.register("illumenite_sword",
+            () -> new IllumeniteSwordItem(NetherrocksItemTier.ILLUMENITE, 3, -2.4F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SwordItem> malachite_sword = ITEMS.register("malachite_sword",
             () -> new SwordItem(NetherrocksItemTier.MALACHITE, 3, -2.4F,
