@@ -1,10 +1,14 @@
 package mod.alexndr.netherrocks.helpers;
 
+import java.util.Random;
+
+import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -36,7 +40,18 @@ public class FyriteHandler implements IWeaponEffectHelper
 	 */
     public void afterBlockSmelt(World world, BlockPos pos, boolean was_effective)
     {
-        // TODO
+        Netherrocks.LOGGER.info("tried to after-smelt");
+        if (was_effective)
+        {
+            Random random = world.rand;
+            for(int i = 0; i < 3; i++) {
+                world.addParticle(ParticleTypes.FLAME,
+                                    pos.getX() + random.nextDouble() * 0.6D,
+                                    pos.getY() + random.nextDouble() * 0.6D, 
+                                    pos.getZ() + random.nextDouble() * 0.6D,
+                                    0.0D, 0.0D, 0.0D);
+            } // end-for    
+        } // end-if
     }
 
     public ActionResultType onItemUse(ItemUseContext context)

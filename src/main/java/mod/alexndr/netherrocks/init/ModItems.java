@@ -2,6 +2,9 @@ package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.FyriteArmorItem;
+import mod.alexndr.netherrocks.content.FyriteAxeItem;
+import mod.alexndr.netherrocks.content.FyritePickaxeIteam;
+import mod.alexndr.netherrocks.content.FyriteShovelItem;
 import mod.alexndr.netherrocks.content.FyriteSwordItem;
 import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
 import mod.alexndr.netherrocks.content.IllumeniteSwordItem;
@@ -86,8 +89,8 @@ public final class ModItems
     public static final RegistryObject<PickaxeItem> argonite_pickaxe = ITEMS.register("argonite_pickaxe",
             () -> new PickaxeItem(NetherrocksItemTier.ARGONITE, 1, -2.8F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<PickaxeItem> fyrite_pickaxe = ITEMS.register("fyrite_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTier.FYRITE, 1, -2.8F,
+    public static final RegistryObject<FyritePickaxeIteam> fyrite_pickaxe = ITEMS.register("fyrite_pickaxe",
+            () -> new FyritePickaxeIteam(NetherrocksItemTier.FYRITE, 1, -2.8F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> malachite_pickaxe = ITEMS.register("malachite_pickaxe",
             () -> new PickaxeItem(NetherrocksItemTier.MALACHITE, 1, -2.8F,
@@ -104,8 +107,8 @@ public final class ModItems
    public static final RegistryObject<AxeItem> argonite_axe = ITEMS.register("argonite_axe",
             () -> new AxeItem(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<AxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
-            () -> new AxeItem(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
+    public static final RegistryObject<FyriteAxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
+            () -> new FyriteAxeItem(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> malachite_axe = ITEMS.register("malachite_axe",
             () -> new AxeItem(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
@@ -122,8 +125,8 @@ public final class ModItems
     public static final RegistryObject<ShovelItem> argonite_shovel = ITEMS.register("argonite_shovel",
             () -> new ShovelItem(NetherrocksItemTier.ARGONITE, 1.5F, -3.0F,
             new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ShovelItem> fyrite_shovel = ITEMS.register("fyrite_shovel",
-            () -> new ShovelItem(NetherrocksItemTier.FYRITE, 1.5F, -3.0F,
+    public static final RegistryObject<FyriteShovelItem> fyrite_shovel = ITEMS.register("fyrite_shovel",
+            () -> new FyriteShovelItem(NetherrocksItemTier.FYRITE, 1.5F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> malachite_shovel = ITEMS.register("malachite_shovel",
             () -> new ShovelItem(NetherrocksItemTier.MALACHITE, 1.5F, -3.0F,

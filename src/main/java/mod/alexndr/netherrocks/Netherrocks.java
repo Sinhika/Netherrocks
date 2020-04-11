@@ -22,7 +22,7 @@ public class Netherrocks
 	public static final String MODID = "netherrocks";
 
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public Netherrocks()
     {
