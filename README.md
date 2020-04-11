@@ -11,9 +11,9 @@ Forge mods. I hope I did a good job with it.
 
 TO DO
 -----
-1. Implement nether furnace.
-2. Implement special weapon abilities.
-3. Are special armor abilities still implemented?
+1. <s>Implement nether furnace.</s>
+2. Implement special weapon abilities. -- in progress.
+3. <s>Are special armor abilities still implemented? Yes, DONE</s>
 4. Re-implement old, detailed config files.
 
 License
