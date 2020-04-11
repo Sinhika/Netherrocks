@@ -6,21 +6,14 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.event.world.BlockEvent;
 
-public class FyriteHandler implements IWeaponEffectHelper, IHarvestEffectHelper
+public class FyriteHandler implements IWeaponEffectHelper
 {
     public static FyriteHandler INSTANCE = new FyriteHandler();
 
     private FyriteHandler() {}
 
-    @Override
-    public void onHarvestDrops(BlockEvent.HarvestDropsEvent event)
-    {
-        // TODO
-    }
-
-    @Override
+     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
         // TODO
