@@ -1,15 +1,20 @@
 package mod.alexndr.netherrocks;
 
+import javax.annotation.Nonnull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
@@ -76,18 +81,13 @@ public final class ModEventSubscriber
 		}
 	} // onModConfigEvent
 
-
-//    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
-//													   final String name)
-//	{
-//		return setup(entry, new ResourceLocation(Netherrocks.MODID, name));
-//	}
-//
-//	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry,
-//													   final ResourceLocation registryName)
-//	{
-//		entry.setRegistryName(registryName);
-//		return entry;
-//	}
+    @SubscribeEvent
+    public static void onRegisterModifierSerializers(
+            @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
+    {
+        event.getRegistry().register(
+                new NetherrocksLootModifiers.AutoSmeltLootModifier.Serializer().setRegistryName(
+                        new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
+    } // end registerModifierSerializers
 
 } // end class ModEventSubscriber

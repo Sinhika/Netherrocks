@@ -39,10 +39,10 @@ public class NetherrocksLootModifiers
             return ret;
         }
 
-        private static ItemStack smelt(ItemStack stack, LootContext context)
+        protected static ItemStack smelt(ItemStack stack, LootContext context)
         {
             return context.getWorld().getRecipeManager()
-                    .getRecipe(IRecipeType.SMELTING, new Inventory(stack), context.getWorld())
+                    .getRecipe(IRecipeType.SMELTING, new Inventory(stack),context.getWorld())
                     .map(FurnaceRecipe::getRecipeOutput)
                     .filter(itemStack -> !itemStack.isEmpty())
                     .map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, stack.getCount() * itemStack.getCount()))
