@@ -1,0 +1,28 @@
+{
+	"conditions": [
+		{
+			"condition": "minecraft:alternative",
+			"terms": [
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "netherrocks:fyrite_pickaxe"
+					}
+				},
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "netherrocks:fyrite_axe"
+					}
+				},
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "netherrocks:fyrite_shovel"
+					}
+				}
+			]		
+		}		
+	],
+	"function": "netherrocks:auto_smelt_tool"
+}
