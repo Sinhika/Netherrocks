@@ -19,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
  *
  * @author Sinhika, notes by Cadiboo
  */
-public class ModContainers
+public final class ModContainers
 {
     public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = 
             new DeferredRegister<>(ForgeRegistries.CONTAINERS, Netherrocks.MODID);
