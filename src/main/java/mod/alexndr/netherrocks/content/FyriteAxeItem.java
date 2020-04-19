@@ -17,7 +17,6 @@ public class FyriteAxeItem extends AxeItem
     public FyriteAxeItem(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
-        // TODO Auto-generated constructor stub
     }
 
     @Override

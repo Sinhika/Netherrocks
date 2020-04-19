@@ -27,7 +27,6 @@ public class NetherrocksLootModifiers
         protected AutoSmeltLootModifier(ILootCondition[] conditionsIn)
         {
             super(conditionsIn);
-            // TODO Auto-generated constructor stub
         }
 
         @Nonnull
