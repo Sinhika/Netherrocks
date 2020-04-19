@@ -41,7 +41,7 @@ public class FyriteHandler implements IWeaponEffectHelper
     public void afterBlockSmelt(World world, BlockPos pos, boolean was_effective)
     {
         Netherrocks.LOGGER.info("tried to after-smelt");
-        if (was_effective)
+        if (was_effective && world.isRemote())
         {
             Random random = world.rand;
             for(int i = 0; i < 3; i++) {
