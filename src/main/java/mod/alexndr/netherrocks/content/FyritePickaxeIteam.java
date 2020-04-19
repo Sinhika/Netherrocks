@@ -17,7 +17,6 @@ public class FyritePickaxeIteam extends PickaxeItem
     public FyritePickaxeIteam(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
-        // TODO Auto-generated constructor stub
     }
 
     @Override

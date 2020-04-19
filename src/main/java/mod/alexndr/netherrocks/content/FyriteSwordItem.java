@@ -14,7 +14,6 @@ public class FyriteSwordItem extends SwordItem
     public FyriteSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
-        // TODO Auto-generated constructor stub
     }
 
     @Override

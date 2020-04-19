@@ -64,7 +64,6 @@ public final class ModItems
 
     // TOOLS & WEAPONS
     // swords
-    // TODO will need to change classes when tools effects implemented.
     public static final RegistryObject<SwordItem> argonite_sword = ITEMS.register("argonite_sword",
             () -> new SwordItem(NetherrocksItemTier.ARGONITE, 3, -2.4F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
@@ -85,7 +84,6 @@ public final class ModItems
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // pickaxes
-    // TODO will need to change classes when tools effects implemented.
     public static final RegistryObject<PickaxeItem> argonite_pickaxe = ITEMS.register("argonite_pickaxe",
             () -> new PickaxeItem(NetherrocksItemTier.ARGONITE, 1, -2.8F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
@@ -103,7 +101,6 @@ public final class ModItems
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // axes
-    // TODO will need to change classes when tools effects implemented.
    public static final RegistryObject<AxeItem> argonite_axe = ITEMS.register("argonite_axe",
             () -> new AxeItem(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
@@ -121,7 +118,6 @@ public final class ModItems
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shovels
-    // TODO will need to change classes when tools effects implemented.
     public static final RegistryObject<ShovelItem> argonite_shovel = ITEMS.register("argonite_shovel",
             () -> new ShovelItem(NetherrocksItemTier.ARGONITE, 1.5F, -3.0F,
             new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
@@ -139,7 +135,6 @@ public final class ModItems
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // hoes
-    // TODO will need to change classes when tools effects implemented.
     public static final RegistryObject<HoeItem> argonite_hoe = ITEMS.register("argonite_hoe",
             () -> new HoeItem(NetherrocksItemTier.ARGONITE,-2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
