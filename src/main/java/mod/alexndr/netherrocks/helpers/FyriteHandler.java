@@ -22,14 +22,13 @@ public class FyriteHandler implements IWeaponEffectHelper
     private FyriteHandler() {}
 
     /**
-     * set target on fire if it's not already on fire.
+     * set target on fire <s>if it's not already on fire.</s>  
+     * @note Cannot check if entity is on fire in 1.14.4, so we just set it on fire anyway.
      */
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-         if (target.getFireTimer() <= 100) {
-             target.setFire(100);
-         }
+         target.setFire(100);
          return true;    
     } // end hitEntity()
 

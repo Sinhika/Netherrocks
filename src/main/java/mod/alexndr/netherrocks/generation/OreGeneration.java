@@ -33,66 +33,59 @@ public class OreGeneration
 
             if (NetherrocksConfig.enableArgoniteOre)
             {
-            	biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                                 Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                                 OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.argonite_ore.get().getDefaultState(),
-                                                                 NetherrocksConfig.argonite_veinsize))
-                                 .withPlacement(Placement.COUNT_RANGE.configure(NetherrocksConfig.argonite_cfg)));
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+						Biome.createDecoratedFeature(Feature.ORE,
+						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+								ModBlocks.argonite_ore.get().getDefaultState(), 
+								NetherrocksConfig.argonite_veinsize),
+						Placement.COUNT_RANGE, NetherrocksConfig.argonite_cfg));
             }
             if (NetherrocksConfig.enableAshstoneOre)
             {
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                                 Feature.ORE.withConfiguration(
-                                		 new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                              ModBlocks.ashstone_ore.get().getDefaultState(),
-                                                              NetherrocksConfig.ashstone_veinsize))
-                                 .withPlacement(Placement.COUNT_RANGE.configure(NetherrocksConfig.ashstone_cfg)));
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+						Biome.createDecoratedFeature(Feature.ORE,
+						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+								ModBlocks.ashstone_ore.get().getDefaultState(), 
+								NetherrocksConfig.ashstone_veinsize),
+						Placement.COUNT_RANGE, NetherrocksConfig.ashstone_cfg));
 
             }
             if (NetherrocksConfig.enableDragonstoneOre)
             {
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                                 Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                                 OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.dragonstone_ore.get().getDefaultState(),
-                                                                 NetherrocksConfig.dragonstone_veinsize))
-                                 .withPlacement(Placement.COUNT_RANGE.configure(NetherrocksConfig.dragonstone_cfg)));
-
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+						Biome.createDecoratedFeature(Feature.ORE,
+						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+								ModBlocks.dragonstone_ore.get().getDefaultState(), 
+								NetherrocksConfig.dragonstone_veinsize),
+						Placement.COUNT_RANGE, NetherrocksConfig.dragonstone_cfg));
             }
             if (NetherrocksConfig.enableFyriteOre)
             {
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                                Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                                 OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                                 ModBlocks.fyrite_ore.get().getDefaultState(),
-                                                                 NetherrocksConfig.fyrite_veinsize))
-                                .withPlacement(Placement.COUNT_RANGE.configure(NetherrocksConfig.fyrite_cfg)));
-
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+						Biome.createDecoratedFeature(Feature.ORE,
+						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+								ModBlocks.fyrite_ore.get().getDefaultState(), 
+								NetherrocksConfig.fyrite_veinsize),
+						Placement.COUNT_RANGE, NetherrocksConfig.fyrite_cfg));
             }
             if (NetherrocksConfig.enableMalachiteOre)
             {
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                                 Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                        OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                        ModBlocks.malachite_ore.get().getDefaultState(),
-                                                        NetherrocksConfig.malachite_veinsize))
-                                 .withPlacement(Placement.COUNT_RANGE.configure(NetherrocksConfig.malachite_cfg)));
-
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
+						Biome.createDecoratedFeature(Feature.ORE,
+						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+								ModBlocks.malachite_ore.get().getDefaultState(), 
+								NetherrocksConfig.malachite_veinsize),
+						Placement.COUNT_RANGE, NetherrocksConfig.malachite_cfg));
             }
             if (NetherrocksConfig.enableIllumeniteOre)
             {
-                ILLUMENITE_FEATURE
-                    .setRegistryName(Netherrocks.MODID, "illumenite_ore");
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION,
-                				 ILLUMENITE_FEATURE.withConfiguration(
-                						 IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(
-                								 Placement.LIGHT_GEM_CHANCE.configure(
-                										 new FrequencyConfig(NetherrocksConfig.illumenite_veinsize))));
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION,
-                				 ILLUMENITE_FEATURE.withConfiguration(
-                						 IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(
-                                                 	Placement.COUNT_RANGE.configure(NetherrocksConfig.illumenite_cfg)));
+                ILLUMENITE_FEATURE.setRegistryName(Netherrocks.MODID, "illumenite_ore");
+                Biome.createDecoratedFeature(ILLUMENITE_FEATURE, IFeatureConfig.NO_FEATURE_CONFIG,
+                        Placement.LIGHT_GEM_CHANCE,
+                        new FrequencyConfig(NetherrocksConfig.illumenite_veinsize));
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION,
+						Biome.createDecoratedFeature(ILLUMENITE_FEATURE, IFeatureConfig.NO_FEATURE_CONFIG,
+								Placement.COUNT_RANGE, NetherrocksConfig.illumenite_cfg));
             }
         } // end-for biome in Category.NETHER
     } // end setupNetherOreGen()

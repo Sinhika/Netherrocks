@@ -16,7 +16,6 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
@@ -97,13 +96,13 @@ public class NetherFurnaceBlock extends HorizontalBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public ActionResultType onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) {
+   public boolean onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) {
        if (!worldIn.isRemote) {
            final TileEntity tileEntity = worldIn.getTileEntity(pos);
            if (tileEntity instanceof NetherFurnaceTileEntity)
                NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
        }
-       return ActionResultType.SUCCESS;
+       return true;
    }
 
    /**
