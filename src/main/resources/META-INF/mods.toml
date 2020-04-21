@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[31,)" #mandatory
+loaderVersion="[28,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
 logoFile="netherrocks.png"
 
@@ -11,7 +11,7 @@ logoFile="netherrocks.png"
 modId="netherrocks"
 version="${version}"
 displayName="SimpleOres:Netherrocks"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.15/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.14/update.json"
 displayURL="http://minecraft.curseforge.com/projects/netherrocks"
 credits="Thanks to AleXndrTheGr8st for creating the original mod and to Sinhika for porting and maintaining it."
 authors="AleXndrTheGr8st, Sinhika"
@@ -21,13 +21,13 @@ description='''
 [[dependencies.netherrocks]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[31,)"
+    versionRange="[28.2.4,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.netherrocks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
