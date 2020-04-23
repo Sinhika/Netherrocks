@@ -14,6 +14,7 @@ import mod.alexndr.netherrocks.init.ModTabGroups;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @SuppressWarnings("deprecation")
@@ -90,4 +92,17 @@ public final class ModEventSubscriber
                         new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
     } // end registerModifierSerializers
 
+    public static Feature<?> registerFeatures(Feature<?> entry, String name)
+    {
+        entry.setRegistryName(new ResourceLocation(Netherrocks.MODID, name));
+        ForgeRegistries.FEATURES.register(entry);
+        return entry;
+    }
+
+    @SubscribeEvent
+    public static void onRegisterFeatures(RegistryEvent.Register<Feature<?>> event)
+    {
+        registerFeatures(OreGeneration.ILLUMENITE_FEATURE, "feature_illumenite_ore");
+     
+    } // end onRegisterFeatures
 } // end class ModEventSubscriber

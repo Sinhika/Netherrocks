@@ -1,6 +1,5 @@
 package mod.alexndr.netherrocks.generation;
 
-import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import net.minecraft.world.biome.Biome;
@@ -18,7 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public class OreGeneration
 {
-    private static final Feature<NoFeatureConfig> ILLUMENITE_FEATURE = 
+    public static final Feature<NoFeatureConfig> ILLUMENITE_FEATURE = 
             new IllumeniteBlobFeature(NoFeatureConfig::deserialize);
 
     /**
@@ -82,8 +81,6 @@ public class OreGeneration
             }
             if (NetherrocksConfig.enableIllumeniteOre)
             {
-                ILLUMENITE_FEATURE
-                    .setRegistryName(Netherrocks.MODID, "feature_illumenite_ore");
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION,
                 				 ILLUMENITE_FEATURE.withConfiguration(
                 						 IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(
