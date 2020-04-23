@@ -83,7 +83,7 @@ public class OreGeneration
             if (NetherrocksConfig.enableIllumeniteOre)
             {
                 ILLUMENITE_FEATURE
-                    .setRegistryName(Netherrocks.MODID, "illumenite_ore");
+                    .setRegistryName(Netherrocks.MODID, "feature_illumenite_ore");
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION,
                 				 ILLUMENITE_FEATURE.withConfiguration(
                 						 IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(
