@@ -256,6 +256,7 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
                                 input.shrink(1);
                                 inventory.setStackInSlot(INPUT_SLOT, input); // Update the data
                             }
+                            this.setRecipeUsed(getRecipe(input).get());
                             smeltTimeLeft = -1; // Set to -1 so we smelt the next stack on the next tick
                         }
                     }
@@ -298,6 +299,16 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
                 .shortValue();
     } 
 
+    public void setRecipeUsed(@Nullable IRecipe<?> recipe)
+    {
+        if (recipe != null)
+        {
+            this.recipe2xp_map.compute(recipe.getId(), (p_214004_0_, p_214004_1_) -> {
+                return 1 + (p_214004_1_ == null ? 0 : p_214004_1_);
+            });
+        }
+    } // end setRecipeUsed()
+    
     
     /**
      * @return If the fuel was burnt
@@ -388,7 +399,7 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
            int kk = compound.getInt("RecipeAmount" + jj);
            this.recipe2xp_map.put(resourcelocation, kk);
         }
-}
+    }
 
 
     /**
