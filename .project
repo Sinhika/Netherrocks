@@ -16,10 +16,6 @@
 			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
 			<arguments/>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
-			<arguments/>
-		</buildCommand>
 	</buildSpec>
 	<linkedResources/>
 	<filteredResources/>
