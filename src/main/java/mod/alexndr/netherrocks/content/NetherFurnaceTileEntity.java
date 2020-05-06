@@ -5,10 +5,12 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Map.Entry;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import mod.alexndr.netherrocks.init.ModBlocks;
@@ -17,6 +19,7 @@ import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.item.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -28,6 +31,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.FurnaceRecipe;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.Tag;
@@ -36,6 +40,8 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -58,6 +64,14 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
     private static final String FUEL_BURN_TIME_LEFT_TAG = "fuelBurnTimeLeft";
     private static final String MAX_FUEL_BURN_TIME_TAG = "maxFuelBurnTime";
     
+    public short smeltTimeLeft = -1;
+    public short maxSmeltTime = -1;
+    public short fuelBurnTimeLeft = -1;
+    public short maxFuelBurnTime = -1;
+    private boolean lastBurning = false;
+
+    private final Map<ResourceLocation, Integer> recipe2xp_map = Maps.newHashMap();
+
     public final ItemStackHandler inventory = new ItemStackHandler(3) 
     {
         @Override
@@ -92,12 +106,6 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
     private final LazyOptional<IItemHandlerModifiable> inventoryCapabilityExternalDown = LazyOptional.of(() -> new RangedWrapper(this.inventory, OUTPUT_SLOT, OUTPUT_SLOT + 1));
     // Machines (hoppers, pipes) connected to this furnace's side can only insert/extract items from the fuel and input slots
     private final LazyOptional<IItemHandlerModifiable> inventoryCapabilityExternalSides = LazyOptional.of(() -> new RangedWrapper(this.inventory, FUEL_SLOT, INPUT_SLOT + 1));
-
-    public short smeltTimeLeft = -1;
-    public short maxSmeltTime = -1;
-    public short fuelBurnTimeLeft = -1;
-    public short maxFuelBurnTime = -1;
-    private boolean lastBurning = false;
 
     public NetherFurnaceTileEntity()
     {
@@ -363,14 +371,24 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
      * Read saved data from disk into the tile.
      */
     @Override
-    public void read(final CompoundNBT compound) {
+    public void read(final CompoundNBT compound) 
+    {
         super.read(compound);
         this.inventory.deserializeNBT(compound.getCompound(INVENTORY_TAG));
         this.smeltTimeLeft = compound.getShort(SMELT_TIME_LEFT_TAG);
         this.maxSmeltTime = compound.getShort(MAX_SMELT_TIME_TAG);
         this.fuelBurnTimeLeft = compound.getShort(FUEL_BURN_TIME_LEFT_TAG);
         this.maxFuelBurnTime = compound.getShort(MAX_FUEL_BURN_TIME_TAG);
-    }
+        
+        // get recipe2xp map
+        int ii = compound.getShort("RecipesUsedSize");
+        for(int jj = 0; jj < ii; ++jj) {
+           ResourceLocation resourcelocation 
+               = new ResourceLocation(compound.getString("RecipeLocation" + jj));
+           int kk = compound.getInt("RecipeAmount" + jj);
+           this.recipe2xp_map.put(resourcelocation, kk);
+        }
+}
 
 
     /**
@@ -385,6 +403,16 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
         compound.putShort(MAX_SMELT_TIME_TAG, this.maxSmeltTime);
         compound.putShort(FUEL_BURN_TIME_LEFT_TAG, this.fuelBurnTimeLeft);
         compound.putShort(MAX_FUEL_BURN_TIME_TAG, this.maxFuelBurnTime);
+        
+        // write recipe2xp map
+        compound.putShort("RecipesUsedSize", (short)this.recipe2xp_map.size());
+        int ii = 0;
+        for(Entry<ResourceLocation, Integer> entry : this.recipe2xp_map.entrySet()) 
+        {
+           compound.putString("RecipeLocation" + ii, entry.getKey().toString());
+           compound.putInt("RecipeAmount" + ii, entry.getValue());
+           ++ii;
+        }
         return compound;
     }
 
@@ -429,4 +457,45 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
         return new NetherFurnaceContainer(windowId, inventory, this);
     }
 
+    
+    public void grantExperience(PlayerEntity player)
+    {
+        List<IRecipe<?>> list = Lists.newArrayList();
+
+        for (Entry<ResourceLocation, Integer> entry : this.recipe2xp_map.entrySet())
+        {
+            player.world.getRecipeManager().getRecipe(entry.getKey()).ifPresent((p_213993_3_) -> {
+                list.add(p_213993_3_);
+                spawnExpOrbs(player, entry.getValue(), ((AbstractCookingRecipe) p_213993_3_).getExperience());
+            });
+        }
+        player.unlockRecipes(list);
+        this.recipe2xp_map.clear();
+    }
+    
+    private static void spawnExpOrbs(PlayerEntity player, int pCount, float experience)
+    {
+        if (experience == 0.0F) {
+            pCount = 0;
+        }
+        else if (experience < 1.0F)
+        {
+            int i = MathHelper.floor((float) pCount * experience);
+            if (i < MathHelper.ceil((float) pCount * experience)
+                    && Math.random() < (double) ((float) pCount * experience - (float) i))
+            {
+                ++i;
+            }
+            pCount = i;
+        }
+
+        while (pCount > 0)
+        {
+            int j = ExperienceOrbEntity.getXPSplit(pCount);
+            pCount -= j;
+            player.world.addEntity(new ExperienceOrbEntity(player.world, player.getPosX(), player.getPosY() + 0.5D,
+                    player.getPosZ() + 0.5D, j));
+        }
+    } // end spawnExpOrbs()
+    
 }  // end class NetherFurnaceTileEntity

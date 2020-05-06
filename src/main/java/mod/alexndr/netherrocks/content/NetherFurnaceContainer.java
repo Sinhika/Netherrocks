@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.annotation.Nonnull;
 
 import mod.alexndr.netherrocks.helpers.FunctionalIntReferenceHolder;
+import mod.alexndr.netherrocks.helpers.FurnaceResultSlotItemHandler;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
@@ -70,7 +71,8 @@ public class NetherFurnaceContainer extends Container
         // Tile inventory slot(s)
         this.addSlot(new SlotItemHandler(tileEntity.inventory, NetherFurnaceTileEntity.FUEL_SLOT, 56, 53));
         this.addSlot(new SlotItemHandler(tileEntity.inventory, NetherFurnaceTileEntity.INPUT_SLOT, 56, 17));
-        this.addSlot(new SlotItemHandler(tileEntity.inventory, NetherFurnaceTileEntity.OUTPUT_SLOT, 116, 35));
+        this.addSlot(new FurnaceResultSlotItemHandler(playerInventory.player, tileEntity, tileEntity.inventory, 
+                                                      NetherFurnaceTileEntity.OUTPUT_SLOT, 116, 35));
 
         final int playerInventoryStartX = 8;
         final int playerInventoryStartY = 84;

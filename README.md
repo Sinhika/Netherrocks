@@ -11,12 +11,9 @@ Forge mods. I hope I did a good job with it.
 
 TO DO
 -----
-1. <s>Implement nether furnace.</s>
-2. <s>Implement special weapon abilities. -- in progress.</s>
-3. <s>Are special armor abilities still implemented? Yes, DONE</s>
-4. <s>Re-implement old, detailed config files. Partially done.</s>
-5. Decide if we really need more detailed configs than that.
-6. Add shears for all metals.
+* Decide if we really need more detailed configs than that.
+* Add shears for all metals.
+* update/move wiki 
 
 License
 -------
