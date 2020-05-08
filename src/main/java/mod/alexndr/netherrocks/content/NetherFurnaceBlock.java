@@ -15,6 +15,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -100,8 +101,13 @@ public class NetherFurnaceBlock extends HorizontalBlock
    public ActionResultType onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) {
        if (!worldIn.isRemote) {
            final TileEntity tileEntity = worldIn.getTileEntity(pos);
-           if (tileEntity instanceof NetherFurnaceTileEntity)
+           if (tileEntity instanceof NetherFurnaceTileEntity) 
+           {
                NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
+               // since we don't use the AbstractModFurnaceBlock class from the Machines API, just
+               // add the interaction code here.
+               player.addStat(Stats.INTERACT_WITH_FURNACE);
+           }
        }
        return ActionResultType.SUCCESS;
    }
