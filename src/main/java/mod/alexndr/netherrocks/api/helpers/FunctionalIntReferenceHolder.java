@@ -1,4 +1,4 @@
-package mod.alexndr.netherrocks.helpers;
+package mod.alexndr.netherrocks.api.helpers;
 
 import net.minecraft.util.IntReferenceHolder;
 
