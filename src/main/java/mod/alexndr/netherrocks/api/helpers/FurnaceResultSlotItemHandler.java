@@ -1,5 +1,6 @@
-package mod.alexndr.netherrocks.helpers;
+package mod.alexndr.netherrocks.api.helpers;
 
+import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -56,7 +57,7 @@ public class FurnaceResultSlotItemHandler extends SlotItemHandler
         stack.onCrafting(this.player.world, this.player, this.removeCount);
         if (!this.player.world.isRemote && this.tile instanceof NetherFurnaceTileEntity) 
         {
-           ((NetherFurnaceTileEntity)this.tile).grantExperience(this.player);
+           ((AbstractNetherFurnaceTileEntity)this.tile).grantExperience(this.player);
         }
         this.removeCount = 0;
         net.minecraftforge.fml.hooks.BasicEventHooks.firePlayerSmeltedEvent(this.player, stack);
