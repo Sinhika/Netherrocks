@@ -13,6 +13,7 @@ TO DO
 -----
 * Decide if we really need more detailed configs than that.
 * Add shears for all metals.
+* Add a nether blast furnace and a nether smoker.
 * update/move wiki 
 
 License

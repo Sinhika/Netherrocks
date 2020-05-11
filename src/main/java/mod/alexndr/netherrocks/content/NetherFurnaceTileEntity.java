@@ -72,6 +72,10 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
 
     private final Map<ResourceLocation, Integer> recipe2xp_map = Maps.newHashMap();
 
+    // implement recipe-caching like all the cool kids.
+    protected FurnaceRecipe cachedRecipe;
+    protected ItemStack failedMatch = ItemStack.EMPTY;
+    
     public final ItemStackHandler inventory = new ItemStackHandler(3) 
     {
         @Override
@@ -138,10 +142,27 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
     }
 
     /**
-     * @return The smelting recipe for the inventory
+     * @return The smelting recipe for the inventory; implements recipe caching
      */
-    private Optional<FurnaceRecipe> getRecipe(final IInventory inventory) {
-        return world.getRecipeManager().getRecipe(IRecipeType.SMELTING, inventory, world);
+    private Optional<FurnaceRecipe> getRecipe(final IInventory inventory) 
+    {
+        if (cachedRecipe != null && cachedRecipe.matches(inventory, world))
+        {
+            return Optional.of(cachedRecipe);
+        }
+        else
+        {
+            AbstractCookingRecipe rec 
+                = world.getRecipeManager().getRecipe(IRecipeType.SMELTING, inventory, world).orElse(null);
+            if (rec == null) {
+                failedMatch = inventory.getStackInSlot(0); // i.e., input.
+            }
+            else {
+                failedMatch = ItemStack.EMPTY;
+            }
+            cachedRecipe = (FurnaceRecipe) rec;
+            return Optional.ofNullable(cachedRecipe);
+        } // end else
     }
 
 
@@ -184,10 +205,6 @@ public class NetherFurnaceTileEntity extends TileEntity implements ITickableTile
             {
                 validFuels.add(item);
             }
-//            validFuels.add(ModItems.fyrite_axe);
-//            validFuels.add(ModItems.fyrite_pickaxe);
-//            validFuels.add(ModItems.fyrite_shovel);
-//            validFuels.add(ModItems.fyrite_sword);
         }
         return validFuels;
     } // end getValidFuels()
