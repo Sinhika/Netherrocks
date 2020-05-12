@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "bottom" : "netherrocks:block/nether_smoker_bottom",
+        "top": "netherrocks:block/nether_smoker_top",
+        "front": "netherrocks:block/nether_smoker_front_on",
+        "side": "netherrocks:block/nether_smoker_side"
+    }
+}

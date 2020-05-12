@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,burning=false": { "model": "netherrocks:block/nether_blast_furnace" },
+        "facing=south,burning=false": { "model": "netherrocks:block/nether_blast_furnace", "y": 180 },
+        "facing=west,burning=false":  { "model": "netherrocks:block/nether_blast_furnace", "y": 270 },
+        "facing=east,burning=false":  { "model": "netherrocks:block/nether_blast_furnace", "y": 90 },
+        "facing=north,burning=true": { "model": "netherrocks:block/nether_blast_furnace_on" },
+        "facing=south,burning=true": { "model": "netherrocks:block/nether_blast_furnace_on", "y": 180 },
+        "facing=west,burning=true":  { "model": "netherrocks:block/nether_blast_furnace_on", "y": 270 },
+        "facing=east,burning=true":  { "model": "netherrocks:block/nether_blast_furnace_on", "y": 90 }
+    }
+}
