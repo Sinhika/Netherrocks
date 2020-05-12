@@ -1,7 +1,9 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
+import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
@@ -27,4 +29,13 @@ public final class ModContainers
    public static RegistryObject<ContainerType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 
                    () -> IForgeContainerType.create(NetherFurnaceContainer::new));
+   
+   public static RegistryObject<ContainerType<NetherSmokerContainer>> NETHER_SMOKER =
+           CONTAINER_TYPES.register("nether_smoker", 
+                   () -> IForgeContainerType.create(NetherSmokerContainer::new));
+   
+   public static RegistryObject<ContainerType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
+           CONTAINER_TYPES.register("nether_blast_furnace", 
+                   () -> IForgeContainerType.create(NetherBlastFurnaceContainer::new));
+   
 }  // end class ModContainers

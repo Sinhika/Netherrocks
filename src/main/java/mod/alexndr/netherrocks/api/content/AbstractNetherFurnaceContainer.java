@@ -4,17 +4,33 @@ import javax.annotation.Nonnull;
 
 import mod.alexndr.netherrocks.api.helpers.FunctionalIntReferenceHolder;
 import mod.alexndr.netherrocks.api.helpers.FurnaceResultSlotItemHandler;
+import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.play.server.SWindowPropertyPacket;
 import net.minecraft.util.IWorldPosCallable;
+import net.minecraft.util.IntReferenceHolder;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.items.SlotItemHandler;
 
+/**
+ * Smelt time is synced with
+ * Server: Each tick {@link #detectAndSendChanges()} is called ({@link ServerPlayerEntity#tick()})
+ * Server: The (tracked) value of the tile's energy is updated ({@link #updateProgressBar(int, int)})
+ * Server: If the value is different from the value last sent to the client ({@link IntReferenceHolder#isDirty()}),
+ * it is synced to the client ({@link ServerPlayerEntity#sendWindowProperty(Container, int, int)})
+ * Client: The sync packet is received ({@link ClientPlayNetHandler#handleWindowProperty(SWindowPropertyPacket)})
+ * and the tracked value of is updated ({@link Container#updateProgressBar(int, int)})
+ * Client: The tile's data is set to the new value
+ *
+ * @author Sinhika, notes by Cadiboo
+ */
 public abstract class AbstractNetherFurnaceContainer<T extends AbstractNetherFurnaceBlock> extends Container
 {
     protected RegistryObject<T> my_block; 
