@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:logs"
+    },
+    "X": {
+      "item": "netherrocks:nether_furnace"
+    }
+  },
+  "result": {
+    "item": "netherrocks:nether_smoker"
+  }
+}
