@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "netherrocks:block/nether_blast_furnace_top",
+        "front": "netherrocks:block/nether_blast_furnace_on",
+        "side": "netherrocks:block/nether_blast_furnace_side"
+    }
+}
