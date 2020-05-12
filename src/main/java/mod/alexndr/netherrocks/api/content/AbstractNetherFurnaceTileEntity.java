@@ -303,6 +303,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
                         if (smeltTimeLeft == 0)
                         {
                             inventory.insertItem(OUTPUT_SLOT, result, false);
+                            
+                            this.setRecipeUsed(getRecipe(input).get()); // move to BEFORE we shrink stack!
+                            
                             if (input.hasContainerItem()) {
                                 inventory.setStackInSlot(INPUT_SLOT, input.getContainerItem());
                             }
@@ -311,7 +314,6 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
                                 input.shrink(1);
                                 inventory.setStackInSlot(INPUT_SLOT, input); // Update the data
                             }
-                            this.setRecipeUsed(getRecipe(input).get());
                             
                             smeltTimeLeft = -1; // Set to -1 so we smelt the next stack on the next tick
                         } // end-if
