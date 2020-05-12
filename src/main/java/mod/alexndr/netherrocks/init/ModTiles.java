@@ -1,7 +1,9 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.content.NetherBlastFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.NetherSmokerTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,5 +31,12 @@ public final class ModTiles
             TILE_ENTITY_TYPES.register("nether_furnace", 
                     () -> TileEntityType.Builder.create(NetherFurnaceTileEntity::new, 
                             ModBlocks.nether_furnace.get()).build(null));
-
+    public static RegistryObject<TileEntityType<NetherSmokerTileEntity>> NETHER_SMOKER =
+            TILE_ENTITY_TYPES.register("nether_smoker", 
+                    () -> TileEntityType.Builder.create(NetherSmokerTileEntity::new, 
+                            ModBlocks.nether_smoker.get()).build(null));
+    public static RegistryObject<TileEntityType<NetherBlastFurnaceTileEntity>> NETHER_BLAST_FURNACE =
+            TILE_ENTITY_TYPES.register("nether_blast_furnace", 
+                    () -> TileEntityType.Builder.create(NetherBlastFurnaceTileEntity::new, 
+                            ModBlocks.nether_blast_furnace.get()).build(null));
 }  // end class ModTiles

@@ -381,7 +381,8 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
             if (NetherFurnaceTileEntity.burnTimes.isEmpty()) {
                 NetherFurnaceTileEntity.burnTimes = NetherFurnaceTileEntity.getBurnTimes();
             }
-            final int burnTime = NetherFurnaceTileEntity.burnTimes.get(fuelStack.getItem());
+            final int burnTime = 
+                    (int) Math.ceil(NetherFurnaceTileEntity.burnTimes.get(fuelStack.getItem()) * fuelMultiplier);
             if (burnTime > 0) {
                 fuelBurnTimeLeft = maxFuelBurnTime = ((short) burnTime);
                 if (fuelStack.hasContainerItem())

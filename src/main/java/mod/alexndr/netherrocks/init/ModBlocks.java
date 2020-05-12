@@ -1,7 +1,9 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.content.NetherBlastFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherFurnaceBlock;
+import mod.alexndr.netherrocks.content.NetherSmokerBlock;
 import mod.alexndr.netherrocks.content.SimpleMetalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
@@ -86,4 +88,13 @@ public final class ModBlocks
             () -> new NetherFurnaceBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.5F, 12.0F)
                     .lightValue(13).harvestTool(ToolType.PICKAXE)));
+    public static final RegistryObject<NetherSmokerBlock> nether_smoker = BLOCKS.register("nether_smoker",
+            () -> new NetherSmokerBlock(Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(3.5F, 12.0F)
+                    .lightValue(13).harvestTool(ToolType.PICKAXE)));
+    public static final RegistryObject<NetherBlastFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
+            () -> new NetherBlastFurnaceBlock(Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(3.5F, 12.0F)
+                    .lightValue(13).harvestTool(ToolType.PICKAXE)));
+  
 }  // end class ModBlocks

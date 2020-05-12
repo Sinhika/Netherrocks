@@ -43,16 +43,20 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-       if (oldState.getBlock() != newState.getBlock()) {
-           TileEntity tileEntity = worldIn.getTileEntity(pos);
-           if (tileEntity instanceof NetherFurnaceTileEntity) {
-               final ItemStackHandler inventory = ((NetherFurnaceTileEntity) tileEntity).inventory;
-               for (int slot = 0; slot < inventory.getSlots(); ++slot)
-                   InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), inventory.getStackInSlot(slot));
-           }
-       }
-   }
+   public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
+   {
+        if (oldState.getBlock() != newState.getBlock())
+        {
+            TileEntity tileEntity = worldIn.getTileEntity(pos);
+            if (tileEntity instanceof NetherFurnaceTileEntity)
+            {
+                final ItemStackHandler inventory = ((NetherFurnaceTileEntity) tileEntity).inventory;
+                for (int slot = 0; slot < inventory.getSlots(); ++slot)
+                    InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+                            inventory.getStackInSlot(slot));
+            }
+        }
+    }
 
    /**
     * Called when a player right clicks our block.
@@ -62,14 +66,13 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public ActionResultType onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) {
+   public ActionResultType onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) 
+   {
        if (!worldIn.isRemote) {
            final TileEntity tileEntity = worldIn.getTileEntity(pos);
            if (tileEntity instanceof NetherFurnaceTileEntity) 
            {
                NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
-               // since we don't use the AbstractModFurnaceBlock class from the Machines API, just
-               // add the interaction code here.
                player.addStat(Stats.INTERACT_WITH_FURNACE);
            }
        }
