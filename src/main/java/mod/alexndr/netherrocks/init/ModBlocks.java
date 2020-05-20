@@ -7,7 +7,9 @@ import mod.alexndr.netherrocks.content.NetherSmokerBlock;
 import mod.alexndr.netherrocks.content.SimpleMetalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -62,24 +64,24 @@ public final class ModBlocks
                     .hardnessAndResistance(7.0F, 72.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<Block> dragonstone_block = BLOCKS.register("dragonstone_block",
-            () -> new Block(Block.Properties.create(Material.ROCK)
+            () -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK)
                     .hardnessAndResistance(10.0F, 72.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<SimpleMetalBlock> argonite_block = BLOCKS.register("argonite_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON, MaterialColor.BLUE)
                     .hardnessAndResistance(7.0F, 72.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<SimpleMetalBlock> fyrite_block = BLOCKS.register("fyrite_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON, MaterialColor.TNT)
                     .hardnessAndResistance(7.0F, 72.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     public static final RegistryObject<SimpleMetalBlock> illumenite_block = BLOCKS.register("illumenite_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
-                    .hardnessAndResistance(7.0F, 72.0F)
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.GLASS, MaterialColor.YELLOW)
+                    .hardnessAndResistance(7.0F, 72.0F).sound(SoundType.GLASS)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)
                     .lightValue(15)));
     public static final RegistryObject<SimpleMetalBlock> malachite_block = BLOCKS.register("malachite_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.ROCK)
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON, MaterialColor.EMERALD)
                     .hardnessAndResistance(7.0F, 72.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 
