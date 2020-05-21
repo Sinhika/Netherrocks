@@ -1,3 +1,4 @@
+.project
 build/
 gradle/
 run/
@@ -16,5 +17,4 @@ gradlew.bat
 bin/
 .gradle/
 /bin/
-.project
 .idea/
