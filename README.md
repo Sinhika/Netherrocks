@@ -7,13 +7,12 @@ Forge 1.15.2 port enabled thanks to Cadiboo's LGPL-licensed example code
 in the hopes of encouraging good coding practices in
 Forge mods. I hope I did a good job with it. 
 
-**WARNING: 1.15 is a Work-in-Progress; expect frequent changes!**
 
 TO DO
 -----
 * Decide if we really need more detailed configs than that.
 * Add shears for all metals.
-* Add a nether blast furnace and a nether smoker.
+* <s>Add a nether blast furnace and a nether smoker.</s> DONE.
 * update/move wiki 
 
 License
