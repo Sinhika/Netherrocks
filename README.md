@@ -11,6 +11,7 @@ Forge mods. I hope I did a good job with it.
 TO DO
 -----
 * Decide if we really need more detailed configs than that.
+* if possible, add nether furnace fuel support to JEI.
 * Add shears for all metals.
 * <s>Add a nether blast furnace and a nether smoker.</s> DONE.
 * update/move wiki 
