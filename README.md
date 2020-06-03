@@ -14,6 +14,7 @@ TO DO
 * Add shears for all metals.
 * <s>Add a nether blast furnace and a nether smoker.</s> DONE.
 * update/move wiki 
+* add Netherrocks tools, ingots to nether fortress chest loot tables.
 
 License
 -------
