@@ -16,6 +16,7 @@ public final class ConfigHelper
 
 	public static void bakeServer(final ModConfig config)
 	{
+	    NetherrocksConfig.addModLootToChests = ConfigHolder.SERVER.serverAddModLootToChests.get();
 		NetherrocksConfig.enableArgoniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
         NetherrocksConfig.argonite_veinsize = ConfigHolder.SERVER.serverArgoniteVeinSize.get();
         NetherrocksConfig.argonite_cfg = new CountRangeConfig(  
