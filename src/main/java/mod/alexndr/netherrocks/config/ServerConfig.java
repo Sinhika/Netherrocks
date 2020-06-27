@@ -49,9 +49,16 @@ final class ServerConfig
     final ForgeConfigSpec.IntValue serverMalachiteBottomHeight;
     final ForgeConfigSpec.IntValue serverMalachiteMaxHeight;
 
+    final ForgeConfigSpec.BooleanValue serverAddModLootToChests;
     
 	ServerConfig(final ForgeConfigSpec.Builder builder)
 	{
+	    builder.push("General");
+	    serverAddModLootToChests = builder.comment("Add Netherrocks items to chest loot?")
+                .translation(Netherrocks.MODID + ".config.serverAddModLootToChests")
+                .define("AddModLootToChests", true);
+	    builder.pop();
+	    
 		builder.push("OreGeneration");
 		serverEnableArgoniteOre = builder
 				.comment("Enable argonite ore generation?")

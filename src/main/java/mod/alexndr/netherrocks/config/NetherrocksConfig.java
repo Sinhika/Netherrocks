@@ -16,6 +16,7 @@ public class NetherrocksConfig
     public static boolean enableFyriteOre;
     public static boolean enableIllumeniteOre;
     public static boolean enableMalachiteOre;
+    public static boolean addModLootToChests;
 
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
     public static CountRangeConfig argonite_cfg;
