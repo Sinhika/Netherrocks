@@ -1,0 +1,181 @@
+{
+    "__comment": "This table is injected as its own pool into minecraft:chests/simple_dungeon",
+    "pools": [
+        {
+            "name": "main",
+            "rolls": 1,
+            "entries": [
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_helmet",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_chestplate",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_leggings",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_boots",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_sword",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_axe",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_pickaxe",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_shovel",
+                        "weight": 3
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:argonite_sword",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:argonite_axe",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:argonite_pickaxe",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:argonite_shovel",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:ashstone_sword",
+                        "weight": 1
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:ashstone_axe",
+                        "weight": 1
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:ashstone_pickaxe",
+                        "weight": 1
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:ashstone_shovel",
+                        "weight": 1
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_helmet",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_chestplate",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_leggings",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_boots",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_sword",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_pickaxe",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_shovel",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_helmet",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_chestplate",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_leggings",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_boots",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_sword",
+                        "weight": 2
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:malachite_ingot",
+                        "weight": 2,
+                        "functions": [{ "function": "set_count", "count": {"min": 2,"max": 4} }]
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:argonite_ingot",
+                        "weight": 2,
+                        "functions": [{ "function": "set_count", "count": {"min": 1,"max": 3} }]
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:fyrite_ingot",
+                        "weight": 2,
+                        "functions": [{ "function": "set_count", "count": {"min": 1,"max": 2} }]
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:illumenite_ingot",
+                        "weight": 1,
+                        "functions": [{ "function": "set_count", "count": {"min": 1,"max": 2} }]
+                },
+                {
+                        "type": "item",
+                        "name": "netherrocks:ashstone_gem",
+                        "weight": 1,
+                        "functions": [{ "function": "set_count", "count": {"min": 1,"max": 2} }]
+                }
+            ]
+        }
+    ]
+}
