@@ -10,12 +10,12 @@ Forge mods. I hope I did a good job with it.
 
 TO DO
 -----
+* update/move wiki 
 * Decide if we really need more detailed configs than that.
 * if possible, add nether furnace fuel support to JEI.
 * Add shears for all metals.
 * <s>Add a nether blast furnace and a nether smoker.</s> DONE.
-* update/move wiki 
-* add Netherrocks tools, ingots to nether fortress chest loot tables.
+* <s>add Netherrocks tools, ingots to nether fortress chest loot tables.</s>
 
 License
 -------
