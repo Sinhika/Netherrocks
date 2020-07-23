@@ -45,7 +45,6 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
     @Override
     protected void func_230451_b_(MatrixStack matStack, final int mouseX, final int mouseY)
     {
-    	super.func_230451_b_(matStack, mouseX, mouseY);
     	// Copied from AbstractFurnaceScreen#drawGuiContainerForegroundLayer
     	String s = this.title.getString();
     	this.font.drawString(matStack, s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, displayNameColor);
