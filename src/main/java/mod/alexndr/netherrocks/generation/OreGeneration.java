@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class OreGeneration
 {
     public static final Feature<NoFeatureConfig> ILLUMENITE_FEATURE = 
-            new IllumeniteBlobFeature(NoFeatureConfig::deserialize);
+            new IllumeniteBlobFeature(NoFeatureConfig.field_236558_a_);
 
     /**
      * called in setup to generate Nether ores.

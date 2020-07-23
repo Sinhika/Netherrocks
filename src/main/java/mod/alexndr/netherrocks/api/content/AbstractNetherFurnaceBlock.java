@@ -54,16 +54,6 @@ public abstract class AbstractNetherFurnaceBlock extends HorizontalBlock
     @Override
     public abstract TileEntity createTileEntity(final BlockState state, final IBlockReader world);
 
-    /**
-     * Amount of light emitted
-     *
-     * @deprecated Call via {@link BlockState#getLightValue())}
-     * Implementing/overriding is fine.
-     */
-    public int getLightValue(BlockState state)
-    {
-    	return state.get(BURNING) ? super.getLightValue(state) : 0;
-    }
 
     /**
      * Called on the logical server when a BlockState with a TileEntity is replaced by another BlockState.

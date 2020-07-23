@@ -1,5 +1,6 @@
 package mod.alexndr.netherrocks.api.client.gui;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceContainer;
@@ -27,26 +28,42 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
     }
 
     @Override
-    public void render(final int mouseX, final int mouseY, final float partialTicks)
+    public void render(MatrixStack matStack, final int mouseX, final int mouseY, final float partialTicks)
     {
-    	this.renderBackground();
-    	super.render(mouseX, mouseY, partialTicks);
-    	this.renderHoveredToolTip(mouseX, mouseY);
+    	this.renderBackground( matStack);
+    	super.render(matStack, mouseX, mouseY, partialTicks);
+    	this.func_230459_a_( matStack, mouseX, mouseY); // formerly renderHoveredTooltip
     }
 
+    /**
+     * Probably corresponds to ContainerScreen.func_230451_b_() in 1.16.1.
+     * Formerly drawGuiContainerForegroundLayer() in 1.15.2.
+     * @param matStack
+     * @param mouseX
+     * @param mouseY
+     */
     @Override
-    protected void drawGuiContainerForegroundLayer(final int mouseX, final int mouseY)
+    protected void func_230451_b_(MatrixStack matStack, final int mouseX, final int mouseY)
     {
-    	super.drawGuiContainerForegroundLayer(mouseX, mouseY);
+    	super.func_230451_b_(matStack, mouseX, mouseY);
     	// Copied from AbstractFurnaceScreen#drawGuiContainerForegroundLayer
-    	String s = this.title.getFormattedText();
-    	this.font.drawString(s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, displayNameColor);
-    	this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, 
+    	String s = this.title.getString();
+    	this.font.drawString(matStack, s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, displayNameColor);
+    	this.font.drawString(matStack,this.playerInventory.getDisplayName().getString(), 8.0F, 
     	                     (float) (this.ySize - 96 + 2), displayNameColor);
     }
 
-    @Override
-    protected void drawGuiContainerBackgroundLayer(final float partialTicks, final int mouseX, final int mouseY)
+    /**
+     * Corresponds to AbstractFurnaceScreen.func_230450_a_() in 1.16.1.
+     * Formerly drawGuiContainerBackgroundLayer() in 1.15.2
+     * @param matStack
+     * @param partialTicks
+     * @param mouseX
+     * @param mouseY
+     */
+   @SuppressWarnings("deprecation")
+@Override
+    protected void func_230450_a_(MatrixStack matStack, final float partialTicks, final int mouseX, final int mouseY)
     {
     	RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     	getMinecraft().getTextureManager().bindTexture(BACKGROUND_TEXTURE);
@@ -56,13 +73,13 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
     	// Screen#blit draws a part of the current texture (assumed to be 256x256) to the screen
     	// The parameters are (x, y, u, v, width, height)
     
-    	this.blit(startX, startY, 0, 0, this.xSize, this.ySize);
+    	this.blit(matStack,startX, startY, 0, 0, this.xSize, this.ySize);
     
     	final AbstractNetherFurnaceTileEntity tileEntity = container.tileEntity;
     	if (tileEntity.smeltTimeLeft > 0) {
     		// Draw progress arrow
     		int arrowWidth = getSmeltTimeScaled();
-    		this.blit(
+    		this.blit(matStack,
     				startX + 79, startY + 34,
     				176, 14,
     				arrowWidth, 14
@@ -71,7 +88,7 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
     	if (tileEntity.isBurning()) {
     		// Draw flames
     		int flameHeight = getFuelBurnTimeScaled();
-    		this.blit(
+    		this.blit(matStack,
     				startX + 56, startY + 50 - flameHeight,
     				176, 14 - flameHeight,
     				14, flameHeight

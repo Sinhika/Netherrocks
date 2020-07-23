@@ -37,7 +37,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModItems
 {
     public static final DeferredRegister<Item> ITEMS = 
-            new DeferredRegister<>(ForgeRegistries.ITEMS, Netherrocks.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, Netherrocks.MODID);
     
    // ingots and nuggets
     public static final RegistryObject<Item> argonite_ingot = ITEMS.register("argonite_ingot",
@@ -136,16 +136,16 @@ public final class ModItems
 
     // hoes
     public static final RegistryObject<HoeItem> argonite_hoe = ITEMS.register("argonite_hoe",
-            () -> new HoeItem(NetherrocksItemTier.ARGONITE,-2.0F,
+            () -> new HoeItem(NetherrocksItemTier.ARGONITE, -1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> malachite_hoe = ITEMS.register("malachite_hoe",
-            () -> new HoeItem(NetherrocksItemTier.MALACHITE, -2.0F,
+            () -> new HoeItem(NetherrocksItemTier.MALACHITE, -1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> ashstone_hoe = ITEMS.register("ashstone_hoe",
-            () -> new HoeItem(NetherrocksItemTier.ASHSTONE, -2.0F,
+            () -> new HoeItem(NetherrocksItemTier.ASHSTONE, -1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> dragonstone_hoe = ITEMS.register("dragonstone_hoe",
-            () -> new HoeItem(NetherrocksItemTier.DRAGONSTONE, -2.0F,
+            () -> new HoeItem(NetherrocksItemTier.DRAGONSTONE, -1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
     // ARMOR

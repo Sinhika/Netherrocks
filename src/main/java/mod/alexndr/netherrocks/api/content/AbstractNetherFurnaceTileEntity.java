@@ -34,7 +34,7 @@ import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.ITag;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -254,9 +254,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
         map.put(itemProvider.asItem(), burnTimeIn);
     }
 
-    protected static void addItemTagBurnTime(Map<Item, Integer> map, Tag<Item> itemTag, int burnTimeIn)
+    protected static void addItemTagBurnTime(Map<Item, Integer> map, ITag<Item> iTag, int burnTimeIn)
     {
-        for(Item item : itemTag.getAllElements()) {
+        for(Item item : iTag.getAllElements()) {
             map.put(item, burnTimeIn);
         }
     } // end ()
@@ -435,29 +435,25 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     	return super.getCapability(cap, side);
     }
 
-    @Override
-    public void onLoad()
-    {
-    	super.onLoad();
-    	// We set this in onLoad instead of the constructor so that TileEntities
-    	// constructed from NBT (saved tile entities) have this set to the proper value
-    	if (world != null && !world.isRemote)
-    		lastBurning = isBurning();
-    }
-
     /**
      * Read saved data from disk into the tile.
      */
     @Override
-    public void read(final CompoundNBT compound)
+    public void read(BlockState stateIn, final CompoundNBT compound)
     {
-    	super.read(compound);
+    	super.read(stateIn, compound);
     	this.inventory.deserializeNBT(compound.getCompound(INVENTORY_TAG));
     	this.smeltTimeLeft = compound.getShort(SMELT_TIME_LEFT_TAG);
     	this.maxSmeltTime = compound.getShort(MAX_SMELT_TIME_TAG);
     	this.fuelBurnTimeLeft = compound.getShort(FUEL_BURN_TIME_LEFT_TAG);
     	this.maxFuelBurnTime = compound.getShort(MAX_FUEL_BURN_TIME_TAG);
     	
+        // We set this in read() instead of the constructor so that TileEntities
+        // constructed from NBT (saved tile entities) have this set to the proper value
+        if (this.hasWorld() && !this.world.isRemote) {
+            lastBurning = this.isBurning();
+        }
+        
     	// get recipe2xp map
         int ii = compound.getShort("RecipesUsedSize");
         for(int jj = 0; jj < ii; ++jj) {
@@ -466,7 +462,13 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
            int kk = compound.getInt("RecipeAmount" + jj);
            this.recipe2xp_map.put(resourcelocation, kk);
         }
-    }
+        // blockstate?
+        if (this.hasWorld()) {
+            this.world.setBlockState(getPos(), this.getBlockState()
+                    .with(AbstractNetherFurnaceBlock.BURNING, Boolean.valueOf(this.isBurning())));
+        }
+        
+    } // end read()
 
     /**
      * Write data from the tile into a compound tag for saving to disk.

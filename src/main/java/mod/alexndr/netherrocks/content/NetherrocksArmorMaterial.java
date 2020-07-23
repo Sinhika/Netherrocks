@@ -85,4 +85,11 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
     public float getToughness() {
         return this.toughness;
     }
+
+    @Override
+    public float func_230304_f_()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 }  // end class NetherrocksArmorMaterial

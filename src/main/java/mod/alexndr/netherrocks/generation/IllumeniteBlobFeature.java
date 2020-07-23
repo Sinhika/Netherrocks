@@ -1,36 +1,48 @@
 package mod.alexndr.netherrocks.generation;
 
-import com.mojang.datafixers.Dynamic;
+import java.util.Random;
+
+import com.mojang.serialization.Codec;
+
 import mod.alexndr.netherrocks.init.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorld;
+import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-
-import java.util.Random;
-import java.util.function.Function;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 
 public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
 {
-    public IllumeniteBlobFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49878_1_)
+    public IllumeniteBlobFeature(Codec<NoFeatureConfig> p_i231956_1_)
     {
-        super(p_i49878_1_);
+        super(p_i231956_1_);
     }
 
+    /**
+     * How to construct the feature...
+     * Was place() in 1.15.2.
+     * @param worldIn
+     * @param generator
+     * @param rand
+     * @param pos
+     * @param config
+     * @return
+     */
     @Override
-    public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator,
-                         Random rand, BlockPos pos, NoFeatureConfig config)
+    public boolean func_230362_a_(ISeedReader worldIn, StructureManager struct_mgr, 
+            ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config)
     {
-        Block upblock = worldIn.getBlockState(pos.up()).getBlock();
         if (!worldIn.isAirBlock(pos)) {
             return false;
         }
-        else if ((upblock != Blocks.NETHERRACK) && (upblock != Blocks.GLOWSTONE))
+        BlockState upblock = worldIn.getBlockState(pos.up());
+        if (!upblock.isIn(Blocks.NETHERRACK) && !upblock.isIn(Blocks.GLOWSTONE)
+            && !upblock.isIn(Blocks.BASALT) && !upblock.isIn(Blocks.BLACKSTONE))
         {
             return false;
         }
