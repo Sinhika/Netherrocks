@@ -1,14 +1,13 @@
 package mod.alexndr.netherrocks.init;
 
-import java.util.function.ToIntFunction;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherSmokerBlock;
+import mod.alexndr.simplecorelib.helpers.LightUtils;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -55,7 +54,7 @@ public final class ModBlocks
             () -> new OreBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance( 1.0F, 30.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(2).setRequiresTool()
-                    .setLightLevel(it_glows(15))));
+                    .setLightLevel(LightUtils.setFixedLight(15))));
     public static final RegistryObject<OreBlock> malachite_ore = BLOCKS.register("malachite_ore",
             () -> new OreBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance( 3.0F, 30.0F)
@@ -82,7 +81,7 @@ public final class ModBlocks
             () -> new Block(Block.Properties.create(Material.GLASS, MaterialColor.YELLOW)
                     .hardnessAndResistance(7.0F, 72.0F).sound(SoundType.GLASS)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1).setRequiresTool()
-                    .setLightLevel(it_glows(15))));
+                    .setLightLevel(LightUtils.setFixedLight(15))));
     public static final RegistryObject<Block> malachite_block = BLOCKS.register("malachite_block",
             () -> new Block(Block.Properties.create(Material.IRON, MaterialColor.EMERALD)
                     .hardnessAndResistance(7.0F, 72.0F).sound(SoundType.METAL)
@@ -92,23 +91,17 @@ public final class ModBlocks
     public static final RegistryObject<NetherFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
             () -> new NetherFurnaceBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.5F, 12.0F)
-                    .setLightLevel(lit_makes_light(13)).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+                    .setLightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool()));
     public static final RegistryObject<NetherSmokerBlock> nether_smoker = BLOCKS.register("nether_smoker",
             () -> new NetherSmokerBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.5F, 12.0F)
-                    .setLightLevel(lit_makes_light(13)).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+                    .setLightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool()));
     public static final RegistryObject<NetherBlastFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
             () -> new NetherBlastFurnaceBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.5F, 12.0F)
-                    .setLightLevel(lit_makes_light(13)).harvestTool(ToolType.PICKAXE).setRequiresTool()));
+                    .setLightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool()));
   
-    private static ToIntFunction<BlockState> lit_makes_light(int foo)
-    {
-        return (bar) -> {return bar.get(AbstractNetherFurnaceBlock.BURNING) ? foo : 0;};
-    }
-    
-    private static ToIntFunction<BlockState> it_glows(int foo)
-    {
-        return (bar) -> { return foo; };
-    }
 }  // end class ModBlocks

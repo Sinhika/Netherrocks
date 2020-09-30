@@ -2,8 +2,8 @@ package mod.alexndr.netherrocks.api.content;
 
 import javax.annotation.Nonnull;
 
-import mod.alexndr.netherrocks.api.helpers.FunctionalIntReferenceHolder;
 import mod.alexndr.netherrocks.api.helpers.FurnaceResultSlotItemHandler;
+import mod.alexndr.simplecorelib.helpers.FunctionalIntReferenceHolder;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

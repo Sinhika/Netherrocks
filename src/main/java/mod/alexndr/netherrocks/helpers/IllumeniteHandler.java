@@ -1,6 +1,7 @@
 package mod.alexndr.netherrocks.helpers;
 
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
+import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;

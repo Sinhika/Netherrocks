@@ -58,6 +58,12 @@ public class NetherrocksLootModifiers
                 return new AutoSmeltLootModifier(ailootcondition);
             }
 
+            @Override
+            public JsonObject write(AutoSmeltLootModifier instance)
+            {
+                return makeConditions(instance.conditions);
+            }
+
         } // end class Serializer
 
     } // end class AutoSmeltLootModifier

@@ -32,7 +32,7 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
     {
     	this.renderBackground( matStack);
     	super.render(matStack, mouseX, mouseY, partialTicks);
-    	this.func_230459_a_( matStack, mouseX, mouseY); // formerly renderHoveredTooltip
+    	this.renderHoveredTooltip( matStack, mouseX, mouseY); // formerly renderHoveredTooltip
     }
 
     /**
@@ -43,7 +43,7 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
      * @param mouseY
      */
     @Override
-    protected void func_230451_b_(MatrixStack matStack, final int mouseX, final int mouseY)
+    protected void drawGuiContainerForegroundLayer(MatrixStack matStack, final int mouseX, final int mouseY)
     {
     	// Copied from AbstractFurnaceScreen#drawGuiContainerForegroundLayer
     	String s = this.title.getString();
@@ -62,7 +62,7 @@ public abstract class AbstractNetherFurnaceScreen<T extends AbstractNetherFurnac
      */
    @SuppressWarnings("deprecation")
 @Override
-    protected void func_230450_a_(MatrixStack matStack, final float partialTicks, final int mouseX, final int mouseY)
+    protected void drawGuiContainerBackgroundLayer(MatrixStack matStack, final float partialTicks, final int mouseX, final int mouseY)
     {
     	RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     	getMinecraft().getTextureManager().bindTexture(BACKGROUND_TEXTURE);

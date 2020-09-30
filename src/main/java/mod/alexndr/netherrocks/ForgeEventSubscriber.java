@@ -5,11 +5,14 @@ import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
-import mod.alexndr.netherrocks.loot.ChestLootHandler;
+import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.simplecorelib.loot.ChestLootHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -52,6 +55,20 @@ public final class ForgeEventSubscriber
         } // end-if player
     } // end onLivingHurtEvent
 
+    /**
+     * Biome loading triggers ore generation.
+     */
+    @SubscribeEvent(priority=EventPriority.HIGH)
+    public static void onBiomeLoading(BiomeLoadingEvent evt)
+    {
+        if (!OreGeneration.checkAndInitBiome(evt)) return;
+        
+        if (evt.getCategory() == Biome.Category.NETHER) 
+        {
+            OreGeneration.generateNetherOres(evt);
+        }
+    } // end onBiomeLoading()
+    
     /**
      * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which
      * neatly solves the problem when I couldn't figure it out.

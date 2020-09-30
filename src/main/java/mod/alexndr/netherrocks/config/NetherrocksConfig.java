@@ -1,6 +1,6 @@
 package mod.alexndr.netherrocks.config;
 
-import net.minecraft.world.gen.placement.CountRangeConfig;
+import mod.alexndr.simplecorelib.config.ModOreConfig;
 
 public class NetherrocksConfig
 {
@@ -19,18 +19,11 @@ public class NetherrocksConfig
     public static boolean addModLootToChests;
 
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
-    public static CountRangeConfig argonite_cfg;
-    public static int argonite_veinsize = 6;
-    public static CountRangeConfig ashstone_cfg;
-    public static int ashstone_veinsize = 5;
-    public static CountRangeConfig dragonstone_cfg;
-    public static int dragonstone_veinsize = 5;
-    public static CountRangeConfig fyrite_cfg;
-    public static int fyrite_veinsize = 6;
-    public static CountRangeConfig malachite_cfg;
-    public static int malachite_veinsize = 7;
-
-    public static CountRangeConfig illumenite_cfg;
-    public static int illumenite_veinsize = 15;
+    public static ModOreConfig argonite_cfg;
+    public static ModOreConfig ashstone_cfg;
+    public static ModOreConfig dragonstone_cfg;
+    public static ModOreConfig fyrite_cfg;
+    public static ModOreConfig malachite_cfg;
+    public static ModOreConfig illumenite_cfg;
 
 }  // end class NetherrocksConfig

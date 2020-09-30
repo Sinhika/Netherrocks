@@ -3,6 +3,7 @@ package mod.alexndr.netherrocks.helpers;
 import java.util.Random;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
