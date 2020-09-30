@@ -90,11 +90,23 @@ minecraft {
     }
 }
 
+repositories {
+        maven {
+                name = "mcmodsrepo"
+                url = "file:///${project.projectDir}/../mcmodsrepo"
+        }
+}
+
+sourceSets {
+    main.resources.srcDirs += 'src/generated/resources'
+}
+
 dependencies {
         // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
         // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
         // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-        minecraft "net.minecraftforge:forge:${version_forge}"
+    minecraft "net.minecraftforge:forge:${version_forge}"
+    compile fg.deobf("mod.alexndr.simplecorelib:SimpleCoreLib:${simplecorelib_version}")
 }
 
 repositories {
