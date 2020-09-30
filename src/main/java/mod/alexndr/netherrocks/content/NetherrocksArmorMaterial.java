@@ -15,16 +15,16 @@ import java.util.function.Supplier;
 public enum NetherrocksArmorMaterial implements IArmorMaterial
 {
     FYRITE ("netherrocks:fyrite", 5, new int [] {3,4,5,3}, 7,
-            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F,
+            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F, 0.0F,
             ()-> { return Ingredient.fromItems(ModItems.fyrite_ingot.get());} ),
     MALACHITE ("netherrocks:malachite", 16, new int [] {2,4,4,2}, 39,
-            SoundEvents.ITEM_ARMOR_EQUIP_IRON , 0.0F,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON , 0.0F, 0.0F,
             ()-> { return Ingredient.fromItems(ModItems.malachite_ingot.get());} ),
     ILLUMENITE ("netherrocks:illumenite", 12, new int [] {3,5,5,4}, 15,
-            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F,
+            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN , 0.0F, 0.0F,
             ()-> { return Ingredient.fromItems(ModItems.illumenite_ingot.get());} ),
     DRAGONSTONE ("netherrocks:dragonstone", 48, new int [] {3,7,9,3}, 27,
-    SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2.0F,
+    SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2.0F, 0.1F,
         ()-> { return Ingredient.fromItems(ModItems.dragonstone_gem.get());} );
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
@@ -35,10 +35,11 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
     private final SoundEvent soundEvent;
     private final float toughness;
     private final LazyValue<Ingredient> repairMaterial;
+    private final float knockbackResistance;
 
     private NetherrocksArmorMaterial(String nameIn, int maxDamageIn, int[] drAmtArray,
                                      int enchantabilityIn, SoundEvent soundIn,
-                                     float toughnessIn,
+                                     float toughnessIn, float knockResistanceIn,
                                      Supplier<Ingredient> repairMatIn)
     {
         name = nameIn;
@@ -47,6 +48,7 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
         enchantability = enchantabilityIn;
         soundEvent = soundIn;
         toughness = toughnessIn;
+        knockbackResistance = knockResistanceIn;
         repairMaterial = new LazyValue<>(repairMatIn);
     } // end ctor()
 
@@ -87,9 +89,8 @@ public enum NetherrocksArmorMaterial implements IArmorMaterial
     }
 
     @Override
-    public float func_230304_f_()
+    public float getKnockbackResistance()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return knockbackResistance;
     }
 }  // end class NetherrocksArmorMaterial
