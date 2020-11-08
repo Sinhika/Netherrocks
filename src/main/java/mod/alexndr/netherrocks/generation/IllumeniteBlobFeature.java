@@ -33,7 +33,7 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
      * @return
      */
     @Override
-    public boolean func_241855_a(ISeedReader worldIn,
+    public boolean generate(ISeedReader worldIn,
             ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config)
     {
         if (!worldIn.isAirBlock(pos)) {
@@ -52,7 +52,8 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
             for(int i = 0; i < 1500; ++i)
             {
                 BlockPos blockpos = pos.add(rand.nextInt(8) - rand.nextInt(8), -rand.nextInt(12), rand.nextInt(8) - rand.nextInt(8));
-                if (worldIn.getBlockState(blockpos).isAir(worldIn, blockpos))
+                BlockState bstate = worldIn.getBlockState(blockpos);
+                if (bstate.getBlock().isAir(bstate, worldIn, blockpos))
                 {
                     int j = 0;
 

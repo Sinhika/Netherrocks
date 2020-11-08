@@ -75,11 +75,12 @@ public class OreGeneration
         if (NetherrocksConfig.enableIllumeniteOre && ORE_ILLUMENITE == null) 
         {
             ORE_ILLUMENITE = ILLUMENITE_FEATURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-                    .withPlacement(Placement.field_242907_l.configure(NetherrocksConfig.illumenite_cfg.getCfg())
-                    .func_242728_a()
-                    .func_242731_b(NetherrocksConfig.illumenite_cfg.getVein_count()));
+                    .range(NetherrocksConfig.illumenite_cfg.getCfg().maximum).square()
+                    .func_242731_b(NetherrocksConfig.illumenite_cfg.getVein_count());
+//                    .withPlacement(Placement.field_242907_l.configure(NetherrocksConfig.illumenite_cfg.getCfg())
+//                    .func_242728_a()
             ORE_ILLUMENITE_EXTRA = ILLUMENITE_FEATURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-                    .withPlacement(Placement.field_242912_w.configure(new FeatureSpreadConfig(10)));
+                    .withPlacement(Placement.GLOWSTONE.configure(new FeatureSpreadConfig(10)));
         }
         if (NetherrocksConfig.enableMalachiteOre && ORE_MALACHITE == null) 
         {

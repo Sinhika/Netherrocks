@@ -92,7 +92,7 @@ public class FyriteHandler implements IWeaponEffectHelper
             return ActionResultType.PASS;
         }
         IForgeBlockState targetBlock = worldIn.getBlockState(adjacentPos);
-        if (targetBlock.isAir(worldIn, adjacentPos))
+        if (targetBlock.getBlockState().getBlock().isAir(targetBlock.getBlockState(), worldIn, adjacentPos))
         {
             if (worldIn.isRemote) {
                 playerIn.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1.0F, 1.0F);
