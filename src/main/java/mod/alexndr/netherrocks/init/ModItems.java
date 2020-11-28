@@ -39,26 +39,46 @@ public final class ModItems
     public static final DeferredRegister<Item> ITEMS = 
             DeferredRegister.create(ForgeRegistries.ITEMS, Netherrocks.MODID);
     
-   // ingots and nuggets
+   // ingots and nuggets, dusts and crushed ore
     public static final RegistryObject<Item> argonite_ingot = ITEMS.register("argonite_ingot",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> argonite_nugget = ITEMS.register("argonite_nugget",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> argonite_dust = ITEMS.register("argonite_dust",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> crushed_argonite_ore = ITEMS.register("crushed_argonite_ore",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+   
     public static final RegistryObject<Item> dragonstone_gem = ITEMS.register("dragonstone_gem",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> ashstone_gem = ITEMS.register("ashstone_gem",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    
     public static final RegistryObject<Item> fyrite_ingot = ITEMS.register("fyrite_ingot",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> fyrite_nugget = ITEMS.register("fyrite_nugget",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> fyrite_dust = ITEMS.register("fyrite_dust",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> crushed_fyrite_ore = ITEMS.register("crushed_fyrite_ore",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    
     public static final RegistryObject<Item> illumenite_ingot = ITEMS.register("illumenite_ingot",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> illumenite_nugget = ITEMS.register("illumenite_nugget",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> illumenite_dust = ITEMS.register("illumenite_dust",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> crushed_illumenite_ore = ITEMS.register("crushed_illumenite_ore",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    
     public static final RegistryObject<Item> malachite_ingot = ITEMS.register("malachite_ingot",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> malachite_nugget = ITEMS.register("malachite_nugget",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> malachite_dust = ITEMS.register("malachite_dust",
+            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> crushed_malachite_ore = ITEMS.register("crushed_malachite_ore",
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
 
 
