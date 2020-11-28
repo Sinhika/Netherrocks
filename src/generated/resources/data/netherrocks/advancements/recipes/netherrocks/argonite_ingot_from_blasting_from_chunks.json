@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_ingot_from_blasting_from_chunks"
+    ]
+  },
+  "criteria": {
+    "argonite_ingot_from_blasting_from_chunks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "netherrocks:crushed_argonite_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:argonite_ingot_from_blasting_from_chunks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "argonite_ingot_from_blasting_from_chunks",
+      "has_the_recipe"
+    ]
+  ]
+}

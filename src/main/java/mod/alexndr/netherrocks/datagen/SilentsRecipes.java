@@ -55,7 +55,20 @@ public class SilentsRecipes extends RecipeProvider implements ISimpleConditionBu
         setbuilder.buildOre2IngotRecipes(consumer, 
                 Ingredient.fromItems(ModItems.malachite_dust.get().asItem()), ModItems.malachite_ingot.get(),
                 hasItem(ModItems.malachite_dust.get().asItem()), 0.5F, 200, "_from_dust");
-    } // end registerFurnaceRecipes()
+        
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.fromItems(ModItems.crushed_argonite_ore.get().asItem()), ModItems.argonite_ingot.get(),
+                hasItem(ModItems.crushed_argonite_ore.get().asItem()), 0.7F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.fromItems(ModItems.crushed_fyrite_ore.get().asItem()), ModItems.fyrite_ingot.get(),
+                hasItem(ModItems.crushed_fyrite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.fromItems(ModItems.crushed_illumenite_ore.get().asItem()), ModItems.illumenite_ingot.get(),
+                hasItem(ModItems.crushed_illumenite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.fromItems(ModItems.crushed_malachite_ore.get().asItem()), ModItems.malachite_ingot.get(),
+                hasItem(ModItems.crushed_malachite_ore.get().asItem()), 0.5F, 200, "_from_chunks");
+   } // end registerFurnaceRecipes()
     
     private void registerCrushingRecipes(Consumer<IFinishedRecipe> consumer)
     {
