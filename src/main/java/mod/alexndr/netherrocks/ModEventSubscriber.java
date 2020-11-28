@@ -7,15 +7,21 @@ import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
+import mod.alexndr.simplecorelib.config.FlagCondition;
+import mod.alexndr.simplecorelib.recipes.CrushingRecipe;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -84,4 +90,17 @@ public final class ModEventSubscriber
                         new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
     } // end registerModifierSerializers
 
+    @SubscribeEvent
+    public static void onRegisterRecipeSerializers(
+            @Nonnull final RegistryEvent.Register<IRecipeSerializer<?>> event)
+    {
+           CraftingHelper.register(new FlagCondition.Serializer(NetherrocksConfig.INSTANCE, 
+                                               new ResourceLocation(Netherrocks.MODID, "flag")));
+           
+           if (! ModList.get().isLoaded("silents_mechanisms")) {
+               event.getRegistry().register(
+                   CrushingRecipe.SERIALIZER.setRegistryName(CrushingRecipe.RECIPE_TYPE.toString()));
+           }
+    } // end registerRecipeSerializers
+    
 } // end class ModEventSubscriber

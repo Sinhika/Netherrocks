@@ -66,7 +66,7 @@ public class SilentsRecipes extends RecipeProvider implements ISimpleConditionBu
                 ModItems.argonite_dust.get(), CRUSHING_CHUNKS_TIME, CRUSHING_CHUNKS_EXTRA_CHANCE).build(consumer);
         CrushingRecipeBuilder
                 .crushingIngot(Netherrocks.MODID, ModItems.argonite_ingot.get(), ModItems.argonite_dust.get(),
-                        CRUSHING_CHUNKS_TIME)
+                        CRUSHING_INGOT_TIME)
                 .build(consumer, new ResourceLocation(Netherrocks.MODID, "crushing/argonite_dust_from_ingot"));
 
         CrushingRecipeBuilder.crushingOre(Netherrocks.MODID, ModBlocks.fyrite_ore.get(),
@@ -76,7 +76,7 @@ public class SilentsRecipes extends RecipeProvider implements ISimpleConditionBu
                 ModItems.fyrite_dust.get(), CRUSHING_CHUNKS_TIME, CRUSHING_CHUNKS_EXTRA_CHANCE).build(consumer);
         CrushingRecipeBuilder
                 .crushingIngot(Netherrocks.MODID, ModItems.fyrite_ingot.get(), ModItems.fyrite_dust.get(),
-                        CRUSHING_CHUNKS_TIME)
+                        CRUSHING_INGOT_TIME)
                 .build(consumer, new ResourceLocation(Netherrocks.MODID, "crushing/fyrite_dust_from_ingot"));
 
         CrushingRecipeBuilder.crushingOre(Netherrocks.MODID, ModBlocks.illumenite_ore.get(),
@@ -88,7 +88,7 @@ public class SilentsRecipes extends RecipeProvider implements ISimpleConditionBu
                 .build(consumer);
         CrushingRecipeBuilder
                 .crushingIngot(Netherrocks.MODID, ModItems.illumenite_ingot.get(), ModItems.illumenite_dust.get(),
-                        CRUSHING_CHUNKS_TIME)
+                        CRUSHING_INGOT_TIME)
                 .build(consumer, new ResourceLocation(Netherrocks.MODID, "crushing/illumenite_dust_from_ingot"));
 
         CrushingRecipeBuilder.crushingOre(Netherrocks.MODID, ModBlocks.malachite_ore.get(),
@@ -98,7 +98,7 @@ public class SilentsRecipes extends RecipeProvider implements ISimpleConditionBu
                 ModItems.malachite_dust.get(), CRUSHING_CHUNKS_TIME, CRUSHING_CHUNKS_EXTRA_CHANCE).build(consumer);
         CrushingRecipeBuilder
                 .crushingIngot(Netherrocks.MODID, ModItems.malachite_ingot.get(), ModItems.malachite_dust.get(),
-                        CRUSHING_CHUNKS_TIME)
+                        CRUSHING_INGOT_TIME)
                 .build(consumer, new ResourceLocation(Netherrocks.MODID, "crushing/malachite_dust_from_ingot"));
     } // end registerCrushingRecipes()
     
