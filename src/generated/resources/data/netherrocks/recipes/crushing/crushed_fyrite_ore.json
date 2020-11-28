@@ -1,0 +1,17 @@
+{
+  "type": "silents_mechanisms:crushing",
+  "process_time": 400,
+  "ingredient": {
+    "item": "netherrocks:fyrite_ore"
+  },
+  "results": [
+    {
+      "item": "netherrocks:crushed_fyrite_ore",
+      "count": 2
+    },
+    {
+      "item": "minecraft:cobblestone",
+      "chance": 0.1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "silents_mechanisms:crushing",
+  "process_time": 200,
+  "ingredient": {
+    "item": "netherrocks:malachite_ingot"
+  },
+  "results": [
+    {
+      "item": "netherrocks:malachite_dust"
+    }
+  ]
+}

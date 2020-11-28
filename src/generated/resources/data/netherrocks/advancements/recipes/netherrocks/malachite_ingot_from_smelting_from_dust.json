@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:malachite_ingot_from_smelting_from_dust"
+    ]
+  },
+  "criteria": {
+    "malachite_ingot_from_smelting_from_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "netherrocks:malachite_dust"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:malachite_ingot_from_smelting_from_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "malachite_ingot_from_smelting_from_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

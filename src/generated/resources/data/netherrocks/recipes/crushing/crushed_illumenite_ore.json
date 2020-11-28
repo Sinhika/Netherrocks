@@ -1,0 +1,17 @@
+{
+  "type": "silents_mechanisms:crushing",
+  "process_time": 400,
+  "ingredient": {
+    "item": "netherrocks:illumenite_ore"
+  },
+  "results": [
+    {
+      "item": "netherrocks:crushed_illumenite_ore",
+      "count": 2
+    },
+    {
+      "item": "minecraft:cobblestone",
+      "chance": 0.1
+    }
+  ]
+}

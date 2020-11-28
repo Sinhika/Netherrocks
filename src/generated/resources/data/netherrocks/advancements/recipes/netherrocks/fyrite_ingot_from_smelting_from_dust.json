@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:fyrite_ingot_from_smelting_from_dust"
+    ]
+  },
+  "criteria": {
+    "fyrite_ingot_from_smelting_from_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "netherrocks:fyrite_dust"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:fyrite_ingot_from_smelting_from_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "fyrite_ingot_from_smelting_from_dust",
+      "has_the_recipe"
+    ]
+  ]
+}

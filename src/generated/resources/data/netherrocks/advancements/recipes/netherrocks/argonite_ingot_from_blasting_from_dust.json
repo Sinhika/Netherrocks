@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_ingot_from_blasting_from_dust"
+    ]
+  },
+  "criteria": {
+    "argonite_ingot_from_blasting_from_dust": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "netherrocks:argonite_dust"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:argonite_ingot_from_blasting_from_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "argonite_ingot_from_blasting_from_dust",
+      "has_the_recipe"
+    ]
+  ]
+}
