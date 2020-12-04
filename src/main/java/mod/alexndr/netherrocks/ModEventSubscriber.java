@@ -97,10 +97,10 @@ public final class ModEventSubscriber
            CraftingHelper.register(new FlagCondition.Serializer(NetherrocksConfig.INSTANCE, 
                                                new ResourceLocation(Netherrocks.MODID, "flag")));
            
-           if (! ModList.get().isLoaded("silents_mechanisms")) {
-               event.getRegistry().register(
-                   CrushingRecipe.SERIALIZER.setRegistryName(CrushingRecipe.RECIPE_TYPE.toString()));
-           }
+//           if (! ModList.get().isLoaded("silents_mechanisms")) {
+//               event.getRegistry().register(
+//                   CrushingRecipe.SERIALIZER.setRegistryName(CrushingRecipe.RECIPE_TYPE.toString()));
+//           }
     } // end registerRecipeSerializers
     
 } // end class ModEventSubscriber
