@@ -1,9 +1,9 @@
 package mod.alexndr.netherrocks.generation;
 
+import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.simplecorelib.world.OreGenUtils;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
@@ -12,22 +12,29 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Ore generation master-class for Netherrocks.
  */
 public class OreGeneration
 {
-    protected static ConfiguredFeature<?, ?> ORE_ARGONITE;
-    protected static ConfiguredFeature<?, ?> ORE_ASHSTONE;
-    protected static ConfiguredFeature<?, ?> ORE_DRAGONSTONE;
-    protected static ConfiguredFeature<?, ?> ORE_FYRITE;
-    protected static ConfiguredFeature<?, ?> ORE_ILLUMENITE;
-    protected static ConfiguredFeature<?, ?> ORE_ILLUMENITE_EXTRA;
-    protected static ConfiguredFeature<?, ?> ORE_MALACHITE;
+    public static ConfiguredFeature<?, ?> ORE_ARGONITE;
+    public static ConfiguredFeature<?, ?> ORE_ASHSTONE;
+    public static ConfiguredFeature<?, ?> ORE_DRAGONSTONE;
+    public static ConfiguredFeature<?, ?> ORE_FYRITE;
+    public static ConfiguredFeature<?, ?> ORE_ILLUMENITE;
+    public static ConfiguredFeature<?, ?> ORE_ILLUMENITE_EXTRA;
+    public static ConfiguredFeature<?, ?> ORE_MALACHITE;
 
-    public static final Feature<NoFeatureConfig> ILLUMENITE_FEATURE = new IllumeniteBlobFeature(
-            NoFeatureConfig.field_236558_a_);
+    public static final DeferredRegister<Feature<?>> FEATURES = 
+            DeferredRegister.create(ForgeRegistries.FEATURES, Netherrocks.MODID);
+
+    public static final RegistryObject<Feature<NoFeatureConfig>> ILLUMENITE_FEATURE = 
+            FEATURES.register("illumenite_blob", 
+                              () -> new IllumeniteBlobFeature(NoFeatureConfig.field_236558_a_));
 
     /** 
      * generate nether ores.
@@ -48,60 +55,51 @@ public class OreGeneration
      * 
      * @param evt
      */
-    protected static void initNetherFeatures()
+    public static void initNetherFeatures()
     {
-        if (NetherrocksConfig.enableArgoniteOre && ORE_ARGONITE == null) 
+        if (NetherrocksConfig.enableArgoniteOre) 
         {
-            ORE_ARGONITE = OreGenUtils.buildNetherOreFeature(ModBlocks.argonite_ore.get().getDefaultState(),
+            ORE_ARGONITE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.argonite_ore.get().getDefaultState(),
                                                              NetherrocksConfig.argonite_cfg);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "argonite_vein", ORE_ARGONITE);
         }
-        if (NetherrocksConfig.enableAshstoneOre && ORE_ASHSTONE == null) 
+        if (NetherrocksConfig.enableAshstoneOre) 
         {
-            ORE_ASHSTONE = OreGenUtils.buildNetherOreFeature(ModBlocks.ashstone_ore.get().getDefaultState(),
+            ORE_ASHSTONE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.ashstone_ore.get().getDefaultState(),
                     NetherrocksConfig.ashstone_cfg);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "ashstone_vein", ORE_ASHSTONE);
         }
-        if (NetherrocksConfig.enableDragonstoneOre && ORE_DRAGONSTONE == null) 
+        if (NetherrocksConfig.enableDragonstoneOre) 
         {
-            ORE_DRAGONSTONE = OreGenUtils.buildNetherOreFeature(ModBlocks.dragonstone_ore.get().getDefaultState(),
+            ORE_DRAGONSTONE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.dragonstone_ore.get().getDefaultState(),
                     NetherrocksConfig.dragonstone_cfg);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "dragonstone_vein", ORE_DRAGONSTONE);
         }
         if (NetherrocksConfig.enableFyriteOre && ORE_FYRITE == null) 
         {
-            ORE_FYRITE = OreGenUtils.buildNetherOreFeature(ModBlocks.fyrite_ore.get().getDefaultState(),
+            ORE_FYRITE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.fyrite_ore.get().getDefaultState(),
                     NetherrocksConfig.fyrite_cfg);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "fyrite_vein", ORE_FYRITE);
         }
         // Illumenite ore is a special snowflake that generates in glowstone blobs, so it has
         // to mimic glowstone generation. A side-effect is that more glowstone generates as well.
         if (NetherrocksConfig.enableIllumeniteOre && ORE_ILLUMENITE == null) 
         {
-            ORE_ILLUMENITE = ILLUMENITE_FEATURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+            ORE_ILLUMENITE = ILLUMENITE_FEATURE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
                     .range(NetherrocksConfig.illumenite_cfg.getCfg().maximum).square()
                     .func_242731_b(NetherrocksConfig.illumenite_cfg.getVein_count());
-//                    .withPlacement(Placement.field_242907_l.configure(NetherrocksConfig.illumenite_cfg.getCfg())
-//                    .func_242728_a()
-            ORE_ILLUMENITE_EXTRA = ILLUMENITE_FEATURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+            ORE_ILLUMENITE_EXTRA = ILLUMENITE_FEATURE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
                     .withPlacement(Placement.GLOWSTONE.configure(new FeatureSpreadConfig(10)));
+            OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster", ORE_ILLUMENITE);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster_extra", ORE_ILLUMENITE_EXTRA);
+            
         }
         if (NetherrocksConfig.enableMalachiteOre && ORE_MALACHITE == null) 
         {
-            ORE_MALACHITE = OreGenUtils.buildNetherOreFeature(ModBlocks.malachite_ore.get().getDefaultState(),
+            ORE_MALACHITE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.malachite_ore.get().getDefaultState(),
                     NetherrocksConfig.malachite_cfg);
+            OreGenUtils.registerFeature(Netherrocks.MODID, "malachite_vein", ORE_MALACHITE);
         }
     } // end-initNetherFeatures()
-
-    /**
-     * Do we care about this biome? Yes, if overworld or nether, no if THEEND. Also
-     * init relevant Features, if they are null.
-     */
-    public static boolean checkAndInitBiome(BiomeLoadingEvent evt)
-    {
-        if (evt.getCategory() == Biome.Category.NETHER)
-        {
-            initNetherFeatures();
-            return true;
-        }
-        return false;
-    } // end checkBiome
-
 
 } // end class OreGeneration
