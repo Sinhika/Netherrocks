@@ -1,0 +1,23 @@
+{
+    "conditions": [
+        {
+            "modid": "silents_mechanisms",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "silents_mechanisms:crushing",
+    "process_time": 400,
+    "ingredient": {
+        "item": "netherrocks:malachite_ore"
+    },
+    "results": [
+        {
+            "item": "netherrocks:crushed_malachite_ore",
+            "count": 2
+        },
+        {
+            "item": "minecraft:netherrack",
+            "chance": 0.1
+        }
+    ]
+}

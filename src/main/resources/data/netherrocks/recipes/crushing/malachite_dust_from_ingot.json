@@ -1,0 +1,18 @@
+{
+    "conditions": [
+        {
+            "modid": "silents_mechanisms",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "silents_mechanisms:crushing",
+    "process_time": 300,
+    "ingredient": {
+        "item": "netherrocks:malachite_ingot"
+    },
+    "results": [
+        {
+            "item": "netherrocks:malachite_dust"
+        }
+    ]
+}

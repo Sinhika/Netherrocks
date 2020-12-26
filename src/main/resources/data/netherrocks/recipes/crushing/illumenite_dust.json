@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "modid": "silents_mechanisms",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "silents_mechanisms:crushing",
+    "process_time": 300,
+    "ingredient": {
+        "item": "netherrocks:crushed_illumenite_ore"
+    },
+    "results": [
+        {
+            "item": "netherrocks:illumenite_dust"
+        },
+        {
+            "item": "netherrocks:illumenite_dust",
+            "chance": 0.1
+        },
+        {
+            "item": "minecraft:glowstone_dust",
+            "chance": 0.1
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "modid": "silents_mechanisms",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "silents_mechanisms:crushing",
+    "process_time": 300,
+    "ingredient": {
+        "item": "netherrocks:crushed_fyrite_ore"
+    },
+    "results": [
+        {
+            "item": "netherrocks:fyrite_dust"
+        },
+        {
+            "item": "netherrocks:fyrite_dust",
+            "chance": 0.1
+        }
+    ]
+}
