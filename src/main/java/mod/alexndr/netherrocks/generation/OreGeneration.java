@@ -41,13 +41,22 @@ public class OreGeneration
      */
     public static void generateNetherOres(BiomeLoadingEvent evt)
     {
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ARGONITE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ASHSTONE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_DRAGONSTONE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_FYRITE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_MALACHITE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ILLUMENITE);
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ILLUMENITE_EXTRA);
+        if (NetherrocksConfig.enableArgoniteOre)
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ARGONITE);
+        if (NetherrocksConfig.enableAshstoneOre)
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ASHSTONE);
+        if (NetherrocksConfig.enableDragonstoneOre)
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_DRAGONSTONE);
+        if (NetherrocksConfig.enableFyriteOre)
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_FYRITE);
+        if (NetherrocksConfig.enableMalachiteOre)
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_MALACHITE);
+        
+        if (NetherrocksConfig.enableIllumeniteOre)
+        {
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ILLUMENITE);
+            evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ILLUMENITE_EXTRA);
+        }
     } // end generateNetherOres()
     
    /**
@@ -75,7 +84,7 @@ public class OreGeneration
                     NetherrocksConfig.dragonstone_cfg);
             OreGenUtils.registerFeature(Netherrocks.MODID, "dragonstone_vein", ORE_DRAGONSTONE);
         }
-        if (NetherrocksConfig.enableFyriteOre && ORE_FYRITE == null) 
+        if (NetherrocksConfig.enableFyriteOre) 
         {
             ORE_FYRITE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.fyrite_ore.get().getDefaultState(),
                     NetherrocksConfig.fyrite_cfg);
@@ -83,7 +92,7 @@ public class OreGeneration
         }
         // Illumenite ore is a special snowflake that generates in glowstone blobs, so it has
         // to mimic glowstone generation. A side-effect is that more glowstone generates as well.
-        if (NetherrocksConfig.enableIllumeniteOre && ORE_ILLUMENITE == null) 
+        if (NetherrocksConfig.enableIllumeniteOre) 
         {
             ORE_ILLUMENITE = ILLUMENITE_FEATURE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
                     .range(NetherrocksConfig.illumenite_cfg.getCfg().maximum).square()
@@ -94,7 +103,7 @@ public class OreGeneration
             OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster_extra", ORE_ILLUMENITE_EXTRA);
             
         }
-        if (NetherrocksConfig.enableMalachiteOre && ORE_MALACHITE == null) 
+        if (NetherrocksConfig.enableMalachiteOre) 
         {
             ORE_MALACHITE = OreGenUtils.buildNetherOreFeature(Feature.ORE, ModBlocks.malachite_ore.get().getDefaultState(),
                     NetherrocksConfig.malachite_cfg);
