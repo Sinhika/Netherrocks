@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[35,)" #mandatory
+loaderVersion="[36,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
 license="LGPL 3.0"
 logoFile="netherrocks.png"
@@ -25,21 +25,21 @@ Additional Credits: AzazEL3095 (Spanish translation)
 [[dependencies.netherrocks]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[35.1.0,)"
+    versionRange="[36.0.0,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.netherrocks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4,)"
+    versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"
 
  [[dependencies.netherrocks]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.4-2.0.4.3,1.16.4-2.0.5.0)"
+    versionRange="[1.16.5-2.0.5.0,1.16.5-2.0.6.0)"
     ordering="NONE"
     side="BOTH"
     
