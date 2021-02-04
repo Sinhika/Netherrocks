@@ -12,11 +12,11 @@ TO DO
 -----
 * update/move wiki 
 * Decide if we really need more detailed configs than that.
-* <s>if possible, add nether furnace fuel support to JEI.</s>
 * Add shears for all metals.
-* Add dusts for all ores.
-* <s>Add a nether blast furnace and a nether smoker.</s> DONE.
-* <s>add Netherrocks tools, ingots to nether fortress chest loot tables.</s>
+* <s>Add dusts for all ores.</s>
+* <s>add support for Silent's Mechanisms: Crusher</s>
+* add support for Silent Gear
+
 
 License
 -------

@@ -242,6 +242,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
         addItemBurnTime(map, ModBlocks.fyrite_block.get(), fyriteBurnTime * 10);
         addItemBurnTime(map, ModItems.fyrite_ingot.get(), fyriteBurnTime);
         addItemBurnTime(map, ModItems.fyrite_nugget.get(), fyriteBurnTime/9);
+        addItemBurnTime(map, ModItems.fyrite_dust.get(), fyriteBurnTime/2);
         addItemBurnTime(map, Items.BLAZE_ROD, blazeRodBurnTime);
         addItemBurnTime(map, Items.BLAZE_POWDER, blazeRodBurnTime/3);
         addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), fyriteBurnTime / 3);
