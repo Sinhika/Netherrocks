@@ -13,4 +13,11 @@ public class ModBlockTags extends BlockTagsProvider
         super(generatorIn, Netherrocks.MODID, existingFileHelper);
     }
 
-}
+    @Override
+    protected void registerTags()
+    {
+        // do nothing; super() generates all the vanilla blocktags, and we don't want that.
+    }
+
+    
+} // end class

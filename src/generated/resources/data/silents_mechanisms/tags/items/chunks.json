@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#silents_mechanisms:chunks/argonite",
+    "#silents_mechanisms:chunks/fyrite",
+    "#silents_mechanisms:chunks/illumenite",
+    "#silents_mechanisms:chunks/malachite"
+  ]
+}

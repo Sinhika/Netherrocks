@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:dusts/argonite",
+    "#forge:dusts/fyrite",
+    "#forge:dusts/illumenite",
+    "#forge:dusts/malachite"
+  ]
+}
