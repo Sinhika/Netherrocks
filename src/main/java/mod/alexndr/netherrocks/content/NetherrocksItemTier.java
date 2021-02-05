@@ -17,7 +17,7 @@ public enum NetherrocksItemTier implements IItemTier
             ()->{ return Ingredient.fromItems(ModItems.dragonstone_gem.get());}),
    FYRITE(3, 150, 8.0F, 4.0F, 7,
             ()->{ return Ingredient.fromItems(ModItems.fyrite_ingot.get());}),
-   ILLUMENITE(3, 700, 8.0F, 4.0F, 7,
+   ILLUMENITE(3, 700, 8.0F, 4.0F, 15,
             ()->{ return Ingredient.fromItems(ModItems.illumenite_ingot.get());}),
    MALACHITE(3, 700, 9.0F, 3.0F, 39,
                   ()->{ return Ingredient.fromItems(ModItems.malachite_ingot.get());});
