@@ -17,7 +17,7 @@
     "main/armor": [
     {
       "texture": "silentgear:main_generic_hc",
-      "color": "#00e663"
+      "color": "#00e196"
     },
     {
       "texture": "silentgear:_highlight"

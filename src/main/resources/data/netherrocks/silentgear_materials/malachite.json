@@ -59,8 +59,8 @@
 	"traits": {
 		"main": [
 			{
-				"name": "silentgear:malleable",
-				"level": 2
+				"name": "silentgear:brittle",
+				"level": 5
 			},
 			{
 				"name": "silentgear:stellar",
@@ -71,15 +71,15 @@
 						"gear_type": "armor"
 					},
 					{
-						"type": "silentgear:material_ratio",
-						"ratio": 1.0
+						"type": "silentgear:material_count",
+						"count": 4
 					}
 				]
 			}
 		],
 		"rod": [
 			{
-				"name": "silentgear:malleable",
+				"name": "silentgear:brittle",
 				"level": 2
 			}
 		]
