@@ -43,14 +43,14 @@ Additional Credits: AzazEL3095 (Spanish translation)
     ordering="NONE"
     side="BOTH"
     
-[[dependencies.simpleores]]
+[[dependencies.netherrocks]]
         modId="silents_mechanisms"
         mandatory=false
         versionRange="[1.16.3-0.8.9,)"
         ordering="BEFORE"
         side="BOTH"
         
-[[dependencies.simpleores]]
+[[dependencies.netherrocks]]
         modId="silentgear"
         mandatory=false
         versionRange="[1.16.3-2.5.2,)"
