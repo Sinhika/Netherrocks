@@ -15,7 +15,9 @@ TO DO
 * Add shears for all metals.
 * <s>Add dusts for all ores.</s>
 * <s>add support for Silent's Mechanisms: Crusher</s>
-* add support for Silent Gear
+* <s>add support for Silent Gear</s>
+* add random chance for injected loot, instead of 100% guaranteed.
+
 
 
 License
