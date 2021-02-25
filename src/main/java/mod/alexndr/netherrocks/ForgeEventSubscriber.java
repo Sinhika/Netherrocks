@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.simplecorelib.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.loot.ChestLootHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -37,7 +38,7 @@ public final class ForgeEventSubscriber
 
             // fall damage and are they wearing full illumenite armor?
             if ((event.getSource() == DamageSource.FALL) &&
-                ModUtil.isPlayerWearingFullSet(player,
+                    ArmorUtils.isPlayerWearingFullSet(player,
                                                NetherrocksArmorMaterial.ILLUMENITE))
             {
                 // pro-forma cancelable check.
@@ -45,7 +46,7 @@ public final class ForgeEventSubscriber
                 LOGGER.debug("Canceled fall damage because of illumenite");
             } // end-if full set of Illumenite and fall damage
             else if (event.getSource().isFireDamage()
-                     && ModUtil.isPlayerWearingFullSet(player,
+                     && ArmorUtils.isPlayerWearingFullSet(player,
                                                       NetherrocksArmorMaterial.FYRITE))
             {
                 // pro-forma cancelable check.

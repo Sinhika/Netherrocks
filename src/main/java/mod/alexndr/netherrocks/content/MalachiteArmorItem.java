@@ -1,6 +1,10 @@
 package mod.alexndr.netherrocks.content;
 
-import mod.alexndr.netherrocks.ModUtil;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import mod.alexndr.simplecorelib.helpers.ArmorUtils;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -14,9 +18,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 public class MalachiteArmorItem extends ArmorItem
 {
@@ -32,7 +33,7 @@ public class MalachiteArmorItem extends ArmorItem
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
     {
  	// must be wearing full set and not sneaking
-		if (ModUtil.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) 
+		if (ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) 
 				&& ! player.isSneaking())
 		{
 			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 2, jumpBoostFactor, false, false));
