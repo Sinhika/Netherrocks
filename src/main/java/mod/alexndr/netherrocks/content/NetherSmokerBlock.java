@@ -32,31 +32,31 @@ public class NetherSmokerBlock extends AbstractNetherSmokerBlock
     }
 
     @Override
-    public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
+    public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
     {
         if (oldState.getBlock() != newState.getBlock())
         {
-            TileEntity tileEntity = worldIn.getTileEntity(pos);
+            TileEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof NetherSmokerTileEntity)
             {
                 final ItemStackHandler inventory = ((NetherSmokerTileEntity) tileEntity).inventory;
                 for (int slot = 0; slot < inventory.getSlots(); ++slot)
-                    InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+                    InventoryHelper.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
                             inventory.getStackInSlot(slot));
             }
         }
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+    public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
             Hand handIn, BlockRayTraceResult hit)
     {
-        if (!worldIn.isRemote) {
-            final TileEntity tileEntity = worldIn.getTileEntity(pos);
+        if (!worldIn.isClientSide) {
+            final TileEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof NetherSmokerTileEntity) 
             {
                 NetworkHooks.openGui((ServerPlayerEntity) player, (NetherSmokerTileEntity) tileEntity, pos);
-                player.addStat(Stats.INTERACT_WITH_SMOKER);
+                player.awardStat(Stats.INTERACT_WITH_SMOKER);
             }
         }
         return ActionResultType.SUCCESS;

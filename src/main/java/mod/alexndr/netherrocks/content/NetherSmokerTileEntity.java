@@ -22,7 +22,7 @@ public class NetherSmokerTileEntity extends AbstractNetherFurnaceTileEntity
     @Override
     public ITextComponent getDisplayName()
     {
-        return new TranslationTextComponent(ModBlocks.nether_smoker.get().getTranslationKey());
+        return new TranslationTextComponent(ModBlocks.nether_smoker.get().getDescriptionId());
     }
 
     @Override

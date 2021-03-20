@@ -34,9 +34,9 @@ public class MalachiteArmorItem extends ArmorItem
     {
  	// must be wearing full set and not sneaking
 		if (ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) 
-				&& ! player.isSneaking())
+				&& ! player.isShiftKeyDown())
 		{
-			player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 2, jumpBoostFactor, false, false));
+			player.addEffect(new EffectInstance(Effects.JUMP, 2, jumpBoostFactor, false, false));
 					//new PotionEffect(MobEffects.JUMP_BOOST, 2, jumpBoostFactor));
 		}
 		super.onArmorTick(stack, world, player);
@@ -44,9 +44,9 @@ public class MalachiteArmorItem extends ArmorItem
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("netherrocks.malachite_armor.info"));
     }
 }  // end class MalachiteArmorItem

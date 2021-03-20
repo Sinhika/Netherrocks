@@ -45,7 +45,7 @@ public final class ForgeEventSubscriber
                 if (event.isCancelable()) event.setCanceled(true);
                 LOGGER.debug("Canceled fall damage because of illumenite");
             } // end-if full set of Illumenite and fall damage
-            else if (event.getSource().isFireDamage()
+            else if (event.getSource().isFire()
                      && ArmorUtils.isPlayerWearingFullSet(player,
                                                       NetherrocksArmorMaterial.FYRITE))
             {

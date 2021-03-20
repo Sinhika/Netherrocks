@@ -16,7 +16,7 @@ public class ModTags
 
     public static ITag<Item> getnetherFurnaceFuels()
     {
-        return ItemTags.getCollection().get(tagNetherFurnaceFuels);
+        return ItemTags.getAllTags().getTag(tagNetherFurnaceFuels);
     }
 
 }  // end class ModTags

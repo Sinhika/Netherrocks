@@ -40,9 +40,9 @@ public class ClientModEventSubscriber
         // Register ContainerType Screens
         // ScreenManager.registerFactory is not safe to call during parallel mod loading so we queue it to run later
         DeferredWorkQueue.runLater(() -> {
-            ScreenManager.registerFactory(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
-            ScreenManager.registerFactory(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
-            ScreenManager.registerFactory(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
+            ScreenManager.register(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
+            ScreenManager.register(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
+            ScreenManager.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
             LOGGER.debug("Registered ContainerType Screens");
         });
 

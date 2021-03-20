@@ -22,7 +22,7 @@ public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntit
     @Override
     public ITextComponent getDisplayName()
     {
-        return new TranslationTextComponent(ModBlocks.nether_blast_furnace.get().getTranslationKey());
+        return new TranslationTextComponent(ModBlocks.nether_blast_furnace.get().getDescriptionId());
     }
 
     @Override

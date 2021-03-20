@@ -28,8 +28,8 @@ public class FyriteHandler implements IWeaponEffectHelper
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-         if (target.getFireTimer() <= 100) {
-             target.setFire(100);
+         if (target.getRemainingFireTicks() <= 100) {
+             target.setSecondsOnFire(100);
          }
          return true;    
     } // end hitEntity()
@@ -42,9 +42,9 @@ public class FyriteHandler implements IWeaponEffectHelper
     public void afterBlockSmelt(World world, BlockPos pos, boolean was_effective)
     {
         Netherrocks.LOGGER.info("tried to after-smelt");
-        if (was_effective && world.isRemote())
+        if (was_effective && world.isClientSide())
         {
-            Random random = world.rand;
+            Random random = world.random;
             for(int i = 0; i < 3; i++) {
                 world.addParticle(ParticleTypes.FLAME,
                                     pos.getX() + random.nextDouble() * 0.6D,
@@ -57,22 +57,22 @@ public class FyriteHandler implements IWeaponEffectHelper
 
     public ActionResultType onItemUse(ItemUseContext context)
     {
-        BlockPos adjacentPos = context.getPos();
-        BlockPos pos = context.getPos();
-        ItemStack stack = context.getItem();
+        BlockPos adjacentPos = context.getClickedPos();
+        BlockPos pos = context.getClickedPos();
+        ItemStack stack = context.getItemInHand();
         PlayerEntity playerIn = context.getPlayer();
-        World worldIn = context.getWorld();
+        World worldIn = context.getLevel();
         
         if (stack.isEmpty()) {
             return ActionResultType.PASS;
         }
-        switch (context.getFace()) 
+        switch (context.getClickedFace()) 
         {
         case DOWN:
-            adjacentPos = pos.down();
+            adjacentPos = pos.below();
             break;
         case UP:
-            adjacentPos = pos.up();
+            adjacentPos = pos.above();
             break;
         case NORTH:
             adjacentPos = pos.north();
@@ -87,18 +87,18 @@ public class FyriteHandler implements IWeaponEffectHelper
             adjacentPos = pos.west();
             break;
         } // end switch
-        if (!playerIn.canPlayerEdit(adjacentPos, context.getFace(), stack))
+        if (!playerIn.mayUseItemAt(adjacentPos, context.getClickedFace(), stack))
         {
             return ActionResultType.PASS;
         }
         IForgeBlockState targetBlock = worldIn.getBlockState(adjacentPos);
         if (targetBlock.getBlockState().getBlock().isAir(targetBlock.getBlockState(), worldIn, adjacentPos))
         {
-            if (worldIn.isRemote) {
-                playerIn.playSound(SoundEvents.BLOCK_FIRE_AMBIENT, 1.0F, 1.0F);
+            if (worldIn.isClientSide) {
+                playerIn.playSound(SoundEvents.FIRE_AMBIENT, 1.0F, 1.0F);
             }
-            worldIn.setBlockState(adjacentPos, Blocks.FIRE.getDefaultState());
-            stack.attemptDamageItem(1, worldIn.rand, null);
+            worldIn.setBlockAndUpdate(adjacentPos, Blocks.FIRE.defaultBlockState());
+            stack.hurt(1, worldIn.random, null);
         }
         return ActionResultType.PASS;
     } // end onItemUse()

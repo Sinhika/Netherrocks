@@ -22,19 +22,19 @@ public class FyriteShovelItem extends ShovelItem
     // for shovels, do the FyriteHandler() thing AFTER the normal thing, or paths
     // won't get created. (Paths require air above grass_block, not fire).
     @Override
-    public ActionResultType onItemUse(ItemUseContext context)
+    public ActionResultType useOn(ItemUseContext context)
     {
-        ActionResultType result = super.onItemUse(context);
+        ActionResultType result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos,
+    public boolean mineBlock(ItemStack stack, World worldIn, BlockState state, BlockPos pos,
             LivingEntity entityLiving)
     {
         FyriteHandler.INSTANCE.afterBlockSmelt(worldIn, pos, true);
-        return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        return super.mineBlock(stack, worldIn, state, pos, entityLiving);
     }
 
 } // end class

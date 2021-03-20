@@ -10,7 +10,7 @@ logoFile="netherrocks.png"
 
 [[mods]]
 modId="netherrocks"
-version="${version}"
+version="${file.jarVersion}"
 displayName="SimpleOres:Netherrocks"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.16/update.json"
 displayURL="http://minecraft.curseforge.com/projects/netherrocks"
@@ -25,7 +25,7 @@ Additional Credits: AzazEL3095 (Spanish translation)
 [[dependencies.netherrocks]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[36.0.0,)"
+    versionRange="[36.1.0,)"
     ordering="NONE"
     side="BOTH"
 
@@ -39,7 +39,7 @@ Additional Credits: AzazEL3095 (Spanish translation)
  [[dependencies.netherrocks]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.5-2.0.5.0,1.16.5-2.0.6.0)"
+    versionRange="[1.16.5-2.0.7.0,1.16.5-2.0.8.0)"
     ordering="NONE"
     side="BOTH"
     

@@ -29,14 +29,14 @@ public final class ModTiles
     // We don't have a datafixer for our TileEntities, so we pass null into build.
     public static RegistryObject<TileEntityType<NetherFurnaceTileEntity>> NETHER_FURNACE =
             TILE_ENTITY_TYPES.register("nether_furnace", 
-                    () -> TileEntityType.Builder.create(NetherFurnaceTileEntity::new, 
+                    () -> TileEntityType.Builder.of(NetherFurnaceTileEntity::new, 
                             ModBlocks.nether_furnace.get()).build(null));
     public static RegistryObject<TileEntityType<NetherSmokerTileEntity>> NETHER_SMOKER =
             TILE_ENTITY_TYPES.register("nether_smoker", 
-                    () -> TileEntityType.Builder.create(NetherSmokerTileEntity::new, 
+                    () -> TileEntityType.Builder.of(NetherSmokerTileEntity::new, 
                             ModBlocks.nether_smoker.get()).build(null));
     public static RegistryObject<TileEntityType<NetherBlastFurnaceTileEntity>> NETHER_BLAST_FURNACE =
             TILE_ENTITY_TYPES.register("nether_blast_furnace", 
-                    () -> TileEntityType.Builder.create(NetherBlastFurnaceTileEntity::new, 
+                    () -> TileEntityType.Builder.of(NetherBlastFurnaceTileEntity::new, 
                             ModBlocks.nether_blast_furnace.get()).build(null));
 }  // end class ModTiles

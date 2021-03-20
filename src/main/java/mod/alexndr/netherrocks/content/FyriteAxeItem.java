@@ -20,26 +20,26 @@ public class FyriteAxeItem extends AxeItem
     }
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context)
+    public ActionResultType useOn(ItemUseContext context)
     {
-        ActionResultType result = super.onItemUse(context);
+        ActionResultType result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
     }
 
     @Override
-    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
         return FyriteHandler.INSTANCE.hitEntity(stack, target, attacker)
-                && super.hitEntity(stack, target, attacker);
+                && super.hurtEnemy(stack, target, attacker);
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos,
+    public boolean mineBlock(ItemStack stack, World worldIn, BlockState state, BlockPos pos,
             LivingEntity entityLiving)
     {
         FyriteHandler.INSTANCE.afterBlockSmelt(worldIn, pos, true);
-        return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        return super.mineBlock(stack, worldIn, state, pos, entityLiving);
     }
 
 

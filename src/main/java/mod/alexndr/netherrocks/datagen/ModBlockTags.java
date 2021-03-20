@@ -14,7 +14,7 @@ public class ModBlockTags extends BlockTagsProvider
     }
 
     @Override
-    protected void registerTags()
+    protected void addTags()
     {
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.
     }

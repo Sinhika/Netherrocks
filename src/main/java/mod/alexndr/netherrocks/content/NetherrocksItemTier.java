@@ -10,17 +10,17 @@ import java.util.function.Supplier;
 public enum NetherrocksItemTier implements IItemTier
 {
    ARGONITE(4, 1300, 8.0F, 3.0F, 18,
-            ()->{ return Ingredient.fromItems(ModItems.argonite_ingot.get());}),
+            ()->{ return Ingredient.of(ModItems.argonite_ingot.get());}),
    ASHSTONE(3, 900, 16.0F, 2.0F, 7,
-            ()->{ return Ingredient.fromItems(ModItems.ashstone_gem.get());}),
+            ()->{ return Ingredient.of(ModItems.ashstone_gem.get());}),
    DRAGONSTONE(4, 4000, 10.0F, 8.0F, 27,
-            ()->{ return Ingredient.fromItems(ModItems.dragonstone_gem.get());}),
+            ()->{ return Ingredient.of(ModItems.dragonstone_gem.get());}),
    FYRITE(3, 150, 8.0F, 4.0F, 7,
-            ()->{ return Ingredient.fromItems(ModItems.fyrite_ingot.get());}),
+            ()->{ return Ingredient.of(ModItems.fyrite_ingot.get());}),
    ILLUMENITE(3, 700, 8.0F, 4.0F, 15,
-            ()->{ return Ingredient.fromItems(ModItems.illumenite_ingot.get());}),
+            ()->{ return Ingredient.of(ModItems.illumenite_ingot.get());}),
    MALACHITE(3, 700, 9.0F, 3.0F, 39,
-                  ()->{ return Ingredient.fromItems(ModItems.malachite_ingot.get());});
+                  ()->{ return Ingredient.of(ModItems.malachite_ingot.get());});
 
    private final int harvestLevel;
    private final int maxUses;
@@ -41,32 +41,32 @@ public enum NetherrocksItemTier implements IItemTier
    }
 
    @Override
-   public int getMaxUses() {
+   public int getUses() {
       return this.maxUses;
    }
 
    @Override
-   public float getEfficiency() {
+   public float getSpeed() {
       return this.efficiency;
    }
 
    @Override
-   public float getAttackDamage() {
+   public float getAttackDamageBonus() {
       return this.attackDamage;
    }
 
    @Override
-   public int getHarvestLevel() {
+   public int getLevel() {
       return this.harvestLevel;
    }
 
    @Override
-   public int getEnchantability() {
+   public int getEnchantmentValue() {
       return this.enchantability;
    }
 
    @Override
-   public Ingredient getRepairMaterial() {
-      return this.repairMaterial.getValue();
+   public Ingredient getRepairIngredient() {
+      return this.repairMaterial.get();
    }
 }  // end class SimpleOresItemTier

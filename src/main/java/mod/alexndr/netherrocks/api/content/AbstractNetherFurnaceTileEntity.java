@@ -106,7 +106,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     			// Mark the tile entity as having changed whenever its inventory changes.
     			// "markDirty" tells vanilla that the chunk containing the tile entity has
     			// changed and means the game will save the chunk to disk later.
-    			AbstractNetherFurnaceTileEntity.this.markDirty();
+    			AbstractNetherFurnaceTileEntity.this.setChanged();
     		} // end ()
     }; // end ItemStackHandler(3)
     
@@ -137,7 +137,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     private boolean isOutput(final ItemStack stack)
     {
     	final Optional<ItemStack> result = getResult(inventory.getStackInSlot(INPUT_SLOT));
-    	return result.isPresent() && ItemStack.areItemsEqual(result.get(), stack);
+    	return result.isPresent() && ItemStack.isSame(result.get(), stack);
     }
 
     /**
@@ -158,16 +158,16 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     @SuppressWarnings("unchecked")
     private Optional<AbstractCookingRecipe> getRecipe(final IInventory inventory)
     {
-        if (cachedRecipe != null && cachedRecipe.matches(inventory, world))
+        if (cachedRecipe != null && cachedRecipe.matches(inventory, level))
         {
             return Optional.of(cachedRecipe);
         }
         else
         {
             AbstractCookingRecipe rec 
-                = world.getRecipeManager().getRecipe((IRecipeType<AbstractCookingRecipe>) recipeType, inventory, world).orElse(null);
+                = level.getRecipeManager().getRecipeFor((IRecipeType<AbstractCookingRecipe>) recipeType, inventory, level).orElse(null);
             if (rec == null) {
-                failedMatch = inventory.getStackInSlot(0); // i.e., input.
+                failedMatch = inventory.getItem(0); // i.e., input.
             }
             else {
                 failedMatch = ItemStack.EMPTY;
@@ -184,7 +184,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
         // AbstractCookingRecipe#getCraftingResult() so we make one here.
         final Inventory dummyInventory = new Inventory(input);
         Optional<ItemStack> maybe_result = 
-                getRecipe(dummyInventory).map(recipe -> recipe.getCraftingResult(dummyInventory));
+                getRecipe(dummyInventory).map(recipe -> recipe.assemble(dummyInventory));
         
         // enhanced yield processing.
         if (YieldChance <= 0 || YieldAmount <= 0)
@@ -227,7 +227,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
             validFuels.add(ModItems.fyrite_nugget.get());
             validFuels.add(Items.BLAZE_ROD);
             validFuels.add(Items.BLAZE_POWDER);
-            for (Item item : ModTags.getnetherFurnaceFuels().getAllElements())
+            for (Item item : ModTags.getnetherFurnaceFuels().getValues())
             {
                 validFuels.add(item);
             }
@@ -257,7 +257,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
 
     protected static void addItemTagBurnTime(Map<Item, Integer> map, ITag<Item> iTag, int burnTimeIn)
     {
-        for(Item item : iTag.getAllElements()) {
+        for(Item item : iTag.getValues()) {
             map.put(item, burnTimeIn);
         }
     } // end ()
@@ -276,7 +276,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
             --fuelBurnTimeLeft;
         }
         
-    	if (world == null || world.isRemote)
+    	if (level == null || level.isClientSide)
     		return;
     
     	// Smelting code
@@ -337,13 +337,13 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     
     		// "markDirty" tells vanilla that the chunk containing the tile entity has
     		// changed and means the game will save the chunk to disk later.
-    		this.markDirty();
+    		this.setChanged();
     
     		final BlockState newState = this.getBlockState()
-    				.with(AbstractNetherFurnaceBlock.BURNING, hasFuel);
+    				.setValue(AbstractNetherFurnaceBlock.BURNING, hasFuel);
     
     		// Flag 2: Send the change to clients
-    		world.setBlockState(pos, newState, 2);
+    		level.setBlock(worldPosition, newState, 2);
     
     		// Update the last synced burning state to the current burning state
     		lastBurning = hasFuel;
@@ -351,14 +351,14 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     } // end tick()
 
     /**
-     * Mimics the code in {@link AbstractFurnaceTileEntity#func_214005_h()}
+     * Mimics the code in {@link AbstractFurnaceTileEntity#getTotalCookTime()}
      *
      * @return The custom smelt time or 200 if there is no recipe for the input
      */
     protected short getSmeltTime(final ItemStack input)
     {
     	return getRecipe(input)
-    			.map(AbstractCookingRecipe::getCookTime)
+    			.map(AbstractCookingRecipe::getCookingTime)
     			.orElse(200)
     			.shortValue();
     }
@@ -440,9 +440,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
      * Read saved data from disk into the tile.
      */
     @Override
-    public void read(BlockState stateIn, final CompoundNBT compound)
+    public void load(BlockState stateIn, final CompoundNBT compound)
     {
-    	super.read(stateIn, compound);
+    	super.load(stateIn, compound);
     	this.inventory.deserializeNBT(compound.getCompound(INVENTORY_TAG));
     	this.smeltTimeLeft = compound.getShort(SMELT_TIME_LEFT_TAG);
     	this.maxSmeltTime = compound.getShort(MAX_SMELT_TIME_TAG);
@@ -451,7 +451,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     	
         // We set this in read() instead of the constructor so that TileEntities
         // constructed from NBT (saved tile entities) have this set to the proper value
-        if (this.hasWorld() && !this.world.isRemote) {
+        if (this.hasLevel() && !this.level.isClientSide) {
             lastBurning = this.isBurning();
         }
         
@@ -464,9 +464,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
            this.recipe2xp_map.put(resourcelocation, kk);
         }
         // blockstate?
-        if (this.hasWorld()) {
-            this.world.setBlockState(getPos(), this.getBlockState()
-                    .with(AbstractNetherFurnaceBlock.BURNING, Boolean.valueOf(this.isBurning())));
+        if (this.hasLevel()) {
+            this.level.setBlockAndUpdate(getBlockPos(), this.getBlockState()
+                    .setValue(AbstractNetherFurnaceBlock.BURNING, Boolean.valueOf(this.isBurning())));
         }
         
     } // end read()
@@ -476,9 +476,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
      */
     @Nonnull
     @Override
-    public CompoundNBT write(final CompoundNBT compound)
+    public CompoundNBT save(final CompoundNBT compound)
     {
-    	super.write(compound);
+    	super.save(compound);
     	compound.put(INVENTORY_TAG, this.inventory.serializeNBT());
     	compound.putShort(SMELT_TIME_LEFT_TAG, this.smeltTimeLeft);
     	compound.putShort(MAX_SMELT_TIME_TAG, this.maxSmeltTime);
@@ -507,16 +507,16 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     @Nonnull
     public CompoundNBT getUpdateTag()
     {
-    	return this.write(new CompoundNBT());
+    	return this.save(new CompoundNBT());
     }
 
     /**
      * Invalidates our tile entity
      */
     @Override
-    public void remove()
+    public void setRemoved()
     {
-    	super.remove();
+    	super.setRemoved();
     	// We need to invalidate our capability references so that any cached references (by other mods) don't
     	// continue to reference our capabilities and try to use them and/or prevent them from being garbage collected
     	inventoryCapabilityExternal.invalidate();
@@ -542,12 +542,12 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
 
         for (Entry<ResourceLocation, Integer> entry : this.recipe2xp_map.entrySet())
         {
-            player.world.getRecipeManager().getRecipe(entry.getKey()).ifPresent((p_213993_3_) -> {
+            player.level.getRecipeManager().byKey(entry.getKey()).ifPresent((p_213993_3_) -> {
                 list.add(p_213993_3_);
                 spawnExpOrbs(player, entry.getValue(), ((AbstractCookingRecipe) p_213993_3_).getExperience());
             });
         }
-        player.unlockRecipes(list);
+        player.awardRecipes(list);
         this.recipe2xp_map.clear();
     }
     
@@ -569,10 +569,10 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
 
         while (pCount > 0)
         {
-            int j = ExperienceOrbEntity.getXPSplit(pCount);
+            int j = ExperienceOrbEntity.getExperienceValue(pCount);
             pCount -= j;
-            player.world.addEntity(new ExperienceOrbEntity(player.world, player.getPosX(), player.getPosY() + 0.5D,
-                    player.getPosZ() + 0.5D, j));
+            player.level.addFreshEntity(new ExperienceOrbEntity(player.level, player.getX(), player.getY() + 0.5D,
+                    player.getZ() + 0.5D, j));
         }
     } // end spawnExpOrbs()
 

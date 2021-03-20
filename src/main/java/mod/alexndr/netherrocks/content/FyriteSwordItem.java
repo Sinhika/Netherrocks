@@ -17,16 +17,16 @@ public class FyriteSwordItem extends SwordItem
     }
 
     @Override
-    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
         return  FyriteHandler.INSTANCE.hitEntity(stack, target, attacker)
-                && super.hitEntity(stack, target, attacker);
+                && super.hurtEnemy(stack, target, attacker);
     }
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context)
+    public ActionResultType useOn(ItemUseContext context)
     {
-        ActionResultType result = super.onItemUse(context);
+        ActionResultType result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
     } // end onItemUse()

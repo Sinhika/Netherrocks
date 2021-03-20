@@ -24,9 +24,9 @@ public class IllumeniteHandler implements IWeaponEffectHelper
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-        attacker.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, NetherrocksConfig.illumeniteNVTime));
-        target.addPotionEffect(new EffectInstance(Effects.BLINDNESS, NetherrocksConfig.illumeniteBlindnessTime));
-        target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 
+        attacker.addEffect(new EffectInstance(Effects.NIGHT_VISION, NetherrocksConfig.illumeniteNVTime));
+        target.addEffect(new EffectInstance(Effects.BLINDNESS, NetherrocksConfig.illumeniteBlindnessTime));
+        target.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 
                                 NetherrocksConfig.illumeniteSlowTime, 
                                 NetherrocksConfig.illumeniteSlowLevel));
         return true;

@@ -43,16 +43,16 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
+   public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
    {
         if (oldState.getBlock() != newState.getBlock())
         {
-            TileEntity tileEntity = worldIn.getTileEntity(pos);
+            TileEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof NetherFurnaceTileEntity)
             {
                 final ItemStackHandler inventory = ((NetherFurnaceTileEntity) tileEntity).inventory;
                 for (int slot = 0; slot < inventory.getSlots(); ++slot)
-                    InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+                    InventoryHelper.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
                             inventory.getStackInSlot(slot));
             }
         }
@@ -66,14 +66,14 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public ActionResultType onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) 
+   public ActionResultType use(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) 
    {
-       if (!worldIn.isRemote) {
-           final TileEntity tileEntity = worldIn.getTileEntity(pos);
+       if (!worldIn.isClientSide) {
+           final TileEntity tileEntity = worldIn.getBlockEntity(pos);
            if (tileEntity instanceof NetherFurnaceTileEntity) 
            {
                NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
-               player.addStat(Stats.INTERACT_WITH_FURNACE);
+               player.awardStat(Stats.INTERACT_WITH_FURNACE);
            }
        }
        return ActionResultType.SUCCESS;
