@@ -2,23 +2,22 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name" : "netherrocks:droppool",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:copy_name",
-              "source": "block_entity"
-            }
-          ],
-          "name": "netherrocks:nether_furnace"
+          "name": "netherrocks:nether_smoker"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:copy_name",
+          "source": "block_entity"
         }
       ]
     }

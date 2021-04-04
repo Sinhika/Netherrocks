@@ -29,6 +29,7 @@ public class NetherrocksDataGenerator
             gen.addProvider(new SilentsRecipes(gen));
             gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
+            gen.addProvider(new NetherrocksLootTableProvider(gen));
         }
      } // end gatherData()
 
