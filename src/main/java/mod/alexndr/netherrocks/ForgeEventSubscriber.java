@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.generation.OreGeneration;
+import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.helpers.ArmorUtils;
+import mod.alexndr.simplecorelib.helpers.LootUtils;
 import mod.alexndr.simplecorelib.loot.ChestLootHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -26,6 +28,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public final class ForgeEventSubscriber
 {
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Forge Event Subscriber");
+    private static final NetherrocksInjectionLookup lootLookupMap = new NetherrocksInjectionLookup();
 
     @SubscribeEvent(receiveCanceled = true, priority= EventPriority.HIGHEST)
     public static void onLivingAttackEvent(LivingAttackEvent event)
@@ -77,62 +80,7 @@ public final class ForgeEventSubscriber
     {
         if (NetherrocksConfig.addModLootToChests)
         {
-            String prefix = "minecraft:chests/";
-            String name = event.getName().toString();
-
-            if (name.startsWith(prefix)) 
-            {
-                String file = name.substring(name.indexOf(prefix) + prefix.length());
-                
-                // village chests are a bit more complicated now, but use the old
-                // village_blacksmith chest loot table anyway.
-                if (file.startsWith("village/village_")) 
-                {
-                    String village = "village/";
-                    file = file.substring(file.indexOf(village) + village.length());
-                }
-                else if (file.startsWith("stronghold_")) 
-                {
-                    file = "stronghold";
-                }
-                switch (file) {
-                case "simple_dungeon":
-                case "woodland_mansion":
-                case "shipwreck_supply":
-                case "shipwreck_map":
-                case "shipwreck_treasure":
-                case "buried_treasure":
-                case "pillager_outpost":
-                case "underwater_ruin_small":
-                case "underwater_ruin_big":
-                    LOGGER.debug("Attempting to inject loot pool for " + file);
-                    event.getTable().addPool(ChestLootHandler.getInjectPool(Netherrocks.MODID, "simple_dungeon"));
-                    break;
-                case "nether_bridge":
-                    LOGGER.debug("Attempting to inject loot pool for " + file);
-                    event.getTable().addPool(ChestLootHandler.getInjectPool(Netherrocks.MODID, "nether"));
-                    break;
-                case "village_weaponsmith":
-                case "village_toolsmith":
-                case "village_armorer":
-                case "village_mason":
-                case "desert_pyramid":
-                case "abandoned_mineshaft":
-                case "jungle_temple":
-                case "stronghold":
-                case "igloo_chest":
-                    LOGGER.debug("Attempting to inject loot pool for " + file);
-                    event.getTable().addPool(ChestLootHandler.getInjectPool(Netherrocks.MODID, file));
-                    break;
-                default:
-                    // cases deliberately ignored:
-                    // dispensers, because you don't shoot ingots/ores/tools at people.
-                    // other villagers
-                    // the_end, because no end ores or metals.
-                    break;
-                } // end-switch
-            } // end-if chest loot
-            
+            LootUtils.LootLoadHandler(Netherrocks.MODID,  event, lootLookupMap);
         } // end-if config allows
     } // end LootLoad()
     
