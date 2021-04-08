@@ -1,8 +1,6 @@
 package mod.alexndr.netherrocks.helpers;
 
-import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.helpers.InjectionTableLookup;
-import mod.alexndr.simplecorelib.loot.ChestLootHandler;
 
 @SuppressWarnings("serial")
 public class NetherrocksInjectionLookup extends InjectionTableLookup

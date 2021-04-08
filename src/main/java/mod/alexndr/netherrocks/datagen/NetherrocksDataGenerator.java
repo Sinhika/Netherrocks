@@ -30,6 +30,7 @@ public class NetherrocksDataGenerator
             gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new NetherrocksLootTableProvider(gen));
+            gen.addProvider(new NetherrocksLootInjectorProvider(gen));
         }
      } // end gatherData()
 

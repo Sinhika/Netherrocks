@@ -9,7 +9,6 @@ import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.helpers.LootUtils;
-import mod.alexndr.simplecorelib.loot.ChestLootHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.biome.Biome;
