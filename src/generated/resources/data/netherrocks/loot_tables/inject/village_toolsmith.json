@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "netherrocks:malachite_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "netherrocks:malachite_pickaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "netherrocks:malachite_shovel"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "netherrocks:argonite_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "netherrocks:argonite_pickaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "netherrocks:argonite_shovel"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "netherrocks:fyrite_pickaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "netherrocks:fyrite_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "netherrocks:fyrite_shovel"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "netherrocks:malachite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1.0
+            }
+          ],
+          "name": "netherrocks:argonite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "netherrocks:fyrite_ingot"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.25
+        }
+      ]
+    }
+  ]
+}
