@@ -16,8 +16,8 @@ TO DO
 * <s>Add dusts for all ores.</s>
 * <s>add support for Silent's Mechanisms: Crusher</s>
 * <s>add support for Silent Gear</s>
-* add random chance for injected loot, instead of 100% guaranteed.
-* Malachite weapons should be mildly poisonous.
+* <s>add random chance for injected loot, instead of 100% guaranteed.</s>
+* <s>Malachite weapons should be mildly poisonous.</s>
 
 
 
