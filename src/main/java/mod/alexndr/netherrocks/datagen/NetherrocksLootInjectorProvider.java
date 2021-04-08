@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 import com.mojang.datafixers.util.Pair;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.LootTableInjectorProvider;
 import net.minecraft.data.DataGenerator;
@@ -63,7 +64,66 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                 .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
                         .apply(SetCount.setCount(RandomValueRange.between(1, 1))));
         addInjectionTable(Netherrocks.MODID, "desert_pyramid", foo);
-        
+
+        foo = createChestPool(1, 2, 0.75F)
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_helmet.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_chestplate.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_leggings.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_boots.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_sword.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_axe.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_pickaxe.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_shovel.get()).setWeight(3))
+                .add(ItemLootEntry.lootTableItem(ModItems.argonite_sword.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.argonite_axe.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.argonite_pickaxe.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.argonite_shovel.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.ashstone_sword.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.ashstone_axe.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.ashstone_pickaxe.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.ashstone_shovel.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_helmet.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_chestplate.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_leggings.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_boots.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_sword.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_pickaxe.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_shovel.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_helmet.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_chestplate.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_leggings.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_boots.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_sword.get()).setWeight(2))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_helmet.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_chestplate.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_leggings.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_boots.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_sword.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_axe.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_pickaxe.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_shovel.get()).setWeight(1))
+                .add(ItemLootEntry.lootTableItem(ModBlocks.argonite_ore.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
+                .add(ItemLootEntry.lootTableItem(ModBlocks.malachite_ore.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
+                .add(ItemLootEntry.lootTableItem(ModBlocks.illumenite_ore.get()).setWeight(1)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
+                .add(ItemLootEntry.lootTableItem(ModBlocks.fyrite_ore.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 1))))
+                .add(ItemLootEntry.lootTableItem(ModItems.malachite_ingot.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(2, 4))))
+                .add(ItemLootEntry.lootTableItem(ModItems.argonite_ingot.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
+                .add(ItemLootEntry.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(2)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
+                .add(ItemLootEntry.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
+                            .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
+                .add(ItemLootEntry.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
+                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
+                .add(ItemLootEntry.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
+                            .apply(SetCount.setCount(RandomValueRange.between(1, 1))));
+        addInjectionTable(Netherrocks.MODID, "bastion", foo);
+
         // TODO
         return tables;
     } // end getTables()
