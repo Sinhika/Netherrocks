@@ -9,6 +9,8 @@ import mod.alexndr.netherrocks.content.FyriteSwordItem;
 import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
 import mod.alexndr.netherrocks.content.IllumeniteSwordItem;
 import mod.alexndr.netherrocks.content.MalachiteArmorItem;
+import mod.alexndr.netherrocks.content.MalachiteAxeItem;
+import mod.alexndr.netherrocks.content.MalachiteSwordItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -93,8 +95,8 @@ public final class ModItems
     public static final RegistryObject<IllumeniteSwordItem> illumenite_sword = ITEMS.register("illumenite_sword",
             () -> new IllumeniteSwordItem(NetherrocksItemTier.ILLUMENITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<SwordItem> malachite_sword = ITEMS.register("malachite_sword",
-            () -> new SwordItem(NetherrocksItemTier.MALACHITE, 3, -2.4F,
+    public static final RegistryObject<MalachiteSwordItem> malachite_sword = ITEMS.register("malachite_sword",
+            () -> new MalachiteSwordItem(NetherrocksItemTier.MALACHITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SwordItem> ashstone_sword = ITEMS.register("ashstone_sword",
             () ->  new SwordItem(NetherrocksItemTier.ASHSTONE, 3, -2.4F,
@@ -127,8 +129,8 @@ public final class ModItems
     public static final RegistryObject<FyriteAxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
             () -> new FyriteAxeItem(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<AxeItem> malachite_axe = ITEMS.register("malachite_axe",
-            () -> new AxeItem(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
+    public static final RegistryObject<MalachiteAxeItem> malachite_axe = ITEMS.register("malachite_axe",
+            () -> new MalachiteAxeItem(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> ashstone_axe = ITEMS.register("ashstone_axe",
             () -> new AxeItem(NetherrocksItemTier.ASHSTONE, 7.0F, -3.1F,
