@@ -13,6 +13,7 @@ TO DO
 * update/move wiki 
 * Decide if we really need more detailed configs than that.
 * Add shears for all metals.
+* add ingots/tools/armor to appropriate piglin trade tables.
 * <s>Add dusts for all ores.</s>
 * <s>add support for Silent's Mechanisms: Crusher</s>
 * <s>add support for Silent Gear</s>

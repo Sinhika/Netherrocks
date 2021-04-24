@@ -7,40 +7,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "netherrocks:malachite_sword"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "netherrocks:malachite_axe"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "netherrocks:argonite_sword"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:argonite_axe"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:fyrite_sword"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:fyrite_axe"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 2.0,
+                "min": 2.0,
+                "max": 4.0,
                 "type": "minecraft:uniform"
               }
             }
@@ -49,6 +22,22 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "netherrocks:argonite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -59,7 +48,36 @@
               }
             }
           ],
-          "name": "netherrocks:argonite_ingot"
+          "name": "netherrocks:fyrite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "netherrocks:illumenite_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "netherrocks:ashstone_gem"
         },
         {
           "type": "minecraft:item",
@@ -69,13 +87,13 @@
               "count": 1.0
             }
           ],
-          "name": "netherrocks:fyrite_ingot"
+          "name": "netherrocks:dragonstone_gem"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.25
+          "chance": 0.5
         }
       ]
     }
