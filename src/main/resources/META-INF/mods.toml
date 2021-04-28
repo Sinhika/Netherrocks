@@ -46,13 +46,13 @@ Additional Credits: AzazEL3095 (Spanish translation)
 [[dependencies.netherrocks]]
         modId="silents_mechanisms"
         mandatory=false
-        versionRange="[1.16.3-0.8.9,)"
+        versionRange="[0.8.9,)"
         ordering="BEFORE"
         side="BOTH"
         
 [[dependencies.netherrocks]]
         modId="silentgear"
         mandatory=false
-        versionRange="[1.16.3-2.5.2,)"
+        versionRange="[2.5.2,)"
         ordering="BEFORE"
         side="BOTH"
