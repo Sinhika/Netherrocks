@@ -34,6 +34,8 @@ import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tags.ITag;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -507,7 +509,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     @Nonnull
     public CompoundNBT getUpdateTag()
     {
-    	return this.save(new CompoundNBT());
+    	return this.save(super.getUpdateTag());
     }
 
     /**
@@ -575,5 +577,12 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
                     player.getZ() + 0.5D, j));
         }
     } // end spawnExpOrbs()
+
+    @Override
+    public SUpdateTileEntityPacket getUpdatePacket()
+    {
+        CompoundNBT nbtTag = new CompoundNBT();
+        return new SUpdateTileEntityPacket(getBlockPos(), -1, save(nbtTag));
+    }
 
 } // end class
