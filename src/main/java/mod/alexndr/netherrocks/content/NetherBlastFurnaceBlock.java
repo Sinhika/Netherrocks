@@ -31,6 +31,7 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
         return ModTiles.NETHER_BLAST_FURNACE.get().create();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
     {
@@ -45,7 +46,9 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
                             inventory.getStackInSlot(slot));
             }
         }
-    }
+        // call this or tile entities don't get cleaned up!
+        super.onRemove(oldState, worldIn, pos, newState, isMoving);
+    } // end onRemove
 
     @Override
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,

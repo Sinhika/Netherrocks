@@ -45,6 +45,8 @@ public class NetherSmokerBlock extends AbstractNetherSmokerBlock
                             inventory.getStackInSlot(slot));
             }
         }
+        // call this or tile entities don't get cleaned up!
+        super.onRemove(oldState, worldIn, pos, newState, isMoving);
     }
 
     @Override

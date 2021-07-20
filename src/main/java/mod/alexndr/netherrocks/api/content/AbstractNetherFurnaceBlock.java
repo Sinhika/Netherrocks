@@ -56,16 +56,6 @@ public abstract class AbstractNetherFurnaceBlock extends HorizontalBlock
 
 
     /**
-     * Called on the logical server when a BlockState with a TileEntity is replaced by another BlockState.
-     * We use this method to drop all the items from our tile entity's inventory and update comparators near our block.
-     *
-     * @deprecated Call via {@link BlockState#onReplaced(World, BlockPos, BlockState, boolean)}
-     * Implementing/overriding is fine.
-     */
-    @Override
-    public abstract void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving);
-
-    /**
      * Called when a player right clicks our block.
      * We use this method to open our gui.
      *
