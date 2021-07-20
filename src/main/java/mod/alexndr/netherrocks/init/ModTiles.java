@@ -31,10 +31,12 @@ public final class ModTiles
             TILE_ENTITY_TYPES.register("nether_furnace", 
                     () -> TileEntityType.Builder.of(NetherFurnaceTileEntity::new, 
                             ModBlocks.nether_furnace.get()).build(null));
+
     public static RegistryObject<TileEntityType<NetherSmokerTileEntity>> NETHER_SMOKER =
             TILE_ENTITY_TYPES.register("nether_smoker", 
                     () -> TileEntityType.Builder.of(NetherSmokerTileEntity::new, 
                             ModBlocks.nether_smoker.get()).build(null));
+    
     public static RegistryObject<TileEntityType<NetherBlastFurnaceTileEntity>> NETHER_BLAST_FURNACE =
             TILE_ENTITY_TYPES.register("nether_blast_furnace", 
                     () -> TileEntityType.Builder.of(NetherBlastFurnaceTileEntity::new, 

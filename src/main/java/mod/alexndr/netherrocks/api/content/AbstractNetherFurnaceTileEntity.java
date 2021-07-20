@@ -34,6 +34,7 @@ import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tags.ITag;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
@@ -323,6 +324,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
                 }
                 else // No fuel -> add to smelt time left to simulate cooling
                 {
+                    // TODO fix this it is questionable!
                     if (smeltTimeLeft < maxSmeltTime) ++smeltTimeLeft;
                 }
             }
@@ -512,15 +514,27 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     }
 
     /**
-     * Invalidates our tile entity
+     * Called when the chunk's TE update tag, gotten from {@link #getUpdateTag()}, is received on the client.
+     * Used to handle this tag in a special way. By default this simply calls {@link #readFromNBT(NBTTagCompound)}.
+     *
+     * @param tag The {@link NBTTagCompound} sent from {@link #getUpdateTag()}
      */
     @Override
-    public void setRemoved()
+    public void handleUpdateTag(BlockState state, CompoundNBT tag)
     {
-    	super.setRemoved();
-    	// We need to invalidate our capability references so that any cached references (by other mods) don't
-    	// continue to reference our capabilities and try to use them and/or prevent them from being garbage collected
-    	inventoryCapabilityExternal.invalidate();
+        this.load(state, tag);
+    }
+    
+    @Override
+    protected void invalidateCaps()
+    {
+        super.invalidateCaps();
+        // We need to invalidate our capability references so that any cached references (by other mods) don't
+        // continue to reference our capabilities and try to use them and/or prevent them from being garbage collected
+        inventoryCapabilityExternal.invalidate();
+        inventoryCapabilityExternalUp.invalidate();
+        inventoryCapabilityExternalDown.invalidate();
+        inventoryCapabilityExternalSides.invalidate();
     }
 
     @Nonnull
@@ -582,6 +596,36 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
     {
         CompoundNBT nbtTag = new CompoundNBT();
         return new SUpdateTileEntityPacket(getBlockPos(), -1, save(nbtTag));
+    }
+
+    
+    /**
+     * Called when you receive a TileEntityData packet for the location this
+     * TileEntity is currently in. On the client, the NetworkManager will always
+     * be the remote server. On the server, it will be whomever is responsible for
+     * sending the packet.
+     *
+     * @param net The NetworkManager the packet originated from
+     * @param pkt The data packet
+     */
+    @Override
+    public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt)
+    {
+        CompoundNBT nbtTag = pkt.getTag();
+        this.load(getBlockState(), nbtTag);
+    }
+
+    public boolean stillValid(PlayerEntity player)
+    {
+        if (this.level.getBlockEntity(this.worldPosition) != this)
+        {
+            return false;
+        }
+        else
+        {
+            return player.distanceToSqr((double) this.worldPosition.getX() + 0.5D,
+                    (double) this.worldPosition.getY() + 0.5D, (double) this.worldPosition.getZ() + 0.5D) <= 64.0D;
+        }
     }
 
 } // end class
