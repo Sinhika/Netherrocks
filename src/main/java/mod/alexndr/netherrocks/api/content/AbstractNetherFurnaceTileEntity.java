@@ -34,7 +34,6 @@ import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tags.ITag;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
@@ -383,8 +382,8 @@ public abstract class AbstractNetherFurnaceTileEntity extends TileEntity  implem
         final ItemStack fuelStack = inventory.getStackInSlot(FUEL_SLOT).copy();
         if (!fuelStack.isEmpty()) 
         {
-            if (NetherFurnaceTileEntity.burnTimes.isEmpty()) {
-                NetherFurnaceTileEntity.burnTimes = NetherFurnaceTileEntity.getBurnTimes();
+            if (AbstractNetherFurnaceTileEntity.burnTimes.isEmpty()) {
+                AbstractNetherFurnaceTileEntity.burnTimes = AbstractNetherFurnaceTileEntity.getBurnTimes();
             }
             final int burnTime = 
                     (int) Math.ceil(NetherFurnaceTileEntity.burnTimes.get(fuelStack.getItem()) * fuelMultiplier);
