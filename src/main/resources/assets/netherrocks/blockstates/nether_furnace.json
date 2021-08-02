@@ -1,12 +1,12 @@
 {
     "variants": {
-        "facing=north,burning=false": { "model": "netherrocks:block/nether_furnace" },
-        "facing=south,burning=false": { "model": "netherrocks:block/nether_furnace", "y": 180 },
-        "facing=west,burning=false":  { "model": "netherrocks:block/nether_furnace", "y": 270 },
-        "facing=east,burning=false":  { "model": "netherrocks:block/nether_furnace", "y": 90 },
-        "facing=north,burning=true": { "model": "netherrocks:block/nether_furnace_lit" },
-        "facing=south,burning=true": { "model": "netherrocks:block/nether_furnace_lit", "y": 180 },
-        "facing=west,burning=true":  { "model": "netherrocks:block/nether_furnace_lit", "y": 270 },
-        "facing=east,burning=true":  { "model": "netherrocks:block/nether_furnace_lit", "y": 90 }
+        "facing=north,lit=false": { "model": "netherrocks:block/nether_furnace" },
+        "facing=south,lit=false": { "model": "netherrocks:block/nether_furnace", "y": 180 },
+        "facing=west,lit=false":  { "model": "netherrocks:block/nether_furnace", "y": 270 },
+        "facing=east,lit=false":  { "model": "netherrocks:block/nether_furnace", "y": 90 },
+        "facing=north,lit=true": { "model": "netherrocks:block/nether_furnace_lit" },
+        "facing=south,lit=true": { "model": "netherrocks:block/nether_furnace_lit", "y": 180 },
+        "facing=west,lit=true":  { "model": "netherrocks:block/nether_furnace_lit", "y": 270 },
+        "facing=east,lit=true":  { "model": "netherrocks:block/nether_furnace_lit", "y": 90 }
     }
 }

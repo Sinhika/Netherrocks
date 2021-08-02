@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +24,7 @@ public abstract class AbstractNetherSmokerBlock extends AbstractNetherFurnaceBlo
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (stateIn.getValue(BURNING)) {
+        if (stateIn.getValue(BlockStateProperties.LIT)) {
             double d0 = (double)pos.getX() + 0.5D;
             double d1 = (double)pos.getY();
             double d2 = (double)pos.getZ() + 0.5D;

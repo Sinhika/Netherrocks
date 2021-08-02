@@ -6,6 +6,7 @@ import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -16,8 +17,15 @@ public class NetherSmokerTileEntity extends AbstractNetherFurnaceTileEntity
     public NetherSmokerTileEntity()
     {
         super(ModTiles.NETHER_SMOKER.get(), IRecipeType.SMOKING);
-        fuelMultiplier = fuelMultiplier / 2.0; // because smoker.
     }
+
+    
+    @Override
+    protected int getBurnDuration(ItemStack fuelstack)
+    {
+        return super.getBurnDuration(fuelstack)/2;
+    }
+
 
     @Override
     public ITextComponent getDisplayName()

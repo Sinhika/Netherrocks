@@ -12,6 +12,7 @@ import net.minecraft.block.OreBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -88,20 +89,20 @@ public final class ModBlocks
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 
     // Furnace
-    public static final RegistryObject<NetherFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
+    public static final RegistryObject<AbstractNetherFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
             () -> new NetherFurnaceBlock(Block.Properties.of(Material.STONE)
                     .strength(3.5F, 12.0F)
-                    .lightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13))
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<NetherSmokerBlock> nether_smoker = BLOCKS.register("nether_smoker",
+    public static final RegistryObject<AbstractNetherFurnaceBlock> nether_smoker = BLOCKS.register("nether_smoker",
             () -> new NetherSmokerBlock(Block.Properties.of(Material.STONE)
                     .strength(3.5F, 12.0F)
-                    .lightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13))
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()));
-    public static final RegistryObject<NetherBlastFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
+    public static final RegistryObject<AbstractNetherFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
             () -> new NetherBlastFurnaceBlock(Block.Properties.of(Material.STONE)
                     .strength(3.5F, 12.0F)
-                    .lightLevel(LightUtils.setSwitchedLight(AbstractNetherFurnaceBlock.BURNING, 13))
+                    .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13))
                     .harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops()));
   
 }  // end class ModBlocks

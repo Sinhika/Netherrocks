@@ -31,6 +31,7 @@ public class NetherSmokerBlock extends AbstractNetherSmokerBlock
         return ModTiles.NETHER_SMOKER.get().create();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving)
     {

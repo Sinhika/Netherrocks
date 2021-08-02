@@ -20,8 +20,6 @@ public class NetherFurnaceTileEntity extends AbstractNetherFurnaceTileEntity
         super(ModTiles.NETHER_FURNACE.get(), IRecipeType.SMELTING);
     }
 
-    
-
     @Nonnull
     @Override
     public ITextComponent getDisplayName() {

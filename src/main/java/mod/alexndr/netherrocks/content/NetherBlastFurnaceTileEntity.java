@@ -6,6 +6,7 @@ import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -16,7 +17,12 @@ public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntit
     public NetherBlastFurnaceTileEntity()
     {
         super(ModTiles.NETHER_BLAST_FURNACE.get(), IRecipeType.BLASTING);
-        fuelMultiplier = fuelMultiplier / 2.0; // because blast furnace
+    }
+
+    @Override
+    protected int getBurnDuration(ItemStack fuelstack)
+    {
+        return super.getBurnDuration(fuelstack)/2;
     }
 
     @Override
