@@ -5,6 +5,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
 import com.google.common.collect.Maps;
 
 import mod.alexndr.netherrocks.init.ModBlocks;
@@ -54,6 +56,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
             validFuels.add(ModBlocks.fyrite_block.get().asItem());
             validFuels.add(ModItems.fyrite_ingot.get());
             validFuels.add(ModItems.fyrite_nugget.get());
+            validFuels.add(ModItems.fyrite_dust.get());
             validFuels.add(Items.BLAZE_ROD);
             validFuels.add(Items.BLAZE_POWDER);
             for (Item item : ModTags.getnetherFurnaceFuels().getValues())
@@ -64,7 +67,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
         return validFuels;
     } // end getValidFuels()
 
-    public static Map<Item, Integer> getBurnTimes()
+    public static Map<Item, Integer> loadBurnTimes()
     {
         Map<Item, Integer> map = Maps.newLinkedHashMap();
         addItemBurnTime(map, Blocks.NETHERRACK, netherrackBurnTime);
@@ -91,31 +94,44 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
         }
     } // end ()
 
+    /**
+     * For nether furnaces, replaces ForgeHooks.getBurnTime.
+     * @param stack - fuel itemstack
+     * @param recipeType - ignored
+     * @return burn time in ticks.
+     */
+    protected static int getBurnTime(ItemStack stack, @Nullable IRecipeType<?> recipeType)
+    {
+        if (AbstractNetherFurnaceTileEntity.burnTimes.isEmpty()) {
+            AbstractNetherFurnaceTileEntity.burnTimes = AbstractNetherFurnaceTileEntity.loadBurnTimes();
+        }
+        if (stack.isEmpty())
+        {
+            return 0;
+        }
+        else {
+            Item item = stack.getItem();
+            int ret = AbstractNetherFurnaceTileEntity.burnTimes.getOrDefault(item, 0);
+            return ret;
+        }
+    } // end getBurnTime()
     
+    /**
+     * Nether furnaces cook things twice as fast as normal.
+     */
+    @Override
+    protected short getSmeltTime(ItemStack input)
+    {
+        return (short) (super.getSmeltTime(input)/2);
+    }
+
     @Override
     protected int getBurnDuration(ItemStack fuelstack)
     {
-        if (AbstractNetherFurnaceTileEntity.burnTimes.isEmpty()) {
-            AbstractNetherFurnaceTileEntity.burnTimes = AbstractNetherFurnaceTileEntity.getBurnTimes();
-        }
-        int returnval = 0;
-        
-        if (!fuelstack.isEmpty()) 
-        {
-            if (fuelMultiplier == 1.0)
-            {
-                returnval = AbstractNetherFurnaceTileEntity.burnTimes.get(fuelstack.getItem());
-            }
-            else {
-                // improved fuel efficiency processing here.
-                returnval = (int) Math.ceil( ((double) AbstractNetherFurnaceTileEntity.burnTimes.get(fuelstack.getItem())) * fuelMultiplier);
-            }
-            // LOGGER.debug("[" + getDisplayName().getString() + "]AbstractNetherFurnaceTileEntity.getBurnDuration: returns " + returnval + " for " + fuelstack.toString());
-        }
-        else {
-            returnval = 0;
-        }
-        return returnval;
-    }
+        // getBurnTime() already handles empty stack case.
+         int returnval = AbstractNetherFurnaceTileEntity.getBurnTime(fuelstack, recipeType);
+         // LOGGER.debug("[" + getDisplayName().getString() + "]AbstractNetherFurnaceTileEntity.getBurnDuration: returns " + returnval + " for " + fuelstack.toString());
+         return returnval;
+    } // end getBurnDuration
 
 } // end class
