@@ -11,7 +11,6 @@ import mod.alexndr.netherrocks.init.ModContainers;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -20,7 +19,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  *
  * @author Sinhika
  */
-@SuppressWarnings("deprecation")
 @EventBusSubscriber(modid = Netherrocks.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientModEventSubscriber
 {
@@ -39,7 +37,7 @@ public class ClientModEventSubscriber
     {
         // Register ContainerType Screens
         // ScreenManager.registerFactory is not safe to call during parallel mod loading so we queue it to run later
-        DeferredWorkQueue.runLater(() -> {
+        event.enqueueWork(() -> {
             ScreenManager.register(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
             ScreenManager.register(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
             ScreenManager.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
