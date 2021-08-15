@@ -1,4 +1,5 @@
 build/
+src/generated/resources/.cache/
 gradle/
 run/
 libs/
@@ -8,14 +9,11 @@ libs/
 *.jar
 *.class
 *~
-.*.swp
 .classpath
 gradlew
-build.number
 gradlew.bat
+build.number
 bin/
 .gradle/
-/bin/
-.project
 .idea/
-src/generated/resources/.cache/cache
+.project
