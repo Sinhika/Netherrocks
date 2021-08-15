@@ -4,16 +4,16 @@ import java.util.Random;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.extensions.IForgeBlockState;
 
 public class FyriteHandler implements IWeaponEffectHelper
@@ -39,7 +39,7 @@ public class FyriteHandler implements IWeaponEffectHelper
 	 * @param pos
 	 * @param was_effective
 	 */
-    public void afterBlockSmelt(World world, BlockPos pos, boolean was_effective)
+    public void afterBlockSmelt(Level world, BlockPos pos, boolean was_effective)
     {
         Netherrocks.LOGGER.info("tried to after-smelt");
         if (was_effective && world.isClientSide())
@@ -55,16 +55,16 @@ public class FyriteHandler implements IWeaponEffectHelper
         } // end-if
     }
 
-    public ActionResultType onItemUse(ItemUseContext context)
+    public InteractionResult onItemUse(UseOnContext context)
     {
         BlockPos adjacentPos = context.getClickedPos();
         BlockPos pos = context.getClickedPos();
         ItemStack stack = context.getItemInHand();
-        PlayerEntity playerIn = context.getPlayer();
-        World worldIn = context.getLevel();
+        Player playerIn = context.getPlayer();
+        Level worldIn = context.getLevel();
         
         if (stack.isEmpty()) {
-            return ActionResultType.PASS;
+            return InteractionResult.PASS;
         }
         switch (context.getClickedFace()) 
         {
@@ -89,7 +89,7 @@ public class FyriteHandler implements IWeaponEffectHelper
         } // end switch
         if (!playerIn.mayUseItemAt(adjacentPos, context.getClickedFace(), stack))
         {
-            return ActionResultType.PASS;
+            return InteractionResult.PASS;
         }
         IForgeBlockState targetBlock = worldIn.getBlockState(adjacentPos);
         if (targetBlock.getBlockState().getBlock().isAir(targetBlock.getBlockState(), worldIn, adjacentPos))
@@ -100,7 +100,7 @@ public class FyriteHandler implements IWeaponEffectHelper
             worldIn.setBlockAndUpdate(adjacentPos, Blocks.FIRE.defaultBlockState());
             stack.hurt(1, worldIn.random, null);
         }
-        return ActionResultType.PASS;
+        return InteractionResult.PASS;
     } // end onItemUse()
     
 }  // end class FyriteHandler

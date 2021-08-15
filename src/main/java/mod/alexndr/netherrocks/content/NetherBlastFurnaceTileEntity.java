@@ -3,20 +3,20 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 
 public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntity
 {
 
     public NetherBlastFurnaceTileEntity()
     {
-        super(ModTiles.NETHER_BLAST_FURNACE.get(), IRecipeType.BLASTING);
+        super(ModTiles.NETHER_BLAST_FURNACE.get(), RecipeType.BLASTING);
     }
 
     @Override
@@ -26,13 +26,13 @@ public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntit
     }
 
     @Override
-    public ITextComponent getDisplayName()
+    public Component getDisplayName()
     {
-        return new TranslationTextComponent(ModBlocks.nether_blast_furnace.get().getDescriptionId());
+        return new TranslatableComponent(ModBlocks.nether_blast_furnace.get().getDescriptionId());
     }
 
     @Override
-    public Container createMenu(int windowId, PlayerInventory inventory, PlayerEntity player)
+    public AbstractContainerMenu createMenu(int windowId, Inventory inventory, Player player)
     {
         return new NetherBlastFurnaceContainer(windowId, inventory, this);
     }

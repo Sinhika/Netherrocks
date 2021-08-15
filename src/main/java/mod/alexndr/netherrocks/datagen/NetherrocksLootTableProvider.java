@@ -11,9 +11,9 @@ import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.BlockLootTableProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.loot.LootParameterSet;
-import net.minecraft.loot.LootTable.Builder;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.world.level.storage.loot.LootTable.Builder;
+import net.minecraft.resources.ResourceLocation;
 
 public class NetherrocksLootTableProvider extends BlockLootTableProvider
 {
@@ -25,7 +25,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
     }
 
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> getTables()
+    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> getTables()
     {
         tables.clear();
         standardDropTable(ModBlocks.argonite_block.get());

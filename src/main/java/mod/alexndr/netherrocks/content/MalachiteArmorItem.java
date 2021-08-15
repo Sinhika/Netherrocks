@@ -5,38 +5,40 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import mod.alexndr.simplecorelib.helpers.ArmorUtils;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class MalachiteArmorItem extends ArmorItem
 {
 
     protected final int jumpBoostFactor = 1;
 
-    public MalachiteArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder)
+    public MalachiteArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player)
+    public void onArmorTick(ItemStack stack, Level world, Player player)
     {
  	// must be wearing full set and not sneaking
 		if (ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.MALACHITE) 
 				&& ! player.isShiftKeyDown())
 		{
-			player.addEffect(new EffectInstance(Effects.JUMP, 2, jumpBoostFactor, false, false));
+			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 2, jumpBoostFactor, false, false));
 					//new PotionEffect(MobEffects.JUMP_BOOST, 2, jumpBoostFactor));
 		}
 		super.onArmorTick(stack, world, player);
@@ -44,9 +46,9 @@ public class MalachiteArmorItem extends ArmorItem
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("netherrocks.malachite_armor.info"));
+        tooltip.add(new TranslatableComponent("netherrocks.malachite_armor.info"));
     }
 }  // end class MalachiteArmorItem

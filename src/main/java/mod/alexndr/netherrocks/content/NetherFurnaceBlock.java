@@ -4,20 +4,22 @@ import javax.annotation.Nullable;
 
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceBlock;
 import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.stats.Stats;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.items.ItemStackHandler;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
 {
@@ -30,7 +32,7 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
 
    @Nullable
    @Override
-   public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
+   public BlockEntity createTileEntity(final BlockState state, final BlockGetter world) {
        // Always use TileEntityType#create to allow registry overrides to work.
        return ModTiles.NETHER_FURNACE.get().create();
    }
@@ -43,16 +45,16 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
+   public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
    {
         if (oldState.getBlock() != newState.getBlock())
         {
-            TileEntity tileEntity = worldIn.getBlockEntity(pos);
+            BlockEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof NetherFurnaceTileEntity)
             {
                 final ItemStackHandler inventory = ((NetherFurnaceTileEntity) tileEntity).inventory;
                 for (int slot = 0; slot < inventory.getSlots(); ++slot)
-                    InventoryHelper.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+                    Containers.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
                             inventory.getStackInSlot(slot));
             }
         }
@@ -68,17 +70,17 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public ActionResultType use(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) 
+   public InteractionResult use(final BlockState state, final Level worldIn, final BlockPos pos, final Player player, final InteractionHand handIn, final BlockHitResult hit) 
    {
        if (!worldIn.isClientSide) {
-           final TileEntity tileEntity = worldIn.getBlockEntity(pos);
+           final BlockEntity tileEntity = worldIn.getBlockEntity(pos);
            if (tileEntity instanceof NetherFurnaceTileEntity) 
            {
-               NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
+               NetworkHooks.openGui((ServerPlayer) player, (NetherFurnaceTileEntity) tileEntity, pos);
                player.awardStat(Stats.INTERACT_WITH_FURNACE);
            }
        }
-       return ActionResultType.SUCCESS;
+       return InteractionResult.SUCCESS;
    }
 
    

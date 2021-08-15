@@ -13,14 +13,14 @@ import mod.alexndr.netherrocks.content.MalachiteAxeItem;
 import mod.alexndr.netherrocks.content.MalachiteSwordItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.content.NetherrocksItemTier;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -173,58 +173,58 @@ public final class ModItems
     // ARMOR
     // dragonstone
    public static final RegistryObject<ArmorItem> dragonstone_helmet = ITEMS.register("dragonstone_helmet",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.HEAD,
+            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> dragonstone_leggings = ITEMS.register("dragonstone_leggings",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.LEGS,
+            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> dragonstone_chestplate = ITEMS.register("dragonstone_chestplate",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.CHEST,
+            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> dragonstone_boots = ITEMS.register("dragonstone_boots",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlotType.FEET,
+            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // fyrite
     public static final RegistryObject<FyriteArmorItem> fyrite_helmet = ITEMS.register("fyrite_helmet",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.HEAD,
+            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteArmorItem> fyrite_leggings = ITEMS.register("fyrite_leggings",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.LEGS,
+            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteArmorItem> fyrite_chestplate = ITEMS.register("fyrite_chestplate",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.CHEST,
+            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteArmorItem> fyrite_boots = ITEMS.register("fyrite_boots",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlotType.FEET,
+            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
      // illumenite
     public static final RegistryObject<IllumeniteArmorItem> illumenite_helmet = ITEMS.register("illumenite_helmet",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.HEAD,
+            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<IllumeniteArmorItem> illumenite_leggings = ITEMS.register("illumenite_leggings",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.LEGS,
+            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<IllumeniteArmorItem> illumenite_chestplate = ITEMS.register("illumenite_chestplate",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.CHEST,
+            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<IllumeniteArmorItem> illumenite_boots = ITEMS.register("illumenite_boots",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlotType.FEET,
+            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // malachite
     public static final RegistryObject<MalachiteArmorItem> malachite_helmet = ITEMS.register("malachite_helmet",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.HEAD,
+            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteArmorItem> malachite_leggings = ITEMS.register("malachite_leggings",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.LEGS,
+            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteArmorItem> malachite_chestplate = ITEMS.register("malachite_chestplate",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.CHEST,
+            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteArmorItem> malachite_boots = ITEMS.register("malachite_boots",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlotType.FEET,
+            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
 } // end class ModItems

@@ -8,7 +8,7 @@ import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
 import mod.alexndr.netherrocks.init.ModContainers;
-import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -38,9 +38,9 @@ public class ClientModEventSubscriber
         // Register ContainerType Screens
         // ScreenManager.registerFactory is not safe to call during parallel mod loading so we queue it to run later
         event.enqueueWork(() -> {
-            ScreenManager.register(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
-            ScreenManager.register(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
-            ScreenManager.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
+            MenuScreens.register(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
+            MenuScreens.register(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
+            MenuScreens.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
             LOGGER.debug("Registered ContainerType Screens");
         });
 

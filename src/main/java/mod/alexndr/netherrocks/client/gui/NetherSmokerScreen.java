@@ -3,9 +3,9 @@ package mod.alexndr.netherrocks.client.gui;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import mod.alexndr.simplecorelib.client.gui.VeryAbstractFurnaceScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 
 public class NetherSmokerScreen extends VeryAbstractFurnaceScreen<NetherSmokerContainer>
 {
@@ -13,7 +13,7 @@ public class NetherSmokerScreen extends VeryAbstractFurnaceScreen<NetherSmokerCo
     private static final ResourceLocation NETHER_FURNACE_GUI_TEXTURES =
         new ResourceLocation(Netherrocks.MODID, "textures/gui/container/nether_furnace_gui.png");
 
-    public NetherSmokerScreen(NetherSmokerContainer screenContainer, PlayerInventory inv, ITextComponent titleIn)
+    public NetherSmokerScreen(NetherSmokerContainer screenContainer, Inventory inv, Component titleIn)
     {
         super(screenContainer, inv, NETHER_FURNACE_GUI_TEXTURES, titleIn, name_color);
     }

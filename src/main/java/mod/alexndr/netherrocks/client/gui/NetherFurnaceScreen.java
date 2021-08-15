@@ -3,9 +3,9 @@ package mod.alexndr.netherrocks.client.gui;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.simplecorelib.client.gui.VeryAbstractFurnaceScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 
 public class NetherFurnaceScreen extends VeryAbstractFurnaceScreen<NetherFurnaceContainer>
 {
@@ -13,7 +13,7 @@ public class NetherFurnaceScreen extends VeryAbstractFurnaceScreen<NetherFurnace
     private static final ResourceLocation NETHER_FURNACE_GUI_TEXTURES =
         new ResourceLocation(Netherrocks.MODID, "textures/gui/container/nether_furnace_gui.png");
 
-    public NetherFurnaceScreen(final NetherFurnaceContainer container, final PlayerInventory inv, final ITextComponent text)
+    public NetherFurnaceScreen(final NetherFurnaceContainer container, final Inventory inv, final Component text)
     {
         super(container, inv, NETHER_FURNACE_GUI_TEXTURES,  text, name_color);
     }

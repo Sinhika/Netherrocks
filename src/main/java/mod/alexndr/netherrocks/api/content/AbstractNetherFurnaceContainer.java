@@ -3,10 +3,10 @@ package mod.alexndr.netherrocks.api.content;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceContainer;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceTileEntity;
 import net.minecraft.client.network.play.ClientPlayNetHandler;
-import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.network.play.server.SWindowPropertyPacket;
 import net.minecraft.util.IntReferenceHolder;
 import net.minecraftforge.fml.RegistryObject;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.RegistryObject;
 public abstract class AbstractNetherFurnaceContainer<T extends AbstractNetherFurnaceBlock> extends VeryAbstractFurnaceContainer<AbstractNetherFurnaceBlock>
 {
 
-    public AbstractNetherFurnaceContainer(ContainerType<?> containerType, int id, PlayerInventory playerInventory,
+    public AbstractNetherFurnaceContainer(MenuType<?> containerType, int id, Inventory playerInventory,
             VeryAbstractFurnaceTileEntity tileEntity, RegistryObject<AbstractNetherFurnaceBlock> arg4)
     {
         super(containerType, id, playerInventory, tileEntity, arg4);

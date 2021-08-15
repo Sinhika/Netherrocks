@@ -7,13 +7,13 @@ import javax.annotation.Nonnull;
 
 import com.google.gson.JsonObject;
 
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipe;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.loot.LootContext;
-import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -24,7 +24,7 @@ public class NetherrocksLootModifiers
     public static class AutoSmeltLootModifier extends LootModifier
     {
 
-        protected AutoSmeltLootModifier(ILootCondition[] conditionsIn)
+        protected AutoSmeltLootModifier(LootItemCondition[] conditionsIn)
         {
             super(conditionsIn);
         }
@@ -41,8 +41,8 @@ public class NetherrocksLootModifiers
         protected static ItemStack smelt(ItemStack stack, LootContext context)
         {
             return context.getLevel().getRecipeManager()
-                    .getRecipeFor(IRecipeType.SMELTING, new Inventory(stack),context.getLevel())
-                    .map(FurnaceRecipe::getResultItem)
+                    .getRecipeFor(RecipeType.SMELTING, new SimpleContainer(stack),context.getLevel())
+                    .map(SmeltingRecipe::getResultItem)
                     .filter(itemStack -> !itemStack.isEmpty())
                     .map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, stack.getCount() * itemStack.getCount()))
                     .orElse(stack);
@@ -53,7 +53,7 @@ public class NetherrocksLootModifiers
 
             @Override
             public AutoSmeltLootModifier read(ResourceLocation location, JsonObject object,
-                    ILootCondition[] ailootcondition)
+                    LootItemCondition[] ailootcondition)
             {
                 return new AutoSmeltLootModifier(ailootcondition);
             }

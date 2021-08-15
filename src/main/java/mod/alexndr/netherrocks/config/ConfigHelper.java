@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.config;
 
 import mod.alexndr.simplecorelib.config.ModOreConfig;
-import net.minecraft.world.gen.placement.TopSolidRangeConfig;
+import net.minecraft.world.level.levelgen.feature.configurations.RangeDecoratorConfiguration;
 import net.minecraftforge.fml.config.ModConfig;
 
 /**
@@ -21,42 +21,42 @@ public final class ConfigHelper
 
 	    NetherrocksConfig.enableArgoniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
         NetherrocksConfig.argonite_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverArgoniteBottomHeight.get(),
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverArgoniteBottomHeight.get(),
                         0, ConfigHolder.SERVER.serverArgoniteMaxHeight.get()),
                 ConfigHolder.SERVER.serverArgoniteVeinSize.get(),
                 ConfigHolder.SERVER.serverArgoniteVeinCount.get()); 
         
 		NetherrocksConfig.enableAshstoneOre = ConfigHolder.SERVER.serverEnableAshstoneOre.get();
         NetherrocksConfig.ashstone_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverAshstoneBottomHeight.get(), 
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverAshstoneBottomHeight.get(), 
                         0, ConfigHolder.SERVER.serverAshstoneMaxHeight.get()),
                 ConfigHolder.SERVER.serverAshstoneVeinSize.get(), 
                 ConfigHolder.SERVER.serverAshstoneVeinCount.get());
         
 		NetherrocksConfig.enableDragonstoneOre = ConfigHolder.SERVER.serverEnableDragonstoneOre.get();
         NetherrocksConfig.dragonstone_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverDragonstoneBottomHeight.get(), 
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverDragonstoneBottomHeight.get(), 
                         0, ConfigHolder.SERVER.serverDragonstoneMaxHeight.get()),
                 ConfigHolder.SERVER.serverDragonstoneVeinSize.get(), 
                 ConfigHolder.SERVER.serverDragonstoneVeinCount.get());
         
 		NetherrocksConfig.enableFyriteOre = ConfigHolder.SERVER.serverEnableFyriteOre.get();
         NetherrocksConfig.fyrite_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverFyriteBottomHeight.get(), 
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverFyriteBottomHeight.get(), 
                         0, ConfigHolder.SERVER.serverFyriteMaxHeight.get() ),
                 ConfigHolder.SERVER.serverFyriteVeinSize.get(),
                 ConfigHolder.SERVER.serverFyriteVeinCount.get());
                 
         NetherrocksConfig.enableIllumeniteOre = ConfigHolder.SERVER.serverEnableIllumeniteOre.get();
         NetherrocksConfig.illumenite_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverIllumeniteBottomHeight.get(), 
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverIllumeniteBottomHeight.get(), 
                         0, ConfigHolder.SERVER.serverIllumeniteMaxHeight.get()),
                 ConfigHolder.SERVER.serverIllumeniteVeinSize.get(),
                 ConfigHolder.SERVER.serverIllumeniteVeinCount.get());
 
         NetherrocksConfig.enableMalachiteOre = ConfigHolder.SERVER.serverEnableMalachiteOre.get();
         NetherrocksConfig.malachite_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(ConfigHolder.SERVER.serverMalachiteBottomHeight.get(), 
+                new RangeDecoratorConfiguration(ConfigHolder.SERVER.serverMalachiteBottomHeight.get(), 
                         0, ConfigHolder.SERVER.serverMalachiteMaxHeight.get()),
                 ConfigHolder.SERVER.serverMalachiteVeinSize.get(),
                 ConfigHolder.SERVER.serverMalachiteVeinCount.get());

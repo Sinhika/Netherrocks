@@ -2,10 +2,10 @@ package mod.alexndr.netherrocks.helpers;
 
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 
 public class MalachiteHandler implements IWeaponEffectHelper
 {
@@ -19,7 +19,7 @@ public class MalachiteHandler implements IWeaponEffectHelper
         if (stack.getItem() == ModItems.malachite_axe.get() 
                 || stack.getItem() == ModItems.malachite_sword.get())
         {
-            target.addEffect(new EffectInstance(Effects.POISON, 50));
+            target.addEffect(new MobEffectInstance(MobEffects.POISON, 50));
         }
         return false;
     }

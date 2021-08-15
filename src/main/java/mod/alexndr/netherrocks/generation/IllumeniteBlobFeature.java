@@ -5,19 +5,19 @@ import java.util.Random;
 import com.mojang.serialization.Codec;
 
 import mod.alexndr.netherrocks.init.ModBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
+public class IllumeniteBlobFeature  extends Feature<NoneFeatureConfiguration>
 {
-    public IllumeniteBlobFeature(Codec<NoFeatureConfig> p_i231956_1_)
+    public IllumeniteBlobFeature(Codec<NoneFeatureConfiguration> p_i231956_1_)
     {
         super(p_i231956_1_);
     }
@@ -33,8 +33,8 @@ public class IllumeniteBlobFeature  extends Feature<NoFeatureConfig>
      * @return
      */
     @Override
-    public boolean place(ISeedReader worldIn,
-            ChunkGenerator generator, Random rand, BlockPos pos, NoFeatureConfig config)
+    public boolean place(WorldGenLevel worldIn,
+            ChunkGenerator generator, Random rand, BlockPos pos, NoneFeatureConfiguration config)
     {
         if (!worldIn.isEmptyBlock(pos)) {
             return false;

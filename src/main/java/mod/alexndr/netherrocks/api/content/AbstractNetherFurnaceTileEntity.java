@@ -13,21 +13,21 @@ import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceTileEntity;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.tags.ITag;
-import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.IItemProvider;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.tags.Tag;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.ItemLike;
 
 public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnaceTileEntity
 {
     
-    public AbstractNetherFurnaceTileEntity(TileEntityType<?> tileEntityTypeIn,
-            IRecipeType<? extends AbstractCookingRecipe> recipeTypeIn)
+    public AbstractNetherFurnaceTileEntity(BlockEntityType<?> tileEntityTypeIn,
+            RecipeType<? extends AbstractCookingRecipe> recipeTypeIn)
     {
         super(tileEntityTypeIn, recipeTypeIn);
     }
@@ -82,12 +82,12 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
     } // end getBurnTimes()
 
     protected static void addItemBurnTime(Map<Item, Integer> map,
-                                   IItemProvider itemProvider, int burnTimeIn)
+                                   ItemLike itemProvider, int burnTimeIn)
     {
         map.put(itemProvider.asItem(), burnTimeIn);
     }
 
-    protected static void addItemTagBurnTime(Map<Item, Integer> map, ITag<Item> iTag, int burnTimeIn)
+    protected static void addItemTagBurnTime(Map<Item, Integer> map, Tag<Item> iTag, int burnTimeIn)
     {
         for(Item item : iTag.getValues()) {
             map.put(item, burnTimeIn);
@@ -100,7 +100,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
      * @param recipeType - ignored
      * @return burn time in ticks.
      */
-    protected static int getBurnTime(ItemStack stack, @Nullable IRecipeType<?> recipeType)
+    protected static int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
     {
         if (AbstractNetherFurnaceTileEntity.burnTimes.isEmpty()) {
             AbstractNetherFurnaceTileEntity.burnTimes = AbstractNetherFurnaceTileEntity.loadBurnTimes();
