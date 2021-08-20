@@ -12,7 +12,7 @@ import mod.alexndr.netherrocks.content.MalachiteArmorItem;
 import mod.alexndr.netherrocks.content.MalachiteAxeItem;
 import mod.alexndr.netherrocks.content.MalachiteSwordItem;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
-import mod.alexndr.netherrocks.content.NetherrocksItemTier;
+import mod.alexndr.netherrocks.content.NetherrocksItemTiers;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
@@ -87,87 +87,87 @@ public final class ModItems
     // TOOLS & WEAPONS
     // swords
     public static final RegistryObject<SwordItem> argonite_sword = ITEMS.register("argonite_sword",
-            () -> new SwordItem(NetherrocksItemTier.ARGONITE, 3, -2.4F,
+            () -> new SwordItem(NetherrocksItemTiers.ARGONITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteSwordItem> fyrite_sword = ITEMS.register("fyrite_sword",
-            () -> new FyriteSwordItem(NetherrocksItemTier.FYRITE, 3, -2.4F,
+            () -> new FyriteSwordItem(NetherrocksItemTiers.FYRITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<IllumeniteSwordItem> illumenite_sword = ITEMS.register("illumenite_sword",
-            () -> new IllumeniteSwordItem(NetherrocksItemTier.ILLUMENITE, 3, -2.4F,
+            () -> new IllumeniteSwordItem(NetherrocksItemTiers.ILLUMENITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteSwordItem> malachite_sword = ITEMS.register("malachite_sword",
-            () -> new MalachiteSwordItem(NetherrocksItemTier.MALACHITE, 3, -2.4F,
+            () -> new MalachiteSwordItem(NetherrocksItemTiers.MALACHITE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SwordItem> ashstone_sword = ITEMS.register("ashstone_sword",
-            () ->  new SwordItem(NetherrocksItemTier.ASHSTONE, 3, -2.4F,
+            () ->  new SwordItem(NetherrocksItemTiers.ASHSTONE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SwordItem> dragonstone_sword = ITEMS.register("dragonstone_sword",
-            () -> new SwordItem(NetherrocksItemTier.DRAGONSTONE, 3, -2.4F,
+            () -> new SwordItem(NetherrocksItemTiers.DRAGONSTONE, 3, -2.4F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // pickaxes
     public static final RegistryObject<PickaxeItem> argonite_pickaxe = ITEMS.register("argonite_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTier.ARGONITE, 1, -2.8F,
+            () -> new PickaxeItem(NetherrocksItemTiers.ARGONITE, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyritePickaxeIteam> fyrite_pickaxe = ITEMS.register("fyrite_pickaxe",
-            () -> new FyritePickaxeIteam(NetherrocksItemTier.FYRITE, 1, -2.8F,
+            () -> new FyritePickaxeIteam(NetherrocksItemTiers.FYRITE, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> malachite_pickaxe = ITEMS.register("malachite_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTier.MALACHITE, 1, -2.8F,
+            () -> new PickaxeItem(NetherrocksItemTiers.MALACHITE, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> ashstone_pickaxe = ITEMS.register("ashstone_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTier.ASHSTONE, 1, -2.8F,
+            () -> new PickaxeItem(NetherrocksItemTiers.ASHSTONE, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> dragonstone_pickaxe = ITEMS.register("dragonstone_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTier.DRAGONSTONE, 1, -2.8F,
+            () -> new PickaxeItem(NetherrocksItemTiers.DRAGONSTONE, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // axes
    public static final RegistryObject<AxeItem> argonite_axe = ITEMS.register("argonite_axe",
-            () -> new AxeItem(NetherrocksItemTier.ARGONITE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.ARGONITE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteAxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
-            () -> new FyriteAxeItem(NetherrocksItemTier.FYRITE, 7.0F, -3.1F,
+            () -> new FyriteAxeItem(NetherrocksItemTiers.FYRITE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteAxeItem> malachite_axe = ITEMS.register("malachite_axe",
-            () -> new MalachiteAxeItem(NetherrocksItemTier.MALACHITE, 7.0F, -3.1F,
+            () -> new MalachiteAxeItem(NetherrocksItemTiers.MALACHITE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> ashstone_axe = ITEMS.register("ashstone_axe",
-            () -> new AxeItem(NetherrocksItemTier.ASHSTONE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.ASHSTONE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> dragonstone_axe = ITEMS.register("dragonstone_axe",
-            () -> new AxeItem(NetherrocksItemTier.DRAGONSTONE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.DRAGONSTONE, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shovels
     public static final RegistryObject<ShovelItem> argonite_shovel = ITEMS.register("argonite_shovel",
-            () -> new ShovelItem(NetherrocksItemTier.ARGONITE, 1.5F, -3.0F,
+            () -> new ShovelItem(NetherrocksItemTiers.ARGONITE, 1.5F, -3.0F,
             new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteShovelItem> fyrite_shovel = ITEMS.register("fyrite_shovel",
-            () -> new FyriteShovelItem(NetherrocksItemTier.FYRITE, 1.5F, -3.0F,
+            () -> new FyriteShovelItem(NetherrocksItemTiers.FYRITE, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> malachite_shovel = ITEMS.register("malachite_shovel",
-            () -> new ShovelItem(NetherrocksItemTier.MALACHITE, 1.5F, -3.0F,
+            () -> new ShovelItem(NetherrocksItemTiers.MALACHITE, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> ashstone_shovel = ITEMS.register("ashstone_shovel",
-            () -> new ShovelItem(NetherrocksItemTier.ASHSTONE, 1.5F, -3.0F,
+            () -> new ShovelItem(NetherrocksItemTiers.ASHSTONE, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> dragonstone_shovel = ITEMS.register("dragonstone_shovel",
-            () -> new ShovelItem(NetherrocksItemTier.DRAGONSTONE, 1.5F, -3.0F,
+            () -> new ShovelItem(NetherrocksItemTiers.DRAGONSTONE, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // hoes
     public static final RegistryObject<HoeItem> argonite_hoe = ITEMS.register("argonite_hoe",
-            () -> new HoeItem(NetherrocksItemTier.ARGONITE, -1, -2.0F,
+            () -> new HoeItem(NetherrocksItemTiers.ARGONITE, -1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> malachite_hoe = ITEMS.register("malachite_hoe",
-            () -> new HoeItem(NetherrocksItemTier.MALACHITE, -1, -2.0F,
+            () -> new HoeItem(NetherrocksItemTiers.MALACHITE, -1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> ashstone_hoe = ITEMS.register("ashstone_hoe",
-            () -> new HoeItem(NetherrocksItemTier.ASHSTONE, -1, -2.0F,
+            () -> new HoeItem(NetherrocksItemTiers.ASHSTONE, -1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> dragonstone_hoe = ITEMS.register("dragonstone_hoe",
-            () -> new HoeItem(NetherrocksItemTier.DRAGONSTONE, -1, -2.0F,
+            () -> new HoeItem(NetherrocksItemTiers.DRAGONSTONE, -1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // ARMOR

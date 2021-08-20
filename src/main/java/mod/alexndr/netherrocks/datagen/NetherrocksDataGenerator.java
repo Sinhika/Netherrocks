@@ -2,11 +2,11 @@ package mod.alexndr.netherrocks.datagen;
 
 import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
+import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
-import mod.alexndr.netherrocks.Netherrocks;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 /**
  * bundles up the GatherDataEvent handler and all the necessary data providers for

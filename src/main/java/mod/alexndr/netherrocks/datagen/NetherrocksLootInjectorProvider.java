@@ -11,13 +11,13 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.LootTableInjectorProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-import net.minecraft.world.level.storage.loot.RandomValueBounds;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
 {
@@ -34,27 +34,27 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
         // desert pyramid
         LootPool.Builder foo = createChestPool(1, 1, 0.25F)
                 .add(LootItem.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(10)
-                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(5)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 1))));
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
         addInjectionTable(Netherrocks.MODID, "desert_pyramid", foo);
 
         // ruined_portal
         foo = createChestPool(1, 1, 0.50F)
                 .add(LootItem.lootTableItem(ModItems.malachite_ingot.get()).setWeight(10)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 4))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 .add(LootItem.lootTableItem(ModItems.argonite_ingot.get()).setWeight(8)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
                 .add(LootItem.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(10)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(5)
-                            .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
-                            .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 1))));
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
         addInjectionTable(Netherrocks.MODID, "ruined_portal", foo);
         
         // bastion
@@ -96,25 +96,25 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                 .add(LootItem.lootTableItem(ModItems.dragonstone_pickaxe.get()).setWeight(1))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_shovel.get()).setWeight(1))
                 .add(LootItem.lootTableItem(ModItems.malachite_ingot.get()).setWeight(2)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 4))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 .add(LootItem.lootTableItem(ModItems.argonite_ingot.get()).setWeight(2)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
                 .add(LootItem.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(2)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
-                            .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
-                            .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 1))));
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
         addInjectionTable(Netherrocks.MODID, "bastion", foo);
 
         // jungle_temple
         foo = createChestPool(1, 1, 0.25F)
                 .add(LootItem.lootTableItem(ModItems.malachite_ingot.get()).setWeight(10)
-                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 4))))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))));
         addInjectionTable(Netherrocks.MODID, "jungle_temple", foo);
 
         // stronghold
@@ -127,13 +127,13 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                 .add(LootItem.lootTableItem(ModItems.malachite_axe.get()).setWeight(1))
                 .add(LootItem.lootTableItem(ModItems.malachite_pickaxe.get()).setWeight(1))
                 .add(LootItem.lootTableItem(ModItems.malachite_ingot.get()).setWeight(10)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 4))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 .add(LootItem.lootTableItem(ModItems.argonite_ingot.get()).setWeight(3)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
                 .add(LootItem.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(5)
-                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
-                            .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))));
         addInjectionTable(Netherrocks.MODID, "stronghold", foo);
                
         return tables;
