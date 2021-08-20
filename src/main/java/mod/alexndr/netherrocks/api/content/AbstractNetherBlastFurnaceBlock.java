@@ -2,18 +2,17 @@ package mod.alexndr.netherrocks.api.content;
 
 import java.util.Random;
 
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.sounds.SoundEvents;
+import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-
-public abstract class AbstractNetherBlastFurnaceBlock extends AbstractNetherFurnaceBlock
+public abstract class AbstractNetherBlastFurnaceBlock extends VeryAbstractFurnaceBlock
 {
 
     public AbstractNetherBlastFurnaceBlock(Properties builder)

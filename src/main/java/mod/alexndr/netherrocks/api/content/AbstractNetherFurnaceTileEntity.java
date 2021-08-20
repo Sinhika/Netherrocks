@@ -13,23 +13,25 @@ import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceTileEntity;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.tags.Tag;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 
 public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnaceTileEntity
 {
     
-    public AbstractNetherFurnaceTileEntity(BlockEntityType<?> tileEntityTypeIn,
-            RecipeType<? extends AbstractCookingRecipe> recipeTypeIn)
+    public AbstractNetherFurnaceTileEntity(BlockEntityType<?> tileEntityTypeIn, BlockPos blockpos, BlockState blockstate,
+    		RecipeType<? extends AbstractCookingRecipe> recipeTypeIn)
     {
-        super(tileEntityTypeIn, recipeTypeIn);
+        super(tileEntityTypeIn, blockpos, blockstate, recipeTypeIn);
     }
 
     @Override

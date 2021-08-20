@@ -1,14 +1,12 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.InteractionResult;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
 
 public class FyriteSwordItem extends SwordItem
 {

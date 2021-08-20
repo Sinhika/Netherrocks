@@ -3,20 +3,21 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class NetherSmokerTileEntity extends AbstractNetherFurnaceTileEntity
 {
 
-    public NetherSmokerTileEntity()
+    public NetherSmokerTileEntity(BlockPos blockpos, BlockState blockstate)
     {
-        super(ModTiles.NETHER_SMOKER.get(), RecipeType.SMOKING);
+        super(ModTiles.NETHER_SMOKER.get(), blockpos, blockstate, RecipeType.SMOKING);
     }
 
     
@@ -28,13 +29,13 @@ public class NetherSmokerTileEntity extends AbstractNetherFurnaceTileEntity
 
 
     @Override
-    public Component getDisplayName()
+    public Component getDefaultName()
     {
         return new TranslatableComponent(ModBlocks.nether_smoker.get().getDescriptionId());
     }
 
     @Override
-    public AbstractContainerMenu createMenu(int windowId, Inventory inventory, Player player)
+    public AbstractContainerMenu createMenu(int windowId, Inventory inventory)
     {
         return new NetherSmokerContainer(windowId, inventory, this);
     }

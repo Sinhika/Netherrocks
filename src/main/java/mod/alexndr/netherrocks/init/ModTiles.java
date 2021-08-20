@@ -5,7 +5,7 @@ import mod.alexndr.netherrocks.content.NetherBlastFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherSmokerTileEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -23,7 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModTiles
 {
     public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITY_TYPES = 
-            DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Netherrocks.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Netherrocks.MODID);
 
     // tile entity type
     // We don't have a datafixer for our TileEntities, so we pass null into build.

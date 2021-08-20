@@ -1,17 +1,13 @@
 package mod.alexndr.netherrocks.content;
 
-import java.util.Objects;
-
-import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceContainer;
-import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.inventory.container.ContainerType;
+import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceMenu;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.fml.network.IContainerFactory;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.fmllegacy.network.IContainerFactory;
 
-public class NetherBlastFurnaceContainer extends AbstractNetherFurnaceContainer<NetherBlastFurnaceBlock>
+public class NetherBlastFurnaceContainer extends VeryAbstractFurnaceMenu
 {
     /**
     * Logical-client-side constructor, called from {@link ContainerType#create(IContainerFactory)}
@@ -19,24 +15,13 @@ public class NetherBlastFurnaceContainer extends AbstractNetherFurnaceContainer<
     */
    public NetherBlastFurnaceContainer(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) 
    {
-       this(windowId, playerInventory, getTileEntity(playerInventory, data));
+       super(ModContainers.NETHER_BLAST_FURNACE.get(), RecipeType.BLASTING, windowId, playerInventory);
    }
 
-    public NetherBlastFurnaceContainer(int id, Inventory playerInventory,
-                                       NetherBlastFurnaceTileEntity tileEntity)
+    public NetherBlastFurnaceContainer(final int windowId, final Inventory playerInventory, final NetherBlastFurnaceTileEntity tileEntity)
     {
-        super(ModContainers.NETHER_BLAST_FURNACE.get(), id, playerInventory, tileEntity, 
-                ModBlocks.nether_blast_furnace);
+        super(ModContainers.NETHER_BLAST_FURNACE.get(), RecipeType.BLASTING, windowId, playerInventory, tileEntity.inventory,
+        	  tileEntity.dataAccess, tileEntity);
     }
 
-    private static NetherBlastFurnaceTileEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) 
-    {
-        Objects.requireNonNull(playerInventory, "playerInventory cannot be null!");
-        Objects.requireNonNull(data, "data cannot be null!");
-        final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
-        if (tileAtPos instanceof NetherBlastFurnaceTileEntity)
-            return (NetherBlastFurnaceTileEntity) tileAtPos;
-        throw new IllegalStateException("Tile entity is not correct! " + tileAtPos);
-    }
-    
 } // end class

@@ -1,17 +1,15 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class FyriteAxeItem extends AxeItem
 {

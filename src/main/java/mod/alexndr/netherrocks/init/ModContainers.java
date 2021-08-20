@@ -6,7 +6,7 @@ import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 

@@ -8,15 +8,17 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 
 public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntity
 {
 
-    public NetherBlastFurnaceTileEntity()
+    public NetherBlastFurnaceTileEntity(BlockPos blockpos, BlockState blockstate)
     {
-        super(ModTiles.NETHER_BLAST_FURNACE.get(), RecipeType.BLASTING);
+        super(ModTiles.NETHER_BLAST_FURNACE.get(), blockpos, blockstate, RecipeType.BLASTING);
     }
 
     @Override
@@ -26,15 +28,16 @@ public class NetherBlastFurnaceTileEntity extends AbstractNetherFurnaceTileEntit
     }
 
     @Override
-    public Component getDisplayName()
+    public Component getDefaultName()
     {
         return new TranslatableComponent(ModBlocks.nether_blast_furnace.get().getDescriptionId());
     }
 
     @Override
-    public AbstractContainerMenu createMenu(int windowId, Inventory inventory, Player player)
+    public AbstractContainerMenu createMenu(int windowId, Inventory inventory)
     {
         return new NetherBlastFurnaceContainer(windowId, inventory, this);
     }
+
 
 } // end class

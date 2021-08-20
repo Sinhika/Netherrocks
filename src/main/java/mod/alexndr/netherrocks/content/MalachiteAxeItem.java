@@ -3,10 +3,8 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.helpers.MalachiteHandler;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.Tier;
 
 public class MalachiteAxeItem extends AxeItem
 {

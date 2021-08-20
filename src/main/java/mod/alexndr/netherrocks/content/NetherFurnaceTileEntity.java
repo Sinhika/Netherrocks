@@ -5,24 +5,25 @@ import javax.annotation.Nonnull;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraftforge.fml.network.NetworkHooks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.fmllegacy.network.NetworkHooks;
 
 public class NetherFurnaceTileEntity extends AbstractNetherFurnaceTileEntity
 {
-    public NetherFurnaceTileEntity()
+    public NetherFurnaceTileEntity(BlockPos blockpos, BlockState blockstate)
     {
-        super(ModTiles.NETHER_FURNACE.get(), RecipeType.SMELTING);
+        super(ModTiles.NETHER_FURNACE.get(),blockpos, blockstate, RecipeType.SMELTING);
     }
 
     @Nonnull
     @Override
-    public Component getDisplayName() {
+    public Component getDefaultName() {
         return new TranslatableComponent(ModBlocks.nether_furnace.get().getDescriptionId());
     }
 
@@ -34,7 +35,7 @@ public class NetherFurnaceTileEntity extends AbstractNetherFurnaceTileEntity
      */
     @Nonnull
     @Override
-    public AbstractContainerMenu createMenu(final int windowId, final Inventory inventory, final Player player) 
+    public AbstractContainerMenu createMenu(final int windowId, final Inventory inventory) 
     {
         return new NetherFurnaceContainer(windowId, inventory, this);
     }

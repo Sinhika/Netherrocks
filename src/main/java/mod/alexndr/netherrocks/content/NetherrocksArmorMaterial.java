@@ -1,16 +1,16 @@
 package mod.alexndr.netherrocks.content;
 
+import java.util.function.Supplier;
+
 import mod.alexndr.netherrocks.init.ModItems;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import java.util.function.Supplier;
+import net.minecraftforge.common.util.Lazy;
 
 public enum NetherrocksArmorMaterial implements ArmorMaterial
 {
@@ -34,7 +34,7 @@ public enum NetherrocksArmorMaterial implements ArmorMaterial
     private final int enchantability;
     private final SoundEvent soundEvent;
     private final float toughness;
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Lazy<Ingredient> repairMaterial;
     private final float knockbackResistance;
 
     private NetherrocksArmorMaterial(String nameIn, int maxDamageIn, int[] drAmtArray,
@@ -49,7 +49,7 @@ public enum NetherrocksArmorMaterial implements ArmorMaterial
         soundEvent = soundIn;
         toughness = toughnessIn;
         knockbackResistance = knockResistanceIn;
-        repairMaterial = new LazyLoadedValue<>(repairMatIn);
+        repairMaterial = Lazy.of(repairMatIn);
     } // end ctor()
 
     @Override

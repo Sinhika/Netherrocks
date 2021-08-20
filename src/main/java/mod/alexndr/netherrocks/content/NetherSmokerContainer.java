@@ -1,17 +1,13 @@
 package mod.alexndr.netherrocks.content;
 
-import java.util.Objects;
-
-import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceContainer;
-import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.inventory.container.ContainerType;
+import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceMenu;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.fml.network.IContainerFactory;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.fmllegacy.network.IContainerFactory;
 
-public class NetherSmokerContainer extends AbstractNetherFurnaceContainer<NetherSmokerBlock>
+public class NetherSmokerContainer extends VeryAbstractFurnaceMenu
 {
     /**
     * Logical-client-side constructor, called from {@link ContainerType#create(IContainerFactory)}
@@ -19,23 +15,13 @@ public class NetherSmokerContainer extends AbstractNetherFurnaceContainer<Nether
     */
    public NetherSmokerContainer(final int windowId, final Inventory playerInventory, final FriendlyByteBuf data) 
    {
-       this(windowId, playerInventory, getTileEntity(playerInventory, data));
+	   super(ModContainers.NETHER_SMOKER.get(), RecipeType.SMOKING, windowId, playerInventory);
    }
 
-    public NetherSmokerContainer(int id, Inventory playerInventory, 
-                                 NetherSmokerTileEntity tileEntity)
+    public NetherSmokerContainer(int id, Inventory playerInventory, NetherSmokerTileEntity tileEntity)
     {
-        super(ModContainers.NETHER_SMOKER.get(), id, playerInventory, tileEntity, ModBlocks.nether_smoker);
+        super(ModContainers.NETHER_SMOKER.get(), RecipeType.SMOKING, id, playerInventory, 
+        		tileEntity.inventory, tileEntity.dataAccess, tileEntity);
     }
 
-    private static NetherSmokerTileEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) 
-    {
-        Objects.requireNonNull(playerInventory, "playerInventory cannot be null!");
-        Objects.requireNonNull(data, "data cannot be null!");
-        final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
-        if (tileAtPos instanceof NetherSmokerTileEntity)
-            return (NetherSmokerTileEntity) tileAtPos;
-        throw new IllegalStateException("Tile entity is not correct! " + tileAtPos);
-    }
-    
-} // end class
+ } // end class
