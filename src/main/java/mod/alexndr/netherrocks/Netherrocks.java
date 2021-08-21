@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
+import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,7 +36,7 @@ public class Netherrocks
         ModItems.ITEMS.register(modEventBus);
         ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
-        OreGeneration.FEATURES.register(modEventBus);
+        ModFeatures.FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);

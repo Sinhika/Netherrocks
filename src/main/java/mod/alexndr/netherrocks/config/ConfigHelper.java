@@ -2,7 +2,6 @@ package mod.alexndr.netherrocks.config;
 
 import mod.alexndr.simplecorelib.config.ModOreConfig;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.configurations.RangeDecoratorConfiguration;
 import net.minecraftforge.fml.config.ModConfig;
 
 /**

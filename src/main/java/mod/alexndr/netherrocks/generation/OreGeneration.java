@@ -5,22 +5,18 @@ import com.google.common.collect.ImmutableList;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.simplecorelib.world.OreGenUtils;
 import net.minecraft.data.worldgen.Features;
 import net.minecraft.util.valueproviders.BiasedToBottomInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.fmllegacy.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Ore generation master-class for Netherrocks.
@@ -46,12 +42,6 @@ public class OreGeneration
     public static ConfiguredFeature<?, ?> ORE_ILLUMENITE;
     public static ConfiguredFeature<?, ?> ORE_ILLUMENITE_EXTRA;
     public static ConfiguredFeature<?, ?> ORE_MALACHITE;
-
-    public static final DeferredRegister<Feature<?>> FEATURES = 
-    		DeferredRegister.create(ForgeRegistries.FEATURES, Netherrocks.MODID);
-
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ILLUMENITE_FEATURE = 
-            FEATURES.register("illumenite_blob", () -> new IllumeniteBlobFeature(NoneFeatureConfiguration.CODEC));
 
     /**
      * initialize nether Features.
@@ -90,10 +80,10 @@ public class OreGeneration
         // to mimic glowstone generation. A side-effect is that more glowstone generates as well.
         if (NetherrocksConfig.enableIllumeniteOre) 
         {
-            ORE_ILLUMENITE = ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
+            ORE_ILLUMENITE = ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
                    .range(Features.Decorators.FULL_RANGE).squared().count(NetherrocksConfig.illumenite_cfg.getVein_count());
             
-            ORE_ILLUMENITE_EXTRA = ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
+            ORE_ILLUMENITE_EXTRA = ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
             		.range(Features.Decorators.RANGE_4_4).squared().count(BiasedToBottomInt.of(0, 9));
             
             OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster", ORE_ILLUMENITE);
