@@ -37,7 +37,6 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         specialDropTable(ModBlocks.dragonstone_ore.get(), ModItems.dragonstone_gem.get());
         standardDropTable(ModBlocks.fyrite_block.get());
         standardDropTable(ModBlocks.raw_fyrite_block.get());
-        standardDropTable(ModBlocks.dark_fyrite_block.get());
         specialDropTable(ModBlocks.fyrite_ore.get(), ModItems.raw_fyrite.get());
         standardDropTable(ModBlocks.illumenite_block.get());
         standardDropTable(ModBlocks.raw_illumenite_block.get());

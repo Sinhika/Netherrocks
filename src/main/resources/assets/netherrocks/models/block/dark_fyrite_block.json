@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "netherrocks:block/fyrite_block_alt"
-    }
-}

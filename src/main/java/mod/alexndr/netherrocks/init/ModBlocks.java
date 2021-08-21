@@ -70,9 +70,6 @@ public final class ModBlocks
     public static final RegistryObject<Block> fyrite_block = BLOCKS.register("fyrite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> dark_fyrite_block = BLOCKS.register("dark_fyrite_block",
-            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
-                    .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> raw_fyrite_block = BLOCKS.register("raw_fyrite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));

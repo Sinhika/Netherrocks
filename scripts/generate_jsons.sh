@@ -23,7 +23,6 @@ gen_blockstate_jsons.py --type=simple raw_fyrite_block
 gen_blockstate_jsons.py --type=simple raw_illumenite_block
 gen_blockstate_jsons.py --type=simple raw_argonite_block
 gen_blockstate_jsons.py --type=simple raw_malachite_block
-gen_blockstate_jsons.py --type=simple dark_fyrite_block
 
 # models
 TARGETDIR=${TOPDIR}/src/main/resources/assets/${ID}/models
@@ -34,7 +33,6 @@ cd $TARGETDIR
 
 # block models
 gen_model_jsons.py --type=block raw_fyrite_block
-gen_model_jsons.py --type=block dark_fyrite_block
 gen_model_jsons.py --type=block raw_illumenite_block
 gen_model_jsons.py --type=block raw_argonite_block
 gen_model_jsons.py --type=block raw_malachite_block
