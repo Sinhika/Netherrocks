@@ -29,17 +29,23 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
     {
         tables.clear();
         standardDropTable(ModBlocks.argonite_block.get());
-        standardDropTable(ModBlocks.argonite_ore.get());
+        standardDropTable(ModBlocks.raw_argonite_block.get());
+        specialDropTable(ModBlocks.argonite_ore.get(), ModItems.raw_argonite.get());
         standardDropTable(ModBlocks.ashstone_block.get());
         specialDropTable(ModBlocks.ashstone_ore.get(), ModItems.ashstone_gem.get());
         standardDropTable(ModBlocks.dragonstone_block.get());
         specialDropTable(ModBlocks.dragonstone_ore.get(), ModItems.dragonstone_gem.get());
         standardDropTable(ModBlocks.fyrite_block.get());
-        standardDropTable(ModBlocks.fyrite_ore.get());
+        standardDropTable(ModBlocks.raw_fyrite_block.get());
+        standardDropTable(ModBlocks.dark_fyrite_block.get());
+        specialDropTable(ModBlocks.fyrite_ore.get(), ModItems.raw_fyrite.get());
         standardDropTable(ModBlocks.illumenite_block.get());
-        standardDropTable(ModBlocks.illumenite_ore.get());
+        standardDropTable(ModBlocks.raw_illumenite_block.get());
+        specialDropTable(ModBlocks.illumenite_ore.get(), ModItems.raw_illumenite.get());
         standardDropTable(ModBlocks.malachite_block.get());
-        standardDropTable(ModBlocks.malachite_ore.get());
+        standardDropTable(ModBlocks.raw_malachite_block.get());
+        specialDropTable(ModBlocks.malachite_ore.get(), ModItems.raw_malachite.get());
+        
         copyNameDropTable(ModBlocks.nether_blast_furnace.get(), 
                           ModBlocks.nether_blast_furnace.get().asItem());
         copyNameDropTable(ModBlocks.nether_furnace.get(), 
