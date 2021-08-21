@@ -4,17 +4,25 @@ import java.util.Random;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.extensions.IForgeBlockState;
+import net.minecraft.world.level.block.BaseFireBlock;
+import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.CandleCakeBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.gameevent.GameEvent;
 
 public class FyriteHandler implements IWeaponEffectHelper
 {
@@ -57,50 +65,51 @@ public class FyriteHandler implements IWeaponEffectHelper
 
     public InteractionResult onItemUse(UseOnContext context)
     {
-        BlockPos adjacentPos = context.getClickedPos();
         BlockPos pos = context.getClickedPos();
         ItemStack stack = context.getItemInHand();
         Player playerIn = context.getPlayer();
         Level worldIn = context.getLevel();
-        
+        BlockState blockstate = worldIn.getBlockState(pos);
+
         if (stack.isEmpty()) {
-            return InteractionResult.PASS;
+            return InteractionResult.FAIL;
         }
-        switch (context.getClickedFace()) 
-        {
-        case DOWN:
-            adjacentPos = pos.below();
-            break;
-        case UP:
-            adjacentPos = pos.above();
-            break;
-        case NORTH:
-            adjacentPos = pos.north();
-            break;
-        case SOUTH:
-            adjacentPos = pos.south();
-            break;
-        case EAST:
-            adjacentPos = pos.east();
-            break;
-        case WEST:
-            adjacentPos = pos.west();
-            break;
-        } // end switch
+        BlockPos adjacentPos = pos.relative(context.getClickedFace());
+        
         if (!playerIn.mayUseItemAt(adjacentPos, context.getClickedFace(), stack))
         {
-            return InteractionResult.PASS;
+            return InteractionResult.FAIL;
         }
-        IForgeBlockState targetBlock = worldIn.getBlockState(adjacentPos);
-        if (targetBlock.isAir(targetBlock.getBlockState(), worldIn, adjacentPos))
+        if (!CampfireBlock.canLight(blockstate) && !CandleBlock.canLight(blockstate) && !CandleCakeBlock.canLight(blockstate)) 
         {
-            if (worldIn.isClientSide) {
-                playerIn.playSound(SoundEvents.FIRE_AMBIENT, 1.0F, 1.0F);
+	        if (BaseFireBlock.canBePlacedAt(worldIn, adjacentPos, context.getHorizontalDirection())) 
+	        {
+	            worldIn.playSound(playerIn, adjacentPos, SoundEvents.FIRE_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
+	            BlockState blockstate1 = BaseFireBlock.getState(worldIn, adjacentPos);
+	            worldIn.setBlock(adjacentPos, blockstate1, 11);
+	            worldIn.gameEvent(playerIn, GameEvent.BLOCK_PLACE, pos);
+	            ItemStack itemstack = context.getItemInHand();
+	            if (playerIn instanceof ServerPlayer) 
+	            {
+	               CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer) playerIn, adjacentPos, itemstack);
+	               itemstack.hurtAndBreak(1, playerIn, (foo) -> { foo.broadcastBreakEvent(context.getHand());} );
+	            } // end-if ServerPlayer
+
+	            return InteractionResult.sidedSuccess(worldIn.isClientSide());
+	        } // end if can place fire
+	        else {
+	            return InteractionResult.FAIL;
+	         }
+        } // end-if not campfire, candle, etc.
+        else {
+        	worldIn.playSound(playerIn, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, worldIn.getRandom().nextFloat() * 0.4F + 0.8F);
+        	worldIn.setBlock(pos, blockstate.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
+        	worldIn.gameEvent(playerIn, GameEvent.BLOCK_PLACE, pos);
+            if (playerIn != null) {
+            	context.getItemInHand().hurtAndBreak(1, playerIn, (foo) -> {foo.broadcastBreakEvent(context.getHand());} );
             }
-            worldIn.setBlockAndUpdate(adjacentPos, Blocks.FIRE.defaultBlockState());
-            stack.hurt(1, worldIn.random, null);
-        }
-        return InteractionResult.PASS;
+            return InteractionResult.sidedSuccess(worldIn.isClientSide());
+         }
     } // end onItemUse()
     
 }  // end class FyriteHandler

@@ -95,11 +95,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverArgoniteVeinCount")
                 .defineInRange("ArgoniteVeinCount", 10, 1, Integer.MAX_VALUE);
         serverArgoniteBottomHeight = builder
-                .comment("Argonite ore minimum height")
+                .comment("Argonite ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverArgoniteBottomHeight")
-                .defineInRange("ArgoniteBottomHeight", 0, 1, 128);
+                .defineInRange("ArgoniteBottomHeight", 1, 1, 128);
         serverArgoniteMaxHeight = builder
-                .comment("Argonite ore maximum height")
+                .comment("Argonite ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverArgoniteMaxHeight")
                 .defineInRange("ArgoniteMaxHeight", 128, 1, 128);
         builder.pop();
@@ -114,11 +114,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverAshstoneVeinCount")
                 .defineInRange("AshstoneVeinCount", 10, 1, Integer.MAX_VALUE);
         serverAshstoneBottomHeight = builder
-                .comment("Ashstone ore minimum height")
+                .comment("Ashstone ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverAshstoneBottomHeight")
-                .defineInRange("AshstoneBottomHeight", 0, 1, 127);
+                .defineInRange("AshstoneBottomHeight", 1, 1, 127);
         serverAshstoneMaxHeight = builder
-                .comment("Ashstone ore maximum height")
+                .comment("Ashstone ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverAshstoneMaxHeight")
                 .defineInRange("AshstoneMaxHeight", 128, 1, 128);
         builder.pop();
@@ -133,11 +133,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverDragonstoneVeinCount")
                 .defineInRange("DragonstoneVeinCount", 7, 1, Integer.MAX_VALUE);
         serverDragonstoneBottomHeight = builder
-                .comment("Dragonstone ore minimum height")
+                .comment("Dragonstone ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverDragonstoneBottomHeight")
-                .defineInRange("DragonstoneBottomHeight", 0, 1, 127);
+                .defineInRange("DragonstoneBottomHeight", 1, 1, 127);
         serverDragonstoneMaxHeight = builder
-                .comment("Dragonstone ore maximum height")
+                .comment("Dragonstone ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverDragonstoneMaxHeight")
                 .defineInRange("DragonstoneMaxHeight", 128, 1, 128);
         builder.pop();
@@ -152,11 +152,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverFyriteVeinCount")
                 .defineInRange("FyriteVeinCount", 10, 1, Integer.MAX_VALUE);
         serverFyriteBottomHeight = builder
-                .comment("Fyrite ore minimum height")
+                .comment("Fyrite ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverFyriteBottomHeight")
-                .defineInRange("FyriteBottomHeight", 0, 1, 127);
+                .defineInRange("FyriteBottomHeight", 1, 1, 127);
         serverFyriteMaxHeight = builder
-                .comment("Fyrite ore maximum height")
+                .comment("Fyrite ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverFyriteMaxHeight")
                 .defineInRange("FyriteMaxHeight", 128, 1, 128);
         builder.pop();
@@ -171,11 +171,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverIllumeniteVeinCount")
                 .defineInRange("IllumeniteVeinCount", 5, 1, Integer.MAX_VALUE);
         serverIllumeniteBottomHeight = builder
-                .comment("Illumenite ore minimum height")
+                .comment("Illumenite ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverIllumeniteBottomHeight")
-                .defineInRange("IllumeniteBottomHeight", 0, 1, 127);
+                .defineInRange("IllumeniteBottomHeight", 1, 1, 127);
         serverIllumeniteMaxHeight = builder
-                .comment("Illumenite ore maximum height")
+                .comment("Illumenite ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverIllumeniteMaxHeight")
                 .defineInRange("IllumeniteMaxHeight", 128, 1, 128);
         builder.pop();
@@ -190,11 +190,11 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + ".config.serverMalachiteVeinCount")
                 .defineInRange("MalachiteVeinCount", 10, 1, Integer.MAX_VALUE);
         serverMalachiteBottomHeight = builder
-                .comment("Malachite ore minimum height")
+                .comment("Malachite ore minimum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverMalachiteBottomHeight")
-                .defineInRange("MalachiteBottomHeight", 0, 0, 127);
+                .defineInRange("MalachiteBottomHeight", 1, 1, 127);
         serverMalachiteMaxHeight = builder
-                .comment("Malachite ore maximum height")
+                .comment("Malachite ore maximum height (currently ignored)")
                 .translation(Netherrocks.MODID + ".config.serverMalachiteMaxHeight")
                 .defineInRange("MalachiteMaxHeight", 128, 1, 128);
         builder.pop();
