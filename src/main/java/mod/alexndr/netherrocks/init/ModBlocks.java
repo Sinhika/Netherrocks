@@ -64,14 +64,30 @@ public final class ModBlocks
     public static final RegistryObject<Block> argonite_block = BLOCKS.register("argonite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> raw_argonite_block = BLOCKS.register("raw_argonite_block",
+            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE)
+                    .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> fyrite_block = BLOCKS.register("fyrite_block",
+            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
+                    .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> dark_fyrite_block = BLOCKS.register("dark_fyrite_block",
+            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
+                    .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> raw_fyrite_block = BLOCKS.register("raw_fyrite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.FIRE)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> illumenite_block = BLOCKS.register("illumenite_block",
             () -> new Block(Block.Properties.of(Material.GLASS, MaterialColor.COLOR_YELLOW)
                     .strength(7.0F, 72.0F).sound(SoundType.GLASS).requiresCorrectToolForDrops()
                     .lightLevel(LightUtils.setFixedLight(15))));
+    public static final RegistryObject<Block> raw_illumenite_block = BLOCKS.register("raw_illumenite_block",
+            () -> new Block(Block.Properties.of(Material.GLASS, MaterialColor.COLOR_YELLOW)
+                    .strength(7.0F, 72.0F).sound(SoundType.GLASS).requiresCorrectToolForDrops()
+                    .lightLevel(LightUtils.setFixedLight(15))));
     public static final RegistryObject<Block> malachite_block = BLOCKS.register("malachite_block",
+            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.EMERALD)
+                    .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> raw_malachite_block = BLOCKS.register("raw_malachite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.EMERALD)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 

@@ -50,6 +50,8 @@ public final class ModItems
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> crushed_argonite_ore = ITEMS.register("crushed_argonite_ore",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> raw_argonite = ITEMS.register("raw_argonite",
+            () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
    
     public static final RegistryObject<Item> dragonstone_gem = ITEMS.register("dragonstone_gem",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
@@ -64,6 +66,8 @@ public final class ModItems
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> crushed_fyrite_ore = ITEMS.register("crushed_fyrite_ore",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> raw_fyrite = ITEMS.register("raw_fyrite",
+            () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     
     public static final RegistryObject<Item> illumenite_ingot = ITEMS.register("illumenite_ingot",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
@@ -73,6 +77,8 @@ public final class ModItems
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> crushed_illumenite_ore = ITEMS.register("crushed_illumenite_ore",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> raw_illumenite = ITEMS.register("raw_illumenite",
+            () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     
     public static final RegistryObject<Item> malachite_ingot = ITEMS.register("malachite_ingot",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
@@ -81,6 +87,8 @@ public final class ModItems
     public static final RegistryObject<Item> malachite_dust = ITEMS.register("malachite_dust",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<Item> crushed_malachite_ore = ITEMS.register("crushed_malachite_ore",
+            () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> raw_malachite = ITEMS.register("raw_malachite",
             () -> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
 
