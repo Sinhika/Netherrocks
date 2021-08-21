@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "netherrocks:argonite_dust"
+            "items": [
+              "netherrocks:argonite_dust"
+            ]
           }
         ]
       }

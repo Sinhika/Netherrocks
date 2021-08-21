@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "netherrocks:argonite_block",
+    "netherrocks:argonite_ore",
+    "netherrocks:ashstone_block",
+    "netherrocks:ashstone_ore",
+    "netherrocks:dragonstone_block",
+    "netherrocks:dragonstone_ore"
+  ]
+}

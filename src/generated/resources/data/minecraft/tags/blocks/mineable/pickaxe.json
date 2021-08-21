@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "netherrocks:argonite_block",
+    "netherrocks:argonite_ore",
+    "netherrocks:ashstone_block",
+    "netherrocks:ashstone_ore",
+    "netherrocks:dragonstone_block",
+    "netherrocks:dragonstone_ore",
+    "netherrocks:fyrite_block",
+    "netherrocks:illumenite_block",
+    "netherrocks:illumenite_ore",
+    "netherrocks:malachite_block",
+    "netherrocks:malachite_ore",
+    "netherrocks:nether_blast_furnace",
+    "netherrocks:nether_furnace",
+    "netherrocks:nether_smoker"
+  ]
+}

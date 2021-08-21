@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "netherrocks:fyrite_block",
+    "netherrocks:fyrite_ore",
+    "netherrocks:illumenite_block",
+    "netherrocks:illumenite_ore",
+    "netherrocks:malachite_block",
+    "netherrocks:malachite_ore"
+  ]
+}

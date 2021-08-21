@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "netherrocks:illumenite_dust"
+            "items": [
+              "netherrocks:illumenite_dust"
+            ]
           }
         ]
       }
