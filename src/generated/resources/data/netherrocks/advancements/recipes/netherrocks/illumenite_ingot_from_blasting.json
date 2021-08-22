@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:illumenite_ingot_from_blasting"
+    ]
+  },
+  "criteria": {
+    "illumenite_ingot_from_blasting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:raw_illumenite"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:illumenite_ingot_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "illumenite_ingot_from_blasting",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "netherrocks:raw_illumenite"
+  },
+  "result": "netherrocks:illumenite_ingot",
+  "experience": 0.8,
+  "cookingtime": 200
+}

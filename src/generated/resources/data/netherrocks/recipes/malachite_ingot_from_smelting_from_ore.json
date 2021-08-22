@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "netherrocks:malachite_ore"
+  },
+  "result": "netherrocks:malachite_ingot",
+  "experience": 0.5,
+  "cookingtime": 200
+}

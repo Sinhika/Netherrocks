@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherrocks:raw_argonite_block"
+    }
+  ],
+  "result": {
+    "item": "netherrocks:raw_argonite",
+    "count": 9
+  }
+}
