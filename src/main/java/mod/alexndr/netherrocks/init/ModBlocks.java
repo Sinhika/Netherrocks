@@ -57,10 +57,10 @@ public final class ModBlocks
     // Metal Blocks
    public static final RegistryObject<Block> ashstone_block = BLOCKS.register("ashstone_block",
             () -> new Block(Block.Properties.of(Material.STONE)
-                    .strength(7.0F, 72.0F).requiresCorrectToolForDrops()));
+                    .strength(7.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> dragonstone_block = BLOCKS.register("dragonstone_block",
             () -> new Block(Block.Properties.of(Material.STONE, MaterialColor.NETHER)
-                    .strength(10.0F, 72.0F).requiresCorrectToolForDrops()));
+                    .strength(10.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> argonite_block = BLOCKS.register("argonite_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE)
                     .strength(7.0F, 72.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));

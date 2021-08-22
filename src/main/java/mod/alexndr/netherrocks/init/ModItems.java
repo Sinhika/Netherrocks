@@ -132,19 +132,19 @@ public final class ModItems
 
     // axes
    public static final RegistryObject<AxeItem> argonite_axe = ITEMS.register("argonite_axe",
-            () -> new AxeItem(NetherrocksItemTiers.ARGONITE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.ARGONITE, 5.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<FyriteAxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
-            () -> new FyriteAxeItem(NetherrocksItemTiers.FYRITE, 7.0F, -3.1F,
+            () -> new FyriteAxeItem(NetherrocksItemTiers.FYRITE, 5.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<MalachiteAxeItem> malachite_axe = ITEMS.register("malachite_axe",
-            () -> new MalachiteAxeItem(NetherrocksItemTiers.MALACHITE, 7.0F, -3.1F,
+            () -> new MalachiteAxeItem(NetherrocksItemTiers.MALACHITE, 5.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> ashstone_axe = ITEMS.register("ashstone_axe",
-            () -> new AxeItem(NetherrocksItemTiers.ASHSTONE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.ASHSTONE, 6.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> dragonstone_axe = ITEMS.register("dragonstone_axe",
-            () -> new AxeItem(NetherrocksItemTiers.DRAGONSTONE, 7.0F, -3.1F,
+            () -> new AxeItem(NetherrocksItemTiers.DRAGONSTONE, 1.0F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shovels
