@@ -6,6 +6,9 @@
     "netherrocks:illumenite_block",
     "netherrocks:illumenite_ore",
     "netherrocks:malachite_block",
-    "netherrocks:malachite_ore"
+    "netherrocks:malachite_ore",
+    "netherrocks:raw_fyrite_block",
+    "netherrocks:raw_illumenite_block",
+    "netherrocks:raw_malachite_block"
   ]
 }

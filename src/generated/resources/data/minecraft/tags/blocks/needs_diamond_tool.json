@@ -6,6 +6,7 @@
     "netherrocks:ashstone_block",
     "netherrocks:ashstone_ore",
     "netherrocks:dragonstone_block",
-    "netherrocks:dragonstone_ore"
+    "netherrocks:dragonstone_ore",
+    "netherrocks:raw_argonite_block"
   ]
 }
