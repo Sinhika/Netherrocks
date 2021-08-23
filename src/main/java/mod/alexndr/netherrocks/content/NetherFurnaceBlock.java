@@ -1,7 +1,6 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.init.ModTiles;
-import mod.alexndr.simplecorelib.content.TestFurnaceTileEntity;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
@@ -58,7 +57,7 @@ public class NetherFurnaceBlock extends VeryAbstractFurnaceBlock
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos bpos, BlockState bstate) {
-		return new TestFurnaceTileEntity(bpos, bstate);
+		return new NetherFurnaceTileEntity(bpos, bstate);
 	}
 
 
