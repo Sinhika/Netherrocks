@@ -101,7 +101,10 @@
   "container.nether_furnace": "Nether Furnace",
   "gui.netherrocks.smeltTimeProgress": "Smelt time %s/%s",
   "gui.netherrocks.fuelBurnTimeProgress": "Fuel burn time %s/%s",
-
+  "gui.jei.category.fuel.smeltCount.single": "Smelts 1 item",
+  "gui.jei.category.fuel.smeltCount": "Smelts %s items",
+  "gui.jei.category.fuel": "Nether Fuel",
+ 
   "advancements.root.welcome": "Ready to mine Hell!",
   "advancements.root.welcome.desc": "You've reached the Nether. Look for netherrocks ores.",
   "advancements.fyrite_ore_ach": "Warm to the Touch",

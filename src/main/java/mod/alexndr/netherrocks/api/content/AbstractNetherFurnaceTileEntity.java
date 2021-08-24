@@ -102,7 +102,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
      * @param recipeType - ignored
      * @return burn time in ticks.
      */
-    protected static int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
+    public static int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
     {
         if (AbstractNetherFurnaceTileEntity.burnTimes.isEmpty()) {
             AbstractNetherFurnaceTileEntity.burnTimes = AbstractNetherFurnaceTileEntity.loadBurnTimes();
