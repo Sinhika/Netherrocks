@@ -13,7 +13,7 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.runtime.IIngredientManager;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
-import mod.alexndr.netherrocks.api.jei.AlternateFuelRecipe;
+import mod.alexndr.simplecorelib.client.jei.AlternateFuelRecipe;
 import net.minecraft.world.item.ItemStack;
 
 public final class NetherFuelRecipeMaker

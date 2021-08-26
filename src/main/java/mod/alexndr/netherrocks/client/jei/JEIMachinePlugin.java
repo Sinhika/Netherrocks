@@ -36,11 +36,11 @@ public class JEIMachinePlugin implements IModPlugin
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry)
     {
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_furnace.get()), 
-                VanillaRecipeCategoryUid.FURNACE);
+                VanillaRecipeCategoryUid.FURNACE, NetherFuelCategory.UID);
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_blast_furnace.get()), 
-                VanillaRecipeCategoryUid.BLASTING);
+                VanillaRecipeCategoryUid.BLASTING, NetherFuelCategory.UID);
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_smoker.get()), 
-                VanillaRecipeCategoryUid.SMOKING);
+                VanillaRecipeCategoryUid.SMOKING, NetherFuelCategory.UID);
     }
 
     

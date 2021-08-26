@@ -4,12 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.api.client.gui.SimpleSpriteUploader;
-import mod.alexndr.netherrocks.api.client.gui.Textures;
 import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
 import mod.alexndr.netherrocks.init.ModContainers;
+import mod.alexndr.simplecorelib.SimpleCoreLib;
+import mod.alexndr.simplecorelib.client.gui.SimpleSpriteUploader;
+import mod.alexndr.simplecorelib.client.gui.Textures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -56,7 +57,7 @@ public class ClientModEventSubscriber
     {
     	// add things to texture atlas.
     	Minecraft minecraft = Minecraft.getInstance();
-    	SimpleSpriteUploader spriteUploader = new SimpleSpriteUploader(minecraft.textureManager, Netherrocks.SIMPLE_TEXTURE_ATLAS);
+    	SimpleSpriteUploader spriteUploader = new SimpleSpriteUploader(minecraft.textureManager, SimpleCoreLib.SIMPLE_TEXTURE_ATLAS);
     	textures = new Textures(spriteUploader);
     	event.registerReloadListener(spriteUploader);
     } // end onRegisterClientReloadListenersEvent
