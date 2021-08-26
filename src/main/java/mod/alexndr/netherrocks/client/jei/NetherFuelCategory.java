@@ -12,8 +12,8 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.api.jei.AlternateFuelRecipe;
-import mod.alexndr.netherrocks.api.jei.IconDrawable;
 import mod.alexndr.netherrocks.api.jei.VeryAbstractFurnaceVariantCategory;
+import mod.alexndr.netherrocks.client.ClientModEventSubscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
@@ -26,8 +26,6 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 	
 	private final IDrawableStatic background;
 	private final IDrawableStatic flameTransparentBackground;
-	private final ResourceLocation flameSpriteResource = new ResourceLocation(Netherrocks.MODID, "textures/gui/flame");
-	
 	private final Component localizedName;
 
 
@@ -45,7 +43,7 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 			.addPadding(0, 0, 0, stringWidth + 20)
 			.build();
 
-		flameTransparentBackground = new IconDrawable(flameSpriteResource, 14, 14);
+		flameTransparentBackground = ClientModEventSubscriber.textures.getFlameIcon();
 		localizedName = new TranslatableComponent("gui.jei.category.fuel");
 	} // end ctor
 

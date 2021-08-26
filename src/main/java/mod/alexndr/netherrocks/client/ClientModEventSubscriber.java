@@ -4,12 +4,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.api.client.gui.SimpleSpriteUploader;
+import mod.alexndr.netherrocks.api.client.gui.Textures;
 import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
 import mod.alexndr.netherrocks.init.ModContainers;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,7 +27,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ClientModEventSubscriber
 {
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Client Mod Event Subscriber");
-
+    public static Textures textures;
+    
+    //public static Textures textures;
     /**
      * We need to register our renderers on the client because rendering code does not exist on the server
      * and trying to use it on a dedicated server will crash the game.
@@ -43,6 +49,17 @@ public class ClientModEventSubscriber
             MenuScreens.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
             LOGGER.debug("Registered ContainerType Screens");
         });
+    } // end onFMLClientSetupEvent()
+    
+    @SubscribeEvent
+    public static void onRegisterClientReloadListenersEvent(final RegisterClientReloadListenersEvent event)
+    {
+    	// add things to texture atlas.
+    	Minecraft minecraft = Minecraft.getInstance();
+    	SimpleSpriteUploader spriteUploader = new SimpleSpriteUploader(minecraft.textureManager, Netherrocks.SIMPLE_TEXTURE_ATLAS);
+    	textures = new Textures(spriteUploader);
+    	event.registerReloadListener(spriteUploader);
+    } // end onRegisterClientReloadListenersEvent
 
-    } // end ()
+    
 } // end class

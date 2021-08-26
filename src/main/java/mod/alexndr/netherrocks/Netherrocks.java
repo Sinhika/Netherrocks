@@ -9,6 +9,7 @@ import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTiles;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +22,8 @@ public class Netherrocks
 {
 	// modid 
 	public static final String MODID = "netherrocks";
+	
+    public static final ResourceLocation SIMPLE_TEXTURE_ATLAS = new ResourceLocation(MODID, "textures/atlas/gui.png");
 
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
