@@ -36,6 +36,8 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 		// width of the recipe depends on the text, which is different in each language
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
+		AlternateFuelRecipe.init(100);	// because nether furnaces burn 2x as fast as normal.
+		
 		Component smeltCountText = AlternateFuelRecipe.createSmeltCountText(100000);
 		int stringWidth = fontRenderer.width(smeltCountText.getString());
 
