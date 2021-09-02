@@ -21,8 +21,17 @@ public class ModItemTags extends ItemTagsProvider
     {
         registerDustTags();
         registerOreChunkTags();
+        registerToolTags();
     }
 
+    private void registerToolTags()
+    {
+    	this.tag(TagUtils.modTag(Netherrocks.MODID, "auto_smelt_tools"))
+    		.add(ModItems.fyrite_axe.get())
+    		.add(ModItems.fyrite_pickaxe.get())
+    		.add(ModItems.fyrite_shovel.get());
+    }
+    
     private void registerDustTags()
     {
         this.tag(TagUtils.forgeTag("dusts"))
