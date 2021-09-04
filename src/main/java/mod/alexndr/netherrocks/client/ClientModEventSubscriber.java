@@ -7,12 +7,15 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
+import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.simplecorelib.SimpleCoreLib;
 import mod.alexndr.simplecorelib.client.gui.SimpleSpriteUploader;
 import mod.alexndr.simplecorelib.client.gui.Textures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -51,6 +54,35 @@ public class ClientModEventSubscriber
             MenuScreens.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);
             LOGGER.debug("Registered ContainerType Screens");
         });
+        
+        // doors with see-through windows.
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.argonite_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ashstone_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.dragonstone_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.fyrite_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.illumenite_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.malachite_door.get(), (layer) -> layer 
+                == RenderType.cutout());
+
+        // bars, which are see-through between the bars, obviously.
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.argonite_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ashstone_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.dragonstone_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.fyrite_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.illumenite_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.malachite_bars.get(), (layer) -> layer 
+                == RenderType.cutout());
+        
     } // end onFMLClientSetupEvent()
     
     @SubscribeEvent
