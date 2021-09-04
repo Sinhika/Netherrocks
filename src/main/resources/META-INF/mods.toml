@@ -25,7 +25,7 @@ Additional Credits: AzazEL3095 (Spanish translation)
 [[dependencies.netherrocks]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[37.0.31,)"
+    versionRange="[37.0.46,)"
     ordering="NONE"
     side="BOTH"
 
