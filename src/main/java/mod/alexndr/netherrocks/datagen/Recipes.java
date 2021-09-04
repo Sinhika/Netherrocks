@@ -4,8 +4,8 @@ import java.util.function.Consumer;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
-import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
@@ -42,7 +42,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
  			has(ModItems.argonite_ingot.get()), flag("aesthetics_enabled"));
     	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.ashstone_gem.get()), "ashstone", 
  			has(ModItems.ashstone_gem.get()), flag("aesthetics_enabled"));
-    	// TODO
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.dragonstone_gem.get()), "dragonstone", 
+ 			has(ModItems.dragonstone_gem.get()), flag("aesthetics_enabled"));
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.fyrite_ingot.get()), "fyrite", 
+ 			has(ModItems.fyrite_ingot.get()), flag("aesthetics_enabled"));
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.illumenite_ingot.get()), "illumenite", 
+ 			has(ModItems.illumenite_ingot.get()), flag("aesthetics_enabled"));
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.malachite_ingot.get()), "malachite", 
+ 			has(ModItems.malachite_ingot.get()), flag("aesthetics_enabled"));
     }
     
     protected void registerStorageRecipes(Consumer<FinishedRecipe> consumer)
