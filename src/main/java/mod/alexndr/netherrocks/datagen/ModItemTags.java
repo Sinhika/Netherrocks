@@ -1,6 +1,7 @@
 package mod.alexndr.netherrocks.datagen;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.helpers.TagUtils;
 import net.minecraft.data.DataGenerator;
@@ -22,6 +23,32 @@ public class ModItemTags extends ItemTagsProvider
         registerDustTags();
         registerOreChunkTags();
         registerToolTags();
+        registerDoorsSlabsAndStairs();
+    }
+
+    private void registerDoorsSlabsAndStairs()
+    {
+    	this.tag(TagUtils.modTag("minecraft", "doors"))
+    		.add(ModBlocks.argonite_door.get().asItem())
+    		.add(ModBlocks.ashstone_door.get().asItem())
+    		.add(ModBlocks.dragonstone_door.get().asItem())
+    		.add(ModBlocks.fyrite_door.get().asItem())
+    		.add(ModBlocks.illumenite_door.get().asItem())
+    		.add(ModBlocks.malachite_door.get().asItem());
+    	this.tag(TagUtils.modTag("minecraft","stairs"))
+			.add(ModBlocks.argonite_brick_stairs.get().asItem())
+			.add(ModBlocks.ashstone_brick_stairs.get().asItem())
+			.add(ModBlocks.dragonstone_brick_stairs.get().asItem())
+			.add(ModBlocks.fyrite_brick_stairs.get().asItem())
+			.add(ModBlocks.illumenite_brick_stairs.get().asItem())
+			.add(ModBlocks.malachite_brick_stairs.get().asItem());
+    	this.tag(TagUtils.modTag("minecraft","slabs"))
+			.add(ModBlocks.argonite_brick_slab.get().asItem())
+			.add(ModBlocks.ashstone_brick_slab.get().asItem())
+			.add(ModBlocks.dragonstone_brick_slab.get().asItem())
+			.add(ModBlocks.fyrite_brick_slab.get().asItem())
+			.add(ModBlocks.illumenite_brick_slab.get().asItem())
+			.add(ModBlocks.malachite_brick_slab.get().asItem());
     }
 
     private void registerToolTags()

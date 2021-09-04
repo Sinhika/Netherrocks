@@ -32,8 +32,19 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 //        registerToolRecipes(consumer);
 //        registerArmorRecipes(consumer);
         registerFurnaceRecipes(consumer);
+        registerAestheticRecipes(consumer);
     } // end registerRecipes() 
 	
+    
+    protected void registerAestheticRecipes(Consumer<FinishedRecipe> consumer)
+    {
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.argonite_ingot.get()), "argonite", 
+ 			has(ModItems.argonite_ingot.get()), flag("aesthetics_enabled"));
+    	setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModItems.ashstone_gem.get()), "ashstone", 
+ 			has(ModItems.ashstone_gem.get()), flag("aesthetics_enabled"));
+    	// TODO
+    }
+    
     protected void registerStorageRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildSimpleStorageRecipes(consumer, ModItems.raw_fyrite.get(), 
