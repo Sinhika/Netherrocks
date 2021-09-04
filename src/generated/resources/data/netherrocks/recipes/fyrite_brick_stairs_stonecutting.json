@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "aesthetics_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "netherrocks:fyrite_bricks"
+        },
+        "result": "netherrocks:fyrite_brick_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

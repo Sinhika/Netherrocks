@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "aesthetics_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "S  ",
+          "SS ",
+          "SSS"
+        ],
+        "key": {
+          "S": {
+            "item": "netherrocks:dragonstone_bricks"
+          }
+        },
+        "result": {
+          "item": "netherrocks:dragonstone_brick_stairs",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

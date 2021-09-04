@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "aesthetics_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          " SS",
+          " SS",
+          " SS"
+        ],
+        "key": {
+          "S": {
+            "item": "netherrocks:malachite_ingot"
+          }
+        },
+        "result": {
+          "item": "netherrocks:malachite_door",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

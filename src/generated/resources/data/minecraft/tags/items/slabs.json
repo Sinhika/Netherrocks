@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "netherrocks:argonite_brick_slab",
+    "netherrocks:ashstone_brick_slab",
+    "netherrocks:dragonstone_brick_slab",
+    "netherrocks:fyrite_brick_slab",
+    "netherrocks:illumenite_brick_slab",
+    "netherrocks:malachite_brick_slab"
+  ]
+}
