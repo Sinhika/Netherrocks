@@ -23,6 +23,12 @@ gen_blockstate_jsons.py --type=simple raw_fyrite_block
 gen_blockstate_jsons.py --type=simple raw_illumenite_block
 gen_blockstate_jsons.py --type=simple raw_argonite_block
 gen_blockstate_jsons.py --type=simple raw_malachite_block
+gen_blockstate_jsons.py --type=slab argonite_brick_slab
+gen_blockstate_jsons.py --type=slab ashstone_brick_slab
+gen_blockstate_jsons.py --type=slab dragonstone_brick_slab
+gen_blockstate_jsons.py --type=slab fyrite_brick_slab
+gen_blockstate_jsons.py --type=slab illumenite_brick_slab
+gen_blockstate_jsons.py --type=slab malachite_brick_slab
 
 # models
 TARGETDIR=${TOPDIR}/src/main/resources/assets/${ID}/models
@@ -36,6 +42,12 @@ gen_model_jsons.py --type=block raw_fyrite_block
 gen_model_jsons.py --type=block raw_illumenite_block
 gen_model_jsons.py --type=block raw_argonite_block
 gen_model_jsons.py --type=block raw_malachite_block
+gen_model_jsons.py --type=slab argonite_brick_slab
+gen_model_jsons.py --type=slab ashstone_brick_slab
+gen_model_jsons.py --type=slab dragonstone_brick_slab
+gen_model_jsons.py --type=slab fyrite_brick_slab
+gen_model_jsons.py --type=slab illumenite_brick_slab
+gen_model_jsons.py --type=slab malachite_brick_slab
 
 #inventory items
 gen_model_jsons.py --type=inventory --item_only raw_fyrite
