@@ -50,13 +50,17 @@ final class ServerConfig
     final ForgeConfigSpec.IntValue serverMalachiteMaxHeight;
 
     final ForgeConfigSpec.BooleanValue serverAddModLootToChests;
-    
+    final ForgeConfigSpec.BooleanValue serverEnableAesthetics;
+
 	ServerConfig(final ForgeConfigSpec.Builder builder)
 	{
 	    builder.push("General");
 	    serverAddModLootToChests = builder.comment("Add Netherrocks items to chest loot?")
                 .translation(Netherrocks.MODID + ".config.serverAddModLootToChests")
                 .define("AddModLootToChests", true);
+        serverEnableAesthetics = builder.comment("Enable Netherrocks aesthetic blocks?")
+                .translation(Netherrocks.MODID + "config.EnableAesthetics")
+                .define("EnableAestheticsBlocks", true);
 	    builder.pop();
 	    
 		builder.push("OreGeneration");

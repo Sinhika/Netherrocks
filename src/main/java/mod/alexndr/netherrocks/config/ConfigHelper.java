@@ -55,6 +55,8 @@ public final class ConfigHelper
                 ConfigHolder.SERVER.serverMalachiteVeinSize.get(),ConfigHolder.SERVER.serverMalachiteVeinCount.get(),
            		VerticalAnchor.absolute(ConfigHolder.SERVER.serverMalachiteBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverMalachiteMaxHeight.get()));
+        
+        NetherrocksConfig.INSTANCE.putFlag("aesthetics_enabled", ConfigHolder.SERVER.serverEnableAesthetics.get());
 	} // end bakeServer()
 
 	@SuppressWarnings("unused")
