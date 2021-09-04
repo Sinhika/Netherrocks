@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "aesthetics:block/malachite_bricks",
+        "top": "aesthetics:block/malachite_bricks",
+        "side": "aesthetics:block/malachite_bricks"
+    }
+}
