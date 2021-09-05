@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/argonite_bars",
-        "bars": "aesthetics:block/argonite_bars"
+        "particle": "netherrocks:block/argonite_bars",
+        "bars": "netherrocks:block/argonite_bars"
     },
     "elements": [
         {   "from": [ 8, 0, 7 ],

@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "aesthetics:block/illumenite_bricks" }
+		"": { "model": "netherrocks:block/illumenite_bricks" }
 	}
 }

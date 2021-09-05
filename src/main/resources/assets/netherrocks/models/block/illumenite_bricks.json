@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "aesthetics:block/illumenite_bricks"
+		"all": "netherrocks:block/illumenite_bricks"
 	}
 }

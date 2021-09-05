@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "aesthetics:block/dragonstone_bricks" }
+		"": { "model": "netherrocks:block/dragonstone_bricks" }
 	}
 }

@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/illumenite_bars",
-        "edge": "aesthetics:block/illumenite_bars"
+        "particle": "netherrocks:block/illumenite_bars",
+        "edge": "netherrocks:block/illumenite_bars"
     },
     "elements": [
         {   "from": [ 7, 0.001, 7 ],

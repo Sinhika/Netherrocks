@@ -1,7 +1,7 @@
 {
     "parent": "block/door_bottom",
     "textures": {
-        "bottom": "aesthetics:block/fyrite_door_lower",
-        "top": "aesthetics:block/fyrite_door_upper"
+        "bottom": "netherrocks:block/fyrite_door_lower",
+        "top": "netherrocks:block/fyrite_door_upper"
     }
 }

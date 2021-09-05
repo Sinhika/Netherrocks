@@ -1,7 +1,7 @@
 {
     "parent": "block/door_bottom",
     "textures": {
-        "bottom": "aesthetics:block/argonite_door_lower",
-        "top": "aesthetics:block/argonite_door_upper"
+        "bottom": "netherrocks:block/argonite_door_lower",
+        "top": "netherrocks:block/argonite_door_upper"
     }
 }

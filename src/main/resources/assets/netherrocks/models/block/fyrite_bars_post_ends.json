@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/fyrite_bars",
-        "edge": "aesthetics:block/fyrite_bars"
+        "particle": "netherrocks:block/fyrite_bars",
+        "edge": "netherrocks:block/fyrite_bars"
     },
     "elements": [
         {   "from": [ 7, 0.001, 7 ],

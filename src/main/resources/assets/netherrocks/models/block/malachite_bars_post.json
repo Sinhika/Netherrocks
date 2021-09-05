@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/malachite_bars",
-        "bars": "aesthetics:block/malachite_bars"
+        "particle": "netherrocks:block/malachite_bars",
+        "bars": "netherrocks:block/malachite_bars"
     },
     "elements": [
         {   "from": [ 8, 0, 7 ],

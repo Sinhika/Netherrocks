@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/ashstone_bars",
-        "bars": "aesthetics:block/ashstone_bars"
+        "particle": "netherrocks:block/ashstone_bars",
+        "bars": "netherrocks:block/ashstone_bars"
     },
     "elements": [
         {   "from": [ 8, 0, 7 ],

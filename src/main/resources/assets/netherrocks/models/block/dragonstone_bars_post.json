@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "aesthetics:block/dragonstone_bars",
-        "bars": "aesthetics:block/dragonstone_bars"
+        "particle": "netherrocks:block/dragonstone_bars",
+        "bars": "netherrocks:block/dragonstone_bars"
     },
     "elements": [
         {   "from": [ 8, 0, 7 ],

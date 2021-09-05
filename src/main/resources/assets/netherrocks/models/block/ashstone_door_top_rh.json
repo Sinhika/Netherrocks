@@ -1,7 +1,7 @@
 {
     "parent": "block/door_top_rh",
     "textures": {
-        "bottom": "aesthetics:block/ashstone_door_lower",
-        "top": "aesthetics:block/ashstone_door_upper"
+        "bottom": "netherrocks:block/ashstone_door_lower",
+        "top": "netherrocks:block/ashstone_door_upper"
     }
 }

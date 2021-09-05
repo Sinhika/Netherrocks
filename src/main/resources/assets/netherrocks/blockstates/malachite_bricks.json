@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "aesthetics:block/malachite_bricks" }
+		"": { "model": "netherrocks:block/malachite_bricks" }
 	}
 }

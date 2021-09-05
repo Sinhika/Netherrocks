@@ -1,8 +1,8 @@
 {
     "parent": "block/inner_stairs",
     "textures": {
-        "bottom": "aesthetics:block/dragonstone_bricks",
-        "top": "aesthetics:block/dragonstone_bricks",
-        "side": "aesthetics:block/dragonstone_bricks"
+        "bottom": "netherrocks:block/dragonstone_bricks",
+        "top": "netherrocks:block/dragonstone_bricks",
+        "side": "netherrocks:block/dragonstone_bricks"
     }
 }

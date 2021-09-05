@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "aesthetics:block/malachite_bricks"
+		"all": "netherrocks:block/malachite_bricks"
 	}
 }
