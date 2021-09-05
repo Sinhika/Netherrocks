@@ -10,7 +10,9 @@ Forge mods. I hope I did a good job with it.
 
 TO DO
 -----
-* [1.17.1] add missing raw metal textures.
+* Add language entries for brick slabs.
+* Investigate doors, they aren't behaving correctly for metal doors.
+* <s>[1.17.1] add missing raw metal textures.</s>
 * <s>[1.17.1] add datagen recipes for raw_metal_blocks & smelting/blasting raw_metal.</s>
 * <s>[1.17.1] add datagen storage block tags for raw_metal blocks.</s>
 * update/move wiki 
