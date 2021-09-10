@@ -18,7 +18,9 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:nether_furnace"}
+      			{ "items" : [ 
+      				"netherrocks:nether_furnace", "netherrocks:nether_smoker", 
+      				"netherrocks:nether_blast_furnace" ]}
       			]
       		}
     	}

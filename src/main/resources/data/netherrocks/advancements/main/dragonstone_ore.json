@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:dragonstone_ore"}
+      			{"items" : ["netherrocks:dragonstone_ore","netherrocks:dragonstone_gem"]}
       			]
       		}
     	}

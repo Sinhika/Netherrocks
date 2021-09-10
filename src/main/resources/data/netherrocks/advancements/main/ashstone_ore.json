@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:ashstone_ore"}
+      			{"items" : ["netherrocks:ashstone_ore","netherrocks:ashstone_gem"]}
       			]
       		}
     	}

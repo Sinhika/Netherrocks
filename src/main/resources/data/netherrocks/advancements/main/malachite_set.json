@@ -18,7 +18,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_chestplate"}
+      			{"items" : ["netherrocks:malachite_chestplate"]}
       			]
       		}
     	},
@@ -26,7 +26,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_leggings"}
+      			{"items" : ["netherrocks:malachite_leggings"]}
       			]
       		}
     	},
@@ -34,7 +34,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_helmet"}
+      			{"items" : ["netherrocks:malachite_helmet"]}
       			]
       		}
     	},
@@ -42,7 +42,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_boots"}
+      			{"items" : ["netherrocks:malachite_boots"]}
       			]
       		}
     	}

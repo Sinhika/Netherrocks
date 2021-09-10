@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:blasting",
-	"ingredient": {
-		"item": "netherrocks:dragonstone_ore"
-	},
-	"result": "netherrocks:dragonstone_gem",
-	"experience": 1.0,
-	"cookingtime": 100
-}

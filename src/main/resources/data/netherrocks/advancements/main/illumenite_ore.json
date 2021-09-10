@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:illumenite_ore"}
+      			{"items" : ["netherrocks:illumenite_ore", "netherrocks:raw_illumenite"]}
       			]
       		}
     	}

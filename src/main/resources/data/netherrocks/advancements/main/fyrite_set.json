@@ -18,7 +18,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_chestplate"}
+      			{"items" : ["netherrocks:fyrite_chestplate"]}
       			]
       		}
     	},
@@ -26,7 +26,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_leggings"}
+      			{"items" : ["netherrocks:fyrite_leggings"]}
       			]
       		}
     	},
@@ -34,7 +34,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_helmet"}
+      			{"items" : ["netherrocks:fyrite_helmet"]}
       			]
       		}
     	},
@@ -42,7 +42,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_boots"}
+      			{"items" : ["netherrocks:fyrite_boots"]}
       			]
       		}
     	}

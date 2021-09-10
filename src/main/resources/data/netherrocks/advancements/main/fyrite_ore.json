@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:fyrite_ore"}
+      			{"items" : ["netherrocks:fyrite_ore","netherrocks:raw_fyrite"]}
       			]
       		}
     	}
