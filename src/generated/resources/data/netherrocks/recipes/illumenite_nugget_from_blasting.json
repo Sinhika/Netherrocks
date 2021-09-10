@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "netherrocks:illumenite_boots"
+    },
+    {
+      "item": "netherrocks:illumenite_sword"
+    },
+    {
+      "item": "netherrocks:illumenite_chestplate"
+    },
+    {
+      "item": "netherrocks:illumenite_helmet"
+    },
+    {
+      "item": "netherrocks:illumenite_leggings"
+    }
+  ],
+  "result": "netherrocks:illumenite_nugget",
+  "experience": 0.3,
+  "cookingtime": 100
+}

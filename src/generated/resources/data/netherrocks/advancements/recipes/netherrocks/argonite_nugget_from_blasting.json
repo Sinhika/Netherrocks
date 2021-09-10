@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_nugget_from_blasting"
+    ]
+  },
+  "criteria": {
+    "argonite_nugget_from_blasting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:argonite_axe"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:argonite_nugget_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "argonite_nugget_from_blasting",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherrocks:dragonstone_block"
+    }
+  ],
+  "result": {
+    "item": "netherrocks:dragonstone_gem",
+    "count": 9
+  }
+}
