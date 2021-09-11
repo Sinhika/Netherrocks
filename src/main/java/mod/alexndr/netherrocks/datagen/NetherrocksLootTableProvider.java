@@ -32,7 +32,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.raw_argonite_block.get());
         standardDropTable(ModBlocks.argonite_bricks.get());
         standardDropTable(ModBlocks.argonite_brick_stairs.get());
-        standardDropTable(ModBlocks.argonite_brick_slab.get());
+        slabDropTable(ModBlocks.argonite_brick_slab.get());
         standardDropTable(ModBlocks.argonite_bars.get());
         standardDropTable(ModBlocks.argonite_door.get());
         specialDropTable(ModBlocks.argonite_ore.get(), ModItems.raw_argonite.get());
@@ -40,7 +40,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.ashstone_block.get());
         standardDropTable(ModBlocks.ashstone_bricks.get());
         standardDropTable(ModBlocks.ashstone_brick_stairs.get());
-        standardDropTable(ModBlocks.ashstone_brick_slab.get());
+        slabDropTable(ModBlocks.ashstone_brick_slab.get());
         standardDropTable(ModBlocks.ashstone_bars.get());
         standardDropTable(ModBlocks.ashstone_door.get());
         specialDropTable(ModBlocks.ashstone_ore.get(), ModItems.ashstone_gem.get());
@@ -48,7 +48,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.dragonstone_block.get());
         standardDropTable(ModBlocks.dragonstone_bricks.get());
         standardDropTable(ModBlocks.dragonstone_brick_stairs.get());
-        standardDropTable(ModBlocks.dragonstone_brick_slab.get());
+        slabDropTable(ModBlocks.dragonstone_brick_slab.get());
         standardDropTable(ModBlocks.dragonstone_bars.get());
         standardDropTable(ModBlocks.dragonstone_door.get());
         specialDropTable(ModBlocks.dragonstone_ore.get(), ModItems.dragonstone_gem.get());
@@ -57,7 +57,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.raw_fyrite_block.get());
         standardDropTable(ModBlocks.fyrite_bricks.get());
         standardDropTable(ModBlocks.fyrite_brick_stairs.get());
-        standardDropTable(ModBlocks.fyrite_brick_slab.get());
+        slabDropTable(ModBlocks.fyrite_brick_slab.get());
         standardDropTable(ModBlocks.fyrite_bars.get());
         standardDropTable(ModBlocks.fyrite_door.get());
         specialDropTable(ModBlocks.fyrite_ore.get(), ModItems.raw_fyrite.get());
@@ -66,7 +66,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.raw_illumenite_block.get());
         standardDropTable(ModBlocks.illumenite_bricks.get());
         standardDropTable(ModBlocks.illumenite_brick_stairs.get());
-        standardDropTable(ModBlocks.illumenite_brick_slab.get());
+        slabDropTable(ModBlocks.illumenite_brick_slab.get());
         standardDropTable(ModBlocks.illumenite_bars.get());
         standardDropTable(ModBlocks.illumenite_door.get());
         specialDropTable(ModBlocks.illumenite_ore.get(), ModItems.raw_illumenite.get());
@@ -75,7 +75,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         standardDropTable(ModBlocks.raw_malachite_block.get());
         standardDropTable(ModBlocks.malachite_bricks.get());
         standardDropTable(ModBlocks.malachite_brick_stairs.get());
-        standardDropTable(ModBlocks.malachite_brick_slab.get());
+        slabDropTable(ModBlocks.malachite_brick_slab.get());
         standardDropTable(ModBlocks.malachite_bars.get());
         standardDropTable(ModBlocks.malachite_door.get());
         specialDropTable(ModBlocks.malachite_ore.get(), ModItems.raw_malachite.get());
