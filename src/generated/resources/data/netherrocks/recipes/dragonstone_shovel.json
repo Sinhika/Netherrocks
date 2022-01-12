@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:dragonstone_gem"
+    },
+    "T": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "netherrocks:dragonstone_shovel"
+  }
+}

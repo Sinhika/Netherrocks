@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "netherrocks:block/ashstone_door_lower",
+        "top": "netherrocks:block/ashstone_door_upper"
+    }
+}

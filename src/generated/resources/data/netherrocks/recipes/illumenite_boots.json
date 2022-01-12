@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:illumenite_ingot"
+    }
+  },
+  "result": {
+    "item": "netherrocks:illumenite_boots"
+  }
+}

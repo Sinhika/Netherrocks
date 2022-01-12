@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "netherrocks:block/raw_malachite_block"
+        }
+    }
+}

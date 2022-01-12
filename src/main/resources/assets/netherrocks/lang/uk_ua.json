@@ -1,0 +1,29 @@
+{
+    "block.netherrocks.fyrite_bricks": "Фейритова цегла Bricks",
+    "block.netherrocks.malachite_bricks": "Малахітова цегла",
+    "block.netherrocks.ashstone_bricks": "Вулканічна цегла",
+    "block.netherrocks.illumenite_bricks": "Ілюменітова цегла",
+    "block.netherrocks.dragonstone_bricks": "Драконітова цегла",
+    "block.netherrocks.argonite_bricks": "Аргонітова цегла",
+
+    "block.netherrocks.fyrite_brick_stairs": "Сходи з фейритової цегли",
+    "block.netherrocks.malachite_brick_stairs": "Сходи з малахітової цегли",
+    "block.netherrocks.ashstone_brick_stairs": "Сходи з вулканічної цегли",
+    "block.netherrocks.illumenite_brick_stairs": "Сходи з ілюменітової цегли",
+    "block.netherrocks.dragonstone_brick_stairs": "Сходи з драконіту цегли",
+    "block.netherrocks.argonite_brick_stairs": "Сходи з аргонітової цегли",
+
+    "block.netherrocks.fyrite_bars": "Фейритові грати",
+    "block.netherrocks.malachite_bars": "Малахітові грати",
+    "block.netherrocks.ashstone_bars": "вулканічні грати",
+    "block.netherrocks.illumenite_bars": "Ілюменітові грати",
+    "block.netherrocks.dragonstone_bars": "Драконітові грати",
+    "block.netherrocks.argonite_bars": "Аргонітові грати",
+
+    "block.netherrocks.argonite_door": "Аргонітові двері",
+    "block.netherrocks.ashstone_door": "вулканічні двері",
+    "block.netherrocks.dragonstone_door": "Драконітові двері",
+    "block.netherrocks.fyrite_door": "Фейрітові двері",
+    "block.netherrocks.illumenite_door": "Ілюменітові двері",
+    "block.netherrocks.malachite_door": "Малахітові двері"
+}

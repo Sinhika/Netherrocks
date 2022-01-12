@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "netherrocks:fyrite_ore"
-	},
-	"result": "netherrocks:fyrite_ingot",
-	"experience": 0.8,
-	"cookingtime": 200
-}

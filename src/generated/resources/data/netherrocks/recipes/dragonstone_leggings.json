@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:dragonstone_gem"
+    }
+  },
+  "result": {
+    "item": "netherrocks:dragonstone_leggings"
+  }
+}

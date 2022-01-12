@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "netherrocks:block/fyrite_bricks",
+        "top": "netherrocks:block/fyrite_bricks",
+        "side": "netherrocks:block/fyrite_bricks"
+    }
+}

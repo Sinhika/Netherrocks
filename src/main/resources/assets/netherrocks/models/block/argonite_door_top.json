@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "netherrocks:block/argonite_door_lower",
+        "top": "netherrocks:block/argonite_door_upper"
+    }
+}

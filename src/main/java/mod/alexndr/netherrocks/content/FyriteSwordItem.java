@@ -1,17 +1,17 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.item.SwordItem;
-import net.minecraft.util.ActionResultType;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
 
 public class FyriteSwordItem extends SwordItem
 {
 
-    public FyriteSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+    public FyriteSwordItem(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
     }
@@ -24,9 +24,9 @@ public class FyriteSwordItem extends SwordItem
     }
 
     @Override
-    public ActionResultType useOn(ItemUseContext context)
+    public InteractionResult useOn(UseOnContext context)
     {
-        ActionResultType result = super.useOn(context);
+        InteractionResult result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
     } // end onItemUse()

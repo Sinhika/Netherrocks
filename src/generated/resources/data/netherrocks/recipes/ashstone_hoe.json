@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS ",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:ashstone_gem"
+    },
+    "T": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "netherrocks:ashstone_hoe"
+  }
+}

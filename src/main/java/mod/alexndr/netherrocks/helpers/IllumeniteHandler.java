@@ -2,10 +2,10 @@ package mod.alexndr.netherrocks.helpers;
 
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 
 public class IllumeniteHandler implements IWeaponEffectHelper
 {
@@ -24,9 +24,9 @@ public class IllumeniteHandler implements IWeaponEffectHelper
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-        attacker.addEffect(new EffectInstance(Effects.NIGHT_VISION, NetherrocksConfig.illumeniteNVTime));
-        target.addEffect(new EffectInstance(Effects.BLINDNESS, NetherrocksConfig.illumeniteBlindnessTime));
-        target.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 
+        attacker.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, NetherrocksConfig.illumeniteNVTime));
+        target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, NetherrocksConfig.illumeniteBlindnessTime));
+        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 
                                 NetherrocksConfig.illumeniteSlowTime, 
                                 NetherrocksConfig.illumeniteSlowLevel));
         return true;

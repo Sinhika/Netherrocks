@@ -1,15 +1,15 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.helpers.MalachiteHandler;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 
 public class MalachiteSwordItem extends SwordItem
 {
 
-    public MalachiteSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn)
+    public MalachiteSwordItem(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn)
     {
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }

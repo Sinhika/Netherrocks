@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherrocks:ashstone_block"
+    }
+  ],
+  "result": {
+    "item": "netherrocks:ashstone_gem",
+    "count": 9
+  }
+}

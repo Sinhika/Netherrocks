@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:malachite_ore"}
+      			{"items" : ["netherrocks:malachite_ore","netherrocks:raw_malachite"] }
       			]
       		}
     	}

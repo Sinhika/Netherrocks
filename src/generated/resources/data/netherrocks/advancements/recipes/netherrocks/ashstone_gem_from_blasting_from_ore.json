@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:ashstone_gem_from_blasting_from_ore"
+    ]
+  },
+  "criteria": {
+    "ashstone_gem_from_blasting_from_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:ashstone_ore"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:ashstone_gem_from_blasting_from_ore"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ashstone_gem_from_blasting_from_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

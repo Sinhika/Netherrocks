@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "aesthetics_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "SSS",
+          "SSS"
+        ],
+        "key": {
+          "S": {
+            "item": "netherrocks:ashstone_gem"
+          }
+        },
+        "result": {
+          "item": "netherrocks:ashstone_bars",
+          "count": 16
+        }
+      }
+    }
+  ]
+}

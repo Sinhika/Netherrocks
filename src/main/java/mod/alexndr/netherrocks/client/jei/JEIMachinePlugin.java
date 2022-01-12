@@ -3,11 +3,24 @@ package mod.alexndr.netherrocks.client.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaRecipeCategoryUid;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.helpers.IJeiHelpers;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IRecipeTransferRegistration;
+import mezz.jei.api.runtime.IIngredientManager;
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
+import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
+import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
+import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
+import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
+import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 @JeiPlugin
 public class JEIMachinePlugin implements IModPlugin 
@@ -23,14 +36,57 @@ public class JEIMachinePlugin implements IModPlugin
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry)
     {
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_furnace.get()), 
-                VanillaRecipeCategoryUid.FURNACE);
+                VanillaRecipeCategoryUid.FURNACE, NetherFuelCategory.UID);
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_blast_furnace.get()), 
-                VanillaRecipeCategoryUid.BLASTING);
+                VanillaRecipeCategoryUid.BLASTING, NetherFuelCategory.UID);
         registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_smoker.get()), 
-                VanillaRecipeCategoryUid.SMOKING);
+                VanillaRecipeCategoryUid.SMOKING, NetherFuelCategory.UID);
     }
 
+    
     @Override
+	public void registerCategories(IRecipeCategoryRegistration registration)
+	{
+		IJeiHelpers jeiHelpers = registration.getJeiHelpers();
+		IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
+		
+    	registration.addRecipeCategories(new NetherFuelCategory(guiHelper));
+	}
+
+
+	@Override
+	public void registerRecipes(IRecipeRegistration registration)
+	{
+		IJeiHelpers jeiHelpers = registration.getJeiHelpers();
+		IIngredientManager ingredientManager = registration.getIngredientManager();
+		registration.addRecipes(NetherFuelRecipeMaker.getFuelRecipes(ingredientManager, jeiHelpers), 
+				NetherFuelCategory.UID);
+	}
+
+
+	@Override
+	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration)
+	{
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, VanillaRecipeCategoryUid.FURNACE, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, VanillaRecipeCategoryUid.SMOKING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, VanillaRecipeCategoryUid.BLASTING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
+	}
+
+	@Override
+	public void registerGuiHandlers(IGuiHandlerRegistration registration)
+	{
+		registration.addRecipeClickArea(NetherFurnaceScreen.class, 78, 32, 28, 23, VanillaRecipeCategoryUid.FURNACE,
+				NetherFuelCategory.UID);
+		registration.addRecipeClickArea(NetherSmokerScreen.class, 78, 32, 28, 23, VanillaRecipeCategoryUid.SMOKING,
+				NetherFuelCategory.UID);
+		registration.addRecipeClickArea(NetherBlastFurnaceScreen.class, 78, 32, 28, 23, 
+				VanillaRecipeCategoryUid.BLASTING, NetherFuelCategory.UID);
+	}
+
+	@Override
     public ResourceLocation getPluginUid()
     {
         return ID;

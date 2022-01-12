@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "netherrocks:ashstone_ore"
+  },
+  "result": "netherrocks:ashstone_gem",
+  "experience": 0.8,
+  "cookingtime": 200
+}

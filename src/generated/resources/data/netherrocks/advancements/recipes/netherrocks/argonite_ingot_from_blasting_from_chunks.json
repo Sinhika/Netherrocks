@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "netherrocks:crushed_argonite_ore"
+            "items": [
+              "netherrocks:crushed_argonite_ore"
+            ]
           }
         ]
       }

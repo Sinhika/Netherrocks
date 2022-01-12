@@ -4,9 +4,9 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
-import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -23,18 +23,18 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public final class ModContainers
 {
-    public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = 
+    public static final DeferredRegister<MenuType<?>> CONTAINER_TYPES = 
             DeferredRegister.create(ForgeRegistries.CONTAINERS, Netherrocks.MODID);
     
-   public static RegistryObject<ContainerType<NetherFurnaceContainer>> NETHER_FURNACE =
+   public static RegistryObject<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 
                    () -> IForgeContainerType.create(NetherFurnaceContainer::new));
    
-   public static RegistryObject<ContainerType<NetherSmokerContainer>> NETHER_SMOKER =
+   public static RegistryObject<MenuType<NetherSmokerContainer>> NETHER_SMOKER =
            CONTAINER_TYPES.register("nether_smoker", 
                    () -> IForgeContainerType.create(NetherSmokerContainer::new));
    
-   public static RegistryObject<ContainerType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
+   public static RegistryObject<MenuType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
            CONTAINER_TYPES.register("nether_blast_furnace", 
                    () -> IForgeContainerType.create(NetherBlastFurnaceContainer::new));
    

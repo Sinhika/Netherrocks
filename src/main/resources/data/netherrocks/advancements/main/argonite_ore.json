@@ -23,7 +23,7 @@
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
-      			{"item" : "netherrocks:argonite_ore"}
+      			{"items" : ["netherrocks:argonite_ore","netherrocks:raw_argonite"] }
       			]
       		}
     	}

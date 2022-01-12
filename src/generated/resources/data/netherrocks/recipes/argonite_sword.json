@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " S ",
+    " T "
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:argonite_ingot"
+    },
+    "T": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "netherrocks:argonite_sword"
+  }
+}

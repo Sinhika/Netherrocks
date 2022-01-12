@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:raw_argonite"
+    }
+  },
+  "result": {
+    "item": "netherrocks:raw_argonite_block"
+  }
+}

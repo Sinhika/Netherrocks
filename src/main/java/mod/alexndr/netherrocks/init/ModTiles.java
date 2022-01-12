@@ -4,8 +4,8 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherSmokerTileEntity;
-import net.minecraft.tileentity.TileEntityType;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -22,23 +22,23 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public final class ModTiles
 {
-    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = 
-            DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Netherrocks.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITY_TYPES = 
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Netherrocks.MODID);
 
     // tile entity type
     // We don't have a datafixer for our TileEntities, so we pass null into build.
-    public static RegistryObject<TileEntityType<NetherFurnaceTileEntity>> NETHER_FURNACE =
+    public static RegistryObject<BlockEntityType<NetherFurnaceTileEntity>> NETHER_FURNACE =
             TILE_ENTITY_TYPES.register("nether_furnace", 
-                    () -> TileEntityType.Builder.of(NetherFurnaceTileEntity::new, 
+                    () -> BlockEntityType.Builder.of(NetherFurnaceTileEntity::new, 
                             ModBlocks.nether_furnace.get()).build(null));
 
-    public static RegistryObject<TileEntityType<NetherSmokerTileEntity>> NETHER_SMOKER =
+    public static RegistryObject<BlockEntityType<NetherSmokerTileEntity>> NETHER_SMOKER =
             TILE_ENTITY_TYPES.register("nether_smoker", 
-                    () -> TileEntityType.Builder.of(NetherSmokerTileEntity::new, 
+                    () -> BlockEntityType.Builder.of(NetherSmokerTileEntity::new, 
                             ModBlocks.nether_smoker.get()).build(null));
     
-    public static RegistryObject<TileEntityType<NetherBlastFurnaceTileEntity>> NETHER_BLAST_FURNACE =
+    public static RegistryObject<BlockEntityType<NetherBlastFurnaceTileEntity>> NETHER_BLAST_FURNACE =
             TILE_ENTITY_TYPES.register("nether_blast_furnace", 
-                    () -> TileEntityType.Builder.of(NetherBlastFurnaceTileEntity::new, 
+                    () -> BlockEntityType.Builder.of(NetherBlastFurnaceTileEntity::new, 
                             ModBlocks.nether_blast_furnace.get()).build(null));
 }  // end class ModTiles

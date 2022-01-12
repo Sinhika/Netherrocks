@@ -13,18 +13,19 @@ import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import mod.alexndr.simplecorelib.config.FlagCondition;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -73,7 +74,7 @@ public final class ModEventSubscriber
 	}  // end onRegisterItems()
 
 	@SubscribeEvent
-	public static void onModConfigEvent(final ModConfig.ModConfigEvent event)
+	public static void onModConfigEvent(final ModConfigEvent event)
 	{
 		final ModConfig config = event.getConfig();
 
@@ -94,7 +95,7 @@ public final class ModEventSubscriber
 
     @SubscribeEvent
     public static void onRegisterRecipeSerializers(
-            @Nonnull final RegistryEvent.Register<IRecipeSerializer<?>> event)
+            @Nonnull final RegistryEvent.Register<RecipeSerializer<?>> event)
     {
            CraftingHelper.register(new FlagCondition.Serializer(NetherrocksConfig.INSTANCE, 
                                                new ResourceLocation(Netherrocks.MODID, "flag")));

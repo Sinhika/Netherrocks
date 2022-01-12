@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_ingot_from_smelting_from_ore"
+    ]
+  },
+  "criteria": {
+    "argonite_ingot_from_smelting_from_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:argonite_ore"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "netherrocks:argonite_ingot_from_smelting_from_ore"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "argonite_ingot_from_smelting_from_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

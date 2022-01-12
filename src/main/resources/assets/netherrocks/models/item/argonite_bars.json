@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "netherrocks:block/argonite_bars"
+    }
+}

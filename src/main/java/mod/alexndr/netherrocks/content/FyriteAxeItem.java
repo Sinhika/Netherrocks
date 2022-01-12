@@ -1,28 +1,28 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class FyriteAxeItem extends AxeItem
 {
 
-    public FyriteAxeItem(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder)
+    public FyriteAxeItem(Tier tier, float attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
     }
 
     @Override
-    public ActionResultType useOn(ItemUseContext context)
+    public InteractionResult useOn(UseOnContext context)
     {
-        ActionResultType result = super.useOn(context);
+        InteractionResult result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
     }
@@ -35,7 +35,7 @@ public class FyriteAxeItem extends AxeItem
     }
 
     @Override
-    public boolean mineBlock(ItemStack stack, World worldIn, BlockState state, BlockPos pos,
+    public boolean mineBlock(ItemStack stack, Level worldIn, BlockState state, BlockPos pos,
             LivingEntity entityLiving)
     {
         FyriteHandler.INSTANCE.afterBlockSmelt(worldIn, pos, true);

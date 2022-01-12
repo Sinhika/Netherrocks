@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "aesthetics_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "netherrocks:ashstone_bricks"
+        },
+        "result": "netherrocks:ashstone_brick_slab",
+        "count": 2
+      }
+    }
+  ]
+}

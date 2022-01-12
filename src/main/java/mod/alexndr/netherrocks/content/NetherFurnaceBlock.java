@@ -1,25 +1,20 @@
 package mod.alexndr.netherrocks.content;
 
-import javax.annotation.Nullable;
-
-import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceBlock;
 import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.inventory.InventoryHelper;
+import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceBlock;
+import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.network.NetworkHooks;
+import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
+public class NetherFurnaceBlock extends VeryAbstractFurnaceBlock
 {
 
    public NetherFurnaceBlock(final Properties builder)
@@ -27,13 +22,6 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
         super(builder);
     } // end ctor
 
-
-   @Nullable
-   @Override
-   public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
-       // Always use TileEntityType#create to allow registry overrides to work.
-       return ModTiles.NETHER_FURNACE.get().create();
-   }
 
     /**
     * Called on the logical server when a BlockState with a TileEntity is replaced by another BlockState.
@@ -43,16 +31,16 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
     * Implementing/overriding is fine.
     */
    @Override
-   public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
+   public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
    {
         if (oldState.getBlock() != newState.getBlock())
         {
-            TileEntity tileEntity = worldIn.getBlockEntity(pos);
+            BlockEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof NetherFurnaceTileEntity)
             {
                 final ItemStackHandler inventory = ((NetherFurnaceTileEntity) tileEntity).inventory;
                 for (int slot = 0; slot < inventory.getSlots(); ++slot)
-                    InventoryHelper.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
+                    Containers.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(),
                             inventory.getStackInSlot(slot));
             }
         }
@@ -60,26 +48,28 @@ public class NetherFurnaceBlock extends AbstractNetherFurnaceBlock
         super.onRemove(oldState, worldIn, pos, newState, isMoving);
     }
 
-   /**
-    * Called when a player right clicks our block.
-    * We use this method to open our gui.
-    *
-    * @deprecated Call via {@link BlockState#onBlockActivated(World, PlayerEntity, Hand, BlockRayTraceResult)} whenever possible.
-    * Implementing/overriding is fine.
-    */
-   @Override
-   public ActionResultType use(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit) 
-   {
-       if (!worldIn.isClientSide) {
-           final TileEntity tileEntity = worldIn.getBlockEntity(pos);
-           if (tileEntity instanceof NetherFurnaceTileEntity) 
-           {
-               NetworkHooks.openGui((ServerPlayerEntity) player, (NetherFurnaceTileEntity) tileEntity, pos);
-               player.awardStat(Stats.INTERACT_WITH_FURNACE);
-           }
-       }
-       return ActionResultType.SUCCESS;
-   }
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState bstate, BlockEntityType<T> entityType) 
+	{
+		return createFurnaceTicker(level, entityType, ModTiles.NETHER_FURNACE.get());
+	}
 
+
+	@Override
+	public BlockEntity newBlockEntity(BlockPos bpos, BlockState bstate) {
+		return new NetherFurnaceTileEntity(bpos, bstate);
+	}
+
+
+	@Override
+	protected void openContainer(Level level, BlockPos bpos, Player player) 
+	{
+		BlockEntity blockentity = level.getBlockEntity(bpos);
+		if (blockentity instanceof NetherFurnaceTileEntity)
+		{
+			player.openMenu((MenuProvider) blockentity);
+			player.awardStat(Stats.INTERACT_WITH_FURNACE);
+		}
+	}
    
 }  // end class NetherFurnaceBlock
