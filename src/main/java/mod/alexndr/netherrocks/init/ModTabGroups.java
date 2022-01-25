@@ -1,11 +1,12 @@
 package mod.alexndr.netherrocks.init;
 
+import java.util.function.Supplier;
+
+import javax.annotation.Nonnull;
+
 import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-
-import javax.annotation.Nonnull;
-import java.util.function.Supplier;
 
 public final class ModTabGroups
 {

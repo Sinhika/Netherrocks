@@ -90,7 +90,7 @@ public class ModBlockTags extends MiningBlockTags
 
     } // end registerStorageBlockTags()
     
-    private void registerMiningTags()
+    protected void registerMiningTags()
     {
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.
     	registerMineableTags( List.of(ModBlocks.argonite_block.get(), ModBlocks.argonite_ore.get(), 

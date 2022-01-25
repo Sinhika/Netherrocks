@@ -21,38 +21,41 @@ public final class ConfigHelper
 
 	    NetherrocksConfig.enableArgoniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
         NetherrocksConfig.argonite_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
-        		ConfigHolder.SERVER.serverArgoniteVeinSize.get(), ConfigHolder.SERVER.serverArgoniteVeinCount.get(),
+        		ConfigHolder.SERVER.serverArgoniteVeinSize.get(), ConfigHolder.SERVER.serverArgoniteVeinCount.get(), true,
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverArgoniteBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverArgoniteMaxHeight.get()));
                 
         
 		NetherrocksConfig.enableAshstoneOre = ConfigHolder.SERVER.serverEnableAshstoneOre.get();
         NetherrocksConfig.ashstone_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
-        		ConfigHolder.SERVER.serverAshstoneVeinSize.get(), ConfigHolder.SERVER.serverAshstoneVeinCount.get(),
+        		ConfigHolder.SERVER.serverAshstoneVeinSize.get(), ConfigHolder.SERVER.serverAshstoneVeinCount.get(), true,
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverAshstoneBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverAshstoneMaxHeight.get()));
 
 		NetherrocksConfig.enableDragonstoneOre = ConfigHolder.SERVER.serverEnableDragonstoneOre.get();
         NetherrocksConfig.dragonstone_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE,
         		ConfigHolder.SERVER.serverDragonstoneVeinSize.get(), ConfigHolder.SERVER.serverDragonstoneVeinCount.get(),
+        		true,
            		VerticalAnchor.absolute(ConfigHolder.SERVER.serverDragonstoneBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverDragonstoneMaxHeight.get()));
         
 		NetherrocksConfig.enableFyriteOre = ConfigHolder.SERVER.serverEnableFyriteOre.get();
         NetherrocksConfig.fyrite_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
-                ConfigHolder.SERVER.serverFyriteVeinSize.get(), ConfigHolder.SERVER.serverFyriteVeinCount.get(),
+                ConfigHolder.SERVER.serverFyriteVeinSize.get(), ConfigHolder.SERVER.serverFyriteVeinCount.get(), true,
            		VerticalAnchor.absolute(ConfigHolder.SERVER.serverFyriteBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverFyriteMaxHeight.get()));
                 
         NetherrocksConfig.enableIllumeniteOre = ConfigHolder.SERVER.serverEnableIllumeniteOre.get();
         NetherrocksConfig.illumenite_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
                 ConfigHolder.SERVER.serverIllumeniteVeinSize.get(), ConfigHolder.SERVER.serverIllumeniteVeinCount.get(),
+                true, 
            		VerticalAnchor.absolute(ConfigHolder.SERVER.serverIllumeniteBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverIllumeniteMaxHeight.get()));
 
         NetherrocksConfig.enableMalachiteOre = ConfigHolder.SERVER.serverEnableMalachiteOre.get();
         NetherrocksConfig.malachite_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
                 ConfigHolder.SERVER.serverMalachiteVeinSize.get(),ConfigHolder.SERVER.serverMalachiteVeinCount.get(),
+                true, 
            		VerticalAnchor.absolute(ConfigHolder.SERVER.serverMalachiteBottomHeight.get()),
         		VerticalAnchor.absolute(ConfigHolder.SERVER.serverMalachiteMaxHeight.get()));
         
