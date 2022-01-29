@@ -78,17 +78,24 @@ public class OreGeneration
         }
         if (NetherrocksConfig.enableAshstoneOre) 
         {
-//            ORE_ASHSTONE = OreGenUtils.buildNetherRockFeature(ModBlocks.ashstone_ore.get().defaultBlockState(),
-//                    NetherrocksConfig.ashstone_cfg);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "ashstone_vein", ORE_ASHSTONE);
+        	ORE_ASHSTONE = FeatureUtils.register("ore_ashstone", OreGenUtils.ConfigureOreFeature(ORE_ASHSTONE_TARGET_LIST, 
+            		NetherrocksConfig.ashstone_cfg.getVein_size(), 0.0F));
+        	ASHSTONE_VEIN = PlacementUtils.register("argonite_vein", 
+            							OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.ashstone_cfg, ORE_ASHSTONE));												
         }
         if (NetherrocksConfig.enableDragonstoneOre) 
         {
-//            ORE_DRAGONSTONE = OreGenUtils.buildTargettedOreFeature(ORE_DRAGONSTONE_TARGET_LIST, NetherrocksConfig.dragonstone_cfg);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "dragonstone_vein", ORE_DRAGONSTONE);
+        	ORE_DRAGONSTONE = FeatureUtils.register("ore_dragonstone", OreGenUtils.ConfigureOreFeature(ORE_DRAGONSTONE_TARGET_LIST, 
+            		NetherrocksConfig.dragonstone_cfg.getVein_size(), 0.0F));
+        	DRAGONSTONE_VEIN = PlacementUtils.register("dragonstone_vein", 
+            							OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.dragonstone_cfg, ORE_DRAGONSTONE));												
         }
         if (NetherrocksConfig.enableFyriteOre) 
         {
+            ORE_FYRITE = FeatureUtils.register("ore_fyrite", OreGenUtils.ConfigureOreFeature(ORE_FYRITE_TARGET_LIST, 
+            		NetherrocksConfig.argonite_cfg.getVein_size(), 0.0F));
+            FYRITE_VEIN = PlacementUtils.register("argonite_vein", 
+            							OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.argonite_cfg, ORE_FYRITE));												
 //            ORE_FYRITE = OreGenUtils.buildNetherOreFeature(ModBlocks.fyrite_ore.get().defaultBlockState(),
 //                    NetherrocksConfig.fyrite_cfg);
 //            ORE_FYRITE_ROCK = OreGenUtils.buildTargettedOreFeature(ORE_FYRITE_TARGET_LIST, NetherrocksConfig.fyrite_cfg);
