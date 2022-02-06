@@ -169,7 +169,7 @@ final class ServerConfig
         serverIllumeniteVeinSize = builder
                 .comment("Illumenite ore vein size")
                 .translation(Netherrocks.MODID + ".config.serverIllumeniteVeinSize")
-                .defineInRange("IllumeniteVeinSize", 15, 1, Integer.MAX_VALUE);
+                .defineInRange("IllumeniteVeinSize", 10, 1, Integer.MAX_VALUE);
         serverIllumeniteVeinCount = builder
                 .comment("Illumenite ore vein count per chunk")
                 .translation(Netherrocks.MODID + ".config.serverIllumeniteVeinCount")

@@ -4,13 +4,20 @@ import java.util.List;
 
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.simplecorelib.world.OreGenUtils;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.util.valueproviders.BiasedToBottomInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -50,8 +57,7 @@ public class OreGeneration
     public static ConfiguredFeature<OreConfiguration, ?> ORE_DRAGONSTONE;
     public static ConfiguredFeature<OreConfiguration, ?> ORE_FYRITE;
     public static ConfiguredFeature<OreConfiguration, ?> ORE_FYRITE_ROCK;
-    public static ConfiguredFeature<OreConfiguration, ?> ORE_ILLUMENITE;
-    public static ConfiguredFeature<OreConfiguration, ?> ORE_ILLUMENITE_EXTRA;
+    public static ConfiguredFeature<NoneFeatureConfiguration, ?>  ORE_ILLUMENITE;
     public static ConfiguredFeature<OreConfiguration, ?> ORE_MALACHITE;
 
     public static PlacedFeature ARGONITE_VEIN;
@@ -60,6 +66,7 @@ public class OreGeneration
     public static PlacedFeature FYRITE_VEIN;
     public static PlacedFeature FYRITE_IN_MAGMA;
     public static PlacedFeature ILLUMENITE_CLUSTER;
+    public static PlacedFeature ILLUMENITE_CLUSTER_EXTRA;
     public static PlacedFeature MALACHITE_VEIN;
     
     /**
@@ -93,34 +100,34 @@ public class OreGeneration
         if (NetherrocksConfig.enableFyriteOre) 
         {
             ORE_FYRITE = FeatureUtils.register("ore_fyrite", OreGenUtils.ConfigureOreFeature(ORE_FYRITE_TARGET_LIST, 
-            		NetherrocksConfig.argonite_cfg.getVein_size(), 0.0F));
-            FYRITE_VEIN = PlacementUtils.register("argonite_vein", 
-            							OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.argonite_cfg, ORE_FYRITE));												
-//            ORE_FYRITE = OreGenUtils.buildNetherOreFeature(ModBlocks.fyrite_ore.get().defaultBlockState(),
-//                    NetherrocksConfig.fyrite_cfg);
-//            ORE_FYRITE_ROCK = OreGenUtils.buildTargettedOreFeature(ORE_FYRITE_TARGET_LIST, NetherrocksConfig.fyrite_cfg);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "fyrite_vein", ORE_FYRITE);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "fyrite_in_magma", ORE_FYRITE_ROCK);
+            		NetherrocksConfig.fyrite_cfg.getVein_size(), 0.0F));
+            FYRITE_VEIN = PlacementUtils.register("fyrite_vein", 
+            							OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.fyrite_cfg, ORE_FYRITE));		
+            ORE_FYRITE_ROCK = FeatureUtils.register("ore_fyrite_rock", OreGenUtils.ConfigureOreFeature(ORE_FYRITE_TARGET_LIST2,
+            		NetherrocksConfig.fyrite_cfg.getVein_size(), 0.0F));
+            FYRITE_IN_MAGMA  = PlacementUtils.register("fyrite_in_magma", 
+					OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.fyrite_cfg, ORE_FYRITE_ROCK));	
         }
         // Illumenite ore is a special snowflake that generates in glowstone blobs, so it has
         // to mimic glowstone generation. A side-effect is that more glowstone generates as well.
         if (NetherrocksConfig.enableIllumeniteOre) 
         {
-//            ORE_ILLUMENITE = ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
-//                   .range(Features.Decorators.FULL_RANGE).squared().count(NetherrocksConfig.illumenite_cfg.getVein_count());
-//            
-//            ORE_ILLUMENITE_EXTRA = ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE)
-//            		.range(Features.Decorators.RANGE_4_4).squared().count(BiasedToBottomInt.of(0, 9));
-//            
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster", ORE_ILLUMENITE);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "illumenite_cluster_extra", ORE_ILLUMENITE_EXTRA);
-            
+        	ORE_ILLUMENITE = FeatureUtils.register("ore_illumenite", 
+        			ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE));
+        	ILLUMENITE_CLUSTER =  PlacementUtils.register("illumenite_cluster", 
+        			ORE_ILLUMENITE.placed(CountPlacement.of(NetherrocksConfig.illumenite_cfg.getVein_size()), 
+        					InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));		
+        	ILLUMENITE_CLUSTER_EXTRA =  PlacementUtils.register("illumenite_cluster_extra", 
+        			ORE_ILLUMENITE.placed(
+        					CountPlacement.of(BiasedToBottomInt.of(0,NetherrocksConfig.illumenite_cfg.getVein_count())),
+        					InSquarePlacement.spread(), PlacementUtils.RANGE_4_4, BiomeFilter.biome()));
         }
         if (NetherrocksConfig.enableMalachiteOre) 
         {
-//            ORE_MALACHITE = OreGenUtils.buildNetherRockFeature(ModBlocks.malachite_ore.get().defaultBlockState(),
-//                    NetherrocksConfig.malachite_cfg);
-//            OreGenUtils.registerFeature(Netherrocks.MODID, "malachite_vein", ORE_MALACHITE);
+        	ORE_MALACHITE = FeatureUtils.register("ore_malachite", OreGenUtils.ConfigureOreFeature(ORE_MALACHITE_TARGET_LIST, 
+            		NetherrocksConfig.malachite_cfg.getVein_size(), 0.0F));
+        	MALACHITE_VEIN = PlacementUtils.register("malachite_vein", 
+					OreGenUtils.ConfigurePlacedFeature(NetherrocksConfig.malachite_cfg, ORE_MALACHITE));	
         }
     } // end-initNetherFeatures()
 
@@ -146,7 +153,7 @@ public class OreGeneration
         if (NetherrocksConfig.enableIllumeniteOre)
         {
             evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ILLUMENITE_CLUSTER);
-//            evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_ILLUMENITE_EXTRA);
+            evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ILLUMENITE_CLUSTER_EXTRA);
         }
     } // end generateNetherOres()
     
