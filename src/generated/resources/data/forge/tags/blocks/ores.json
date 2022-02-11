@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/malachite",
+    "#forge:ores/argonite",
     "#forge:ores/ashstone",
     "#forge:ores/dragonstone",
-    "#forge:ores/argonite",
+    "#forge:ores/fyrite",
     "#forge:ores/illumenite",
-    "#forge:ores/fyrite"
+    "#forge:ores/malachite"
   ]
 }

@@ -20,13 +20,55 @@ public class ModBlockTags extends MiningBlockTags
     @Override
     protected void addTags()
     {
-//        registerOreTags();
+        registerOreTags();
         registerStorageBlockTags();
         registerMiningTags();
         registerBeaconTags();
         registerDoorsSlabsAndStairs();
     }
 
+    
+    protected void registerOreTags()
+    {
+    	// register "forge:ores" tags
+        this.tag(TagUtils.forgeBlockTag( "ores"))
+                .addTag(TagUtils.forgeBlockTag( "ores/argonite"))
+                .addTag(TagUtils.forgeBlockTag( "ores/ashstone"))
+                .addTag(TagUtils.forgeBlockTag( "ores/dragonstone"))
+                .addTag(TagUtils.forgeBlockTag( "ores/fyrite"))
+                .addTag(TagUtils.forgeBlockTag( "ores/illumenite"))
+                .addTag(TagUtils.forgeBlockTag( "ores/malachite"));
+
+        this.tag(TagUtils.forgeBlockTag( "ores/argonite"))
+                .add(ModBlocks.argonite_ore.get());
+        this.tag(TagUtils.forgeBlockTag( "ores/ashstone"))
+        	.add(ModBlocks.ashstone_ore.get());
+        this.tag(TagUtils.forgeBlockTag( "ores/dragonstone"))
+        	.add(ModBlocks.dragonstone_ore.get());
+        this.tag(TagUtils.forgeBlockTag( "ores/fyrite"))
+        	.add(ModBlocks.fyrite_ore.get());
+        this.tag(TagUtils.forgeBlockTag( "ores/illumenite"))
+        	.add(ModBlocks.illumenite_ore.get());
+        this.tag(TagUtils.forgeBlockTag( "ores/malachite"))
+        	.add(ModBlocks.malachite_ore.get());
+
+        // register forge ore_rates tags.
+        this.registerOreRateTags( List.of(), // sparse 
+        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
+        				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()), // singular 
+        		List.of()); // dense
+        
+        // register forge:ores_in_ground tags
+        this.registerOresInGroundTags( List.of(), // stone ores
+        		List.of(), // deepslate ores
+        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
+        				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()));  // netherrack ores
+    
+    }  // end registerOreTags
+    
+    
     private void registerDoorsSlabsAndStairs()
     {
     	this.tag(TagUtils.modBlockTag("minecraft", "doors"))
