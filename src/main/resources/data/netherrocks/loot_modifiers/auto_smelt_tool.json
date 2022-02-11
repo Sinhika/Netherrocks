@@ -1,15 +1,10 @@
 {
 	"conditions": [
 		{
-			"condition": "minecraft:alternative",
-			"terms": [
-				{
-					"condition": "minecraft:match_tool",
-					"predicate": {
-						"tag": "netherrocks:auto_smelt_tools"
-					}
-				}
-			]		
+			"condition": "minecraft:match_tool",
+			"predicate": {
+				"tag": "netherrocks:auto_smelt_tools"
+			}
 		}		
 	],
 	"function": "netherrocks:auto_smelt_tool"
