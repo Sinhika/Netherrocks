@@ -1,4 +1,5 @@
 {
+	"type" : "netherrocks:auto_smelt_tool",
 	"conditions": [
 		{
 			"condition": "minecraft:match_tool",
