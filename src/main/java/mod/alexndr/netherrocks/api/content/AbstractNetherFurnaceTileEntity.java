@@ -37,7 +37,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
     @Override
     public boolean isFuel(ItemStack stack)
     {
-        return getValidFuels().contains(stack.getItem());
+        return getValidFuels().contains(stack.getItem()) || stack.is(Items.BUCKET);
     }
 
     protected static final int netherrackBurnTime = 200;

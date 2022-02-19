@@ -3,19 +3,26 @@ package mod.alexndr.netherrocks.content;
 import mod.alexndr.netherrocks.api.content.AbstractNetherSmokerBlock;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.network.NetworkHooks;
 
 public class NetherSmokerBlock extends AbstractNetherSmokerBlock
 {
+    private static final String DISPLAY_NAME = "block.netherrocks.nether_smoker";
 
     public NetherSmokerBlock(Properties builder)
     {
@@ -55,15 +62,30 @@ public class NetherSmokerBlock extends AbstractNetherSmokerBlock
 	}
 
 
-	@Override
-	protected void openContainer(Level level, BlockPos bpos, Player player) 
-	{
-		BlockEntity blockentity = level.getBlockEntity(bpos);
-		if (blockentity instanceof NetherSmokerTileEntity)
-		{
-			player.openMenu((MenuProvider) blockentity);
-			player.awardStat(Stats.INTERACT_WITH_FURNACE);
-		}
-	}
+    @Override
+    protected void openContainer(Level level, BlockPos bpos, Player player) 
+    {
+        BlockEntity be = level.getBlockEntity(bpos);
+        if (be instanceof NetherSmokerTileEntity) 
+        {
+            MenuProvider containerProvider = new MenuProvider() {
+                @Override
+                public Component getDisplayName() {
+                    return new TranslatableComponent(DISPLAY_NAME);
+                }
+                
+                @Override
+                public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player playerEntity)
+                {
+                    return new NetherSmokerContainer(windowId, playerInventory, bpos, playerEntity);
+                }
+            }; // end anonymous-class
+            NetworkHooks.openGui((ServerPlayer) player, containerProvider, be.getBlockPos());
+            player.awardStat(Stats.INTERACT_WITH_FURNACE);
+        } // end-if
+        else {
+            throw new IllegalStateException("Our named container provider is missing!");
+        }
+    } // end openContainer
 
 } // end-class

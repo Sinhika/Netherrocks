@@ -28,14 +28,17 @@ public final class ModContainers
     
    public static RegistryObject<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 
-                   () -> IForgeMenuType.create(NetherFurnaceContainer::new));
+                   () -> IForgeMenuType.create((windowId, inv, data) 
+                           -> new NetherFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
    public static RegistryObject<MenuType<NetherSmokerContainer>> NETHER_SMOKER =
            CONTAINER_TYPES.register("nether_smoker", 
-                   () -> IForgeMenuType.create(NetherSmokerContainer::new));
+                   () -> IForgeMenuType.create((windowId, inv, data) 
+                           -> new NetherSmokerContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
    public static RegistryObject<MenuType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
            CONTAINER_TYPES.register("nether_blast_furnace", 
-                   () -> IForgeMenuType.create(NetherBlastFurnaceContainer::new));
+                   () -> IForgeMenuType.create((windowId, inv, data) 
+                           -> new NetherBlastFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
 }  // end class ModContainers

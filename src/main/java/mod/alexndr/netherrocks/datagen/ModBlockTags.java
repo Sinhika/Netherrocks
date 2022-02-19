@@ -20,7 +20,7 @@ public class ModBlockTags extends MiningBlockTags
     @Override
     protected void addTags()
     {
-        registerOreTags();
+        super.addTags();
         registerStorageBlockTags();
         registerMiningTags();
         registerBeaconTags();
