@@ -2,7 +2,6 @@ package mod.alexndr.netherrocks.helpers;
 
 import java.util.Random;
 
-import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -49,7 +48,7 @@ public class FyriteHandler implements IWeaponEffectHelper
 	 */
     public void afterBlockSmelt(Level world, BlockPos pos, boolean was_effective)
     {
-        Netherrocks.LOGGER.info("tried to after-smelt");
+        //Netherrocks.LOGGER.info("tried to after-smelt");
         if (was_effective && world.isClientSide())
         {
             Random random = world.random;
