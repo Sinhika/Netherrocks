@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 public final class ModFeatures
 {
     public static final DeferredRegister<Feature<?>> FEATURES = 
-    		DeferredRegister.create(ForgeRegistries.FEATURES, Netherrocks.MODID);
+    		DeferredRegister.create(ForgeRegistries.Keys.FEATURES, Netherrocks.MODID);
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> ILLUMENITE_FEATURE = 
             FEATURES.register("illumenite_blob", () -> new IllumeniteBlobFeature(NoneFeatureConfiguration.CODEC));

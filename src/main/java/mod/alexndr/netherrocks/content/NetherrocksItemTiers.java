@@ -6,7 +6,7 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -16,18 +16,18 @@ import net.minecraftforge.common.TierSortingRegistry;
 
 public final class NetherrocksItemTiers
 {
-	public static final Tag.Named<Block> ARGONITE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_argonite_tool"));
-	public static final Tag.Named<Block> ASHSTONE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_ashstone_tool"));
-	public static final Tag.Named<Block> DRAGONSTONE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_dragonstone_tool"));
-	public static final Tag.Named<Block> FYRITE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_fyrite_tool"));
-	public static final Tag.Named<Block> ILLUMENITE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_illumenite_tool"));
-	public static final Tag.Named<Block> MALACHITE_TAG = 
-			BlockTags.createOptional(new ResourceLocation(Netherrocks.MODID, "needs_malachite_tool"));
+	public static final TagKey<Block> ARGONITE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_argonite_tool"));
+	public static final TagKey<Block> ASHSTONE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_ashstone_tool"));
+	public static final TagKey<Block> DRAGONSTONE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_dragonstone_tool"));
+	public static final TagKey<Block> FYRITE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_fyrite_tool"));
+	public static final TagKey<Block> ILLUMENITE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_illumenite_tool"));
+	public static final TagKey<Block> MALACHITE_TAG = 
+			BlockTags.create(new ResourceLocation(Netherrocks.MODID, "needs_malachite_tool"));
 	
 	public static final Tier ARGONITE = TierSortingRegistry.registerTier(
 			new ForgeTier(Tiers.NETHERITE.getLevel(), 1300, 8.0F, 3.0F, 18, ARGONITE_TAG, 
