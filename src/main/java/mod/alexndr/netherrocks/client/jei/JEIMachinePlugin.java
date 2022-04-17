@@ -2,6 +2,7 @@ package mod.alexndr.netherrocks.client.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.constants.VanillaRecipeCategoryUid;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.helpers.IJeiHelpers;
@@ -35,12 +36,9 @@ public class JEIMachinePlugin implements IModPlugin
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry)
     {
-        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_furnace.get()), 
-                VanillaRecipeCategoryUid.FURNACE, NetherFuelCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_blast_furnace.get()), 
-                VanillaRecipeCategoryUid.BLASTING, NetherFuelCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_smoker.get()), 
-                VanillaRecipeCategoryUid.SMOKING, NetherFuelCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_furnace.get()), RecipeTypes.SMELTING);
+        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_blast_furnace.get()), RecipeTypes.BLASTING);
+        registry.addRecipeCatalyst(new ItemStack(ModBlocks.nether_smoker.get()), RecipeTypes.SMOKING);
     }
 
     
@@ -67,7 +65,7 @@ public class JEIMachinePlugin implements IModPlugin
 	@Override
 	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration)
 	{
-		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, VanillaRecipeCategoryUid.FURNACE, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, RecipeTypes.SMELTING, 0, 1, 3, 36);
 		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
 		registration.addRecipeTransferHandler(NetherSmokerContainer.class, VanillaRecipeCategoryUid.SMOKING, 0, 1, 3, 36);
 		registration.addRecipeTransferHandler(NetherSmokerContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);

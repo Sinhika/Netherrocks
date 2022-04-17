@@ -1,23 +1,24 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
+import mod.alexndr.simplecorelib.helpers.TagUtils;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.tags.ITag;
 
 /**
  * Holds tag collections this mod needs to keep track of.
  */
 public class ModTags
 {
-    private static ResourceLocation
-        tagNetherFurnaceFuels = new ResourceLocation(Netherrocks.MODID, "nether_furnace_fuels");
+    private static TagKey<Item> tagNetherFurnaceFuels 
+        = TagUtils.modTag(Netherrocks.MODID, "nether_furnace_fuels");
 
-    public static Tag<Item> getnetherFurnaceFuels()
+    public static ITag<Item> getnetherFurnaceFuels()
     {
-        // TODO: convert to ITagManager
-        return ItemTags.getAllTags().getTag(tagNetherFurnaceFuels);
+        return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels);
+        // return ItemTags.getAllTags().getTag(tagNetherFurnaceFuels);
     }
 
 }  // end class ModTags

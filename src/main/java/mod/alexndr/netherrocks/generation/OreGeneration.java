@@ -118,17 +118,16 @@ public class OreGeneration
         }
         // Illumenite ore is a special snowflake that generates in glowstone blobs, so it has
         // to mimic glowstone generation. A side-effect is that more glowstone generates as well.
+        // If code does not work after porting, check changes to ORE_GLOWSTONE in vanilla.
         if (NetherrocksConfig.enableIllumeniteOre) 
         {
-        	ORE_ILLUMENITE = FeatureUtils.register("ore_illumenite", Feature.ORE, 
-        			ModFeatures.ILLUMENITE_FEATURE.get().configured(FeatureConfiguration.NONE));
+        	ORE_ILLUMENITE = FeatureUtils.register("ore_illumenite", ModFeatures.ILLUMENITE_FEATURE.get());
         	ILLUMENITE_CLUSTER =  PlacementUtils.register("illumenite_cluster", 
-        			ORE_ILLUMENITE.placed(CountPlacement.of(NetherrocksConfig.illumenite_cfg.getVein_size()), 
-        					InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));		
+        			ORE_ILLUMENITE, CountPlacement.of(NetherrocksConfig.illumenite_cfg.getVein_size()), 
+        					InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());		
         	ILLUMENITE_CLUSTER_EXTRA =  PlacementUtils.register("illumenite_cluster_extra", 
-        			ORE_ILLUMENITE.placed(
-        					CountPlacement.of(BiasedToBottomInt.of(0,NetherrocksConfig.illumenite_cfg.getVein_count())),
-        					InSquarePlacement.spread(), PlacementUtils.RANGE_4_4, BiomeFilter.biome()));
+        			ORE_ILLUMENITE, CountPlacement.of(BiasedToBottomInt.of(0,NetherrocksConfig.illumenite_cfg.getVein_count())),
+        					InSquarePlacement.spread(), PlacementUtils.RANGE_4_4, BiomeFilter.biome());
         }
         if (NetherrocksConfig.enableMalachiteOre) 
         {

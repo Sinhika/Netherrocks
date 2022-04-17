@@ -24,6 +24,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.registries.tags.ITag;
 
 public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnaceTileEntity
 {
@@ -67,10 +68,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
             validFuels.add(ModBlocks.fyrite_door.get().asItem());
             validFuels.add(Items.BLAZE_ROD);
             validFuels.add(Items.BLAZE_POWDER);
-            for (Item item : ModTags.getnetherFurnaceFuels().getValues())
-            {
-                validFuels.add(item);
-            }
+            ModTags.getnetherFurnaceFuels().stream().forEach(item -> validFuels.add(item));
         }
         return validFuels;
     } // end getValidFuels()
@@ -101,11 +99,10 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
         map.put(itemProvider.asItem(), burnTimeIn);
     }
 
-    protected static void addItemTagBurnTime(Map<Item, Integer> map, Tag<Item> iTag, int burnTimeIn)
+    protected static void addItemTagBurnTime(Map<Item, Integer> map, ITag<Item> iTag, int burnTimeIn)
     {
-        for(Item item : iTag.getValues()) {
-            map.put(item, burnTimeIn);
-        }
+        iTag.stream().forEach(item -> map.put(item, burnTimeIn));
+        
     } // end ()
 
     /**
