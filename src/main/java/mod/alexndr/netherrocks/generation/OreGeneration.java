@@ -53,14 +53,14 @@ public class OreGeneration
 	public static final List<OreConfiguration.TargetBlockState> ORE_ILLUMENITE_TARGET =
 			List.of(OreConfiguration.target(GLOWSTONE_TEST, ModBlocks.illumenite_ore.get().defaultBlockState()));
 	
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_ARGONITE;
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_ASHSTONE;
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_DRAGONSTONE;
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_FYRITE;
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_FYRITE_ROCK;
-    public static Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>>  ORE_ILLUMENITE;
-    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_MALACHITE;
-
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_ARGONITE;
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_ASHSTONE;
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_DRAGONSTONE;
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_FYRITE;
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_FYRITE_ROCK;
+//    public static Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>>  ORE_ILLUMENITE;
+//    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_MALACHITE;
+//
     public static Holder<PlacedFeature> ARGONITE_VEIN;
     public static Holder<PlacedFeature> ASHSTONE_VEIN;
     public static Holder<PlacedFeature> DRAGONSTONE_VEIN;
@@ -79,9 +79,9 @@ public class OreGeneration
     {
         if (NetherrocksConfig.enableArgoniteOre) 
         {
-            ORE_ARGONITE = FeatureUtils.register("ore_argonite", Feature.ORE, 
-                    OreGenUtils.ConfigureOreFeature(ORE_ARGONITE_TARGET_LIST, 
-            		NetherrocksConfig.argonite_cfg.getVein_size(), 0.0F));
+//            ORE_ARGONITE = FeatureUtils.register("ore_argonite", Feature.ORE, 
+//                    OreGenUtils.ConfigureOreFeature(OreGenUtils.BuildNetherOreTargetList(ModBlocks.argonite_ore.get(), true), 
+//            		NetherrocksConfig.argonite_cfg.getVein_size(), 0.0F));
             
             ARGONITE_VEIN = PlacementUtils.register("argonite_vein", ORE_ARGONITE, 
             							OreGenUtils.ConfigurePlacementModifiers(NetherrocksConfig.argonite_cfg));												
