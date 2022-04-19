@@ -29,6 +29,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         setbuilder = new RecipeSetBuilder(Netherrocks.MODID);
 	}
 
+    @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);

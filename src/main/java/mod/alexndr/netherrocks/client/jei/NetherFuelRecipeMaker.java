@@ -9,11 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.runtime.IIngredientManager;
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
-import mod.alexndr.simplecorelib.client.jei.AlternateFuelRecipe;
 import net.minecraft.world.item.ItemStack;
 
 public final class NetherFuelRecipeMaker
@@ -22,15 +20,14 @@ public final class NetherFuelRecipeMaker
 
 	private NetherFuelRecipeMaker() {}
 
-	public static List<AlternateFuelRecipe> getFuelRecipes(IIngredientManager ingredientManager, IJeiHelpers helpers) 
+	public static List<NetherFurnaceFuelRecipe> getFuelRecipes(IIngredientManager ingredientManager, IJeiHelpers helpers) 
 	{
-		IGuiHelper guiHelper = helpers.getGuiHelper();
 		Collection<ItemStack> allItemStacks = ingredientManager.getAllIngredients(VanillaTypes.ITEM);
-		List<AlternateFuelRecipe> fuelRecipes = new ArrayList<>();
+		List<NetherFurnaceFuelRecipe> fuelRecipes = new ArrayList<>();
 		for (ItemStack stack : allItemStacks) {
 			int burnTime = getBurnTime(stack);
 			if (burnTime > 0) {
-				fuelRecipes.add(new AlternateFuelRecipe(guiHelper, Collections.singleton(stack), burnTime));
+				fuelRecipes.add(new NetherFurnaceFuelRecipe(Collections.singleton(stack), burnTime));
 			}
 		}
 		return fuelRecipes;

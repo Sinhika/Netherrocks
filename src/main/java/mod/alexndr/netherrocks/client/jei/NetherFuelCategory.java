@@ -2,17 +2,16 @@ package mod.alexndr.netherrocks.client.jei;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.gui.IRecipeLayout;
+import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
-import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.IFocusGroup;
+import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.client.ClientModEventSubscriber;
-import mod.alexndr.simplecorelib.client.jei.AlternateFuelRecipe;
 import mod.alexndr.simplecorelib.client.jei.VeryAbstractFurnaceVariantCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -20,7 +19,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 
-public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<AlternateFuelRecipe>
+public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<NetherFurnaceFuelRecipe>
 {
 	public static final ResourceLocation UID = new ResourceLocation(Netherrocks.MODID, "nether_furnace_fuel");
 	
@@ -36,9 +35,8 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 		// width of the recipe depends on the text, which is different in each language
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		AlternateFuelRecipe.init(100);	// because nether furnaces burn 2x as fast as normal.
 		
-		Component smeltCountText = AlternateFuelRecipe.createSmeltCountText(100000);
+		this.smeltCountText = createSmeltCountText(100000 * NetherFurnaceFuelRecipe.getSingleItemBurnTime());
 		int stringWidth = fontRenderer.width(smeltCountText.getString());
 
 		background = guiHelper.drawableBuilder(VeryAbstractFurnaceVariantCategory.RECIPE_GUI_VANILLA, 0, 134, 18, 34)
@@ -51,6 +49,13 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 
 
 	@Override
+    public RecipeType<NetherFurnaceFuelRecipe> getRecipeType()
+    {
+        return JEIMachinePlugin.NETHER_FUEL;
+    }
+
+
+    @Override
 	public ResourceLocation getUid()
 	{
 		return UID;
@@ -58,9 +63,9 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 
 
 	@Override
-	public Class<? extends AlternateFuelRecipe> getRecipeClass()
+	public Class<? extends NetherFurnaceFuelRecipe> getRecipeClass()
 	{
-		return AlternateFuelRecipe.class;
+		return NetherFurnaceFuelRecipe.class;
 	}
 
 
@@ -86,27 +91,19 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Alter
 
 
 	@Override
-	public void setIngredients(AlternateFuelRecipe recipe, IIngredients ingredients)
-	{
-		ingredients.setInputs(VanillaTypes.ITEM, recipe.getInputs());
-	}
+    public void setRecipe(IRecipeLayoutBuilder builder, NetherFurnaceFuelRecipe recipe, IFocusGroup focuses)
+    {
+	    builder.addSlot(RecipeIngredientRole.INPUT, 1, 17).addItemStacks(recipe.getInputs());
+    }
 
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, AlternateFuelRecipe recipe, IIngredients ingredients)
+	public void draw(NetherFurnaceFuelRecipe recipe, PoseStack poseStack, double mouseX, double mouseY) 
 	{
-		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
-
-		guiItemStacks.init(fuelSlot, true, 0, 16);
-		guiItemStacks.set(ingredients);
-	}
-
-	@Override
-	public void draw(AlternateFuelRecipe recipe, PoseStack poseStack, double mouseX, double mouseY) {
-		IDrawableAnimated flame = recipe.getFlame();
+		IDrawableAnimated flame = this.getFlame();
 		flame.draw(poseStack, 1, 0);
 		Minecraft minecraft = Minecraft.getInstance();
-		Component smeltCountText = recipe.getSmeltCountText();
+		this.smeltCountText = createSmeltCountText(recipe.getBurnTime());
 		minecraft.font.draw(poseStack, smeltCountText, 24, 13, 0xFF808080);
 	}
 

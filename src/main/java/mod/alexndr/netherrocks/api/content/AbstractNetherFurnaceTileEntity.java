@@ -14,7 +14,6 @@ import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceTileEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

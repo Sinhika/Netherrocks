@@ -35,6 +35,7 @@ public class ModItemTags extends MiningItemTags
     }
 
     
+    @Override
     protected void registerOreTags()
     {
     	// register "forge:ores" tags

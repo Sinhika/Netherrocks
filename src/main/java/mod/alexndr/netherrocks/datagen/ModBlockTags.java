@@ -28,6 +28,7 @@ public class ModBlockTags extends MiningBlockTags
     }
 
     
+    @Override
     protected void registerOreTags()
     {
     	// register "forge:ores" tags
@@ -132,6 +133,7 @@ public class ModBlockTags extends MiningBlockTags
 
     } // end registerStorageBlockTags()
     
+    @Override
     protected void registerMiningTags()
     {
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.

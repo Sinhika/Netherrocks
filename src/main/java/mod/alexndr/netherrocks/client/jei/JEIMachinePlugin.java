@@ -3,9 +3,9 @@ package mod.alexndr.netherrocks.client.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
-import mezz.jei.api.constants.VanillaRecipeCategoryUid;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.helpers.IJeiHelpers;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
@@ -26,8 +26,14 @@ import net.minecraft.world.item.ItemStack;
 @JeiPlugin
 public class JEIMachinePlugin implements IModPlugin 
 {
-    private static final ResourceLocation ID = new ResourceLocation(Netherrocks.MODID, "main");
-
+    private static final ResourceLocation ID = new ResourceLocation(Netherrocks.MODID, "nether_furnace_plugin");
+    
+    /**
+     * Nether furnace fuel recipe type.
+     */
+    public static final RecipeType<NetherFurnaceFuelRecipe>  NETHER_FUEL = RecipeType.create(Netherrocks.MODID, "nether_fuel", NetherFurnaceFuelRecipe.class);
+    
+    
     /**
      * Register recipe catalysts.
      * Recipe Catalysts are ingredients that are needed in order to craft other things.
@@ -57,8 +63,7 @@ public class JEIMachinePlugin implements IModPlugin
 	{
 		IJeiHelpers jeiHelpers = registration.getJeiHelpers();
 		IIngredientManager ingredientManager = registration.getIngredientManager();
-		registration.addRecipes(NetherFuelRecipeMaker.getFuelRecipes(ingredientManager, jeiHelpers), 
-				NetherFuelCategory.UID);
+		registration.addRecipes(NETHER_FUEL, NetherFuelRecipeMaker.getFuelRecipes(ingredientManager, jeiHelpers)); 
 	}
 
 
@@ -66,22 +71,19 @@ public class JEIMachinePlugin implements IModPlugin
 	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration)
 	{
 		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, RecipeTypes.SMELTING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherSmokerContainer.class, VanillaRecipeCategoryUid.SMOKING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherSmokerContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, VanillaRecipeCategoryUid.BLASTING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, NetherFuelCategory.UID, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, NETHER_FUEL, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, RecipeTypes.SMOKING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, NETHER_FUEL, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, RecipeTypes.BLASTING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, NETHER_FUEL, 1, 1, 3, 36);
 	}
 
 	@Override
 	public void registerGuiHandlers(IGuiHandlerRegistration registration)
 	{
-		registration.addRecipeClickArea(NetherFurnaceScreen.class, 78, 32, 28, 23, VanillaRecipeCategoryUid.FURNACE,
-				NetherFuelCategory.UID);
-		registration.addRecipeClickArea(NetherSmokerScreen.class, 78, 32, 28, 23, VanillaRecipeCategoryUid.SMOKING,
-				NetherFuelCategory.UID);
-		registration.addRecipeClickArea(NetherBlastFurnaceScreen.class, 78, 32, 28, 23, 
-				VanillaRecipeCategoryUid.BLASTING, NetherFuelCategory.UID);
+		registration.addRecipeClickArea(NetherFurnaceScreen.class, 78, 32, 28, 23, RecipeTypes.SMELTING, NETHER_FUEL);
+		registration.addRecipeClickArea(NetherSmokerScreen.class, 78, 32, 28, 23, RecipeTypes.SMOKING, NETHER_FUEL);
+		registration.addRecipeClickArea(NetherBlastFurnaceScreen.class, 78, 32, 28, 23, RecipeTypes.BLASTING, NETHER_FUEL);
 	}
 
 	@Override
