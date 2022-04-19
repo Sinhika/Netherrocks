@@ -44,7 +44,7 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 			.build();
 
 		flameTransparentBackground = ClientModEventSubscriber.textures.getFlameIcon();
-		localizedName = new TranslatableComponent("gui.jei.category.fuel");
+		localizedName = new TranslatableComponent("gui.netherrocks.category.fuel");
 	} // end ctor
 
 
