@@ -61,14 +61,14 @@ public class OreGeneration
 //    public static Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>>  ORE_ILLUMENITE;
 //    public static Holder<ConfiguredFeature<OreConfiguration, ?>> ORE_MALACHITE;
 //
-    public static Holder<PlacedFeature> ARGONITE_VEIN;
-    public static Holder<PlacedFeature> ASHSTONE_VEIN;
-    public static Holder<PlacedFeature> DRAGONSTONE_VEIN;
-    public static Holder<PlacedFeature> FYRITE_VEIN;
-    public static Holder<PlacedFeature> FYRITE_IN_MAGMA;
-    public static Holder<PlacedFeature> ILLUMENITE_CLUSTER;
-    public static Holder<PlacedFeature> ILLUMENITE_CLUSTER_EXTRA;
-    public static Holder<PlacedFeature> MALACHITE_VEIN;
+//    public static Holder<PlacedFeature> ARGONITE_VEIN;
+//    public static Holder<PlacedFeature> ASHSTONE_VEIN;
+//    public static Holder<PlacedFeature> DRAGONSTONE_VEIN;
+//    public static Holder<PlacedFeature> FYRITE_VEIN;
+//    public static Holder<PlacedFeature> FYRITE_IN_MAGMA;
+//    public static Holder<PlacedFeature> ILLUMENITE_CLUSTER;
+//    public static Holder<PlacedFeature> ILLUMENITE_CLUSTER_EXTRA;
+//    public static Holder<PlacedFeature> MALACHITE_VEIN;
     
     /**
      * initialize nether Features.
@@ -83,8 +83,8 @@ public class OreGeneration
 //                    OreGenUtils.ConfigureOreFeature(OreGenUtils.BuildNetherOreTargetList(ModBlocks.argonite_ore.get(), true), 
 //            		NetherrocksConfig.argonite_cfg.getVein_size(), 0.0F));
             
-            ARGONITE_VEIN = PlacementUtils.register("argonite_vein", ORE_ARGONITE, 
-            							OreGenUtils.ConfigurePlacementModifiers(NetherrocksConfig.argonite_cfg));												
+//            ARGONITE_VEIN = PlacementUtils.register("argonite_vein", ORE_ARGONITE, 
+//            							OreGenUtils.ConfigurePlacementModifiers(NetherrocksConfig.argonite_cfg));												
         }
         if (NetherrocksConfig.enableAshstoneOre) 
         {

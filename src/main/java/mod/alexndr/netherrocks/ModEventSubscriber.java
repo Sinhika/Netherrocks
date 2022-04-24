@@ -40,9 +40,9 @@ public final class ModEventSubscriber
 	@SubscribeEvent
 	public static void onCommonSetup(final FMLCommonSetupEvent event)
 	{
-        event.enqueueWork(() -> {
-            OreGeneration.initNetherFeatures();
-        });
+//        event.enqueueWork(() -> {
+//            OreGeneration.initNetherFeatures();
+//        });
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
 
