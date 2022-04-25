@@ -64,7 +64,7 @@ public final class ModFeatures
                             NetherrocksConfig.fyrite_cfg));
     
     public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_FYRITE_ROCK = 
-            CONFIGURED_FEATURES.register("ore_fyrite", 
+            CONFIGURED_FEATURES.register("ore_fyrite_rock", 
                     ()->OreGenUtils.createConfiguredOreFeature(
                             List.of(OreConfiguration.target(new BlockMatchTest(Blocks.MAGMA_BLOCK), 
                                                             ModBlocks.fyrite_ore.get().defaultBlockState())), 
@@ -101,8 +101,8 @@ public final class ModFeatures
             PLACED_FEATURES.register("fyrite_vein", 
                     ()->OreGenUtils.createPlacedOreFeature(ORE_FYRITE.getHolder().get(),NetherrocksConfig.fyrite_cfg));
     
-    public static RegistryObject<PlacedFeature> FYRITE_IN_MAGMA= 
-            PLACED_FEATURES.register("fyrite_vein", 
+    public static RegistryObject<PlacedFeature> FYRITE_IN_MAGMA = 
+            PLACED_FEATURES.register("fyrite_in_magma", 
                     ()->OreGenUtils.createPlacedOreFeature(ORE_FYRITE_ROCK.getHolder().get(),NetherrocksConfig.fyrite_cfg));
 
     public static RegistryObject<PlacedFeature> MALACHITE_VEIN = 
