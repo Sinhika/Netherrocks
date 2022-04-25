@@ -12,7 +12,7 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.client.ClientModEventSubscriber;
-import mod.alexndr.simplecorelib.client.jei.VeryAbstractFurnaceVariantCategory;
+import mod.alexndr.simplecorelib.api.client.jei.VeryAbstractFurnaceVariantCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;

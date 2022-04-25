@@ -2,7 +2,7 @@ package mod.alexndr.netherrocks.helpers;
 
 import java.util.Random;
 
-import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
+import mod.alexndr.simplecorelib.api.helpers.IWeaponEffectHelper;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;

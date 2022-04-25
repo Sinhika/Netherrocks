@@ -1,11 +1,11 @@
 package mod.alexndr.netherrocks.helpers;
 
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
-import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
+import mod.alexndr.simplecorelib.api.helpers.IWeaponEffectHelper;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 
 public class IllumeniteHandler implements IWeaponEffectHelper
 {

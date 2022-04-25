@@ -2,7 +2,7 @@ package mod.alexndr.netherrocks.client.jei;
 
 import java.util.Collection;
 
-import mod.alexndr.simplecorelib.client.jei.AlternateFuelRecipe;
+import mod.alexndr.simplecorelib.api.client.jei.AlternateFuelRecipe;
 import net.minecraft.world.item.ItemStack;
 
 public class NetherFurnaceFuelRecipe extends AlternateFuelRecipe

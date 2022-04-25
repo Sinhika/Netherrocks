@@ -1,6 +1,6 @@
 package mod.alexndr.netherrocks.helpers;
 
-import mod.alexndr.simplecorelib.helpers.InjectionTableLookup;
+import mod.alexndr.simplecorelib.api.helpers.InjectionTableLookup;
 
 @SuppressWarnings("serial")
 public class NetherrocksInjectionLookup extends InjectionTableLookup

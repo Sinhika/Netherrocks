@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.init.ModTiles;
-import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceBlock;
+import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

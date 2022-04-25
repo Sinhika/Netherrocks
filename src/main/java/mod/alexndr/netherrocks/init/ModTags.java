@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.simplecorelib.helpers.TagUtils;
+import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;

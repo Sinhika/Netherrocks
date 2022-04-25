@@ -12,7 +12,7 @@ import com.google.common.collect.Maps;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
-import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceTileEntity;
+import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

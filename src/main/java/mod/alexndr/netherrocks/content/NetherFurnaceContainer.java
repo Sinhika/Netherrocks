@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.init.ModContainers;
-import mod.alexndr.simplecorelib.content.VeryAbstractFurnaceMenu;
+import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

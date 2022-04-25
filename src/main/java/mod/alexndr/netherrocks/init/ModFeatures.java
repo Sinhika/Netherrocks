@@ -3,9 +3,8 @@ package mod.alexndr.netherrocks.init;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.generation.IllumeniteBlobFeature;
-import mod.alexndr.simplecorelib.world.OreGenUtils;
+import mod.alexndr.simplecorelib.api.helpers.OreGenUtils;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -31,9 +30,9 @@ public final class ModFeatures
     
     public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_ARGONITE = 
             CONFIGURED_FEATURES.register("ore_argonite", 
-                    OreGenUtils.createConfiguredOreFeature(
+                    ()->OreGenUtils.createConfiguredOreFeature(
                             OreGenUtils.BuildNetherOreTargetList(ModBlocks.argonite_ore.get(), true), 
-                            NetherrocksConfig.argonite_cfg.getVein_size()));
+                            NetherrocksConfig.argonite_cfg));
     
     public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_ASHSTONE;
     public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_DRAGONSTONE;
@@ -48,10 +47,8 @@ public final class ModFeatures
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Netherrocks.MODID);
     
     public static RegistryObject<PlacedFeature> ARGONITE_VEIN = 
-            PLACED_FEATURES.register("argonite_vein", OreGenUtils.createPlacedOreFeature(ORE_ARGONITE.getHolder(),
-                                      OreGenUtils.ConfigurePlacementModifiers(NetherrocksConfig.argonite_cfg)));
-            
-//  OreGenUtils.ConfigurePlacementModifiers(NetherrocksConfig.argonite_cfg));                                               
+            PLACED_FEATURES.register("argonite_vein", 
+                    ()->OreGenUtils.createPlacedOreFeature(ORE_ARGONITE.getHolder().get(),NetherrocksConfig.argonite_cfg));
 
     public static RegistryObject<PlacedFeature> ASHSTONE_VEIN;
     public static RegistryObject<PlacedFeature> DRAGONSTONE_VEIN;

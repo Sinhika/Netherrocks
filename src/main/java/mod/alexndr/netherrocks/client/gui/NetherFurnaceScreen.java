@@ -2,10 +2,10 @@ package mod.alexndr.netherrocks.client.gui;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
-import mod.alexndr.simplecorelib.client.gui.VeryAbstractFurnaceScreen;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.resources.ResourceLocation;
+import mod.alexndr.simplecorelib.api.client.gui.VeryAbstractFurnaceScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Inventory;
 
 public class NetherFurnaceScreen extends VeryAbstractFurnaceScreen<NetherFurnaceContainer>
 {

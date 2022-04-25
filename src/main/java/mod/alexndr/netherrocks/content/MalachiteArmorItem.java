@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import mod.alexndr.simplecorelib.helpers.ArmorUtils;
+import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffectInstance;

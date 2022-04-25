@@ -40,7 +40,8 @@ public class Netherrocks
         ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
-        // TODO register CONFIGURED_FEATURES, PLACED.
+        ModFeatures.CONFIGURED_FEATURES.register(modEventBus);
+        ModFeatures.PLACED_FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);

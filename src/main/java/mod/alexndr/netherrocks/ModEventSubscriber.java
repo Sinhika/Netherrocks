@@ -8,11 +8,10 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
-import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
-import mod.alexndr.simplecorelib.config.FlagCondition;
+import mod.alexndr.simplecorelib.api.config.FlagCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -40,9 +39,6 @@ public final class ModEventSubscriber
 	@SubscribeEvent
 	public static void onCommonSetup(final FMLCommonSetupEvent event)
 	{
-//        event.enqueueWork(() -> {
-//            OreGeneration.initNetherFeatures();
-//        });
 		LOGGER.debug("Common setup done");
 	} // end onCommonSetup
 
