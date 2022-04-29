@@ -18,18 +18,16 @@ public class NetherrocksItemModelProvider extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        ResourceLocation shears_parent = new ResourceLocation("shears");
-        
-        this.singleTexture("argonite_shears", shears_parent, 
-                new ResourceLocation(Netherrocks.MODID, "item/argonite_shears"));
-        this.singleTexture("ashstone_shears", shears_parent, 
-                new ResourceLocation(Netherrocks.MODID, "item/ashstone_shears"));
-        this.singleTexture("dragonstone_shears", shears_parent, 
-                new ResourceLocation(Netherrocks.MODID, "item/dragonstone_shears"));
-        this.singleTexture("fyrite_shears", shears_parent, 
-                new ResourceLocation(Netherrocks.MODID, "item/fyrite_shears"));
-        this.singleTexture("malachite_shears", shears_parent, 
-                new ResourceLocation(Netherrocks.MODID, "item/malachite_shears"));
+        this.withExistingParent("argonite_shears", "handheld")
+            .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/argonite_shears"));
+        this.withExistingParent("ashstone_shears", "handheld") 
+            .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/ashstone_shears"));
+        this.withExistingParent("dragonstone_shears", "handheld") 
+            .texture("layer0",  new ResourceLocation(Netherrocks.MODID, "item/dragonstone_shears"));
+        this.withExistingParent("fyrite_shears", "handheld")
+            .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/fyrite_shears"));
+        this.withExistingParent("malachite_shears", "handheld") 
+            .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/malachite_shears"));
     }
 
 } // end class

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/shears",
+  "parent": "minecraft:item/handheld",
   "textures": {
-    "texture": "netherrocks:item/argonite_shears"
+    "layer0": "netherrocks:item/argonite_shears"
   }
 }
