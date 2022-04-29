@@ -178,6 +178,9 @@ public final class ModItems
             () -> new HoeItem(NetherrocksItemTiers.DRAGONSTONE, -1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
+    // shears
+    // TODO
+    
     // ARMOR
     // dragonstone
    public static final RegistryObject<ArmorItem> dragonstone_helmet = ITEMS.register("dragonstone_helmet",
