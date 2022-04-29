@@ -1,10 +1,16 @@
 package mod.alexndr.netherrocks.content;
 
+import java.util.List;
+
 import mod.alexndr.netherrocks.helpers.MalachiteHandler;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 
 public class MalachiteAxeItem extends AxeItem
 {
@@ -20,4 +26,13 @@ public class MalachiteAxeItem extends AxeItem
         return MalachiteHandler.INSTANCE.hitEntity(stack, target, attacker)
                 && super.hurtEnemy(stack, target, attacker);
     }
+    
+    @Override
+    public void appendHoverText(ItemStack pStack, Level pLevel, List<Component> pTooltipComponents,
+            TooltipFlag pIsAdvanced)
+    {
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+        pTooltipComponents.add(new TranslatableComponent("netherrocks.malachite_axe.info"));
+    }
+
 } // end class

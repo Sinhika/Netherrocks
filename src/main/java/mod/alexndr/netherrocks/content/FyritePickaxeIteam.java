@@ -1,12 +1,17 @@
 package mod.alexndr.netherrocks.content;
 
+import java.util.List;
+
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,6 +38,14 @@ public class FyritePickaxeIteam extends PickaxeItem
         InteractionResult result = super.useOn(context);
         FyriteHandler.INSTANCE.onItemUse(context);
         return result;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, Level pLevel, List<Component> pTooltipComponents,
+            TooltipFlag pIsAdvanced)
+    {
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+        pTooltipComponents.add(new TranslatableComponent("netherrocks.fyrite_pickaxe.info"));
     }
 
 } // end class

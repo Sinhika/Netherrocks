@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/shears",
+  "textures": {
+    "texture": "netherrocks:item/fyrite_shears"
+  }
+}

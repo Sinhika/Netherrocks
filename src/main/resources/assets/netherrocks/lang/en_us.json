@@ -179,12 +179,14 @@
   "advancements.nether_furnace_ach.desc": "Construct a Nether Furnace!",
 
   "netherrocks.fyrite_armor.info": "§aSet Bonus: No fire/lava damage.",
-  "netherrocks.malachite_armor.info": "§aSet Bonus: Jump 2 blocks instead of 1.",
-  "netherrocks.illumenite_armor.info": "§aSet Bonus: No fall damage.",
   "netherrocks.fyrite_pickaxe.info": "§aAuto smelts when mining.",
   "netherrocks.fyrite_axe.info": "§aInstant charcoal while felling trees.",
   "netherrocks.fyrite_shovel.info": "§aInstant glass when digging up sand.",
   "netherrocks.fyrite_sword.info": "§aHarnesses the power of fire.",
-  "netherrocks.fyrite_shears.info" : "Do not use on flammable substances",
+  "netherrocks.fyrite_shears.info" : "§aDo not use on flammable substances",
+  "netherrocks.malachite_armor.info": "§aSet Bonus: Jump 2 blocks instead of 1.",
+  "netherrocks.malachite_axe.info": "§aMildly poisonous.",
+  "netherrocks.malachite_sword.info": "§aMildly poisonous.",
+  "netherrocks.illumenite_armor.info": "§aSet Bonus: No fall damage.",
   "netherrocks.illumenite_sword.info": "§aGrants night vision on hit. Blinds and slows target."
 }
