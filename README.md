@@ -17,7 +17,7 @@ TO DO
 * <s>[1.17.1] add datagen storage block tags for raw_metal blocks.</s>
 * update/move wiki 
 * Decide if we really need more detailed configs than that.
-* Add shears for all metals.
+* <s>Add shears for all metals.</s>
 * add ingots/tools/armor to appropriate piglin trade tables.
 * <s>Add dusts for all ores.</s>
 * <s>add support for Silent's Mechanisms: Crusher</s>
