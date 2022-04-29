@@ -4,6 +4,7 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.FyriteArmorItem;
 import mod.alexndr.netherrocks.content.FyriteAxeItem;
 import mod.alexndr.netherrocks.content.FyritePickaxeIteam;
+import mod.alexndr.netherrocks.content.FyriteShearsItem;
 import mod.alexndr.netherrocks.content.FyriteShovelItem;
 import mod.alexndr.netherrocks.content.FyriteSwordItem;
 import mod.alexndr.netherrocks.content.IllumeniteArmorItem;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -179,7 +181,21 @@ public final class ModItems
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // shears
-    // TODO
+    public static final RegistryObject<ShearsItem> argonite_shears = ITEMS.register("argonite_shears",
+            () -> new ShearsItem(new Item.Properties().durability(NetherrocksItemTiers.ARGONITE.getUses())
+                    .tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<ShearsItem> ashstone_shears = ITEMS.register("ashstone_shears",
+            () -> new ShearsItem(new Item.Properties().durability(NetherrocksItemTiers.ASHSTONE.getUses())
+                    .tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<ShearsItem> dragonstone_shears = ITEMS.register("dragonstone_shears",
+            () -> new ShearsItem(new Item.Properties().durability(NetherrocksItemTiers.DRAGONSTONE.getUses())
+                    .tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<ShearsItem> malachite_shears = ITEMS.register("malachite_shears",
+            () -> new ShearsItem(new Item.Properties().durability(NetherrocksItemTiers.MALACHITE.getUses())
+                    .tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<FyriteShearsItem> fyrite_shears = ITEMS.register("fyrite_shears",
+            () -> new FyriteShearsItem(new Item.Properties().durability(NetherrocksItemTiers.FYRITE.getUses())
+                    .tab(ModTabGroups.MOD_ITEM_GROUP)));
     
     // ARMOR
     // dragonstone
@@ -238,4 +254,5 @@ public final class ModItems
             () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
+    
 } // end class ModItems

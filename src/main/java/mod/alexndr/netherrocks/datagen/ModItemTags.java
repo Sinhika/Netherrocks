@@ -215,7 +215,15 @@ public class ModItemTags extends MiningItemTags
     	this.tag(TagUtils.modTag(Netherrocks.MODID, "auto_smelt_tools"))
     		.add(ModItems.fyrite_axe.get())
     		.add(ModItems.fyrite_pickaxe.get())
-    		.add(ModItems.fyrite_shovel.get());
+    		.add(ModItems.fyrite_shovel.get())
+    		.add(ModItems.fyrite_shears.get());
+    	
+        this.tag(TagUtils.forgeTag("shears"))
+            .add(ModItems.argonite_shears.get())
+            .add(ModItems.ashstone_shears.get())
+            .add(ModItems.dragonstone_shears.get())
+            .add(ModItems.malachite_shears.get())
+            .add(ModItems.fyrite_shears.get());
     }
     
     private void registerDustTags()
