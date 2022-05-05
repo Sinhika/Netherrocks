@@ -36,7 +36,7 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
 		
-		this.smeltCountText = createSmeltCountText(100000 * NetherFurnaceFuelRecipe.getSingleItemBurnTime());
+		this.smeltCountText = createSmeltCountText(100000);
 		int stringWidth = fontRenderer.width(smeltCountText.getString());
 
 		background = guiHelper.drawableBuilder(VeryAbstractFurnaceVariantCategory.RECIPE_GUI_VANILLA, 0, 134, 18, 34)

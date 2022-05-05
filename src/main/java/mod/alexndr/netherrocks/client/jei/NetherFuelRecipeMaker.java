@@ -24,7 +24,8 @@ public final class NetherFuelRecipeMaker
 	{
 		Collection<ItemStack> allItemStacks = ingredientManager.getAllIngredients(VanillaTypes.ITEM);
 		List<NetherFurnaceFuelRecipe> fuelRecipes = new ArrayList<>();
-		for (ItemStack stack : allItemStacks) {
+		for (ItemStack stack : allItemStacks) 
+		{
 			int burnTime = getBurnTime(stack);
 			if (burnTime > 0) {
 				fuelRecipes.add(new NetherFurnaceFuelRecipe(Collections.singleton(stack), burnTime));
