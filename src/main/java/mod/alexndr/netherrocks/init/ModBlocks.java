@@ -39,23 +39,23 @@ public final class ModBlocks
     
     // Ore Blocks
     public static final RegistryObject<OreBlock> argonite_ore = BLOCKS.register("argonite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> ashstone_ore = BLOCKS.register("ashstone_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> dragonstone_ore = BLOCKS.register("dragonstone_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> fyrite_ore = BLOCKS.register("fyrite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.GLASS)
                     .strength( 1.0F, 30.0F).requiresCorrectToolForDrops()
                     .lightLevel(LightUtils.setFixedLight(15))));
     public static final RegistryObject<OreBlock> malachite_ore = BLOCKS.register("malachite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE)
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
 
     // Metal Blocks
