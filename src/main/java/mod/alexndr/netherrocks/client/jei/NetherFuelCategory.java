@@ -36,7 +36,6 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
 		
-		this.smeltCountText = createSmeltCountText(100000);
 		int stringWidth = fontRenderer.width(smeltCountText.getString());
 
 		background = guiHelper.drawableBuilder(VeryAbstractFurnaceVariantCategory.RECIPE_GUI_VANILLA, 0, 134, 18, 34)
@@ -93,6 +92,7 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 	@Override
     public void setRecipe(IRecipeLayoutBuilder builder, NetherFurnaceFuelRecipe recipe, IFocusGroup focuses)
     {
+	    super.setRecipe(builder, recipe, focuses);
 	    builder.addSlot(RecipeIngredientRole.INPUT, 1, 17).addItemStacks(recipe.getInputs());
     }
 
