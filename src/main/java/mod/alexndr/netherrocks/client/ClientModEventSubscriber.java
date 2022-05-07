@@ -9,17 +9,11 @@ import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
-import mod.alexndr.simplecorelib.SimpleCoreLib;
-import mod.alexndr.simplecorelib.api.client.gui.SimpleSpriteUploader;
-import mod.alexndr.simplecorelib.api.client.gui.Textures;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -32,7 +26,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class ClientModEventSubscriber
 {
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Client Mod Event Subscriber");
-    public static Textures textures;
     
     //public static Textures textures;
     /**
@@ -85,18 +78,5 @@ public class ClientModEventSubscriber
         
     } // end onFMLClientSetupEvent()
     
-    @SubscribeEvent
-    public static void onRegisterClientReloadListenersEvent(final RegisterClientReloadListenersEvent event)
-    {
-    	if (ModList.get().isLoaded("jei"))
-    	{
-	    	// add things to texture atlas.
-	    	Minecraft minecraft = Minecraft.getInstance();
-	    	SimpleSpriteUploader spriteUploader = new SimpleSpriteUploader(minecraft.textureManager, SimpleCoreLib.SIMPLE_TEXTURE_ATLAS);
-	    	textures = new Textures(spriteUploader);
-	    	event.registerReloadListener(spriteUploader);
-    	}
-    } // end onRegisterClientReloadListenersEvent
-
     
 } // end class
