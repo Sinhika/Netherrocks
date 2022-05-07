@@ -23,26 +23,9 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 {
 	public static final ResourceLocation UID = new ResourceLocation(Netherrocks.MODID, "nether_furnace_fuel");
 	
-	private final IDrawableStatic background;
-	private final IDrawableStatic flameTransparentBackground;
-	private final Component localizedName;
-
-
 	public NetherFuelCategory(IGuiHelper guiHelper) 
 	{
 		super(guiHelper);
-
-		// width of the recipe depends on the text, which is different in each language
-		Minecraft minecraft = Minecraft.getInstance();
-		Font fontRenderer = minecraft.font;
-		
-		int stringWidth = fontRenderer.width(smeltCountText.getString());
-
-		background = guiHelper.drawableBuilder(VeryAbstractFurnaceVariantCategory.RECIPE_GUI_VANILLA, 0, 134, 18, 34)
-			.addPadding(0, 0, 0, stringWidth + 20)
-			.build();
-
-		flameTransparentBackground = ClientModEventSubscriber.textures.getFlameIcon();
 		localizedName = new TranslatableComponent("gui.netherrocks.category.fuel");
 	} // end ctor
 
@@ -67,26 +50,6 @@ public class NetherFuelCategory extends VeryAbstractFurnaceVariantCategory<Nethe
 		return NetherFurnaceFuelRecipe.class;
 	}
 
-
-	@Override
-	public Component getTitle()
-	{
-		return localizedName;
-	}
-
-
-	@Override
-	public IDrawable getBackground()
-	{
-		return background;
-	}
-
-
-	@Override
-	public IDrawable getIcon()
-	{
-		return flameTransparentBackground;
-	}
 
 
 	@Override
