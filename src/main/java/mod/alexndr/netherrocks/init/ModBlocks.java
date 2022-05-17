@@ -2,9 +2,11 @@ package mod.alexndr.netherrocks.init;
 
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherFurnaceBlock;
 import mod.alexndr.netherrocks.content.NetherSmokerBlock;
+import mod.alexndr.simplecorelib.api.content.MultifunctionPressurePlateBlock;
 import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
@@ -193,6 +195,30 @@ public final class ModBlocks
                     .strength(7.0F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()));
    
     // pressure plates
-    // TODO
-    
+    // argonite = heavy weighted plate with a slow rebound.
+    public static final RegistryObject<MultifunctionPressurePlateBlock> argonite_pressure_plate = BLOCKS.register(
+            "argonite_pressure_plate", () -> new MultifunctionPressurePlateBlock(150, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING_WEIGHTED,
+                    20,  Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).noCollission().strength(0.5F).sound(SoundType.METAL)));
+    // ashstone - stone plate with a very slow rebound.
+    public static final RegistryObject<MultifunctionPressurePlateBlock> ashstone_pressure_plate = BLOCKS.register(
+            "ashstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING,
+                    40,  Block.Properties.of(Material.STONE).noCollission().strength(0.5F).sound(SoundType.STONE)));
+    // dragonstone - stone plate with very quick rebound.
+    public static final RegistryObject<MultifunctionPressurePlateBlock> dragonstone_pressure_plate = BLOCKS.register(
+            "dragonstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING,
+                    10,  Block.Properties.of(Material.STONE, MaterialColor.NETHER).noCollission().strength(0.5F).sound(SoundType.STONE)));
+    // malachite - normal light weighted plate.
+    public static final RegistryObject<MultifunctionPressurePlateBlock> malachite_pressure_plate = BLOCKS.register(
+            "malachite_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING_WEIGHTED,
+                    20,  Block.Properties.of(Material.METAL, MaterialColor.EMERALD).noCollission().strength(0.5F).sound(SoundType.METAL)));
+    // illumenite - light weighted plate that glows.
+    public static final RegistryObject<MultifunctionPressurePlateBlock> illumenite_pressure_plate = BLOCKS.register(
+            "illumenite_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING_WEIGHTED,
+                    20,  Block.Properties.of(Material.GLASS, MaterialColor.COLOR_YELLOW).noCollission().strength(0.5F).sound(SoundType.GLASS)
+            .lightLevel(LightUtils.setFixedLight(15))));
+          
+    // fyrite - light weighted plate that sets entities on fire.
+    public static final RegistryObject<FyritePressurePlateBlock> fyrite_pressure_plate = BLOCKS.register("fyrite_pressure_plate", 
+            () -> new FyritePressurePlateBlock());
+   
 }  // end class ModBlocks
