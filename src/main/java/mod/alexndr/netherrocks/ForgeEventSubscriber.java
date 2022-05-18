@@ -103,21 +103,14 @@ public final class ForgeEventSubscriber
         {
             return;
         }
-        // we only care about BLOCK_PRESSED or BLOCK_UNPRESSED events.
+        // we only care about BLOCK_PRESSED events.
         if (event.getVanillaEvent() == GameEvent.BLOCK_PRESS)
         {
             Entity entity = event.getCause();
-            if (!entity.fireImmune() && entity.getRemainingFireTicks() <= 50) {
+            if (entity != null && !entity.fireImmune() && entity.getRemainingFireTicks() <= 50) {
                 entity.setSecondsOnFire(50);
             }
         }
-        else if (event.getVanillaEvent() == GameEvent.BLOCK_UNPRESS)
-        {
-            // stop causing fire
-            Entity entity = event.getCause();
-            entity.clearFire();
-        }
-        // else we don't care.
     } // end onVanillaGameEvent
 
 } // end-class
