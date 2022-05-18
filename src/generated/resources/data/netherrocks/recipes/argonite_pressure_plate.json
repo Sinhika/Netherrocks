@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "SS ",
+    "   "
+  ],
+  "key": {
+    "S": {
+      "item": "netherrocks:argonite_ingot"
+    }
+  },
+  "result": {
+    "item": "netherrocks:argonite_pressure_plate"
+  }
+}
