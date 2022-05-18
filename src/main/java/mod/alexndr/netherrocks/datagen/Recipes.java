@@ -93,17 +93,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
     protected void registerToolRecipes(Consumer<FinishedRecipe> consumer)
     {
     	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.argonite_ingot.get()), 
-    			"argonite", has(ModItems.argonite_ingot.get()), null, false);
+    			"argonite", has(ModItems.argonite_ingot.get()), null, true);
        	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.ashstone_gem.get()), 
-    			"ashstone", has(ModItems.ashstone_gem.get()), null, false);
+    			"ashstone", has(ModItems.ashstone_gem.get()), null, true);
        	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.dragonstone_gem.get()), 
-    			"dragonstone", has(ModItems.dragonstone_gem.get()), null, false);
+    			"dragonstone", has(ModItems.dragonstone_gem.get()), null, true);
        	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.illumenite_ingot.get()), 
-    			"illumenite", has(ModItems.illumenite_ingot.get()), null, false);
+    			"illumenite", has(ModItems.illumenite_ingot.get()), null, true);
        	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.fyrite_ingot.get()), 
-    			"fyrite", has(ModItems.fyrite_ingot.get()), null, false);
+    			"fyrite", has(ModItems.fyrite_ingot.get()), null, true);
        	setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.malachite_ingot.get()), 
-    			"malachite", has(ModItems.malachite_ingot.get()), null, false);
+    			"malachite", has(ModItems.malachite_ingot.get()), null, true);
     } // end registerToolRecipes()
     
     protected void registerArmorRecipes(Consumer<FinishedRecipe> consumer)
