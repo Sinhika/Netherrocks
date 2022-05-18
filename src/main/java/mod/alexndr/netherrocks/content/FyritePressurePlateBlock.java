@@ -27,7 +27,7 @@ public class FyritePressurePlateBlock extends MultifunctionPressurePlateBlock
        // add fire sounds
        pLevel.playSound((Player) null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 0.3F,
                0.8F);
-       pLevel.playSound((Player) null, pPos, SoundEvents.FIRE_AMBIENT, SoundSource.BLOCKS, 0.3F,
+       pLevel.playSound((Player) null, pPos, SoundEvents.GENERIC_BURN, SoundSource.BLOCKS, 0.3F,
                0.8F);
     }
 

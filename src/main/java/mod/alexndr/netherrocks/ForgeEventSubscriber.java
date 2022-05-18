@@ -107,10 +107,21 @@ public final class ForgeEventSubscriber
         if (event.getVanillaEvent() == GameEvent.BLOCK_PRESS)
         {
             Entity entity = event.getCause();
-            if (entity != null && !entity.fireImmune() && entity.getRemainingFireTicks() <= 50) {
-                entity.setSecondsOnFire(50);
+            if (entity == null) { return; }
+//            if (entity instanceof ItemEntity) 
+//            {
+//                ItemStack stack = ((ItemEntity) entity).getItem();
+//                if (stack.getBurnTime(RecipeType.SMELTING) > 0) 
+//                {
+//                    entity.setSecondsOnFire(10);
+//                }
+//            } // end-else if ItemEntity
+//            else 
+            if (!entity.fireImmune())
+            {
+                entity.setSecondsOnFire(10);
             }
-        }
+        } // end-if BLOCK_PRESS  
     } // end onVanillaGameEvent
 
 } // end-class
