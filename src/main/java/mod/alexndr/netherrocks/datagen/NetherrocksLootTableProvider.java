@@ -87,6 +87,14 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         copyNameDropTable(ModBlocks.nether_smoker.get(), 
                           ModBlocks.nether_smoker.get().asItem());
         
+        // pressure plates
+        standardDropTable(ModBlocks.argonite_pressure_plate.get());
+        standardDropTable(ModBlocks.ashstone_pressure_plate.get());
+        standardDropTable(ModBlocks.dragonstone_pressure_plate.get());
+        standardDropTable(ModBlocks.fyrite_pressure_plate.get());
+        standardDropTable(ModBlocks.illumenite_pressure_plate.get());
+        standardDropTable(ModBlocks.malachite_pressure_plate.get());
+        
         return tables;
     } // end getTables()
     

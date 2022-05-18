@@ -72,6 +72,21 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 	        .unlockedBy("has_item", has(ModBlocks.nether_furnace.get()))
 	        .save(consumer);
         
+        
+        // pressure_plates
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.argonite_ingot.get()),
+                ModBlocks.argonite_pressure_plate.get(), has(ModItems.argonite_ingot.get()));
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.fyrite_ingot.get()),
+                ModBlocks.fyrite_pressure_plate.get(), has(ModItems.fyrite_ingot.get()));
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.illumenite_ingot.get()),
+                ModBlocks.illumenite_pressure_plate.get(), has(ModItems.illumenite_ingot.get()));
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.malachite_ingot.get()),
+                ModBlocks.malachite_pressure_plate.get(), has(ModItems.malachite_ingot.get()));
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.ashstone_gem.get()),
+                ModBlocks.ashstone_pressure_plate.get(), has(ModItems.ashstone_gem.get()));
+        this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.dragonstone_gem.get()),
+                ModBlocks.dragonstone_pressure_plate.get(), has(ModItems.dragonstone_gem.get()));
+        
     } // end registerMiscRecipes
     
     

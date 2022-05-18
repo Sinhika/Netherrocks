@@ -7,7 +7,9 @@ import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockTags extends MiningBlockTags
 {
@@ -25,6 +27,7 @@ public class ModBlockTags extends MiningBlockTags
         registerMiningTags();
         registerBeaconTags();
         registerDoorsSlabsAndStairs();
+        registerMiscTags();
     }
 
     
@@ -136,28 +139,11 @@ public class ModBlockTags extends MiningBlockTags
     @Override
     protected void registerMiningTags()
     {
+     // all the registered blocks are mineable.
+        List<Block> mineables = ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+        
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.
-    	registerMineableTags( List.of(ModBlocks.argonite_block.get(), ModBlocks.argonite_ore.get(), 
-    			ModBlocks.argonite_bars.get(), ModBlocks.argonite_brick_slab.get(), ModBlocks.argonite_brick_stairs.get(),
-    			ModBlocks.argonite_bricks.get(), ModBlocks.argonite_door.get(),
-    			ModBlocks.ashstone_block.get(), ModBlocks.ashstone_ore.get(), 
-    			ModBlocks.ashstone_bars.get(), ModBlocks.ashstone_brick_slab.get(), ModBlocks.ashstone_brick_stairs.get(),
-    			ModBlocks.ashstone_bricks.get(), ModBlocks.ashstone_door.get(),
-    			ModBlocks.dragonstone_ore.get(), ModBlocks.dragonstone_block.get(), 
-    			ModBlocks.dragonstone_bars.get(), ModBlocks.dragonstone_brick_slab.get(), ModBlocks.dragonstone_brick_stairs.get(),
-    			ModBlocks.dragonstone_bricks.get(), ModBlocks.dragonstone_door.get(),
-    			ModBlocks.fyrite_block.get(), ModBlocks.fyrite_ore.get(),
-    			ModBlocks.fyrite_bars.get(), ModBlocks.fyrite_brick_slab.get(), ModBlocks.fyrite_brick_stairs.get(),
-    			ModBlocks.fyrite_bricks.get(), ModBlocks.fyrite_door.get(),
-    			ModBlocks.illumenite_block.get(), ModBlocks.illumenite_ore.get(), 
-    			ModBlocks.illumenite_bars.get(), ModBlocks.illumenite_brick_slab.get(), ModBlocks.illumenite_brick_stairs.get(),
-    			ModBlocks.illumenite_bricks.get(), ModBlocks.illumenite_door.get(),
-    			ModBlocks.malachite_block.get(), ModBlocks.malachite_ore.get(),
-    			ModBlocks.malachite_bars.get(), ModBlocks.malachite_brick_slab.get(), ModBlocks.malachite_brick_stairs.get(),
-    			ModBlocks.malachite_bricks.get(), ModBlocks.malachite_door.get(),
-    			ModBlocks.raw_argonite_block.get(), ModBlocks.raw_fyrite_block.get(), ModBlocks.raw_illumenite_block.get(),
-    			ModBlocks.raw_malachite_block.get(),
-    			ModBlocks.nether_blast_furnace.get(), ModBlocks.nether_furnace.get(), ModBlocks.nether_smoker.get()),
+    	registerMineableTags( mineables,
     		List.of(),   // 1 
     		List.of(ModBlocks.fyrite_block.get(), ModBlocks.fyrite_ore.get(), ModBlocks.fyrite_bars.get(), 
     				ModBlocks.fyrite_brick_slab.get(), ModBlocks.fyrite_brick_stairs.get(),
@@ -192,4 +178,15 @@ public class ModBlockTags extends MiningBlockTags
     		.add(ModBlocks.malachite_block.get());
     }
     
+    private void registerMiscTags()
+    {
+        this.tag(TagUtils.modBlockTag("minecraft", "pressure_plates"))
+            .add(ModBlocks.argonite_pressure_plate.get())
+            .add(ModBlocks.ashstone_pressure_plate.get())
+            .add(ModBlocks.dragonstone_pressure_plate.get())
+            .add(ModBlocks.illumenite_pressure_plate.get())
+            .add(ModBlocks.malachite_pressure_plate.get())
+            .add(ModBlocks.fyrite_pressure_plate.get());
+        
+    }
 } // end class
