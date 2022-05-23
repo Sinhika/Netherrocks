@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "netherrocks:block/argonite_bricks",
-        "top": "netherrocks:block/argonite_bricks",
-        "side": "netherrocks:block/argonite_bricks"
-    }
-}
