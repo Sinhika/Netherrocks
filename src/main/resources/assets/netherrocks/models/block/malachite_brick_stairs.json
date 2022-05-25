@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "netherrocks:block/malachite_bricks",
-        "top": "netherrocks:block/malachite_bricks",
-        "side": "netherrocks:block/malachite_bricks"
-    }
-}

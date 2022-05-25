@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "netherrocks:block/cut_fyrite",
+    "bottom": "netherrocks:block/cut_fyrite",
+    "top": "netherrocks:block/cut_fyrite"
+  }
+}

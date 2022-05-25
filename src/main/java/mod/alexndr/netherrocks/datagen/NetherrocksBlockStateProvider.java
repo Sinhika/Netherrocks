@@ -65,19 +65,43 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
         // BLOCKSTATES -- brick blocks, but have "cut_metal" texture names.
         this.simpleBlock(ModBlocks.argonite_bricks.get(), 
                 this.models().cubeAll("argonite_bricks", new ResourceLocation(Netherrocks.MODID, "block/cut_argonite")));
-        
+        this.simpleBlock(ModBlocks.fyrite_bricks.get(), 
+                this.models().cubeAll("fyrite_bricks", new ResourceLocation(Netherrocks.MODID, "block/cut_fyrite")));
+        this.simpleBlock(ModBlocks.illumenite_bricks.get(), 
+                this.models().cubeAll("illumenite_bricks", new ResourceLocation(Netherrocks.MODID, "block/cut_illumenite")));
+        this.simpleBlock(ModBlocks.malachite_bricks.get(), 
+                this.models().cubeAll("malachite_bricks", new ResourceLocation(Netherrocks.MODID, "block/cut_malachite")));
+       
         // BLOCKSTATES -- brick slabs, but have "cut_metal" texture names.
         this.slabBlock(ModBlocks.argonite_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/argonite_bricks"), 
                 new ResourceLocation(Netherrocks.MODID, "block/cut_argonite"));
+        this.slabBlock(ModBlocks.fyrite_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/fyrite_bricks"), 
+                new ResourceLocation(Netherrocks.MODID, "block/cut_fyrite"));
+        this.slabBlock(ModBlocks.illumenite_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/illumenite_bricks"), 
+                new ResourceLocation(Netherrocks.MODID, "block/cut_illumenite"));
+        this.slabBlock(ModBlocks.malachite_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/malachite_bricks"), 
+                new ResourceLocation(Netherrocks.MODID, "block/cut_malachite"));
         
         // BLOCKSTATES -- brick stairs, but have "cut metal" textures.
         this.stairsBlock(ModBlocks.argonite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_argonite"));
-        
+        this.stairsBlock(ModBlocks.fyrite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_fyrite"));
+        this.stairsBlock(ModBlocks.illumenite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_illumenite"));
+        this.stairsBlock(ModBlocks.malachite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_malachite"));
+       
         // ITEM MODELS -- brick blocks
         this.itemModels().withExistingParent("argonite_bricks", new ResourceLocation(Netherrocks.MODID, "block/argonite_bricks"));
         this.itemModels().withExistingParent("argonite_brick_slab", new ResourceLocation(Netherrocks.MODID, "block/argonite_brick_slab"));
         this.itemModels().withExistingParent("argonite_brick_stairs", new ResourceLocation(Netherrocks.MODID, "block/argonite_brick_stairs"));
-        
+        this.itemModels().withExistingParent("fyrite_bricks", new ResourceLocation(Netherrocks.MODID, "block/fyrite_bricks"));
+        this.itemModels().withExistingParent("fyrite_brick_slab", new ResourceLocation(Netherrocks.MODID, "block/fyrite_brick_slab"));
+        this.itemModels().withExistingParent("fyrite_brick_stairs", new ResourceLocation(Netherrocks.MODID, "block/fyrite_brick_stairs"));
+        this.itemModels().withExistingParent("illumenite_bricks", new ResourceLocation(Netherrocks.MODID, "block/illumenite_bricks"));
+        this.itemModels().withExistingParent("illumenite_brick_slab", new ResourceLocation(Netherrocks.MODID, "block/illumenite_brick_slab"));
+        this.itemModels().withExistingParent("illumenite_brick_stairs", new ResourceLocation(Netherrocks.MODID, "block/illumenite_brick_stairs"));
+        this.itemModels().withExistingParent("malachite_bricks", new ResourceLocation(Netherrocks.MODID, "block/malachite_bricks"));
+        this.itemModels().withExistingParent("malachite_brick_slab", new ResourceLocation(Netherrocks.MODID, "block/malachite_brick_slab"));
+        this.itemModels().withExistingParent("malachite_brick_stairs", new ResourceLocation(Netherrocks.MODID, "block/malachite_brick_stairs"));
+     
     } // end registerStatesAndModels()
 
 } // end class

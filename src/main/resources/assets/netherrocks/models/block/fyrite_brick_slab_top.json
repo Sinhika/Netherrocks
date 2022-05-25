@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/slab_top",
-    "textures": {
-        "bottom": "netherrocks:block/fyrite_bricks",
-        "top": "netherrocks:block/fyrite_bricks",
-        "side": "netherrocks:block/fyrite_bricks"
-    }
-}
