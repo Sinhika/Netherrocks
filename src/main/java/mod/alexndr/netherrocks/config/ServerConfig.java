@@ -51,7 +51,8 @@ final class ServerConfig
 
     final ForgeConfigSpec.BooleanValue serverAddModLootToChests;
     final ForgeConfigSpec.BooleanValue serverEnableAesthetics;
-
+    final ForgeConfigSpec.BooleanValue serverEnableAshstoneGhastOre;
+    
 	ServerConfig(final ForgeConfigSpec.Builder builder)
 	{
 	    builder.push("General");
@@ -61,6 +62,10 @@ final class ServerConfig
         serverEnableAesthetics = builder.comment("Enable Netherrocks aesthetic blocks?")
                 .translation(Netherrocks.MODID + "config.EnableAesthetics")
                 .define("EnableAestheticsBlocks", true);
+        serverEnableAshstoneGhastOre = builder.comment("Enable Ashstone to double as ghast tear ore, if ashstone is enabled?")
+                .translation(Netherrocks.MODID + "config.EnableAshstoneGhastOre")
+                .define("EnableAshstoneGhastOre", false);
+                
 	    builder.pop();
 	    
 		builder.push("OreGeneration");

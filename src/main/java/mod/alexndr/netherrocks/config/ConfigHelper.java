@@ -23,8 +23,10 @@ public final class ConfigHelper
 		NetherrocksConfig.enableFyriteOre = ConfigHolder.SERVER.serverEnableFyriteOre.get();
         NetherrocksConfig.enableIllumeniteOre = ConfigHolder.SERVER.serverEnableIllumeniteOre.get();
         NetherrocksConfig.enableMalachiteOre = ConfigHolder.SERVER.serverEnableMalachiteOre.get();
-
+        NetherrocksConfig.enableAshstoneGhastOre = ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get();
+        
         NetherrocksConfig.INSTANCE.putFlag("aesthetics_enabled", ConfigHolder.SERVER.serverEnableAesthetics.get());
+        NetherrocksConfig.INSTANCE.putFlag("ghast_ore_enabled", ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get());
 	} // end bakeServer()
 
 	@SuppressWarnings("unused")

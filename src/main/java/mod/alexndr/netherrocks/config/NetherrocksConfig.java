@@ -21,7 +21,8 @@ public class NetherrocksConfig  extends SimpleConfig
     public static boolean enableIllumeniteOre;
     public static boolean enableMalachiteOre;
     public static boolean addModLootToChests;
-
+    public static boolean enableAshstoneGhastOre;
+    
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
     public static Lazy<ModOreConfig> argonite_cfg = Lazy.of(()->new ModOreConfig(ModOreConfig.FULL_RANGE, 
                 ConfigHolder.SERVER.serverArgoniteVeinSize.get(), ConfigHolder.SERVER.serverArgoniteVeinCount.get(), true,

@@ -12,10 +12,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -72,6 +74,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 	        .unlockedBy("has_item", has(ModBlocks.nether_furnace.get()))
 	        .save(consumer);
         
+        ResourceLocation recipe_name = setbuilder.make_resource("ghast_tears_from_ashstone_ore");
+        ConditionalRecipe.builder().addCondition(flag("ghast_ore_enabled"))
+            .addRecipe( ShapedRecipeBuilder.shaped(Items.GHAST_TEAR, 4)
+                .define('#', Items.LAVA_BUCKET)
+                .define('B', ModBlocks.ashstone_ore.get())
+                .pattern("BBB")
+                .pattern("B#B")
+                .pattern("BBB")
+                .unlockedBy("has_item", has(ModBlocks.ashstone_ore.get()))
+                ::save)
+            .setAdvancement(recipe_name, 
+                    setbuilder.build_advancement_with_condition(recipe_name, flag("ghast_ore_enabled"), 
+                            has(ModBlocks.ashstone_ore.get())))
+            .build(consumer, recipe_name);
+            
+            
         
         // pressure_plates
         this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.argonite_ingot.get()),
