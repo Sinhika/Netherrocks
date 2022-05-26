@@ -3,6 +3,7 @@ package mod.alexndr.netherrocks.client.jei;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.recipe.RecipeType;
@@ -20,6 +21,7 @@ import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -64,6 +66,12 @@ public class JEIMachinePlugin implements IModPlugin
 		IJeiHelpers jeiHelpers = registration.getJeiHelpers();
 		IIngredientManager ingredientManager = registration.getIngredientManager();
 		registration.addRecipes(NETHER_FUEL, NetherFuelRecipeMaker.getFuelRecipes(ingredientManager, jeiHelpers)); 
+		registration.addIngredientInfo(new ItemStack(ModBlocks.nether_furnace.get().asItem()), VanillaTypes.ITEM, 
+		        new TranslatableComponent("netherrocks.nether_furnace.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_blast_furnace.get().asItem()), VanillaTypes.ITEM, 
+                new TranslatableComponent("netherrocks.nether_blast_furnace.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_smoker.get().asItem()), VanillaTypes.ITEM, 
+                new TranslatableComponent("netherrocks.nether_smoker.info"));
 	}
 
 

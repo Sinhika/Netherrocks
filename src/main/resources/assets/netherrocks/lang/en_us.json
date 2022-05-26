@@ -177,5 +177,8 @@
 	"netherrocks.malachite_axe.info": "§aMildly poisonous.",
 	"netherrocks.malachite_sword.info": "§aMildly poisonous.",
 	"netherrocks.illumenite_armor.info": "§aSet Bonus: No fall damage.",
-	"netherrocks.illumenite_sword.info": "§aGrants night vision on hit. Blinds and slows target."
+	"netherrocks.illumenite_sword.info": "§aGrants night vision on hit. Blinds and slows target.",
+	"netherrocks.nether_furnace.info" : "Smelt things twice as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack",
+	"netherrocks.nether_blast_furnace.info" : "Blast ores four times as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack",
+	"netherrocks.nether_smoker.info" : "Cook food four times as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack"
 }
