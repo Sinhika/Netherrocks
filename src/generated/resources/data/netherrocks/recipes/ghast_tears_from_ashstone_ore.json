@@ -20,7 +20,7 @@
             "item": "minecraft:lava_bucket"
           },
           "B": {
-            "item": "netherrocks:ashstone_ore"
+            "tag": "forge:ores/ashstone"
           }
         },
         "result": {

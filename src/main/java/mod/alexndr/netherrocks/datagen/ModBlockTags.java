@@ -61,7 +61,8 @@ public class ModBlockTags extends MiningBlockTags
         this.registerOreRateTags( List.of(), // sparse 
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()), // singular 
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get(),
+        				ModBlocks.ghast_ore.get()), // singular 
         		List.of()); // dense
         
         // register forge:ores_in_ground tags
@@ -69,7 +70,8 @@ public class ModBlockTags extends MiningBlockTags
         		List.of(), // deepslate ores
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()));  // netherrack ores
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get(),
+        				ModBlocks.ghast_ore.get()));  // netherrack ores
     
     }  // end registerOreTags
     
@@ -160,7 +162,8 @@ public class ModBlockTags extends MiningBlockTags
     		List.of(ModBlocks.argonite_block.get(), ModBlocks.argonite_ore.get(), ModBlocks.argonite_bars.get(), 
     				ModBlocks.argonite_brick_slab.get(), ModBlocks.argonite_brick_stairs.get(),
         			ModBlocks.argonite_bricks.get(), ModBlocks.argonite_door.get(), 
-    				ModBlocks.ashstone_block.get(), ModBlocks.ashstone_ore.get(), ModBlocks.ashstone_bars.get(), 
+    				ModBlocks.ashstone_block.get(), ModBlocks.ashstone_ore.get(), ModBlocks.ghast_ore.get(),
+    				ModBlocks.ashstone_bars.get(), 
     				ModBlocks.ashstone_brick_slab.get(), ModBlocks.ashstone_brick_stairs.get(),
         			ModBlocks.ashstone_bricks.get(), ModBlocks.ashstone_door.get(),
     				ModBlocks.dragonstone_block.get(), ModBlocks.dragonstone_ore.get(), ModBlocks.dragonstone_bars.get(), 
