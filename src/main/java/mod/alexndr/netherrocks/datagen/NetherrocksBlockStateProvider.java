@@ -74,7 +74,7 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
         this.simpleBlock(ModBlocks.ashstone_bricks.get(), 
                 this.models().cubeAll("ashstone_bricks", new ResourceLocation(Netherrocks.MODID, "block/ashstone_small_bricks")));
         this.simpleBlock(ModBlocks.dragonstone_bricks.get(), 
-                this.models().cubeAll("dragonstone_bricks", new ResourceLocation(Netherrocks.MODID, "block/dragonstone_small_bricks")));
+                this.models().cubeAll("dragonstone_bricks", new ResourceLocation(Netherrocks.MODID, "block/dragonstone_bricks")));
        
         // BLOCKSTATES -- brick slabs, but have "cut_metal" texture names.
         this.slabBlock(ModBlocks.argonite_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/argonite_bricks"), 
@@ -88,7 +88,7 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
         this.slabBlock(ModBlocks.ashstone_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/ashstone_bricks"), 
                 new ResourceLocation(Netherrocks.MODID, "block/ashstone_small_bricks"));
         this.slabBlock(ModBlocks.dragonstone_brick_slab.get(), new ResourceLocation(Netherrocks.MODID, "block/dragonstone_bricks"), 
-                new ResourceLocation(Netherrocks.MODID, "block/dragonstone_small_bricks"));
+                new ResourceLocation(Netherrocks.MODID, "block/dragonstone_bricks"));
         
         // BLOCKSTATES -- brick stairs, but have "cut metal" textures.
         this.stairsBlock(ModBlocks.argonite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_argonite"));
@@ -96,7 +96,7 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
         this.stairsBlock(ModBlocks.illumenite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_illumenite"));
         this.stairsBlock(ModBlocks.malachite_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/cut_malachite"));
         this.stairsBlock(ModBlocks.ashstone_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/ashstone_small_bricks"));
-        this.stairsBlock(ModBlocks.dragonstone_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/dragonstone_small_bricks"));
+        this.stairsBlock(ModBlocks.dragonstone_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/dragonstone_bricks"));
       
         // ITEM MODELS -- brick blocks
         this.itemModels().withExistingParent("argonite_bricks", new ResourceLocation(Netherrocks.MODID, "block/argonite_bricks"));
