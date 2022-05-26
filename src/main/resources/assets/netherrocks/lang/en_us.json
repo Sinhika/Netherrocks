@@ -180,5 +180,6 @@
 	"netherrocks.illumenite_sword.info": "§aGrants night vision on hit. Blinds and slows target.",
 	"netherrocks.nether_furnace.info" : "Smelt things twice as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack",
 	"netherrocks.nether_blast_furnace.info" : "Blast ores four times as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack",
-	"netherrocks.nether_smoker.info" : "Cook food four times as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack"
+	"netherrocks.nether_smoker.info" : "Cook food four times as fast as normal furnaces, but can only burn Fyrite Ingots, fyrite items, or netherrack",
+	"netherrocks.ghast_ore.info" : "An alternate form of ashstone ore that only generates when EnableAshstoneGhastOre=true. When mined adjacent to lava, ghast tears may drop, or it can be processed with a lava bucket to get ghast tears. In all other cases, it acts like normal ashstone ore."
 }

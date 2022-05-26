@@ -72,6 +72,8 @@ public class JEIMachinePlugin implements IModPlugin
                 new TranslatableComponent("netherrocks.nether_blast_furnace.info"));
         registration.addIngredientInfo(new ItemStack(ModBlocks.nether_smoker.get().asItem()), VanillaTypes.ITEM, 
                 new TranslatableComponent("netherrocks.nether_smoker.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.ghast_ore.get().asItem()), VanillaTypes.ITEM,
+                new TranslatableComponent("netherrocks.ghast_ore.info"));
 	}
 
 
