@@ -17,8 +17,15 @@ public class OreGeneration
     {
         if (NetherrocksConfig.enableArgoniteOre)
             evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, ModFeatures.ARGONITE_VEIN.getHolder().get());
-        if (NetherrocksConfig.enableAshstoneOre)
-            evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, ModFeatures.ASHSTONE_VEIN.getHolder().get());
+        if (NetherrocksConfig.enableAshstoneOre) 
+        {
+            if (NetherrocksConfig.enableAshstoneGhastOre) {
+                evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, ModFeatures.GHAST_ORE_VEIN.getHolder().get());
+            }
+            else {
+                evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, ModFeatures.ASHSTONE_VEIN.getHolder().get());
+            }
+        }
         if (NetherrocksConfig.enableDragonstoneOre)
             evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, ModFeatures.DRAGONSTONE_VEIN.getHolder().get());
         if (NetherrocksConfig.enableFyriteOre) {

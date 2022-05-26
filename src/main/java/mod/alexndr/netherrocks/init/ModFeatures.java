@@ -50,7 +50,13 @@ public final class ModFeatures
                     ()->OreGenUtils.createConfiguredOreFeature(
                             OreGenUtils.BuildNetherOreTargetList(ModBlocks.ashstone_ore.get(), false), 
                             NetherrocksConfig.ashstone_cfg));
-                            
+    
+    public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_GHAST = 
+            CONFIGURED_FEATURES.register("ore_ghast", 
+                    ()->OreGenUtils.createConfiguredOreFeature(
+                            OreGenUtils.BuildNetherOreTargetList(ModBlocks.ghast_ore.get(), false), 
+                            NetherrocksConfig.ashstone_cfg));
+                          
     public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_DRAGONSTONE = 
             CONFIGURED_FEATURES.register("ore_dragonstone", 
                     ()->OreGenUtils.createConfiguredOreFeature(
@@ -93,7 +99,11 @@ public final class ModFeatures
             PLACED_FEATURES.register("ashstone_vein", 
                     ()->OreGenUtils.createPlacedOreFeature(ORE_ASHSTONE.getHolder().get(),NetherrocksConfig.ashstone_cfg));
     
-    public static RegistryObject<PlacedFeature> DRAGONSTONE_VEIN = 
+    public static RegistryObject<PlacedFeature> GHAST_ORE_VEIN = 
+            PLACED_FEATURES.register("ghast_ore_vein", 
+                    ()->OreGenUtils.createPlacedOreFeature(ORE_GHAST.getHolder().get(), NetherrocksConfig.ashstone_cfg));
+    
+   public static RegistryObject<PlacedFeature> DRAGONSTONE_VEIN = 
             PLACED_FEATURES.register("dragonstone_vein", 
                     ()->OreGenUtils.createPlacedOreFeature(ORE_DRAGONSTONE.getHolder().get(),NetherrocksConfig.dragonstone_cfg));
     
