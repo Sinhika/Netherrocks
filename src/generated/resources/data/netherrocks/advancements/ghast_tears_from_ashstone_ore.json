@@ -1,0 +1,39 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "flag": "ghast_ore_enabled",
+          "type": "netherrocks:flag"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "netherrocks:ghast_tears_from_ashstone_ore"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "netherrocks:ashstone_ore"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ]
+      }
+    }
+  ]
+}
