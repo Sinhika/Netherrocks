@@ -50,7 +50,8 @@ public class ModItemTags extends MiningItemTags
         this.tag(TagUtils.forgeTag( "ores/argonite"))
                 .add(ModBlocks.argonite_ore.get().asItem());
         this.tag(TagUtils.forgeTag( "ores/ashstone"))
-        	.add(ModBlocks.ashstone_ore.get().asItem());
+        	.add(ModBlocks.ashstone_ore.get().asItem())
+        	.add(ModBlocks.ghast_ore.get().asItem());
         this.tag(TagUtils.forgeTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get().asItem());
         this.tag(TagUtils.forgeTag( "ores/fyrite"))

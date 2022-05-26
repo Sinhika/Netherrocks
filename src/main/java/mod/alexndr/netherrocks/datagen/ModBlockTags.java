@@ -46,7 +46,8 @@ public class ModBlockTags extends MiningBlockTags
         this.tag(TagUtils.forgeBlockTag( "ores/argonite"))
                 .add(ModBlocks.argonite_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/ashstone"))
-        	.add(ModBlocks.ashstone_ore.get());
+        	.add(ModBlocks.ashstone_ore.get())
+        	.add(ModBlocks.ghast_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/fyrite"))

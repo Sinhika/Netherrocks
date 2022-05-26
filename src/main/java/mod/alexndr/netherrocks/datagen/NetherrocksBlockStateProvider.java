@@ -98,6 +98,13 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
         this.stairsBlock(ModBlocks.ashstone_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/ashstone_small_bricks"));
         this.stairsBlock(ModBlocks.dragonstone_brick_stairs.get(), new ResourceLocation(Netherrocks.MODID, "block/dragonstone_bricks"));
       
+        // BLOCKSATES -- "ghast" ore, evil clone of ashstone ore.
+        this.simpleBlock(ModBlocks.ghast_ore.get(), 
+                this.models().cubeAll("ghast_ore", new ResourceLocation(Netherrocks.MODID, "block/ashstone_ore")));
+                        
+        // ITEM MODELS -- ghast ore
+        this.itemModels().withExistingParent("ghast_ore", new ResourceLocation(Netherrocks.MODID, "block/ashstone_ore"));
+        
         // ITEM MODELS -- brick blocks
         this.itemModels().withExistingParent("argonite_bricks", new ResourceLocation(Netherrocks.MODID, "block/argonite_bricks"));
         this.itemModels().withExistingParent("argonite_brick_slab", new ResourceLocation(Netherrocks.MODID, "block/argonite_brick_slab"));

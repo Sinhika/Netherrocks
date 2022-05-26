@@ -6,6 +6,7 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
+import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
@@ -78,7 +79,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         ConditionalRecipe.builder().addCondition(flag("ghast_ore_enabled"))
             .addRecipe( ShapedRecipeBuilder.shaped(Items.GHAST_TEAR, 4)
                 .define('#', Items.LAVA_BUCKET)
-                .define('B', ModBlocks.ashstone_ore.get())
+                .define('B', ModTags.Items.ORES_ASHSTONE)
                 .pattern("BBB")
                 .pattern("B#B")
                 .pattern("BBB")
@@ -89,8 +90,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                             has(ModBlocks.ashstone_ore.get())))
             .build(consumer, recipe_name);
             
-            
-        
         // pressure_plates
         this.setbuilder.buildSimplePressurePlate(consumer, Ingredient.of(ModItems.argonite_ingot.get()),
                 ModBlocks.argonite_pressure_plate.get(), has(ModItems.argonite_ingot.get()));

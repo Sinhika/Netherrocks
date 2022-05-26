@@ -59,7 +59,12 @@ public final class ModBlocks
     public static final RegistryObject<OreBlock> malachite_ore = BLOCKS.register("malachite_ore",
             () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
-
+    
+    // evil clone of ashstone_ore for use when ghast_ore_enabled.
+    public static final RegistryObject<OreBlock> ghast_ore = BLOCKS.register("ghast_ore",
+            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+                    .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
+    
     // Metal Blocks
    public static final RegistryObject<Block> ashstone_block = BLOCKS.register("ashstone_block",
             () -> new Block(Block.Properties.of(Material.STONE)
