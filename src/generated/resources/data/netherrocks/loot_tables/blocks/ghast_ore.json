@@ -12,6 +12,32 @@
               "type": "minecraft:item",
               "conditions": [
                 {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1.0,
+                  "add": false
+                }
+              ],
+              "name": "netherrocks:ghast_ore"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
                   "condition": "minecraft:location_check",
                   "predicate": {
                     "fluid": {
@@ -85,6 +111,50 @@
                     }
                   },
                   "offsetZ": -1
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1.0,
+                  "add": false
+                }
+              ],
+              "name": "minecraft:ghast_tear"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "fluid": {
+                      "tag": "minecraft:lava"
+                    }
+                  },
+                  "offsetY": 1
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1.0,
+                  "add": false
+                }
+              ],
+              "name": "minecraft:ghast_tear"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "fluid": {
+                      "tag": "minecraft:lava"
+                    }
+                  },
+                  "offsetY": -1
                 }
               ],
               "functions": [

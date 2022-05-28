@@ -133,15 +133,21 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         Item niceItem = Items.GHAST_TEAR;
         Item normalItem = ModItems.ashstone_gem.get();
 
-        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(niceItem)
+        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(ModBlocks.ghast_ore.get().asItem())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                .when(create_location_check(new BlockPos(1, 0, 0)))
+                .when(SILK_TOUCH)
+                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        .when(create_location_check(new BlockPos(1, 0, 0))))
                 .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                         .when(create_location_check(new BlockPos(-1, 0, 0))))
                 .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                         .when(create_location_check(new BlockPos(0, 0, 1))))
                 .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                         .when(create_location_check(new BlockPos(0, 0, -1))))
+                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        .when(create_location_check(new BlockPos(0, 1, 0))))
+                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                        .when(create_location_check(new BlockPos(0, -1, 0))))
                 .otherwise(LootItem.lootTableItem(normalItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))));
                
 
