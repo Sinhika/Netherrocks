@@ -102,15 +102,15 @@ public final class ModBlocks
     // Furnace
     public static final RegistryObject<VeryAbstractFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
             () -> new NetherFurnaceBlock(Block.Properties.of(Material.STONE)
-                    .strength(3.5F, 12.0F)
+                    .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
     public static final RegistryObject<VeryAbstractFurnaceBlock> nether_smoker = BLOCKS.register("nether_smoker",
             () -> new NetherSmokerBlock(Block.Properties.of(Material.STONE)
-                    .strength(3.5F, 12.0F)
+                    .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
     public static final RegistryObject<VeryAbstractFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
             () -> new NetherBlastFurnaceBlock(Block.Properties.of(Material.STONE)
-                    .strength(3.5F, 12.0F)
+                    .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
   
     // AESTHETICS STUFF
@@ -206,11 +206,11 @@ public final class ModBlocks
                     20,  Block.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).noCollission().strength(0.5F).sound(SoundType.METAL)));
     // ashstone - stone plate with a very slow rebound.
     public static final RegistryObject<MultifunctionPressurePlateBlock> ashstone_pressure_plate = BLOCKS.register(
-            "ashstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING,
+            "ashstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.LIVING,
                     40,  Block.Properties.of(Material.STONE).noCollission().strength(0.5F).sound(SoundType.STONE)));
     // dragonstone - stone plate with very quick rebound.
     public static final RegistryObject<MultifunctionPressurePlateBlock> dragonstone_pressure_plate = BLOCKS.register(
-            "dragonstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.EVERYTHING,
+            "dragonstone_pressure_plate", () -> new MultifunctionPressurePlateBlock(15, MultifunctionPressurePlateBlock.Sensitivity.LIVING,
                     10,  Block.Properties.of(Material.STONE, MaterialColor.NETHER).noCollission().strength(0.5F).sound(SoundType.STONE)));
     // malachite - normal light weighted plate.
     public static final RegistryObject<MultifunctionPressurePlateBlock> malachite_pressure_plate = BLOCKS.register(
