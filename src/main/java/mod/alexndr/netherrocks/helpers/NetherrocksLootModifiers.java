@@ -5,8 +5,12 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.google.gson.JsonObject;
+import org.jetbrains.annotations.NotNull;
 
+import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
@@ -15,6 +19,7 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.items.ItemHandlerHelper;
 
@@ -28,12 +33,19 @@ public class NetherrocksLootModifiers
         {
             super(conditionsIn);
         }
-
-        @Nonnull
+        
         @Override
-        protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context)
+        public Codec<? extends IGlobalLootModifier> codec()
         {
-            ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot,
+                LootContext context)
+        {
+            ObjectArrayList<ItemStack> ret = new ObjectArrayList<ItemStack>();
             generatedLoot.forEach((stack) -> ret.add(smelt(stack, context)));
             return ret;
         }
@@ -66,6 +78,7 @@ public class NetherrocksLootModifiers
 
         } // end class Serializer
 
+ 
     } // end class AutoSmeltLootModifier
 
 } // end class

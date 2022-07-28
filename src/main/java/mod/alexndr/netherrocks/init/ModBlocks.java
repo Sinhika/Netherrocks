@@ -11,8 +11,8 @@ import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -40,29 +40,29 @@ public final class ModBlocks
             DeferredRegister.create(ForgeRegistries.BLOCKS, Netherrocks.MODID);
     
     // Ore Blocks
-    public static final RegistryObject<OreBlock> argonite_ore = BLOCKS.register("argonite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> argonite_ore = BLOCKS.register("argonite_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<OreBlock> ashstone_ore = BLOCKS.register("ashstone_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> ashstone_ore = BLOCKS.register("ashstone_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<OreBlock> dragonstone_ore = BLOCKS.register("dragonstone_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> dragonstone_ore = BLOCKS.register("dragonstone_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<OreBlock> fyrite_ore = BLOCKS.register("fyrite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> fyrite_ore = BLOCKS.register("fyrite_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
-    public static final RegistryObject<OreBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.GLASS)
+    public static final RegistryObject<DropExperienceBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.GLASS)
                     .strength( 1.0F, 30.0F).requiresCorrectToolForDrops()
                     .lightLevel(LightUtils.setFixedLight(15))));
-    public static final RegistryObject<OreBlock> malachite_ore = BLOCKS.register("malachite_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> malachite_ore = BLOCKS.register("malachite_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
     
     // evil clone of ashstone_ore for use when ghast_ore_enabled.
-    public static final RegistryObject<OreBlock> ghast_ore = BLOCKS.register("ghast_ore",
-            () -> new OreBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+    public static final RegistryObject<DropExperienceBlock> ghast_ore = BLOCKS.register("ghast_ore",
+            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
     
     // Metal Blocks

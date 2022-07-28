@@ -12,6 +12,7 @@ import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import mod.alexndr.simplecorelib.api.config.FlagCondition;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -24,7 +25,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = Netherrocks.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -47,26 +49,33 @@ public final class ModEventSubscriber
 	 * This method will always be called after the Block registry method.
 	 */
 	@SubscribeEvent
-	public static void onRegisterItems(final RegistryEvent.Register<Item> event)
+	public static void onRegisterItems(final RegisterEvent event)
 	{
-		final IForgeRegistry<Item> registry = event.getRegistry();
-        // Automatically register BlockItems for all our Blocks
-        ModBlocks.BLOCKS.getEntries().stream()
+        if (event.getRegistryKey() == Registry.ITEM_REGISTRY)
+        {
+            // We need to go over the entire registry so that we include any potential
+            // Registry Overrides
+            // Automatically register BlockItems for all our Blocks
+            ModBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
-                // You can do extra filtering here if you don't want some blocks to have an BlockItem automatically registered for them
-                // .filter(block -> needsItemBlock(block))
-                // Register the BlockItem for the block
-                .forEach(block -> {
-                    // Make the properties, and make it so that the item will be on our ItemGroup (CreativeTab)
-                    final Item.Properties properties = new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP);
-                    // Create the new BlockItem with the block and it's properties
-                    final BlockItem blockItem = new BlockItem(block, properties);
-                    // Set the new BlockItem's registry name to the block's registry name
-                    blockItem.setRegistryName(block.getRegistryName());
-                    // Register the BlockItem
-                    registry.register(blockItem);
-                });
-        LOGGER.debug("Registered BlockItems");
+                    // You can do extra filtering here if you don't want some blocks to have an
+                    // BlockItem automatically registered for them
+                    // .filter(block -> needsItemBlock(block))
+                    // Register the BlockItem for the block
+                    .forEach(block ->
+                    {
+                        // Make the properties, and make it so that the item will be on our ItemGroup
+                        // (CreativeTab)
+                        Item.Properties properties = new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP);
+                        // Create the new BlockItem with the block and it's properties
+                        BlockItem blockItem = new BlockItem(block, properties);
+                        // Register the BlockItem
+                        event.register(Registry.ITEM_REGISTRY,  helper -> {
+                            helper.register(ForgeRegistries.BLOCKS.getKey(block), blockItem);
+                        });
+                    });
+            LOGGER.debug("Registered BlockItems");
+        }
 	}  // end onRegisterItems()
 
 	@SubscribeEvent
@@ -81,20 +90,22 @@ public final class ModEventSubscriber
 	} // onModConfigEvent
     
     @SubscribeEvent
-    public static void onRegisterModifierSerializers(
-            @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
-    {
-        event.getRegistry().register(
-                new NetherrocksLootModifiers.AutoSmeltLootModifier.Serializer().setRegistryName(
-                        new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
-    } // end registerModifierSerializers
+//    public static void onRegisterModifierSerializers(@Nonnull RegisterEvent event)
+// //           @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
+//    {
+//        if (event.getRegistryKey() == Registry.)
+//        event.getRegistry().register(
+//                new NetherrocksLootModifiers.AutoSmeltLootModifier.Serializer().setRegistryName(
+//                        new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
+//    } // end registerModifierSerializers
 
     @SubscribeEvent
-    public static void onRegisterRecipeSerializers(
-            @Nonnull final RegistryEvent.Register<RecipeSerializer<?>> event)
+    public static void onRegisterRecipeSerializers( @Nonnull RegisterEvent event)
     {
-           CraftingHelper.register(new FlagCondition.Serializer(NetherrocksConfig.INSTANCE, 
+        if (event.getRegistryKey() == Registry.RECIPE_SERIALIZER_REGISTRY)
+        {           CraftingHelper.register(new FlagCondition.Serializer(NetherrocksConfig.INSTANCE, 
                                                new ResourceLocation(Netherrocks.MODID, "flag")));
+        }
     } // end registerRecipeSerializers
     
 } // end class ModEventSubscriber

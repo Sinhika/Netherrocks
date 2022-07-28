@@ -6,21 +6,17 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
-import mod.alexndr.netherrocks.generation.OreGeneration;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.api.helpers.LootUtils;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.VanillaGameEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -65,18 +61,6 @@ public final class ForgeEventSubscriber
     } // end onLivingHurtEvent
 
     /**
-     * Biome loading triggers ore generation.
-     */
-    @SubscribeEvent(priority=EventPriority.HIGH)
-    public static void onBiomeLoading(BiomeLoadingEvent evt)
-    {
-        if (evt.getCategory() == Biome.BiomeCategory.NETHER) 
-        {
-            OreGeneration.generateNetherOres(evt);
-        }
-    } // end onBiomeLoading()
-    
-    /**
      * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which
      * neatly solves the problem when I couldn't figure it out.
      */
@@ -97,14 +81,13 @@ public final class ForgeEventSubscriber
     public static void onVanillaGameEvent(VanillaGameEvent event)
     {
         // is the responsible block a FyritePressurePlateBlock?
-        Level level = event.getLevel();
-        BlockPos pos = event.getEventPosition();
-        if (! (level.getBlockState(pos).getBlock() instanceof FyritePressurePlateBlock))
+        BlockState bs = event.getContext().affectedState();
+        if (! (bs.getBlock() instanceof FyritePressurePlateBlock))
         {
             return;
         }
         // we only care about BLOCK_PRESSED events.
-        if (event.getVanillaEvent() == GameEvent.BLOCK_PRESS)
+        if (event.getVanillaEvent() == GameEvent.BLOCK_ACTIVATE)
         {
             Entity entity = event.getCause();
             if (entity == null) { return; }
