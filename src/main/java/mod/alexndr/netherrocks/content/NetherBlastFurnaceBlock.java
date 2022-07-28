@@ -20,6 +20,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
 {
     private static final String DISPLAY_NAME = "block.netherrocks.nether_blast_furnace";
@@ -79,7 +81,7 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
                     return new NetherBlastFurnaceContainer(windowId, playerInventory, bpos, playerEntity);
                 }
             }; // end anonymous-class
-            NetworkHooks.openGui((ServerPlayer) player, containerProvider, be.getBlockPos());
+            NetworkHooks.openScreen((ServerPlayer) player, containerProvider, be.getBlockPos());
             player.awardStat(Stats.INTERACT_WITH_FURNACE);
         } // end-if
         else {

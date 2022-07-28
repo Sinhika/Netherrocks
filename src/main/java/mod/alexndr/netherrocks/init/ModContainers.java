@@ -24,7 +24,7 @@ import net.minecraftforge.registries.RegistryObject;
 public final class ModContainers
 {
     public static final DeferredRegister<MenuType<?>> CONTAINER_TYPES = 
-            DeferredRegister.create(ForgeRegistries.CONTAINERS, Netherrocks.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, Netherrocks.MODID);
     
    public static RegistryObject<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 

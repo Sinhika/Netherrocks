@@ -23,7 +23,7 @@ import net.minecraftforge.registries.RegistryObject;
 public final class ModTiles
 {
     public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITY_TYPES = 
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Netherrocks.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Netherrocks.MODID);
 
     // tile entity type
     // We don't have a datafixer for our TileEntities, so we pass null into build.
