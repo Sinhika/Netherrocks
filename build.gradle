@@ -1,22 +1,10 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
-}
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 plugins {
     id 'eclipse'
     id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/ForgeUpdatesRemapper/main/remapper.gradle'
+//apply from: 'https://raw.githubusercontent.com/SizableShrimp/ForgeUpdatesRemapper/main/remapper.gradle'
 
 def getVersionAppendage() {
     if (System.env.BUILD_NUMBER)
@@ -132,12 +120,7 @@ repositories {
         name = "mcmodsrepo"
         url = "file:///${project.projectDir}/../mcmodsrepo"
     }
-    maven {
-        // fallback if not available locally.
-        name = "CurseForge"
-        url = "https://minecraft.curseforge.com/api/maven/"
-    }
-    maven {
+   maven {
         // location of the maven that hosts JEI files
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
@@ -147,7 +130,12 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
-}
+    maven {
+        // fallback if not available locally.
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
+ }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
@@ -156,9 +144,10 @@ dependencies {
     minecraft "net.minecraftforge:forge:${version_forge}"
     implementation fg.deobf("simplecore-api:SimpleCoreLib:${simplecorelib_version}")
   // compile against the JEI API but do not include it at runtime
-  compileOnly fg.deobf("mezz.jei:jei-${version_mcjei}:${jei_version}:api")
-  // at runtime, use the full JEI jar
-  runtimeOnly fg.deobf("mezz.jei:jei-${version_mcjei}:${jei_version}")
+  compileOnly fg.deobf("mezz.jei:jei-${version_mcjei}-common-api:${jei_version}")
+  compileOnly fg.deobf("mezz.jei:jei-${version_mcjei}-forge-api:${jei_version}")
+  // at runtime, use the full JEI jar for Forge
+  runtimeOnly fg.deobf("mezz.jei:jei-${version_mcjei}-forge:${jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
@@ -196,3 +185,8 @@ publishing {
         }
     }
 }
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+

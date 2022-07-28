@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[40,)" #mandatory
+loaderVersion="[41,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
 license="LGPL 3.0"
 logoFile="netherrocks.png"
@@ -12,7 +12,7 @@ logoFile="netherrocks.png"
 modId="netherrocks"
 version="${file.jarVersion}"
 displayName="SimpleOres:Netherrocks"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.16/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.19/update.json"
 displayURL="http://minecraft.curseforge.com/projects/netherrocks"
 credits="AleXndrTheGr8st (original mod), Sinhika (ports, maintenance) and Wuppy29 (Ghast Ore idea from Peaceful Pack)"
 authors="AleXndrTheGr8st, Sinhika"
@@ -25,21 +25,21 @@ Additional Credits: AzazEL3095 (Spanish translation)
 [[dependencies.netherrocks]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[40.1,41)"
+    versionRange="[41.0.98,42)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.netherrocks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,1.19)"
+    versionRange="[1.19, 1.19.1)"
     ordering="NONE"
     side="BOTH"
 
  [[dependencies.netherrocks]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.18.2-4.3.1.2, 1.18.2-4.4)"
+    versionRange="[1.19-5.0.1.6,1.19-5.1.0.0)"
     ordering="NONE"
     side="BOTH"
     
