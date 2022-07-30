@@ -1,0 +1,8 @@
+{
+  "parent": "simplecorelib:block/template_bars_side",
+  "textures": {
+    "bars": "netherrocks:block/illumenite_bars",
+    "edge": "netherrocks:block/illumenite_bars",
+    "particle": "netherrocks:block/illumenite_bars"
+  }
+}

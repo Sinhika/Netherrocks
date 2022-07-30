@@ -1,0 +1,8 @@
+{
+  "parent": "simplecorelib:block/template_bars_side",
+  "textures": {
+    "bars": "netherrocks:block/dragonstone_bars",
+    "edge": "netherrocks:block/dragonstone_bars",
+    "particle": "netherrocks:block/dragonstone_bars"
+  }
+}

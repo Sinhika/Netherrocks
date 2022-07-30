@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 2,
+        "ingredient": {
+          "item": "netherrocks:argonite_bricks"
+        },
+        "result": "netherrocks:argonite_brick_slab"
+      }
+    }
+  ]
+}

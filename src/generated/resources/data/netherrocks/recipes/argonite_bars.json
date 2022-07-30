@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "netherrocks:argonite_ingot"
+          }
+        },
+        "pattern": [
+          "SSS",
+          "SSS"
+        ],
+        "result": {
+          "count": 16,
+          "item": "netherrocks:argonite_bars"
+        }
+      }
+    }
+  ]
+}

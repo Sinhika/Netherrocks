@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "netherrocks:illumenite_bricks"
+          }
+        },
+        "pattern": [
+          "S  ",
+          "SS ",
+          "SSS"
+        ],
+        "result": {
+          "count": 4,
+          "item": "netherrocks:illumenite_brick_stairs"
+        }
+      }
+    }
+  ]
+}

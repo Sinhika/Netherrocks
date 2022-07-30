@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "ingredient": [
+    {
+      "item": "netherrocks:malachite_axe"
+    },
+    {
+      "item": "netherrocks:malachite_pickaxe"
+    },
+    {
+      "item": "netherrocks:malachite_shovel"
+    },
+    {
+      "item": "netherrocks:malachite_boots"
+    },
+    {
+      "item": "netherrocks:malachite_sword"
+    },
+    {
+      "item": "netherrocks:malachite_chestplate"
+    },
+    {
+      "item": "netherrocks:malachite_helmet"
+    },
+    {
+      "item": "netherrocks:malachite_leggings"
+    },
+    {
+      "item": "netherrocks:malachite_hoe"
+    }
+  ],
+  "result": "netherrocks:malachite_nugget"
+}

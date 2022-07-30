@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "netherrocks:fyrite_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "item": "netherrocks:fyrite_pressure_plate"
+  }
+}

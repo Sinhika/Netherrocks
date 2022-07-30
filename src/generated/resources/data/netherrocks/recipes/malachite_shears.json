@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "netherrocks:malachite_ingot"
+    }
+  },
+  "pattern": [
+    " S",
+    "S "
+  ],
+  "result": {
+    "item": "netherrocks:malachite_shears"
+  }
+}

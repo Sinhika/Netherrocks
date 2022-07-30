@@ -1,0 +1,8 @@
+{
+  "parent": "simplecorelib:block/template_bars_cap",
+  "textures": {
+    "bars": "netherrocks:block/fyrite_bars",
+    "edge": "netherrocks:block/fyrite_bars",
+    "particle": "netherrocks:block/fyrite_bars"
+  }
+}

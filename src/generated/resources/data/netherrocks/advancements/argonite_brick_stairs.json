@@ -1,0 +1,39 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_item": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "netherrocks:argonite_ingot"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "netherrocks:argonite_brick_stairs"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ]
+    }
+  ]
+}

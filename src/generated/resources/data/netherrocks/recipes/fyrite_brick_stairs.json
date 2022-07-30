@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "netherrocks:fyrite_bricks"
+          }
+        },
+        "pattern": [
+          "S  ",
+          "SS ",
+          "SSS"
+        ],
+        "result": {
+          "count": 4,
+          "item": "netherrocks:fyrite_brick_stairs"
+        }
+      }
+    }
+  ]
+}

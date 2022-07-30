@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:malachite_ingot_from_blasting_from_chunks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "malachite_ingot_from_blasting_from_chunks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:crushed_malachite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "malachite_ingot_from_blasting_from_chunks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:malachite_ingot_from_blasting_from_chunks"
+    ]
+  }
+}

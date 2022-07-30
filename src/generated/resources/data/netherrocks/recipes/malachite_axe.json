@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "netherrocks:malachite_ingot"
+    },
+    "T": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "SS ",
+    "ST ",
+    " T "
+  ],
+  "result": {
+    "item": "netherrocks:malachite_axe"
+  }
+}

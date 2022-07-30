@@ -1,0 +1,8 @@
+{
+  "parent": "simplecorelib:block/template_bars_cap_alt",
+  "textures": {
+    "bars": "netherrocks:block/ashstone_bars",
+    "edge": "netherrocks:block/ashstone_bars",
+    "particle": "netherrocks:block/ashstone_bars"
+  }
+}

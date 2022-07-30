@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "netherrocks:argonite_ingot"
+    }
+  },
+  "pattern": [
+    " S",
+    "S "
+  ],
+  "result": {
+    "item": "netherrocks:argonite_shears"
+  }
+}

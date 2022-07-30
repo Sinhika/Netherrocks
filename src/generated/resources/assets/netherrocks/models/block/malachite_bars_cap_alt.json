@@ -1,0 +1,8 @@
+{
+  "parent": "simplecorelib:block/template_bars_cap_alt",
+  "textures": {
+    "bars": "netherrocks:block/malachite_bars",
+    "edge": "netherrocks:block/malachite_bars",
+    "particle": "netherrocks:block/malachite_bars"
+  }
+}

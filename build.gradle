@@ -32,8 +32,8 @@ minecraft {
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     
-	// uncomment if including JEI support
-	sourceSets.main.java { srcDir 'src/api/java' }
+    // uncomment if including JEI support
+    sourceSets.main.java { srcDir 'src/api/java' }
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -104,7 +104,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'netherrocks'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'netherrocks', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/', '--existing-mod', 'simplecorelib')
+            args '--mod', 'netherrocks', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'simplecorelib'
 
             mods {
                 netherrocks {

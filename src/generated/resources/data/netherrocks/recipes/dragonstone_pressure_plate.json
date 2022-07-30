@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "netherrocks:dragonstone_gem"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SS ",
+    "   "
+  ],
+  "result": {
+    "item": "netherrocks:dragonstone_pressure_plate"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:malachite_ingot_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "malachite_ingot_from_blasting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:raw_malachite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "malachite_ingot_from_blasting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:malachite_ingot_from_blasting"
+    ]
+  }
+}

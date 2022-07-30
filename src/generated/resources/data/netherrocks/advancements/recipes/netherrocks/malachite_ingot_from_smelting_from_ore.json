@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:malachite_ingot_from_smelting_from_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "malachite_ingot_from_smelting_from_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:malachite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "malachite_ingot_from_smelting_from_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:malachite_ingot_from_smelting_from_ore"
+    ]
+  }
+}

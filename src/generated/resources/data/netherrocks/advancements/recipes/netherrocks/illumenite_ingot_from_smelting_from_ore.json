@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:illumenite_ingot_from_smelting_from_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "illumenite_ingot_from_smelting_from_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:illumenite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "illumenite_ingot_from_smelting_from_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:illumenite_ingot_from_smelting_from_ore"
+    ]
+  }
+}

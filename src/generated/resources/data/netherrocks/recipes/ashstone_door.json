@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "netherrocks:ashstone_gem"
+          }
+        },
+        "pattern": [
+          " SS",
+          " SS",
+          " SS"
+        ],
+        "result": {
+          "count": 3,
+          "item": "netherrocks:ashstone_door"
+        }
+      }
+    }
+  ]
+}
