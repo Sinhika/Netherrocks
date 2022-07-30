@@ -9,9 +9,13 @@ import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.api.helpers.LootUtils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
@@ -81,7 +85,8 @@ public final class ForgeEventSubscriber
     public static void onVanillaGameEvent(VanillaGameEvent event)
     {
         // is the responsible block a FyritePressurePlateBlock?
-        BlockState bs = event.getContext().affectedState();
+        BlockPos bpos = new BlockPos(event.getEventPosition());
+        BlockState bs = event.getLevel().getBlockState(bpos);
         if (bs == null) { return; }
         
         if (! (bs.getBlock() instanceof FyritePressurePlateBlock))
@@ -93,6 +98,7 @@ public final class ForgeEventSubscriber
         {
             Entity entity = event.getCause();
             if (entity == null) { return; }
+// COMMENTED-OUT CODE DOES NOT WORK! 
 //            if (entity instanceof ItemEntity) 
 //            {
 //                ItemStack stack = ((ItemEntity) entity).getItem();
