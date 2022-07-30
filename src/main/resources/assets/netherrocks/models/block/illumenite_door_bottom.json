@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "netherrocks:block/illumenite_door_lower",
-        "top": "netherrocks:block/illumenite_door_upper"
-    }
-}

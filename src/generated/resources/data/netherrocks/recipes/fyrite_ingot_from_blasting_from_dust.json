@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "cookingtime": 100,
-  "experience": 0.8,
-  "ingredient": {
-    "item": "netherrocks:fyrite_dust"
-  },
-  "result": "netherrocks:fyrite_ingot"
-}

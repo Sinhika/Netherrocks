@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "netherrocks:block/cut_argonite",
-    "side": "netherrocks:block/cut_argonite",
-    "top": "netherrocks:block/cut_argonite"
-  }
-}

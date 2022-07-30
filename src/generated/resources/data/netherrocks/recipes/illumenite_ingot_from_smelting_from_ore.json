@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.8,
-  "ingredient": {
-    "item": "netherrocks:illumenite_ore"
-  },
-  "result": "netherrocks:illumenite_ingot"
-}

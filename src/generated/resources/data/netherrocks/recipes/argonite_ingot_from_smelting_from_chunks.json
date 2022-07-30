@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.7,
-  "ingredient": {
-    "item": "netherrocks:crushed_argonite_ore"
-  },
-  "result": "netherrocks:argonite_ingot"
-}

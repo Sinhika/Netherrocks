@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "netherrocks:block/ashstone_small_bricks",
-    "side": "netherrocks:block/ashstone_small_bricks",
-    "top": "netherrocks:block/ashstone_small_bricks"
-  }
-}

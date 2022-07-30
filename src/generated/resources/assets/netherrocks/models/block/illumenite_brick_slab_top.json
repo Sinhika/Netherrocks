@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "netherrocks:block/cut_illumenite",
-    "side": "netherrocks:block/cut_illumenite",
-    "top": "netherrocks:block/cut_illumenite"
-  }
-}
