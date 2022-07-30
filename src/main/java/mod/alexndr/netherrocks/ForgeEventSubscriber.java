@@ -82,6 +82,8 @@ public final class ForgeEventSubscriber
     {
         // is the responsible block a FyritePressurePlateBlock?
         BlockState bs = event.getContext().affectedState();
+        if (bs == null) { return; }
+        
         if (! (bs.getBlock() instanceof FyritePressurePlateBlock))
         {
             return;

@@ -48,34 +48,6 @@ public class ClientModEventSubscriber
             LOGGER.debug("Registered ContainerType Screens");
         });
         
-        // doors with see-through windows.
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.argonite_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ashstone_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.dragonstone_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.fyrite_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.illumenite_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.malachite_door.get(), (layer) -> layer 
-                == RenderType.cutout());
-
-        // bars, which are see-through between the bars, obviously.
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.argonite_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ashstone_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.dragonstone_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.fyrite_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.illumenite_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.malachite_bars.get(), (layer) -> layer 
-                == RenderType.cutout());
-        
     } // end onFMLClientSetupEvent()
     
     
