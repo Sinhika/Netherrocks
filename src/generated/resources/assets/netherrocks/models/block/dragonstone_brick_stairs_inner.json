@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "side": "netherrocks:block/dragonstone_bricks",
     "bottom": "netherrocks:block/dragonstone_bricks",
+    "side": "netherrocks:block/dragonstone_bricks",
     "top": "netherrocks:block/dragonstone_bricks"
   }
 }

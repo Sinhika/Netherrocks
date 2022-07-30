@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.8,
   "ingredient": {
     "item": "netherrocks:crushed_fyrite_ore"
   },
-  "result": "netherrocks:fyrite_ingot",
-  "experience": 0.8,
-  "cookingtime": 100
+  "result": "netherrocks:fyrite_ingot"
 }

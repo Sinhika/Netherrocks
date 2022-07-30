@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "III",
-    "IXI",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "minecraft:nether_brick"
@@ -16,6 +11,11 @@
       "item": "netherrocks:nether_furnace"
     }
   },
+  "pattern": [
+    "III",
+    "IXI",
+    "###"
+  ],
   "result": {
     "item": "netherrocks:nether_blast_furnace"
   }

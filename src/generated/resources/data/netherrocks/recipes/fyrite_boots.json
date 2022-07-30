@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "   ",
-    "S S",
-    "S S"
-  ],
   "key": {
     "S": {
       "item": "netherrocks:fyrite_ingot"
     }
   },
+  "pattern": [
+    "   ",
+    "S S",
+    "S S"
+  ],
   "result": {
     "item": "netherrocks:fyrite_boots"
   }

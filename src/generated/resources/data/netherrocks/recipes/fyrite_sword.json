@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " S ",
-    " S ",
-    " T "
-  ],
   "key": {
     "S": {
       "item": "netherrocks:fyrite_ingot"
@@ -13,6 +8,11 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    " S ",
+    " S ",
+    " T "
+  ],
   "result": {
     "item": "netherrocks:fyrite_sword"
   }

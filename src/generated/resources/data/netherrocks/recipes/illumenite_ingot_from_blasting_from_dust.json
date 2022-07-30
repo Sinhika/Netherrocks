@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.8,
   "ingredient": {
     "item": "netherrocks:illumenite_dust"
   },
-  "result": "netherrocks:illumenite_ingot",
-  "experience": 0.8,
-  "cookingtime": 100
+  "result": "netherrocks:illumenite_ingot"
 }

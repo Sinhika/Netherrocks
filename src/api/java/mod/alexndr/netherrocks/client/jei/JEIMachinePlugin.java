@@ -21,7 +21,8 @@ import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import net.minecraft.network.chat.TranslatableComponent;
+import mod.alexndr.netherrocks.init.ModContainers;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -66,26 +67,26 @@ public class JEIMachinePlugin implements IModPlugin
 		IJeiHelpers jeiHelpers = registration.getJeiHelpers();
 		IIngredientManager ingredientManager = registration.getIngredientManager();
 		registration.addRecipes(NETHER_FUEL, NetherFuelRecipeMaker.getFuelRecipes(ingredientManager, jeiHelpers)); 
-		registration.addIngredientInfo(new ItemStack(ModBlocks.nether_furnace.get().asItem()), VanillaTypes.ITEM, 
-		        new TranslatableComponent("netherrocks.nether_furnace.info"));
-        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_blast_furnace.get().asItem()), VanillaTypes.ITEM, 
-                new TranslatableComponent("netherrocks.nether_blast_furnace.info"));
-        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_smoker.get().asItem()), VanillaTypes.ITEM, 
-                new TranslatableComponent("netherrocks.nether_smoker.info"));
-        registration.addIngredientInfo(new ItemStack(ModBlocks.ghast_ore.get().asItem()), VanillaTypes.ITEM,
-                new TranslatableComponent("netherrocks.ghast_ore.info"));
+		registration.addIngredientInfo(new ItemStack(ModBlocks.nether_furnace.get().asItem()), VanillaTypes.ITEM_STACK, 
+		        Component.translatable("netherrocks.nether_furnace.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_blast_furnace.get().asItem()), VanillaTypes.ITEM_STACK, 
+                Component.translatable("netherrocks.nether_blast_furnace.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.nether_smoker.get().asItem()), VanillaTypes.ITEM_STACK, 
+                Component.translatable("netherrocks.nether_smoker.info"));
+        registration.addIngredientInfo(new ItemStack(ModBlocks.ghast_ore.get().asItem()), VanillaTypes.ITEM_STACK,
+                Component.translatable("netherrocks.ghast_ore.info"));
 	}
 
 
 	@Override
 	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration)
 	{
-		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, RecipeTypes.SMELTING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, NETHER_FUEL, 1, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherSmokerContainer.class, RecipeTypes.SMOKING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherSmokerContainer.class, NETHER_FUEL, 1, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, RecipeTypes.BLASTING, 0, 1, 3, 36);
-		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, NETHER_FUEL, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, ModContainers.NETHER_FURNACE.get(), RecipeTypes.SMELTING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherFurnaceContainer.class, ModContainers.NETHER_FURNACE.get(), NETHER_FUEL, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, ModContainers.NETHER_SMOKER.get(), RecipeTypes.SMOKING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherSmokerContainer.class, ModContainers.NETHER_SMOKER.get(), NETHER_FUEL, 1, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, ModContainers.NETHER_BLAST_FURNACE.get(), RecipeTypes.BLASTING, 0, 1, 3, 36);
+		registration.addRecipeTransferHandler(NetherBlastFurnaceContainer.class, ModContainers.NETHER_BLAST_FURNACE.get(), NETHER_FUEL, 1, 1, 3, 36);
 	}
 
 	@Override

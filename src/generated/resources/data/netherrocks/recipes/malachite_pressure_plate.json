@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "   ",
-    "SS ",
-    "   "
-  ],
   "key": {
     "S": {
       "item": "netherrocks:malachite_ingot"
     }
   },
+  "pattern": [
+    "   ",
+    "SS ",
+    "   "
+  ],
   "result": {
     "item": "netherrocks:malachite_pressure_plate"
   }

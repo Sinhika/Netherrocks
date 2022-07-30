@@ -1,7 +1,5 @@
 package mod.alexndr.netherrocks.helpers;
 
-import java.util.Random;
-
 import mod.alexndr.simplecorelib.api.helpers.IWeaponEffectHelper;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -9,6 +7,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -51,7 +50,7 @@ public class FyriteHandler implements IWeaponEffectHelper
         //Netherrocks.LOGGER.info("tried to after-smelt");
         if (was_effective && world.isClientSide())
         {
-            Random random = world.random;
+            RandomSource random = world.random;
             for(int i = 0; i < 3; i++) {
                 world.addParticle(ParticleTypes.FLAME,
                                     pos.getX() + random.nextDouble() * 0.6D,

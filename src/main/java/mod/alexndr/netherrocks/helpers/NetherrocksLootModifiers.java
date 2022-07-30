@@ -1,46 +1,47 @@
 package mod.alexndr.netherrocks.helpers;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nonnull;
+import java.util.function.Supplier;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.google.gson.JsonObject;
+import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class NetherrocksLootModifiers
 {
-
+    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = 
+            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Netherrocks.MODID);
+    
+    public static final RegistryObject<Codec<AutoSmeltLootModifier>> AUTO_SMELT_TOOL 
+        = GLM.register("auto_smelt_tool", AutoSmeltLootModifier.CODEC);
+    
+    
     public static class AutoSmeltLootModifier extends LootModifier
     {
-
-        protected AutoSmeltLootModifier(LootItemCondition[] conditionsIn)
+        public static final Supplier<Codec<AutoSmeltLootModifier>> CODEC = 
+                Suppliers.memoize( () -> RecordCodecBuilder.create( inst -> codecStart(inst).apply(inst, AutoSmeltLootModifier::new)));
+        
+        public AutoSmeltLootModifier(LootItemCondition[] conditionsIn)
         {
             super(conditionsIn);
         }
         
-        @Override
-        public Codec<? extends IGlobalLootModifier> codec()
-        {
-            // TODO Auto-generated method stub
-            return null;
-        }
-
         @Override
         protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot,
                 LootContext context)
@@ -60,25 +61,12 @@ public class NetherrocksLootModifiers
                     .orElse(stack);
        }
 
-        public static class Serializer extends GlobalLootModifierSerializer<AutoSmeltLootModifier>
+        @Override
+        public Codec<? extends IGlobalLootModifier> codec()
         {
+            return CODEC.get();
+        }
 
-            @Override
-            public AutoSmeltLootModifier read(ResourceLocation location, JsonObject object,
-                    LootItemCondition[] ailootcondition)
-            {
-                return new AutoSmeltLootModifier(ailootcondition);
-            }
-
-            @Override
-            public JsonObject write(AutoSmeltLootModifier instance)
-            {
-                return makeConditions(instance.conditions);
-            }
-
-        } // end class Serializer
-
- 
     } // end class AutoSmeltLootModifier
 
 } // end class

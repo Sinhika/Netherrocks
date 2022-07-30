@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.3,
   "ingredient": [
     {
       "item": "netherrocks:argonite_axe"
@@ -17,7 +19,5 @@
       "item": "netherrocks:argonite_sword"
     }
   ],
-  "result": "netherrocks:argonite_nugget",
-  "experience": 0.3,
-  "cookingtime": 200
+  "result": "netherrocks:argonite_nugget"
 }

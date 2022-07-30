@@ -25,6 +25,7 @@ public class ModTags
     public static class Items
     {
         public static final TagKey<Item> ORES_ASHSTONE = TagUtils.forgeTag("ores/ashstone");
+        public static final TagKey<Item> AUTO_SMELT_TOOLS = TagUtils.modTag(Netherrocks.MODID, "auto_smelt_tools");
     }
     
     public static class Blocks 

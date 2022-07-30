@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "aesthetics_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:stonecutting",
+        "count": 1,
         "ingredient": {
           "item": "netherrocks:argonite_bricks"
         },
-        "result": "netherrocks:argonite_brick_stairs",
-        "count": 1
+        "result": "netherrocks:argonite_brick_stairs"
       }
     }
   ]

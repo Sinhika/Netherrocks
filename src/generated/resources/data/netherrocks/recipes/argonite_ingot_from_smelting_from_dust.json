@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.7,
   "ingredient": {
     "item": "netherrocks:argonite_dust"
   },
-  "result": "netherrocks:argonite_ingot",
-  "experience": 0.7,
-  "cookingtime": 200
+  "result": "netherrocks:argonite_ingot"
 }

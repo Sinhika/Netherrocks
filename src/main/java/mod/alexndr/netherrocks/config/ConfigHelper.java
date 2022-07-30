@@ -17,14 +17,6 @@ public final class ConfigHelper
 	{
 	    NetherrocksConfig.addModLootToChests = ConfigHolder.SERVER.serverAddModLootToChests.get();
 
-	    NetherrocksConfig.enableArgoniteOre = ConfigHolder.SERVER.serverEnableArgoniteOre.get();
-		NetherrocksConfig.enableAshstoneOre = ConfigHolder.SERVER.serverEnableAshstoneOre.get();
-		NetherrocksConfig.enableDragonstoneOre = ConfigHolder.SERVER.serverEnableDragonstoneOre.get();
-		NetherrocksConfig.enableFyriteOre = ConfigHolder.SERVER.serverEnableFyriteOre.get();
-        NetherrocksConfig.enableIllumeniteOre = ConfigHolder.SERVER.serverEnableIllumeniteOre.get();
-        NetherrocksConfig.enableMalachiteOre = ConfigHolder.SERVER.serverEnableMalachiteOre.get();
-        NetherrocksConfig.enableAshstoneGhastOre = ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get();
-        
         NetherrocksConfig.INSTANCE.putFlag("aesthetics_enabled", ConfigHolder.SERVER.serverEnableAesthetics.get());
         NetherrocksConfig.INSTANCE.putFlag("ghast_ore_enabled", ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get());
 	} // end bakeServer()

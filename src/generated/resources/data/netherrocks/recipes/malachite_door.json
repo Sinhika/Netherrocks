@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "aesthetics_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          " SS",
-          " SS",
-          " SS"
-        ],
         "key": {
           "S": {
             "item": "netherrocks:malachite_ingot"
           }
         },
+        "pattern": [
+          " SS",
+          " SS",
+          " SS"
+        ],
         "result": {
-          "item": "netherrocks:malachite_door",
-          "count": 3
+          "count": 3,
+          "item": "netherrocks:malachite_door"
         }
       }
     }

@@ -6,6 +6,24 @@
     "power=1": {
       "model": "netherrocks:block/fyrite_plate_down"
     },
+    "power=10": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
+    "power=11": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
+    "power=12": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
+    "power=13": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
+    "power=14": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
+    "power=15": {
+      "model": "netherrocks:block/fyrite_plate_down"
+    },
     "power=2": {
       "model": "netherrocks:block/fyrite_plate_down"
     },
@@ -28,24 +46,6 @@
       "model": "netherrocks:block/fyrite_plate_down"
     },
     "power=9": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=10": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=11": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=12": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=13": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=14": {
-      "model": "netherrocks:block/fyrite_plate_down"
-    },
-    "power=15": {
       "model": "netherrocks:block/fyrite_plate_down"
     }
   }

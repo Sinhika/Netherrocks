@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "aesthetics_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:stonecutting",
+        "count": 2,
         "ingredient": {
           "item": "netherrocks:illumenite_bricks"
         },
-        "result": "netherrocks:illumenite_brick_slab",
-        "count": 2
+        "result": "netherrocks:illumenite_brick_slab"
       }
     }
   ]

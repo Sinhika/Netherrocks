@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -27,9 +26,9 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "netherrocks:ghast_ore"
@@ -39,19 +38,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetX": 1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetX": 1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -61,19 +60,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetX": -1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetX": -1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -83,19 +82,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetZ": 1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetZ": 1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -105,19 +104,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetZ": -1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetZ": -1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -127,19 +126,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetY": 1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetY": 1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -149,19 +148,19 @@
               "conditions": [
                 {
                   "condition": "minecraft:location_check",
+                  "offsetY": -1,
                   "predicate": {
                     "fluid": {
                       "tag": "minecraft:lava"
                     }
-                  },
-                  "offsetY": -1
+                  }
                 }
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "minecraft:ghast_tear"
@@ -170,16 +169,17 @@
               "type": "minecraft:item",
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": 1.0,
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "netherrocks:ashstone_gem"
             }
           ]
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

@@ -1,5 +1,7 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.3,
   "ingredient": [
     {
       "item": "netherrocks:fyrite_axe"
@@ -26,7 +28,5 @@
       "item": "netherrocks:fyrite_leggings"
     }
   ],
-  "result": "netherrocks:fyrite_nugget",
-  "experience": 0.3,
-  "cookingtime": 100
+  "result": "netherrocks:fyrite_nugget"
 }

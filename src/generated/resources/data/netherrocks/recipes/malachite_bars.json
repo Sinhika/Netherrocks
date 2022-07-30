@@ -4,24 +4,24 @@
     {
       "conditions": [
         {
-          "flag": "aesthetics_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "SSS",
-          "SSS"
-        ],
         "key": {
           "S": {
             "item": "netherrocks:malachite_ingot"
           }
         },
+        "pattern": [
+          "SSS",
+          "SSS"
+        ],
         "result": {
-          "item": "netherrocks:malachite_bars",
-          "count": 16
+          "count": 16,
+          "item": "netherrocks:malachite_bars"
         }
       }
     }

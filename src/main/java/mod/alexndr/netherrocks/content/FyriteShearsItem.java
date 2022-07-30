@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import mod.alexndr.netherrocks.helpers.FyriteHandler;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,8 +17,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import net.minecraft.world.item.Item.Properties;
 
 public class FyriteShearsItem extends ShearsItem
 {
@@ -54,7 +51,7 @@ public class FyriteShearsItem extends ShearsItem
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslatableComponent("netherrocks.fyrite_shears.info"));
+        tooltip.add(Component.translatable("netherrocks.fyrite_shears.info"));
     }
 
 } // end class

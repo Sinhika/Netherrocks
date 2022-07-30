@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "aesthetics_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "aesthetics_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "   ",
-          "   ",
-          "SSS"
-        ],
         "key": {
           "S": {
             "item": "netherrocks:malachite_bricks"
           }
         },
+        "pattern": [
+          "   ",
+          "   ",
+          "SSS"
+        ],
         "result": {
-          "item": "netherrocks:malachite_brick_slab",
-          "count": 6
+          "count": 6,
+          "item": "netherrocks:malachite_brick_slab"
         }
       }
     }

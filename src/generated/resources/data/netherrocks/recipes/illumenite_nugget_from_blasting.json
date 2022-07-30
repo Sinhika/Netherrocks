@@ -1,5 +1,7 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.3,
   "ingredient": [
     {
       "item": "netherrocks:illumenite_boots"
@@ -17,7 +19,5 @@
       "item": "netherrocks:illumenite_leggings"
     }
   ],
-  "result": "netherrocks:illumenite_nugget",
-  "experience": 0.3,
-  "cookingtime": 100
+  "result": "netherrocks:illumenite_nugget"
 }

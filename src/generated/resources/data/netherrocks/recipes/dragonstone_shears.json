@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " S",
-    "S "
-  ],
   "key": {
     "S": {
       "item": "netherrocks:dragonstone_gem"
     }
   },
+  "pattern": [
+    " S",
+    "S "
+  ],
   "result": {
     "item": "netherrocks:dragonstone_shears"
   }

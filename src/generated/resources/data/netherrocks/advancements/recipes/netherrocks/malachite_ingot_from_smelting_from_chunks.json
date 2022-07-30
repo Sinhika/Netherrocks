@@ -1,13 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
-  "rewards": {
-    "recipes": [
-      "netherrocks:malachite_ingot_from_smelting_from_chunks"
-    ]
-  },
   "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:malachite_ingot_from_smelting_from_chunks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
     "malachite_ingot_from_smelting_from_chunks": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -16,13 +16,8 @@
             ]
           }
         ]
-      }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "netherrocks:malachite_ingot_from_smelting_from_chunks"
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
@@ -30,5 +25,10 @@
       "malachite_ingot_from_smelting_from_chunks",
       "has_the_recipe"
     ]
-  ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:malachite_ingot_from_smelting_from_chunks"
+    ]
+  }
 }

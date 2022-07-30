@@ -4,9 +4,9 @@ import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.data.event.GatherDataEvent;
 
 /**
  * bundles up the GatherDataEvent handler and all the necessary data providers for
@@ -24,17 +24,16 @@ public class NetherrocksDataGenerator
     public static void gatherData(GatherDataEvent event)
     {
         DataGenerator gen = event.getGenerator();
-        if (event.includeServer())
-        {
-            gen.addProvider(new Recipes(gen));
-            gen.addProvider(new SilentsRecipes(gen));
-            gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
-            gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
-            gen.addProvider(new NetherrocksLootTableProvider(gen));
-            gen.addProvider(new NetherrocksLootInjectorProvider(gen));
-            gen.addProvider(new NetherrocksBlockStateProvider(gen, event.getExistingFileHelper()));
-            gen.addProvider(new NetherrocksItemModelProvider(gen, event.getExistingFileHelper()));
-        }
+        gen.addProvider(event.includeServer(), new Recipes(gen));
+        gen.addProvider(event.includeServer(),new SilentsRecipes(gen));
+        gen.addProvider(event.includeServer(),new ModBlockTags(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeServer(),new ModItemTags(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeServer(),new NetherrocksLootTableProvider(gen));
+        gen.addProvider(event.includeServer(),new NetherrocksLootInjectorProvider(gen));
+        gen.addProvider(event.includeServer(), new LootModifierProvider(gen));
+        
+        gen.addProvider(event.includeClient(),new NetherrocksBlockStateProvider(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeClient(),new NetherrocksItemModelProvider(gen, event.getExistingFileHelper()));
      } // end gatherData()
 
 } // end class

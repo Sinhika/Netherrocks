@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "ghast_ore_enabled",
-          "type": "netherrocks:flag"
+          "type": "netherrocks:flag",
+          "flag": "ghast_ore_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "BBB",
-          "B#B",
-          "BBB"
-        ],
         "key": {
           "#": {
             "item": "minecraft:lava_bucket"
@@ -23,9 +18,14 @@
             "tag": "forge:ores/ashstone"
           }
         },
+        "pattern": [
+          "BBB",
+          "B#B",
+          "BBB"
+        ],
         "result": {
-          "item": "minecraft:ghast_tear",
-          "count": 4
+          "count": 4,
+          "item": "minecraft:ghast_tear"
         }
       }
     }

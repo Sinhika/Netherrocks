@@ -1,5 +1,7 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.3,
   "ingredient": [
     {
       "item": "netherrocks:malachite_axe"
@@ -29,7 +31,5 @@
       "item": "netherrocks:malachite_hoe"
     }
   ],
-  "result": "netherrocks:malachite_nugget",
-  "experience": 0.3,
-  "cookingtime": 100
+  "result": "netherrocks:malachite_nugget"
 }

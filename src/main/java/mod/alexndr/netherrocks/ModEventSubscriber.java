@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
-import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTabGroups;
 import mod.alexndr.simplecorelib.api.config.FlagCondition;
@@ -16,10 +15,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -89,7 +85,7 @@ public final class ModEventSubscriber
 		}
 	} // onModConfigEvent
     
-    @SubscribeEvent
+//    @SubscribeEvent
 //    public static void onRegisterModifierSerializers(@Nonnull RegisterEvent event)
 // //           @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
 //    {

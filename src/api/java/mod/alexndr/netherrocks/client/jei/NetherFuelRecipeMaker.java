@@ -22,7 +22,7 @@ public final class NetherFuelRecipeMaker
 
 	public static List<NetherFurnaceFuelRecipe> getFuelRecipes(IIngredientManager ingredientManager, IJeiHelpers helpers) 
 	{
-		Collection<ItemStack> allItemStacks = ingredientManager.getAllIngredients(VanillaTypes.ITEM);
+		Collection<ItemStack> allItemStacks = ingredientManager.getAllIngredients(VanillaTypes.ITEM_STACK);
 		List<NetherFurnaceFuelRecipe> fuelRecipes = new ArrayList<>();
 		for (ItemStack stack : allItemStacks) 
 		{
