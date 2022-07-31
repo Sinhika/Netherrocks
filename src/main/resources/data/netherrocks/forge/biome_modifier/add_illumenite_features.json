@@ -1,0 +1,6 @@
+{
+	"type" : "forge:add_features",
+	"biomes" : "#minecraft:is_nether",
+	"features" : ["netherrocks:illumenite_cluster", "netherrocks:illumenite_cluster_extra" ],
+	"step" : "underground_decoration"
+}

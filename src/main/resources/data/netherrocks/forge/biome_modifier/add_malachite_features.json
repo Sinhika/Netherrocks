@@ -1,0 +1,6 @@
+{
+	"type" : "forge:add_features",
+	"biomes" : "#minecraft:is_nether",
+	"features" : "netherrocks:malachite_vein",
+	"step" : "underground_decoration"
+}
