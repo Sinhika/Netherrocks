@@ -16,7 +16,7 @@ public final class ConfigHelper
 	public static void bakeServer(final ModConfig config)
 	{
 	    NetherrocksConfig.addModLootToChests = ConfigHolder.SERVER.serverAddModLootToChests.get();
-
+	    NetherrocksConfig.enableAshstoneGhastOre = ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get();
         NetherrocksConfig.INSTANCE.putFlag("aesthetics_enabled", ConfigHolder.SERVER.serverEnableAesthetics.get());
         NetherrocksConfig.INSTANCE.putFlag("ghast_ore_enabled", ConfigHolder.SERVER.serverEnableAshstoneGhastOre.get());
 	} // end bakeServer()
