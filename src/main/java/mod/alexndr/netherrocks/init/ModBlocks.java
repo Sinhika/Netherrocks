@@ -61,9 +61,9 @@ public final class ModBlocks
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
     
     // evil clone of ashstone_ore for use when ghast_ore_enabled.
-    public static final RegistryObject<DropExperienceBlock> ghast_ore = BLOCKS.register("ghast_ore",
-            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
-                    .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
+//    public static final RegistryObject<DropExperienceBlock> ghast_ore = BLOCKS.register("ghast_ore",
+//            () -> new DropExperienceBlock(Block.Properties.of(Material.STONE).sound(SoundType.NETHER_ORE)
+//                    .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
     
     // Metal Blocks
    public static final RegistryObject<Block> ashstone_block = BLOCKS.register("ashstone_block",

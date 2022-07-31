@@ -7,7 +7,6 @@ import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
-import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.resources.ResourceLocation;
@@ -42,9 +41,7 @@ public class Netherrocks
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
         NetherrocksLootModifiers.GLM.register(modEventBus);
         
-        ModFeatures.FEATURES.register(modEventBus);
-//        ModFeatures.CONFIGURED_FEATURES.register(modEventBus);
-//        ModFeatures.PLACED_FEATURES.register(modEventBus);
+//        ModFeatures.FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);

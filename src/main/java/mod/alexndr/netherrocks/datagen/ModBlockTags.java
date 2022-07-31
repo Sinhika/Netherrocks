@@ -46,8 +46,7 @@ public class ModBlockTags extends MiningBlockTags
         this.tag(TagUtils.forgeBlockTag( "ores/argonite"))
                 .add(ModBlocks.argonite_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/ashstone"))
-        	.add(ModBlocks.ashstone_ore.get())
-        	.add(ModBlocks.ghast_ore.get());
+        	.add(ModBlocks.ashstone_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get());
         this.tag(TagUtils.forgeBlockTag( "ores/fyrite"))
@@ -59,19 +58,18 @@ public class ModBlockTags extends MiningBlockTags
 
         // register forge ore_rates tags.
         this.registerOreRateTags( List.of(), // sparse 
-        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
+        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(), // singular
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get(),
-        				ModBlocks.ghast_ore.get()), // singular 
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()),
         		List.of()); // dense
         
         // register forge:ores_in_ground tags
         this.registerOresInGroundTags( List.of(), // stone ores
         		List.of(), // deepslate ores
-        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
+        		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(), // netherrack ores
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get(),
-        				ModBlocks.ghast_ore.get()));  // netherrack ores
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()));
+ 
     
     }  // end registerOreTags
     
@@ -162,7 +160,7 @@ public class ModBlockTags extends MiningBlockTags
     		List.of(ModBlocks.argonite_block.get(), ModBlocks.argonite_ore.get(), ModBlocks.argonite_bars.get(), 
     				ModBlocks.argonite_brick_slab.get(), ModBlocks.argonite_brick_stairs.get(),
         			ModBlocks.argonite_bricks.get(), ModBlocks.argonite_door.get(), 
-    				ModBlocks.ashstone_block.get(), ModBlocks.ashstone_ore.get(), ModBlocks.ghast_ore.get(),
+    				ModBlocks.ashstone_block.get(), ModBlocks.ashstone_ore.get(), 
     				ModBlocks.ashstone_bars.get(), 
     				ModBlocks.ashstone_brick_slab.get(), ModBlocks.ashstone_brick_stairs.get(),
         			ModBlocks.ashstone_bricks.get(), ModBlocks.ashstone_door.get(),

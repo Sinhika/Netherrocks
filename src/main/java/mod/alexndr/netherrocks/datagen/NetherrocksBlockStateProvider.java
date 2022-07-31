@@ -19,13 +19,6 @@ public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        // BLOCKSATES -- "ghast" ore, evil clone of ashstone ore.
-        this.simpleBlock(ModBlocks.ghast_ore.get(), 
-                this.models().cubeAll("ghast_ore", new ResourceLocation(Netherrocks.MODID, "block/ashstone_ore")));
-                        
-        // ITEM MODELS -- ghast ore
-        this.itemModels().withExistingParent("ghast_ore", new ResourceLocation(Netherrocks.MODID, "block/ashstone_ore"));
-        
         this.generateBrickStatesAndModels();
         this.generatePressurePlateStatesAndModels();
         this.generateBarStatesAndModels();

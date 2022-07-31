@@ -16,18 +16,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 public class NetherrocksLootTableProvider extends BlockLootTableProvider
 {
@@ -112,7 +104,7 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
 
     protected void ghastOreDropTable()
     {
-        blockTable(ModBlocks.ghast_ore.get(), createGhastOreDrops());
+//       blockTable(ModBlocks.ghast_ore.get(), createGhastOreDrops());
     }
 
     protected static LootItemCondition.Builder create_location_check(BlockPos pos) 
@@ -128,30 +120,30 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
      * 
      * @return
      */
-    protected static LootTable.Builder createGhastOreDrops()
-    {
-        Item niceItem = Items.GHAST_TEAR;
-        Item normalItem = ModItems.ashstone_gem.get();
-
-        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(ModBlocks.ghast_ore.get().asItem())
-                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                .when(SILK_TOUCH)
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(1, 0, 0))))
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(-1, 0, 0))))
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(0, 0, 1))))
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(0, 0, -1))))
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(0, 1, 0))))
-                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                        .when(create_location_check(new BlockPos(0, -1, 0))))
-                .otherwise(LootItem.lootTableItem(normalItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))));
-               
-
-         return LootTable.lootTable().withPool(LootPool.lootPool().add(builder));
-    } // end createGhastOreDrops()
+//    protected static LootTable.Builder createGhastOreDrops()
+//    {
+//        Item niceItem = Items.GHAST_TEAR;
+//        Item normalItem = ModItems.ashstone_gem.get();
+//
+//        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(ModBlocks.ghast_ore.get().asItem())
+//                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                .when(SILK_TOUCH)
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(1, 0, 0))))
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(-1, 0, 0))))
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(0, 0, 1))))
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(0, 0, -1))))
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(0, 1, 0))))
+//                .otherwise(LootItem.lootTableItem(niceItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+//                        .when(create_location_check(new BlockPos(0, -1, 0))))
+//                .otherwise(LootItem.lootTableItem(normalItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))));
+//               
+//
+//         return LootTable.lootTable().withPool(LootPool.lootPool().add(builder));
+//    } // end createGhastOreDrops()
 
 } // end class
