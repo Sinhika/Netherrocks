@@ -9,9 +9,11 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
+import mod.alexndr.netherrocks.init.ModItems;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -19,18 +21,9 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class NetherrocksLootModifiers
 {
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = 
-            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Netherrocks.MODID);
-    
-    public static final RegistryObject<Codec<AutoSmeltLootModifier>> AUTO_SMELT_TOOL 
-        = GLM.register("auto_smelt_tool", AutoSmeltLootModifier.CODEC);
-    
     
     public static class AutoSmeltLootModifier extends LootModifier
     {
@@ -69,4 +62,45 @@ public class NetherrocksLootModifiers
 
     } // end class AutoSmeltLootModifier
 
+    public static class GhastOreLootModifier extends LootModifier
+    {
+        public static final Supplier<Codec<GhastOreLootModifier>> CODEC = 
+                Suppliers.memoize( () -> RecordCodecBuilder.create( inst -> codecStart(inst).apply(inst, GhastOreLootModifier::new)));
+        
+        public GhastOreLootModifier(LootItemCondition[] conditionsIn)
+        {
+            super(conditionsIn);
+        }
+
+        @Override
+        public Codec<? extends IGlobalLootModifier> codec()
+        {
+            return CODEC.get();
+        }
+
+        @Override
+        protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot,
+                LootContext context)
+        {
+            // pass loot thru and do nothing if AshstoneGhastOre not enabled.
+            if (! NetherrocksConfig.enableAshstoneGhastOre)
+            {
+                return generatedLoot;
+            }
+            ObjectArrayList<ItemStack> ret = new ObjectArrayList<ItemStack>();
+            generatedLoot.forEach((x) -> ret.add(substitute(x)));
+            return ret;
+        } // end GhastOreLootModifier.doApply
+
+        protected static ItemStack substitute(ItemStack stack)
+        {
+            if (stack.getItem() == ModItems.ashstone_gem.get())
+            {
+                return new ItemStack(Items.GHAST_TEAR);
+            }
+            return stack;
+        } // end substitute()
+        
+    } // end class GhastOreLootModifer
+    
 } // end class

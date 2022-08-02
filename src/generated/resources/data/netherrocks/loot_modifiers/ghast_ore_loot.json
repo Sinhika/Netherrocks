@@ -1,0 +1,68 @@
+{
+  "type": "netherrocks:ghast_ore_loot",
+  "conditions": [
+    {
+      "block": "netherrocks:ashstone_ore",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "minecraft:location_check",
+          "offsetX": 1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetX": -1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetZ": 1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetZ": -1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": 1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -1,
+          "predicate": {
+            "fluid": {
+              "tag": "minecraft:lava"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

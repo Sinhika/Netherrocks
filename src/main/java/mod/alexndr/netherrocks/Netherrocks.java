@@ -4,9 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModContainers;
+import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.netherrocks.init.ModItems;
+import mod.alexndr.netherrocks.init.ModModifiers;
+import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -27,18 +30,18 @@ public class Netherrocks
 
     public Netherrocks()
     {
-    	LOGGER.debug("Hello from Simple Ores:Netherrocks!");
+    	LOGGER.debug("Hello from Netherrocks!");
     	
         final ModLoadingContext modLoadingContext = ModLoadingContext.get();
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
-  //      ModContainers.CONTAINER_TYPES.register(modEventBus);
-  //      ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
-        NetherrocksLootModifiers.GLM.register(modEventBus);
+        ModContainers.CONTAINER_TYPES.register(modEventBus);
+        ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
+        ModModifiers.GLM.register(modEventBus);
         
-  //      ModFeatures.FEATURES.register(modEventBus);
+        ModFeatures.FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
