@@ -85,16 +85,6 @@ public final class ModEventSubscriber
 		}
 	} // onModConfigEvent
     
-//    @SubscribeEvent
-//    public static void onRegisterModifierSerializers(@Nonnull RegisterEvent event)
-// //           @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
-//    {
-//        if (event.getRegistryKey() == Registry.)
-//        event.getRegistry().register(
-//                new NetherrocksLootModifiers.AutoSmeltLootModifier.Serializer().setRegistryName(
-//                        new ResourceLocation(Netherrocks.MODID, "auto_smelt_tool")) );
-//    } // end registerModifierSerializers
-
     @SubscribeEvent
     public static void onRegisterRecipeSerializers( @Nonnull RegisterEvent event)
     {

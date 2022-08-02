@@ -17,24 +17,5 @@ public final class ModFeatures
     /** illumenite blob feature */
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> ILLUMENITE_BLOB = 
             FEATURES.register("illumenite_blob", () -> new IllumeniteBlobFeature(NoneFeatureConfiguration.CODEC));
-//
-//    /** ConfiguredFeature<?, ?> registry */
-//    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
-//            DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Netherrocks.MODID);
-//    
-//    public static RegistryObject<ConfiguredFeature<OreConfiguration, ?>> ORE_GHAST = 
-//            CONFIGURED_FEATURES.register("ore_ghast", 
-//                    ()->OreGenUtils.createConfiguredOreFeature(
-//                            OreGenUtils.BuildNetherOreTargetList(ModBlocks.ghast_ore.get(), false), 
-//                            NetherrocksConfig.ashstone_cfg));
-//                          
-//    /** PlacedFeature registry */
-//    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
-//            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Netherrocks.MODID);
-//    
-//    public static RegistryObject<PlacedFeature> GHAST_ORE_VEIN = 
-//            PLACED_FEATURES.register("ghast_ore_vein", 
-//                    ()->OreGenUtils.createPlacedOreFeature(ORE_GHAST.getHolder().get(), NetherrocksConfig.ashstone_cfg));
-//    
-            
+
 } // end class

@@ -87,9 +87,9 @@ public class NetherrocksLootTableProvider extends BlockLootTableProvider
         doorDropTable(ModBlocks.malachite_door.get());
         specialDropTable(ModBlocks.malachite_ore.get(), ModItems.raw_malachite.get());
 
-        copyNameDropTable(ModBlocks.nether_blast_furnace.get(), ModBlocks.nether_blast_furnace.get().asItem());
-        copyNameDropTable(ModBlocks.nether_furnace.get(), ModBlocks.nether_furnace.get().asItem());
-        copyNameDropTable(ModBlocks.nether_smoker.get(), ModBlocks.nether_smoker.get().asItem());
+//        copyNameDropTable(ModBlocks.nether_blast_furnace.get(), ModBlocks.nether_blast_furnace.get().asItem());
+//        copyNameDropTable(ModBlocks.nether_furnace.get(), ModBlocks.nether_furnace.get().asItem());
+//        copyNameDropTable(ModBlocks.nether_smoker.get(), ModBlocks.nether_smoker.get().asItem());
 
         // pressure plates
         standardDropTable(ModBlocks.argonite_pressure_plate.get());

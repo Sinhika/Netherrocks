@@ -6,10 +6,7 @@ import org.apache.logging.log4j.Logger;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModItems;
-import mod.alexndr.netherrocks.init.ModTiles;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +20,7 @@ public class Netherrocks
 	// modid 
 	public static final String MODID = "netherrocks";
 	
-    public static final ResourceLocation SIMPLE_TEXTURE_ATLAS = new ResourceLocation(MODID, "textures/atlas/gui.png");
+    // public static final ResourceLocation SIMPLE_TEXTURE_ATLAS = new ResourceLocation(MODID, "textures/atlas/gui.png");
 
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
@@ -37,14 +34,15 @@ public class Netherrocks
         
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
-        ModContainers.CONTAINER_TYPES.register(modEventBus);
-        ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
+  //      ModContainers.CONTAINER_TYPES.register(modEventBus);
+  //      ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
         NetherrocksLootModifiers.GLM.register(modEventBus);
         
-//        ModFeatures.FEATURES.register(modEventBus);
+  //      ModFeatures.FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
+        modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
     } // end Netherrocks()
 
 } // end class Netherrocks
