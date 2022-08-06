@@ -32,6 +32,7 @@ public class ModItemTags extends MiningItemTags
         registerToolTags();
         registerDoorsSlabsAndStairs();
     	registerBlockItemTags();
+    	registerNetherFurnaceFuelTags();
     }
 
     
@@ -77,6 +78,18 @@ public class ModItemTags extends MiningItemTags
     }  // end registerOreTags
     
     
+    private void registerNetherFurnaceFuelTags()
+    {
+        this.tag(TagUtils.modTag(Netherrocks.MODID, "nether_furnace_fuels"))
+            .add(ModItems.fyrite_axe.get())
+            .add(ModItems.fyrite_pickaxe.get())
+            .add(ModItems.fyrite_shears.get())
+            .add(ModItems.fyrite_shovel.get())
+            .add(ModItems.fyrite_sword.get())
+            .add(ModBlocks.fyrite_bars.get().asItem());
+            
+    } // end registerNetherFurnaceFuelTags
+    
     private void registerDoorsSlabsAndStairs()
     {
     	this.tag(TagUtils.modTag("minecraft", "doors"))
@@ -100,7 +113,7 @@ public class ModItemTags extends MiningItemTags
 			.add(ModBlocks.fyrite_brick_slab.get().asItem())
 			.add(ModBlocks.illumenite_brick_slab.get().asItem())
 			.add(ModBlocks.malachite_brick_slab.get().asItem());
-    }
+    } // end registerDoorsSlabsAndStairs
 
     private void registerBlockItemTags()
     {
