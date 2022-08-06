@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 
+import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
@@ -17,10 +18,12 @@ import net.minecraftforge.registries.tags.ITag;
 
 public final class NetherFurnaceFuelHandler
 {
-    protected static final int netherrackBurnTime = 200;
-    protected static final int fyriteBurnTime = 8000;
-    protected static final int blazeRodBurnTime = 2400;
-    protected static final List<Item> validFuels = new ArrayList<Item>();
+    protected static int netherrackBurnTime = 0;
+    protected static int fyriteBurnTime = 0;
+    protected static int blazeRodBurnTime = 0;
+    protected static int baseToolBurnTime = 0;
+    
+    protected static List<Item> validFuels = new ArrayList<Item>();
     protected static Map<Item, Integer> burnTimes = Maps.newLinkedHashMap();
 
     
@@ -44,6 +47,11 @@ public final class NetherFurnaceFuelHandler
     public static Map<Item, Integer> loadBurnTimes()
     {
         Map<Item, Integer> map = Maps.newLinkedHashMap();
+        netherrackBurnTime = ConfigHolder.SERVER.serverNetherrackBurnTime.get();
+        fyriteBurnTime = ConfigHolder.SERVER.serverFyriteBurnTime.get();
+        blazeRodBurnTime = ConfigHolder.SERVER.serverBlazeRodBurnTime.get();
+        baseToolBurnTime = ConfigHolder.SERVER.serverBaseToolBurnTime.get();
+        
         addItemBurnTime(map, Blocks.NETHERRACK, netherrackBurnTime);
         addItemBurnTime(map, ModItems.fyrite_ingot.get(), fyriteBurnTime);
         addItemBurnTime(map, ModItems.raw_fyrite.get(), fyriteBurnTime);
@@ -58,7 +66,7 @@ public final class NetherFurnaceFuelHandler
         addItemBurnTime(map, Items.BLAZE_ROD, blazeRodBurnTime);
         addItemBurnTime(map, Items.BLAZE_POWDER, blazeRodBurnTime/3);
         
-        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), fyriteBurnTime / 3);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), baseToolBurnTime);
      
         return map;
     } // end getBurnTimes()

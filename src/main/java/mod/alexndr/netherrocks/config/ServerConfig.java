@@ -10,12 +10,16 @@ import net.minecraftforge.common.ForgeConfigSpec;
  * @author Cadiboo
  * @author Sinhika
  */
-final class ServerConfig
+public final class ServerConfig
 {
 
     final ForgeConfigSpec.BooleanValue serverAddModLootToChests;
     final ForgeConfigSpec.BooleanValue serverEnableAesthetics;
     final ForgeConfigSpec.BooleanValue serverEnableAshstoneGhastOre;
+    public final ForgeConfigSpec.IntValue serverNetherrackBurnTime;
+    public final ForgeConfigSpec.IntValue serverFyriteBurnTime;
+    public final ForgeConfigSpec.IntValue serverBlazeRodBurnTime;
+    public final ForgeConfigSpec.IntValue serverBaseToolBurnTime;
     
 	ServerConfig(final ForgeConfigSpec.Builder builder)
 	{
@@ -30,7 +34,16 @@ final class ServerConfig
                 .translation(Netherrocks.MODID + "config.EnableAshstoneGhastOre")
                 .define("EnableAshstoneGhastOre", false);
 	    builder.pop();
-	    
+	    builder.push("Nether Furnace Fuels");
+	    serverNetherrackBurnTime = builder.comment("Ticks to consume 1 block of netherrack")
+	            .defineInRange("NetherrackBurnTime", 200, 1, 10000);
+	    serverFyriteBurnTime = builder.comment("Ticks to consume 1 ingot of fyrite: base for several other burn times")
+	            .defineInRange("FyriteBurnTime", 8000, 1, 32000);
+	    serverBlazeRodBurnTime = builder.comment("Ticks to consume 1 blaze rod; base for certain other burn times")
+	            .defineInRange("BlazeRodBurnTime", 2400, 1, 20000);
+	    serverBaseToolBurnTime = builder.comment("Ticks to consume 1 fyrite tool")
+	            .defineInRange("BaseToolBurntime", 3200, 1, 32000);
+	    builder.pop();
 	} // end ctor
 
 } // end class ServerConfig
