@@ -54,19 +54,22 @@ public final class NetherFurnaceFuelHandler
         
         addItemBurnTime(map, Blocks.NETHERRACK, netherrackBurnTime);
         addItemBurnTime(map, ModItems.fyrite_ingot.get(), fyriteBurnTime);
-        addItemBurnTime(map, ModItems.raw_fyrite.get(), fyriteBurnTime);
         addItemBurnTime(map, ModBlocks.fyrite_block.get(), fyriteBurnTime * 10);
-        addItemBurnTime(map, ModBlocks.raw_fyrite_block.get(), fyriteBurnTime * 10);
-        addItemBurnTime(map, ModBlocks.fyrite_bricks.get(), fyriteBurnTime * 10);
-        addItemBurnTime(map, ModBlocks.fyrite_brick_stairs.get(), fyriteBurnTime * 10);
         addItemBurnTime(map, ModBlocks.fyrite_brick_slab.get(), fyriteBurnTime * 5);
-        addItemBurnTime(map, ModBlocks.fyrite_door.get(), fyriteBurnTime * 5);
+        addItemBurnTime(map, ModBlocks.fyrite_door.get(), fyriteBurnTime * 2);      // 6 ingots / 3 doors = 2
         addItemBurnTime(map, ModItems.fyrite_nugget.get(), fyriteBurnTime/9);
-        addItemBurnTime(map, ModItems.fyrite_dust.get(), fyriteBurnTime/2);
+        addItemBurnTime(map, ModBlocks.fyrite_bars.get(), fyriteBurnTime/2);    // 6 ingots / 12 bars = 0.5. dust same.
         addItemBurnTime(map, Items.BLAZE_ROD, blazeRodBurnTime);
         addItemBurnTime(map, Items.BLAZE_POWDER, blazeRodBurnTime/3);
         
-        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels(), baseToolBurnTime);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_tool"), baseToolBurnTime);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_ingot"), fyriteBurnTime);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_block"), fyriteBurnTime * 10);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_slab"), fyriteBurnTime * 5);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_door"), fyriteBurnTime * 2);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_bars"), fyriteBurnTime/2);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_blaze_rod"), blazeRodBurnTime);
+        addItemTagBurnTime(map, ModTags.getnetherFurnaceFuels("as_blaze_powder"), blazeRodBurnTime/3);
      
         return map;
     } // end getBurnTimes()

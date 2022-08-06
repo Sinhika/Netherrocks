@@ -1,10 +1,12 @@
 {
   "values": [
-    "netherrocks:fyrite_axe",
-    "netherrocks:fyrite_pickaxe",
-    "netherrocks:fyrite_shears",
-    "netherrocks:fyrite_shovel",
-    "netherrocks:fyrite_sword",
-    "netherrocks:fyrite_bars"
+    "#netherrocks:nether_furnace_fuels/as_tool",
+    "#netherrocks:nether_furnace_fuels/as_ingot",
+    "#netherrocks:nether_furnace_fuels/as_block",
+    "#netherrocks:nether_furnace_fuels/as_slab",
+    "#netherrocks:nether_furnace_fuels/as_door",
+    "#netherrocks:nether_furnace_fuels/as_bars",
+    "#netherrocks:nether_furnace_fuels/as_blaze_rod",
+    "#netherrocks:nether_furnace_fuels/as_blaze_powder"
   ]
 }
