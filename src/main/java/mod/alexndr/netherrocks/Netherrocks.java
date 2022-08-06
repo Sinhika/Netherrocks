@@ -8,7 +8,7 @@ import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModFeatures;
 import mod.alexndr.netherrocks.init.ModItems;
-import mod.alexndr.netherrocks.init.ModModifiers;
+import mod.alexndr.netherrocks.init.ModSerializers;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -39,9 +39,8 @@ public class Netherrocks
         ModItems.ITEMS.register(modEventBus);
         ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
-        ModModifiers.GLM.register(modEventBus);
-        
-        ModFeatures.FEATURES.register(modEventBus);
+        ModSerializers.GLM.register(modEventBus);
+         ModFeatures.FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
