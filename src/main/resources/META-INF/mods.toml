@@ -39,7 +39,7 @@ Additional Credits: AzazEL3095 (Spanish translation)
  [[dependencies.netherrocks]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.0, 1.19.2-5.2.0.0)"
+    versionRange="[1.19.2-5.1.0.1, 1.19.2-5.2.0.0)"
     ordering="NONE"
     side="BOTH"
     
