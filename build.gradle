@@ -20,7 +20,7 @@ def getVersionAppendage() {
     return "DEV-" + proc.text.trim()
 }
 
-version = "${version_minecraft}-${version_mod}." + getVersionAppendage()
+version = "${minecraft_version}-${mod_version}." + getVersionAppendage()
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17) 
 
