@@ -1,8 +1,8 @@
 {
    "pack":{
-      "description":"Netherrocks resources",
-       "pack_format": 9,
-        "forge:resource_pack_format": 9,
-        "forge:data_pack_format": 10
+      "description":"${mod_name} resources",
+       "pack_format": 15,
+        "forge:resource_pack_format": 15,
+        "forge:data_pack_format": 15
    }
 }

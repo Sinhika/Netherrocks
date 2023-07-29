@@ -3,54 +3,50 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[43,)" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
-license="LGPL 3.0"
+license="${mod_license}"
 logoFile="netherrocks.png"
 
 [[mods]]
-modId="netherrocks"
-version="${file.jarVersion}"
-displayName="SimpleOres:Netherrocks"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.19/update.json"
+modId="${mod_id}"
+version="${version}"
+displayName="${mod_name}"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.20/update.json"
 displayURL="http://minecraft.curseforge.com/projects/netherrocks"
 credits="AleXndrTheGr8st (original mod), Sinhika (ports, maintenance) and Wuppy29 (Ghast Ore idea from Peaceful Pack)"
-authors="AleXndrTheGr8st, Sinhika"
-description='''
-Adds 6 more ores to the base game that are found only in the Nether: Argonite, Ashstone, Dragonstone, Fyrite, Illumenite, and Malachite. Each ore has its own unique properties, armor and tool sets, and more.
+authors="${mod_authors}"
+description="${mod_description}"
 
-Additional Credits: AzazEL3095 (Spanish translation)
-'''
-
-[[dependencies.netherrocks]] #optional
+[[dependencies.${mod_id}]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[43.0.0,44)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.netherrocks]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2, 1.19.3)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
- [[dependencies.netherrocks]]
+ [[dependencies.${mod_id}]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.1, 1.19.2-5.2.0.0)"
+    versionRange="${simplecore_range}"
     ordering="NONE"
     side="BOTH"
     
-# [[dependencies.netherrocks]]
+# [[dependencies.${mod_id}]]
 #         modId="silents_mechanisms"
 #         mandatory=false
 #         versionRange="[0.8.9,)"
 #         ordering="BEFORE"
 #         side="BOTH"
 #         
-# [[dependencies.netherrocks]]
+# [[dependencies.${mod_id}]]
 #         modId="silentgear"
 #         mandatory=false
 #         versionRange="[2.5.2,)"
