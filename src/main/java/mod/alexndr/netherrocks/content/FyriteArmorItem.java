@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class FyriteArmorItem extends ArmorItem
 {
-    public FyriteArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
+    public FyriteArmorItem(ArmorMaterial materialIn, Type slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }

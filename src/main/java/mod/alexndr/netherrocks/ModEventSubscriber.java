@@ -9,7 +9,7 @@ import mod.alexndr.netherrocks.config.ConfigHelper;
 import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import mod.alexndr.netherrocks.init.ModTabGroups;
+import mod.alexndr.netherrocks.init.CreativeTabs;
 import mod.alexndr.simplecorelib.api.config.FlagCondition;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -62,7 +62,7 @@ public final class ModEventSubscriber
                     {
                         // Make the properties, and make it so that the item will be on our ItemGroup
                         // (CreativeTab)
-                        Item.Properties properties = new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP);
+                        Item.Properties properties = new Item.Properties().tab(CreativeTabs.MOD_ITEM_GROUP);
                         // Create the new BlockItem with the block and it's properties
                         BlockItem blockItem = new BlockItem(block, properties);
                         // Register the BlockItem

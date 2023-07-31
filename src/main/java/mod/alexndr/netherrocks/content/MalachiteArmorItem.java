@@ -8,7 +8,6 @@ import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -23,7 +22,7 @@ public class MalachiteArmorItem extends ArmorItem
 
     protected final int jumpBoostFactor = 1;
 
-    public MalachiteArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder)
+    public MalachiteArmorItem(ArmorMaterial materialIn, Type slot, Properties builder)
     {
         super(materialIn, slot, builder);
     }

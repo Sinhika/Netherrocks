@@ -8,7 +8,7 @@ import mod.alexndr.netherrocks.Netherrocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public final class ModTabGroups
+public final class CreativeTabs
 {
 
     public static final CreativeModeTab MOD_ITEM_GROUP =
