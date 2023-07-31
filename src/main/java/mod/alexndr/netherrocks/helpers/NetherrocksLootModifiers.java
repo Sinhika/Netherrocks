@@ -11,11 +11,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModItems;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
@@ -44,11 +45,14 @@ public class NetherrocksLootModifiers
             return ret;
         }
 
+        
         protected static ItemStack smelt(ItemStack stack, LootContext context)
         {
+        	ServerLevel level = context.getLevel();
+        	RegistryAccess registryAccess = level.registryAccess();
             return context.getLevel().getRecipeManager()
-                    .getRecipeFor(RecipeType.SMELTING, new SimpleContainer(stack),context.getLevel())
-                    .map(SmeltingRecipe::getResultItem)
+                    .getRecipeFor(RecipeType.SMELTING, new SimpleContainer(stack), level)
+                    .map((a)->a.getResultItem(registryAccess))
                     .filter(itemStack -> !itemStack.isEmpty())
                     .map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, stack.getCount() * itemStack.getCount()))
                     .orElse(stack);
