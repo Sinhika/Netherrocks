@@ -9,8 +9,8 @@ import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.api.helpers.LootUtils;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,18 +41,19 @@ public final class ForgeEventSubscriber
             Player player = (Player) event.getEntity();
             LOGGER.debug("caught LivingAttackEvent");
 
+            DamageSource source = event.getSource();
+            
             // fall damage and are they wearing full illumenite armor?
-            if ((event.getSource() == DamageSource.FALL) &&
-                    ArmorUtils.isPlayerWearingFullSet(player,
-                                               NetherrocksArmorMaterial.ILLUMENITE))
+            if ((source.is(DamageTypes.FALL))
+            	   && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.ILLUMENITE))
             {
                 // pro-forma cancelable check.
                 if (event.isCancelable()) event.setCanceled(true);
                 LOGGER.debug("Canceled fall damage because of illumenite");
             } // end-if full set of Illumenite and fall damage
-            else if (event.getSource().isFire()
-                     && ArmorUtils.isPlayerWearingFullSet(player,
-                                                      NetherrocksArmorMaterial.FYRITE))
+            else if ((source.is(DamageTypes.IN_FIRE) || source.is(DamageTypes.ON_FIRE) || source.is(DamageTypes.HOT_FLOOR)
+            		 	|| source.is(DamageTypes.LAVA) || source.is(DamageTypes.FIREBALL) || source.is(DamageTypes.FIREWORKS))
+                     && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.FYRITE))
             {
                 // pro-forma cancelable check.
                 if (event.isCancelable()) event.setCanceled(true);
@@ -85,8 +86,8 @@ public final class ForgeEventSubscriber
         if (event.getVanillaEvent() == GameEvent.BLOCK_ACTIVATE)
         {
             // is the responsible block a FyritePressurePlateBlock?
-            BlockPos bpos = new BlockPos(event.getEventPosition());
-            BlockState bs = event.getLevel().getBlockState(bpos);
+
+            BlockState bs = event.getContext().affectedState();
             if (bs == null) { return; }
             
             if (! (bs.getBlock() instanceof FyritePressurePlateBlock))

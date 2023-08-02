@@ -36,8 +36,7 @@ public class NetherFurnaceBlock extends VeryAbstractFurnaceBlock
     * @deprecated Call via {@link BlockState#onReplaced(World, BlockPos, BlockState, boolean)}
     * Implementing/overriding is fine.
     */
-   @SuppressWarnings("dep-ann")
-@Override
+   @Override
    public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) 
    {
         if (oldState.getBlock() != newState.getBlock())
