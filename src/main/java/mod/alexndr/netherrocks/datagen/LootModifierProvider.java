@@ -8,9 +8,9 @@ import net.minecraft.advancements.critereon.FluidPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.level.storage.loot.predicates.AlternativeLootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.AnyOfCondition;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -20,9 +20,9 @@ import net.minecraftforge.common.data.GlobalLootModifierProvider;
 public class LootModifierProvider extends GlobalLootModifierProvider
 {
 
-    public LootModifierProvider(DataGenerator gen)
+    public LootModifierProvider(PackOutput output)
     {
-        super(gen, Netherrocks.MODID);
+        super(output, Netherrocks.MODID);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class LootModifierProvider extends GlobalLootModifierProvider
         add("ghast_ore_loot", new NetherrocksLootModifiers.GhastOreLootModifier(
                 new LootItemCondition[] {
                         LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.ashstone_ore.get()).build(),
-                        AlternativeLootItemCondition.alternative(
+                        AnyOfCondition.anyOf(
                             LocationCheck.checkLocation(
                                     LocationPredicate.Builder.location().setFluid(FluidPredicate.Builder.fluid().of(FluidTags.LAVA).build()), 
                                     new BlockPos(1,0,0))

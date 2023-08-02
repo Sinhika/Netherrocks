@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.datagen;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -9,10 +9,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class NetherrocksItemModelProvider extends ItemModelProvider
 {
 
-    public NetherrocksItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper)
+    public NetherrocksItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper)
     {
-        super(generator, Netherrocks.MODID, existingFileHelper);
-        // TODO Auto-generated constructor stub
+        super(output, Netherrocks.MODID, existingFileHelper);
     }
 
     @Override

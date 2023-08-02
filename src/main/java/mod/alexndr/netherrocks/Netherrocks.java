@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.init.CreativeTabs;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModContainers;
 import mod.alexndr.netherrocks.init.ModFeatures;
@@ -37,6 +38,7 @@ public class Netherrocks
         
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        CreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
         ModSerializers.GLM.register(modEventBus);

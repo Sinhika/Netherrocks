@@ -9,8 +9,9 @@ import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -26,14 +27,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 {
     private RecipeSetBuilder setbuilder;
     
-	public Recipes(DataGenerator generatorIn)
+	public Recipes(PackOutput generatorIn)
 	{
 		super(generatorIn);
         setbuilder = new RecipeSetBuilder(Netherrocks.MODID);
 	}
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -41,13 +42,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         registerArmorRecipes(consumer);
         registerFurnaceRecipes(consumer);
         registerAestheticRecipes(consumer);
+        registerSilentsFurnaceRecipes(consumer);
     } // end registerRecipes() 
 	
     
     protected void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
     {
     	// nether furnace recipes
-        ShapedRecipeBuilder.shaped(ModBlocks.nether_furnace.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.nether_furnace.get())
 	        .define('S', Blocks.NETHERRACK)
 	        .define('Y', Items.FLINT_AND_STEEL)
 	        .pattern("SSS")
@@ -56,7 +58,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 	        .unlockedBy("has_item", has(Blocks.NETHERRACK))
 	        .save(consumer);
         
-        ShapedRecipeBuilder.shaped(ModBlocks.nether_smoker.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.nether_smoker.get())
 	        .define('#', ItemTags.LOGS)
 	        .define('X', ModBlocks.nether_furnace.get())
 	        .pattern(" # ")
@@ -65,7 +67,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 	        .unlockedBy("has_item", has(ModBlocks.nether_furnace.get()))
 	        .save(consumer);
        
-        ShapedRecipeBuilder.shaped(ModBlocks.nether_blast_furnace.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.nether_blast_furnace.get())
 	        .define('#', Items.NETHER_BRICK)
 	        .define('I', Items.IRON_INGOT)
 	        .define('X', ModBlocks.nether_furnace.get())
@@ -77,7 +79,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         
         ResourceLocation recipe_name = setbuilder.make_resource("ghast_tears_from_ashstone_ore");
         ConditionalRecipe.builder().addCondition(flag("ghast_ore_enabled"))
-            .addRecipe( ShapedRecipeBuilder.shaped(Items.GHAST_TEAR, 4)
+            .addRecipe( ShapedRecipeBuilder.shaped(RecipeCategory.BREWING, Items.GHAST_TEAR, 4)
                 .define('#', Items.LAVA_BUCKET)
                 .define('B', ModTags.Items.ORES_ASHSTONE)
                 .pattern("BBB")
@@ -231,6 +233,35 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         
     } // end registerFurnaceRecipes()
     
+    private void registerSilentsFurnaceRecipes(Consumer<FinishedRecipe> consumer)
+    {
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.argonite_dust.get().asItem()), ModItems.argonite_ingot.get(),
+                has(ModItems.argonite_dust.get().asItem()), 0.7F, 200, "_from_dust");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.fyrite_dust.get().asItem()), ModItems.fyrite_ingot.get(),
+                has(ModItems.fyrite_dust.get().asItem()), 0.8F, 200, "_from_dust");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.illumenite_dust.get().asItem()), ModItems.illumenite_ingot.get(),
+                has(ModItems.illumenite_dust.get().asItem()), 0.8F, 200, "_from_dust");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.malachite_dust.get().asItem()), ModItems.malachite_ingot.get(),
+                has(ModItems.malachite_dust.get().asItem()), 0.5F, 200, "_from_dust");
+        
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.crushed_argonite_ore.get().asItem()), ModItems.argonite_ingot.get(),
+                has(ModItems.crushed_argonite_ore.get().asItem()), 0.7F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.crushed_fyrite_ore.get().asItem()), ModItems.fyrite_ingot.get(),
+                has(ModItems.crushed_fyrite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.crushed_illumenite_ore.get().asItem()), ModItems.illumenite_ingot.get(),
+                has(ModItems.crushed_illumenite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
+        setbuilder.buildOre2IngotRecipes(consumer, 
+                Ingredient.of(ModItems.crushed_malachite_ore.get().asItem()), ModItems.malachite_ingot.get(),
+                has(ModItems.crushed_malachite_ore.get().asItem()), 0.5F, 200, "_from_chunks");
+   } // end registerFurnaceRecipes()
+
 	@Override
 	public ICondition flag(String arg0)
 	{

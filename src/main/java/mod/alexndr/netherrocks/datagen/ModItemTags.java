@@ -1,28 +1,31 @@
 package mod.alexndr.netherrocks.datagen;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.MiningItemTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemTags extends MiningItemTags
 {
 
-    public ModItemTags(DataGenerator dataGenerator, ExistingFileHelper existingFileHelper)
+    public ModItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+    		CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper)
     {
-        super(dataGenerator, new ModBlockTags(dataGenerator, existingFileHelper), 
-                              Netherrocks.MODID, existingFileHelper);
+        super(output, lookupProvider, blockTagProvider, Netherrocks.MODID, existingFileHelper);
     }
     
     @Override
-    protected void addTags()
+    protected void addTags(HolderLookup.Provider lookupProvider)
     {
-    	super.addTags();
+    	super.addTags(lookupProvider);
     	registerNuggetTags();
     	registerIngotTags();
     	registerRawMetalTags();
@@ -273,7 +276,41 @@ public class ModItemTags extends MiningItemTags
             .add(ModItems.dragonstone_shears.get())
             .add(ModItems.malachite_shears.get())
             .add(ModItems.fyrite_shears.get());
-    }
+        
+    	this.tag(TagUtils.modTag("minecraft", "axes"))
+			.add(ModItems.argonite_axe.get())
+			.add(ModItems.ashstone_axe.get())
+			.add(ModItems.dragonstone_axe.get())
+			.add(ModItems.fyrite_axe.get())
+			.add(ModItems.malachite_axe.get());
+	
+		this.tag(TagUtils.modTag("minecraft", "swords"))
+			.add(ModItems.argonite_sword.get())
+			.add(ModItems.ashstone_sword.get())
+			.add(ModItems.dragonstone_sword.get())
+			.add(ModItems.fyrite_sword.get())
+			.add(ModItems.malachite_sword.get());
+	
+		this.tag(TagUtils.modTag("minecraft", "pickaxes"))
+			.add(ModItems.argonite_pickaxe.get())
+			.add(ModItems.ashstone_pickaxe.get())
+			.add(ModItems.dragonstone_pickaxe.get())
+			.add(ModItems.fyrite_pickaxe.get())
+			.add(ModItems.malachite_pickaxe.get());
+	
+		this.tag(TagUtils.modTag("minecraft", "shovels"))
+			.add(ModItems.argonite_shovel.get())
+			.add(ModItems.ashstone_shovel.get())
+			.add(ModItems.dragonstone_shovel.get())
+			.add(ModItems.fyrite_shovel.get())
+			.add(ModItems.malachite_shovel.get());
+	
+		this.tag(TagUtils.modTag("minecraft", "hoes"))
+			.add(ModItems.argonite_hoe.get())
+			.add(ModItems.ashstone_hoe.get())
+			.add(ModItems.dragonstone_hoe.get())
+			.add(ModItems.malachite_hoe.get());
+    } // end registerToolTags
     
     private void registerDustTags()
     {

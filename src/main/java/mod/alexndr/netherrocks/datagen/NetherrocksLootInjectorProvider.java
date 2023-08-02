@@ -1,36 +1,23 @@
 package mod.alexndr.netherrocks.datagen;
 
-import java.util.List;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
-import com.mojang.datafixers.util.Pair;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.LootTableInjectorProvider;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
 {
 
-    public NetherrocksLootInjectorProvider(DataGenerator dataGeneratorIn)
-    {
-        super(dataGeneratorIn);
-    }
-
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> getTables()
+    public void generate(BiConsumer<ResourceLocation, Builder> bar) 
     {
-        tables.clear();
         // desert pyramid
         LootPool.Builder foo = createChestPool(1, 1, 0.25F)
                 .add(LootItem.lootTableItem(ModItems.fyrite_ingot.get()).setWeight(10)
@@ -39,7 +26,7 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
-        addInjectionTable(Netherrocks.MODID, "desert_pyramid", foo);
+        addInjectionTable(bar, getInjectionTableId(Netherrocks.MODID, "desert_pyramid"), foo);
 
         // ruined_portal
         foo = createChestPool(1, 1, 0.50F)
@@ -55,7 +42,7 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
-        addInjectionTable(Netherrocks.MODID, "ruined_portal", foo);
+        addInjectionTable(bar, getInjectionTableId(Netherrocks.MODID, "ruined_portal"), foo);
         
         // bastion
         foo = createChestPool(1, 2, 0.75F)
@@ -107,7 +94,7 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))));
-        addInjectionTable(Netherrocks.MODID, "bastion", foo);
+        addInjectionTable(bar, getInjectionTableId(Netherrocks.MODID, "bastion"), foo);
 
         // jungle_temple
         foo = createChestPool(1, 1, 0.25F)
@@ -115,7 +102,7 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                 .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))));
-        addInjectionTable(Netherrocks.MODID, "jungle_temple", foo);
+        addInjectionTable(bar, getInjectionTableId(Netherrocks.MODID, "jungle_temple"), foo);
 
         // stronghold
         foo = createChestPool(1, 1, 0.25F)
@@ -134,9 +121,8 @@ public class NetherrocksLootInjectorProvider extends LootTableInjectorProvider
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))));
-        addInjectionTable(Netherrocks.MODID, "stronghold", foo);
+        addInjectionTable(bar, getInjectionTableId(Netherrocks.MODID, "stronghold"), foo);
                
-        return tables;
     } // end getTables()
 
 } // end class

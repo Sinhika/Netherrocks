@@ -3,7 +3,7 @@ package mod.alexndr.netherrocks.datagen;
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -11,9 +11,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class NetherrocksBlockStateProvider extends SimpleBlockStateProvider
 {
 
-    public NetherrocksBlockStateProvider(DataGenerator gen,  ExistingFileHelper exFileHelper)
+    public NetherrocksBlockStateProvider(PackOutput output,  ExistingFileHelper exFileHelper)
     {
-        super(gen, Netherrocks.MODID, exFileHelper);
+        super(output, Netherrocks.MODID, exFileHelper);
     }
 
     @Override
