@@ -11,16 +11,17 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_name",
+              "source": "block_entity"
+            }
+          ],
           "name": "netherrocks:nether_blast_furnace"
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:copy_name",
-          "source": "block_entity"
         }
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "netherrocks:blocks/nether_blast_furnace"
 }

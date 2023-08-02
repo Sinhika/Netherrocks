@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "S": {
       "item": "netherrocks:raw_fyrite"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "netherrocks:raw_fyrite_block"
-  }
+  },
+  "show_notification": true
 }

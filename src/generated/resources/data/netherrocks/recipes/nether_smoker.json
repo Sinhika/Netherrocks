@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "tag": "minecraft:logs"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "netherrocks:nether_smoker"
-  }
+  },
+  "show_notification": true
 }

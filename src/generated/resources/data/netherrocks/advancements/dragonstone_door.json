@@ -26,7 +26,8 @@
           "recipes": [
             "netherrocks:dragonstone_door"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "item": "netherrocks:illumenite_ingot"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "netherrocks:illumenite_sword"
-  }
+  },
+  "show_notification": true
 }

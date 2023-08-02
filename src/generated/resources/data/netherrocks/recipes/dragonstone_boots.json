@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "item": "netherrocks:dragonstone_gem"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "netherrocks:dragonstone_boots"
-  }
+  },
+  "show_notification": true
 }

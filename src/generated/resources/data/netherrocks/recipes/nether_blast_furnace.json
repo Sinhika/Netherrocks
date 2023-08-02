@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:nether_brick"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "netherrocks:nether_blast_furnace"
-  }
+  },
+  "show_notification": true
 }

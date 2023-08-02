@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "argonite_ingot_from_blasting_from_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "netherrocks:argonite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:argonite_ingot_from_blasting_from_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "argonite_ingot_from_blasting_from_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_ingot_from_blasting_from_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

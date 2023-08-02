@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "item": "netherrocks:ashstone_gem"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "netherrocks:ashstone_pickaxe"
-  }
+  },
+  "show_notification": true
 }

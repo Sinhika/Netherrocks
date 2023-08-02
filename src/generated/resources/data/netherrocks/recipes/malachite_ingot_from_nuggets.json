@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "S": {
       "item": "netherrocks:malachite_nugget"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "netherrocks:malachite_ingot"
-  }
+  },
+  "show_notification": true
 }

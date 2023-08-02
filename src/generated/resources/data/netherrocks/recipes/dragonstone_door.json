@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "S": {
             "item": "netherrocks:dragonstone_gem"
@@ -23,7 +24,8 @@
         "result": {
           "count": 3,
           "item": "netherrocks:dragonstone_door"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

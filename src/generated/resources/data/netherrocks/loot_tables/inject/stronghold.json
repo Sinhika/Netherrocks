@@ -109,5 +109,6 @@
         "min": 1.0
       }
     }
-  ]
+  ],
+  "random_sequence": "netherrocks:inject/stronghold"
 }

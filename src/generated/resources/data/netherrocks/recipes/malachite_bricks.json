@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "S": {
             "item": "netherrocks:malachite_ingot"
@@ -21,7 +22,8 @@
         ],
         "result": {
           "item": "netherrocks:malachite_bricks"
-        }
+        },
+        "show_notification": true
       }
     }
   ]
