@@ -9,12 +9,14 @@ import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import mod.alexndr.simplecorelib.api.helpers.LootUtils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.VanillaGameEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -86,8 +88,9 @@ public final class ForgeEventSubscriber
         if (event.getVanillaEvent() == GameEvent.BLOCK_ACTIVATE)
         {
             // is the responsible block a FyritePressurePlateBlock?
-
-            BlockState bs = event.getContext().affectedState();
+        	Vec3 pos = event.getEventPosition();
+        	BlockPos blockPos = BlockPos.containing(pos.x(), pos.y(), pos.z());
+            BlockState bs = event.getLevel().getBlockState(blockPos);
             if (bs == null) { return; }
             
             if (! (bs.getBlock() instanceof FyritePressurePlateBlock))
