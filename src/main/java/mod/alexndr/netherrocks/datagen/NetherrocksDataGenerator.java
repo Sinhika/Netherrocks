@@ -55,8 +55,8 @@ public class NetherrocksDataGenerator
         gen.addProvider(event.includeServer(), new LootModifierProvider(packOutput));
         
         // client
-        gen.addProvider(event.includeClient(),new NetherrocksBlockStateProvider(packOutput, event.getExistingFileHelper()));
-        gen.addProvider(event.includeClient(),new NetherrocksItemModelProvider(packOutput, event.getExistingFileHelper()));
+        gen.addProvider(event.includeClient(),new NetherrocksBlockStateProvider(packOutput, existingFileHelper));
+        gen.addProvider(event.includeClient(),new NetherrocksItemModelProvider(packOutput, existingFileHelper));
      } // end gatherData()
 
 } // end class
