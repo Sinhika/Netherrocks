@@ -1,9 +1,10 @@
 {
   "values": [
     "netherrocks:argonite_sword",
-    "netherrocks:ashstone_sword",
-    "netherrocks:dragonstone_sword",
     "netherrocks:fyrite_sword",
-    "netherrocks:malachite_sword"
+    "netherrocks:illumenite_sword",
+    "netherrocks:malachite_sword",
+    "netherrocks:ashstone_sword",
+    "netherrocks:dragonstone_sword"
   ]
 }
