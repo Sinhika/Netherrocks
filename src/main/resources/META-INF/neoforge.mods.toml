@@ -6,12 +6,12 @@ modLoader="javafml" #mandatory
 loaderVersion="${loader_version_range}" #mandatory
 issueTrackerURL="https://github.com/Sinhika/Netherrocks/issues"
 license="${mod_license}"
-logoFile="netherrocks.png"
 
 [[mods]]
 modId="${mod_id}"
 version="${version}"
 displayName="${mod_name}"
+logoFile="netherrocks.png"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/Netherrocks/1.20/update.json"
 displayURL="http://minecraft.curseforge.com/projects/netherrocks"
 credits="AleXndrTheGr8st (original mod), Sinhika (ports, maintenance) and Wuppy29 (Ghast Ore idea from Peaceful Pack)"
@@ -23,36 +23,31 @@ Additional Credits: AzazEL3095 (Spanish translation)
 '''
 
 [[dependencies.${mod_id}]] #optional
-    modId="forge"
-    mandatory=true
-    versionRange="${forge_version_range}"
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="minecraft"
-    mandatory=true
+    type="required"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
  [[dependencies.${mod_id}]]
     modId="simplecorelib"
-    mandatory=true
+    type="required"
     versionRange="${simplecore_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="jei"
+    type="optional"
+    versionRange="${jei_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
     
-# [[dependencies.${mod_id}]]
-#         modId="silents_mechanisms"
-#         mandatory=false
-#         versionRange="[0.8.9,)"
-#         ordering="BEFORE"
-#         side="BOTH"
-#         
-# [[dependencies.${mod_id}]]
-#         modId="silentgear"
-#         mandatory=false
-#         versionRange="[2.5.2,)"
-#         ordering="BEFORE"
-#         side="BOTH"
