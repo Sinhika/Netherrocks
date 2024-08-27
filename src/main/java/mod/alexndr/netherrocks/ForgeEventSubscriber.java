@@ -1,14 +1,9 @@
 package mod.alexndr.netherrocks;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
 import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
-import mod.alexndr.simplecorelib.api.helpers.LootUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -17,24 +12,20 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod.EventBusSubscriber;
-import net.neoforged.neoforge.event.LootTableLoadEvent;
 import net.neoforged.neoforge.event.VanillaGameEvent;
 import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Subscribe to events from the FORGE EventBus that should be handled on both PHYSICAL sides in this class
  *
  */
-@EventBusSubscriber(modid = Netherrocks.MODID, bus = EventBusSubscriber.Bus.FORGE )
 public final class ForgeEventSubscriber
 {
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Forge Event Subscriber");
     private static final NetherrocksInjectionLookup lootLookupMap = new NetherrocksInjectionLookup();
 
-    @SubscribeEvent(receiveCanceled = true, priority= EventPriority.HIGHEST)
     public static void onLivingAttackEvent(LivingAttackEvent event)
     {
         // first, is it a player?
@@ -49,16 +40,14 @@ public final class ForgeEventSubscriber
             if ((source.is(DamageTypes.FALL))
             	   && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.ILLUMENITE))
             {
-                // pro-forma cancelable check.
-                if (event.isCancelable()) event.setCanceled(true);
+                event.setCanceled(true);
                 LOGGER.debug("Canceled fall damage because of illumenite");
             } // end-if full set of Illumenite and fall damage
             else if ((source.is(DamageTypes.IN_FIRE) || source.is(DamageTypes.ON_FIRE) || source.is(DamageTypes.HOT_FLOOR)
             		 	|| source.is(DamageTypes.LAVA) || source.is(DamageTypes.FIREBALL) || source.is(DamageTypes.FIREWORKS))
                      && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.FYRITE))
             {
-                // pro-forma cancelable check.
-                if (event.isCancelable()) event.setCanceled(true);
+                event.setCanceled(true);
                 LOGGER.debug("Canceled fire damage because of fyrite");
             } // end-else-if full set of Fyrite and fire damage
         } // end-if player
@@ -68,20 +57,19 @@ public final class ForgeEventSubscriber
      * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which
      * neatly solves the problem when I couldn't figure it out.
      */
-    @SubscribeEvent
-    public static void LootLoad(final LootTableLoadEvent event)
-    {
-        if (NetherrocksConfig.addModLootToChests)
-        {
-            LootUtils.LootLoadHandler(Netherrocks.MODID,  event, lootLookupMap);
-        } // end-if config allows
-    } // end LootLoad()
-    
+//    @SubscribeEvent
+//    public static void LootLoad(final LootTableLoadEvent event)
+//    {
+//        if (NetherrocksConfig.addModLootToChests)
+//        {
+//            LootUtils.LootLoadHandler(Netherrocks.MODID,  event, lootLookupMap);
+//        } // end-if config allows
+//    } // end LootLoad()
+
     /**
      * intercept BLOCK_PRESSED, BLOCK_UNPRESSED game events for fyrite pressure plates and 
      * set things on fire / stop setting on fire.
      */
-    @SubscribeEvent
     public static void onVanillaGameEvent(VanillaGameEvent event)
     {
         // we only care about BLOCK_PRESSED events.
@@ -101,7 +89,7 @@ public final class ForgeEventSubscriber
             if (entity == null) { return; }
             if (!entity.fireImmune())
             {
-                entity.setSecondsOnFire(10);
+                entity.igniteForSeconds(10);
             }
         } // end-if BLOCK_PRESS  
     } // end onVanillaGameEvent
