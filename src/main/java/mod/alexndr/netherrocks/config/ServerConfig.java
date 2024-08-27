@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.config;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.NeoForgeConfigSpec;
 
 /**
  * For configuration settings that change the behaviour of code on the LOGICAL SERVER.
@@ -13,15 +13,15 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public final class ServerConfig
 {
 
-    final ForgeConfigSpec.BooleanValue serverAddModLootToChests;
-    final ForgeConfigSpec.BooleanValue serverEnableAesthetics;
-    final ForgeConfigSpec.BooleanValue serverEnableAshstoneGhastOre;
-    public final ForgeConfigSpec.IntValue serverNetherrackBurnTime;
-    public final ForgeConfigSpec.IntValue serverFyriteBurnTime;
-    public final ForgeConfigSpec.IntValue serverBlazeRodBurnTime;
-    public final ForgeConfigSpec.IntValue serverBaseToolBurnTime;
+    final NeoForgeConfigSpec.BooleanValue serverAddModLootToChests;
+    final NeoForgeConfigSpec.BooleanValue serverEnableAesthetics;
+    final NeoForgeConfigSpec.BooleanValue serverEnableAshstoneGhastOre;
+    public final NeoForgeConfigSpec.IntValue serverNetherrackBurnTime;
+    public final NeoForgeConfigSpec.IntValue serverFyriteBurnTime;
+    public final NeoForgeConfigSpec.IntValue serverBlazeRodBurnTime;
+    public final NeoForgeConfigSpec.IntValue serverBaseToolBurnTime;
     
-	ServerConfig(final ForgeConfigSpec.Builder builder)
+	ServerConfig(final NeoForgeConfigSpec.Builder builder)
 	{
 	    builder.push("General");
 	    serverAddModLootToChests = builder.comment("Add Netherrocks items to chest loot?")

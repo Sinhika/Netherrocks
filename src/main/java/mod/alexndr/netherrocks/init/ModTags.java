@@ -5,8 +5,8 @@ import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.tags.ITag;
+import net.neoforged.neoforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.tags.ITag;
 
 /**
  * Holds tag collections this mod needs to keep track of.

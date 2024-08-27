@@ -5,9 +5,9 @@ import mod.alexndr.netherrocks.content.NetherBlastFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.content.NetherSmokerTileEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 /**
  * Holds a list of all our {@link TileEntityType}s.

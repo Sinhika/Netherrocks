@@ -5,10 +5,10 @@ import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 /**
  * Holds a list of all our {@link ContainerType}s.
@@ -28,17 +28,17 @@ public final class ModContainers
     
    public static RegistryObject<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 
-                   () -> IForgeMenuType.create((windowId, inv, data) 
+                   () -> IMenuTypeExtension.create((windowId, inv, data) 
                            -> new NetherFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
    public static RegistryObject<MenuType<NetherSmokerContainer>> NETHER_SMOKER =
            CONTAINER_TYPES.register("nether_smoker", 
-                   () -> IForgeMenuType.create((windowId, inv, data) 
+                   () -> IMenuTypeExtension.create((windowId, inv, data) 
                            -> new NetherSmokerContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
    public static RegistryObject<MenuType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
            CONTAINER_TYPES.register("nether_blast_furnace", 
-                   () -> IForgeMenuType.create((windowId, inv, data) 
+                   () -> IMenuTypeExtension.create((windowId, inv, data) 
                            -> new NetherBlastFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
    
 }  // end class ModContainers

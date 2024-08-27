@@ -1,11 +1,11 @@
 package mod.alexndr.netherrocks.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.NeoForgeConfigSpec;
 
 public final class ClientConfig
 {
 
-    public ClientConfig(final ForgeConfigSpec.Builder builder)
+    public ClientConfig(final NeoForgeConfigSpec.Builder builder)
     {
         // TODO Auto-generated constructor stub
     }

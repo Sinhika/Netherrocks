@@ -14,7 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.registries.tags.ITag;
+import net.neoforged.neoforge.registries.tags.ITag;
 
 public final class NetherFurnaceFuelHandler
 {
