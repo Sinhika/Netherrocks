@@ -2,6 +2,7 @@ package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.client.ClientModEventSubscriber;
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.*;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
@@ -43,16 +44,15 @@ public class Netherrocks
         modEventBus.addListener(ModEventSubscriber::onRegisterItems);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST,true, ForgeEventSubscriber::onLivingAttackEvent);
         NeoForge.EVENT_BUS.addListener(ForgeEventSubscriber::onVanillaGameEvent);
+        modEventBus.addListener(NetherrocksConfig::onLoad);
         // TODO
 
         // register client event listeners
         modEventBus.addListener(RegisterMenuScreensEvent.class, ClientModEventSubscriber::registerScreens);
-
         // TODO
 
         // Register Configs
-        modContainer.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
-        modContainer.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
+        modContainer.registerConfig(ModConfig.Type.STARTUP, NetherrocksConfig.SPEC);
 
     } // end Netherrocks()
 
