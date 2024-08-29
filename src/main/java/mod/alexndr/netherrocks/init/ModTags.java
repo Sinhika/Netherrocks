@@ -75,5 +75,9 @@ public class ModTags
     public static class Blocks 
     {
         public static final TagKey<Block> ORES_ASHSTONE = TagUtils.forgeBlockTag("ores/ashstone");
-   }
+        public static final TagKey<Block> NEEDS_DRAGONSTONE_TOOL =
+                TagUtils.modBlockTag(Netherrocks.MODID, "needs_dragonstone_tool");
+        public static final TagKey<Block> INCORRECT_FOR_DRAGONSTONE_TOOL =
+                TagUtils.modBlockTag(Netherrocks.MODID, "incorrect_for_dragonstone_tool");
+    }
 }  // end class ModTags

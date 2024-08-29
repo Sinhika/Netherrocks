@@ -5,12 +5,15 @@ import java.util.concurrent.CompletableFuture;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModTags;
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.RegistryObject;
 
@@ -144,7 +147,7 @@ public class ModBlockTags extends MiningBlockTags
     protected void registerMiningTags()
     {
      // all the registered blocks are mineable.
-        List<Block> mineables = ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+        List<Block> mineables = (List<Block>) ModBlocks.BLOCKS.getEntries().stream().map((h) -> h.get()).toList();
         
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.
     	registerMineableTags( mineables,
@@ -172,7 +175,16 @@ public class ModBlockTags extends MiningBlockTags
         			ModBlocks.dragonstone_bricks.get(), ModBlocks.dragonstone_door.get(),
     				ModBlocks.raw_argonite_block.get()),   // 3
     		List.of());  // 4
-    }
+
+		this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+				.addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+				.addTag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
+
+		this.tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+				.addTag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
+
+		this.tag(ModTags.Blocks.INCORRECT_FOR_DRAGONSTONE_TOOL);
+    } // end registerMiningTags()
     
     private void registerBeaconTags()
     {

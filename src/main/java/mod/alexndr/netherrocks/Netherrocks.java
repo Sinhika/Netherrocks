@@ -1,7 +1,6 @@
 package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.client.ClientModEventSubscriber;
-import mod.alexndr.netherrocks.config.ConfigHolder;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.*;
 import net.neoforged.bus.api.EventPriority;
@@ -9,7 +8,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import org.apache.logging.log4j.LogManager;
@@ -32,6 +30,7 @@ public class Netherrocks
     	LOGGER.debug("Hello from Netherrocks!");
 
         // Register DeferredRegisters
+        ModArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         CreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
