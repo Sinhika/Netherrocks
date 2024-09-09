@@ -34,39 +34,39 @@ public class ModTags
     private static final TagKey<Item> tagNetherFurnaceFuels_asBlazePowder
         = TagUtils.modTag(Netherrocks.MODID, "nether_furnace_fuels/as_blaze_powder");
 
-    public static Collection<Item> getnetherFurnaceFuels(String qualifier)
+    public static Iterable<Holder<Item>> getnetherFurnaceFuels(String qualifier)
     {
 
         if (qualifier == "as_tool") {
-            return getItemsFromTag(tagNetherFurnaceFuels_asTool);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asTool);
         }
         else if (qualifier == "as_ingot")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asIngot);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asIngot);
         }
         else if (qualifier == "as_block")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asBlock);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asBlock);
         }
         else if (qualifier == "as_slab")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asSlab);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asSlab);
         }
         else if (qualifier == "as_door")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asDoor);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asDoor);
         }
         else if (qualifier == "as_bars")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asBars);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asBars);
         }
         else if (qualifier == "as_blaze_rod")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asBlazeRod);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asBlazeRod);
         }
         else if (qualifier == "as_blaze_powder")
         {
-            return getItemsFromTag(tagNetherFurnaceFuels_asBlazePowder);
+            return BuiltInRegistries.ITEM.getTagOrEmpty(tagNetherFurnaceFuels_asBlazePowder);
         }
        return null;
     } // end getnetherFurnaceFuels
@@ -85,16 +85,5 @@ public class ModTags
         public static final TagKey<Block> INCORRECT_FOR_DRAGONSTONE_TOOL =
                 TagUtils.modBlockTag(Netherrocks.MODID, "incorrect_for_dragonstone_tool");
     }
-
-    public static Collection<Item> getItemsFromTag(TagKey<Item> pItemTag)
-    {
-        Set<Item> foo = new HashSet<Item>();
-
-        for (Holder<Item> holder : BuiltInRegistries.ITEM.getTagOrEmpty(pItemTag))
-        {
-                foo.add(holder.value());
-        }
-        return foo;
-    }
-
+    
 }  // end class ModTags

@@ -11,6 +11,7 @@ import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -81,10 +82,9 @@ public final class NetherFurnaceFuelHandler
         map.put(itemProvider.asItem(), burnTimeIn);
     }
 
-    protected static void addItemTagBurnTime(Map<Item, Integer> map, ITag<Item> iTag, int burnTimeIn)
+    protected static void addItemTagBurnTime(Map<Item, Integer> map, Iterable<Holder<Item>> iTag, int burnTimeIn)
     {
-        iTag.stream().forEach(item -> map.put(item, burnTimeIn));
-        
+        iTag.forEach(item -> map.put(item.value(), burnTimeIn));
     } // end ()
 
 
