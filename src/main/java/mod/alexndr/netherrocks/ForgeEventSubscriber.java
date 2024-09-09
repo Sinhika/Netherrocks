@@ -1,8 +1,8 @@
 package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
-import mod.alexndr.netherrocks.content.NetherrocksArmorMaterial;
 import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
+import mod.alexndr.netherrocks.init.ModArmorMaterials;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
@@ -35,17 +35,17 @@ public final class ForgeEventSubscriber
             LOGGER.debug("caught LivingAttackEvent");
 
             DamageSource source = event.getSource();
-            
+
             // fall damage and are they wearing full illumenite armor?
             if ((source.is(DamageTypes.FALL))
-            	   && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.ILLUMENITE))
+            	   && ArmorUtils.isPlayerWearingFullSet(player, ModArmorMaterials.ILLUMENITE.value()))
             {
                 event.setCanceled(true);
                 LOGGER.debug("Canceled fall damage because of illumenite");
             } // end-if full set of Illumenite and fall damage
             else if ((source.is(DamageTypes.IN_FIRE) || source.is(DamageTypes.ON_FIRE) || source.is(DamageTypes.HOT_FLOOR)
             		 	|| source.is(DamageTypes.LAVA) || source.is(DamageTypes.FIREBALL) || source.is(DamageTypes.FIREWORKS))
-                     && ArmorUtils.isPlayerWearingFullSet(player, NetherrocksArmorMaterial.FYRITE))
+                     && ArmorUtils.isPlayerWearingFullSet(player, ModArmorMaterials.FYRITE.value()))
             {
                 event.setCanceled(true);
                 LOGGER.debug("Canceled fire damage because of fyrite");
@@ -53,18 +53,6 @@ public final class ForgeEventSubscriber
         } // end-if player
     } // end onLivingHurtEvent
 
-    /**
-     * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which
-     * neatly solves the problem when I couldn't figure it out.
-     */
-//    @SubscribeEvent
-//    public static void LootLoad(final LootTableLoadEvent event)
-//    {
-//        if (NetherrocksConfig.addModLootToChests)
-//        {
-//            LootUtils.LootLoadHandler(Netherrocks.MODID,  event, lootLookupMap);
-//        } // end-if config allows
-//    } // end LootLoad()
 
     /**
      * intercept BLOCK_PRESSED, BLOCK_UNPRESSED game events for fyrite pressure plates and 

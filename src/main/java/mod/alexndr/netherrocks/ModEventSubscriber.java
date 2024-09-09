@@ -1,29 +1,14 @@
 package mod.alexndr.netherrocks;
 
-import javax.annotation.Nonnull;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import mod.alexndr.netherrocks.config.ConfigHelper;
-import mod.alexndr.netherrocks.config.ConfigHolder;
-import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
-import mod.alexndr.simplecorelib.api.config.FlagCondition;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.config.ModConfigEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.crafting.CraftingHelper;
-import net.neoforged.neoforge.registries.ForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
-import net.neoforged.neoforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public final class ModEventSubscriber
 {
@@ -54,6 +39,7 @@ public final class ModEventSubscriber
 	                // Register the BlockItem for the block
 	                .forEach(block ->
 					{
+						event.register(Registries.ITEM, helper -> {
 						helper.register(BuiltInRegistries.BLOCK.getKey(block),
 								new BlockItem(block, new Item.Properties()));
 	                    });

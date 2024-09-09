@@ -2,12 +2,15 @@ package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Holds tag collections this mod needs to keep track of.
@@ -31,38 +34,39 @@ public class ModTags
     private static final TagKey<Item> tagNetherFurnaceFuels_asBlazePowder
         = TagUtils.modTag(Netherrocks.MODID, "nether_furnace_fuels/as_blaze_powder");
 
-    public static ITag<Item> getnetherFurnaceFuels(String qualifier)
+    public static Collection<Item> getnetherFurnaceFuels(String qualifier)
     {
+
         if (qualifier == "as_tool") {
-            return (tagNetherFurnaceFuels_asTool);
+            return getItemsFromTag(tagNetherFurnaceFuels_asTool);
         }
         else if (qualifier == "as_ingot")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asIngot);
+            return getItemsFromTag(tagNetherFurnaceFuels_asIngot);
         }
         else if (qualifier == "as_block")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asBlock);
+            return getItemsFromTag(tagNetherFurnaceFuels_asBlock);
         }
         else if (qualifier == "as_slab")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asSlab);
+            return getItemsFromTag(tagNetherFurnaceFuels_asSlab);
         }
         else if (qualifier == "as_door")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asDoor);
+            return getItemsFromTag(tagNetherFurnaceFuels_asDoor);
         }
         else if (qualifier == "as_bars")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asBars);
+            return getItemsFromTag(tagNetherFurnaceFuels_asBars);
         }
         else if (qualifier == "as_blaze_rod")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asBlazeRod);
+            return getItemsFromTag(tagNetherFurnaceFuels_asBlazeRod);
         }
         else if (qualifier == "as_blaze_powder")
         {
-            return ForgeRegistries.ITEMS.tags().getTag(tagNetherFurnaceFuels_asBlazePowder);
+            return getItemsFromTag(tagNetherFurnaceFuels_asBlazePowder);
         }
        return null;
     } // end getnetherFurnaceFuels
@@ -81,4 +85,16 @@ public class ModTags
         public static final TagKey<Block> INCORRECT_FOR_DRAGONSTONE_TOOL =
                 TagUtils.modBlockTag(Netherrocks.MODID, "incorrect_for_dragonstone_tool");
     }
+
+    public static Collection<Item> getItemsFromTag(TagKey<Item> pItemTag)
+    {
+        Set<Item> foo = new HashSet<Item>();
+
+        for (Holder<Item> holder : BuiltInRegistries.ITEM.getTagOrEmpty(pItemTag))
+        {
+                foo.add(holder.value());
+        }
+        return foo;
+    }
+
 }  // end class ModTags

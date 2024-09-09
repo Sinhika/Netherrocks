@@ -1,19 +1,19 @@
 package mod.alexndr.netherrocks.api.content;
 
-import javax.annotation.Nullable;
-
 import mod.alexndr.netherrocks.helpers.NetherFurnaceFuelHandler;
-import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnaceTileEntity
+import javax.annotation.Nullable;
+
+public abstract class AbstractNetherFurnaceTileEntity extends AbstractFurnaceBlockEntity
 {
     
     public AbstractNetherFurnaceTileEntity(BlockEntityType<?> tileEntityTypeIn, BlockPos blockpos, BlockState blockstate,
@@ -22,8 +22,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends VeryAbstractFurnac
         super(tileEntityTypeIn, blockpos, blockstate, recipeTypeIn);
     }
 
-    @Override
-    public boolean isFuel(ItemStack stack)
+    public static boolean isFuel(ItemStack stack)
     {
         return NetherFurnaceFuelHandler.getValidfuels().contains(stack.getItem()) || stack.is(Items.BUCKET);
     }

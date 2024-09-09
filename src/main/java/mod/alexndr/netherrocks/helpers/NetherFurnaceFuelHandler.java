@@ -7,6 +7,7 @@ import java.util.Map;
 import com.google.common.collect.Maps;
 
 import mod.alexndr.netherrocks.config.ConfigHolder;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
@@ -47,10 +48,10 @@ public final class NetherFurnaceFuelHandler
     public static Map<Item, Integer> loadBurnTimes()
     {
         Map<Item, Integer> map = Maps.newLinkedHashMap();
-        netherrackBurnTime = ConfigHolder.SERVER.serverNetherrackBurnTime.get();
-        fyriteBurnTime = ConfigHolder.SERVER.serverFyriteBurnTime.get();
-        blazeRodBurnTime = ConfigHolder.SERVER.serverBlazeRodBurnTime.get();
-        baseToolBurnTime = ConfigHolder.SERVER.serverBaseToolBurnTime.get();
+        netherrackBurnTime = NetherrocksConfig.serverNetherrackBurnTime.get();
+        fyriteBurnTime = NetherrocksConfig.serverFyriteBurnTime.get();
+        blazeRodBurnTime = NetherrocksConfig.serverBlazeRodBurnTime.get();
+        baseToolBurnTime = NetherrocksConfig.serverBaseToolBurnTime.get();
         
         addItemBurnTime(map, Blocks.NETHERRACK, netherrackBurnTime);
         addItemBurnTime(map, ModItems.fyrite_ingot.get(), fyriteBurnTime);
