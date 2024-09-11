@@ -1,7 +1,6 @@
 package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
-import mod.alexndr.netherrocks.helpers.NetherrocksInjectionLookup;
 import mod.alexndr.netherrocks.init.ModArmorMaterials;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.core.BlockPos;
@@ -24,7 +23,6 @@ import org.apache.logging.log4j.Logger;
 public final class ForgeEventSubscriber
 {
     private static final Logger LOGGER = LogManager.getLogger(Netherrocks.MODID + " Forge Event Subscriber");
-    private static final NetherrocksInjectionLookup lootLookupMap = new NetherrocksInjectionLookup();
 
     public static void onLivingAttackEvent(LivingAttackEvent event)
     {

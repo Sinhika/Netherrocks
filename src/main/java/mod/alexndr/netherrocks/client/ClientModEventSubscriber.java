@@ -5,8 +5,6 @@ import mod.alexndr.netherrocks.client.gui.NetherBlastFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherFurnaceScreen;
 import mod.alexndr.netherrocks.client.gui.NetherSmokerScreen;
 import mod.alexndr.netherrocks.init.ModContainers;
-import mod.alexndr.simplecorelib.client.gui.TestFurnaceScreen;
-import mod.alexndr.simplecorelib.init.ModMenuTypes;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +22,6 @@ public class ClientModEventSubscriber
     public static void registerScreens(RegisterMenuScreensEvent event)
     {
         // uncomment to register client gui of test_furnace.
-        event.register(ModMenuTypes.test_furnace.get(), TestFurnaceScreen::new);
         event.register(ModContainers.NETHER_FURNACE.get(), NetherFurnaceScreen::new);
         event.register(ModContainers.NETHER_BLAST_FURNACE.get(), NetherBlastFurnaceScreen::new);
         event.register(ModContainers.NETHER_SMOKER.get(), NetherSmokerScreen::new);

@@ -1,10 +1,5 @@
 package mod.alexndr.netherrocks.datagen;
 
-import static net.neoforged.fml.common.Mod.EventBusSubscriber.Bus.MOD;
-
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.simplecorelib.api.datagen.SimpleLootTableProvider;
 import net.minecraft.core.HolderLookup;
@@ -13,16 +8,19 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * bundles up the GatherDataEvent handler and all the necessary data providers for
  * data generation.
  * @author Sinhika
  */
-@EventBusSubscriber(modid = Netherrocks.MODID, bus = MOD)
+@EventBusSubscriber(modid = Netherrocks.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class NetherrocksDataGenerator
 {
     /**
@@ -38,10 +36,7 @@ public class NetherrocksDataGenerator
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();		
         
         // server
-        gen.addProvider(event.includeServer(), new Recipes(packOutput));
-
         ModBlockTags blockTags = new ModBlockTags(packOutput,lookupProvider, existingFileHelper);
-        
         gen.addProvider(event.includeServer(), blockTags);
         gen.addProvider(event.includeServer(),
         		new ModItemTags(packOutput,lookupProvider, blockTags.contentsGetter(), existingFileHelper));
@@ -50,10 +45,13 @@ public class NetherrocksDataGenerator
             	new SimpleLootTableProvider(packOutput, List.of(
             			new LootTableProvider.SubProviderEntry(NetherrocksLootTableSubprovider::new, LootContextParamSets.BLOCK),
             			new LootTableProvider.SubProviderEntry(NetherrocksLootInjectorProvider::new, LootContextParamSets.CHEST)
-            			)));
+            			), lookupProvider));
         
-        gen.addProvider(event.includeServer(), new LootModifierProvider(packOutput));
-        
+        gen.addProvider(event.includeServer(), new LootModifierProvider(packOutput, lookupProvider));
+        gen.addProvider(event.includeServer(), new NetherrocksLootModifierProvider(packOutput, lookupProvider));
+
+        gen.addProvider(event.includeServer(), new Recipes(packOutput));
+
         // client
         gen.addProvider(event.includeClient(),new NetherrocksBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeClient(),new NetherrocksItemModelProvider(packOutput, existingFileHelper));
