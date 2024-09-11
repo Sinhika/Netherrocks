@@ -5,13 +5,18 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModItems;
+import mod.alexndr.netherrocks.init.ModSerializers;
+import mod.alexndr.simplecorelib.api.loot.AbstractChestLootModifier;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
@@ -55,7 +60,7 @@ public class NetherrocksLootModifiers
         @Override
         public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return CODEC;
+            return ModSerializers.AUTO_SMELT_TOOL.get();
         }
 
     } // end class AutoSmeltLootModifier
@@ -73,7 +78,7 @@ public class NetherrocksLootModifiers
         @Override
         public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return CODEC;
+            return ModSerializers.GHAST_ORE_LOOT.get();
         }
 
         @Override
@@ -103,6 +108,32 @@ public class NetherrocksLootModifiers
 
     public static class NetherrocksChestLootModifier extends AbstractChestLootModifier
     {
+        public static final MapCodec<NetherrocksChestLootModifier> CODEC =
+                RecordCodecBuilder.mapCodec(inst -> LootModifier.codecStart(inst)
+                        .and(ResourceKey.codec(Registries.LOOT_TABLE).fieldOf("lootTable")
+                                .forGetter((m) -> m.lootTable))
+                        .apply(inst, NetherrocksChestLootModifier::new));
 
+        public NetherrocksChestLootModifier(LootItemCondition[] conditionsIn,
+                                            ResourceKey<LootTable> lootTable)
+        {
+            super(conditionsIn, lootTable);
+        }
+
+        @Override protected @NotNull ObjectArrayList<ItemStack> doApply(
+                @NotNull ObjectArrayList<ItemStack> generatedLoot, LootContext context)
+        {
+            if (NetherrocksConfig.addModLootToChests) {
+                return super.doApply(generatedLoot, context);
+            }
+            else {
+                return generatedLoot;
+            }
+        }
+
+        @Override public @NotNull MapCodec<? extends IGlobalLootModifier> codec()
+        {
+            return ModSerializers.CHEST_LOOT.get();
+        }
     }
 } // end class

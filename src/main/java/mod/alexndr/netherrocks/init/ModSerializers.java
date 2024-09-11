@@ -2,6 +2,7 @@ package mod.alexndr.netherrocks.init;
 
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers.NetherrocksChestLootModifier;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers.AutoSmeltLootModifier;
 import mod.alexndr.netherrocks.helpers.NetherrocksLootModifiers.GhastOreLootModifier;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
