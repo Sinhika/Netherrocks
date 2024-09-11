@@ -9,6 +9,8 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Supplier;
+
 /**
  * Holds a list of all our {@link MenuType}s.
  * Suppliers that create ContainerTypes are added to the DeferredRegister.

@@ -1,13 +1,7 @@
 package mod.alexndr.netherrocks.helpers;
 
-import java.util.function.Supplier;
-
-import org.jetbrains.annotations.NotNull;
-
-import com.google.common.base.Suppliers;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModItems;
@@ -21,15 +15,15 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import org.jetbrains.annotations.NotNull;
 
 public class NetherrocksLootModifiers
 {
     
     public static class AutoSmeltLootModifier extends LootModifier
     {
-        public static final Supplier<Codec<AutoSmeltLootModifier>> CODEC = 
-                Suppliers.memoize( () -> RecordCodecBuilder.create( inst -> codecStart(inst).apply(inst, AutoSmeltLootModifier::new)));
+        public static final MapCodec<AutoSmeltLootModifier> CODEC =
+                RecordCodecBuilder.mapCodec( inst -> LootModifier.codecStart(inst).apply(inst, AutoSmeltLootModifier::new));
         
         public AutoSmeltLootModifier(LootItemCondition[] conditionsIn)
         {
@@ -52,24 +46,24 @@ public class NetherrocksLootModifiers
         	RegistryAccess registryAccess = level.registryAccess();
             return context.getLevel().getRecipeManager()
                     .getRecipeFor(RecipeType.SMELTING, new SimpleContainer(stack), level)
-                    .map((a)->a.getResultItem(registryAccess))
+                    .map((a)->a.value().getResultItem(registryAccess))
                     .filter(itemStack -> !itemStack.isEmpty())
-                    .map(itemStack -> ItemHandlerHelper.copyStackWithSize(itemStack, stack.getCount() * itemStack.getCount()))
+                    .map(itemStack -> itemStack.copyWithCount(stack.getCount() * itemStack.getCount()))
                     .orElse(stack);
        }
 
         @Override
-        public Codec<? extends IGlobalLootModifier> codec()
+        public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return CODEC.get();
+            return CODEC;
         }
 
     } // end class AutoSmeltLootModifier
 
     public static class GhastOreLootModifier extends LootModifier
     {
-        public static final Supplier<Codec<GhastOreLootModifier>> CODEC = 
-                Suppliers.memoize( () -> RecordCodecBuilder.create( inst -> codecStart(inst).apply(inst, GhastOreLootModifier::new)));
+        public static final MapCodec<GhastOreLootModifier> CODEC =
+                RecordCodecBuilder.mapCodec( inst -> LootModifier.codecStart(inst).apply(inst, GhastOreLootModifier::new));
         
         public GhastOreLootModifier(LootItemCondition[] conditionsIn)
         {
@@ -77,9 +71,9 @@ public class NetherrocksLootModifiers
         }
 
         @Override
-        public Codec<? extends IGlobalLootModifier> codec()
+        public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return CODEC.get();
+            return CODEC;
         }
 
         @Override
@@ -106,5 +100,9 @@ public class NetherrocksLootModifiers
         } // end substitute()
         
     } // end class GhastOreLootModifer
-    
+
+    public static class NetherrocksChestLootModifier extends AbstractChestLootModifier
+    {
+
+    }
 } // end class

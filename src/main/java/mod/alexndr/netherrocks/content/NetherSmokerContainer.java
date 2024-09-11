@@ -1,18 +1,27 @@
 package mod.alexndr.netherrocks.content;
 
 import mod.alexndr.netherrocks.init.ModContainers;
-import mod.alexndr.simplecorelib.api.content.VeryAbstractFurnaceMenu;
-import net.minecraft.core.BlockPos;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractFurnaceMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.RecipeType;
 
-public class NetherSmokerContainer extends VeryAbstractFurnaceMenu
+public class NetherSmokerContainer extends AbstractFurnaceMenu
 {
-     public NetherSmokerContainer(final int windowId, final Inventory playerInventory, final BlockPos pos, Player playerEntity)
+    public NetherSmokerContainer(int pContainerId, Inventory pPlayerInventory)
     {
-        super(ModContainers.NETHER_SMOKER.get(), windowId, pos, playerInventory, playerEntity, RecipeType.SMOKING);
-        		
+        super(ModContainers.NETHER_SMOKER.get(), RecipeType.SMOKING, RecipeBookType.SMOKER, pContainerId,
+                pPlayerInventory);
     }
 
- } // end class
+    public NetherSmokerContainer(int pContainerId, Inventory pPlayerInventory, Container pFurnaceContainer,
+                                  ContainerData pFurnaceData)
+    {
+        super(ModContainers.NETHER_SMOKER.get(), RecipeType.SMOKING, RecipeBookType.SMOKER, pContainerId,
+                pPlayerInventory,
+                pFurnaceContainer, pFurnaceData);
+    }
+
+} // end class
