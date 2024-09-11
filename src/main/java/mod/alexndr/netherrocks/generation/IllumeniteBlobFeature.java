@@ -24,11 +24,6 @@ public class IllumeniteBlobFeature  extends Feature<NoneFeatureConfiguration>
     /**
      * How to construct the feature...
      * Was place() in 1.15.2.
-     * @param worldIn
-     * @param generator
-     * @param rand
-     * @param pos
-     * @param config
      * @return
      */
     @Override

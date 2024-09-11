@@ -5,18 +5,16 @@ import java.util.List;
 import mod.alexndr.netherrocks.helpers.MalachiteHandler;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 public class MalachiteSwordItem extends SwordItem
 {
 
-    public MalachiteSwordItem(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn)
+    public MalachiteSwordItem()
     {
-        super(tier, attackDamageIn, attackSpeedIn, builderIn);
+        super(NetherrocksItemTiers.MALACHITE, new Item.Properties().attributes(
+                SwordItem.createAttributes(NetherrocksItemTiers.MALACHITE, 3, -2.4f)));
     }
 
     @Override
@@ -27,10 +25,10 @@ public class MalachiteSwordItem extends SwordItem
     }
     
     @Override
-    public void appendHoverText(ItemStack pStack, Level pLevel, List<Component> pTooltipComponents,
-            TooltipFlag pIsAdvanced)
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents,
+                                TooltipFlag pIsAdvanced)
     {
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+        super.appendHoverText(pStack, pContext, pTooltipComponents, pIsAdvanced);
         pTooltipComponents.add(Component.translatable("netherrocks.malachite_sword.info"));
     }
 

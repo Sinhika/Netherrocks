@@ -75,88 +75,98 @@ public final class ModItems
     // TOOLS & WEAPONS
     // swords
     public static final DeferredItem<SwordItem> argonite_sword = ITEMS.register("argonite_sword",
-            () -> new SwordItem(NetherrocksItemTiers.ARGONITE, 3, -2.4F,
-                    new Item.Properties()));
+            () -> new SwordItem(NetherrocksItemTiers.ARGONITE, new Item.Properties().attributes(
+                    SwordItem.createAttributes(NetherrocksItemTiers.ARGONITE, 3, -2.4f))));
+
     public static final DeferredItem<FyriteSwordItem> fyrite_sword = ITEMS.register("fyrite_sword",
-            () -> new FyriteSwordItem(NetherrocksItemTiers.FYRITE, 3, -2.4F,
-                    new Item.Properties()));
+            FyriteSwordItem::new);
     public static final DeferredItem<IllumeniteSwordItem> illumenite_sword = ITEMS.register("illumenite_sword",
-            () -> new IllumeniteSwordItem(NetherrocksItemTiers.ILLUMENITE, 3, -2.4F,
-                    new Item.Properties()));
+            IllumeniteSwordItem::new);
     public static final DeferredItem<MalachiteSwordItem> malachite_sword = ITEMS.register("malachite_sword",
-            () -> new MalachiteSwordItem(NetherrocksItemTiers.MALACHITE, 3, -2.4F,
-                    new Item.Properties()));
+            MalachiteSwordItem::new);
     public static final DeferredItem<SwordItem> ashstone_sword = ITEMS.register("ashstone_sword",
-            () ->  new SwordItem(NetherrocksItemTiers.ASHSTONE, 3, -2.4F,
-                    new Item.Properties()));
+            () ->  new SwordItem(NetherrocksItemTiers.ASHSTONE, new Item.Properties().attributes(
+                    SwordItem.createAttributes(NetherrocksItemTiers.ASHSTONE, 3, -2.4F))));
+
     public static final DeferredItem<SwordItem> dragonstone_sword = ITEMS.register("dragonstone_sword",
-            () -> new SwordItem(NetherrocksItemTiers.DRAGONSTONE, 3, -2.4F,
-                    new Item.Properties()));
+            () -> new SwordItem(NetherrocksItemTiers.DRAGONSTONE, new Item.Properties().attributes(
+                    SwordItem.createAttributes(NetherrocksItemTiers.DRAGONSTONE, 3, -2.4F))));
 
     // pickaxes
     public static final DeferredItem<PickaxeItem> argonite_pickaxe = ITEMS.register("argonite_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTiers.ARGONITE, 1, -2.8F,
-                    new Item.Properties()));
+            () -> new PickaxeItem(NetherrocksItemTiers.ARGONITE, new Item.Properties().attributes(
+                    PickaxeItem.createAttributes(NetherrocksItemTiers.ARGONITE,1, -2.8F))));
+
     public static final DeferredItem<FyritePickaxeIteam> fyrite_pickaxe = ITEMS.register("fyrite_pickaxe",
-            () -> new FyritePickaxeIteam(NetherrocksItemTiers.FYRITE, 1, -2.8F,
-                    new Item.Properties()));
+            FyritePickaxeIteam::new);
+
     public static final DeferredItem<PickaxeItem> malachite_pickaxe = ITEMS.register("malachite_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTiers.MALACHITE, 1, -2.8F,
-                    new Item.Properties()));
+            () -> new PickaxeItem(NetherrocksItemTiers.MALACHITE,  new Item.Properties().attributes(
+                    PickaxeItem.createAttributes(NetherrocksItemTiers.MALACHITE,1, -2.8F))));
+
     public static final DeferredItem<PickaxeItem> ashstone_pickaxe = ITEMS.register("ashstone_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTiers.ASHSTONE, 1, -2.8F,
-                    new Item.Properties()));
+            () -> new PickaxeItem(NetherrocksItemTiers.ASHSTONE, new Item.Properties().attributes(
+                    PickaxeItem.createAttributes(NetherrocksItemTiers.ASHSTONE,1, -2.8F))));
+
     public static final DeferredItem<PickaxeItem> dragonstone_pickaxe = ITEMS.register("dragonstone_pickaxe",
-            () -> new PickaxeItem(NetherrocksItemTiers.DRAGONSTONE, 1, -2.8F,
-                    new Item.Properties()));
+            () -> new PickaxeItem(NetherrocksItemTiers.DRAGONSTONE, new Item.Properties().attributes(
+                    PickaxeItem.createAttributes(NetherrocksItemTiers.DRAGONSTONE,1, -2.8F))));
 
     // axes
    public static final DeferredItem<AxeItem> argonite_axe = ITEMS.register("argonite_axe",
-            () -> new AxeItem(NetherrocksItemTiers.ARGONITE, 5.0F, -3.1F,
-                    new Item.Properties()));
+            () -> new AxeItem(NetherrocksItemTiers.ARGONITE, new Item.Properties().attributes(
+                    AxeItem.createAttributes(NetherrocksItemTiers.ARGONITE, 5.0F, -3.1F))));
+
     public static final DeferredItem<FyriteAxeItem> fyrite_axe = ITEMS.register("fyrite_axe",
-            () -> new FyriteAxeItem(NetherrocksItemTiers.FYRITE, 5.0F, -3.1F,
-                    new Item.Properties()));
+            FyriteAxeItem::new);
     public static final DeferredItem<MalachiteAxeItem> malachite_axe = ITEMS.register("malachite_axe",
-            () -> new MalachiteAxeItem(NetherrocksItemTiers.MALACHITE, 5.0F, -3.1F,
-                    new Item.Properties()));
+            MalachiteAxeItem::new);
     public static final DeferredItem<AxeItem> ashstone_axe = ITEMS.register("ashstone_axe",
-            () -> new AxeItem(NetherrocksItemTiers.ASHSTONE, 6.0F, -3.1F,
-                    new Item.Properties()));
+            () -> new AxeItem(NetherrocksItemTiers.ASHSTONE, new Item.Properties().attributes(
+                    AxeItem.createAttributes(NetherrocksItemTiers.ASHSTONE, 6.0F, -3.1F))));
+
     public static final DeferredItem<AxeItem> dragonstone_axe = ITEMS.register("dragonstone_axe",
-            () -> new AxeItem(NetherrocksItemTiers.DRAGONSTONE, 1.0F, -3.0F,
-                    new Item.Properties()));
+            () -> new AxeItem(NetherrocksItemTiers.DRAGONSTONE, new Item.Properties().attributes(
+                    AxeItem.createAttributes(NetherrocksItemTiers.DRAGONSTONE, 1.0F, -3.0F))));
 
     // shovels
     public static final DeferredItem<ShovelItem> argonite_shovel = ITEMS.register("argonite_shovel",
-            () -> new ShovelItem(NetherrocksItemTiers.ARGONITE, 1.5F, -3.0F,
-            new Item.Properties()));
+            () -> new ShovelItem(NetherrocksItemTiers.ARGONITE, new Item.Properties().attributes(
+                     ShovelItem.createAttributes(NetherrocksItemTiers.ARGONITE,  1.5F, -3.0F))));
+
     public static final DeferredItem<FyriteShovelItem> fyrite_shovel = ITEMS.register("fyrite_shovel",
-            () -> new FyriteShovelItem(NetherrocksItemTiers.FYRITE, 1.5F, -3.0F,
-                    new Item.Properties()));
+            FyriteShovelItem::new);
+
     public static final DeferredItem<ShovelItem> malachite_shovel = ITEMS.register("malachite_shovel",
-            () -> new ShovelItem(NetherrocksItemTiers.MALACHITE, 1.5F, -3.0F,
-                    new Item.Properties()));
+            () -> new ShovelItem(NetherrocksItemTiers.MALACHITE, new Item.Properties().attributes(
+                    ShovelItem.createAttributes(NetherrocksItemTiers.MALACHITE, 1.5F, -3.0F))));
+
     public static final DeferredItem<ShovelItem> ashstone_shovel = ITEMS.register("ashstone_shovel",
-            () -> new ShovelItem(NetherrocksItemTiers.ASHSTONE, 1.5F, -3.0F,
-                    new Item.Properties()));
+            () -> new ShovelItem(NetherrocksItemTiers.ASHSTONE, new Item.Properties().attributes(
+                    ShovelItem.createAttributes(NetherrocksItemTiers.ASHSTONE,  1.5F, -3.0F))));
+
     public static final DeferredItem<ShovelItem> dragonstone_shovel = ITEMS.register("dragonstone_shovel",
-            () -> new ShovelItem(NetherrocksItemTiers.DRAGONSTONE, 1.5F, -3.0F,
-                    new Item.Properties()));
+            () -> new ShovelItem(NetherrocksItemTiers.DRAGONSTONE, new Item.Properties().attributes(
+                    ShovelItem.createAttributes(NetherrocksItemTiers.DRAGONSTONE, 1.5F, -3.0F))));
+
 
     // hoes
     public static final DeferredItem<HoeItem> argonite_hoe = ITEMS.register("argonite_hoe",
-            () -> new HoeItem(NetherrocksItemTiers.ARGONITE, -1, -2.0F,
-                    new Item.Properties()));
+            () -> new HoeItem(NetherrocksItemTiers.ARGONITE, new Item.Properties().attributes(
+                    HoeItem.createAttributes(NetherrocksItemTiers.ARGONITE, -1, -2.0F))));
+
     public static final DeferredItem<HoeItem> malachite_hoe = ITEMS.register("malachite_hoe",
-            () -> new HoeItem(NetherrocksItemTiers.MALACHITE, -1, -2.0F,
-                    new Item.Properties()));
+            () -> new HoeItem(NetherrocksItemTiers.MALACHITE, new Item.Properties().attributes(
+                    HoeItem.createAttributes(NetherrocksItemTiers.MALACHITE,-1, -2.0F))));
+
     public static final DeferredItem<HoeItem> ashstone_hoe = ITEMS.register("ashstone_hoe",
-            () -> new HoeItem(NetherrocksItemTiers.ASHSTONE, -1, -2.0F,
-                    new Item.Properties()));
+            () -> new HoeItem(NetherrocksItemTiers.ASHSTONE, new Item.Properties().attributes(
+                    HoeItem.createAttributes(NetherrocksItemTiers.ASHSTONE, -1, -2.0F))));
+
     public static final DeferredItem<HoeItem> dragonstone_hoe = ITEMS.register("dragonstone_hoe",
-            () -> new HoeItem(NetherrocksItemTiers.DRAGONSTONE, -1, -2.0F,
-                    new Item.Properties()));
+            () -> new HoeItem(NetherrocksItemTiers.DRAGONSTONE, new Item.Properties().attributes(
+                    HoeItem.createAttributes(NetherrocksItemTiers.DRAGONSTONE, -1, -2.0F))));
+
 
     // shears
     public static final DeferredItem<ShearsItem> argonite_shears = ITEMS.register("argonite_shears",
@@ -178,58 +188,58 @@ public final class ModItems
     // ARMOR
     // dragonstone
    public static final DeferredItem<ArmorItem> dragonstone_helmet = ITEMS.register("dragonstone_helmet",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, ArmorItem.Type.HELMET,
+            () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final DeferredItem<ArmorItem> dragonstone_leggings = ITEMS.register("dragonstone_leggings",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, ArmorItem.Type.LEGGINGS,
+            () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final DeferredItem<ArmorItem> dragonstone_chestplate = ITEMS.register("dragonstone_chestplate",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, ArmorItem.Type.CHESTPLATE,
+            () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final DeferredItem<ArmorItem> dragonstone_boots = ITEMS.register("dragonstone_boots",
-            () -> new ArmorItem(NetherrocksArmorMaterial.DRAGONSTONE, ArmorItem.Type.BOOTS,
+            () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
     // fyrite
     public static final DeferredItem<FyriteArmorItem> fyrite_helmet = ITEMS.register("fyrite_helmet",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, ArmorItem.Type.HELMET,
+            () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final DeferredItem<FyriteArmorItem> fyrite_leggings = ITEMS.register("fyrite_leggings",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, ArmorItem.Type.LEGGINGS,
+            () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final DeferredItem<FyriteArmorItem> fyrite_chestplate = ITEMS.register("fyrite_chestplate",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, ArmorItem.Type.CHESTPLATE,
+            () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final DeferredItem<FyriteArmorItem> fyrite_boots = ITEMS.register("fyrite_boots",
-            () -> new FyriteArmorItem(NetherrocksArmorMaterial.FYRITE, ArmorItem.Type.BOOTS,
+            () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
      // illumenite
     public static final DeferredItem<IllumeniteArmorItem> illumenite_helmet = ITEMS.register("illumenite_helmet",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, ArmorItem.Type.HELMET,
+            () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_leggings = ITEMS.register("illumenite_leggings",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, ArmorItem.Type.LEGGINGS,
+            () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_chestplate = ITEMS.register("illumenite_chestplate",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, ArmorItem.Type.CHESTPLATE,
+            () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_boots = ITEMS.register("illumenite_boots",
-            () -> new IllumeniteArmorItem(NetherrocksArmorMaterial.ILLUMENITE, ArmorItem.Type.BOOTS,
+            () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
     // malachite
     public static final DeferredItem<MalachiteArmorItem> malachite_helmet = ITEMS.register("malachite_helmet",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, ArmorItem.Type.HELMET,
+            () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.HELMET,
                     new Item.Properties()));
     public static final DeferredItem<MalachiteArmorItem> malachite_leggings = ITEMS.register("malachite_leggings",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, ArmorItem.Type.LEGGINGS,
+            () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
     public static final DeferredItem<MalachiteArmorItem> malachite_chestplate = ITEMS.register("malachite_chestplate",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, ArmorItem.Type.CHESTPLATE,
+            () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties()));
     public static final DeferredItem<MalachiteArmorItem> malachite_boots = ITEMS.register("malachite_boots",
-            () -> new MalachiteArmorItem(NetherrocksArmorMaterial.MALACHITE, ArmorItem.Type.BOOTS,
+            () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
 
     

@@ -7,10 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,9 +15,10 @@ import net.minecraft.world.level.block.state.BlockState;
 public class FyriteShovelItem extends ShovelItem
 {
 
-    public FyriteShovelItem(Tier tier, float attackDamageIn, float attackSpeedIn, Properties builder)
+    public FyriteShovelItem()
     {
-        super(tier, attackDamageIn, attackSpeedIn, builder);
+        super(NetherrocksItemTiers.FYRITE,  new Item.Properties().attributes(
+                ShovelItem.createAttributes(NetherrocksItemTiers.FYRITE, 1.5F, -3.0F)));
     }
 
     // for shovels, do the FyriteHandler() thing AFTER the normal thing, or paths
@@ -42,10 +40,10 @@ public class FyriteShovelItem extends ShovelItem
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, Level pLevel, List<Component> pTooltipComponents,
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents,
             TooltipFlag pIsAdvanced)
     {
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+        super.appendHoverText(pStack, pContext, pTooltipComponents, pIsAdvanced);
         pTooltipComponents.add(Component.translatable("netherrocks.fyrite_shovel.info"));
     }
 

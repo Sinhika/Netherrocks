@@ -4,14 +4,13 @@ import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
 import mod.alexndr.netherrocks.content.NetherSmokerContainer;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
-import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.ForgeRegistries;
-import net.neoforged.neoforge.registries.RegistryObject;
 
 /**
- * Holds a list of all our {@link ContainerType}s.
+ * Holds a list of all our {@link MenuType}s.
  * Suppliers that create ContainerTypes are added to the DeferredRegister.
  * The DeferredRegister is then added to our mod event bus in our constructor.
  * When the ContainerType Registry Event is fired by Forge and it is time for the mod to
@@ -24,21 +23,18 @@ import net.neoforged.neoforge.registries.RegistryObject;
 public final class ModContainers
 {
     public static final DeferredRegister<MenuType<?>> CONTAINER_TYPES = 
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, Netherrocks.MODID);
+            DeferredRegister.create(Registries.MENU, Netherrocks.MODID);
     
-   public static RegistryObject<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
+   public static Supplier<MenuType<NetherFurnaceContainer>> NETHER_FURNACE =
            CONTAINER_TYPES.register("nether_furnace", 
-                   () -> IMenuTypeExtension.create((windowId, inv, data) 
-                           -> new NetherFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
+                   () ->  new MenuType<>(NetherFurnaceContainer::new, FeatureFlags.DEFAULT_FLAGS));
    
-   public static RegistryObject<MenuType<NetherSmokerContainer>> NETHER_SMOKER =
-           CONTAINER_TYPES.register("nether_smoker", 
-                   () -> IMenuTypeExtension.create((windowId, inv, data) 
-                           -> new NetherSmokerContainer(windowId, inv, data.readBlockPos(), inv.player)));
-   
-   public static RegistryObject<MenuType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
-           CONTAINER_TYPES.register("nether_blast_furnace", 
-                   () -> IMenuTypeExtension.create((windowId, inv, data) 
-                           -> new NetherBlastFurnaceContainer(windowId, inv, data.readBlockPos(), inv.player)));
-   
+   public static Supplier<MenuType<NetherSmokerContainer>> NETHER_SMOKER =
+           CONTAINER_TYPES.register("nether_smoker",
+                   () ->  new MenuType<>(NetherSmokerContainer::new, FeatureFlags.DEFAULT_FLAGS));
+
+   public static Supplier<MenuType<NetherBlastFurnaceContainer>> NETHER_BLAST_FURNACE =
+           CONTAINER_TYPES.register("nether_blast_furnace",
+                   () ->  new MenuType<>(NetherBlastFurnaceContainer::new, FeatureFlags.DEFAULT_FLAGS));
+
 }  // end class ModContainers
