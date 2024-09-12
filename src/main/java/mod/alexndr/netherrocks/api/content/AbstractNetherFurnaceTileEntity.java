@@ -24,10 +24,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends AbstractFurnaceBlo
 
     public static boolean isFuel(ItemStack stack)
     {
-        return NetherFurnaceFuelHandler.getValidfuels().contains(stack.getItem()) || stack.is(Items.BUCKET);
+        return NetherFurnaceFuelHandler.getFuel().containsKey(stack.getItem())  || stack.is(Items.BUCKET);
     }
 
- 
     /**
      * For nether furnaces, replaces ForgeHooks.getBurnTime.
      * @param stack - fuel itemstack
@@ -42,8 +41,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends AbstractFurnaceBlo
         }
         else {
             Item item = stack.getItem();
-            int ret = NetherFurnaceFuelHandler.getBurnTimes().getOrDefault(item, 0);
-            return ret;
+            return NetherFurnaceFuelHandler.getFuel().getOrDefault(item, 0);
         }
     } // end getBurnTime()
     

@@ -49,8 +49,8 @@ public class NetherrocksDataGenerator
         
         gen.addProvider(event.includeServer(), new LootModifierProvider(packOutput, lookupProvider));
         gen.addProvider(event.includeServer(), new NetherrocksLootModifierProvider(packOutput, lookupProvider));
-
-        gen.addProvider(event.includeServer(), new Recipes(packOutput));
+        gen.addProvider(event.includeServer(), new NetherrocksDataMapsProvider(packOutput, lookupProvider));
+        gen.addProvider(event.includeServer(), new Recipes(packOutput, lookupProvider));
 
         // client
         gen.addProvider(event.includeClient(),new NetherrocksBlockStateProvider(packOutput, existingFileHelper));
