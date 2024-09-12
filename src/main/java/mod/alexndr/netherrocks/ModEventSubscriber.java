@@ -1,12 +1,14 @@
 package mod.alexndr.netherrocks;
 
 import mod.alexndr.netherrocks.init.ModBlocks;
+import mod.alexndr.netherrocks.init.ModDataMaps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -48,5 +50,11 @@ public final class ModEventSubscriber
         }
 	}  // end onRegisterItems()
 
-
+	/**
+	 * Here we register mod datamaps.
+	 */
+	public static void onRegisterDataMapTypes(final RegisterDataMapTypesEvent event)
+	{
+		event.register(ModDataMaps.NETHER_FURNACE_FUELS);
+	} // end onRegisterDataMapTypes()
 } // end class ModEventSubscriber

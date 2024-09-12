@@ -42,6 +42,7 @@ public class Netherrocks
 
         // register event listeners.
         modEventBus.addListener(ModEventSubscriber::onRegisterItems);
+        modEventBus.addListener(ModEventSubscriber::onRegisterDataMapTypes);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST,true, ForgeEventSubscriber::onLivingAttackEvent);
         NeoForge.EVENT_BUS.addListener(ForgeEventSubscriber::onVanillaGameEvent);
         modEventBus.addListener(NetherrocksConfig::onLoad);
