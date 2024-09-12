@@ -1,8 +1,5 @@
 package mod.alexndr.netherrocks.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModTags;
@@ -15,12 +12,15 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.RegistryObject;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTags extends MiningBlockTags
 {
 
-    public ModBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper)
+    public ModBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+						ExistingFileHelper existingFileHelper)
     {
         super(output, lookupProvider, Netherrocks.MODID, existingFileHelper);
     }
@@ -41,25 +41,25 @@ public class ModBlockTags extends MiningBlockTags
     protected void registerOreTags()
     {
     	// register "forge:ores" tags
-        this.tag(TagUtils.forgeBlockTag( "ores"))
-                .addTag(TagUtils.forgeBlockTag( "ores/argonite"))
-                .addTag(TagUtils.forgeBlockTag( "ores/ashstone"))
-                .addTag(TagUtils.forgeBlockTag( "ores/dragonstone"))
-                .addTag(TagUtils.forgeBlockTag( "ores/fyrite"))
-                .addTag(TagUtils.forgeBlockTag( "ores/illumenite"))
-                .addTag(TagUtils.forgeBlockTag( "ores/malachite"));
+        this.tag(TagUtils.cBlockTag( "ores"))
+                .addTag(TagUtils.cBlockTag( "ores/argonite"))
+                .addTag(TagUtils.cBlockTag( "ores/ashstone"))
+                .addTag(TagUtils.cBlockTag( "ores/dragonstone"))
+                .addTag(TagUtils.cBlockTag( "ores/fyrite"))
+                .addTag(TagUtils.cBlockTag( "ores/illumenite"))
+                .addTag(TagUtils.cBlockTag( "ores/malachite"));
 
-        this.tag(TagUtils.forgeBlockTag( "ores/argonite"))
+        this.tag(TagUtils.cBlockTag( "ores/argonite"))
                 .add(ModBlocks.argonite_ore.get());
-        this.tag(TagUtils.forgeBlockTag( "ores/ashstone"))
+        this.tag(TagUtils.cBlockTag( "ores/ashstone"))
         	.add(ModBlocks.ashstone_ore.get());
-        this.tag(TagUtils.forgeBlockTag( "ores/dragonstone"))
+        this.tag(TagUtils.cBlockTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get());
-        this.tag(TagUtils.forgeBlockTag( "ores/fyrite"))
+        this.tag(TagUtils.cBlockTag( "ores/fyrite"))
         	.add(ModBlocks.fyrite_ore.get());
-        this.tag(TagUtils.forgeBlockTag( "ores/illumenite"))
+        this.tag(TagUtils.cBlockTag( "ores/illumenite"))
         	.add(ModBlocks.illumenite_ore.get());
-        this.tag(TagUtils.forgeBlockTag( "ores/malachite"))
+        this.tag(TagUtils.cBlockTag( "ores/malachite"))
         	.add(ModBlocks.malachite_ore.get());
 
         // register forge ore_rates tags.
@@ -82,21 +82,21 @@ public class ModBlockTags extends MiningBlockTags
     
     private void registerDoorsSlabsAndStairs()
     {
-    	this.tag(TagUtils.modBlockTag("minecraft", "doors"))
+    	this.tag(BlockTags.DOORS)
     		.add(ModBlocks.argonite_door.get())
     		.add(ModBlocks.ashstone_door.get())
     		.add(ModBlocks.dragonstone_door.get())
     		.add(ModBlocks.fyrite_door.get())
     		.add(ModBlocks.illumenite_door.get())
     		.add(ModBlocks.malachite_door.get());
-    	this.tag(TagUtils.modBlockTag("minecraft","stairs"))
+    	this.tag(BlockTags.STAIRS)
 			.add(ModBlocks.argonite_brick_stairs.get())
 			.add(ModBlocks.ashstone_brick_stairs.get())
 			.add(ModBlocks.dragonstone_brick_stairs.get())
 			.add(ModBlocks.fyrite_brick_stairs.get())
 			.add(ModBlocks.illumenite_brick_stairs.get())
 			.add(ModBlocks.malachite_brick_stairs.get());
-    	this.tag(TagUtils.modBlockTag("minecraft","slabs"))
+    	this.tag(BlockTags.SLABS)
 			.add(ModBlocks.argonite_brick_slab.get())
 			.add(ModBlocks.ashstone_brick_slab.get())
 			.add(ModBlocks.dragonstone_brick_slab.get())
@@ -107,38 +107,38 @@ public class ModBlockTags extends MiningBlockTags
     
     private void registerStorageBlockTags()
     {
-        this.tag(TagUtils.forgeBlockTag("storage_blocks"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/malachite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/fyrite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/argonite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/ashstone"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/dragonstone"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/illumenite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/raw_malachite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/raw_fyrite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/raw_argonite"))
-        	.addTag(TagUtils.forgeBlockTag("storage_blocks/raw_illumenite"));
+        this.tag(Tags.Blocks.STORAGE_BLOCKS)
+        	.addTag(TagUtils.cBlockTag("storage_blocks/malachite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/fyrite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/argonite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/ashstone"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/dragonstone"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/illumenite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/raw_malachite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/raw_fyrite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/raw_argonite"))
+        	.addTag(TagUtils.cBlockTag("storage_blocks/raw_illumenite"));
         
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/raw_argonite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/raw_argonite"))
     		.add(ModBlocks.raw_argonite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/raw_fyrite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/raw_fyrite"))
     		.add(ModBlocks.raw_fyrite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/raw_malachite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/raw_malachite"))
     		.add(ModBlocks.raw_malachite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/raw_illumenite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/raw_illumenite"))
     		.add(ModBlocks.raw_illumenite_block.get());
 
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/argonite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/argonite"))
     		.add(ModBlocks.argonite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/fyrite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/fyrite"))
     		.add(ModBlocks.fyrite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/malachite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/malachite"))
     		.add(ModBlocks.malachite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/illumenite"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/illumenite"))
     		.add(ModBlocks.illumenite_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/ashstone"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/ashstone"))
     		.add(ModBlocks.ashstone_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/dragonstone"))
+        this.tag(TagUtils.cBlockTag("storage_blocks/dragonstone"))
     		.add(ModBlocks.dragonstone_block.get());
 
     } // end registerStorageBlockTags()
@@ -188,7 +188,7 @@ public class ModBlockTags extends MiningBlockTags
     
     private void registerBeaconTags()
     {
-    	this.tag(TagUtils.modBlockTag("minecraft", "beacon_base_blocks"))
+    	this.tag(BlockTags.BEACON_BASE_BLOCKS)
     		.add(ModBlocks.argonite_block.get())
     		.add(ModBlocks.fyrite_block.get())
     		.add(ModBlocks.illumenite_block.get())
@@ -197,7 +197,7 @@ public class ModBlockTags extends MiningBlockTags
     
     private void registerMiscTags()
     {
-        this.tag(TagUtils.modBlockTag("minecraft", "pressure_plates"))
+        this.tag(BlockTags.PRESSURE_PLATES)
             .add(ModBlocks.argonite_pressure_plate.get())
             .add(ModBlocks.ashstone_pressure_plate.get())
             .add(ModBlocks.dragonstone_pressure_plate.get())

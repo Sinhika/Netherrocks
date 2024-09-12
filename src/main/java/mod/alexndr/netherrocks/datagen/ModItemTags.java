@@ -1,8 +1,5 @@
 package mod.alexndr.netherrocks.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
@@ -10,8 +7,13 @@ import mod.alexndr.simplecorelib.api.datagen.MiningItemTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ModItemTags extends MiningItemTags
 {
@@ -44,25 +46,25 @@ public class ModItemTags extends MiningItemTags
     protected void registerOreTags()
     {
     	// register "forge:ores" tags
-        this.tag(TagUtils.forgeTag( "ores"))
-                .addTag(TagUtils.forgeTag( "ores/argonite"))
-                .addTag(TagUtils.forgeTag( "ores/ashstone"))
-                .addTag(TagUtils.forgeTag( "ores/dragonstone"))
-                .addTag(TagUtils.forgeTag( "ores/fyrite"))
-                .addTag(TagUtils.forgeTag( "ores/illumenite"))
-                .addTag(TagUtils.forgeTag( "ores/malachite"));
+        this.tag(Tags.Items.ORES)
+                .addTag(TagUtils.cTag( "ores/argonite"))
+                .addTag(TagUtils.cTag( "ores/ashstone"))
+                .addTag(TagUtils.cTag( "ores/dragonstone"))
+                .addTag(TagUtils.cTag( "ores/fyrite"))
+                .addTag(TagUtils.cTag( "ores/illumenite"))
+                .addTag(TagUtils.cTag( "ores/malachite"));
 
-        this.tag(TagUtils.forgeTag( "ores/argonite"))
+        this.tag(TagUtils.cTag( "ores/argonite"))
                 .add(ModBlocks.argonite_ore.get().asItem());
-        this.tag(TagUtils.forgeTag( "ores/ashstone"))
+        this.tag(TagUtils.cTag( "ores/ashstone"))
         	.add(ModBlocks.ashstone_ore.get().asItem());
-        this.tag(TagUtils.forgeTag( "ores/dragonstone"))
+        this.tag(TagUtils.cTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get().asItem());
-        this.tag(TagUtils.forgeTag( "ores/fyrite"))
+        this.tag(TagUtils.cTag( "ores/fyrite"))
         	.add(ModBlocks.fyrite_ore.get().asItem());
-        this.tag(TagUtils.forgeTag( "ores/illumenite"))
+        this.tag(TagUtils.cTag( "ores/illumenite"))
         	.add(ModBlocks.illumenite_ore.get().asItem());
-        this.tag(TagUtils.forgeTag( "ores/malachite"))
+        this.tag(TagUtils.cTag( "ores/malachite"))
         	.add(ModBlocks.malachite_ore.get().asItem());
 
         // register forge ore_rates tags.
@@ -132,21 +134,21 @@ public class ModItemTags extends MiningItemTags
     
     private void registerDoorsSlabsAndStairs()
     {
-    	this.tag(TagUtils.modTag("minecraft", "doors"))
+    	this.tag(ItemTags.DOORS)
     		.add(ModBlocks.argonite_door.get().asItem())
     		.add(ModBlocks.ashstone_door.get().asItem())
     		.add(ModBlocks.dragonstone_door.get().asItem())
     		.add(ModBlocks.fyrite_door.get().asItem())
     		.add(ModBlocks.illumenite_door.get().asItem())
     		.add(ModBlocks.malachite_door.get().asItem());
-    	this.tag(TagUtils.modTag("minecraft","stairs"))
+    	this.tag(ItemTags.STAIRS)
 			.add(ModBlocks.argonite_brick_stairs.get().asItem())
 			.add(ModBlocks.ashstone_brick_stairs.get().asItem())
 			.add(ModBlocks.dragonstone_brick_stairs.get().asItem())
 			.add(ModBlocks.fyrite_brick_stairs.get().asItem())
 			.add(ModBlocks.illumenite_brick_stairs.get().asItem())
 			.add(ModBlocks.malachite_brick_stairs.get().asItem());
-    	this.tag(TagUtils.modTag("minecraft","slabs"))
+    	this.tag(ItemTags.SLABS)
 			.add(ModBlocks.argonite_brick_slab.get().asItem())
 			.add(ModBlocks.ashstone_brick_slab.get().asItem())
 			.add(ModBlocks.dragonstone_brick_slab.get().asItem())
@@ -157,108 +159,108 @@ public class ModItemTags extends MiningItemTags
 
     private void registerBlockItemTags()
     {
-        this.tag(TagUtils.forgeTag("storage_blocks"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/malachite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/fyrite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/argonite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/ashstone"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/dragonstone"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/illumenite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/raw_malachite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/raw_fyrite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/raw_illumenite"))
-	        .addTag(TagUtils.forgeTag("storage_blocks/raw_argonite"));
+        this.tag(Tags.Items.STORAGE_BLOCKS)
+	        .addTag(TagUtils.cTag("storage_blocks/malachite"))
+	        .addTag(TagUtils.cTag("storage_blocks/fyrite"))
+	        .addTag(TagUtils.cTag("storage_blocks/argonite"))
+	        .addTag(TagUtils.cTag("storage_blocks/ashstone"))
+	        .addTag(TagUtils.cTag("storage_blocks/dragonstone"))
+	        .addTag(TagUtils.cTag("storage_blocks/illumenite"))
+	        .addTag(TagUtils.cTag("storage_blocks/raw_malachite"))
+	        .addTag(TagUtils.cTag("storage_blocks/raw_fyrite"))
+	        .addTag(TagUtils.cTag("storage_blocks/raw_illumenite"))
+	        .addTag(TagUtils.cTag("storage_blocks/raw_argonite"));
     
         
-        this.tag(TagUtils.forgeTag("storage_blocks/raw_argonite"))
+        this.tag(TagUtils.cTag("storage_blocks/raw_argonite"))
     		.add(ModBlocks.raw_argonite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/raw_fyrite"))
+        this.tag(TagUtils.cTag("storage_blocks/raw_fyrite"))
     		.add(ModBlocks.raw_fyrite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/raw_malachite"))
+        this.tag(TagUtils.cTag("storage_blocks/raw_malachite"))
     		.add(ModBlocks.raw_malachite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/raw_illumenite"))
+        this.tag(TagUtils.cTag("storage_blocks/raw_illumenite"))
     		.add(ModBlocks.raw_illumenite_block.get().asItem());
 
-        this.tag(TagUtils.forgeTag("storage_blocks/argonite"))
+        this.tag(TagUtils.cTag("storage_blocks/argonite"))
     		.add(ModBlocks.argonite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/fyrite"))
+        this.tag(TagUtils.cTag("storage_blocks/fyrite"))
     		.add(ModBlocks.fyrite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/malachite"))
+        this.tag(TagUtils.cTag("storage_blocks/malachite"))
     		.add(ModBlocks.malachite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/illumenite"))
+        this.tag(TagUtils.cTag("storage_blocks/illumenite"))
     		.add(ModBlocks.illumenite_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/ashstone"))
+        this.tag(TagUtils.cTag("storage_blocks/ashstone"))
     		.add(ModBlocks.ashstone_block.get().asItem());
-        this.tag(TagUtils.forgeTag("storage_blocks/dragonstone"))
+        this.tag(TagUtils.cTag("storage_blocks/dragonstone"))
     		.add(ModBlocks.dragonstone_block.get().asItem());
 
     } // end registerBlockItemTags()
    
     private void registerNuggetTags()
     {
-        this.tag(TagUtils.forgeTag("nuggets"))
-	    	.addTag(TagUtils.forgeTag("nuggets/argonite"))
-			.addTag(TagUtils.forgeTag("nuggets/fyrite"))
-	    	.addTag(TagUtils.forgeTag("nuggets/malachite"))
-	    	.addTag(TagUtils.forgeTag("nuggets/illumenite"));
+        this.tag(Tags.Items.NUGGETS)
+	    	.addTag(TagUtils.cTag("nuggets/argonite"))
+			.addTag(TagUtils.cTag("nuggets/fyrite"))
+	    	.addTag(TagUtils.cTag("nuggets/malachite"))
+	    	.addTag(TagUtils.cTag("nuggets/illumenite"));
 
-        this.tag(TagUtils.forgeTag("nuggets/argonite"))
+        this.tag(TagUtils.cTag("nuggets/argonite"))
     		.add(ModItems.argonite_nugget.get());
-        this.tag(TagUtils.forgeTag("nuggets/fyrite"))
+        this.tag(TagUtils.cTag("nuggets/fyrite"))
         	.add(ModItems.fyrite_nugget.get());
-        this.tag(TagUtils.forgeTag("nuggets/malachite"))
+        this.tag(TagUtils.cTag("nuggets/malachite"))
     		.add(ModItems.malachite_nugget.get());
-        this.tag(TagUtils.forgeTag("nuggets/illumenite"))
+        this.tag(TagUtils.cTag("nuggets/illumenite"))
     		.add(ModItems.illumenite_nugget.get());
     } // end registerNuggetTags()
 
     
     private void registerRawMetalTags()
     {
-        this.tag(TagUtils.forgeTag("raw_metals"))
-	    	.addTag(TagUtils.forgeTag("raw_metals/argonite"))
-			.addTag(TagUtils.forgeTag("raw_metals/fyrite"))
-	    	.addTag(TagUtils.forgeTag("raw_metals/malachite"))
-	    	.addTag(TagUtils.forgeTag("raw_metals/illumenite"));
+        this.tag(Tags.Items.RAW_MATERIALS)
+	    	.addTag(TagUtils.cTag("raw_metals/argonite"))
+			.addTag(TagUtils.cTag("raw_metals/fyrite"))
+	    	.addTag(TagUtils.cTag("raw_metals/malachite"))
+	    	.addTag(TagUtils.cTag("raw_metals/illumenite"));
         
-        this.tag(TagUtils.forgeTag("raw_metals/argonite"))
+        this.tag(TagUtils.cTag("raw_metals/argonite"))
     		.add(ModItems.raw_argonite.get());
-        this.tag(TagUtils.forgeTag("raw_metals/fyrite"))
+        this.tag(TagUtils.cTag("raw_metals/fyrite"))
         	.add(ModItems.raw_fyrite.get());
-        this.tag(TagUtils.forgeTag("raw_metals/malachite"))
+        this.tag(TagUtils.cTag("raw_metals/malachite"))
     		.add(ModItems.raw_malachite.get());
-        this.tag(TagUtils.forgeTag("raw_metals/illumenite"))
+        this.tag(TagUtils.cTag("raw_metals/illumenite"))
     		.add(ModItems.raw_illumenite.get());
     } // end registerRawMetalTags()
 
     
     private void registerGemTags()
     {
-        this.tag(TagUtils.forgeTag("gems"))
-        	.addTag(TagUtils.forgeTag("gems/ashstone"));
-        this.tag(TagUtils.forgeTag("gems/ashstone"))
+        this.tag(Tags.Items.GEMS)
+        	.addTag(TagUtils.cTag("gems/ashstone"));
+        this.tag(TagUtils.cTag("gems/ashstone"))
         	.add(ModItems.ashstone_gem.get());
-        this.tag(TagUtils.forgeTag("gems"))
-    		.addTag(TagUtils.forgeTag("gems/dragonstone"));
-        this.tag(TagUtils.forgeTag("gems/dragonstone"))
+        this.tag(TagUtils.cTag("gems"))
+    		.addTag(TagUtils.cTag("gems/dragonstone"));
+        this.tag(TagUtils.cTag("gems/dragonstone"))
     		.add(ModItems.dragonstone_gem.get());
     }
 
     private void registerIngotTags()
     {
-        this.tag(TagUtils.forgeTag("ingots"))
-    		.addTag(TagUtils.forgeTag("ingots/argonite"))
-        	.addTag(TagUtils.forgeTag("ingots/fyrite"))
-        	.addTag(TagUtils.forgeTag("ingots/illumenite"))
-        	.addTag(TagUtils.forgeTag("ingots/malachite"));
+        this.tag(Tags.Items.INGOTS)
+    		.addTag(TagUtils.cTag("ingots/argonite"))
+        	.addTag(TagUtils.cTag("ingots/fyrite"))
+        	.addTag(TagUtils.cTag("ingots/illumenite"))
+        	.addTag(TagUtils.cTag("ingots/malachite"));
         
-        this.tag(TagUtils.forgeTag("ingots/argonite"))
+        this.tag(TagUtils.cTag("ingots/argonite"))
         	.add(ModItems.argonite_ingot.get());
-        this.tag(TagUtils.forgeTag("ingots/fyrite"))
+        this.tag(TagUtils.cTag("ingots/fyrite"))
     		.add(ModItems.fyrite_ingot.get());
-        this.tag(TagUtils.forgeTag("ingots/malachite"))
+        this.tag(TagUtils.cTag("ingots/malachite"))
     		.add(ModItems.malachite_ingot.get());
-        this.tag(TagUtils.forgeTag("ingots/illumenite"))
+        this.tag(TagUtils.cTag("ingots/illumenite"))
     		.add(ModItems.illumenite_ingot.get());
     } // end registerIngotTags()
 
@@ -277,19 +279,19 @@ public class ModItemTags extends MiningItemTags
     
     private void registerDustTags()
     {
-        this.tag(TagUtils.forgeTag("dusts"))
-            .addTag(TagUtils.forgeTag("dusts/argonite"))
-            .addTag(TagUtils.forgeTag("dusts/fyrite"))
-            .addTag(TagUtils.forgeTag("dusts/illumenite"))
-            .addTag(TagUtils.forgeTag("dusts/malachite"));
+        this.tag(Tags.Items.DUSTS)
+            .addTag(TagUtils.cTag("dusts/argonite"))
+            .addTag(TagUtils.cTag("dusts/fyrite"))
+            .addTag(TagUtils.cTag("dusts/illumenite"))
+            .addTag(TagUtils.cTag("dusts/malachite"));
         
-        this.tag(TagUtils.forgeTag("dusts/argonite"))
+        this.tag(TagUtils.cTag("dusts/argonite"))
             .add(ModItems.argonite_dust.get());
-        this.tag(TagUtils.forgeTag("dusts/fyrite"))
+        this.tag(TagUtils.cTag("dusts/fyrite"))
             .add(ModItems.fyrite_dust.get());
-        this.tag(TagUtils.forgeTag("dusts/illumenite"))
+        this.tag(TagUtils.cTag("dusts/illumenite"))
             .add(ModItems.illumenite_dust.get());
-        this.tag(TagUtils.forgeTag("dusts/malachite"))
+        this.tag(TagUtils.cTag("dusts/malachite"))
             .add(ModItems.malachite_dust.get());
             
     } // end registerDustTags()
