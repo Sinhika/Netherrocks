@@ -1,7 +1,6 @@
 package mod.alexndr.netherrocks.datagen;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
 import mod.alexndr.netherrocks.init.ModTags;
@@ -11,15 +10,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.crafting.ConditionalRecipe;
-import net.neoforged.neoforge.common.crafting.conditions.ICondition;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class Recipes extends SimpleRecipeProvider
@@ -121,144 +118,132 @@ public class Recipes extends SimpleRecipeProvider
     protected void registerArmorRecipes(RecipeOutput pRecipeOutput)
     {
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()), 
-    			"dragonstone", has(ModItems.dragonstone_gem.get()), null);
+    			"dragonstone", has(ModItems.dragonstone_gem.get()));
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.fyrite_ingot.get()), "fyrite", 
-    			has(ModItems.fyrite_ingot.get()), null);
+    			has(ModItems.fyrite_ingot.get()));
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.illumenite_ingot.get()), "illumenite", 
-    			has(ModItems.illumenite_ingot.get()), null);
+    			has(ModItems.illumenite_ingot.get()));
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.malachite_ingot.get()), "malachite", 
-    			has(ModItems.malachite_ingot.get()), null);
+    			has(ModItems.malachite_ingot.get()));
     } // end registerArmorRecipes()
     
     
     protected void registerAestheticRecipes(RecipeOutput pRecipeOutput)
     {
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.argonite_ingot.get()), "argonite", 
- 			has(ModItems.argonite_ingot.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.argonite_ingot.get()));
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.ashstone_gem.get()), "ashstone", 
- 			has(ModItems.ashstone_gem.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.ashstone_gem.get()));
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()), "dragonstone", 
- 			has(ModItems.dragonstone_gem.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.dragonstone_gem.get()));
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.fyrite_ingot.get()), "fyrite", 
- 			has(ModItems.fyrite_ingot.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.fyrite_ingot.get()));
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.illumenite_ingot.get()), "illumenite", 
- 			has(ModItems.illumenite_ingot.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.illumenite_ingot.get()));
     	buildSimpleAestheticBlocks(pRecipeOutput, Ingredient.of(ModItems.malachite_ingot.get()), "malachite", 
- 			has(ModItems.malachite_ingot.get()), flag("aesthetics_enabled"));
+ 			has(ModItems.malachite_ingot.get()));
     } // end registerAestheticRecipes()
     
     
     protected void registerStorageRecipes(RecipeOutput pRecipeOutput)
     {
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.raw_fyrite.get(), 
-        		ModBlocks.raw_fyrite_block.get(), null, has(ModItems.raw_fyrite.get()));
+        		ModBlocks.raw_fyrite_block.get(), null);
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.raw_illumenite.get(), 
-        		ModBlocks.raw_illumenite_block.get(), null, has(ModItems.raw_illumenite.get()));
+        		ModBlocks.raw_illumenite_block.get(), null);
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.raw_argonite.get(), 
-        		ModBlocks.raw_argonite_block.get(), null, has(ModItems.raw_argonite.get()));
+        		ModBlocks.raw_argonite_block.get(), null);
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.raw_malachite.get(), 
-        		ModBlocks.raw_malachite_block.get(), null, has(ModItems.raw_malachite.get()));
+        		ModBlocks.raw_malachite_block.get(), null);
         
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.argonite_ingot.get(), 
-        		ModBlocks.argonite_block.get().asItem(), ModItems.argonite_nugget.get(), 
-        		has(ModItems.argonite_ingot.get()));
+        		ModBlocks.argonite_block.get().asItem(), ModItems.argonite_nugget.get());
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.fyrite_ingot.get(), 
-        		ModBlocks.fyrite_block.get().asItem(), ModItems.fyrite_nugget.get(), 
-        		has(ModItems.fyrite_ingot.get()));
+        		ModBlocks.fyrite_block.get().asItem(), ModItems.fyrite_nugget.get());
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.illumenite_ingot.get(), 
-        		ModBlocks.illumenite_block.get().asItem(), ModItems.illumenite_nugget.get(), 
-        		has(ModItems.illumenite_ingot.get()));
+        		ModBlocks.illumenite_block.get().asItem(), ModItems.illumenite_nugget.get());
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.malachite_ingot.get(), 
-        		ModBlocks.malachite_block.get().asItem(), ModItems.malachite_nugget.get(), 
-        		has(ModItems.malachite_ingot.get()));
+        		ModBlocks.malachite_block.get().asItem(), ModItems.malachite_nugget.get());
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.ashstone_gem.get(), 
-        		ModBlocks.ashstone_block.get().asItem(), null, 
-        		has(ModItems.ashstone_gem.get()));
+        		ModBlocks.ashstone_block.get().asItem(), null);
         buildSimpleStorageRecipes(pRecipeOutput, ModItems.dragonstone_gem.get(), 
-        		ModBlocks.dragonstone_block.get().asItem(), null, 
-        		has(ModItems.dragonstone_gem.get()));
+        		ModBlocks.dragonstone_block.get().asItem(), null);
     } // end registerStorageRecipes()
     
     
     protected void registerFurnaceRecipes(RecipeOutput pRecipeOutput)
     {
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModItems.raw_fyrite.get()), ModItems.fyrite_ingot.get(), 
-                has(ModItems.raw_fyrite.get()), 0.8F, 200);
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModItems.raw_illumenite.get()), ModItems.illumenite_ingot.get(), 
-                has(ModItems.raw_illumenite.get()), 0.8F, 200);
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModItems.raw_argonite.get()), ModItems.argonite_ingot.get(), 
-                has(ModItems.raw_argonite.get()), 0.7F, 200);
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModItems.raw_malachite.get()), ModItems.malachite_ingot.get(), 
-                has(ModItems.raw_malachite.get()), 0.5F, 200);
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModItems.raw_fyrite.get()), ModItems.fyrite_ingot.get(),
+               0.8F, 200, "fyrite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModItems.raw_illumenite.get()), ModItems.illumenite_ingot.get(),
+               0.8F, 200, "illumenite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModItems.raw_argonite.get()), ModItems.argonite_ingot.get(),
+                0.7F, 200, "argonite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModItems.raw_malachite.get()), ModItems.malachite_ingot.get(),
+                0.5F, 200, "malachite_ingots");
         
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.ashstone_ore.get()), ModItems.ashstone_gem.get(), 
-                has(ModBlocks.ashstone_ore.get()), 0.8F, 200, "_from_ore");
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.dragonstone_ore.get()), ModItems.dragonstone_gem.get(), 
-                has(ModBlocks.dragonstone_ore.get()), 0.8F, 200, "_from_ore");
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.fyrite_ore.get()), ModItems.fyrite_ingot.get(), 
-                has(ModBlocks.fyrite_ore.get()), 0.8F, 200, "_from_ore");
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.illumenite_ore.get()), ModItems.illumenite_ingot.get(), 
-                has(ModBlocks.illumenite_ore.get()), 0.8F, 200, "_from_ore");
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.argonite_ore.get()), ModItems.argonite_ingot.get(), 
-                has(ModBlocks.argonite_ore.get()), 0.7F, 200, "_from_ore");
-        buildOre2IngotRecipes(pRecipeOutput, Ingredient.of(ModBlocks.malachite_ore.get()), ModItems.malachite_ingot.get(), 
-                has(ModBlocks.malachite_ore.get()), 0.5F, 200, "_from_ore");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.ashstone_ore.get()), ModItems.ashstone_gem.get(),
+                0.8F, 200, "ashstone_gems");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.dragonstone_ore.get()), ModItems.dragonstone_gem.get(),
+                0.8F, 200, "dragonstone_gems");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.fyrite_ore.get()), ModItems.fyrite_ingot.get(),
+                0.8F, 200, "fyrite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.illumenite_ore.get()), ModItems.illumenite_ingot.get(),
+                0.8F, 200, "illumenite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.argonite_ore.get()), ModItems.argonite_ingot.get(),
+                 0.7F, 200, "argonite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.malachite_ore.get()), ModItems.malachite_ingot.get(),
+                 0.5F, 200, "malachite_ingots");
         
         // vanilla recycling
-        buildVanillaRecyclingRecipes(pRecipeOutput, Ingredient.of(ModItems.argonite_axe.get(),
+        buildVanillaRecyclingRecipes(pRecipeOutput, List.of(ModItems.argonite_axe.get(),
         		ModItems.argonite_hoe.get(), ModItems.argonite_pickaxe.get(), ModItems.argonite_shovel.get(),
         		ModItems.argonite_sword.get()), ModItems.argonite_nugget.get(),
-        		has(ModItems.argonite_axe.get()), 0.3F, 200);
-        buildVanillaRecyclingRecipes(pRecipeOutput, Ingredient.of(ModItems.fyrite_axe.get(),
+        		0.3F, 200, "argonite_recycling");
+        buildVanillaRecyclingRecipes(pRecipeOutput, List.of(ModItems.fyrite_axe.get(),
         		ModItems.fyrite_pickaxe.get(), ModItems.fyrite_shovel.get(), ModItems.fyrite_boots.get(),
         		ModItems.fyrite_sword.get(), ModItems.fyrite_chestplate.get(), ModItems.fyrite_helmet.get(),
         		ModItems.fyrite_leggings.get()), 
-        		ModItems.fyrite_nugget.get(), has(ModItems.fyrite_axe.get()), 0.3F, 200);
-        buildVanillaRecyclingRecipes(pRecipeOutput, Ingredient.of(ModItems.illumenite_boots.get(),
+        		ModItems.fyrite_nugget.get(), 0.3F, 200, "fyrite_recycling");
+        buildVanillaRecyclingRecipes(pRecipeOutput, List.of(ModItems.illumenite_boots.get(),
         		ModItems.illumenite_sword.get(), ModItems.illumenite_chestplate.get(), ModItems.illumenite_helmet.get(),
         		ModItems.illumenite_leggings.get()), 
-        		ModItems.illumenite_nugget.get(), has(ModItems.illumenite_sword.get()), 0.3F, 200);
-        buildVanillaRecyclingRecipes(pRecipeOutput, Ingredient.of(ModItems.malachite_axe.get(),
+        		ModItems.illumenite_nugget.get(), 0.3F, 200, "illumenite_recycling");
+        buildVanillaRecyclingRecipes(pRecipeOutput, List.of(ModItems.malachite_axe.get(),
         		ModItems.malachite_pickaxe.get(), ModItems.malachite_shovel.get(), ModItems.malachite_boots.get(),
         		ModItems.malachite_sword.get(), ModItems.malachite_chestplate.get(), ModItems.malachite_helmet.get(),
         		ModItems.malachite_leggings.get(), ModItems.malachite_hoe.get()), 
-        		ModItems.malachite_nugget.get(), has(ModItems.malachite_axe.get()), 0.3F, 200);
+        		ModItems.malachite_nugget.get(), 0.3F, 200, "malachite_recycling");
         
     } // end registerFurnaceRecipes()
     
     private void registerSilentsFurnaceRecipes(RecipeOutput pRecipeOutput)
     {
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.argonite_dust.get().asItem()), ModItems.argonite_ingot.get(),
-                has(ModItems.argonite_dust.get().asItem()), 0.7F, 200, "_from_dust");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.fyrite_dust.get().asItem()), ModItems.fyrite_ingot.get(),
-                has(ModItems.fyrite_dust.get().asItem()), 0.8F, 200, "_from_dust");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.illumenite_dust.get().asItem()), ModItems.illumenite_ingot.get(),
-                has(ModItems.illumenite_dust.get().asItem()), 0.8F, 200, "_from_dust");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.malachite_dust.get().asItem()), ModItems.malachite_ingot.get(),
-                has(ModItems.malachite_dust.get().asItem()), 0.5F, 200, "_from_dust");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.argonite_dust.get().asItem()), ModItems.argonite_ingot.get(),
+                0.7F, 200, "argonite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.fyrite_dust.get().asItem()), ModItems.fyrite_ingot.get(),
+                 0.8F, 200, "fyrite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.illumenite_dust.get().asItem()), ModItems.illumenite_ingot.get(),
+                 0.8F, 200, "illumenite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.malachite_dust.get().asItem()), ModItems.malachite_ingot.get(),
+                 0.5F, 200, "malachite_ingots");
         
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.crushed_argonite_ore.get().asItem()), ModItems.argonite_ingot.get(),
-                has(ModItems.crushed_argonite_ore.get().asItem()), 0.7F, 200, "_from_chunks");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.crushed_fyrite_ore.get().asItem()), ModItems.fyrite_ingot.get(),
-                has(ModItems.crushed_fyrite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.crushed_illumenite_ore.get().asItem()), ModItems.illumenite_ingot.get(),
-                has(ModItems.crushed_illumenite_ore.get().asItem()), 0.8F, 200, "_from_chunks");
-        buildOre2IngotRecipes(pRecipeOutput, 
-                Ingredient.of(ModItems.crushed_malachite_ore.get().asItem()), ModItems.malachite_ingot.get(),
-                has(ModItems.crushed_malachite_ore.get().asItem()), 0.5F, 200, "_from_chunks");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.crushed_argonite_ore.get().asItem()), ModItems.argonite_ingot.get(),
+                0.7F, 200, "argonite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.crushed_fyrite_ore.get().asItem()), ModItems.fyrite_ingot.get(),
+                0.8F, 200, "fyrite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.crushed_illumenite_ore.get().asItem()), ModItems.illumenite_ingot.get(),
+                0.8F, 200, "illumenite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput,
+				List.of(ModItems.crushed_malachite_ore.get().asItem()), ModItems.malachite_ingot.get(),
+                0.5F, 200, "malachite_ingots");
    } // end registerFurnaceRecipes()
-
-	@Override
-	public ICondition flag(String arg0)
-	{
-		return impl_flag(Netherrocks.MODID, NetherrocksConfig.INSTANCE, arg0);
-	}
 
 } // end class
