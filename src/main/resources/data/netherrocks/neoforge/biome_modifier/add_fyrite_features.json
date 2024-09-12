@@ -1,5 +1,5 @@
 {
-	"type" : "forge:add_features",
+	"type" : "neoforge:add_features",
 	"biomes" : "#minecraft:is_nether",
 	"features" : ["netherrocks:fyrite_vein", "netherrocks:fyrite_in_magma" ],
 	"step" : "underground_decoration"
