@@ -5,7 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModItems;
-import mod.alexndr.netherrocks.init.ModSerializers;
+import mod.alexndr.netherrocks.init.ModCodecs;
 import mod.alexndr.simplecorelib.api.loot.AbstractChestLootModifier;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
@@ -60,7 +60,7 @@ public class NetherrocksLootModifiers
         @Override
         public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return ModSerializers.AUTO_SMELT_TOOL.get();
+            return ModCodecs.AUTO_SMELT_TOOL.get();
         }
 
     } // end class AutoSmeltLootModifier
@@ -78,7 +78,7 @@ public class NetherrocksLootModifiers
         @Override
         public MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return ModSerializers.GHAST_ORE_LOOT.get();
+            return ModCodecs.GHAST_ORE_LOOT.get();
         }
 
         @Override
@@ -133,7 +133,7 @@ public class NetherrocksLootModifiers
 
         @Override public @NotNull MapCodec<? extends IGlobalLootModifier> codec()
         {
-            return ModSerializers.CHEST_LOOT.get();
+            return ModCodecs.CHEST_LOOT.get();
         }
     }
 } // end class

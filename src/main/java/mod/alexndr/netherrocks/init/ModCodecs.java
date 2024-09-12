@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public final class ModSerializers
+public final class ModCodecs
 {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLM =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Netherrocks.MODID);

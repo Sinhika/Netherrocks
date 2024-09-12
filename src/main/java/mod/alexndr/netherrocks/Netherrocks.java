@@ -36,7 +36,7 @@ public class Netherrocks
         CreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModContainers.CONTAINER_TYPES.register(modEventBus);
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
-        ModSerializers.GLM.register(modEventBus);
+        ModCodecs.GLM.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
         // TODO register ModCodecs
 
