@@ -51,16 +51,15 @@ public abstract class AbstractNetherFurnaceTileEntity extends AbstractFurnaceBlo
     @Override
     protected short getSmeltTime(ItemStack input)
     {
-        return (short) (super.getSmeltTime(input)/2);
+        return (short) (super.getTotalCookTime(input)/2);
     }
 
     @Override
     protected int getBurnDuration(ItemStack fuelstack)
     {
         // getBurnTime() already handles empty stack case.
-         int returnval = AbstractNetherFurnaceTileEntity.getBurnTime(fuelstack, recipeType);
-         // LOGGER.debug("[" + getDisplayName().getString() + "]AbstractNetherFurnaceTileEntity.getBurnDuration: returns " + returnval + " for " + fuelstack.toString());
-         return returnval;
+        // LOGGER.debug("[" + getDisplayName().getString() + "]AbstractNetherFurnaceTileEntity.getBurnDuration: returns " + returnval + " for " + fuelstack.toString());
+         return AbstractNetherFurnaceTileEntity.getBurnTime(fuelstack, recipeType);
     } // end getBurnDuration
 
 } // end class
