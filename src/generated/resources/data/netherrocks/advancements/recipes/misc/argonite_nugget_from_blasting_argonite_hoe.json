@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_argonite_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherrocks:argonite_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:argonite_nugget_from_blasting_argonite_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_argonite_hoe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:argonite_nugget_from_blasting_argonite_hoe"
+    ]
+  }
+}

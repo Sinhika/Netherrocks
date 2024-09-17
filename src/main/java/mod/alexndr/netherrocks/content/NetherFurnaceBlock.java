@@ -2,6 +2,7 @@ package mod.alexndr.netherrocks.content;
 
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.init.ModTiles;
+import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,7 +20,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class NetherFurnaceBlock extends AbstractFurnaceBlock
+public class NetherFurnaceBlock extends SomewhatAbstractFurnaceBlock
 {
     //private static final String DISPLAY_NAME = "block.netherrocks.nether_furnace";
     public static final MapCodec<NetherFurnaceBlock> CODEC = simpleCodec(NetherFurnaceBlock::new);

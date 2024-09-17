@@ -1,0 +1,79 @@
+{
+  "remove": [
+    "#minecraft:non_flammable_wood"
+  ],
+  "values": {
+    "minecraft:blaze_powder": {
+      "burn_time": 800
+    },
+    "minecraft:blaze_rod": {
+      "burn_time": 2400
+    },
+    "minecraft:netherrack": {
+      "burn_time": 200
+    },
+    "netherrocks:crushed_fyrite_ore": {
+      "burn_time": 8000
+    },
+    "netherrocks:fyrite_axe": {
+      "burn_time": 3200
+    },
+    "netherrocks:fyrite_bars": {
+      "burn_time": 4000
+    },
+    "netherrocks:fyrite_block": {
+      "burn_time": 80000
+    },
+    "netherrocks:fyrite_boots": {
+      "burn_time": 4000
+    },
+    "netherrocks:fyrite_brick_slab": {
+      "burn_time": 40000
+    },
+    "netherrocks:fyrite_brick_stairs": {
+      "burn_time": 80000
+    },
+    "netherrocks:fyrite_bricks": {
+      "burn_time": 80000
+    },
+    "netherrocks:fyrite_chestplate": {
+      "burn_time": 8000
+    },
+    "netherrocks:fyrite_door": {
+      "burn_time": 16000
+    },
+    "netherrocks:fyrite_dust": {
+      "burn_time": 4000
+    },
+    "netherrocks:fyrite_helmet": {
+      "burn_time": 4000
+    },
+    "netherrocks:fyrite_ingot": {
+      "burn_time": 8000
+    },
+    "netherrocks:fyrite_leggings": {
+      "burn_time": 8000
+    },
+    "netherrocks:fyrite_nugget": {
+      "burn_time": 888
+    },
+    "netherrocks:fyrite_pickaxe": {
+      "burn_time": 3200
+    },
+    "netherrocks:fyrite_shears": {
+      "burn_time": 3200
+    },
+    "netherrocks:fyrite_shovel": {
+      "burn_time": 3200
+    },
+    "netherrocks:fyrite_sword": {
+      "burn_time": 3200
+    },
+    "netherrocks:raw_fyrite": {
+      "burn_time": 8000
+    },
+    "netherrocks:raw_fyrite_block": {
+      "burn_time": 80000
+    }
+  }
+}

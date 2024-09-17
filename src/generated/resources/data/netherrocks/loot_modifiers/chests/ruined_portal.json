@@ -1,0 +1,10 @@
+{
+  "type": "netherrocks:chest_loot",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ruined_portal"
+    }
+  ],
+  "lootTable": "netherrocks:chest/ruined_portal"
+}

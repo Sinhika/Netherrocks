@@ -1,6 +1,7 @@
 package mod.alexndr.netherrocks.helpers;
 
 import com.google.common.collect.Maps;
+import com.mojang.datafixers.util.Either;
 import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.Blocks;
 
 import javax.annotation.Nullable;
 import java.util.Map;
+import java.util.function.ObjIntConsumer;
 
 public class NetherFurnaceFuelHandler
 {
@@ -47,13 +49,13 @@ public class NetherFurnaceFuelHandler
         }
     }
 
-    private static void add(java.util.function.ObjIntConsumer<com.mojang.datafixers.util.Either<Item, TagKey<Item>>> consumer,
+    private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
                             ItemLike item, int time)
     {
         consumer.accept(com.mojang.datafixers.util.Either.left(item.asItem()), time);
     }
 
-    private static void add(java.util.function.ObjIntConsumer<com.mojang.datafixers.util.Either<Item, TagKey<Item>>> consumer,
+    private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
                             TagKey<Item> tag, int time)
     {
         consumer.accept(com.mojang.datafixers.util.Either.right(tag), time);
@@ -86,7 +88,7 @@ public class NetherFurnaceFuelHandler
         }
     }
 
-    public static void buildFuels(java.util.function.ObjIntConsumer<com.mojang.datafixers.util.Either<Item, TagKey<Item>>> map1)
+    public static void buildFuels(ObjIntConsumer<Either<Item, TagKey<Item>>> map1)
     {
         netherrackBurnTime = NetherrocksConfig.serverNetherrackBurnTime.get();
         fyriteBurnTime = NetherrocksConfig.serverFyriteBurnTime.get();

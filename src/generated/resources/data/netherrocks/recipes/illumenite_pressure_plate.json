@@ -1,18 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "redstone",
   "key": {
     "S": {
       "item": "netherrocks:illumenite_ingot"
     }
   },
   "pattern": [
-    "   ",
-    "SS ",
-    "   "
+    "SS"
   ],
   "result": {
-    "item": "netherrocks:illumenite_pressure_plate"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:illumenite_pressure_plate"
+  }
 }

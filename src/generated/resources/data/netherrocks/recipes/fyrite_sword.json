@@ -6,7 +6,7 @@
       "item": "netherrocks:fyrite_ingot"
     },
     "T": {
-      "tag": "forge:rods/wooden"
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     " T "
   ],
   "result": {
-    "item": "netherrocks:fyrite_sword"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:fyrite_sword"
+  }
 }

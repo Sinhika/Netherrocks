@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.145'
+    id 'net.neoforged.gradle.userdev' version '7.0.163'
 }
 
 def getVersionAppendage() {
@@ -26,7 +26,11 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-minecraft.accessTransformers.file('src/main/resources/META-INF/accesstransformer.cfg')
+minecraft {
+    accessTransformers {
+        file('src/main/resources/META-INF/accesstransformer.cfg')
+    }
+}
 
 // Default run configurations.
 // These can be tweaked, removed, or duplicated as needed.
@@ -169,7 +173,7 @@ tasks.withType(ProcessResources).configureEach {
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
-            groupId = 'simpleores'
+            groupId = 'netherrocks'
             from components.java
         }
     }

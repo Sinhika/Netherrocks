@@ -12,7 +12,7 @@
     "SSS"
   ],
   "result": {
-    "item": "netherrocks:dragonstone_chestplate"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:dragonstone_chestplate"
+  }
 }

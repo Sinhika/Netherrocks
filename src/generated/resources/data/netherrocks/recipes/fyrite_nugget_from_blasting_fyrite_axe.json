@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "fyrite_recycling",
+  "ingredient": {
+    "item": "netherrocks:fyrite_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:fyrite_nugget"
+  }
+}

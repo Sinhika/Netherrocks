@@ -1,21 +1,10 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:stonecutting",
-        "count": 2,
-        "ingredient": {
-          "item": "netherrocks:illumenite_bricks"
-        },
-        "result": "netherrocks:illumenite_brick_slab"
-      }
-    }
-  ]
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "netherrocks:illumenite_bricks"
+  },
+  "result": {
+    "count": 2,
+    "id": "netherrocks:illumenite_brick_slab"
+  }
 }

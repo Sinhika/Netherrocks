@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "group": "ashstone_gems",
+  "ingredient": {
+    "item": "netherrocks:ashstone_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:ashstone_gem"
+  }
+}

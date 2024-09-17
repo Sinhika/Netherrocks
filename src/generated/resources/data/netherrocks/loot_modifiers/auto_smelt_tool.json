@@ -4,7 +4,7 @@
     {
       "condition": "minecraft:match_tool",
       "predicate": {
-        "tag": "netherrocks:auto_smelt_tools"
+        "items": "#netherrocks:auto_smelt_tools"
       }
     }
   ]

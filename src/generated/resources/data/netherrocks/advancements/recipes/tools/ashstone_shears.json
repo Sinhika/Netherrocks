@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "netherrocks:ashstone_gem"
-            ]
+            "items": "netherrocks:ashstone_gem"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "netherrocks:ashstone_shears"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -18,7 +18,7 @@
     "###"
   ],
   "result": {
-    "item": "netherrocks:nether_blast_furnace"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:nether_blast_furnace"
+  }
 }

@@ -2,13 +2,13 @@ package mod.alexndr.netherrocks.client.gui;
 
 import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
-import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
+import mod.alexndr.simplecorelib.api.client.gui.SomewhatAbstractFurnaceScreen;
 import net.minecraft.client.gui.screens.recipebook.BlastingRecipeBookComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class NetherBlastFurnaceScreen extends AbstractFurnaceScreen<NetherBlastFurnaceContainer>
+public class NetherBlastFurnaceScreen extends SomewhatAbstractFurnaceScreen<NetherBlastFurnaceContainer>
 {
     private final static int name_color =  0x0ffffff;
     private static final ResourceLocation NETHER_FURNACE_GUI_TEXTURES =

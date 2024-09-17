@@ -176,14 +176,19 @@ public class ModBlockTags extends MiningBlockTags
     				ModBlocks.raw_argonite_block.get()),   // 3
     		List.of());  // 4
 
-		this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-				.addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
-				.addTag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
+		this.tag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
+		this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
+		this.tag(ModTags.Blocks.INCORRECT_FOR_DRAGONSTONE_TOOL);
 
 		this.tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
 				.addTag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
 
-		this.tag(ModTags.Blocks.INCORRECT_FOR_DRAGONSTONE_TOOL);
+		this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+				.addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+				.addTag(ModTags.Blocks.NEEDS_DRAGONSTONE_TOOL);
+
+
     } // end registerMiningTags()
     
     private void registerBeaconTags()

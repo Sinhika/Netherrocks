@@ -12,7 +12,7 @@
     "   "
   ],
   "result": {
-    "item": "netherrocks:dragonstone_helmet"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:dragonstone_helmet"
+  }
 }

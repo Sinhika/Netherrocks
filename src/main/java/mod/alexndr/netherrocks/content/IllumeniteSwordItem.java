@@ -16,7 +16,7 @@ public class IllumeniteSwordItem extends SwordItem
     public IllumeniteSwordItem()
     {
         super(NetherrocksItemTiers.ILLUMENITE, new Item.Properties().attributes(
-                SwordItem.createAttributes(NetherrocksItemTiers.ILLUMENITE, 3, -2.4f));
+                SwordItem.createAttributes(NetherrocksItemTiers.ILLUMENITE, 3, -2.4f)));
     }
 
     @Override

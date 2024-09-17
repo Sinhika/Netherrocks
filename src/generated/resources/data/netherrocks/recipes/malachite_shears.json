@@ -11,7 +11,7 @@
     "S "
   ],
   "result": {
-    "item": "netherrocks:malachite_shears"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:malachite_shears"
+  }
 }

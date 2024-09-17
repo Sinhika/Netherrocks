@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_illumenite_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherrocks:illumenite_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:illumenite_nugget_from_blasting_illumenite_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_illumenite_sword"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:illumenite_nugget_from_blasting_illumenite_sword"
+    ]
+  }
+}

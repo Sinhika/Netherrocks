@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:lava_bucket"
+    },
+    "B": {
+      "tag": "c:ores/ashstone"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "B#B",
+    "BBB"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:ghast_tear"
+  }
+}

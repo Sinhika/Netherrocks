@@ -12,7 +12,7 @@
     "S S"
   ],
   "result": {
-    "item": "netherrocks:dragonstone_leggings"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:dragonstone_leggings"
+  }
 }

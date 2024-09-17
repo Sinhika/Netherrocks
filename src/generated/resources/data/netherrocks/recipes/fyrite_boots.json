@@ -12,7 +12,7 @@
     "S S"
   ],
   "result": {
-    "item": "netherrocks:fyrite_boots"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:fyrite_boots"
+  }
 }

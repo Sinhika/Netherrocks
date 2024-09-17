@@ -1,31 +1,17 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "building",
-        "key": {
-          "S": {
-            "item": "netherrocks:illumenite_ingot"
-          }
-        },
-        "pattern": [
-          "SSS",
-          "SSS"
-        ],
-        "result": {
-          "count": 16,
-          "item": "netherrocks:illumenite_bars"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "netherrocks:illumenite_ingot"
     }
-  ]
+  },
+  "pattern": [
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 16,
+    "id": "netherrocks:illumenite_bars"
+  }
 }

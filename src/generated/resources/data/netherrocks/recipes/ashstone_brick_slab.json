@@ -1,32 +1,18 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "building",
-        "key": {
-          "S": {
-            "item": "netherrocks:ashstone_bricks"
-          }
-        },
-        "pattern": [
-          "   ",
-          "   ",
-          "SSS"
-        ],
-        "result": {
-          "count": 6,
-          "item": "netherrocks:ashstone_brick_slab"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "netherrocks:ashstone_bricks"
     }
-  ]
+  },
+  "pattern": [
+    "   ",
+    "   ",
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "id": "netherrocks:ashstone_brick_slab"
+  }
 }

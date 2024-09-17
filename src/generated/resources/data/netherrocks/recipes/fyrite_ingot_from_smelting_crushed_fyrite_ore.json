@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "group": "fyrite_ingots",
+  "ingredient": {
+    "item": "netherrocks:crushed_fyrite_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:fyrite_ingot"
+  }
+}

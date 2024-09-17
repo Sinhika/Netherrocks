@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "fyrite_recycling",
+  "ingredient": {
+    "item": "netherrocks:fyrite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:fyrite_nugget"
+  }
+}

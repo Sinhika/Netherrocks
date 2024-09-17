@@ -1,31 +1,17 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "building",
-        "key": {
-          "S": {
-            "item": "netherrocks:fyrite_ingot"
-          }
-        },
-        "pattern": [
-          "SSS",
-          "SSS"
-        ],
-        "result": {
-          "count": 16,
-          "item": "netherrocks:fyrite_bars"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "netherrocks:fyrite_ingot"
     }
-  ]
+  },
+  "pattern": [
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 16,
+    "id": "netherrocks:fyrite_bars"
+  }
 }

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "netherrocks:malachite_ingot"
-            ]
+            "items": "netherrocks:malachite_ingot"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "netherrocks:malachite_helmet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

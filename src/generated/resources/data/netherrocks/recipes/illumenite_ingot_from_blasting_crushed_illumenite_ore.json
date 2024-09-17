@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "group": "illumenite_ingots",
+  "ingredient": {
+    "item": "netherrocks:crushed_illumenite_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:illumenite_ingot"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#c:storage_blocks/malachite",
+    "#c:storage_blocks/fyrite",
+    "#c:storage_blocks/argonite",
+    "#c:storage_blocks/ashstone",
+    "#c:storage_blocks/dragonstone",
+    "#c:storage_blocks/illumenite",
+    "#c:storage_blocks/raw_malachite",
+    "#c:storage_blocks/raw_fyrite",
+    "#c:storage_blocks/raw_argonite",
+    "#c:storage_blocks/raw_illumenite"
+  ]
+}

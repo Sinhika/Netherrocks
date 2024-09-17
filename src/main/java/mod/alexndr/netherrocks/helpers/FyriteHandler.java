@@ -35,7 +35,7 @@ public class FyriteHandler implements IWeaponEffectHelper
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
          if (target.getRemainingFireTicks() <= 100) {
-             target.setSecondsOnFire(100);
+             target.igniteForSeconds(100);
          }
          return true;    
     } // end hitEntity()
@@ -90,7 +90,7 @@ public class FyriteHandler implements IWeaponEffectHelper
 	            if (playerIn instanceof ServerPlayer) 
 	            {
 	               CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer) playerIn, adjacentPos, itemstack);
-	               itemstack.hurtAndBreak(1, playerIn, (foo) -> { foo.broadcastBreakEvent(context.getHand());} );
+	               itemstack.hurtAndBreak(1, playerIn, LivingEntity.getSlotForHand(context.getHand()));
 	            } // end-if ServerPlayer
 
 	            return InteractionResult.sidedSuccess(worldIn.isClientSide());
@@ -104,7 +104,7 @@ public class FyriteHandler implements IWeaponEffectHelper
         	worldIn.setBlock(pos, blockstate.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
         	worldIn.gameEvent(playerIn, GameEvent.BLOCK_PLACE, pos);
             if (playerIn != null) {
-            	context.getItemInHand().hurtAndBreak(1, playerIn, (foo) -> {foo.broadcastBreakEvent(context.getHand());} );
+            	context.getItemInHand().hurtAndBreak(1, playerIn, LivingEntity.getSlotForHand(context.getHand()));
             }
             return InteractionResult.sidedSuccess(worldIn.isClientSide());
          }

@@ -1,21 +1,10 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:stonecutting",
-        "count": 1,
-        "ingredient": {
-          "item": "netherrocks:ashstone_bricks"
-        },
-        "result": "netherrocks:ashstone_brick_stairs"
-      }
-    }
-  ]
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "netherrocks:ashstone_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:ashstone_brick_stairs"
+  }
 }

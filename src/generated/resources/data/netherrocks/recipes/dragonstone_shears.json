@@ -11,7 +11,7 @@
     "S "
   ],
   "result": {
-    "item": "netherrocks:dragonstone_shears"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:dragonstone_shears"
+  }
 }

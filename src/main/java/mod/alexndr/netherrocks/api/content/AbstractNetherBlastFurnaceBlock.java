@@ -1,5 +1,6 @@
 package mod.alexndr.netherrocks.api.content;
 
+import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -7,11 +8,10 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-public abstract class AbstractNetherBlastFurnaceBlock extends AbstractFurnaceBlock
+public abstract class AbstractNetherBlastFurnaceBlock extends SomewhatAbstractFurnaceBlock
 {
 
     public AbstractNetherBlastFurnaceBlock(Properties builder)

@@ -15,7 +15,7 @@
     "SSS"
   ],
   "result": {
-    "item": "netherrocks:nether_furnace"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:nether_furnace"
+  }
 }

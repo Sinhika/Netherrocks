@@ -6,7 +6,7 @@
       "item": "netherrocks:malachite_ingot"
     },
     "T": {
-      "tag": "forge:rods/wooden"
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     " T "
   ],
   "result": {
-    "item": "netherrocks:malachite_pickaxe"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:malachite_pickaxe"
+  }
 }

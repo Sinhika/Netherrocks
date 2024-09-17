@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fyrite_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherrocks:fyrite_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:fyrite_nugget_from_blasting_fyrite_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fyrite_axe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:fyrite_nugget_from_blasting_fyrite_axe"
+    ]
+  }
+}

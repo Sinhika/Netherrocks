@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crushed_fyrite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherrocks:crushed_fyrite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherrocks:fyrite_ingot_from_smelting_crushed_fyrite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crushed_fyrite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherrocks:fyrite_ingot_from_smelting_crushed_fyrite_ore"
+    ]
+  }
+}

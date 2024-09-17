@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "netherrocks:illumenite_ingot"
-            ]
+            "items": "netherrocks:illumenite_ingot"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "netherrocks:illumenite_helmet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

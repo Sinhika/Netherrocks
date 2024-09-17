@@ -1,0 +1,17 @@
+{
+  "entries": [
+    "netherrocks:chests/bastion_hoglin_stable",
+    "netherrocks:chests/ruined_portal",
+    "netherrocks:chests/bastion_bridge",
+    "netherrocks:auto_smelt_tool",
+    "netherrocks:chests/bastion_treasure",
+    "netherrocks:chests/desert_pyramid",
+    "netherrocks:chests/jungle_temple",
+    "netherrocks:chests/bastion_other",
+    "netherrocks:chests/stronghold_crossing",
+    "netherrocks:chests/nether_bridge",
+    "netherrocks:chests/stronghold_corridor",
+    "netherrocks:ghast_ore_loot"
+  ],
+  "replace": false
+}

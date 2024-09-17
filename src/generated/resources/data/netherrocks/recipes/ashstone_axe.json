@@ -6,7 +6,7 @@
       "item": "netherrocks:ashstone_gem"
     },
     "T": {
-      "tag": "forge:rods/wooden"
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     " T "
   ],
   "result": {
-    "item": "netherrocks:ashstone_axe"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:ashstone_axe"
+  }
 }

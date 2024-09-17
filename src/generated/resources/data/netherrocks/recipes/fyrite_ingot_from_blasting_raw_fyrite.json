@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "group": "fyrite_ingots",
+  "ingredient": {
+    "item": "netherrocks:raw_fyrite"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:fyrite_ingot"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "group": "malachite_ingots",
+  "ingredient": {
+    "item": "netherrocks:malachite_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:malachite_ingot"
+  }
+}

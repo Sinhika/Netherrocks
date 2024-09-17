@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "argonite_recycling",
+  "ingredient": {
+    "item": "netherrocks:argonite_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:argonite_nugget"
+  }
+}

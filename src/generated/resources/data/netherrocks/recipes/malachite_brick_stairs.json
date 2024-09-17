@@ -1,32 +1,18 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shaped",
-        "category": "building",
-        "key": {
-          "S": {
-            "item": "netherrocks:malachite_bricks"
-          }
-        },
-        "pattern": [
-          "S  ",
-          "SS ",
-          "SSS"
-        ],
-        "result": {
-          "count": 4,
-          "item": "netherrocks:malachite_brick_stairs"
-        },
-        "show_notification": true
-      }
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "netherrocks:malachite_bricks"
     }
-  ]
+  },
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "netherrocks:malachite_brick_stairs"
+  }
 }

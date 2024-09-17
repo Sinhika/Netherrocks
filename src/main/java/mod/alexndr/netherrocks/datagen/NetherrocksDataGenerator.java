@@ -47,7 +47,6 @@ public class NetherrocksDataGenerator
             			new LootTableProvider.SubProviderEntry(NetherrocksLootInjectorProvider::new, LootContextParamSets.CHEST)
             			), lookupProvider));
         
-        gen.addProvider(event.includeServer(), new LootModifierProvider(packOutput, lookupProvider));
         gen.addProvider(event.includeServer(), new NetherrocksLootModifierProvider(packOutput, lookupProvider));
         gen.addProvider(event.includeServer(), new NetherrocksDataMapsProvider(packOutput, lookupProvider));
         gen.addProvider(event.includeServer(), new Recipes(packOutput, lookupProvider));

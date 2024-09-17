@@ -1,21 +1,10 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:stonecutting",
-        "count": 1,
-        "ingredient": {
-          "item": "netherrocks:malachite_bricks"
-        },
-        "result": "netherrocks:malachite_brick_stairs"
-      }
-    }
-  ]
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "netherrocks:malachite_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:malachite_brick_stairs"
+  }
 }

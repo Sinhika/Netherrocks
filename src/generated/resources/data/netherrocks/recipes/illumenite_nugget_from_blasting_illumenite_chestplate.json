@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "illumenite_recycling",
+  "ingredient": {
+    "item": "netherrocks:illumenite_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:illumenite_nugget"
+  }
+}

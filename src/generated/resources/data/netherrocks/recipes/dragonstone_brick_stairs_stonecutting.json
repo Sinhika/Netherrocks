@@ -1,21 +1,10 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
-        {
-          "type": "netherrocks:flag",
-          "flag": "aesthetics_enabled"
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:stonecutting",
-        "count": 1,
-        "ingredient": {
-          "item": "netherrocks:dragonstone_bricks"
-        },
-        "result": "netherrocks:dragonstone_brick_stairs"
-      }
-    }
-  ]
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "netherrocks:dragonstone_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:dragonstone_brick_stairs"
+  }
 }

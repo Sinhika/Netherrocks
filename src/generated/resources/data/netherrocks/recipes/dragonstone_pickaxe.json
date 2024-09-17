@@ -6,7 +6,7 @@
       "item": "netherrocks:dragonstone_gem"
     },
     "T": {
-      "tag": "forge:rods/wooden"
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     " T "
   ],
   "result": {
-    "item": "netherrocks:dragonstone_pickaxe"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "netherrocks:dragonstone_pickaxe"
+  }
 }
