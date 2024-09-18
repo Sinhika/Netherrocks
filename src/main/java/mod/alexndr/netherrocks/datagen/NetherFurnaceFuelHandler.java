@@ -1,4 +1,4 @@
-package mod.alexndr.netherrocks.helpers;
+package mod.alexndr.netherrocks.datagen;
 
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Either;
@@ -52,13 +52,13 @@ public class NetherFurnaceFuelHandler
     private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
                             ItemLike item, int time)
     {
-        consumer.accept(com.mojang.datafixers.util.Either.left(item.asItem()), time);
+        consumer.accept(Either.left(item.asItem()), time);
     }
 
     private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
                             TagKey<Item> tag, int time)
     {
-        consumer.accept(com.mojang.datafixers.util.Either.right(tag), time);
+        consumer.accept(Either.right(tag), time);
     }
 
     private static boolean isNeverAFurnaceFuel(Item pItem) {

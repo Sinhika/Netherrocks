@@ -1,8 +1,11 @@
 package mod.alexndr.netherrocks.api.content;
 
-import mod.alexndr.netherrocks.helpers.NetherFurnaceFuelHandler;
+import mod.alexndr.netherrocks.datagen.NetherFurnaceFuelHandler;
+import mod.alexndr.netherrocks.init.ModDataMaps;
 import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -11,12 +14,13 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 
 import javax.annotation.Nullable;
 
 public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFurnaceBlockEntity
 {
-    
+
     public AbstractNetherFurnaceTileEntity(BlockEntityType<?> tileEntityTypeIn, BlockPos blockpos, BlockState blockstate,
     		RecipeType<? extends AbstractCookingRecipe> recipeTypeIn)
     {
@@ -43,8 +47,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
             return 0;
         }
         else {
-            Item item = stack.getItem();
-            return NetherFurnaceFuelHandler.getFuel().getOrDefault(item, 0);
+            FurnaceFuel furnaceFuel = BuiltInRegistries.ITEM.createIntrusiveHolder(stack.getItem()).getData(
+                    ModDataMaps.NETHER_FURNACE_FUELS);
+            return furnaceFuel == null ? 0 : furnaceFuel.burnTime();
         }
     } // end getBurnTime()
     

@@ -1,10 +1,8 @@
 package mod.alexndr.netherrocks.datagen;
 
-import mod.alexndr.netherrocks.helpers.NetherFurnaceFuelHandler;
 import mod.alexndr.netherrocks.init.ModDataMaps;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.data.DataMapProvider;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 
@@ -36,7 +34,5 @@ public class NetherrocksDataMapsProvider extends DataMapProvider
                 value.ifLeft(item -> fuels.add(item.builtInRegistryHolder(), new FurnaceFuel(time), false))
                 .ifRight(tag -> fuels.add(tag, new FurnaceFuel(time), false)));
 
-        // Mojang decided to use an exclusion tag for nether wood
-        fuels.remove(ItemTags.NON_FLAMMABLE_WOOD);
     }
 } // end class
