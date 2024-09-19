@@ -4,6 +4,7 @@ import mod.alexndr.netherrocks.datagen.NetherFurnaceFuelHandler;
 import mod.alexndr.netherrocks.init.ModDataMaps;
 import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -30,7 +31,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     @Override
     public boolean isCustomFuel(ItemStack stack)
     {
-        return NetherFurnaceFuelHandler.getFuel().containsKey(stack.getItem())  || stack.is(Items.BUCKET);
+        return NetherFurnaceFuelHandler.getFuel().containsKey(stack.getItem());
     }
 
     /**
@@ -39,18 +40,31 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
      * @param recipeType - ignored
      * @return burn time in ticks.
      */
-    @Override
-    protected int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
+    public static int getStaticBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
     {
         if (stack.isEmpty())
         {
             return 0;
         }
         else {
-            FurnaceFuel furnaceFuel = BuiltInRegistries.ITEM.createIntrusiveHolder(stack.getItem()).getData(
+            FurnaceFuel furnaceFuel = stack.getItemHolder().getData(
                     ModDataMaps.NETHER_FURNACE_FUELS);
             return furnaceFuel == null ? 0 : furnaceFuel.burnTime();
         }
+
+    }
+
+
+    /**
+     * For nether furnaces, replaces ForgeHooks.getBurnTime.
+     * @param stack - fuel itemstack
+     * @param recipeType - ignored
+     * @return burn time in ticks.
+     */
+    @Override
+    public int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
+    {
+        return getStaticBurnTime(stack, recipeType);
     } // end getBurnTime()
     
     /**
@@ -61,6 +75,18 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     {
         int baseCookTime = super.getSmeltTime(this.getLevel(), this);
         return (baseCookTime/2);
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int index, ItemStack stack, @org.jetbrains.annotations.Nullable Direction direction) {
+        if (index == 2) {
+            return false;
+        } else if (index != 1) {
+            return true;
+        } else {
+            ItemStack itemstack = (ItemStack)this.items.get(1);
+            return isCustomFuel(stack) || stack.is(Items.BUCKET) && !itemstack.is(Items.BUCKET);
+        }
     }
 
 } // end class

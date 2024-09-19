@@ -37,7 +37,7 @@ public final class NetherFuelRecipeMaker
 	private static int getBurnTime(ItemStack itemStack) 
 	{
 		try {
-			return AbstractNetherFurnaceTileEntity.getBurnTime(itemStack, null);
+			return AbstractNetherFurnaceTileEntity.getStaticBurnTime(itemStack, null);
 		} 
 		catch (RuntimeException | LinkageError e) 
 		{
