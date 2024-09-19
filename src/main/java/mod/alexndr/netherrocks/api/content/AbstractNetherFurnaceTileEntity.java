@@ -1,5 +1,6 @@
 package mod.alexndr.netherrocks.api.content;
 
+import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.datagen.NetherFurnaceFuelHandler;
 import mod.alexndr.netherrocks.init.ModDataMaps;
 import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlockEntity;
@@ -31,7 +32,12 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     @Override
     public boolean isCustomFuel(ItemStack stack)
     {
-        return NetherFurnaceFuelHandler.getFuel().containsKey(stack.getItem());
+        return AbstractNetherFurnaceTileEntity.isStaticCustomFuel(stack);
+    }
+
+    public static boolean isStaticCustomFuel(ItemStack stack)
+    {
+        return (stack.getItemHolder().getData(ModDataMaps.NETHER_FURNACE_FUELS) != null);
     }
 
     /**
@@ -64,7 +70,9 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     @Override
     public int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
     {
-        return getStaticBurnTime(stack, recipeType);
+        int bt = getStaticBurnTime(stack, recipeType);
+        Netherrocks.LOGGER.debug("{} burnTime is {}", stack.getDescriptionId(), bt);
+        return bt;
     } // end getBurnTime()
     
     /**

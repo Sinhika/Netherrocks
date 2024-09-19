@@ -36,7 +36,7 @@ public class NetherFurnaceBlock extends SomewhatAbstractFurnaceBlock
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
             Level level, BlockState bstate, BlockEntityType<T> entityType)
 	{
-		return createFurnaceTicker(level, entityType, ModTiles.NETHER_FURNACE.get());
+		return createCustomFurnaceTicker(level, entityType, ModTiles.NETHER_FURNACE.get());
 	}
 
 
