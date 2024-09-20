@@ -50,7 +50,7 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
     @Override
  	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState bstate, BlockEntityType<T> entityType) 
  	{
- 		return createFurnaceTicker(level, entityType, ModTiles.NETHER_BLAST_FURNACE.get());
+ 		return createCustomFurnaceTicker(level, entityType, ModTiles.NETHER_BLAST_FURNACE.get());
  	}
 
  	@Override

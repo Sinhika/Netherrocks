@@ -32,7 +32,7 @@ public class NetherSmokerBlock extends AbstractNetherSmokerBlock
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState bstate, BlockEntityType<T> entityType) 
 	{
-		return createFurnaceTicker(level, entityType, ModTiles.NETHER_SMOKER.get());
+		return createCustomFurnaceTicker(level, entityType, ModTiles.NETHER_SMOKER.get());
 	}
 
 
