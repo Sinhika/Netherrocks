@@ -148,38 +148,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_helmet"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_chestplate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_leggings"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_boots"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_sword"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_axe"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_pickaxe"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "netherrocks:dragonstone_shovel"
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -255,21 +223,6 @@
             }
           ],
           "name": "netherrocks:ashstone_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "netherrocks:dragonstone_gem"
         }
       ],
       "name": "bastion",

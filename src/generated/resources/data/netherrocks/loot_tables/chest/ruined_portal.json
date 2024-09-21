@@ -88,21 +88,6 @@
             }
           ],
           "name": "netherrocks:ashstone_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "netherrocks:dragonstone_gem"
         }
       ],
       "name": "ruined_portal",

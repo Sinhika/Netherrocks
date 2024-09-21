@@ -1,7 +1,4 @@
 {
-  "remove": [
-    "#minecraft:non_flammable_wood"
-  ],
   "values": {
     "minecraft:blaze_powder": {
       "burn_time": 800

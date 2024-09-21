@@ -61,14 +61,6 @@ public class NetherrocksLootInjectorProvider extends SimpleLootInjectorSubProvid
                         .add(LootItem.lootTableItem(ModItems.illumenite_leggings.get()).setWeight(2))
                         .add(LootItem.lootTableItem(ModItems.illumenite_boots.get()).setWeight(2))
                         .add(LootItem.lootTableItem(ModItems.illumenite_sword.get()).setWeight(2))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_helmet.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_chestplate.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_leggings.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_boots.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_sword.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_axe.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_pickaxe.get()).setWeight(1))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_shovel.get()).setWeight(1))
                         .add(LootItem.lootTableItem(ModItems.malachite_ingot.get()).setWeight(2)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
                         .add(LootItem.lootTableItem(ModItems.argonite_ingot.get()).setWeight(2)
@@ -78,9 +70,7 @@ public class NetherrocksLootInjectorProvider extends SimpleLootInjectorSubProvid
                         .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                         .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
-                        .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))))));
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))));
 
         // desert pyramid
         pGenerator.accept(DESERT_PYRAMID, LootTable.lootTable().withPool(
@@ -112,9 +102,7 @@ public class NetherrocksLootInjectorProvider extends SimpleLootInjectorSubProvid
                 .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(5)
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                 .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
-                .add(LootItem.lootTableItem(ModItems.dragonstone_gem.get()).setWeight(1)
-                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))))));
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))));
 
         // stronghold
         pGenerator.accept(STRONGHOLD, LootTable.lootTable().withPool(
