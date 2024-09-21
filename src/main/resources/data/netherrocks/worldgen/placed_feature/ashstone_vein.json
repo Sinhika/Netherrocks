@@ -11,7 +11,7 @@
 				"type" : "minecraft:uniform",
 				"min_inclusive" : {
 					"above_bottom" : 4
-					},
+				},
 				"max_inclusive" : {
 					"below_top" : 4
 				}
@@ -19,6 +19,9 @@
 		},
 		{
 			"type" : "minecraft:in_square"
+		},
+		{
+			"type": "minecraft:biome"
 		}
 	]
 }
