@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "netherrocks:dragonstone_gem"
+  },
+  "base": {
+    "item": "minecraft:netherite_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "netherrocks:dragonstone_boots"
+  },
+  "template": {
+    "item": "netherrocks:dragonstone_upgrade_smithing_template"
+  }
+}

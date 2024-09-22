@@ -211,6 +211,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "netherrocks:dragonstone_upgrade_smithing_template",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,

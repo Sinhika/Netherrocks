@@ -10,7 +10,10 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -21,12 +24,10 @@ import java.util.concurrent.CompletableFuture;
 
 public class Recipes extends SimpleRecipeProvider
 {
-//    private RecipeSetBuilder setbuilder;
-    
+
 	public Recipes(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> lookupProvider)
 	{
 		super(pOutput, lookupProvider, Netherrocks.MODID);
-//        setbuilder = new RecipeSetBuilder(Netherrocks.MODID);
 	}
 
     @Override
@@ -39,8 +40,33 @@ public class Recipes extends SimpleRecipeProvider
         registerFurnaceRecipes(pRecipeOutput);
         registerAestheticRecipes(pRecipeOutput);
         registerSilentsFurnaceRecipes(pRecipeOutput);
+		registerSmithingRecipes(pRecipeOutput);
     } // end registerRecipes() 
-	
+
+	protected static void dragonstoneSmithing(RecipeOutput recipeOutput, Item ingredientItem, RecipeCategory category,
+											  Item resultItem)
+	{
+		SmithingTransformRecipeBuilder.smithing(
+						Ingredient.of(ModItems.dragonstone_upgrade_smithing_template.get()),
+						Ingredient.of(ingredientItem), Ingredient.of(ModItems.dragonstone_gem.get()),
+						category, resultItem)
+				.unlocks("has_dragonstone_gem", has(ModItems.dragonstone_gem.get()))
+				.save(recipeOutput, new ResourceLocation(Netherrocks.MODID, getItemName(resultItem) + "_smithing"));
+	}
+
+	protected void registerSmithingRecipes(RecipeOutput recipeOutput)
+	{
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, ModItems.dragonstone_boots.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, ModItems.dragonstone_chestplate.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, ModItems.dragonstone_helmet.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, ModItems.dragonstone_leggings.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, ModItems.dragonstone_sword.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, ModItems.dragonstone_shovel.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_AXE, RecipeCategory.TOOLS, ModItems.dragonstone_axe.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, ModItems.dragonstone_pickaxe.get());
+		dragonstoneSmithing(recipeOutput, Items.NETHERITE_HOE, RecipeCategory.TOOLS, ModItems.dragonstone_hoe.get());
+
+	} // end registerSmithingRecipes()
     
     protected void registerMiscRecipes(RecipeOutput pRecipeOutput)
     {
@@ -80,7 +106,7 @@ public class Recipes extends SimpleRecipeProvider
                 .pattern("B#B")
                 .pattern("BBB")
                 .unlockedBy("has_item", has(ModBlocks.ashstone_ore.get()))
-				.save(pRecipeOutput);
+				.save(pRecipeOutput, new ResourceLocation(Netherrocks.MODID, getItemName(Items.GHAST_TEAR)));
 
         // pressure_plates
         this.buildSimplePressurePlate(pRecipeOutput, Ingredient.of(ModItems.argonite_ingot.get()),
@@ -101,12 +127,19 @@ public class Recipes extends SimpleRecipeProvider
     
     protected void registerToolRecipes(RecipeOutput pRecipeOutput)
     {
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.dragonstone_shears.get())
+				.define('S', ModItems.dragonstone_gem.get())
+				.pattern(" S")
+				.pattern("S ")
+				.unlockedBy("has_item", has(ModItems.dragonstone_gem.get()))
+				.save(pRecipeOutput);
+
     	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.argonite_ingot.get()), 
     			"argonite", has(ModItems.argonite_ingot.get()), true);
        	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.ashstone_gem.get()), 
     			"ashstone", has(ModItems.ashstone_gem.get()), true);
-       	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()), 
-    			"dragonstone", has(ModItems.dragonstone_gem.get()), true);
+//       	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()),
+//    			"dragonstone", has(ModItems.dragonstone_gem.get()), true);
        	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.illumenite_ingot.get()), 
     			"illumenite", has(ModItems.illumenite_ingot.get()), true);
        	buildSimpleToolSet(pRecipeOutput, Ingredient.of(ModItems.fyrite_ingot.get()), 
@@ -117,8 +150,8 @@ public class Recipes extends SimpleRecipeProvider
     
     protected void registerArmorRecipes(RecipeOutput pRecipeOutput)
     {
-    	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()), 
-    			"dragonstone", has(ModItems.dragonstone_gem.get()));
+//    	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.dragonstone_gem.get()),
+//    			"dragonstone", has(ModItems.dragonstone_gem.get()));
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.fyrite_ingot.get()), "fyrite", 
     			has(ModItems.fyrite_ingot.get()));
     	buildSimpleArmorSet(pRecipeOutput, Ingredient.of(ModItems.illumenite_ingot.get()), "illumenite", 
@@ -216,7 +249,7 @@ public class Recipes extends SimpleRecipeProvider
         		ModItems.malachite_nugget.get(), 0.3F, 200, "malachite_recycling");
         
     } // end registerFurnaceRecipes()
-    
+
     private void registerSilentsFurnaceRecipes(RecipeOutput pRecipeOutput)
     {
         buildOre2IngotRecipes(pRecipeOutput,
@@ -231,7 +264,7 @@ public class Recipes extends SimpleRecipeProvider
         buildOre2IngotRecipes(pRecipeOutput,
 				List.of(ModItems.malachite_dust.get().asItem()), ModItems.malachite_ingot.get(),
                  0.5F, 200, "malachite_ingots");
-        
+
         buildOre2IngotRecipes(pRecipeOutput,
 				List.of(ModItems.crushed_argonite_ore.get().asItem()), ModItems.argonite_ingot.get(),
                 0.7F, 200, "argonite_ingots");
