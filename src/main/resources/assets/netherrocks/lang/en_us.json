@@ -133,6 +133,7 @@
 	"item.netherrocks.dragonstone_chestplate": "Dragonstone Chestplate",
 	"item.netherrocks.dragonstone_leggings": "Dragonstone Leggings",
 	"item.netherrocks.dragonstone_boots": "Dragonstone Boots",
+	"item.netherrocsk.dragonstone_upgrade_smithing_template" : "Dragonstone Upgrade Template",
 	"container.nether_furnace": "Nether Furnace",
 	"gui.netherrocks.smeltTimeProgress": "Smelt time %s/%s",
 	"gui.netherrocks.fuelBurnTimeProgress": "Fuel burn time %s/%s",

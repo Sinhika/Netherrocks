@@ -69,6 +69,7 @@ public class NetherrocksLootInjectorProvider extends SimpleLootInjectorSubProvid
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
                         .add(LootItem.lootTableItem(ModItems.illumenite_ingot.get()).setWeight(1)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                        .add(LootItem.lootTableItem(ModItems.dragonstone_upgrade_smithing_template.get()).setWeight(3))
                         .add(LootItem.lootTableItem(ModItems.ashstone_gem.get()).setWeight(1)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))));
 

@@ -70,7 +70,8 @@ public final class ModItems
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> raw_malachite = ITEMS.register("raw_malachite",
             () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> dragonstone_upgrade_smithing_template = ITEMS.register(
+         "dragonstone_upgrade_smithing_template", DragonstoneUpgradeTemplate::new);
 
     // TOOLS & WEAPONS
     // swords

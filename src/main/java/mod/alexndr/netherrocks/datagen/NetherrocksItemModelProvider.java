@@ -27,6 +27,8 @@ public class NetherrocksItemModelProvider extends ItemModelProvider
             .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/fyrite_shears"));
         this.withExistingParent("malachite_shears", "handheld") 
             .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/malachite_shears"));
+        this.withExistingParent("dragonstone_upgrade_smithing_template", "generated")
+            .texture("layer0", new ResourceLocation(Netherrocks.MODID, "item/dragonstone_upgrade_smithing_template"));
     }
 
 } // end class
