@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dragonstone_boots_smithing"
+        "recipe": "netherrocks:dragonstone_sword_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dragonstone_boots_smithing"
+      "netherrocks:dragonstone_sword_smithing"
     ]
   }
 }

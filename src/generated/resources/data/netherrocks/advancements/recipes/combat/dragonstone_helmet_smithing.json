@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_item": {
+    "has_dragonstone_gem": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "netherrocks:dragonstone_boots"
+        "recipe": "netherrocks:dragonstone_helmet_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_item"
+      "has_dragonstone_gem"
     ]
   ],
   "rewards": {
     "recipes": [
-      "netherrocks:dragonstone_boots"
+      "netherrocks:dragonstone_helmet_smithing"
     ]
   }
 }

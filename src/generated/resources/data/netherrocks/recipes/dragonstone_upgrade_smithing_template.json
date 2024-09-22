@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:diamond"
+    },
+    "X": {
+      "item": "netherrocks:dragonstone_upgrade_smithing_template"
+    },
+    "Z": {
+      "item": "minecraft:netherrack"
+    }
+  },
+  "pattern": [
+    "CXC",
+    "CZC",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "netherrocks:dragonstone_upgrade_smithing_template"
+  }
+}

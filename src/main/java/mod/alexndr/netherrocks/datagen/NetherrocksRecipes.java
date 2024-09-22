@@ -22,10 +22,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class Recipes extends SimpleRecipeProvider
+public class NetherrocksRecipes extends SimpleRecipeProvider
 {
 
-	public Recipes(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> lookupProvider)
+	public NetherrocksRecipes(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> lookupProvider)
 	{
 		super(pOutput, lookupProvider, Netherrocks.MODID);
 	}
@@ -70,6 +70,16 @@ public class Recipes extends SimpleRecipeProvider
     
     protected void registerMiscRecipes(RecipeOutput pRecipeOutput)
     {
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.dragonstone_upgrade_smithing_template.get())
+				.define('C', Items.DIAMOND)
+				.define('X', ModItems.dragonstone_upgrade_smithing_template.get())
+				.define('Z', Blocks.NETHERRACK)
+				.pattern("CXC")
+				.pattern("CZC")
+				.pattern("CCC")
+				.unlockedBy("has_item", has(ModItems.dragonstone_upgrade_smithing_template.get()))
+				.save(pRecipeOutput);
+
     	// nether furnace recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.nether_furnace.get())
 	        .define('S', Blocks.NETHERRACK)

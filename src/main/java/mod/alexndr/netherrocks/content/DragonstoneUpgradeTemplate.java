@@ -30,7 +30,7 @@ public class DragonstoneUpgradeTemplate extends SmithingTemplateItem
     );
 
     protected static final Component DRAGONSTONE_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade",
-                    new ResourceLocation(Netherrocks.MODID,"dragonstone_upgrade")))
+                    new ResourceLocation(Netherrocks.MODID,"dragonstone_upgrade_smithing_template")))
             .withStyle(TITLE_FORMAT);
 
     public DragonstoneUpgradeTemplate()
