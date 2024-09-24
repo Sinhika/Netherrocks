@@ -27,7 +27,6 @@ public class NetherFurnaceFuelHandler
     protected static int blazeRodBurnTime = 0;
     protected static int baseToolBurnTime = 0;
     
-//    protected static Map<Item, Integer> validFuels = Maps.newLinkedHashMap();
 
     @Nullable private static volatile Map<Item, Integer> fuelCache;
 
@@ -90,10 +89,10 @@ public class NetherFurnaceFuelHandler
 
     public static void buildFuels(ObjIntConsumer<Either<Item, TagKey<Item>>> map1)
     {
-        netherrackBurnTime = NetherrocksConfig.serverNetherrackBurnTime.get();
-        fyriteBurnTime = NetherrocksConfig.serverFyriteBurnTime.get();
-        blazeRodBurnTime = NetherrocksConfig.serverBlazeRodBurnTime.get();
-        baseToolBurnTime = NetherrocksConfig.serverBaseToolBurnTime.get();
+        netherrackBurnTime = 200;
+        fyriteBurnTime = 8000;
+        blazeRodBurnTime = 2400;
+        baseToolBurnTime = 3200;
         
         add(map1, Blocks.NETHERRACK, netherrackBurnTime);
 

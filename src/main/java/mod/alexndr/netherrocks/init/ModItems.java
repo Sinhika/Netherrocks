@@ -1,6 +1,7 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.content.*;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -190,7 +191,7 @@ public final class ModItems
     // dragonstone
    public static final DeferredItem<ArmorItem> dragonstone_helmet = ITEMS.register("dragonstone_helmet",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.HELMET,
-                    new Item.Properties()));
+                    new Item.Properties().durability(48)));
     public static final DeferredItem<ArmorItem> dragonstone_leggings = ITEMS.register("dragonstone_leggings",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties()));
@@ -204,16 +205,16 @@ public final class ModItems
     // fyrite
     public static final DeferredItem<FyriteArmorItem> fyrite_helmet = ITEMS.register("fyrite_helmet",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.HELMET,
-                    new Item.Properties()));
+                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
     public static final DeferredItem<FyriteArmorItem> fyrite_leggings = ITEMS.register("fyrite_leggings",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
     public static final DeferredItem<FyriteArmorItem> fyrite_chestplate = ITEMS.register("fyrite_chestplate",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()));
+                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
     public static final DeferredItem<FyriteArmorItem> fyrite_boots = ITEMS.register("fyrite_boots",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.BOOTS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
 
      // illumenite
     public static final DeferredItem<IllumeniteArmorItem> illumenite_helmet = ITEMS.register("illumenite_helmet",

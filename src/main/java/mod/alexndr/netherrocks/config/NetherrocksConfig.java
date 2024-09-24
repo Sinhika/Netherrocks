@@ -8,6 +8,9 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class NetherrocksConfig  extends SimpleConfig
 {
+    public record ToolProperties (int uses, float speedBonus, float attackDamageBonus, int enchantability) {};
+    public record ArmorProperties(int durabilityFactor, int baseDefense, int enchantability, float toughness, float knockbackResistance) {};
+
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     private static final ModConfigSpec.BooleanValue serverAddModLootToChests;
@@ -17,10 +20,12 @@ public class NetherrocksConfig  extends SimpleConfig
     private static final ModConfigSpec.IntValue serverIllumeniteSlowTime;
     private static final ModConfigSpec.IntValue serverIllumeniteSlowLevel;
 
-    public static final ModConfigSpec.IntValue serverNetherrackBurnTime;
-    public static final ModConfigSpec.IntValue serverFyriteBurnTime;
-    public static final ModConfigSpec.IntValue serverBlazeRodBurnTime;
-    public static final ModConfigSpec.IntValue serverBaseToolBurnTime;
+    // armor properties - fyrite
+    private static final ModConfigSpec.IntValue serverFyriteBaseDefense;
+    private static final ModConfigSpec.IntValue serverFyriteEnchantability;
+    private static final ModConfigSpec.IntValue serverFyriteArmorDurability;
+    private static final ModConfigSpec.DoubleValue serverFyriteToughness;
+    private static final ModConfigSpec.DoubleValue serverFyriteKnockback;
 
     static {
         BUILDER.push("General");
@@ -41,16 +46,41 @@ public class NetherrocksConfig  extends SimpleConfig
         serverIllumeniteSlowLevel = BUILDER.comment("Illumenite target slowed level")
                         .defineInRange("illumeniteSlowLevel", 3, 1, 5);
         BUILDER.pop();
-        BUILDER.push("Nether Furnace Fuels");
-        serverNetherrackBurnTime = BUILDER.comment("Ticks to consume 1 block of netherrack")
-                .defineInRange("NetherrackBurnTime", 200, 1, 10000);
-        serverFyriteBurnTime = BUILDER.comment("Ticks to consume 1 ingot of fyrite: base for several other burn times")
-                .defineInRange("FyriteBurnTime", 8000, 1, 32000);
-        serverBlazeRodBurnTime = BUILDER.comment("Ticks to consume 1 blaze rod; base for certain other burn times")
-                .defineInRange("BlazeRodBurnTime", 2400, 1, 20000);
-        serverBaseToolBurnTime = BUILDER.comment("Ticks to consume 1 fyrite tool")
-                .defineInRange("BaseToolBurntime", 3200, 1, 32000);
-        BUILDER.pop();        
+        BUILDER.push("Armor Properties");
+        BUILDER.push("Fyrite");
+        serverFyriteBaseDefense = BUILDER.comment("Body Defense - base from which other defense values are calculated")
+                        .defineInRange("fyriteBodyDefense", 4, 1, 20);
+        serverFyriteEnchantability = BUILDER.comment("Fyrite Armor Enchantability")
+                        .defineInRange("fyriteArmorEnchantibility", 7, 1, 99);
+        serverFyriteArmorDurability = BUILDER.comment("Base durability for fyrite armor")
+                .defineInRange("fyriteArmorDurability", 5, 1, 99);
+        serverFyriteToughness = BUILDER.comment("Toughness for fyrite armor")
+                .defineInRange("fyriteArmorDurability", 0.0, 0.0, 10.0);
+        serverFyriteKnockback = BUILDER.comment("Knockback Resistance for fyrite armor")
+                .defineInRange("fyriteArmorDurability", 0.0, 0.0, 10.0);
+        BUILDER.pop();
+        BUILDER.push("Malachite");
+        BUILDER.pop();
+        BUILDER.push("illumenite");
+        BUILDER.pop();
+        BUILDER.push("dragonstone");
+        BUILDER.pop();
+
+        BUILDER.pop();
+        BUILDER.push("Tool & Weapon Properties");
+        BUILDER.push("argonite");
+        BUILDER.pop();
+        BUILDER.push("ashstone");
+        BUILDER.pop();
+        BUILDER.push("Fyrite");
+        BUILDER.pop();
+        BUILDER.push("Malachite");
+        BUILDER.pop();
+        BUILDER.push("illumenite");
+        BUILDER.pop();
+        BUILDER.push("dragonstone");
+        BUILDER.pop();
+        BUILDER.pop();
     } // end static block
 
     public static final ModConfigSpec SPEC = BUILDER.build();
@@ -59,15 +89,13 @@ public class NetherrocksConfig  extends SimpleConfig
     public static int illumeniteBlindnessTime = 60;   // target blindness time (seconds)
     public static int illumeniteSlowTime = 200;       // target slow time (seconds)
     public static int illumeniteSlowLevel = 3;        // slow level
-    public static int netherrackBurnTime = 200;
-    public static int fyriteBurnTime = 8000;
-    public static int blazeRodBurnTime = 2400;
-    public static int baseToolBurnTime = 3200;
 
     public static boolean addModLootToChests;
     public static boolean enableAshstoneGhastOre;
 
-    public static void onLoad(final ModConfigEvent.Loading event)
+    public static ArmorProperties fyriteArmorRecord;
+
+    public static void onLoadStartup(final ModConfigEvent.Loading event)
     {
         if (event.getConfig().getType() == ModConfig.Type.STARTUP)
         {
@@ -77,11 +105,17 @@ public class NetherrocksConfig  extends SimpleConfig
             illumeniteBlindnessTime = serverIllumeniteBlindnessTime.get();
             illumeniteSlowTime = serverIllumeniteSlowTime.get();
             illumeniteSlowLevel = serverIllumeniteSlowLevel.get();
-            netherrackBurnTime = serverNetherrackBurnTime.get();
-            fyriteBurnTime = serverFyriteBurnTime.get();
-            blazeRodBurnTime = serverBlazeRodBurnTime.get();
-            baseToolBurnTime = serverBaseToolBurnTime.get();
+
+            // armor materials
+            fyriteArmorRecord = new ArmorProperties(serverFyriteArmorDurability.get(), serverFyriteBaseDefense.get(),
+                    serverFyriteEnchantability.get(), (float) serverFyriteToughness.getAsDouble(),
+                    (float) serverFyriteKnockback.getAsDouble());
+
+            // TODO
+            // tool materials
+            // TODO
         }
     } // end onLoad()
+
 
 }  // end class NetherrocksConfig

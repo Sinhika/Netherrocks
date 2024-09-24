@@ -1,6 +1,7 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
+import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -21,16 +22,18 @@ public final class ModArmorMaterials
 
     public static final Holder<ArmorMaterial> FYRITE = ARMOR_MATERIALS.register("fyrite", () -> new ArmorMaterial (
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                        map.put(ArmorItem.Type.BOOTS, 3);
-                        map.put(ArmorItem.Type.LEGGINGS, 4);
-                        map.put(ArmorItem.Type.CHESTPLATE, 5);
-                        map.put(ArmorItem.Type.HELMET, 3);
-                        map.put(ArmorItem.Type.BODY, 4);
+                        map.put(ArmorItem.Type.BOOTS, NetherrocksConfig.fyriteArmorRecord.baseDefense()-1);
+                        map.put(ArmorItem.Type.LEGGINGS, NetherrocksConfig.fyriteArmorRecord.baseDefense());
+                        map.put(ArmorItem.Type.CHESTPLATE, NetherrocksConfig.fyriteArmorRecord.baseDefense()+1);
+                        map.put(ArmorItem.Type.HELMET, NetherrocksConfig.fyriteArmorRecord.baseDefense()-1);
+                        map.put(ArmorItem.Type.BODY, NetherrocksConfig.fyriteArmorRecord.baseDefense());
                     }),
-                    7, SoundEvents.ARMOR_EQUIP_CHAIN,
+                NetherrocksConfig.fyriteArmorRecord.enchantability(),
+            SoundEvents.ARMOR_EQUIP_CHAIN,
                     () -> Ingredient.of(ModItems.fyrite_ingot.get()),
                     List.of( new ArmorMaterial.Layer(new ResourceLocation(Netherrocks.MODID, "fyrite"))),
-                0,0)); // end fyrite
+                NetherrocksConfig.fyriteArmorRecord.toughness(), NetherrocksConfig.fyriteArmorRecord.knockbackResistance()
+            )); // end fyrite
 
 public static final Holder<ArmorMaterial> MALACHITE = ARMOR_MATERIALS.register("malachite", () -> new ArmorMaterial (
         Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

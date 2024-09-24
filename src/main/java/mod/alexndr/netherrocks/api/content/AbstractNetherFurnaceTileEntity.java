@@ -1,14 +1,10 @@
 package mod.alexndr.netherrocks.api.content;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.datagen.NetherFurnaceFuelHandler;
 import mod.alexndr.netherrocks.init.ModDataMaps;
 import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
