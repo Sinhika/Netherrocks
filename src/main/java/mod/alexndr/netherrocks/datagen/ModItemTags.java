@@ -33,12 +33,11 @@ public class ModItemTags extends MiningItemTags
     	registerRawMetalTags();
     	registerGemTags();
         registerDustTags();
-        registerOreChunkTags();
+        //registerOreChunkTags();
         registerTools();
         registerArmorTags(ModItems.ITEMS);
         registerDoorsSlabsAndStairs();
     	registerBlockItemTags();
-    //	registerNetherFurnaceFuelTags();
     }
 
     
@@ -84,53 +83,7 @@ public class ModItemTags extends MiningItemTags
     }  // end registerOreTags
     
     
-//    private void registerNetherFurnaceFuelTags()
-//    {
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_tool"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_ingot"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_block"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_slab"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_door"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_bars"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_blaze_rod"))
-//            .addTag(TagUtils.modTag(modId, "nether_furnace_fuels/as_blaze_powder"));
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_tool"))
-//            .add(ModItems.fyrite_axe.get())
-//            .add(ModItems.fyrite_pickaxe.get())
-//            .add(ModItems.fyrite_shears.get())
-//            .add(ModItems.fyrite_shovel.get())
-//            .add(ModItems.fyrite_sword.get())
-//            .add(ModBlocks.fyrite_bars.get().asItem());
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_ingot"))
-//            .add(ModItems.raw_fyrite.get())
-//            .add(ModItems.fyrite_leggings.get())
-//            .add(ModItems.fyrite_chestplate.get())
-//            .add(ModItems.crushed_fyrite_ore.get());
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_block"))
-//            .add(ModBlocks.raw_fyrite_block.get().asItem())
-//            .add(ModBlocks.fyrite_bricks.get().asItem())
-//            .add(ModBlocks.fyrite_brick_stairs.get().asItem());
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_slab"));
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_door"));
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_bars"))
-//            .add(ModItems.fyrite_dust.get())
-//            .add(ModItems.fyrite_helmet.get())
-//            .add(ModItems.fyrite_boots.get());
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_blaze_rod"));
-//
-//        this.tag(TagUtils.modTag(modId, "nether_furnace_fuels/as_blaze_powder"));
-//
-//
-//    } // end registerNetherFurnaceFuelTags
-    
+
     
     private void registerDoorsSlabsAndStairs()
     {
@@ -218,18 +171,18 @@ public class ModItemTags extends MiningItemTags
     private void registerRawMetalTags()
     {
         this.tag(Tags.Items.RAW_MATERIALS)
-	    	.addTag(TagUtils.cTag("raw_metals/argonite"))
-			.addTag(TagUtils.cTag("raw_metals/fyrite"))
-	    	.addTag(TagUtils.cTag("raw_metals/malachite"))
-	    	.addTag(TagUtils.cTag("raw_metals/illumenite"));
+	    	.addTag(TagUtils.cTag("raw_materials/argonite"))
+			.addTag(TagUtils.cTag("raw_materials/fyrite"))
+	    	.addTag(TagUtils.cTag("raw_materials/malachite"))
+	    	.addTag(TagUtils.cTag("raw_materials/illumenite"));
         
-        this.tag(TagUtils.cTag("raw_metals/argonite"))
+        this.tag(TagUtils.cTag("raw_materials/argonite"))
     		.add(ModItems.raw_argonite.get());
-        this.tag(TagUtils.cTag("raw_metals/fyrite"))
+        this.tag(TagUtils.cTag("raw_materials/fyrite"))
         	.add(ModItems.raw_fyrite.get());
-        this.tag(TagUtils.cTag("raw_metals/malachite"))
+        this.tag(TagUtils.cTag("raw_materials/malachite"))
     		.add(ModItems.raw_malachite.get());
-        this.tag(TagUtils.cTag("raw_metals/illumenite"))
+        this.tag(TagUtils.cTag("raw_materials/illumenite"))
     		.add(ModItems.raw_illumenite.get());
     } // end registerRawMetalTags()
 
@@ -296,23 +249,23 @@ public class ModItemTags extends MiningItemTags
             
     } // end registerDustTags()
     
-    private void registerOreChunkTags()
-    {
-        this.tag(TagUtils.modTag("silents_mechanisms", "chunks"))
-            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/argonite"))
-            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/fyrite"))
-            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/illumenite"))
-            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/malachite"));
-        
-        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/argonite"))
-            .add(ModItems.crushed_argonite_ore.get());
-        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/fyrite"))
-            .add(ModItems.crushed_fyrite_ore.get());
-        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/illumenite"))
-            .add(ModItems.crushed_illumenite_ore.get());
-        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/malachite"))
-            .add(ModItems.crushed_malachite_ore.get());
-        
-    } // end registerOreChunkTags()
+//    private void registerOreChunkTags()
+//    {
+//        this.tag(TagUtils.modTag("silents_mechanisms", "chunks"))
+//            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/argonite"))
+//            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/fyrite"))
+//            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/illumenite"))
+//            .addTag(TagUtils.modTag("silents_mechanisms", "chunks/malachite"));
+//
+//        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/argonite"))
+//            .add(ModItems.crushed_argonite_ore.get());
+//        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/fyrite"))
+//            .add(ModItems.crushed_fyrite_ore.get());
+//        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/illumenite"))
+//            .add(ModItems.crushed_illumenite_ore.get());
+//        this.tag(TagUtils.modTag("silents_mechanisms", "chunks/malachite"))
+//            .add(ModItems.crushed_malachite_ore.get());
+//
+//    } // end registerOreChunkTags()
     
 } // end class

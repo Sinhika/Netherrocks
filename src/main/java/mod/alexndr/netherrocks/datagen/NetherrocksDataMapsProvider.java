@@ -29,8 +29,8 @@ public class NetherrocksDataMapsProvider extends DataMapProvider
     @Override protected void gather()
     {
         final var fuels = builder(ModDataMaps.NETHER_FURNACE_FUELS);
-
-        NetherFurnaceFuelHandler.buildFuels((value, time) ->
+        NetherFurnaceFuelHandler fuel_handler = new NetherFurnaceFuelHandler();
+        fuel_handler.buildFuels((value, time) ->
                 value.ifLeft(item -> fuels.add(item.builtInRegistryHolder(), new FurnaceFuel(time), false))
                 .ifRight(tag -> fuels.add(tag, new FurnaceFuel(time), false)));
 

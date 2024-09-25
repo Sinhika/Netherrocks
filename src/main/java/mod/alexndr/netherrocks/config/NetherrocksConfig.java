@@ -8,9 +8,6 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class NetherrocksConfig  extends SimpleConfig
 {
-    public record ToolProperties (int uses, float speedBonus, float attackDamageBonus, int enchantability) {};
-    public record ArmorProperties(int durabilityFactor, int baseDefense, int enchantability, float toughness, float knockbackResistance) {};
-
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     private static final ModConfigSpec.BooleanValue serverAddModLootToChests;
@@ -55,9 +52,9 @@ public class NetherrocksConfig  extends SimpleConfig
         serverFyriteArmorDurability = BUILDER.comment("Base durability for fyrite armor")
                 .defineInRange("fyriteArmorDurability", 5, 1, 99);
         serverFyriteToughness = BUILDER.comment("Toughness for fyrite armor")
-                .defineInRange("fyriteArmorDurability", 0.0, 0.0, 10.0);
+                .defineInRange("fyriteToughness", 0.0, 0.0, 10.0);
         serverFyriteKnockback = BUILDER.comment("Knockback Resistance for fyrite armor")
-                .defineInRange("fyriteArmorDurability", 0.0, 0.0, 10.0);
+                .defineInRange("fyriteKnockback", 0.0, 0.0, 10.0);
         BUILDER.pop();
         BUILDER.push("Malachite");
         BUILDER.pop();

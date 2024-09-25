@@ -205,18 +205,26 @@ public final class ModItems
     // fyrite
     public static final DeferredItem<FyriteArmorItem> fyrite_helmet = ITEMS.register("fyrite_helmet",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.fyriteArmorRecord.durabilityFactor()))));
+
     public static final DeferredItem<FyriteArmorItem> fyrite_leggings = ITEMS.register("fyrite_leggings",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(
+                            NetherrocksConfig.fyriteArmorRecord.durabilityFactor()))));
+
     public static final DeferredItem<FyriteArmorItem> fyrite_chestplate = ITEMS.register("fyrite_chestplate",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(
+                            NetherrocksConfig.fyriteArmorRecord.durabilityFactor()))));
+
     public static final DeferredItem<FyriteArmorItem> fyrite_boots = ITEMS.register("fyrite_boots",
             () -> new FyriteArmorItem(ModArmorMaterials.FYRITE, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(NetherrocksConfig.fyriteArmorRecord.durabilityFactor())));
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(
+                            NetherrocksConfig.fyriteArmorRecord.durabilityFactor()))));
 
-     // illumenite
+
+ // illumenite
     public static final DeferredItem<IllumeniteArmorItem> illumenite_helmet = ITEMS.register("illumenite_helmet",
             () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.HELMET,
                     new Item.Properties()));

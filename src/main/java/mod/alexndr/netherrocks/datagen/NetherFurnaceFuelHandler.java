@@ -1,26 +1,17 @@
 package mod.alexndr.netherrocks.datagen;
 
-import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Either;
-import mod.alexndr.netherrocks.config.NetherrocksConfig;
 import mod.alexndr.netherrocks.init.ModBlocks;
 import mod.alexndr.netherrocks.init.ModItems;
-import net.minecraft.SharedConstants;
-import net.minecraft.Util;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.tags.ItemTags;
+import mod.alexndr.simplecorelib.api.datagen.SpecialFuelHandler;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
-import javax.annotation.Nullable;
-import java.util.Map;
 import java.util.function.ObjIntConsumer;
 
-public class NetherFurnaceFuelHandler
+public class NetherFurnaceFuelHandler extends SpecialFuelHandler
 {
     protected static int netherrackBurnTime = 0;
     protected static int fyriteBurnTime = 0;
@@ -28,66 +19,7 @@ public class NetherFurnaceFuelHandler
     protected static int baseToolBurnTime = 0;
     
 
-    @Nullable private static volatile Map<Item, Integer> fuelCache;
-
-    public static void invalidateCache() {
-        fuelCache = null;
-    }
-
-    public static Map<Item, Integer> getFuel()
-    {
-        Map<Item, Integer> map = fuelCache;
-        if (map != null) {
-            return map;
-        }
-        else {
-            Map<Item, Integer> map1 = Maps.newLinkedHashMap();
-            buildFuels((e, time) -> e.ifRight(tag -> add(map1, tag, time)).ifLeft(item -> add(map1, item, time)));
-            fuelCache = map1;
-            return map1;
-        }
-    }
-
-    private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
-                            ItemLike item, int time)
-    {
-        consumer.accept(Either.left(item.asItem()), time);
-    }
-
-    private static void add(ObjIntConsumer<Either<Item, TagKey<Item>>> consumer,
-                            TagKey<Item> tag, int time)
-    {
-        consumer.accept(Either.right(tag), time);
-    }
-
-    private static boolean isNeverAFurnaceFuel(Item pItem) {
-        return pItem.builtInRegistryHolder().is(ItemTags.NON_FLAMMABLE_WOOD);
-    }
-
-    private static void add(Map<Item, Integer> pMap, TagKey<Item> pItemTag, int pBurnTime) {
-        for (Holder<Item> holder : BuiltInRegistries.ITEM.getTagOrEmpty(pItemTag)) {
-            if (!isNeverAFurnaceFuel(holder.value())) {
-                pMap.put(holder.value(), pBurnTime);
-            }
-        }
-    }
-
-    private static void add(Map<Item, Integer> pMap, ItemLike pItem, int pBurnTime) {
-        Item item = pItem.asItem();
-        if (isNeverAFurnaceFuel(item)) {
-            if (SharedConstants.IS_RUNNING_IN_IDE) {
-                throw (IllegalStateException) Util.pauseInIde(
-                        new IllegalStateException(
-                                "A developer tried to explicitly make fire resistant item " + item.getName(null).getString() + " a furnace fuel. That will not work!"
-                        )
-                );
-            }
-        } else {
-            pMap.put(item, pBurnTime);
-        }
-    }
-
-    public static void buildFuels(ObjIntConsumer<Either<Item, TagKey<Item>>> map1)
+    public void buildFuels(ObjIntConsumer<Either<Item, TagKey<Item>>> map1)
     {
         netherrackBurnTime = 200;
         fyriteBurnTime = 8000;
