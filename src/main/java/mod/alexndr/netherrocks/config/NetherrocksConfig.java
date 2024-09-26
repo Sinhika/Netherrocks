@@ -16,6 +16,7 @@ public class NetherrocksConfig  extends SimpleConfig
     private static final ModConfigSpec.IntValue serverIllumeniteBlindnessTime;
     private static final ModConfigSpec.IntValue serverIllumeniteSlowTime;
     private static final ModConfigSpec.IntValue serverIllumeniteSlowLevel;
+    private static final ModConfigSpec.BooleanValue serverIllumeniteHasGlowingEffect;
 
     // armor properties - fyrite
     private static final ModConfigSpec.IntValue serverFyriteBaseDefense;
@@ -45,6 +46,43 @@ public class NetherrocksConfig  extends SimpleConfig
     private static final ModConfigSpec.DoubleValue serverDragonstoneToughness;
     private static final ModConfigSpec.DoubleValue serverDragonstoneKnockback;
 
+    // tool properties - Argonite
+    private static final ModConfigSpec.IntValue serverArgoniteUses;
+    private static final ModConfigSpec.DoubleValue serverArgoniteSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverArgoniteAttackBonus;
+    private static final ModConfigSpec.IntValue serverArgoniteToolEnchantabilty;
+
+    // tool properties - Ashstone
+    private static final ModConfigSpec.IntValue serverAshstoneUses;
+    private static final ModConfigSpec.DoubleValue serverAshstoneSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverAshstoneAttackBonus;
+    private static final ModConfigSpec.IntValue serverAshstoneToolEnchantabilty;
+
+    // tool properties - Fyrite
+    private static final ModConfigSpec.IntValue serverFyriteUses;
+    private static final ModConfigSpec.DoubleValue serverFyriteSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverFyriteAttackBonus;
+    private static final ModConfigSpec.IntValue serverFyriteToolEnchantabilty;
+
+    // tool properties - Illumenite
+    private static final ModConfigSpec.IntValue serverIllumeniteUses;
+    private static final ModConfigSpec.DoubleValue serverIllumeniteSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverIllumeniteAttackBonus;
+    private static final ModConfigSpec.IntValue serverIllumeniteToolEnchantabilty;
+
+    // tool properties - Malachite
+    private static final ModConfigSpec.IntValue serverMalachiteUses;
+    private static final ModConfigSpec.DoubleValue serverMalachiteSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverMalachiteAttackBonus;
+    private static final ModConfigSpec.IntValue serverMalachiteToolEnchantabilty;
+
+    // tool properties - Dragonstone
+    private static final ModConfigSpec.IntValue serverDragonstoneUses;
+    private static final ModConfigSpec.DoubleValue serverDragonstoneSpeedBonus;
+    private static final ModConfigSpec.DoubleValue serverDragonstoneAttackBonus;
+    private static final ModConfigSpec.IntValue serverDragonstoneToolEnchantabilty;
+
+
     static {
         BUILDER.push("General");
         serverAddModLootToChests = BUILDER.comment("Add Netherrocks items to chest loot?")
@@ -63,6 +101,8 @@ public class NetherrocksConfig  extends SimpleConfig
                         .defineInRange("illumeniteSlowTime", 180, 1, 9999);
         serverIllumeniteSlowLevel = BUILDER.comment("Illumenite target slowed level")
                         .defineInRange("illumeniteSlowLevel", 3, 1, 5);
+        serverIllumeniteHasGlowingEffect = BUILDER.comment("Illumenite armor has Glowing effect")
+                        .define("IllumeniteHasGlowingEffect", false);
         BUILDER.pop();
         BUILDER.push("Armor Properties");
         BUILDER.push("Fyrite");
@@ -117,16 +157,64 @@ public class NetherrocksConfig  extends SimpleConfig
         BUILDER.pop();
         BUILDER.push("Tool & Weapon Properties");
         BUILDER.push("argonite");
+        serverArgoniteUses = BUILDER.comment("Uses before Argonite tool breaks, aka Durability")
+                        .defineInRange("ArgoniteUses", 1300, 1, 9999);
+        serverArgoniteSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Argonite added to base tool speed")
+                        .defineInRange("ArgoniteSpeedBonus", 8.0, 0.0, 99.0);
+        serverArgoniteAttackBonus = BUILDER.comment("Argonite Attack Damage Bonus to base tool damage")
+                        .defineInRange("ArgoniteAttackBonus", 3.0, -1.0, 99.0);
+        serverArgoniteToolEnchantabilty = BUILDER.comment("Argonite tool enchantability")
+                        .defineInRange("ArgoniteToolEnchantabilty", 18, 0, 99);
         BUILDER.pop();
         BUILDER.push("ashstone");
+        serverAshstoneUses = BUILDER.comment("Uses before Ashstone tool breaks, aka Durability")
+                .defineInRange("AshstoneUses", 900, 1, 9999);
+        serverAshstoneSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Ashstone added to base tool speed")
+                .defineInRange("AshstoneSpeedBonus", 16.0, 0.0, 99.0);
+        serverAshstoneAttackBonus = BUILDER.comment("Ashstone Attack Damage Bonus to base tool damage")
+                .defineInRange("AshstoneAttackBonus", 2.0, -1.0, 99.0);
+        serverAshstoneToolEnchantabilty = BUILDER.comment("Ashstone tool enchantability")
+                .defineInRange("AshstoneToolEnchantabilty", 7, 0, 99);
         BUILDER.pop();
         BUILDER.push("Fyrite");
-        BUILDER.pop();
-        BUILDER.push("Malachite");
+        serverFyriteUses = BUILDER.comment("Uses before Fyrite tool breaks, aka Durability")
+                .defineInRange("FyriteUses", 150, 1, 9999);
+        serverFyriteSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Fyrite added to base tool speed")
+                .defineInRange("FyriteSpeedBonus", 8.0, 0.0, 99.0);
+        serverFyriteAttackBonus = BUILDER.comment("Fyrite Attack Damage Bonus to base tool damage")
+                .defineInRange("FyriteAttackBonus", 4.0, -1.0, 99.0);
+        serverFyriteToolEnchantabilty = BUILDER.comment("Fyrite tool enchantability")
+                .defineInRange("FyriteToolEnchantabilty", 7, 0, 99);
         BUILDER.pop();
         BUILDER.push("illumenite");
+        serverIllumeniteUses = BUILDER.comment("Uses before Illumenite tool breaks, aka Durability")
+                .defineInRange("IllumeniteUses", 700, 1, 9999);
+        serverIllumeniteSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Illumenite added to base tool speed")
+                .defineInRange("IllumeniteSpeedBonus", 8.0, 0.0, 99.0);
+        serverIllumeniteAttackBonus = BUILDER.comment("Illumenite Attack Damage Bonus to base tool damage")
+                .defineInRange("IllumeniteAttackBonus", 4.0, -1.0, 99.0);
+        serverIllumeniteToolEnchantabilty = BUILDER.comment("Illumenite tool enchantability")
+                .defineInRange("IllumeniteToolEnchantabilty", 15, 0, 99);
+        BUILDER.pop();
+        BUILDER.push("Malachite");
+        serverMalachiteUses = BUILDER.comment("Uses before Malachite tool breaks, aka Durability")
+                .defineInRange("MalachiteUses", 700, 1, 9999);
+        serverMalachiteSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Malachite added to base tool speed")
+                .defineInRange("MalachiteSpeedBonus", 9.0, 0.0, 99.0);
+        serverMalachiteAttackBonus = BUILDER.comment("Malachite Attack Damage Bonus to base tool damage")
+                .defineInRange("MalachiteAttackBonus", 3.0, -1.0, 99.0);
+        serverMalachiteToolEnchantabilty = BUILDER.comment("Malachite tool enchantability")
+                .defineInRange("MalachiteToolEnchantabilty", 39, 0, 99);
         BUILDER.pop();
         BUILDER.push("dragonstone");
+        serverDragonstoneUses = BUILDER.comment("Uses before Dragonstone tool breaks, aka Durability")
+                .defineInRange("DragonstoneUses", 4000, 1, 9999);
+        serverDragonstoneSpeedBonus = BUILDER.comment("Speed (efficiency) bonus for Dragonstone added to base tool speed")
+                .defineInRange("DragonstoneSpeedBonus", 10.0, 0.0, 99.0);
+        serverDragonstoneAttackBonus = BUILDER.comment("Dragonstone Attack Damage Bonus to base tool damage")
+                .defineInRange("DragonstoneAttackBonus", 8.0, -1.0, 99.0);
+        serverDragonstoneToolEnchantabilty = BUILDER.comment("Dragonstone tool enchantability")
+                .defineInRange("DragonstoneToolEnchantabilty", 27, 0, 99);
         BUILDER.pop();
         BUILDER.pop();
     } // end static block
@@ -137,6 +225,7 @@ public class NetherrocksConfig  extends SimpleConfig
     public static int illumeniteBlindnessTime = 60;   // target blindness time (seconds)
     public static int illumeniteSlowTime = 200;       // target slow time (seconds)
     public static int illumeniteSlowLevel = 3;        // slow level
+    public static boolean illumeniteHasGlowingEffect;
 
     public static boolean addModLootToChests;
     public static boolean enableAshstoneGhastOre;
@@ -145,6 +234,13 @@ public class NetherrocksConfig  extends SimpleConfig
     public static ArmorProperties malachiteArmorRecord;
     public static ArmorProperties illumeniteArmorRecord;
     public static ArmorProperties dragonstoneArmorRecord;
+
+    public static ToolProperties argoniteToolRecord;
+    public static ToolProperties ashstoneToolRecord;
+    public static ToolProperties fyriteToolRecord;
+    public static ToolProperties malachiteToolRecord;
+    public static ToolProperties illumeniteToolRecord;
+    public static ToolProperties dragonstoneToolRecord;
 
     public static void onLoadStartup(final ModConfigEvent.Loading event)
     {
@@ -156,6 +252,7 @@ public class NetherrocksConfig  extends SimpleConfig
             illumeniteBlindnessTime = serverIllumeniteBlindnessTime.get();
             illumeniteSlowTime = serverIllumeniteSlowTime.get();
             illumeniteSlowLevel = serverIllumeniteSlowLevel.get();
+            illumeniteHasGlowingEffect = serverIllumeniteHasGlowingEffect.get();
 
             // armor materials
             fyriteArmorRecord = new ArmorProperties(serverFyriteArmorDurability.get(), serverFyriteBaseDefense.get(),
@@ -172,7 +269,18 @@ public class NetherrocksConfig  extends SimpleConfig
                     (float) serverDragonstoneKnockback.getAsDouble());
 
             // tool materials
-            // TODO
+            argoniteToolRecord = new ToolProperties(serverArgoniteUses.get(), (float) serverArgoniteSpeedBonus.getAsDouble(),
+                    (float) serverArgoniteAttackBonus.getAsDouble(), serverArgoniteToolEnchantabilty.get());
+            ashstoneToolRecord = new ToolProperties(serverAshstoneUses.get(), (float) serverAshstoneSpeedBonus.getAsDouble(),
+                    (float) serverAshstoneAttackBonus.getAsDouble(), serverAshstoneToolEnchantabilty.get());
+            fyriteToolRecord = new ToolProperties(serverFyriteUses.get(), (float) serverFyriteSpeedBonus.getAsDouble(),
+                    (float) serverFyriteAttackBonus.getAsDouble(), serverFyriteToolEnchantabilty.get());
+            illumeniteToolRecord = new ToolProperties(serverIllumeniteUses.get(), (float) serverIllumeniteSpeedBonus.getAsDouble(),
+                    (float) serverIllumeniteAttackBonus.getAsDouble(), serverIllumeniteToolEnchantabilty.get());
+            malachiteToolRecord = new ToolProperties(serverMalachiteUses.get(), (float) serverMalachiteSpeedBonus.getAsDouble(),
+                    (float) serverMalachiteAttackBonus.getAsDouble(), serverMalachiteToolEnchantabilty.get());
+            dragonstoneToolRecord = new ToolProperties(serverDragonstoneUses.get(), (float) serverDragonstoneSpeedBonus.getAsDouble(),
+                    (float) serverDragonstoneAttackBonus.getAsDouble(), serverDragonstoneToolEnchantabilty.get());
         }
     } // end onLoad()
 
