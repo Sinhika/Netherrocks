@@ -24,6 +24,27 @@ public class NetherrocksConfig  extends SimpleConfig
     private static final ModConfigSpec.DoubleValue serverFyriteToughness;
     private static final ModConfigSpec.DoubleValue serverFyriteKnockback;
 
+    // armor properties - Malachite
+    private static final ModConfigSpec.IntValue serverMalachiteBaseDefense;
+    private static final ModConfigSpec.IntValue serverMalachiteEnchantability;
+    private static final ModConfigSpec.IntValue serverMalachiteArmorDurability;
+    private static final ModConfigSpec.DoubleValue serverMalachiteToughness;
+    private static final ModConfigSpec.DoubleValue serverMalachiteKnockback;
+
+    // armor properties - Illumenite
+    private static final ModConfigSpec.IntValue serverIllumeniteBaseDefense;
+    private static final ModConfigSpec.IntValue serverIllumeniteEnchantability;
+    private static final ModConfigSpec.IntValue serverIllumeniteArmorDurability;
+    private static final ModConfigSpec.DoubleValue serverIllumeniteToughness;
+    private static final ModConfigSpec.DoubleValue serverIllumeniteKnockback;
+
+    // armor properties - Dragonstone
+    private static final ModConfigSpec.IntValue serverDragonstoneBaseDefense;
+    private static final ModConfigSpec.IntValue serverDragonstoneEnchantability;
+    private static final ModConfigSpec.IntValue serverDragonstoneArmorDurability;
+    private static final ModConfigSpec.DoubleValue serverDragonstoneToughness;
+    private static final ModConfigSpec.DoubleValue serverDragonstoneKnockback;
+
     static {
         BUILDER.push("General");
         serverAddModLootToChests = BUILDER.comment("Add Netherrocks items to chest loot?")
@@ -57,10 +78,40 @@ public class NetherrocksConfig  extends SimpleConfig
                 .defineInRange("fyriteKnockback", 0.0, 0.0, 10.0);
         BUILDER.pop();
         BUILDER.push("Malachite");
+        serverMalachiteBaseDefense = BUILDER.comment("Body Defense - base from which other defense values are calculated")
+                .defineInRange("MalachiteBodyDefense", 4, 1, 20);
+        serverMalachiteEnchantability = BUILDER.comment("Malachite Armor Enchantability")
+                .defineInRange("MalachiteArmorEnchantibility", 39, 1, 99);
+        serverMalachiteArmorDurability = BUILDER.comment("Base durability for Malachite armor")
+                .defineInRange("MalachiteArmorDurability", 16, 1, 99);
+        serverMalachiteToughness = BUILDER.comment("Toughness for Malachite armor")
+                .defineInRange("MalachiteToughness", 0.0, 0.0, 10.0);
+        serverMalachiteKnockback = BUILDER.comment("Knockback Resistance for Malachite armor")
+                .defineInRange("MalachiteKnockback", 0.0, 0.0, 10.0);
         BUILDER.pop();
         BUILDER.push("illumenite");
+        serverIllumeniteBaseDefense = BUILDER.comment("Body Defense - base from which other defense values are calculated")
+                .defineInRange("IllumeniteBodyDefense", 5, 1, 20);
+        serverIllumeniteEnchantability = BUILDER.comment("Illumenite Armor Enchantability")
+                .defineInRange("IllumeniteArmorEnchantibility", 15, 1, 99);
+        serverIllumeniteArmorDurability = BUILDER.comment("Base durability for Illumenite armor")
+                .defineInRange("IllumeniteArmorDurability", 12, 1, 99);
+        serverIllumeniteToughness = BUILDER.comment("Toughness for Illumenite armor")
+                .defineInRange("IllumeniteToughness", 0.0, 0.0, 10.0);
+        serverIllumeniteKnockback = BUILDER.comment("Knockback Resistance for Illumenite armor")
+                .defineInRange("IllumeniteKnockback", 0.0, 0.0, 10.0);
         BUILDER.pop();
         BUILDER.push("dragonstone");
+        serverDragonstoneBaseDefense = BUILDER.comment("Body Defense - base from which other defense values are calculated")
+                .defineInRange("DragonstoneBodyDefense", 7, 1, 20);
+        serverDragonstoneEnchantability = BUILDER.comment("Dragonstone Armor Enchantability")
+                .defineInRange("DragonstoneArmorEnchantibility", 27, 1, 99);
+        serverDragonstoneArmorDurability = BUILDER.comment("Base durability for Dragonstone armor")
+                .defineInRange("DragonstoneArmorDurability", 48, 1, 99);
+        serverDragonstoneToughness = BUILDER.comment("Toughness for Dragonstone armor")
+                .defineInRange("DragonstoneToughness", 2.0, 0.0, 10.0);
+        serverDragonstoneKnockback = BUILDER.comment("Knockback Resistance for Dragonstone armor")
+                .defineInRange("DragonstoneKnockback", 0.1, 0.0, 10.0);
         BUILDER.pop();
 
         BUILDER.pop();
@@ -91,6 +142,9 @@ public class NetherrocksConfig  extends SimpleConfig
     public static boolean enableAshstoneGhastOre;
 
     public static ArmorProperties fyriteArmorRecord;
+    public static ArmorProperties malachiteArmorRecord;
+    public static ArmorProperties illumeniteArmorRecord;
+    public static ArmorProperties dragonstoneArmorRecord;
 
     public static void onLoadStartup(final ModConfigEvent.Loading event)
     {
@@ -107,8 +161,16 @@ public class NetherrocksConfig  extends SimpleConfig
             fyriteArmorRecord = new ArmorProperties(serverFyriteArmorDurability.get(), serverFyriteBaseDefense.get(),
                     serverFyriteEnchantability.get(), (float) serverFyriteToughness.getAsDouble(),
                     (float) serverFyriteKnockback.getAsDouble());
+            malachiteArmorRecord = new ArmorProperties(serverMalachiteArmorDurability.get(), serverMalachiteBaseDefense.get(),
+                    serverMalachiteEnchantability.get(), (float) serverMalachiteToughness.getAsDouble(),
+                    (float) serverMalachiteKnockback.getAsDouble());
+            illumeniteArmorRecord = new ArmorProperties(serverIllumeniteArmorDurability.get(), serverIllumeniteBaseDefense.get(),
+                    serverIllumeniteEnchantability.get(), (float) serverIllumeniteToughness.getAsDouble(),
+                    (float) serverIllumeniteKnockback.getAsDouble());
+            dragonstoneArmorRecord = new ArmorProperties(serverDragonstoneArmorDurability.get(), serverDragonstoneBaseDefense.get(),
+                    serverDragonstoneEnchantability.get(), (float) serverDragonstoneToughness.getAsDouble(),
+                    (float) serverDragonstoneKnockback.getAsDouble());
 
-            // TODO
             // tool materials
             // TODO
         }

@@ -191,16 +191,20 @@ public final class ModItems
     // dragonstone
    public static final DeferredItem<ArmorItem> dragonstone_helmet = ITEMS.register("dragonstone_helmet",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(48)));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.dragonstoneArmorRecord.durabilityFactor()))));
     public static final DeferredItem<ArmorItem> dragonstone_leggings = ITEMS.register("dragonstone_leggings",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.dragonstoneArmorRecord.durabilityFactor()))));
     public static final DeferredItem<ArmorItem> dragonstone_chestplate = ITEMS.register("dragonstone_chestplate",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.dragonstoneArmorRecord.durabilityFactor()))));
     public static final DeferredItem<ArmorItem> dragonstone_boots = ITEMS.register("dragonstone_boots",
             () -> new ArmorItem(ModArmorMaterials.DRAGONSTONE, ArmorItem.Type.BOOTS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.dragonstoneArmorRecord.durabilityFactor()))));
 
     // fyrite
     public static final DeferredItem<FyriteArmorItem> fyrite_helmet = ITEMS.register("fyrite_helmet",
@@ -227,30 +231,38 @@ public final class ModItems
  // illumenite
     public static final DeferredItem<IllumeniteArmorItem> illumenite_helmet = ITEMS.register("illumenite_helmet",
             () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.HELMET,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.illumeniteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_leggings = ITEMS.register("illumenite_leggings",
             () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.illumeniteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_chestplate = ITEMS.register("illumenite_chestplate",
             () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.illumeniteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<IllumeniteArmorItem> illumenite_boots = ITEMS.register("illumenite_boots",
             () -> new IllumeniteArmorItem(ModArmorMaterials.ILLUMENITE, ArmorItem.Type.BOOTS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.illumeniteArmorRecord.durabilityFactor()))));
 
     // malachite
     public static final DeferredItem<MalachiteArmorItem> malachite_helmet = ITEMS.register("malachite_helmet",
             () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.HELMET,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.malachiteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<MalachiteArmorItem> malachite_leggings = ITEMS.register("malachite_leggings",
             () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.malachiteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<MalachiteArmorItem> malachite_chestplate = ITEMS.register("malachite_chestplate",
             () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.malachiteArmorRecord.durabilityFactor()))));
     public static final DeferredItem<MalachiteArmorItem> malachite_boots = ITEMS.register("malachite_boots",
             () -> new MalachiteArmorItem(ModArmorMaterials.MALACHITE, ArmorItem.Type.BOOTS,
-                    new Item.Properties()));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(
+                            NetherrocksConfig.malachiteArmorRecord.durabilityFactor()))));
 
     
 } // end class ModItems
