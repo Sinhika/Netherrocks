@@ -102,7 +102,7 @@ public class NetherrocksConfig  extends SimpleConfig
         serverIllumeniteSlowLevel = BUILDER.comment("Illumenite target slowed level")
                         .defineInRange("illumeniteSlowLevel", 3, 1, 5);
         serverIllumeniteHasGlowingEffect = BUILDER.comment("Illumenite armor has Glowing effect")
-                        .define("IllumeniteHasGlowingEffect", false);
+                        .define("IllumeniteHasGlowingEffect", true);
         BUILDER.pop();
         BUILDER.push("Armor Properties");
         BUILDER.push("Fyrite");
