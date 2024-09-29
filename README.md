@@ -10,14 +10,14 @@ Forge mods. I hope I did a good job with it.
 
 TO DO
 -----
-* Add Ashstone = Ghast Ore option based on Peaceful Pack.
+* <s>Add Ashstone = Ghast Ore option based on Peaceful Pack.</s>
 * Add language entries for brick slabs.
 * <s>Investigate doors, they aren't behaving correctly for metal doors.</s>
 * <s>[1.17.1] add missing raw metal textures.</s>
 * <s>[1.17.1] add datagen recipes for raw_metal_blocks & smelting/blasting raw_metal.</s>
 * <s>[1.17.1] add datagen storage block tags for raw_metal blocks.</s>
 * update/move wiki 
-* Decide if we really need more detailed configs than that.
+* <s>Decide if we really need more detailed configs than that.</s>
 * <s>Add shears for all metals.</s>
 * add ingots/tools/armor to appropriate piglin trade tables.
 * <s>Add dusts for all ores.</s>
