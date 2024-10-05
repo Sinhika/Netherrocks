@@ -67,7 +67,7 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     public int getBurnTime(ItemStack stack, @Nullable RecipeType<?> recipeType)
     {
         int bt = getStaticBurnTime(stack, recipeType);
-        Netherrocks.LOGGER.debug("{} burnTime is {}", stack.getDescriptionId(), bt);
+        //Netherrocks.LOGGER.debug("{} burnTime is {}", stack.getDescriptionId(), bt);
         return bt;
     } // end getBurnTime()
     

@@ -34,7 +34,8 @@ public class JEIMachinePlugin implements IModPlugin
     /**
      * Nether furnace fuel recipe type.
      */
-    public static final RecipeType<NetherFurnaceFuelRecipe>  NETHER_FUEL = RecipeType.create(Netherrocks.MODID, "nether_fuel", NetherFurnaceFuelRecipe.class);
+    public static final RecipeType<NetherFurnaceFuelRecipe>  NETHER_FUEL = RecipeType.create(Netherrocks.MODID,
+			"nether_fuel", NetherFurnaceFuelRecipe.class);
     
     
     /**
