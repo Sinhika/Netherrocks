@@ -13,13 +13,14 @@ public class NetherSmokerScreen extends SomewhatAbstractFurnaceScreen<NetherSmok
 //    private final static int name_color =  0x0ffffff;
     private static final ResourceLocation NETHER_FURNACE_GUI_TEXTURES =
         new ResourceLocation(Netherrocks.MODID, "textures/gui/container/nether_furnace_gui.png");
-    private static final ResourceLocation LIT_PROGRESS_SPRITE = new ResourceLocation("container/smoker/lit_progress");
-    private static final ResourceLocation BURN_PROGRESS_SPRITE = new ResourceLocation("container/smoker/burn_progress");
+//    private static final ResourceLocation LIT_PROGRESS_SPRITE = new ResourceLocation("container/smoker/lit_progress");
+//    private static final ResourceLocation BURN_PROGRESS_SPRITE = new ResourceLocation("container/smoker/burn_progress");
 
     public NetherSmokerScreen(NetherSmokerContainer screenContainer, Inventory inv, Component titleIn)
     {
         super(screenContainer, new SmokingRecipeBookComponent(), inv, titleIn, NETHER_FURNACE_GUI_TEXTURES,
-                LIT_PROGRESS_SPRITE, BURN_PROGRESS_SPRITE);
+                SomewhatAbstractFurnaceScreen.SMOKER_LIT_PROGRESS_SPRITE,
+                SomewhatAbstractFurnaceScreen.SMOKER_BURN_PROGRESS_SPRITE);
     }
 
 } // end class
