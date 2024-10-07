@@ -1,8 +1,7 @@
 package mod.alexndr.netherrocks.api.content;
 
-import mod.alexndr.netherrocks.Netherrocks;
 import mod.alexndr.netherrocks.init.ModDataMaps;
-import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlockEntity;
+import mod.alexndr.simplecorelib.api.content.block_entity.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;

@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.content.block;
 
 import mod.alexndr.netherrocks.init.ModBlockSetTypes;
-import mod.alexndr.simplecorelib.api.content.MultifunctionPressurePlateBlock;
+import mod.alexndr.simplecorelib.api.content.block.MultifunctionPressurePlateBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 

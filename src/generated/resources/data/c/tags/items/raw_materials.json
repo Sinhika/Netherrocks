@@ -1,8 +1,8 @@
 {
   "values": [
-    "#c:raw_metals/argonite",
-    "#c:raw_metals/fyrite",
-    "#c:raw_metals/malachite",
-    "#c:raw_metals/illumenite"
+    "#c:raw_materials/argonite",
+    "#c:raw_materials/fyrite",
+    "#c:raw_materials/malachite",
+    "#c:raw_materials/illumenite"
   ]
 }

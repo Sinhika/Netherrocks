@@ -2,7 +2,7 @@ package mod.alexndr.netherrocks.content.block;
 
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.api.content.AbstractNetherSmokerBlock;
-import mod.alexndr.netherrocks.content.container.NetherSmokerTileEntity;
+import mod.alexndr.netherrocks.content.block_entity.NetherSmokerTileEntity;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;

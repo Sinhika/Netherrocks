@@ -3,7 +3,7 @@ package mod.alexndr.netherrocks.content.block;
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.content.block_entity.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModTiles;
-import mod.alexndr.simplecorelib.api.content.SomewhatAbstractFurnaceBlock;
+import mod.alexndr.simplecorelib.api.content.block.SomewhatAbstractFurnaceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;

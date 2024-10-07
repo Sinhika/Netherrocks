@@ -1,6 +1,7 @@
-package mod.alexndr.netherrocks.content.container;
+package mod.alexndr.netherrocks.content.block_entity;
 
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.container.NetherSmokerContainer;
 import mod.alexndr.netherrocks.init.ModTiles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

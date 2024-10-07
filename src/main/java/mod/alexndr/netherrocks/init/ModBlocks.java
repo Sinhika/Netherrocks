@@ -6,7 +6,7 @@ import mod.alexndr.netherrocks.content.block.FyritePressurePlateBlock;
 import mod.alexndr.netherrocks.content.block.NetherBlastFurnaceBlock;
 import mod.alexndr.netherrocks.content.block.NetherFurnaceBlock;
 import mod.alexndr.netherrocks.content.block.NetherSmokerBlock;
-import mod.alexndr.simplecorelib.api.content.MultifunctionPressurePlateBlock;
+import mod.alexndr.simplecorelib.api.content.block.MultifunctionPressurePlateBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
