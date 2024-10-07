@@ -1,7 +1,7 @@
 package mod.alexndr.netherrocks.client.gui;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
+import mod.alexndr.netherrocks.content.container.NetherFurnaceContainer;
 import mod.alexndr.simplecorelib.api.client.gui.SomewhatAbstractFurnaceScreen;
 import net.minecraft.client.gui.screens.recipebook.SmeltingRecipeBookComponent;
 import net.minecraft.network.chat.Component;

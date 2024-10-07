@@ -1,9 +1,9 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.content.NetherBlastFurnaceContainer;
-import mod.alexndr.netherrocks.content.NetherFurnaceContainer;
-import mod.alexndr.netherrocks.content.NetherSmokerContainer;
+import mod.alexndr.netherrocks.content.container.NetherBlastFurnaceContainer;
+import mod.alexndr.netherrocks.content.container.NetherFurnaceContainer;
+import mod.alexndr.netherrocks.content.container.NetherSmokerContainer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;

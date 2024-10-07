@@ -1,4 +1,4 @@
-package mod.alexndr.netherrocks.content;
+package mod.alexndr.netherrocks.content.block;
 
 import mod.alexndr.netherrocks.init.ModBlockSetTypes;
 import mod.alexndr.simplecorelib.api.content.MultifunctionPressurePlateBlock;

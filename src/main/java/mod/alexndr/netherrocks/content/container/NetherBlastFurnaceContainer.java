@@ -1,4 +1,4 @@
-package mod.alexndr.netherrocks.content;
+package mod.alexndr.netherrocks.content.container;
 
 import mod.alexndr.netherrocks.api.content.AbstractNetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModContainers;

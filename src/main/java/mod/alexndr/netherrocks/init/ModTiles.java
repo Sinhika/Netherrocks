@@ -1,9 +1,9 @@
 package mod.alexndr.netherrocks.init;
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.content.NetherBlastFurnaceTileEntity;
-import mod.alexndr.netherrocks.content.NetherFurnaceTileEntity;
-import mod.alexndr.netherrocks.content.NetherSmokerTileEntity;
+import mod.alexndr.netherrocks.content.block_entity.NetherBlastFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.block_entity.NetherFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.container.NetherSmokerTileEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;

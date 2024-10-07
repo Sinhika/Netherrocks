@@ -1,6 +1,6 @@
 package mod.alexndr.netherrocks;
 
-import mod.alexndr.netherrocks.content.FyritePressurePlateBlock;
+import mod.alexndr.netherrocks.content.block.FyritePressurePlateBlock;
 import mod.alexndr.netherrocks.init.ModArmorMaterials;
 import mod.alexndr.simplecorelib.api.helpers.ArmorUtils;
 import net.minecraft.core.BlockPos;
