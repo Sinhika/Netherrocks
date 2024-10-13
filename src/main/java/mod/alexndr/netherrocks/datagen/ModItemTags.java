@@ -71,8 +71,7 @@ public class ModItemTags extends MiningItemTags
         this.registerOreRateTags( List.of(), // sparse 
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-						ModBlocks.magmatic_fyrite_ore.get(),
-        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()), // singular 
+        				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()), // singular
         		List.of()); // dense
         
         // register forge:ores_in_ground tags

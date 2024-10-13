@@ -2,10 +2,7 @@ package mod.alexndr.netherrocks.init;
 
 
 import mod.alexndr.netherrocks.Netherrocks;
-import mod.alexndr.netherrocks.content.block.FyritePressurePlateBlock;
-import mod.alexndr.netherrocks.content.block.NetherBlastFurnaceBlock;
-import mod.alexndr.netherrocks.content.block.NetherFurnaceBlock;
-import mod.alexndr.netherrocks.content.block.NetherSmokerBlock;
+import mod.alexndr.netherrocks.content.block.*;
 import mod.alexndr.simplecorelib.api.content.block.MultifunctionPressurePlateBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import mod.alexndr.simplecorelib.api.helpers.PropertyUtils;
@@ -14,6 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -54,12 +52,17 @@ public final class ModBlocks
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()
                     .lightLevel(LightUtils.setFixedLight(2))));
 
- public static final DeferredBlock<DropExperienceBlock> magmatic_fyrite_ore = BLOCKS.register("magmatic_fyrite_ore",
-         () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.NETHER_ORE)
-                 .strength( 3.0F, 30.0F).requiresCorrectToolForDrops().lightLevel(LightUtils.setFixedLight(3))
-                         .isValidSpawn((p_187421_, p_187422_, p_187423_, p_187424_) -> p_187424_.fireImmune())
-                         .hasPostProcess(PropertyUtils::always)
-                         .emissiveRendering(PropertyUtils::always)));
+ public static final DeferredBlock<MagmaticBlock> magmatic_fyrite_ore = BLOCKS.register("magmatic_fyrite_ore",
+         () -> new MagmaticBlock(BlockBehaviour.Properties.of()
+                 .mapColor(MapColor.NETHER)
+                 .instrument(NoteBlockInstrument.BASEDRUM)
+                 .requiresCorrectToolForDrops()
+                 .lightLevel(LightUtils.setFixedLight(3))
+                 .strength(0.5F)
+                 .isValidSpawn((p_187421_, p_187422_, p_187423_, p_187424_) -> p_187424_.fireImmune())
+                 .hasPostProcess(PropertyUtils::always)
+                 .emissiveRendering(PropertyUtils::always)));
+
 
  public static final DeferredBlock<DropExperienceBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
             () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.GLASS)

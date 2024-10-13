@@ -67,7 +67,6 @@ public class ModBlockTags extends MiningBlockTags
         this.registerOreRateTags( List.of(), // sparse 
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(), // singular
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
-						ModBlocks.magmatic_fyrite_ore.get(),
         				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()),
         		List.of()); // dense
         
