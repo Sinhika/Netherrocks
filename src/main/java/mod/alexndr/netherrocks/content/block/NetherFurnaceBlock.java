@@ -2,8 +2,10 @@ package mod.alexndr.netherrocks.content.block;
 
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.content.block_entity.NetherFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.block_entity.NetherSmokerTileEntity;
 import mod.alexndr.netherrocks.init.ModTiles;
 import mod.alexndr.simplecorelib.api.content.block.SomewhatAbstractFurnaceBlock;
+import mod.alexndr.simplecorelib.api.content.block_entity.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -21,6 +23,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
+
 public class NetherFurnaceBlock extends SomewhatAbstractFurnaceBlock
 {
     //private static final String DISPLAY_NAME = "block.netherrocks.nether_furnace";
@@ -37,7 +41,7 @@ public class NetherFurnaceBlock extends SomewhatAbstractFurnaceBlock
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
             Level level, BlockState bstate, BlockEntityType<T> entityType)
 	{
-		return createCustomFurnaceTicker(level, entityType, ModTiles.NETHER_FURNACE.get());
+		return createNetherFurnaceTicker(level, entityType, ModTiles.NETHER_FURNACE.get());
 	}
 
 
@@ -56,6 +60,26 @@ public class NetherFurnaceBlock extends SomewhatAbstractFurnaceBlock
             player.awardStat(Stats.INTERACT_WITH_FURNACE);
         } // end-if
     } // end openContainer
+
+    /**
+     * custom createFurnaceTicker. If you don't restrict the client type to the exact BlockEntity you want,
+     * type-erasure will bite you on the ass.
+     *
+     * @param level
+     * @param serverType
+     * @param clientType
+     * @return
+     * @param <T>
+     */
+    @Nullable
+    protected static <T extends BlockEntity> BlockEntityTicker<T> createNetherFurnaceTicker(
+            Level level, BlockEntityType<T> serverType,
+            BlockEntityType<? extends NetherFurnaceTileEntity> clientType)
+    {
+        return level.isClientSide
+               ? null
+               : createTickerHelper(serverType, clientType, SomewhatAbstractFurnaceBlockEntity::serverTick);
+    }
 
     /**
      * Called periodically clientside on blocks near the player to show effects (like furnace fire particles).

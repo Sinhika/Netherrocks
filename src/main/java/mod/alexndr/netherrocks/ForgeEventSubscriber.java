@@ -30,7 +30,7 @@ public final class ForgeEventSubscriber
         if (event.getEntity() instanceof Player)
         {
             Player player = (Player) event.getEntity();
-            LOGGER.debug("caught LivingAttackEvent");
+            // LOGGER.debug("caught LivingAttackEvent");
 
             DamageSource source = event.getSource();
 

@@ -43,6 +43,7 @@ public class NetherrocksLootTableSubprovider extends SimpleBlockLootSubProvider
         dropSelf(ModBlocks.fyrite_bars.get());
         doorDropTable(ModBlocks.fyrite_door.get());
         dropMultiItemsWithFortune(ModBlocks.fyrite_ore.get(), ModItems.raw_fyrite.get(), 1,1);
+        dropMultiItemsWithFortune(ModBlocks.magmatic_fyrite_ore.get(), ModItems.raw_fyrite.get(), 1,1);
 
         dropSelf(ModBlocks.illumenite_block.get());
         dropSelf(ModBlocks.raw_illumenite_block.get());

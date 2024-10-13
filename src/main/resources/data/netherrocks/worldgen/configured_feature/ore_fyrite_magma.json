@@ -1,0 +1,18 @@
+{
+	"type" : "netherrocks:magmatic_blob",
+	"config" : {
+		"size" : 33,
+		"discard_chance_on_air_exposure" : 0.0,
+		"targets" : [
+		{
+			"state" : {
+				"Name" : "netherrocks:magmatic_fyrite_ore"
+			},
+			"target" : {
+				"block": "minecraft:netherrack",
+				"predicate_type": "minecraft:block_match"
+			}
+		}
+		]
+	}
+}

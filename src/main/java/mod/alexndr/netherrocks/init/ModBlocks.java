@@ -8,6 +8,7 @@ import mod.alexndr.netherrocks.content.block.NetherFurnaceBlock;
 import mod.alexndr.netherrocks.content.block.NetherSmokerBlock;
 import mod.alexndr.simplecorelib.api.content.block.MultifunctionPressurePlateBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
+import mod.alexndr.simplecorelib.api.helpers.PropertyUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -36,29 +37,37 @@ public final class ModBlocks
     
     // Ore Blocks
     public static final DeferredBlock<DropExperienceBlock> argonite_ore = BLOCKS.register("argonite_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
                     .sound(SoundType.NETHER_ORE).strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<DropExperienceBlock> ashstone_ore = BLOCKS.register("ashstone_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(1), BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+            () -> new DropExperienceBlock(ConstantInt.of(1), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
                     .sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<DropExperienceBlock> dragonstone_ore = BLOCKS.register("dragonstone_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(1), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.NETHER_ORE)
+            () -> new DropExperienceBlock(ConstantInt.of(1), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.NETHER_ORE)
                     .strength( 5.0F, 30.0F).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<DropExperienceBlock> fyrite_ore = BLOCKS.register("fyrite_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.NETHER_ORE)
-                    .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
+            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.NETHER_ORE)
+                    .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()
+                    .lightLevel(LightUtils.setFixedLight(2))));
 
-    public static final DeferredBlock<DropExperienceBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.GLASS)
+ public static final DeferredBlock<DropExperienceBlock> magmatic_fyrite_ore = BLOCKS.register("magmatic_fyrite_ore",
+         () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.NETHER_ORE)
+                 .strength( 3.0F, 30.0F).requiresCorrectToolForDrops().lightLevel(LightUtils.setFixedLight(3))
+                         .isValidSpawn((p_187421_, p_187422_, p_187423_, p_187424_) -> p_187424_.fireImmune())
+                         .hasPostProcess(PropertyUtils::always)
+                         .emissiveRendering(PropertyUtils::always)));
+
+ public static final DeferredBlock<DropExperienceBlock> illumenite_ore = BLOCKS.register("illumenite_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.GLASS)
                     .strength( 1.0F, 30.0F).requiresCorrectToolForDrops()
                     .lightLevel(LightUtils.setFixedLight(15))));
 
     public static final DeferredBlock<DropExperienceBlock> malachite_ore = BLOCKS.register("malachite_ore",
-            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.NETHER_ORE)
+            () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.NETHER_ORE)
                     .strength( 3.0F, 30.0F).requiresCorrectToolForDrops()));
     
     // evil clone of ashstone_ore for use when ghast_ore_enabled.
@@ -102,17 +111,17 @@ public final class ModBlocks
 
     // Furnace
     public static final DeferredBlock<NetherFurnaceBlock> nether_furnace = BLOCKS.register("nether_furnace",
-            () -> new NetherFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+            () -> new NetherFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
                     .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<NetherSmokerBlock> nether_smoker = BLOCKS.register("nether_smoker",
-            () -> new NetherSmokerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+            () -> new NetherSmokerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
                     .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<NetherBlastFurnaceBlock> nether_blast_furnace = BLOCKS.register("nether_blast_furnace",
-            () -> new NetherBlastFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+            () -> new NetherBlastFurnaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
                     .strength(3.5F, 12.0F).sound(SoundType.NETHER_ORE)
                     .lightLevel(LightUtils.setSwitchedLight(BlockStateProperties.LIT, 13)).requiresCorrectToolForDrops()));
   

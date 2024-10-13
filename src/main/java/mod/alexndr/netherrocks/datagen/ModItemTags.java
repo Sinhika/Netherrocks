@@ -60,7 +60,8 @@ public class ModItemTags extends MiningItemTags
         this.tag(TagUtils.cTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get().asItem());
         this.tag(TagUtils.cTag( "ores/fyrite"))
-        	.add(ModBlocks.fyrite_ore.get().asItem());
+        	.add(ModBlocks.fyrite_ore.get().asItem())
+				.add(ModBlocks.magmatic_fyrite_ore.get().asItem());
         this.tag(TagUtils.cTag( "ores/illumenite"))
         	.add(ModBlocks.illumenite_ore.get().asItem());
         this.tag(TagUtils.cTag( "ores/malachite"))
@@ -70,6 +71,7 @@ public class ModItemTags extends MiningItemTags
         this.registerOreRateTags( List.of(), // sparse 
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(),
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
+						ModBlocks.magmatic_fyrite_ore.get(),
         				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()), // singular 
         		List.of()); // dense
         

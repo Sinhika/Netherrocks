@@ -38,7 +38,6 @@ public class Netherrocks
         ModTiles.TILE_ENTITY_TYPES.register(modEventBus);
         ModCodecs.GLM.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
-        // TODO register ModCodecs
 
         // register event listeners.
         modEventBus.addListener(ModEventSubscriber::onRegisterItems);

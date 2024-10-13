@@ -1,0 +1,6 @@
+{
+  "type" : "neoforge:remove_features",
+  "biomes" : "#minecraft:is_nether",
+  "features" : "minecraft:ore_magma",
+  "steps" : ["underground_ores", "underground_decoration"]
+}

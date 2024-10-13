@@ -229,8 +229,8 @@ public class NetherrocksRecipes extends SimpleRecipeProvider
                 0.8F, 200, "ashstone_gems");
         buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.dragonstone_ore.get()), ModItems.dragonstone_gem.get(),
                 0.8F, 200, "dragonstone_gems");
-        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.fyrite_ore.get()), ModItems.fyrite_ingot.get(),
-                0.8F, 200, "fyrite_ingots");
+        buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.fyrite_ore.get(), ModBlocks.magmatic_fyrite_ore.get()),
+				ModItems.fyrite_ingot.get(), 0.8F, 200, "fyrite_ingots");
         buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.illumenite_ore.get()), ModItems.illumenite_ingot.get(),
                 0.8F, 200, "illumenite_ingots");
         buildOre2IngotRecipes(pRecipeOutput, List.of(ModBlocks.argonite_ore.get()), ModItems.argonite_ingot.get(),

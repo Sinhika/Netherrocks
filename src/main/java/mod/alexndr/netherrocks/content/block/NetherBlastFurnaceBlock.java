@@ -3,7 +3,9 @@ package mod.alexndr.netherrocks.content.block;
 import com.mojang.serialization.MapCodec;
 import mod.alexndr.netherrocks.api.content.AbstractNetherBlastFurnaceBlock;
 import mod.alexndr.netherrocks.content.block_entity.NetherBlastFurnaceTileEntity;
+import mod.alexndr.netherrocks.content.block_entity.NetherFurnaceTileEntity;
 import mod.alexndr.netherrocks.init.ModTiles;
+import mod.alexndr.simplecorelib.api.content.block_entity.SomewhatAbstractFurnaceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.MenuProvider;
@@ -14,6 +16,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+
+import javax.annotation.Nullable;
 
 public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
 {
@@ -51,7 +55,7 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
     @Override
  	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState bstate, BlockEntityType<T> entityType) 
  	{
- 		return createCustomFurnaceTicker(level, entityType, ModTiles.NETHER_BLAST_FURNACE.get());
+ 		return createNetherFurnaceTicker(level, entityType, ModTiles.NETHER_BLAST_FURNACE.get());
  	}
 
  	@Override
@@ -59,6 +63,25 @@ public class NetherBlastFurnaceBlock extends AbstractNetherBlastFurnaceBlock
  		return new NetherBlastFurnaceTileEntity(bpos, bstate);
  	}
 
+    /**
+     * custom createFurnaceTicker. If you don't restrict the client type to the exact BlockEntity you want,
+     * type-erasure will bite you on the ass.
+     *
+     * @param level
+     * @param serverType
+     * @param clientType
+     * @return
+     * @param <T>
+     */
+    @Nullable
+    protected static <T extends BlockEntity> BlockEntityTicker<T> createNetherFurnaceTicker(
+            Level level, BlockEntityType<T> serverType,
+            BlockEntityType<? extends NetherBlastFurnaceTileEntity> clientType)
+    {
+        return level.isClientSide
+               ? null
+               : createTickerHelper(serverType, clientType, SomewhatAbstractFurnaceBlockEntity::serverTick);
+    }
 
 
 

@@ -55,8 +55,9 @@ public class ModBlockTags extends MiningBlockTags
         	.add(ModBlocks.ashstone_ore.get());
         this.tag(TagUtils.cBlockTag( "ores/dragonstone"))
         	.add(ModBlocks.dragonstone_ore.get());
-        this.tag(TagUtils.cBlockTag( "ores/fyrite"))
-        	.add(ModBlocks.fyrite_ore.get());
+        this.tag(TagUtils.cBlockTag("ores/fyrite"))
+				.add(ModBlocks.fyrite_ore.get())
+				.add(ModBlocks.magmatic_fyrite_ore.get());
         this.tag(TagUtils.cBlockTag( "ores/illumenite"))
         	.add(ModBlocks.illumenite_ore.get());
         this.tag(TagUtils.cBlockTag( "ores/malachite"))
@@ -66,6 +67,7 @@ public class ModBlockTags extends MiningBlockTags
         this.registerOreRateTags( List.of(), // sparse 
         		List.of(ModBlocks.argonite_ore.get(), ModBlocks.ashstone_ore.get(), // singular
         				ModBlocks.dragonstone_ore.get(), ModBlocks.fyrite_ore.get(),
+						ModBlocks.magmatic_fyrite_ore.get(),
         				ModBlocks.illumenite_ore.get(), ModBlocks.malachite_ore.get()),
         		List.of()); // dense
         
@@ -152,7 +154,8 @@ public class ModBlockTags extends MiningBlockTags
         // do nothing; super() generates all the vanilla blocktags, and we don't want that.
     	registerMineableTags( mineables,
     		List.of(),   // 1 
-    		List.of(ModBlocks.fyrite_block.get(), ModBlocks.fyrite_ore.get(), ModBlocks.fyrite_bars.get(), 
+    		List.of(ModBlocks.fyrite_block.get(), ModBlocks.fyrite_ore.get(),
+					ModBlocks.magmatic_fyrite_ore.get(), ModBlocks.fyrite_bars.get(),
     				ModBlocks.fyrite_brick_slab.get(), ModBlocks.fyrite_brick_stairs.get(),
         			ModBlocks.fyrite_bricks.get(), ModBlocks.fyrite_door.get(),
     				ModBlocks.illumenite_block.get(), ModBlocks.illumenite_ore.get(), ModBlocks.illumenite_bars.get(), 

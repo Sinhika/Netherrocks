@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -81,7 +82,17 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
     }
 
     @Override
-    public boolean canPlaceItemThroughFace(int index, ItemStack stack, @org.jetbrains.annotations.Nullable Direction direction) {
+    public boolean canPlaceItemThroughFace(int index, ItemStack stack, @org.jetbrains.annotations.Nullable Direction direction)
+    {
+        return this.canPlaceItem(index, stack);
+    }
+
+    /**
+     * Returns {@code true} if automation is allowed to insert the given stack (ignoring stack size) into the given slot. For guis use Slot.isItemValid
+     */
+    @Override
+    public boolean canPlaceItem(int index, @NotNull ItemStack stack)
+    {
         if (index == 2) {
             return false;
         } else if (index != 1) {
@@ -91,5 +102,4 @@ public abstract class AbstractNetherFurnaceTileEntity extends SomewhatAbstractFu
             return isCustomFuel(stack) || stack.is(Items.BUCKET) && !itemstack.is(Items.BUCKET);
         }
     }
-
 } // end class
